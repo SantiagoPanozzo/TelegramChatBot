@@ -1,5 +1,5 @@
-## Proyecto ChatBot Programación II
-# Implementación de un chatbot para ayudar a la gente encontrar trabajo y/o servicios
+### Proyecto ChatBot Programación II
+## Implementación de un chatbot para ayudar a la gente encontrar trabajo y/o servicios
 
 ## Consigna
 ¿Cómo podemos nosotros, estudiantes del curso de Programación II ayudar a las personas a encontrar trabajo? 
