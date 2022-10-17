@@ -1,18 +1,18 @@
-namespace Usuario;
+namespace Library;
 using System;
 using System.Text;
 
-abstract class Usuario {
+public abstract class Usuario {
     
     public string Nombre {get; set;}
     public string Apellido {get; set;}
     public DateTime FechaNacimiento {get; set;}
     public string Cedula {get; set;}
     public string Telefono {get; set;}
-    public Tuple<string,string>  Ubicacion {get; set;} // TODO testear cuando tengamos una clase que herede de Usuario
+    public Tuple<double, double>  Ubicacion {get; set;} // TODO testear cuando tengamos una clase que herede de Usuario
     public double Reputacion {get; set;}
 
-    public Usuario(string Nombre, string Apellido, DateTime FechaNacimiento, string Cedula, string Telefono, Tuple<string,string>  Ubicacion, double Reputacion) {
+    public Usuario(string Nombre, string Apellido, DateTime FechaNacimiento, string Cedula, string Telefono, Tuple<double, double>  Ubicacion, double Reputacion) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.FechaNacimiento = FechaNacimiento;
@@ -30,7 +30,7 @@ abstract class Usuario {
         StringBuilder contacto = new StringBuilder();
         contacto.Append($"Nombre: {this.Nombre}\n");
         contacto.Append($"Apellido: {this.Apellido}\n");
-        contacto.Append($"Teléfono: {this.Telefono}\n");
+        contacto.Append($"Teléfono: {this.Telefono}");
         return contacto.ToString();
     }
 }
