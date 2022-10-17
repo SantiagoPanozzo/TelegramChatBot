@@ -28,9 +28,9 @@ abstract class Usuario {
 
     public string GetContacto() {
         StringBuilder contacto = new StringBuilder();
-        contacto.Append("Nombre: " + this.Nombre"\n");
-        contacto.Append("Apellido: " + this.Apellido"\n");
-        contacto.Append("Teléfono: " + this.Telefono"\n");
+        contacto.Append($"Nombre: {this.Nombre}\n");
+        contacto.Append($"Apellido: {this.Apellido}\n");
+        contacto.Append($"Teléfono: {this.Telefono}\n");
         return contacto.ToString();
     }
 }
