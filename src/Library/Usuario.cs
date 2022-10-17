@@ -1,8 +1,8 @@
-namespace Usuario;
+namespace Library;
 using System;
 using System.Text;
 
-abstract class Usuario {
+public abstract class Usuario {
     
     public string Nombre {get; set;}
     public string Apellido {get; set;}
@@ -12,14 +12,14 @@ abstract class Usuario {
     public Tuple<string,string>  Ubicacion {get; set;} // TODO testear cuando tengamos una clase que herede de Usuario
     public double Reputacion {get; set;}
 
-    public Usuario(string Nombre, string Apellido, DateTime FechaNacimiento, string Cedula, string Telefono, Tuple<string,string>  Ubicacion, double Reputacion) {
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.FechaNacimiento = FechaNacimiento;
-        this.Cedula = Cedula;
-        this.Telefono = Telefono;
-        this.Ubicacion = Ubicacion;
-        this.Reputacion = Reputacion;
+    public Usuario(string nombre, string apellido, DateTime fechaNacimiento, string cedula, string telefono, Tuple<string,string>  ubicacion, double reputacion) {
+        this.Nombre = nombre;
+        this.Apellido = apellido;
+        this.FechaNacimiento = fechaNacimiento;
+        this.Cedula = cedula;
+        this.Telefono = telefono;
+        this.Ubicacion = ubicacion;
+        this.Reputacion = reputacion;
     }
     
     public double GetReputacion() {
