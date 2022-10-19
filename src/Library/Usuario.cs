@@ -30,7 +30,7 @@ abstract class Usuario {
         StringBuilder contacto = new StringBuilder();
         contacto.Append($"Nombre: {this.Nombre}\n");
         contacto.Append($"Apellido: {this.Apellido}\n");
-        contacto.Append($"Teléfono: {this.Telefono}\n");
+        contacto.Append($"Teléfono: {this.Telefono}");
         return contacto.ToString();
     }
 }
