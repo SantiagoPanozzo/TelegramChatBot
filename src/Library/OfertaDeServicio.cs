@@ -10,16 +10,6 @@ public class OfertaDeServicio
     public bool Disponible { get; set; }
     public int Id; // TODO implementar IDs, placeholder
 
-
-    public enum Calificacion
-    {
-        Deficiente,
-        Regular,
-        Bueno,
-        MuyBueno,
-        Sobresaliente
-    }
-
     public OfertaDeServicio(Trabajador ofertante, string descripcion, string empleo, double precio)
     {
         this.Ofertante = ofertante;
