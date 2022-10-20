@@ -6,19 +6,9 @@ public class OfertaDeServicio
     public string Descripcion { get; set; }
     public string Empleo { get; set; }
     public double Precio { get; set; }
-    private List<Calificacion> Rate { get; set; }
+    public Calificacion Rate { get; set; }
     public bool Disponible { get; set; }
     public int Id; // TODO implementar IDs, placeholder
-
-
-    public enum Calificacion
-    {
-        Deficiente,
-        Regular,
-        Bueno,
-        MuyBueno,
-        Sobresaliente
-    }
 
     public OfertaDeServicio(Trabajador ofertante, string descripcion, string empleo, double precio)
     {
@@ -30,19 +20,13 @@ public class OfertaDeServicio
 
     public void RateMe(Calificacion rate)
     { // TODO test
-        this.Rate.Add(rate);
+        this.Rate = rate;
+        this.Ofertante.Calificar(rate);
     }
 
     public Calificacion getCalificacion()
     {
-        int x = 0;
-        foreach (var calif in this.Rate)
-        {
-            x += (int)calif;
-        }
-
-        x /= this.Rate.Count;
-        return (Calificacion)x;
+        return this.Rate;
     }
     
 }
