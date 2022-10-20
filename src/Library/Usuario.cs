@@ -19,6 +19,7 @@ public abstract class Usuario {
         this.Cedula = cedula;
         this.Telefono = telefono;
         this.Ubicacion = ubicacion;
+        this.Reputacion = new List<Calificacion>();
     }
     
     public Calificacion getReputacion()
