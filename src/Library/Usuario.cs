@@ -34,11 +34,13 @@ public abstract class Usuario {
         return (Calificacion)x;
     }
 
-    public void Calificar(Calificacion Rate){
+    public void Calificar(Calificacion Rate)
+    {
         this.Reputacion.Add(Rate);
     }
-
-    public string GetContacto() {
+    
+    public string GetContacto()
+    {
         StringBuilder contacto = new StringBuilder();
         contacto.Append($"Nombre: {this.Nombre}\n");
         contacto.Append($"Apellido: {this.Apellido}\n");
