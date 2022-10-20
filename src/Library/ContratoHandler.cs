@@ -1,16 +1,16 @@
 namespace Library;
 using System;
 public class ContratoHandler{
-    SolicitudCatalog catalogo = new SolicitudCatalog();
-    public void SolicitarTrabajador(Trabajador trabajador){
-        Solicitud solicitud = new Solicitud();
+    private SolicitudCatalog _catalogo = new SolicitudCatalog();
+    public void SolicitarTrabajador(OfertaDeServicio oferta, Empleador emp){
+        _catalogo.AddSolicitud(oferta, emp);
     }
 
     public void AceptarSolicitud(Solicitud solicitud){
-        solicitud.RecibirRespuesta(1);
+        solicitud.RecibirRespuesta(Aceptacion.Aceptada);
     }
     public void RechazarSolicitud(Solicitud solicitud){
-        solicitud.RecibirRespuesta(2);
+        solicitud.RecibirRespuesta(Aceptacion.Rechazada);
 
     }
 }

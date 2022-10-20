@@ -11,6 +11,7 @@ public abstract class Usuario {
     public string Telefono {get; set;}
     public Tuple<string,string>  Ubicacion {get; set;} // TODO testear cuando tengamos una clase que herede de Usuario
     private List<Calificacion> Reputacion { get; set; }
+    public string Correo { get; set; }
 
     public Usuario(string nombre, string apellido, DateTime fechaNacimiento, string cedula, string telefono, Tuple<string,string>  ubicacion) {
         this.Nombre = nombre;
@@ -22,7 +23,7 @@ public abstract class Usuario {
         this.Reputacion = new List<Calificacion>();
     }
     
-    public Calificacion getReputacion()
+    public Calificacion GetReputacion()
     {
         int x = 0;
         foreach (var calif in this.Reputacion)

@@ -2,19 +2,17 @@ namespace Library;
 using System.Collections.Generic;
 public class SolicitudCatalog{
 
-    private List<Solicitud> solicitudes = new List<Solicitud>();
+    private List<Solicitud> _solicitudes = new List<Solicitud>();
 
-    public void addSolicitud(OfertaDeServicio Oferta, Empleador empleador){
+    public void AddSolicitud(OfertaDeServicio Oferta, Empleador empleador){
 
-        solicitudes.Add(new Solicitud(Oferta, empleador) );
+        _solicitudes.Add(new Solicitud(Oferta, empleador) );
 
     }
+    public void RemoveSolicitud (Solicitud solicitud){
 
-    public void removeSolicitud (Solicitud solicitud){
-
-        solicitudes.Remove(solicitud);
+        _solicitudes.Remove(solicitud);
     }
-
 
 }
 

@@ -24,7 +24,7 @@ public class OfertaDeServicio
         this.Ofertante.Calificar(rate);
     }
 
-    public Calificacion getCalificacion()
+    public Calificacion GetCalificacion()
     {
         return this.Rate;
     }

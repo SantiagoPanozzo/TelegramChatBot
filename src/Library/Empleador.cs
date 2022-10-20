@@ -4,15 +4,15 @@ using System.Text;
 
 public class Empleador:Usuario{
 
-    public Empleador(string Nombre, string Apellido, DateTime FechaNacimiento, string Cedula, string Telefono, Tuple<string,string>  Ubicacion, double Reputacion, string Correo) {
+    public Empleador(string nombre, string apellido, DateTime fechaNacimiento, string cedula, string telefono, Tuple<string,string> ubicacion, string correo): base(nombre, apellido, fechaNacimiento, cedula, telefono, ubicacion)
+    {
 
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.FechaNacimiento = FechaNacimiento;
-        this.Cedula = Cedula;
-        this.Telefono = Telefono;
-        this.Ubicacion = Ubicacion;
-        this.Reputacion = Reputacion;
-        this.Correo = Correo;
+        this.Nombre = nombre;
+        this.Apellido = apellido;
+        this.FechaNacimiento = fechaNacimiento;
+        this.Cedula = cedula;
+        this.Telefono = telefono;
+        this.Ubicacion = ubicacion;
+        this.Correo = correo;
     }
 }
