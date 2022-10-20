@@ -28,9 +28,9 @@ public class OfertaDeServicio
         this.Precio = precio; 
     }
 
-    public void RateMe(int rate)
+    public void RateMe(Calificacion rate)
     { // TODO test
-        this.Rate.Add((Calificacion)rate);
+        this.Rate.Add(rate);
     }
 
     public Calificacion getCalificacion()
