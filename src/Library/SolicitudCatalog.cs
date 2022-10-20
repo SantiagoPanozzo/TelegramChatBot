@@ -1,6 +1,6 @@
 namespace Library;
 using System.Collections.Generic;
-public class Catalogo{
+public class SolicitudCatalog{
 
     private List<Solicitud> solicitudes = new List<Solicitud>();
 
