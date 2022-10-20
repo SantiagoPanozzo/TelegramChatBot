@@ -7,6 +7,9 @@ public class OfertaDeServicio
     public string Empleo { get; set; }
     public double Precio { get; set; }
     private List<Calificacion> Rate { get; set; }
+    public bool Disponible { get; set; }
+    public int Id; // TODO implementar IDs, placeholder
+
 
     public enum Calificacion
     {
@@ -22,7 +25,7 @@ public class OfertaDeServicio
         this.Ofertante = ofertante;
         this.Descripcion = descripcion;
         this.Empleo = empleo;
-        this.Precio = precio;
+        this.Precio = precio; 
     }
 
     public void RateMe(int rate)
