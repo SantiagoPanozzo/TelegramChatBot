@@ -1,8 +1,17 @@
 namespace Library;
 
+/// <summary>  </summary>
 public class OfertasHandler{
     
     public CategoriasCatalog catalog = new CategoriasCatalog();
+
+    /// <summary>  </summary>
+    /// <param name="CategoryDesc">  </param>
+    /// <param name="ofertante">  </param>
+    /// <param name="descripcion">  </param>
+    /// <param name="empleo">  </param>
+    /// <param name="precio">  </param>
+    /// <returns>  </returns>
     public OfertaDeServicio Ofertar(string CategoryDesc,Trabajador ofertante, string descripcion, string empleo, double precio){
         //Por patron Creator se crea instancia de oferta de servicio en esta clase      
         Categoria Category = this.catalog.GetCategoria(CategoryDesc);
