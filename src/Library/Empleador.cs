@@ -4,9 +4,9 @@ using System.Text;
 
 public class Empleador:Usuario{
 
-    public Empleador(string nombre, string apellido, DateTime fechaNacimiento, string cedula, string telefono, Tuple<string,string> ubicacion, string correo): base(nombre, apellido, fechaNacimiento, cedula, telefono, ubicacion)
+    public Empleador(string nombre, string apellido, string contraseña, DateTime fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion): base(nombre, apellido, contraseña, fechaNacimiento, cedula, telefono, correo, ubicacion)
     {
-
+        this.Tipo = TipoDeUsuario.Empleador;
         this.Nombre = nombre;
         this.Apellido = apellido;
         this.FechaNacimiento = fechaNacimiento;
@@ -14,5 +14,6 @@ public class Empleador:Usuario{
         this.Telefono = telefono;
         this.Ubicacion = ubicacion;
         this.Correo = correo;
+        this.SetContraseña(contraseña);
     }
 }

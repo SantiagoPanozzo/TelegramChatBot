@@ -1,9 +1,9 @@
 namespace Library;
 using System;
 public class ContratoHandler{
-    private SolicitudCatalog _catalogo = new SolicitudCatalog();
+    public SolicitudCatalog Catalogo = new SolicitudCatalog();
     public void SolicitarTrabajador(OfertaDeServicio oferta, Empleador emp){
-        _catalogo.AddSolicitud(oferta, emp);
+        Catalogo.AddSolicitud(oferta, emp);
     }
 
     public void AceptarSolicitud(Solicitud solicitud){
