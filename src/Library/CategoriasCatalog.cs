@@ -9,6 +9,10 @@ public class CategoriasCatalog
         this.Categorias = new List<Categoria>();
     }
 
+    public List<Categoria> GetCategorias()
+    {
+        return this.Categorias;
+    }
     public Categoria GetCategoria(string descripcion)
     {
         foreach (Categoria categoria in Categorias)

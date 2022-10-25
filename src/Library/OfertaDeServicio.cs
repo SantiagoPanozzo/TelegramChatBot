@@ -8,14 +8,22 @@ public class OfertaDeServicio
     public double Precio { get; set; }
     public Calificacion Rate { get; set; }
     public bool Disponible { get; set; }
-    public int Id; // TODO implementar IDs, placeholder
+    private int _id; // TODO implementar IDs, placeholder
+    private static int Instancias { get; set; } = 0;
 
     public OfertaDeServicio(Trabajador ofertante, string descripcion, string empleo, double precio)
     {
         this.Ofertante = ofertante;
         this.Descripcion = descripcion;
         this.Empleo = empleo;
-        this.Precio = precio; 
+        this.Precio = precio;
+        OfertaDeServicio.Instancias++;
+        this._id = Instancias;
+    }
+
+    public int GetId()
+    {
+        return this._id;
     }
 
     public void RateMe(Calificacion rate)
