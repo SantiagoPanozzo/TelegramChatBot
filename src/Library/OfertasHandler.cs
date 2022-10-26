@@ -12,7 +12,7 @@ public class OfertasHandler{
     /// <param name="empleo">  </param>
     /// <param name="precio">  </param>
     /// <returns>  </returns>
-    public OfertaDeServicio Ofertar(string CategoryDesc,Trabajador ofertante, string descripcion, string empleo, double precio){
+    public OfertaDeServicio Ofertar(string CategoryDesc, Trabajador ofertante, string descripcion, string empleo, double precio){
         //Por patron Creator se crea instancia de oferta de servicio en esta clase      
         Categoria Category = this.catalog.GetCategoria(CategoryDesc);
         OfertaDeServicio Oferta = new OfertaDeServicio(ofertante, descripcion, empleo, precio);
@@ -48,6 +48,5 @@ public class OfertasHandler{
             }
         }
         throw (new ArgumentException("El id ingresado no coincide con ninguna oferta de servicio"));
-    }
-    
+    } 
 }

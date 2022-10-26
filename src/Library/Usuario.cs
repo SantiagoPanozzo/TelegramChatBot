@@ -2,7 +2,8 @@ namespace Library;
 using System;
 using System.Text;
 
-/// <summary> Clase abstracta <see cref="Usuario"/> para que luego hereden <see cref="Administrador"/>, <see cref="Trabajador"/> y <see cref="Empleador"/> </summary>
+/// <summary> Clase abstracta <see cref="Usuario"/> 
+/// para que luego hereden <see cref="Administrador"/>, <see cref="Trabajador"/> y <see cref="Empleador"/> </summary>
 public abstract class Usuario {
     
     public string Nombre {get; set;}
@@ -17,24 +18,10 @@ public abstract class Usuario {
     private string Contraseña { get; set; }
     protected TipoDeUsuario Tipo { get; set; }
 
-    /// <summary> Constructor de la clase </summary>
-    /// <returns> Retorna tipo <see cref="Usuario.Usuario(string, string, string, DateTime, string, string, string, Tuple{double, double})"/> con sus respectivos atributos </returns>
-    public Usuario(string nombre, string apellido, string contraseña, DateTime fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double>  ubicacion) {
-    
-        this.Nombre = nombre;
-        this.Apellido = apellido;
-        this.FechaNacimiento = fechaNacimiento;
-        this.Cedula = cedula;
-        this.Telefono = telefono;
-        this.Correo = correo;
-        this.Ubicacion = ubicacion;
-        this.Reputacion = new List<Calificacion>();
-        this.Activo = true;
-        this.SetContraseña(contraseña);
-    }
 
     /// <summary> Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador </summary>
-    /// <returns> Retorna el valor indicado, teniendo en cuenta el enum <see cref="TipoDeUsuario"/> 0 = Administrador, 1 = Trabajador, 2 = Empleador</returns>
+    /// <returns> Retorna el valor indicado, teniendo en cuenta el enum <see cref="TipoDeUsuario"/> 
+    /// 0 = Administrador, 1 = Trabajador, 2 = Empleador </returns>
     public TipoDeUsuario GetTipo() {
         return this.Tipo;
     }

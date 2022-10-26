@@ -16,7 +16,8 @@ public class Solicitud {
         this.Emp = emp;
     }
 
-    /// <summary> Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar. También cambia la disponibilidad de la oferta </summary>
+    /// <summary> Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar
+    /// También cambia la disponibilidad de la oferta </summary>
     public void IniciarTrabajo() {
         this.FechaAceptada = DateTime.Now;
         this.FechaLimiteCalificar = FechaAceptada.Add(TiempoMaximoCalificar);

@@ -7,7 +7,14 @@ public class RegistryHandler {
 
     // TODO documentar que el "fechaNacimiento" se tiene que introducir como "año,mes,dia". Idem para la cedula, correo, etc
     /// <summary> Método para registrar un trabajador </summary>
-    /// <param name="nombre"> Nombre del usuario </param> <param name="apellido"> Apellido del usuario </param> <param name="contraseña"> Contraseña del usuario </param> <param name="fechaNacimiento"> Fecha de nacimiento del usuario </param> <param name="cedula"> Cédula del usuario </param> <param name="telefono"> Teléfono del usuario </param> <param name="correo"> Correo electrónico del usuario </param> <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
+    /// <param name="nombre"> Nombre del usuario </param> 
+    /// <param name="apellido"> Apellido del usuario </param> 
+    /// <param name="contraseña"> Contraseña del usuario </param> 
+    /// <param name="fechaNacimiento"> Fecha de nacimiento del usuario </param> 
+    /// <param name="cedula"> Cédula del usuario </param> 
+    /// <param name="telefono"> Teléfono del usuario </param> 
+    /// <param name="correo"> Correo electrónico del usuario </param> 
+    /// <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
     /// <returns>  </returns>
     public Trabajador RegistrarTrabajador(string nombre, string apellido, string contraseña, string fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
     {
@@ -83,8 +90,15 @@ public class RegistryHandler {
     }
 
     /// <summary> Método para agregar un usuario </summary>
-    /// <param name="nombre"> Nombre del usuario </param> <param name="apellido"> Apellido del usuario </param> <param name="contraseña"> Contraseña del usuario </param> <param name="fechaNacimiento"> Fecha de nacimiento del usuario </param> <param name="cedula"> Cédula del usuario </param> <param name="telefono"> Teléfono del usuario </param> <param name="correo"> Correo electrónico del usuario </param> <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
-    /// <returns></returns>
+    /// <param name="nombre"> Nombre del usuario </param> 
+    /// <param name="apellido"> Apellido del usuario </param> 
+    /// <param name="contraseña"> Contraseña del usuario </param> 
+    /// <param name="fechaNacimiento"> Fecha de nacimiento del usuario </param> 
+    /// <param name="cedula"> Cédula del usuario </param> 
+    /// <param name="telefono"> Teléfono del usuario </param> 
+    /// <param name="correo"> Correo electrónico del usuario </param> 
+    /// <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
+    /// <returns>  </returns>
     public Usuario AddUsuario(TipoDeUsuario tipo, string nombre, string apellido, string contraseña, DateTime fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion) {
         Usuario nuevoUsuario;
         switch (tipo)
