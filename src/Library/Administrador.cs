@@ -7,17 +7,12 @@ public class Administrador : Usuario
         //Falta intermediario para las ofertas?
     }
 
-    public Administrador(string nombre, string apellido, string contraseña, DateTime fechaNacimiento, string cedula, string telefono, string correo,
-        Tuple<double, double> ubicacion) : base(nombre, apellido, contraseña, fechaNacimiento, cedula, telefono, correo, ubicacion)
+    public Administrador(string nick, string contraseña, string telefono, string correo)
     {
         this.Tipo = TipoDeUsuario.Administrador;
-        this.Nombre = nombre;
-        this.Apellido = apellido;
-        this.FechaNacimiento = fechaNacimiento;
-        this.Cedula = cedula;
+        this.Nick = nick;
         this.Telefono = telefono;
         this.Correo = correo;
-        this.Ubicacion = ubicacion;
         this.SetContraseña(contraseña);
     }
 }

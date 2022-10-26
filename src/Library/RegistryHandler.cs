@@ -16,13 +16,12 @@ public class RegistryHandler {
     /// <param name="correo"> Correo electrónico del usuario </param> 
     /// <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
     /// <returns>  </returns>
-    public Trabajador RegistrarTrabajador(string nombre, string apellido, string contraseña, string fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
+    public Trabajador RegistrarTrabajador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
     {
         DateTime nacimiento = DateTime.Parse(fechaNacimiento);
-        if (VerificarCorreo(correo) && VerificarCedula(cedula))
+        if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
         {
-            Trabajador nuevoTrabajador = ((Trabajador)AddUsuario(TipoDeUsuario.Trabajador, nombre, apellido, contraseña, nacimiento, cedula,
-                telefono, correo, ubicacion));
+            Trabajador nuevoTrabajador = new Trabajador(nombre, apellido, nick, contraseña, nacimiento, cedula, telefono, correo, ubicacion);
             return nuevoTrabajador;
         }
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
@@ -31,20 +30,38 @@ public class RegistryHandler {
     /// <summary> Método para registrar un empleador </summary>
     /// <param name="nombre"> Nombre del usuario </param> <param name="apellido"> Apellido del usuario </param> <param name="contraseña"> Contraseña del usuario </param> <param name="fechaNacimiento"> Fecha de nacimiento del usuario </param> <param name="cedula"> Cédula del usuario </param> <param name="telefono"> Teléfono del usuario </param> <param name="correo"> Correo electrónico del usuario </param> <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
     /// <returns></returns>
-    public Empleador RegistrarEmpleador(string nombre, string apellido, string contraseña, string fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
+    public Empleador RegistrarEmpleador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
     {
         DateTime nacimiento = DateTime.Parse(fechaNacimiento);
-        if (VerificarCorreo(correo) && VerificarCedula(cedula))
+        if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
         {
-            Empleador nuevoEmpleador = ((Empleador)AddUsuario(TipoDeUsuario.Empleador, nombre, apellido, contraseña, nacimiento, cedula,
-                telefono, correo, ubicacion));
+            Empleador nuevoEmpleador = new Empleador(nombre, apellido, nick, contraseña, nacimiento, cedula, telefono, correo, ubicacion);
             return nuevoEmpleador;
         }
 
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
 
     }
+    public Administrador RegistrarAdministrador(string nick, string contraseña, string telefono, string correo)
+    {
+        if (VerificarCorreo(correo) && VerificarNick(nick))
+        {
+            Administrador nuevoAdministrador = new Administrador(nick, contraseña, telefono, correo);
+            return nuevoAdministrador;
+        }
+        throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
+    }
 
+    public bool VerificarNick(string nick)
+    {
+        foreach (Usuario usuario in usuarios)
+        {
+            if (usuario.Nick.Equals(nick)) return false;
+        }
+
+        return true;
+    }
+    
     /// <summary>  </summary>
     /// <param name="correo">  </param>
     /// <returns>  </returns>
@@ -88,39 +105,7 @@ public class RegistryHandler {
         }
         return false;
     }
-
-    /// <summary> Método para agregar un usuario </summary>
-    /// <param name="nombre"> Nombre del usuario </param> 
-    /// <param name="apellido"> Apellido del usuario </param> 
-    /// <param name="contraseña"> Contraseña del usuario </param> 
-    /// <param name="fechaNacimiento"> Fecha de nacimiento del usuario </param> 
-    /// <param name="cedula"> Cédula del usuario </param> 
-    /// <param name="telefono"> Teléfono del usuario </param> 
-    /// <param name="correo"> Correo electrónico del usuario </param> 
-    /// <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
-    /// <returns>  </returns>
-    public Usuario AddUsuario(TipoDeUsuario tipo, string nombre, string apellido, string contraseña, DateTime fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion) {
-        Usuario nuevoUsuario;
-        switch (tipo)
-        {
-            case TipoDeUsuario.Trabajador: 
-                nuevoUsuario = new Trabajador(nombre, apellido, contraseña, fechaNacimiento, cedula, telefono, correo, ubicacion);
-                break;
-            case TipoDeUsuario.Empleador:
-                nuevoUsuario = new Empleador(nombre, apellido, contraseña, fechaNacimiento, cedula, telefono, correo, ubicacion);
-                break;
-            default:
-                throw (new AggregateException("Error al crear el usuario"));
-        }
-        if (usuarios.Contains(nuevoUsuario)) {
-            throw new Exception("El usuario ya fue ingresado");
-        }
-        else {
-            usuarios.Add(nuevoUsuario);
-            return nuevoUsuario;
-        }
-    }
-
+    
     /// <summary>  </summary>
     /// <param name="usuario">  </param>
     public void RemoveUsuario(Usuario usuario) {

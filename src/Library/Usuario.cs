@@ -6,6 +6,7 @@ using System.Text;
 /// para que luego hereden <see cref="Administrador"/>, <see cref="Trabajador"/> y <see cref="Empleador"/> </summary>
 public abstract class Usuario {
     
+    public string Nick { get; set; }
     public string Nombre {get; set;}
     public string Apellido {get; set;}
     public DateTime FechaNacimiento {get; set;}

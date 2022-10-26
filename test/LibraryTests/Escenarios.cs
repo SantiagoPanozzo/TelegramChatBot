@@ -42,7 +42,7 @@ public class Escenarios
     public void Caso3()
     // Como trabajador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto
     // para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.
-    {
+    { // TODO fix
         // Arrange
         RegistryHandler registryHandler = new RegistryHandler();
         bool Expected = true;
@@ -63,7 +63,7 @@ public class Escenarios
     // Como trabajador, quiero poder hacer ofertas de servicios; mi oferta indicará en qué categoría quiero publicar,
     // tendrá una descripción del servicio ofertado, y un precio para que de esa forma, mis ofertas sean ofrecidas a
     // quienes quieren contratar servicios.
-    {
+    { // TODO fix
         // Arrange
         OfertasHandler ofertasHandler = new();
         RegistryHandler registryHandler = new();

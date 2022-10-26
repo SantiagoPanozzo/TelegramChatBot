@@ -14,12 +14,13 @@ public class Trabajador:Usuario
     /// <param name="correo"> Correo electrónico del usuario </param> 
     /// <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
     /// <returns>   </returns>
-    public Trabajador(string nombre, string apellido, string contraseña, DateTime fechaNacimiento, string cedula,
+    public Trabajador(string nombre, string apellido, string nick, string contraseña, DateTime fechaNacimiento, string cedula,
      string telefono, string correo, Tuple<double, double>  ubicacion)
     { // TODO chequear validez del uso de :base()
         this.Tipo = TipoDeUsuario.Trabajador;
         this.Nombre = nombre;
         this.Apellido = apellido;
+        this.Nick = nick;
         this.FechaNacimiento = fechaNacimiento;
         this.Cedula = cedula;
         this.Telefono = telefono;
