@@ -50,9 +50,22 @@ public class OfertasHandler{
         this.catalog.RemoveCategoria(user, categoria);
     }
 
+    public List<OfertaDeServicio> GetOfertas(int categoriaId)
+    {
+        return GetCategoriaById(categoriaId).getOfertas();
+        throw (new ArgumentException("El id ingresado no coincide con ninguna categoria"));
+
+    }
     public OfertaDeServicio GetOfertaById(int id)
     {
         return this.catalog.GetOfertaById(id);
         throw (new ArgumentException("El id ingresado no coincide con ninguna oferta de servicio"));
-    } 
+    }
+
+    public Categoria GetCategoriaById(int id)
+    {
+        return this.catalog.GetCategoriaById(id);
+        throw (new ArgumentException("El id ingresado no coincide con ninguna categoria"));
+
+    }
 }

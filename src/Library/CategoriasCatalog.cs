@@ -45,6 +45,18 @@ public class CategoriasCatalog
         throw (new ArgumentException("Los datos introducidos no corresponen a ninguna categoria existente"));
     }
 
+    public Categoria GetCategoriaById(int id)
+    {
+        foreach (Categoria categoria in Categorias)
+        {
+            if (categoria.GetId().Equals(id))
+            {
+                return categoria;
+            }
+        }
+        throw (new ArgumentException("Los datos introducidos no corresponen a ninguna categoria existente"));
+    }
+
     /// <summary> Método para agregar una nueva categoría al catálogo </summary>
     /// <param name="user"> Verificación del tipo de usuario, en caso de que sea <see cref="Administrador"/> se podrá agregar </param>
     /// <param name="descripcion"> //TODO </param>

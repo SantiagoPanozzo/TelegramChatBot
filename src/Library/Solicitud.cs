@@ -5,7 +5,8 @@ public class Solicitud {
     public OfertaDeServicio Oferta { get; set;}
     public Aceptacion Aceptada { get; set;}
     public DateTime FechaAceptada { get; set;}
-    public Empleador Emp { get; set;}
+    private Empleador Emp { get; set;}
+    private Trabajador Trab { get; set; }
     private DateTime FechaLimiteCalificar { get; set; }
     public TimeSpan TiempoMaximoCalificar = new TimeSpan(30, 0, 0, 0);
     private static int Instancias { get; set; } = 0;
@@ -26,6 +27,17 @@ public class Solicitud {
     public int GetId()
     {
         return this._id;
+        this.Trab = oferta.Ofertante;
+    }
+
+    public Empleador GetEmpleador()
+    {
+        return this.Emp;
+    }
+
+    public Trabajador GetTrabajador()
+    {
+        return this.Trab;
     }
     /// <summary> Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar
     /// También cambia la disponibilidad de la oferta </summary>

@@ -16,6 +16,11 @@ public class Categoria
         
     }
 
+    public int GetId()
+    {
+        return this.Id;
+    }
+
     /// <summary> Método para agregar una oferta en caso de que la misma no exista todavía en la lista </summary>
     /// <param name="oferta"> Variable de tipo <see cref="OfertaDeServicio"/>, es la que se desea agregar </param>
     public void AddOferta(OfertaDeServicio oferta)

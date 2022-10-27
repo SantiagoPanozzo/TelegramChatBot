@@ -97,7 +97,7 @@ public class RegistryHandler {
         {
             if (validos.Contains(caracteres))
             {
-                if (6 < cedula.Length && cedula.Length < 8)
+                if (cedula.Length > 6 && cedula.Length <= 8)
                 {
                     return true;
                 }

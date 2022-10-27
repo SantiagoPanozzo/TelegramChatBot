@@ -3,7 +3,9 @@ using System;
 using System.Text;
 
 /// <summary> Clase empleador que hereda de <see cref="Usuario"/> </summary>
-public class Empleador:Usuario{
+public class Empleador:Usuario,ICalificable{
+    
+    private List<Calificacion> Reputacion { get; set; }
 
     /// <summary> Constructor de la clase <see cref="Empleador"/> </summary>
     /// <returns> Retorna tipo <see cref="Empleador.Empleador(string, string, string, DateTime, string, string, string, Tuple{double, double})"/> </returns>
@@ -20,4 +22,24 @@ public class Empleador:Usuario{
         this.Correo = correo;
         this.SetContraseña(contraseña);
     }
+    
+    /// <summary> Método para calificar un usuario </summary>
+    public void Calificar(Calificacion Rate)
+    {
+        this.Reputacion.Add(Rate);
+    }
+    /// <summary> Método para obtener las calificaciones del usuario </summary>
+    /// <returns> Retorna el promedio de las calificaciones de un usuario, cualquiera que sea  </returns>
+    public Calificacion GetReputacion()
+    {
+        int x = 0;
+        foreach (var calif in this.Reputacion)
+        {
+            x += (int)calif;
+        }
+
+        x /= this.Reputacion.Count;
+        return (Calificacion)x;
+    }
+
 }
