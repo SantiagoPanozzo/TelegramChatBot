@@ -8,6 +8,8 @@ public class Categoria
     private int Id { get; set; }
     private static int Instancias { get; set; } = 0;
 
+    /// <summary> Constructor de la clase <see cref="Categoria"/> </summary>
+    /// <param name="descripcion"> Descripción de <see cref="Categoria"/> </param>
     public Categoria(string descripcion)
     {
         Categoria.Instancias++;
@@ -16,6 +18,8 @@ public class Categoria
         
     }
 
+    /// <summary> Método para obtener el ID de una <see cref="Categoria"/>  </summary>
+    /// <returns> Devuelve el ID de <see cref="Categoria"/> </returns>
     public int GetId()
     {
         return this.Id;
@@ -36,6 +40,9 @@ public class Categoria
         return this.Ofertas;
     }
 
+    /// <summary> Filtrar <see cref="OfertaDeServicio"/> por id </summary>
+    /// <param name="id"> ID de la oferta que se quiere ver </param>
+    /// <returns> Devuelve la oferta con el ID ingresado </returns>
     public OfertaDeServicio GetOfertaById(int id)
     {
         foreach (OfertaDeServicio ofertaDeServicio in Ofertas)

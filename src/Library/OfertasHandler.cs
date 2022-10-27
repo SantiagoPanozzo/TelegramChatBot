@@ -2,18 +2,18 @@ using System.Security.Authentication;
 
 namespace Library;
 
-/// <summary>  </summary>
+/// <summary> Clase para manejar el catálogo de ofertas </summary>
 public class OfertasHandler{
     
     private CategoriasCatalog catalog = new CategoriasCatalog();
 
-    /// <summary>  </summary>
+    /// <summary> Constructor de la clase </summary>
     /// <param name="CategoryDesc">  </param>
-    /// <param name="ofertante">  </param>
-    /// <param name="descripcion">  </param>
-    /// <param name="empleo">  </param>
-    /// <param name="precio">  </param>
-    /// <returns>  </returns>
+    /// <param name="ofertante"> Quien oferta su trabajo </param>
+    /// <param name="descripcion"> Descripción de la oferta </param>
+    /// <param name="empleo"> Rubro de la oferta </param>
+    /// <param name="precio"> Precio de la oferta </param>
+    /// <returns> Devuelve la oferta de tipo <see cref="OfertaDeServicio"/> </returns>
     public OfertaDeServicio Ofertar(string CategoryDesc, Trabajador ofertante, string descripcion, string empleo, double precio){
         //Por patron Creator se crea instancia de oferta de servicio en esta clase      
         Categoria Category = this.catalog.GetCategoria(CategoryDesc);
@@ -22,17 +22,26 @@ public class OfertasHandler{
         return Oferta;
     }
 
+    /// <summary> Método para dar de baja una <see cref="OfertaDeServicio"/> </summary>
+    /// <param name="user"> Usuario que llama al método </param>
+    /// <param name="id"> Id de la oferta  </param>
     public void DarDeBajaOferta(Usuario user, int id)
     {
         OfertaDeServicio oferta = GetOfertaById(id);
         oferta.DarDeBaja(user);
     }
 
+    /// <summary> Método para obtener la lista de categorías </summary>
+    /// <returns> Devuelve el catálogo de <see cref="Categoria"/> </returns>
     public List<Categoria> GetCategorias()
     {
         return this.catalog.GetCategorias();
     }
 
+    /// <summary>  </summary>
+    /// <param name="user">  </param>
+    /// <param name="descripcion">  </param>
+    /// <returns>  </returns>
     public Categoria CrearCategoria(Usuario user, string descripcion)
     {
         // TODO test que esto solo funcione si el usuario es admin

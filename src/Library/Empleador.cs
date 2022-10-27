@@ -28,6 +28,7 @@ public class Empleador:Usuario,ICalificable{
     {
         this.Reputacion.Add(Rate);
     }
+    
     /// <summary> Método para obtener las calificaciones del usuario </summary>
     /// <returns> Retorna el promedio de las calificaciones de un usuario, cualquiera que sea  </returns>
     public Calificacion GetReputacion()

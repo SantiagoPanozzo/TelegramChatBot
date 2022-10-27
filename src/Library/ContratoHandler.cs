@@ -24,6 +24,9 @@ public class ContratoHandler {
         solicitud.RecibirRespuesta(Aceptacion.Rechazada);
     }
 
+    /// <summary> Método para mostrar solicitudes </summary>
+    /// <param name="user"> Variable de tipo <see cref="Usuario"/> </param>
+    /// <returns> Devuelve las solicitudes según que tipo de <see cref="Usuario"/> se </returns>
     public List<Solicitud> GetSolicitudes(Usuario user)
     {
         List<Solicitud> solicitudesDelUsuario = new();
@@ -50,7 +53,6 @@ public class ContratoHandler {
         {
             throw (new("Error: tipo de usuario no definido"));
         }
-
         return solicitudesDelUsuario;
     }
 }

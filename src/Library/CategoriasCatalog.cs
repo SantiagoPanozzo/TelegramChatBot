@@ -18,6 +18,9 @@ public class CategoriasCatalog
         return this.Categorias;
     }
 
+    /// <summary> Método para obtener <see cref="OfertaDeServicio"/> por id </summary>
+    /// <param name="id"> Valor del id que se quiere filtrar </param>
+    /// <returns> Devuelve la <see cref="OfertaDeServicio"/> filtrada por el id dado </returns>
     public OfertaDeServicio GetOfertaById(int id)
     {
         foreach (Categoria categoria in Categorias)
