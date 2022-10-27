@@ -8,14 +8,25 @@ public class Solicitud {
     public Empleador Emp { get; set;}
     private DateTime FechaLimiteCalificar { get; set; }
     public TimeSpan TiempoMaximoCalificar = new TimeSpan(30, 0, 0, 0);
+    private static int Instancias { get; set; } = 0;
+    private int _id; // TODO implementar IDs, placeholder
+
+
+
+
 
     /// <summary> Constructor de la clase <see cref="Solicitud"/> </summary>
     /// <returns> Retorna tipo <see cref="Solicitud.Solicitud(OfertaDeServicio, Empleador)"/> </returns>
     public Solicitud(OfertaDeServicio oferta, Empleador emp) {
         this.Oferta = oferta;
         this.Emp = emp;
+        Solicitud.Instancias++;
+        this._id = Instancias;
     }
-
+    public int GetId()
+    {
+        return this._id;
+    }
     /// <summary> Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar
     /// También cambia la disponibilidad de la oferta </summary>
     public void IniciarTrabajo() {

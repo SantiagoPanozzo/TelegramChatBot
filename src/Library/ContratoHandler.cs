@@ -4,6 +4,7 @@ using System;
 /// <summary> Clase para manejar el catalogo </summary>
 public class ContratoHandler {
     public SolicitudCatalog Catalogo = new SolicitudCatalog();
+    public List<Solicitud> Solicitudes = new List<Solicitud>();
 
     /// <summary> Método que crea una solicitud de trabajo </summary>
     /// <param name="oferta"> Oferta en cuestión </param>
@@ -23,4 +24,12 @@ public class ContratoHandler {
     public void RechazarSolicitud(Solicitud solicitud){
         solicitud.RecibirRespuesta(Aceptacion.Rechazada);
     }
+    public Solicitud GetSolicitud(int id)    {
+        foreach (Solicitud solicitud in Solicitudes)
+        {
+            if (solicitud.GetId().Equals(id)) return solicitud;
+        }
+        throw (new Exception("No se encontró la solicitud"));
+    }
+    
 }
