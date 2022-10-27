@@ -15,6 +15,7 @@ public class Solicitud {
     public Solicitud(OfertaDeServicio oferta, Empleador emp) {
         this.Oferta = oferta;
         this.Emp = emp;
+        this.Trab = oferta.Ofertante;
     }
 
     public Empleador GetEmpleador()
