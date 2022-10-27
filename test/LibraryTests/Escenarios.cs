@@ -78,17 +78,15 @@ public class Escenarios
     // Como trabajador, quiero poder hacer ofertas de servicios; mi oferta indicará en qué categoría quiero publicar,
     // tendrá una descripción del servicio ofertado, y un precio para que de esa forma, mis ofertas sean ofrecidas a
     // quienes quieren contratar servicios.
-    { // TODO fix
+    { 
         // Arrange
         OfertasHandler ofertasHandler = new();
         RegistryHandler registryHandler = new();
-        CategoriasCatalog categoriasCatalog = new();
         Usuario miUsuario = registryHandler.RegistrarTrabajador("Manolo","Manolete", "manoler","1234",
             "2001 3 14","1234567","099555555",
             "manoloreal@gmail.com",new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        
-        // TODO cambiar a un usuario admin para agregar la categoria
-        categoriasCatalog.AddCategoria(miUsuario,"Tareas del hogar");
+        Administrador admin = registryHandler.RegistrarAdministrador("elpepeAdmin", "1234", "1234", "god@dog.com");
+        ofertasHandler.CrearCategoria(admin,"Tareas del hogar");
 
         // Act
         OfertaDeServicio oferta = ofertasHandler.Ofertar("Tareas del hogar",(Trabajador)miUsuario,"El mejor limpiador de Salto","Limpiador",9000);
@@ -178,9 +176,9 @@ public class Escenarios
         Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
         Trabajador pepe = registryHandler.RegistrarTrabajador("a", "a", "a", "a", "2020,2,2", "1234556", "12345", "a@a.a",
             new Tuple<double, double>(1, 1)); // TODO cambiar el sistema de categorias para que funcione con id en vez de descripcion
-        OfertaDeServicio oferta = ofertasHandler.Ofertar("categoria", pepe, "soy pro", "gamer", 10);
+        OfertaDeServicio oferta = ofertasHandler.Ofertar("categoria", pepe ,"soy pro", "gamer", 10);
         Empleador mrbossman = registryHandler.RegistrarEmpleador("mr", "bossman", "eljefe", "lospoios", "2010,10,10",
-            "123456", "1234", "gus@lospoiosermanos.com", new Tuple<double, double>(10, 10));
+            "1234567", "1234", "gus@lospoiosermanos.com", new Tuple<double, double>(10, 10));
         OfertaDeServicio expected = oferta;
         
         // Act
