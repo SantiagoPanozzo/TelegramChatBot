@@ -171,12 +171,24 @@ public class Escenarios
     // servicios determinada.
     {
         // Arrange
-        
+        RegistryHandler registryHandler = new();
+        OfertasHandler ofertasHandler = new();
+        ContratoHandler contratoHandler = new();
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
+        Trabajador pepe = registryHandler.RegistrarTrabajador("a", "a", "a", "a", "2020,2,2", "1234556", "12345", "a@a.a",
+            new Tuple<double, double>(1, 1)); // TODO cambiar el sistema de categorias para que funcione con id en vez de descripcion
+        OfertaDeServicio oferta = ofertasHandler.Ofertar("categoria", pepe, "soy pro", "gamer", 10);
+        Empleador mrbossman = registryHandler.RegistrarEmpleador("mr", "bossman", "eljefe", "lospoios", "2010,10,10",
+            "123456", "1234", "gus@lospoiosermanos.com", new Tuple<double, double>(10, 10));
+        OfertaDeServicio expected = oferta;
         
         // Act
-        
-        
+        contratoHandler.SolicitarTrabajador(oferta,mrbossman);
+        OfertaDeServicio result = contratoHandler.GetSolicitudes(pepe).FirstOrDefault().Oferta;
+
         // Assert
+        Assert.That(expected.Equals(result));
 
     }
 

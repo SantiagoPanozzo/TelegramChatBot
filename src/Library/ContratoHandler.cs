@@ -23,4 +23,34 @@ public class ContratoHandler {
     public void RechazarSolicitud(Solicitud solicitud){
         solicitud.RecibirRespuesta(Aceptacion.Rechazada);
     }
+
+    public List<Solicitud> GetSolicitudes(Usuario user)
+    {
+        List<Solicitud> solicitudesDelUsuario = new();
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            solicitudesDelUsuario = this.Catalogo.Solicitudes;
+        }
+
+        else if (user.GetTipo().Equals(TipoDeUsuario.Trabajador))
+        {
+            foreach (Solicitud solicitud in Catalogo.Solicitudes)
+            {
+                if(solicitud.GetTrabajador().Equals(user)) solicitudesDelUsuario.Add(solicitud);
+            }
+        }
+        else if (user.GetTipo().Equals(TipoDeUsuario.Empleador))
+        {
+            foreach (Solicitud solicitud in Catalogo.Solicitudes)
+            {
+                if(solicitud.GetEmpleador().Equals(user)) solicitudesDelUsuario.Add(solicitud);
+            }
+        }
+        else
+        {
+            throw (new("Error: tipo de usuario no definido"));
+        }
+
+        return solicitudesDelUsuario;
+    }
 }
