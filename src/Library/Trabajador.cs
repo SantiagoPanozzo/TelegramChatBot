@@ -1,8 +1,10 @@
 namespace Library;
 
 /// <summary>  </summary>
-public class Trabajador:Usuario
+public class Trabajador:Usuario,ICalificable
 {
+
+    private List<Calificacion> Reputacion { get; set; }
 
     /// <summary>  </summary>
     /// <param name="nombre"> Nombre del usuario </param> 
@@ -27,6 +29,25 @@ public class Trabajador:Usuario
         this.Correo = correo;
         this.Ubicacion = ubicacion;
         this.SetContraseña(contraseña);
+    }
+    
+    /// <summary> Método para calificar un usuario </summary>
+    public void Calificar(Calificacion Rate)
+    {
+        this.Reputacion.Add(Rate);
+    }
+    /// <summary> Método para obtener las calificaciones del usuario </summary>
+    /// <returns> Retorna el promedio de las calificaciones de un usuario, cualquiera que sea  </returns>
+    public Calificacion GetReputacion()
+    {
+        int x = 0;
+        foreach (var calif in this.Reputacion)
+        {
+            x += (int)calif;
+        }
+
+        x /= this.Reputacion.Count;
+        return (Calificacion)x;
     }
 
     /// <summary>  </summary>

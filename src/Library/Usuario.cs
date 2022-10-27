@@ -13,7 +13,6 @@ public abstract class Usuario {
     public string Cedula {get; set;}
     public string Telefono {get; set;}
     public Tuple<double,double> Ubicacion {get; set;} // TODO testear cuando tengamos una clase que herede de Usuario
-    private List<Calificacion> Reputacion { get; set; }
     public string Correo { get; set; }
     private bool Activo { get; set; }
     private string Contraseña { get; set; }
@@ -27,26 +26,6 @@ public abstract class Usuario {
         return this.Tipo;
     }
 
-    /// <summary> Método para obtener las calificaciones del usuario </summary>
-    /// <returns> Retorna el promedio de las calificaciones de un usuario, cualquiera que sea  </returns>
-    public Calificacion GetReputacion()
-    {
-        int x = 0;
-        foreach (var calif in this.Reputacion)
-        {
-            x += (int)calif;
-        }
-
-        x /= this.Reputacion.Count;
-        return (Calificacion)x;
-    }
-
-    /// <summary> Método para calificar un usuario </summary>
-    public void Calificar(Calificacion Rate)
-    {
-        this.Reputacion.Add(Rate);
-    }
-    
     /// <summary> Método para obtener el contacto de un usuario </summary>
     /// <returns> Retorna un mensaje con los datos para contactar del usuario </returns>
     public string GetContacto() {
