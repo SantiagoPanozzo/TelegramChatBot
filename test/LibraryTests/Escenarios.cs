@@ -12,29 +12,44 @@ public class Escenarios
     public void Caso1()
     // "Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios
     // para que de esa forma, los trabajadoras puedan clasificarlos.
-    { // TODO falta clase admin
+    {
         // Arrange
-        
-        
+        RegistryHandler registryHandler = new RegistryHandler();
+        Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "1234", "abc@abc.com");
+        OfertasHandler ofertasHandler = new OfertasHandler();
+        bool expected = true;
+
         // Act
-        
-        
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "Tareas del hogar");
+        bool result = ofertasHandler.GetCategorias().Contains(cat);
+
         // Assert
-        
+        Assert.That(expected.Equals(result));
+
     }
 
     [Test]
     public void Caso2()
     // Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma,
     // pueda evitar ofertas inadecudas.
-    { // TODO falta clase admin
+    {
         // Arrange
-        
+        RegistryHandler registryHandler = new RegistryHandler();
+        Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "1234", "abc@abc.com");
+        OfertasHandler ofertasHandler = new OfertasHandler();
+        ofertasHandler.CrearCategoria(admin, "Tareas");
+        Trabajador elpepe = registryHandler.RegistrarTrabajador("Pepe", "Pepe", "Elpepe", "elpepe", "2020,10,1", "12345678", "1234",
+            "elpepe@elpepe.elpepe", new Tuple<double, double>(31,9393));
+        OfertaDeServicio oferta = ofertasHandler.Ofertar("Tareas", elpepe, "un capo", "limpiador", 10);
+        int id = oferta.GetId();
+        bool expected = false;
         
         // Act
-        
-        
+        ofertasHandler.DarDeBajaOferta(admin,id);
+        bool result = ofertasHandler.GetOfertaById(id).IsActiva();
+
         // Assert
+        Assert.That(expected.Equals(result));
 
     }
 
@@ -42,13 +57,13 @@ public class Escenarios
     public void Caso3()
     // Como trabajador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto
     // para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.
-    { // TODO fix
+    { 
         // Arrange
         RegistryHandler registryHandler = new RegistryHandler();
         bool Expected = true;
         
         // Act
-        Usuario miUsuario = registryHandler.RegistrarTrabajador("Manolo","Manolete", "1234",
+        Usuario miUsuario = registryHandler.RegistrarTrabajador("Manolo","Manolete", "manoler","1234",
             "2001 3 14","1234567","099555555",
             "manoloreal@gmail.com",new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
         bool Result = (miUsuario is Trabajador);
@@ -68,7 +83,7 @@ public class Escenarios
         OfertasHandler ofertasHandler = new();
         RegistryHandler registryHandler = new();
         CategoriasCatalog categoriasCatalog = new();
-        Usuario miUsuario = registryHandler.RegistrarTrabajador("Manolo","Manolete", "1234",
+        Usuario miUsuario = registryHandler.RegistrarTrabajador("Manolo","Manolete", "manoler","1234",
             "2001 3 14","1234567","099555555",
             "manoloreal@gmail.com",new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
         
@@ -77,11 +92,11 @@ public class Escenarios
 
         // Act
         OfertaDeServicio oferta = ofertasHandler.Ofertar("Tareas del hogar",(Trabajador)miUsuario,"El mejor limpiador de Salto","Limpiador",9000);
-        OfertaDeServicio Expected = oferta;
-        OfertaDeServicio Result = ofertasHandler.GetOfertaByID(oferta.GetId());
+        OfertaDeServicio expected = oferta;
+        OfertaDeServicio result = ofertasHandler.GetOfertaById(oferta.GetId());
         
         // Assert
-        Assert.That(Expected.Equals(Result));
+        Assert.That(expected.Equals(result));
 
     }
 
@@ -92,16 +107,16 @@ public class Escenarios
     {
         // Arrange
         RegistryHandler registryHandler = new RegistryHandler();
-        bool Expected = true;
+        bool expected = true;
         
         // Act
-        Usuario miUsuario = registryHandler.RegistrarEmpleador("Señor Manolo","Manolete", "1234",
+        Usuario miUsuario = registryHandler.RegistrarEmpleador("Señor Manolo","Manolete", "BigManoler","1234",
             "1970 3 14","1234567","099555555",
             "mistermanoloreal@gmail.com",new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        bool Result = (miUsuario is Empleador);
+        bool result = (miUsuario is Empleador);
         
         // Assert
-        Assert.That(Result.Equals(Expected));
+        Assert.That(result.Equals(expected));
     }
 
     [Test]

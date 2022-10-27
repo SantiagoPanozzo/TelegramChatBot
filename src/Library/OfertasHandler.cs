@@ -1,9 +1,11 @@
+using System.Security.Authentication;
+
 namespace Library;
 
 /// <summary>  </summary>
 public class OfertasHandler{
     
-    public CategoriasCatalog catalog = new CategoriasCatalog();
+    private CategoriasCatalog catalog = new CategoriasCatalog();
 
     /// <summary>  </summary>
     /// <param name="CategoryDesc">  </param>
@@ -20,13 +22,26 @@ public class OfertasHandler{
         return Oferta;
     }
 
-    public void CrearCategoria(Usuario user, string descripcion)
+    public void DarDeBajaOferta(Usuario user, int id)
+    {
+        OfertaDeServicio oferta = GetOfertaById(id);
+        oferta.DarDeBaja(user);
+    }
+
+    public List<Categoria> GetCategorias()
+    {
+        return this.catalog.GetCategorias();
+    }
+
+    public Categoria CrearCategoria(Usuario user, string descripcion)
     {
         // TODO test que esto solo funcione si el usuario es admin
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.catalog.AddCategoria(user, descripcion);
+            return this.catalog.AddCategoria(user, descripcion);
         }
+
+        throw (new AuthenticationException("Solo un administrador puede crear categorías"));
     }
     
     public void EliminarCategoria(Usuario user, Categoria categoria)
@@ -35,18 +50,9 @@ public class OfertasHandler{
         this.catalog.RemoveCategoria(user, categoria);
     }
 
-    public OfertaDeServicio GetOfertaByID(int id)
+    public OfertaDeServicio GetOfertaById(int id)
     {
-        foreach (Categoria categoria in catalog.GetCategorias())
-        {
-            foreach (OfertaDeServicio oferta in categoria.getOfertas())
-            {
-                if (oferta.GetId().Equals(id))
-                {
-                    return oferta;
-                }
-            }
-        }
+        return this.catalog.GetOfertaById(id);
         throw (new ArgumentException("El id ingresado no coincide con ninguna oferta de servicio"));
     } 
 }

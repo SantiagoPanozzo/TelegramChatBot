@@ -11,6 +11,7 @@ public class OfertaDeServicio
     public bool Disponible { get; set; }
     private int _id; // TODO implementar IDs, placeholder
     private static int Instancias { get; set; } = 0;
+    private bool Activa { get; set; }
 
     /// <summary>  </summary>
     /// <param name="ofertante">  </param>
@@ -32,6 +33,43 @@ public class OfertaDeServicio
     public int GetId()
     {
         return this._id;
+    }
+
+    public bool IsActiva()
+    {
+        return this.Activa;
+    }
+
+    public void DarDeBaja(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            this.Activa = false;
+        }
+
+        if (user.GetTipo().Equals(TipoDeUsuario.Trabajador))
+        {
+            if (user.Nick.Equals(Ofertante.Nick))
+            {
+                this.Activa = false;
+            }
+        }
+    }
+    
+    public void Reactivar(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            this.Activa = true;
+        }
+
+        if (user.GetTipo().Equals(TipoDeUsuario.Trabajador))
+        {
+            if (user.Nick.Equals(Ofertante.Nick))
+            {
+                this.Activa = true;
+            }
+        }
     }
 
     /// <summary>  </summary>

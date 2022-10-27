@@ -5,9 +5,13 @@ public class Categoria
 {
     public string Descripcion { get; set; }
     private List<OfertaDeServicio> Ofertas { get; set; } = new List<OfertaDeServicio>();
+    private int Id { get; set; }
+    private static int Instancias { get; set; } = 0;
 
     public Categoria(string descripcion)
     {
+        Categoria.Instancias++;
+        this.Id = Instancias;
         this.Descripcion = descripcion;
         
     }
@@ -25,6 +29,15 @@ public class Categoria
     public List<OfertaDeServicio> getOfertas()
     {
         return this.Ofertas;
+    }
+
+    public OfertaDeServicio GetOfertaById(int id)
+    {
+        foreach (OfertaDeServicio ofertaDeServicio in Ofertas)
+        {
+            if (ofertaDeServicio.GetId().Equals(id)) return ofertaDeServicio;
+        }
+        throw (new Exception("No se encontró la oferta"));
     }
 
     /// <summary> Método para quitar una oferta, en caso de que la misma no exista no hará nada </summary>

@@ -18,6 +18,17 @@ public class CategoriasCatalog
         return this.Categorias;
     }
 
+    public OfertaDeServicio GetOfertaById(int id)
+    {
+        foreach (Categoria categoria in Categorias)
+        {
+            return categoria.GetOfertaById(id);
+        }
+
+        throw (new("No se encontró la oferta"));
+
+    }
+
     //TODO
     /// <summary> Método para obtener información de las categorías </summary>
     /// <param name="descripcion">  </param>
@@ -37,10 +48,12 @@ public class CategoriasCatalog
     /// <summary> Método para agregar una nueva categoría al catálogo </summary>
     /// <param name="user"> Verificación del tipo de usuario, en caso de que sea <see cref="Administrador"/> se podrá agregar </param>
     /// <param name="descripcion"> //TODO </param>
-    public void AddCategoria(Usuario user, string descripcion)
+    public Categoria AddCategoria(Usuario user, string descripcion)
     {
         // TODO implementar que solo funcione si el usuario es admin
-        this.Categorias.Add(new Categoria(descripcion));
+        Categoria nuevaCategoria = new Categoria(descripcion);
+        this.Categorias.Add(nuevaCategoria);
+        return nuevaCategoria;
     }
     public void RemoveCategoria(Usuario user, Categoria categoria)
     {
