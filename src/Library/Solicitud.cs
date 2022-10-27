@@ -27,7 +27,6 @@ public class Solicitud {
     public int GetId()
     {
         return this._id;
-        this.Trab = oferta.Ofertante;
     }
 
     public Empleador GetEmpleador()
