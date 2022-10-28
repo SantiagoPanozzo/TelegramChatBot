@@ -18,6 +18,7 @@ class Program {
         a.Add(c3);
 
         catPrinter.PrintCatalog(a); */
+        Administrador a1 = new("nick", "contra", "tel", "a@b.c");
 
         OfertaDeServicioPrinter ofePrinter = new();
         List<OfertaDeServicio> a = new();
@@ -37,7 +38,8 @@ class Program {
         a.Add(o1);
         a.Add(o2);
 
+        o1.DarDeBaja(a1);
+
         ofePrinter.PrintCatalog(a);
     }
 }
-
