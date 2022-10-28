@@ -1,0 +1,16 @@
+digraph "/home/snowiemischief/projects/programacion2/pii_2022_2_equipo_21/src/Program/obj/Debug"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_94161fb47bad167b5a55c70a12f29d51 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="obj", fontname="Helvetica", fontsize="10", URL="dir_94161fb47bad167b5a55c70a12f29d51.html"]
+  subgraph clusterdir_524f4946c556cae7574cdc771a9bd973 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_524f4946c556cae7574cdc771a9bd973.html"]
+    dir_524f4946c556cae7574cdc771a9bd973 [shape=plaintext, label="Debug"];
+  dir_29095f882b1fbd2868326d780888db2a [shape=box, label="net6.0", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_29095f882b1fbd2868326d780888db2a.html"];
+  }
+  }
+}

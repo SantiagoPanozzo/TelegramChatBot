@@ -107,7 +107,7 @@ public class RegistryHandler {
     /// <param name="cedula"> Cédula del <see cref="Usuario"/> </param>
     /// <returns> Devuelve true si el formato es válido, de lo contrario devuelve false </returns>
     public bool VerificarCedula(string cedula)
-    { // TODO testear, tampoco le tengo fe
+    { // TODO testear
         cedula = cedula.Replace(".", string.Empty);
         cedula = cedula.Replace("-", string.Empty);
         string validos = "0123456789";
@@ -139,7 +139,7 @@ public class RegistryHandler {
     /// <param name="nombre"> Nombre del usuario </param>
     /// <param name="apellido"> Apellido del usuario </param>
     /// <param name="contraseña"> Contraseña del usuario </param>
-    /// <returns>  </returns>
+    /// <returns> Devuelve el <see cref="Usuario"/> que coincida con los parámetros dados </returns>
     public Usuario GetUsuario(string nombre, string apellido, string contraseña)
     {
         foreach (Usuario user in usuarios)

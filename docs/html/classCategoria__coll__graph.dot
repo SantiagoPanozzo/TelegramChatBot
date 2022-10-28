@@ -1,0 +1,8 @@
+digraph "Categoria"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Categoria\n|+ Descripcion\l+ Ofertas\l+ Id\l+ Instancias\l|+ Categoria()\l+ GetId()\l+ AddOferta()\l+ getOfertas()\l+ GetOfertaById()\l+ RemoveOferta()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Clase para conocer y agregar categorias de ofertas de servicio"];
+}

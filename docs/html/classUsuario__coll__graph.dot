@@ -1,0 +1,8 @@
+digraph "Usuario"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Usuario\n|+ Nick\l+ Nombre\l+ Apellido\l+ FechaNacimiento\l+ Cedula\l+ Telefono\l+ Ubicacion\l+ Correo\l+ Activo\l+ Contraseña\l+ Tipo\l|+ GetTipo()\l+ GetContacto()\l+ isActivo()\l+ Deactivate()\l+ ReActivate()\l+ VerifyContraseña()\l# SetContraseña()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador"];
+}

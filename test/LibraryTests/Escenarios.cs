@@ -1,6 +1,7 @@
 namespace LibraryTests;
 using Library;
 
+/// <summary> Tests de los escenarios dados </summary>
 public class Escenarios
 {
     [SetUp]

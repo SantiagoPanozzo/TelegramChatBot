@@ -1,0 +1,15 @@
+digraph "Usuario.SetContraseña"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Usuario.SetContraseña",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para settear la contraseña"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Administrador.Administrador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAdministrador.html#a7bbfb9e1180af5b4e931025ce0ce1a74",tooltip="Constructor de la clase Administrador"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Empleador.Empleador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEmpleador.html#af2659e8f8d224961d6352962341e6f68",tooltip="Constructor de la clase Empleador"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Trabajador.Trabajador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html#a140a28b7a44a90048a01bc4bb5749e49",tooltip=" "];
+}

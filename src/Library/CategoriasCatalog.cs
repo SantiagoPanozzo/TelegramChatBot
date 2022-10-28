@@ -1,6 +1,6 @@
 namespace Library;
 
-/// <summary> Clase de manejo del catalogo de categorías de las ofertas </summary>
+/// <summary> Clase para manejar el catálogo de categorías </summary>
 public class CategoriasCatalog
 {
     protected List<Categoria> Categorias;
@@ -33,9 +33,9 @@ public class CategoriasCatalog
     }
 
     //TODO
-    /// <summary> Método para obtener información de las categorías </summary>
-    /// <param name="descripcion">  </param>
-    /// <returns> Retorna una variable de tipo <see cref="Categoria"/> </returns>
+    /// <summary> Método para obtener una categoría por descripción </summary>
+    /// <param name="descripcion"> Descripción filtro para la busqueda </param>
+    /// <returns> Devuelve <see cref="Categoria"/> según el filtro de la descripción </returns>
     public Categoria GetCategoria(string descripcion)
     {
         foreach (Categoria categoria in Categorias)
@@ -48,6 +48,9 @@ public class CategoriasCatalog
         throw (new ArgumentException("Los datos introducidos no corresponen a ninguna categoria existente"));
     }
 
+    /// <summary> Método para obtener una categoría por id </summary>
+    /// <param name="id"> Id filtro para la busqueda </param>
+    /// <returns> Devuelve <see cref="Categoria"/> según el filtro de id </returns>
     public Categoria GetCategoriaById(int id)
     {
         foreach (Categoria categoria in Categorias)
@@ -61,8 +64,8 @@ public class CategoriasCatalog
     }
 
     /// <summary> Método para agregar una nueva categoría al catálogo </summary>
-    /// <param name="user"> Verificación del tipo de usuario, en caso de que sea <see cref="Administrador"/> se podrá agregar </param>
-    /// <param name="descripcion"> //TODO </param>
+    /// <param name="user"> Tipo de <see cref="Usuario"/> </param>
+    /// <param name="descripcion"> Descripción de la categoría </param>
     public Categoria AddCategoria(Usuario user, string descripcion)
     {
         // TODO implementar que solo funcione si el usuario es admin
@@ -70,6 +73,10 @@ public class CategoriasCatalog
         this.Categorias.Add(nuevaCategoria);
         return nuevaCategoria;
     }
+
+    /// <summary> Método para eliminar una categoría </summary>
+    /// <param name="user"> Tipo de <see cref="Usuario"/> </param>
+    /// <param name="categoria"> <see cref="Categoria"/> que se desea eliminar </param>
     public void RemoveCategoria(Usuario user, Categoria categoria)
     {
         // TODO implementar que solo funcione si el usuario es admin

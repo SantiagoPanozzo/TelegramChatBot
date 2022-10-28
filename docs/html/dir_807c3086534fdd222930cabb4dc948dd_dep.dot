@@ -1,0 +1,12 @@
+digraph "/home/snowiemischief/projects/programacion2/pii_2022_2_equipo_21/src/Library/obj/Debug/net6.0"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_9bdd78b8b1c9f58dc052d00e39963b7a {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="Debug", fontname="Helvetica", fontsize="10", URL="dir_9bdd78b8b1c9f58dc052d00e39963b7a.html"]
+  dir_807c3086534fdd222930cabb4dc948dd [shape=box, label="net6.0", style="filled,bold,", fillcolor="#edf0f7", color="grey25", URL="dir_807c3086534fdd222930cabb4dc948dd.html"];
+  }
+}
