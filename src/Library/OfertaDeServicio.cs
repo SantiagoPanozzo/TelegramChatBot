@@ -1,6 +1,6 @@
 namespace Library;
 
-/// <summary> Clase que representa una oferta de sevicio </summary>
+/// <summary> Clase que representa una oferta de servicio </summary>
 public class OfertaDeServicio
 {
     public Trabajador Ofertante { get; set; }
