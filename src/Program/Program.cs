@@ -19,25 +19,25 @@ class Program {
 
         catPrinter.PrintCatalog(a); */
 
-        SolicitudPrinter solPrinter = new();
-        List<Solicitud> a = new();
+        OfertaDeServicioPrinter ofePrinter = new();
+        List<OfertaDeServicio> a = new();
 
-        Trabajador t1 = new("daker", "a", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        Trabajador t2 = new("daker", "a", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador t1 = new("Ihojan", "Werlyb", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador t2 = new("Cosplay de", "Irelia", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
 
         OfertaDeServicio o1 = new(t1, "ricas cosas", "cosas ricas", 69.420);
-        OfertaDeServicio o2 = new(t2, "mi name is gustavo", "but u can call me gus", 69.420);
+        OfertaDeServicio o2 = new(t2, "my name is gustavo", "but u can call me gus", 69.420);
 
-        Empleador e1 = new("daker", "a", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        Empleador e2 = new("daker", "a", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Empleador e1 = new("Paquito", "Paco", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Empleador e2 = new("Sigo?", "Cont", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
 
         Solicitud s1 = new(o1, e1);
         Solicitud s2 = new(o2, e2);
 
-        a.Add(s1);
-        a.Add(s2);
+        a.Add(o1);
+        a.Add(o2);
 
-        solPrinter.PrintCatalog(a);
+        ofePrinter.PrintCatalog(a);
     }
 }
 
