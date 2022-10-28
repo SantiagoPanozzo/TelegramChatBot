@@ -73,7 +73,8 @@ public class Solicitud {
     public void Update() {
         if (!this.IsRated())
         {
-            // Si la oferta no fue calificada aún y ya pasó la fecha limite, calificamos como neutro (bueno)
+            /// <remarks> Si la oferta no fue calificada aún y ya pasó la fecha limite, 
+            /// calificamos como neutro <see cref="Calificacion.Bueno"> </remarks>
             if (CanBeAutoRated())
             {
                 this.Calificar(Calificacion.Bueno);
