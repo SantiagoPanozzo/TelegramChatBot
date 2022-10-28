@@ -83,10 +83,8 @@ public class Solicitud {
     }
 
     /// <summary> Compara la fecha actual con la fecha límite para calificar </summary>
-    /// <returns> Devuelve true si ya pasó un mes (30 días) desde que se hizo la <see cref="Solicitud"> </returns>
+    /// <returns> Devuelve true si ya pasó un mes (30 días) desde que se hizo la <see cref="Solicitud">, de lo contrario devuelve false </returns>
     public bool CanBeAutoRated() {
-        // la fecha limite de calificacion se compara con la fecha actual
-        // retornamos true si la fecha limite es anterior (-1) a la fecha actual
         return this.FechaLimiteCalificar.CompareTo(DateTime.Now).Equals(-1);
     }
 }
