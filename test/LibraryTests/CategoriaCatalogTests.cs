@@ -8,8 +8,9 @@ public class CategoriaCatalogTests
     public void Setup() {}
 
     [Test]
-    public void Test1()
-    {
-        Assert.Pass();
+    public void GetOfertaByIdTest() {
+        List<Categoria> Categorias = new();
+
+        
     }
 }
