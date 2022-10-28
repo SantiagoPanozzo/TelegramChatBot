@@ -1,6 +1,6 @@
 namespace Library;
 
-/// <summary>  </summary>
+/// <summary> Clase que representa una oferta de sevicio </summary>
 public class OfertaDeServicio
 {
     public Trabajador Ofertante { get; set; }
@@ -86,8 +86,8 @@ public class OfertaDeServicio
         this.Ofertante.Calificar(rate);
     }
 
-    /// <summary>  </summary>
-    /// <returns>  </returns>
+    /// <summary> Método para obtener una calificación </summary>
+    /// <returns> Devuelve una <see cref="Calificacion"/> según sea indicada </returns>
     public Calificacion GetCalificacion()
     {
         return this.Rate;

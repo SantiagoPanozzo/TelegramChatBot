@@ -1,1 +1,94 @@
-<mxfile host="app.diagrams.net" modified="2022-09-30T18:18:19.946Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.53" etag="plV4TlK-qfxbq9KiWEKv" version="20.0.0" type="onedrive"><diagram id="Suj-tyzzf9yo-U5ZwzKX" name="Page-1">7VrZcuI4FP0aHqnygiE8gklPFkIyE4Z0z0uXsIVRxrYcWWbJ17fkLTYShKQC1nTNQ1LylSwfnSudeyXUMu1g8wcB0fIOu9BvGZpHkNsyRy3D0NkfM0TAgzUDb/GIXgujllsT5MK41pBi7FMU1Y0ODkPo0JoNEILX9WYL7IswHh3gQ8H6hFy6zKwXlvZmv4LIWxYf0rW8JgBF49wQL4GL1xWTedkybYIxzUrBxoY+Z6bgJXvv257aEhiBIT3mhVWgOdsn/ebhZ2x69G74Cmd62+hk3ayAn+QjztHSbUGBR3AS1UgF86IuH9sKEgo3e4Hp5XDZJIA4gJRsWZP8hbZZdLMtDGZuWL9RbvRz27JCt1GwDXKvemXvb0ywQk7GR4ixBGIGboBCFFPC/EgElhhJoQt5l1rLHK6XiMLHCDi8ds3mPbMtacAgjHRWPIq1Aw4TuXyPqc7JiOoKRLXZ4wNb5oR/zyPQAyR1rqG9JIimDw6g0GMs2mZrMGKYDM2F7B9eMEr4Y9dnuIdz1rTr8VK1S+gj5oi0m7K9Ws7Y1jmv+EbvWKJv9O7JnNOTOsfO2EdATvSYTXJwrya1mx0em6CaIufH1WY0fvFvO6Y1M+b+jd3WBaZXZ1dSo7srpLol8FKK65cL6Xy2Gd/ol/evvdGTC39e/WNNnhkEgZgpAXPwfCYV3e+sgyIqZekrRFROkiEJw9nSjCMQ1jjqviQ8ZRjWSuXatXGInVQmJziYEyaqNi8Dh2km4wRnzzZ0Ex/kZUwIzO1TlppxSe4vWDeZ6e85ctjb3Dw0wwIVG2UGLPtyVUeOgvrJ0U1hmI4tCRl4jcAooVVsaYyJYRZgfLRgyPn6ahZzEbayWJV+LOFJa7oIcCYF5ZBYausQFAljSqDvYkUGkhOMQ8Y9BQdgKbW2DwSKnmSpf0mgkK91UxqTq6IoC8rvxOwsXI/gIyQr5CAsb/UX9HgCixXzzWbHEQd81T2Vr6R4xdxWgaBudUVeThfUpbyIaeVlEPmwyZDebS6kS/Fc/B/Rf/eIPk9iJw3otNRuGCuCTfEgvWe1NhGkpfj6X7V6xbDe0MQQ8oeGcHw0Udmt/W9MZBUymidz1r+g2p/t7xPr+hu6DejkRc1jigvjnBmNlBdxA37GXHm/p5pJaKR4xG3L753QcKiDtE8duCjNUeIEkP2KFeAVrDVTat40EVql+I74xalZplTQ7u9guF4E0aU+bCf6ZPDjeqbdKaHdbX1XvLuaRLw7pxJvKTGieItZxsmn2H6XNSPiUjwnEPGM6pDmOj4STzDTn/a4ludnoFnD9MSgEHsfxOnmrvIatz8QmDrvlNtWpSZGEyo9bi97K2xt2nQ1im+frrfheC3Rmt3djFK8KavZ4jWCBjTbMo/R7JMl3FJixKNVu3YnoKkJZimm2OJR6xcp9v6TKqWIb0IRpfjEA90G7kp8hDllNVE8XGtAE8sUtTyEkFw6O7MmFnccK8yoML/6ikmiLiYnn9HEuijWiZb+Alu2FX+lV+eU8iMeVEZbdXEHJz8rVoo+FQQ2Rrf3nnt91xlsZ8+d6dW/U7KVJO/XS/zMp+EOf/ESRLyYBP7AoSz3MoecH7bR8sdgDv0HHCOKcMiazDGlOKg0GPjI4xUU7/CME+qjENrlBWztWPLfSe53rwn3ZIotIfoTPLPHt5vZaV3l8rp5+Qs=</diagram></mxfile>
+<mxfile host="65bd71144e">
+    <diagram id="Suj-tyzzf9yo-U5ZwzKX" name="Page-1">
+        <mxGraphModel dx="1866" dy="1674" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="vm0cyW1JP_s3gtMBzeV1-24" value="" style="group" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="-320" y="-330" width="290" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="vm0cyW1JP_s3gtMBzeV1-25" value="Administrador" style="rounded=0;whiteSpace=wrap;html=1;" parent="vm0cyW1JP_s3gtMBzeV1-24" vertex="1">
+                    <mxGeometry width="290" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="vm0cyW1JP_s3gtMBzeV1-26" value="- Poder agregar y quitar categorías de ofertas&lt;br&gt;- Poder eliminar ofertas" style="rounded=0;whiteSpace=wrap;html=1;" parent="vm0cyW1JP_s3gtMBzeV1-24" vertex="1">
+                    <mxGeometry y="40" width="145" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="vm0cyW1JP_s3gtMBzeV1-27" value="- Categoria&lt;br&gt;- ListaOfertas" style="rounded=0;whiteSpace=wrap;html=1;" parent="vm0cyW1JP_s3gtMBzeV1-24" vertex="1">
+                    <mxGeometry x="145" y="40" width="145" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticYHxDLqlK435V2blJC-1" value="v" style="group" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="260" y="-315" width="330" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="bVxLJ1EOz7DWde_HZ5Nj-31" value="Trabajador" style="rounded=0;whiteSpace=wrap;html=1;" parent="ticYHxDLqlK435V2blJC-1" vertex="1">
+                    <mxGeometry width="330" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bVxLJ1EOz7DWde_HZ5Nj-32" value="&lt;span style=&quot;&quot;&gt;- Conocer Nombre, Nacimiento, Cedula, Correo, Teléfono, Ubicación&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;- Tener una reputación y ser calificable&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;- Poder ofertar su trabajo con una descripción y sueldo&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;- Poder ser contactado&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="ticYHxDLqlK435V2blJC-1" vertex="1">
+                    <mxGeometry y="40" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="bVxLJ1EOz7DWde_HZ5Nj-33" value="- Trabajador&lt;br&gt;- Categoria&lt;br&gt;- OfertaDeServicio&lt;br&gt;- Registro" style="rounded=0;whiteSpace=wrap;html=1;" parent="ticYHxDLqlK435V2blJC-1" vertex="1">
+                    <mxGeometry x="170" y="40" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticYHxDLqlK435V2blJC-6" value="v" style="group" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="260" y="-560" width="330" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticYHxDLqlK435V2blJC-7" value="Empleador" style="rounded=0;whiteSpace=wrap;html=1;" parent="ticYHxDLqlK435V2blJC-6" vertex="1">
+                    <mxGeometry width="330" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticYHxDLqlK435V2blJC-8" value="&lt;span style=&quot;&quot;&gt;- Conocer Nombre, Nacimiento, Cedula, Correo, Teléfono, Ubicación&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;- Tener una reputación y ser calificable&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;- Poder buscar trabajadores&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;- Poder ser contactado&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="ticYHxDLqlK435V2blJC-6" vertex="1">
+                    <mxGeometry y="40" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="ticYHxDLqlK435V2blJC-9" value="&lt;span style=&quot;&quot;&gt;- Trabajador&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;- Categoria&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;- OfertaDeServicio&lt;br&gt;- Registro&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="ticYHxDLqlK435V2blJC-6" vertex="1">
+                    <mxGeometry x="170" y="40" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="W3V98t0Q-XN5IFiKmtNq-1" value="v" style="group" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="260" y="-820" width="330" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="W3V98t0Q-XN5IFiKmtNq-2" value="Registro" style="rounded=0;whiteSpace=wrap;html=1;" parent="W3V98t0Q-XN5IFiKmtNq-1" vertex="1">
+                    <mxGeometry width="330" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="W3V98t0Q-XN5IFiKmtNq-3" value="&lt;span style=&quot;&quot;&gt;- Conocer Nombre, Nacimiento, Cedula, Correo, Teléfono, Ubicación&lt;/span&gt;&lt;br style=&quot;&quot;&gt;- Añadir usuario&lt;br&gt;- Remover usuario" style="rounded=0;whiteSpace=wrap;html=1;" parent="W3V98t0Q-XN5IFiKmtNq-1" vertex="1">
+                    <mxGeometry y="40" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="W3V98t0Q-XN5IFiKmtNq-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="W3V98t0Q-XN5IFiKmtNq-1" vertex="1">
+                    <mxGeometry x="170" y="40" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-1" value="v" style="group" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="-160" y="-600" width="340" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-2" value="OfertaDeServicio" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-1" vertex="1">
+                    <mxGeometry width="330" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-3" value="&lt;span style=&quot;&quot;&gt;- Conocer Ofertante, Descripción de la oferta, Empleo, Clasificación, Precio, Ubicación&lt;/span&gt;&lt;br style=&quot;&quot;&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-1" vertex="1">
+                    <mxGeometry y="40" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="L-h7vo5x-tvDsKWIynLw-1" value="- Trabajador" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-1" vertex="1">
+                    <mxGeometry x="170" y="40" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-5" value="v" style="group" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="-530" y="-600" width="330" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-6" value="Categoría" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-5" vertex="1">
+                    <mxGeometry width="330" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-7" value="&lt;span style=&quot;&quot;&gt;- Conocer Ofertas&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-5" vertex="1">
+                    <mxGeometry y="40" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-8" value="- ListaOfertas" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-5" vertex="1">
+                    <mxGeometry x="170" y="40" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-9" value="v" style="group" parent="1" connectable="0" vertex="1">
+                    <mxGeometry x="-340" y="-830" width="330" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-10" value="ListaOfertas" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-9" vertex="1">
+                    <mxGeometry width="330" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-11" value="&lt;span style=&quot;&quot;&gt;-- Conocer ListaOfertas&lt;br&gt;- Conocer descripción&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-9" vertex="1">
+                    <mxGeometry y="40" width="170" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="XaBwfmpE1B-u1NAYIV0M-12" value="- OfertaDeServicio" style="rounded=0;whiteSpace=wrap;html=1;" parent="XaBwfmpE1B-u1NAYIV0M-9" vertex="1">
+                    <mxGeometry x="170" y="40" width="160" height="160" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

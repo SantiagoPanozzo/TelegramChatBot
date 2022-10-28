@@ -24,6 +24,10 @@ public class ContratoHandler {
     public void RechazarSolicitud(Solicitud solicitud){
         solicitud.RecibirRespuesta(Aceptacion.Rechazada);
     }
+
+    /// <summary> Método para obtener una solicitud por id </summary>
+    /// <param name="id"> Valor de id para filtrar <see cref="Solicitud"/> </param>
+    /// <returns> Devuelve la <see cref="Solicitud"/> por valor de id </returns>
     public Solicitud GetSolicitud(int id)    {
         foreach (Solicitud solicitud in Solicitudes)
         {
@@ -32,7 +36,6 @@ public class ContratoHandler {
         throw (new Exception("No se encontró la solicitud"));
     }
     
-
     /// <summary> Método para mostrar solicitudes </summary>
     /// <param name="user"> Variable de tipo <see cref="Usuario"/> </param>
     /// <returns> Devuelve las solicitudes según que tipo de <see cref="Usuario"/> se </returns>

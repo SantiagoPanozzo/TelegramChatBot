@@ -8,8 +8,8 @@ public class OfertasHandler{
     private CategoriasCatalog catalog = new CategoriasCatalog();
 
     /// <summary> Constructor de la clase </summary>
-    /// <param name="CategoryDesc">  </param>
-    /// <param name="ofertante"> Quien oferta su trabajo </param>
+    /// <param name="CategoryDesc"> Descripción de la categoría </param>
+    /// <param name="ofertante"> Usuario que oferta su trabajo </param>
     /// <param name="descripcion"> Descripción de la oferta </param>
     /// <param name="empleo"> Rubro de la oferta </param>
     /// <param name="precio"> Precio de la oferta </param>
@@ -24,7 +24,7 @@ public class OfertasHandler{
 
     /// <summary> Método para dar de baja una <see cref="OfertaDeServicio"/> </summary>
     /// <param name="user"> Usuario que llama al método </param>
-    /// <param name="id"> Id de la oferta  </param>
+    /// <param name="id"> Id de la oferta </param>
     public void DarDeBajaOferta(Usuario user, int id)
     {
         OfertaDeServicio oferta = GetOfertaById(id);

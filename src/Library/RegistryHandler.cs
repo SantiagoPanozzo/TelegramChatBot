@@ -1,7 +1,7 @@
 namespace Library;
 using System;
 
-/// <summary>  </summary>
+/// <summary> Clase para manejar el registro </summary>
 public class RegistryHandler {
     private List<Usuario> usuarios = new();
 
@@ -15,8 +15,9 @@ public class RegistryHandler {
     /// <param name="telefono"> Teléfono del usuario </param> 
     /// <param name="correo"> Correo electrónico del usuario </param> 
     /// <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
-    /// <returns>  </returns>
-    public Trabajador RegistrarTrabajador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
+    /// <returns> Devuelve la instancia de <see cref="Trabajador"/> creada </returns>
+    public Trabajador RegistrarTrabajador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, 
+                                          string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
     {
         DateTime nacimiento = DateTime.Parse(fechaNacimiento);
         if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
@@ -28,9 +29,17 @@ public class RegistryHandler {
     }
 
     /// <summary> Método para registrar un empleador </summary>
-    /// <param name="nombre"> Nombre del usuario </param> <param name="apellido"> Apellido del usuario </param> <param name="contraseña"> Contraseña del usuario </param> <param name="fechaNacimiento"> Fecha de nacimiento del usuario </param> <param name="cedula"> Cédula del usuario </param> <param name="telefono"> Teléfono del usuario </param> <param name="correo"> Correo electrónico del usuario </param> <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
-    /// <returns></returns>
-    public Empleador RegistrarEmpleador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
+    /// <param name="nombre"> Nombre del empleador </param> 
+    /// <param name="apellido"> Apellido del empleador </param> 
+    /// <param name="contraseña"> Contraseña del empleador </param> 
+    /// <param name="fechaNacimiento"> Fecha de nacimiento del empleador </param> 
+    /// <param name="cedula"> Cédula del empleador </param> 
+    /// <param name="telefono"> Teléfono del empleador </param> 
+    /// <param name="correo"> Correo electrónico del empleador </param> 
+    /// <param name="ubicacion"> Ubicación del empleador </param>
+    /// <returns> Devuelve la instancia de <see cref="Empleador"/> creada </returns>
+    public Empleador RegistrarEmpleador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, 
+                                        string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
     {
         DateTime nacimiento = DateTime.Parse(fechaNacimiento);
         if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
@@ -42,6 +51,13 @@ public class RegistryHandler {
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
 
     }
+
+    /// <summary>  </summary>
+    /// <param name="nick"></param>
+    /// <param name="contraseña"></param>
+    /// <param name="telefono"></param>
+    /// <param name="correo"></param>
+    /// <returns> Devuelve la instancia de <see cref="Trabajador"/> creada </returns>
     public Administrador RegistrarAdministrador(string nick, string contraseña, string telefono, string correo)
     {
         if (VerificarCorreo(correo) && VerificarNick(nick))
@@ -52,21 +68,23 @@ public class RegistryHandler {
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
     }
 
+    /// <summary> Método para verificar el nickname de un <see cref="Usuario"/> </summary>
+    /// <param name="nick"> Nickname del <see cref="Usuario"/> </param>
+    /// <returns> Devuelve true si no existe otro <see cref="Usuario"/> con ese nick, de lo contrario devuelve false </returns>
     public bool VerificarNick(string nick)
     {
         foreach (Usuario usuario in usuarios)
         {
             if (usuario.Nick.Equals(nick)) return false;
         }
-
         return true;
     }
     
-    /// <summary>  </summary>
-    /// <param name="correo">  </param>
-    /// <returns>  </returns>
+    /// <summary> Método para verificar el correo de un <see cref="Usuario"/> </summary>
+    /// <param name="correo"> Correo del <see cref="Usuario"/> </param>
+    /// <returns> Devuelve true si el formato del correo es válido, de lo contrario devuelve false </returns>
     public bool VerificarCorreo(string correo)
-    { // TODO testear, no tengo mucha fe en esto
+    { // TODO testear
         bool arroba = false;
         bool punto = false;
         foreach (char caracter in correo)
@@ -85,9 +103,9 @@ public class RegistryHandler {
         return false;
     }
 
-    /// <summary>  </summary>
-    /// <param name="cedula">  </param>
-    /// <returns>  </returns>
+    /// <summary> Método para verificar la cédula de un <see cref="Usuario"/> </summary>
+    /// <param name="cedula"> Cédula del <see cref="Usuario"/> </param>
+    /// <returns> Devuelve true si el formato es válido, de lo contrario devuelve false </returns>
     public bool VerificarCedula(string cedula)
     { // TODO testear, tampoco le tengo fe
         cedula = cedula.Replace(".", string.Empty);
@@ -106,8 +124,8 @@ public class RegistryHandler {
         return false;
     }
     
-    /// <summary>  </summary>
-    /// <param name="usuario">  </param>
+    /// <summary> Método para eliminar un <see cref="Usuario"/> </summary>
+    /// <param name="usuario"> <see cref="Usuario"/> que se desea eliminar </param>
     public void RemoveUsuario(Usuario usuario) {
         if (!usuarios.Contains(usuario)) {
             throw new ArgumentNullException("El usuario ingresado no existe");
@@ -117,10 +135,10 @@ public class RegistryHandler {
         }
     }
 
-    /// <summary>  </summary>
-    /// <param name="nombre">  </param>
-    /// <param name="apellido">  </param>
-    /// <param name="contraseña">  </param>
+    /// <summary> Método para obtener los datos de un <see cref="Usuario"/> </summary>
+    /// <param name="nombre"> Nombre del usuario </param>
+    /// <param name="apellido"> Apellido del usuario </param>
+    /// <param name="contraseña"> Contraseña del usuario </param>
     /// <returns>  </returns>
     public Usuario GetUsuario(string nombre, string apellido, string contraseña)
     {
