@@ -1,4 +1,5 @@
 namespace LibraryTests;
+using Library;
 
 /// <summary> Tests de la clase <see cref="Solicitud"> </summary>
 public class SolicitudTests
