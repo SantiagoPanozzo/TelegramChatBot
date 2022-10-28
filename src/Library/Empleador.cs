@@ -8,7 +8,7 @@ public class Empleador:Usuario,ICalificable{
     private List<Calificacion> Reputacion { get; set; }
 
     /// <summary> Constructor de la clase <see cref="Empleador"/> </summary>
-    /// <returns> Retorna tipo <see cref="Empleador.Empleador(string, string, string, DateTime, string, string, string, Tuple{double, double})"/> </returns>
+    /// <returns> Devuelve la instancia de <see cref="Empleador"/> creada </returns>
     public Empleador(string nombre, string apellido, string nick, string contraseña, DateTime fechaNacimiento, string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
     {
         this.Tipo = TipoDeUsuario.Empleador;
@@ -24,6 +24,7 @@ public class Empleador:Usuario,ICalificable{
     }
     
     /// <summary> Método para calificar un usuario </summary>
+    /// <param name="Rate"> Valor del enum <see cref="Calificacion"/> </param>
     public void Calificar(Calificacion Rate)
     {
         this.Reputacion.Add(Rate);

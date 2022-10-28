@@ -12,10 +12,6 @@ public class Solicitud {
     private static int Instancias { get; set; } = 0;
     private int _id; // TODO implementar IDs, placeholder
 
-
-
-
-
     /// <summary> Constructor de la clase <see cref="Solicitud"/> </summary>
     /// <returns> Retorna tipo <see cref="Solicitud.Solicitud(OfertaDeServicio, Empleador)"/> </returns>
     public Solicitud(OfertaDeServicio oferta, Empleador emp) {
@@ -24,20 +20,28 @@ public class Solicitud {
         Solicitud.Instancias++;
         this._id = Instancias;
     }
+
+    /// <summary> Método para obtener el id de una <see cref="Solicitud"/> </summary>
+    /// <returns> Devuelve el id de <see cref="Solicitud"/> </returns>
     public int GetId()
     {
         return this._id;
     }
 
+    /// <summary> Método para obtener <see cref="Empleador"/> que busca la <see cref="Solicitud"/> </summary>
+    /// <returns> Devuelve el <see cref="Empleador"/> de una <see cref="Solicitud"/> </returns>
     public Empleador GetEmpleador()
     {
         return this.Emp;
     }
 
+    /// <summary> Método para obtener <see cref="Trabajador"/> que busca la <see cref="Solicitud"/> </summary>
+    /// <returns> Devuelve el <see cref="Trabajador"/> de una <see cref="Solicitud"/> </returns>
     public Trabajador GetTrabajador()
     {
         return this.Trab;
     }
+
     /// <summary> Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar
     /// También cambia la disponibilidad de la oferta </summary>
     public void IniciarTrabajo() {
@@ -64,7 +68,8 @@ public class Solicitud {
         return !(Oferta.GetCalificacion().Equals(Calificacion.NoCalificado));
     }
 
-    /// <summary> Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha límite se califica de forma neutral </summary>
+    /// <summary> Método para actualizar una calificación en caso que se haga dentro del plazo.
+    /// Si excede la fecha límite se califica de forma neutral </summary>
     public void Update() {
         if (!this.IsRated())
         {
@@ -76,8 +81,8 @@ public class Solicitud {
         }
     }
 
-    /// <summary> //TODO </summary>
-    /// <returns>  </returns>
+    /// <summary> Compara la fecha actual con la fecha límite para calificar </summary>
+    /// <returns> Devuelve true si ya pasó un mes (30 días) desde que se hizo la <see cref="Solicitud"> </returns>
     public bool CanBeAutoRated() {
         // la fecha limite de calificacion se compara con la fecha actual
         // retornamos true si la fecha limite es anterior (-1) a la fecha actual
