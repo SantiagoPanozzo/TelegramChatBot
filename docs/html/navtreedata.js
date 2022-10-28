@@ -28,10 +28,10 @@ var NAVTREE =
     [ "HistoriasDeUsuarios", "md_HistoriasDeUsuarios.html", null ],
     [ "Justificaciones", "md_Justificaciones.html", null ],
     [ "Manual", "md_Manual.html", null ],
-    [ "Proyecto ChatBot Programación II", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html", [
-      [ "Integrantes del equipo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md2", null ],
-      [ "Consigna", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md3", null ],
-      [ "Escenarios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md4", null ]
+    [ "Proyecto ChatBot Programación II", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html", [
+      [ "Integrantes del equipo:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md2", null ],
+      [ "Consigna", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md3", null ],
+      [ "Escenarios", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md4", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

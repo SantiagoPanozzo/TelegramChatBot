@@ -9,5 +9,5 @@ digraph "OfertasHandler.Ofertar"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="Categoria.AddOferta",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoria.html#a0a1e3ed572d89c7d1abd4a7b9fec6b00",tooltip="Método para agregar una oferta en caso de que la misma no exista todavía en la lista"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="CategoriasCatalog.GetCategoria",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#afb83daeea932ba5c2162513cddb58dbf",tooltip="Método para obtener información de las categorías"];
+  Node3 [label="CategoriasCatalog.GetCategoria",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#afb83daeea932ba5c2162513cddb58dbf",tooltip="Método para obtener una categoría por descripción"];
 }

@@ -8,7 +8,8 @@ var searchData=
   ['registraradministrador_5',['RegistrarAdministrador',['../classRegistryHandler.html#a34b0f1b9b4acc46173e8df18b6d13daf',1,'RegistryHandler']]],
   ['registrarempleador_6',['RegistrarEmpleador',['../classRegistryHandler.html#a7d3db6da50fd5991c864aad52ba21a2b',1,'RegistryHandler']]],
   ['registrartrabajador_7',['RegistrarTrabajador',['../classRegistryHandler.html#a385fec37ba8343a4d75225f0451218e6',1,'RegistryHandler']]],
-  ['removeoferta_8',['RemoveOferta',['../classCategoria.html#add75f082a67fe1e5ef141092881697fc',1,'Categoria']]],
-  ['removesolicitud_9',['RemoveSolicitud',['../classSolicitudCatalog.html#ad441a1c578b0eebdec7527028281fca8',1,'SolicitudCatalog']]],
-  ['removeusuario_10',['RemoveUsuario',['../classRegistryHandler.html#aea5c1fe0a71f0c7910f010d9ee85dd1a',1,'RegistryHandler']]]
+  ['removecategoria_8',['RemoveCategoria',['../classCategoriasCatalog.html#ad0b5c36522f6c81c69aceea4c07c9ac0',1,'CategoriasCatalog']]],
+  ['removeoferta_9',['RemoveOferta',['../classCategoria.html#add75f082a67fe1e5ef141092881697fc',1,'Categoria']]],
+  ['removesolicitud_10',['RemoveSolicitud',['../classSolicitudCatalog.html#ad441a1c578b0eebdec7527028281fca8',1,'SolicitudCatalog']]],
+  ['removeusuario_11',['RemoveUsuario',['../classRegistryHandler.html#aea5c1fe0a71f0c7910f010d9ee85dd1a',1,'RegistryHandler']]]
 ];

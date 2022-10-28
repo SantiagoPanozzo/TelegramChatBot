@@ -8,5 +8,5 @@ digraph "ICalificable"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
   Node2 [label="{Empleador\n|+ Reputacion\l|+ Empleador()\l+ Calificar()\l+ GetReputacion()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEmpleador.html",tooltip="Clase empleador que hereda de Usuario"];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
-  Node3 [label="{Trabajador\n|+ Reputacion\l|+ Trabajador()\l+ Calificar()\l+ GetReputacion()\l+ GetContecto()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html",tooltip=" "];
+  Node3 [label="{Trabajador\n|+ Reputacion\l|+ Trabajador()\l+ Calificar()\l+ GetReputacion()\l+ GetContecto()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html",tooltip="Clase que hereda de"];
 }

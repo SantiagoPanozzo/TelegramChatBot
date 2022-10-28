@@ -5,7 +5,7 @@ digraph "SolicitudCatalog.AddSolicitud"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="SolicitudCatalog.AddSolicitud",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="SolicitudCatalog.AddSolicitud",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para agregar una al catálogo"];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="ContratoHandler.Solicitar\lTrabajador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classContratoHandler.html#ae79bf0777ea2651eaea4ae41af26fa52",tooltip="Método que crea una solicitud de trabajo"];
 }

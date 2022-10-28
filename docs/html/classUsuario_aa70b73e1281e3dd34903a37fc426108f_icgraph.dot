@@ -7,7 +7,7 @@ digraph "Usuario.GetTipo"
   rankdir="RL";
   Node1 [label="Usuario.GetTipo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador"];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="OfertasHandler.CrearCategoria",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#aa69e17fd7233272c4c04c31ae6dad742",tooltip=" "];
+  Node2 [label="OfertasHandler.CrearCategoria",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#aa69e17fd7233272c4c04c31ae6dad742",tooltip="Método para crear una categoria"];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="OfertaDeServicio.DarDeBaja",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#aaca8dc149dd2c0bcd2ab4c70aa592486",tooltip="Método para dar de baja un Usuario"];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
