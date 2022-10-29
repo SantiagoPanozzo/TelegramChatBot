@@ -1,17 +1,18 @@
 namespace Library;
 
 /// <summary> Clase <see cref="Solicitud"/> para iniciar una <see cref="OfertaDeServicio"/> </summary>
-public class Solicitud {
+public class Solicitud : IDesactivable{
     public OfertaDeServicio Oferta { get; set;}
     public Aceptacion Aceptada { get; set;}
     public DateTime FechaAceptada { get; set;}
     private Empleador Emp { get; set;}
-    private Trabajador Trab { get; set; }
+    public string Trab { get; set; }
     private DateTime FechaLimiteCalificar { get; set; }
-    public TimeSpan TiempoMaximoCalificar = new TimeSpan(30, 0, 0, 0);
+    public TimeSpan TiempoMaximoCalificar = new (30, 0, 0, 0);
     private static int Instancias { get; set; } = 0;
-    private int _id; // TODO implementar IDs, placeholder
-
+    private readonly int _id; // TODO implementar IDs, placeholder
+    private bool Activa;
+    
     /// <summary> Constructor de la clase <see cref="Solicitud"/> </summary>
     /// <returns> Retorna tipo <see cref="Solicitud.Solicitud(OfertaDeServicio, Empleador)"/> </returns>
     public Solicitud(OfertaDeServicio oferta, Empleador emp) {
@@ -19,6 +20,8 @@ public class Solicitud {
         this.Emp = emp;
         Solicitud.Instancias++;
         this._id = Instancias;
+        this.Trab = oferta.GetUsuario();
+        this.Activa = true;
     }
 
     /// <summary> Método para obtener el id de una <see cref="Solicitud"/> </summary>
@@ -30,17 +33,20 @@ public class Solicitud {
 
     /// <summary> Método para obtener <see cref="Empleador"/> que busca la <see cref="Solicitud"/> </summary>
     /// <returns> Devuelve el <see cref="Empleador"/> de una <see cref="Solicitud"/> </returns>
-    public Empleador GetEmpleador()
+    public string GetEmpleador()
     {
-        return this.Emp;
+        return this.Emp.Nick;
     }
 
+    /*
+    LEGACY
+     
     /// <summary> Método para obtener <see cref="Trabajador"/> que busca la <see cref="Solicitud"/> </summary>
     /// <returns> Devuelve el <see cref="Trabajador"/> de una <see cref="Solicitud"/> </returns>
     public Trabajador GetTrabajador()
     {
         return this.Trab;
-    }
+    } */
 
     /// <summary> Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar
     /// También cambia la disponibilidad de la oferta </summary>
@@ -66,6 +72,27 @@ public class Solicitud {
     /// <returns> Retorna True si la oferta está calificada o False si no lo está </returns>
     public bool IsRated() {
         return !(Oferta.GetCalificacion().Equals(Calificacion.NoCalificado));
+    }
+
+    public bool IsActiva()
+    {
+        return this.Activa;
+    }
+
+    public void DarDeBaja(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            this.Activa = false;
+        }
+    }
+    
+    public void Reactivar(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            this.Activa = true;
+        }
     }
 
     public Tuple<double, double> GetUbicacion()

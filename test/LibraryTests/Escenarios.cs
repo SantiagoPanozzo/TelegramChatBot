@@ -15,9 +15,9 @@ public class Escenarios
     // para que de esa forma, los trabajadoras puedan clasificarlos.
     {
         // Arrange
-        RegistryHandler registryHandler = new RegistryHandler();
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "1234", "abc@abc.com");
-        OfertasHandler ofertasHandler = new OfertasHandler();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         bool expected = true;
 
         // Act
@@ -35,9 +35,9 @@ public class Escenarios
     // pueda evitar ofertas inadecudas.
     {
         // Arrange
-        RegistryHandler registryHandler = new RegistryHandler();
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "1234", "abc@abc.com");
-        OfertasHandler ofertasHandler = new OfertasHandler();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         ofertasHandler.CrearCategoria(admin, "Tareas");
         Trabajador elpepe = registryHandler.RegistrarTrabajador("Pepe", "Pepe", "Elpepe", "elpepe", "2020,10,1", "12345678", "1234",
             "elpepe@elpepe.elpepe", new Tuple<double, double>(31,9393));
@@ -60,7 +60,7 @@ public class Escenarios
     // para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.
     { 
         // Arrange
-        RegistryHandler registryHandler = new RegistryHandler();
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
         bool Expected = true;
         
         // Act
@@ -81,8 +81,8 @@ public class Escenarios
     // quienes quieren contratar servicios.
     { 
         // Arrange
-        OfertasHandler ofertasHandler = new();
-        RegistryHandler registryHandler = new();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
         Usuario miUsuario = registryHandler.RegistrarTrabajador("Manolo","Manolete", "manoler","1234",
             "2001 3 14","1234567","099555555",
             "manoloreal@gmail.com",new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
@@ -105,7 +105,7 @@ public class Escenarios
     // para que de esa forma, pueda proveer información de contacto a los trabajadores que quiero contratar.
     {
         // Arrange
-        RegistryHandler registryHandler = new RegistryHandler();
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
         bool expected = true;
         
         // Act
@@ -170,9 +170,9 @@ public class Escenarios
     // servicios determinada.
     {
         // Arrange
-        RegistryHandler registryHandler = new();
-        OfertasHandler ofertasHandler = new();
-        ContratoHandler contratoHandler = new();
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
         Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
         Trabajador pepe = registryHandler.RegistrarTrabajador("a", "a", "a", "a", "2020,2,2", "1234556", "12345", "a@a.a",

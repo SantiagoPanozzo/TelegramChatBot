@@ -18,7 +18,6 @@ public abstract class Usuario {
     private string Contraseña { get; set; }
     protected TipoDeUsuario Tipo { get; set; }
 
-
     /// <summary> Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador </summary>
     /// <returns> Retorna el valor indicado, teniendo en cuenta el enum <see cref="TipoDeUsuario"/> 
     /// 0 = Administrador, 1 = Trabajador, 2 = Empleador </returns>

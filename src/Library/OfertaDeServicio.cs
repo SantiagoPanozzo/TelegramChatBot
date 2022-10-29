@@ -1,7 +1,7 @@
 namespace Library;
 
 /// <summary> Clase que representa una oferta de sevicio </summary>
-public class OfertaDeServicio
+public class OfertaDeServicio : IDesactivable
 {
     private Trabajador Ofertante { get; set; }
     public string Descripcion { get; set; }
@@ -26,6 +26,7 @@ public class OfertaDeServicio
         this.Empleo = empleo;
         this.Precio = precio;
         OfertaDeServicio.Instancias++;
+        this.Activa = true;
         this._id = Instancias;
         this.Ubicacion = Ofertante.Ubicacion;
     }
@@ -37,11 +38,9 @@ public class OfertaDeServicio
         return this._id;
     }
 
-    /// <summary> Método para conocer el estado de la <see cref="OfertaDeServicio"/> </summary>
-    /// <returns> Devuelve el estado de <see cref="OfertaDeServicio"/>, true si está activa, false si no está activa  </returns>
-    public bool IsActiva()
+    public string GetUsuario()
     {
-        return this.Activa;
+        return this.Ofertante.Nick;
     }
 
     public Tuple<double, double> GetUbicacion()
@@ -54,6 +53,28 @@ public class OfertaDeServicio
         return Ofertante.GetContacto();
     }
 
+    /// <summary> Método para calificar la oferta en cuestión </summary>
+    /// <param name="rate"> Valor de <see cref="Calificacion"/> </param>
+    public void RateMe(Calificacion rate)
+    { // TODO test
+        this.Rate = rate;
+        this.Ofertante.Calificar(rate);
+    }
+
+    /// <summary> Método para obtener una calificación </summary>
+    /// <returns> Devuelve una <see cref="Calificacion"/> según sea indicada </returns>
+    public Calificacion GetCalificacion()
+    {
+        return this.Rate;
+    }
+    
+    /// <summary> Método para conocer el estado de la <see cref="OfertaDeServicio"/> </summary>
+    /// <returns> Devuelve el estado de <see cref="OfertaDeServicio"/>, true si está activa, false si no está activa  </returns>
+    public bool IsActiva()
+    {
+        return this.Activa;
+    }
+    
     /// <summary> Método para dar de baja un <see cref="Usuario"/> </summary>
     /// <param name="user"> Tipo de <see cref="Usuario"/> que se dará de baja </param>
     public void DarDeBaja(Usuario user)
@@ -88,20 +109,5 @@ public class OfertaDeServicio
                 this.Activa = true;
             }
         }
-    }
-
-    /// <summary> Método para calificar la oferta en cuestión </summary>
-    /// <param name="rate"> Valor de <see cref="Calificacion"/> </param>
-    public void RateMe(Calificacion rate)
-    { // TODO test
-        this.Rate = rate;
-        this.Ofertante.Calificar(rate);
-    }
-
-    /// <summary> Método para obtener una calificación </summary>
-    /// <returns> Devuelve una <see cref="Calificacion"/> según sea indicada </returns>
-    public Calificacion GetCalificacion()
-    {
-        return this.Rate;
     }
 }
