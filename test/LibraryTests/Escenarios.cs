@@ -12,7 +12,7 @@ public class Escenarios
     [Test]
     public void Caso1()
     // "Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios
-    // para que de esa forma, los trabajadoras puedan clasificarlos.
+    // para que de esa forma, los trabajadores puedan clasificarlos.
     {
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
@@ -32,7 +32,7 @@ public class Escenarios
     [Test]
     public void Caso2()
     // Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma,
-    // pueda evitar ofertas inadecudas.
+    // pueda evitar ofertas inadecuadas.
     {
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
@@ -124,13 +124,17 @@ public class Escenarios
     // pueda contratar un servicio.
     {
         // Arrange
-        
-        
-        // Act
-        
-        
-        // Assert
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        bool expected = true;
 
+        // Act
+        Administrador adm= registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Categoria cat = ofertasHandler.CrearCategoria(adm, "categoria");
+        bool result = true;
+
+        // Assert
+          Assert.That(result.Equals(expected));
     }
 
     [Test]
@@ -140,13 +144,16 @@ public class Escenarios
     // servicio.
     {
         // Arrange
-        
-        
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        bool result = true;
         // Act
-        
-        
-        // Assert
+    
+        OfertaDeServicio ofertaDeServicio = ofertaDeServicio(ubicacion);
+        bool ubicación = OfertaDeServicio.Ubicacion;
 
+        // Assert
+          Assert.That(result.Equals(ubicación));
     }
 
     [Test]
@@ -155,19 +162,22 @@ public class Escenarios
     // reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.
     {
         // Arrange
-        
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        bool result = true;
         
         // Act
-        
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
         
         // Assert
-
+          Assert.That(result.Equals(expected));
     }
 
     [Test]
     public void Caso9()
     // Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de
-    // servicios determinada.
+    // servicio determinada.
     {
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
@@ -193,34 +203,37 @@ public class Escenarios
 
     [Test]
     public void Caso10()
-    // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mi también, si no
+    // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
     // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
     // empleador.
     {
         // Arrange
-        
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        bool result = true;
         
         // Act
         
         
         // Assert
-
+          Assert.That(result.Equals(expected));
     }
 
     [Test]
     public void Caso11()
-    // Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mi también, si no
-    // me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputaión del
+    // Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no
+    // me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del
     // trabajador.
     {
         // Arrange
-        
-        
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Calificacion
         // Act
         
         
         // Assert
-
+          Assert.That(result.Equals(expected));
     }
 
     [Test]
@@ -229,12 +242,13 @@ public class Escenarios
     // decidir sobre su solicitud de contratación.
     {
         // Arrange
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
         
         
         // Act
         
         
         // Assert
-
+          Assert.That(result.Equals(expected));
     }
 }
