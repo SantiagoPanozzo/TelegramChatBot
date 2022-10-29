@@ -1,7 +1,8 @@
 namespace Library;
 
-/// <summary> Clase que representa una oferta de sevicio </summary>
+/// <summary> Clase que representa una oferta de servicio </summary>
 public class OfertaDeServicio : IDesactivable
+
 {
     private Trabajador Ofertante { get; set; }
     public string Descripcion { get; set; }

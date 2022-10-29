@@ -4,5 +4,5 @@ digraph "Escenarios"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{Escenarios\n||+ Setup()\l+ Caso1()\l+ Caso2()\l+ Caso3()\l+ Caso4()\l+ Caso5()\l+ Caso6()\l+ Caso7()\l+ Caso8()\l+ Caso9()\l+ Caso10()\l+ Caso11()\l+ Caso12()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="{Escenarios\n||+ Setup()\l+ Caso1()\l+ Caso2()\l+ Caso3()\l+ Caso4()\l+ Caso5()\l+ Caso6()\l+ Caso7()\l+ Caso8()\l+ Caso9()\l+ Caso10()\l+ Caso11()\l+ Caso12()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tests de los escenarios dados"];
 }

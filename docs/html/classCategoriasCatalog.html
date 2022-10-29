@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('classCategoriasCatalog.html',''); init
 </div><!--header-->
 <div class="contents">
 
-<p>Clase de manejo del catalogo de categorías de las ofertas  
+<p>Clase para manejar el catálogo de categorías  
  <a href="classCategoriasCatalog.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for CategoriasCatalog:</div>
@@ -111,14 +111,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a19cc28dc8303a7d6d5b77db7a57d503d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> por id  <a href="classCategoriasCatalog.html#a19cc28dc8303a7d6d5b77db7a57d503d">More...</a><br /></td></tr>
 <tr class="separator:a19cc28dc8303a7d6d5b77db7a57d503d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb83daeea932ba5c2162513cddb58dbf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCategoria.html">Categoria</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCategoriasCatalog.html#afb83daeea932ba5c2162513cddb58dbf">GetCategoria</a> (string descripcion)</td></tr>
-<tr class="memdesc:afb83daeea932ba5c2162513cddb58dbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener información de las categorías  <a href="classCategoriasCatalog.html#afb83daeea932ba5c2162513cddb58dbf">More...</a><br /></td></tr>
+<tr class="memdesc:afb83daeea932ba5c2162513cddb58dbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una categoría por descripción  <a href="classCategoriasCatalog.html#afb83daeea932ba5c2162513cddb58dbf">More...</a><br /></td></tr>
 <tr class="separator:afb83daeea932ba5c2162513cddb58dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1275f6565562402725de3b14b665f622"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCategoria.html">Categoria</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCategoriasCatalog.html#a1275f6565562402725de3b14b665f622">GetCategoriaById</a> (int id)</td></tr>
+<tr class="memdesc:a1275f6565562402725de3b14b665f622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una categoría por id  <a href="classCategoriasCatalog.html#a1275f6565562402725de3b14b665f622">More...</a><br /></td></tr>
 <tr class="separator:a1275f6565562402725de3b14b665f622"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54e30ec64bc063d3da712ed9fed84127"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCategoria.html">Categoria</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCategoriasCatalog.html#a54e30ec64bc063d3da712ed9fed84127">AddCategoria</a> (<a class="el" href="classUsuario.html">Usuario</a> user, string descripcion)</td></tr>
 <tr class="memdesc:a54e30ec64bc063d3da712ed9fed84127"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para agregar una nueva categoría al catálogo  <a href="classCategoriasCatalog.html#a54e30ec64bc063d3da712ed9fed84127">More...</a><br /></td></tr>
 <tr class="separator:a54e30ec64bc063d3da712ed9fed84127"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0b5c36522f6c81c69aceea4c07c9ac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCategoriasCatalog.html#ad0b5c36522f6c81c69aceea4c07c9ac0">RemoveCategoria</a> (<a class="el" href="classUsuario.html">Usuario</a> user, <a class="el" href="classCategoria.html">Categoria</a> categoria)</td></tr>
+<tr class="memdesc:ad0b5c36522f6c81c69aceea4c07c9ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para eliminar una categoría  <a href="classCategoriasCatalog.html#ad0b5c36522f6c81c69aceea4c07c9ac0">More...</a><br /></td></tr>
 <tr class="separator:ad0b5c36522f6c81c69aceea4c07c9ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -127,7 +129,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a733848fe90f3c4147662c99efda5e3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Clase de manejo del catalogo de categorías de las ofertas </p>
+<div class="textblock"><p >Clase para manejar el catálogo de categorías </p>
 
 <p class="definition">Definition at line <a class="el" href="CategoriasCatalog_8cs_source.html#l00004">4</a> of file <a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -182,13 +184,13 @@ Protected Attributes</h2></td></tr>
 <p>Método para agregar una nueva categoría al catálogo </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">user</td><td>Verificación del tipo de usuario, en caso de que sea <a class="el" href="classAdministrador.html" title="Clase Administrador que hereda de Usuario">Administrador</a> se podrá agregar </td></tr>
-    <tr><td class="paramname">descripcion</td><td>//TODO </td></tr>
+    <tr><td class="paramname">user</td><td>Tipo de <a class="el" href="classUsuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador">Usuario</a> </td></tr>
+    <tr><td class="paramname">descripcion</td><td>Descripción de la categoría </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="CategoriasCatalog_8cs_source.html#l00066">66</a> of file <a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CategoriasCatalog_8cs_source.html#l00069">69</a> of file <a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -214,14 +216,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Método para obtener información de las categorías </p>
+<p>Método para obtener una categoría por descripción </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">descripcion</td><td></td></tr>
+    <tr><td class="paramname">descripcion</td><td>Descripción filtro para la busqueda </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Retorna una variable de tipo <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> según el filtro de la descripción </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="CategoriasCatalog_8cs_source.html#l00039">39</a> of file <a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a>.</p>
 <div class="dynheader">
@@ -249,7 +251,28 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CategoriasCatalog_8cs_source.html#l00051">51</a> of file <a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a>.</p>
+<p>Método para obtener una categoría por id </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Id filtro para la busqueda </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> según el filtro de id </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="CategoriasCatalog_8cs_source.html#l00054">54</a> of file <a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 4 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -275,7 +298,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 3 -->
+<div class="center"><!-- SVG 5 -->
 </div>
 </div>
 
@@ -310,7 +333,13 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 4 -->
+<div class="center"><!-- SVG 6 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 7 -->
 </div>
 </div>
 
@@ -342,7 +371,22 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CategoriasCatalog_8cs_source.html#l00073">73</a> of file <a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a>.</p>
+<p>Método para eliminar una categoría </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Tipo de <a class="el" href="classUsuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador">Usuario</a> </td></tr>
+    <tr><td class="paramname">categoria</td><td><a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> que se desea eliminar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="CategoriasCatalog_8cs_source.html#l00080">80</a> of file <a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 8 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -372,7 +416,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/snowiemischief/projects/programacion2/pii_2022_2_equipo_21/src/Library/<a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a></li>
+<li>/mnt/c/Users/Bastet/Projects/WinProgramacion2/pii_2022_2_equipo_21/src/Library/<a class="el" href="CategoriasCatalog_8cs_source.html">CategoriasCatalog.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

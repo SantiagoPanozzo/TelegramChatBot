@@ -95,6 +95,8 @@ public class Solicitud : IDesactivable{
         }
     }
 
+    /// <summary> Método para obtener la ubicación de una oferta </summary>
+    /// <returns> Devuelve en formato de coordenadas la ubicación de la oferta </returns>
     public Tuple<double, double> GetUbicacion()
     {
         return this.Oferta.GetUbicacion();
