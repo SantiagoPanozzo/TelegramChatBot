@@ -49,7 +49,7 @@ public class OfertaDeServicio : IDesactivable
         return this.Ubicacion;
     }
 
-    public string GetContacto()
+    public Dictionary<string, string> GetContacto()
     {
         return Ofertante.GetContacto();
     }

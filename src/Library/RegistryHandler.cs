@@ -177,32 +177,60 @@ public class RegistryHandler
         }
         throw (new ArgumentException("Los datos introducidos no coinciden con ningun usuario"));
     }
+    
+    public Dictionary<string, string> GetUserInfo(string nickname)
+    {
+        Usuario user = GetUser(nickname);
+        return user.GetPublicInfo();
+    }
+
+    public Dictionary<string, string> GetUserContact(string nickname)
+    {
+        Usuario user = GetUser(nickname);
+        return user.GetContacto();
+    }
+
+    private Usuario GetUser(string nickname)
+    {
+        Usuario? user = null;
+        try {
+            foreach (Usuario usuario in usuarios) {
+                if (usuario.Nick.Equals(nickname)) {
+                    user = usuario;
+                }
+            }
+        }
+        catch(NullReferenceException) {
+            throw (new Exception("No se encontró el usuario"));
+        }
+        return user;
+    }
 
     public List<string> GetTrabajadores()
     {
-        List<string> Trabajadores = new();
+        List<string> trabajadores = new();
         foreach (Usuario usuario in usuarios)
         {
             if (usuario.GetTipo().Equals(TipoDeUsuario.Trabajador))
             {
-                Trabajadores.Add(usuario.Nick);
+                trabajadores.Add(usuario.Nick);
             }
         }
 
-        return Trabajadores;
+        return trabajadores;
     }
     
     public List<string> GetEmpleadores()
     {
-        List<string> Empleadores = new();
+        List<string> empleadores = new();
         foreach (Usuario usuario in usuarios)
         {
             if (usuario.GetTipo().Equals(TipoDeUsuario.Trabajador))
             {
-                Empleadores.Add(usuario.Nick);
+                empleadores.Add(usuario.Nick);
             }
         }
 
-        return Empleadores;
+        return empleadores;
     }
 }
