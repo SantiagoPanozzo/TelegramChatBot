@@ -68,6 +68,11 @@ public class Solicitud {
         return !(Oferta.GetCalificacion().Equals(Calificacion.NoCalificado));
     }
 
+    public Tuple<double, double> GetUbicacion()
+    {
+        return this.Oferta.GetUbicacion();
+    }
+
     /// <summary> Método para actualizar una calificación en caso que se haga dentro del plazo.
     /// Si excede la fecha límite se califica de forma neutral </summary>
     public void Update() {
