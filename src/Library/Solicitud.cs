@@ -74,7 +74,7 @@ public class Solicitud : IDesactivable{
         return !(Oferta.GetCalificacion().Equals(Calificacion.NoCalificado));
     }
 
-    public bool IsActiva()
+    public bool IsActive()
     {
         return this.Activa;
     }

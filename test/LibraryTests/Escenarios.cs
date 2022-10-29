@@ -47,7 +47,7 @@ public class Escenarios
         
         // Act
         ofertasHandler.DarDeBajaOferta(admin,id);
-        bool result = ofertasHandler.GetOfertaById(id).IsActiva();
+        bool result = ofertasHandler.GetOfertaById(id).IsActive();
 
         // Assert
         Assert.That(expected.Equals(result));

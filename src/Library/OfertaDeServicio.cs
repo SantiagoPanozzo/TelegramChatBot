@@ -70,7 +70,7 @@ public class OfertaDeServicio : IDesactivable
     
     /// <summary> Método para conocer el estado de la <see cref="OfertaDeServicio"/> </summary>
     /// <returns> Devuelve el estado de <see cref="OfertaDeServicio"/>, true si está activa, false si no está activa  </returns>
-    public bool IsActiva()
+    public bool IsActive()
     {
         return this.Activa;
     }

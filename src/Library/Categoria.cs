@@ -16,11 +16,8 @@ public class Categoria : IDesactivable
         Categoria.Instancias++;
         this.Id = Instancias;
         this.Descripcion = descripcion;
-        
-    }
-    public bool IsActiva()
-    {
-        return this.Activa;
+        this.Activa = true;
+
     }
 
     /// <summary> Método para obtener el ID de una <see cref="Categoria"/>  </summary>
@@ -64,6 +61,11 @@ public class Categoria : IDesactivable
             if (ofertaDeServicio.GetId().Equals(id)) return ofertaDeServicio;
         }
         throw (new Exception("No se encontró la oferta"));
+    }
+    
+    public bool IsActive()
+    {
+        return this.Activa;
     }
 
     public void DarDeBaja(Usuario user)
