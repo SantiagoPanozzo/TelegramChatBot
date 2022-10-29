@@ -1,12 +1,10 @@
 namespace Library;
 
-public class OfertaDeServicioPrinter : IPrinter<OfertaDeServicio> {
-    public void PrintCatalog(List<OfertaDeServicio> ofertas) {
-        Console.WriteLine($"Ofertas de servicio\n");
-        foreach (var ofe in ofertas) {
-            if (!ofe.IsActiva().Equals(false)) { //TODO
-                Console.WriteLine($"»» Descripción: {ofe.Descripcion} ║ Empleo: {ofe.Empleo} ║ Trabajador: {ofe.Ofertante.Nombre} {ofe.Ofertante.Apellido} ║ Precio: {ofe.Precio} ║ ID: {ofe.GetId()}\n");
-            }
+public class SolicitudPrinter : IPrinter<Solicitud> {
+    public void PrintCatalog(List<Solicitud> solicitudes) {
+        Console.WriteLine($"solrtas de servicio\n");
+        foreach (var sol in solicitudes) {
+            Console.WriteLine($"»» Descripción: {sol} ║ Empleo: {sol} ║ Trabajador: {sol} {sol} ║ Precio: {sol} ║ ID: {sol.GetId()}\n");
         }
     }
 }

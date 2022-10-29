@@ -20,8 +20,8 @@ class Program {
         catPrinter.PrintCatalog(a); */
         Administrador a1 = new("nick", "contra", "tel", "a@b.c");
 
-        OfertaDeServicioPrinter ofePrinter = new();
-        List<OfertaDeServicio> a = new();
+        //OfertaDeServicioPrinter ofePrinter = new();
+        ContratoHandler ch = new(); 
 
         Trabajador t1 = new("Ihojan", "Werlyb", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
         Trabajador t2 = new("Cosplay de", "Irelia", "hide on bush", "1234", new DateTime(2020,2,1), "11111111", "099", "a@b.c", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
@@ -35,11 +35,11 @@ class Program {
         Solicitud s1 = new(o1, e1);
         Solicitud s2 = new(o2, e2);
 
-        a.Add(o1);
-        a.Add(o2);
+        ch.Catalogo.AddSolicitud(o1, e1);
+        ch.Catalogo.AddSolicitud(o2, e2);
 
         o1.DarDeBaja(a1);
 
-        ofePrinter.PrintCatalog(a);
+        //ofePrinter.PrintCatalog(ch.Catalogo);
     }
 }
