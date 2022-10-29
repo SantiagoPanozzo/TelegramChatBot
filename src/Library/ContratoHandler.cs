@@ -2,9 +2,35 @@ namespace Library;
 using System;
 
 /// <summary> Clase para manejar el catalogo </summary>
-public class ContratoHandler {
-    public SolicitudCatalog Catalogo = new SolicitudCatalog();
-    public List<Solicitud> Solicitudes = new List<Solicitud>();
+public class ContratoHandler
+{
+
+    public SolicitudCatalog Catalogo;
+    
+    private static ContratoHandler? _instance;
+
+    private static ContratoHandler Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new ContratoHandler();
+            }
+
+            return _instance;
+        }
+    }
+    
+    private ContratoHandler()
+    {
+        this.Catalogo = SolicitudCatalog.GetInstance();
+    }
+
+    public static ContratoHandler GetInstance()
+    {
+        return ContratoHandler.Instance;
+    }
 
     /// <summary> Método que crea una solicitud de trabajo </summary>
     /// <param name="oferta"> Oferta en cuestión </param>
@@ -29,7 +55,7 @@ public class ContratoHandler {
     /// <param name="id"> Valor de id para filtrar <see cref="Solicitud"/> </param>
     /// <returns> Devuelve la <see cref="Solicitud"/> por valor de id </returns>
     public Solicitud GetSolicitud(int id)    {
-        foreach (Solicitud solicitud in Solicitudes)
+        foreach (Solicitud solicitud in Catalogo.Solicitudes)
         {
             if (solicitud.GetId().Equals(id)) return solicitud;
         }
@@ -51,14 +77,14 @@ public class ContratoHandler {
         {
             foreach (Solicitud solicitud in Catalogo.Solicitudes)
             {
-                if(solicitud.GetTrabajador().Equals(user)) solicitudesDelUsuario.Add(solicitud);
+                if(solicitud.Trab.Equals(user.Nick)) solicitudesDelUsuario.Add(solicitud);
             }
         }
         else if (user.GetTipo().Equals(TipoDeUsuario.Empleador))
         {
             foreach (Solicitud solicitud in Catalogo.Solicitudes)
             {
-                if(solicitud.GetEmpleador().Equals(user)) solicitudesDelUsuario.Add(solicitud);
+                if(solicitud.GetEmpleador().Equals(user.Nick)) solicitudesDelUsuario.Add(solicitud);
             }
         }
         else

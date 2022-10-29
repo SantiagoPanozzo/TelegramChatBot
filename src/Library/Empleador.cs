@@ -20,6 +20,7 @@ public class Empleador:Usuario,ICalificable{
         this.Telefono = telefono;
         this.Ubicacion = ubicacion;
         this.Correo = correo;
+        this.Reputacion = new List<Calificacion>();
         this.SetContraseña(contraseña);
     }
     
@@ -34,6 +35,10 @@ public class Empleador:Usuario,ICalificable{
     /// <returns> Retorna el promedio de las calificaciones de un usuario, cualquiera que sea  </returns>
     public Calificacion GetReputacion()
     {
+        if (this.Reputacion.Count() <= 0)
+        {
+            return Calificacion.NoCalificado;
+        }
         int x = 0;
         foreach (var calif in this.Reputacion)
         {

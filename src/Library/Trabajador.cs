@@ -1,10 +1,11 @@
 namespace Library;
 
 /// <summary> Clase <see cref="Trabajador"> que hereda de <see cref="Usuario"> </summary>
-public class Trabajador:Usuario,ICalificable
+public class Trabajador:Usuario,ICalificable,IDesactivable
 {
 
     private List<Calificacion> Reputacion { get; set; }
+    private bool Activo { get; set; }
 
     /// <summary> Constructor de la clase </summary>
     /// <param name="nombre"> Nombre del usuario </param> 
@@ -29,6 +30,8 @@ public class Trabajador:Usuario,ICalificable
         this.Correo = correo;
         this.Ubicacion = ubicacion;
         this.SetContraseña(contraseña);
+        this.Reputacion = new List<Calificacion>();
+        this.Activo = true;
     }
     
     /// <summary> Método para calificar un usuario </summary>
@@ -41,6 +44,10 @@ public class Trabajador:Usuario,ICalificable
     /// <returns> Retorna el promedio de las calificaciones de un usuario, cualquiera que sea  </returns>
     public Calificacion GetReputacion()
     {
+        if (this.Reputacion.Count() <= 0)
+        {
+            return Calificacion.NoCalificado;
+        }
         int x = 0;
         foreach (var calif in this.Reputacion)
         {
@@ -57,4 +64,5 @@ public class Trabajador:Usuario,ICalificable
     {
         return this;
     }
+
 }

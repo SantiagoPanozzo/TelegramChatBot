@@ -5,10 +5,30 @@ public class CategoriasCatalog
 {
     protected List<Categoria> Categorias;
 
+    private static CategoriasCatalog? _instance;
+
+    private static CategoriasCatalog Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new CategoriasCatalog();
+            }
+
+            return _instance;
+        }
+    }
+    
     /// <summary> Constructor de la clase, inicia la lista de las categorías </summary>
-    public CategoriasCatalog()
+    private CategoriasCatalog()
     {
         this.Categorias = new List<Categoria>();
+    }
+
+    public static CategoriasCatalog GetInstance()
+    {
+        return CategoriasCatalog.Instance;
     }
 
     /// <summary> Método para conocer las categorias </summary>

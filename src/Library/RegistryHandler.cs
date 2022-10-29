@@ -2,8 +2,34 @@ namespace Library;
 using System;
 
 /// <summary> Clase para manejar el registro </summary>
-public class RegistryHandler {
-    private List<Usuario> usuarios = new();
+public class RegistryHandler
+{
+    private List<Usuario> usuarios;
+    
+    private static RegistryHandler? _instance;
+
+    private static RegistryHandler Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new RegistryHandler();
+            }
+
+            return _instance;
+        }
+    }
+    
+    private RegistryHandler()
+    {
+        this.usuarios = new();
+    }
+
+    public static RegistryHandler GetInstance()
+    {
+        return RegistryHandler.Instance;
+    }
 
     // TODO documentar que el "fechaNacimiento" se tiene que introducir como "año,mes,dia". Idem para la cedula, correo, etc
     /// <summary> Método para registrar un trabajador </summary>
@@ -140,17 +166,14 @@ public class RegistryHandler {
     /// <param name="apellido"> Apellido del usuario </param>
     /// <param name="contraseña"> Contraseña del usuario </param>
     /// <returns> Devuelve el <see cref="Usuario"/> que coincida con los parámetros dados </returns>
-    public Usuario GetUsuario(string nombre, string apellido, string contraseña)
+    public Usuario GetUsuario(string nickname, string contraseña)
     {
         foreach (Usuario user in usuarios)
         {
-            if (user.Nombre.Equals(nombre) && user.Apellido.Equals(apellido))
+            if (user.Nick.Equals(nickname) && user.VerifyContraseña(contraseña))
             {
-                if (user.VerifyContraseña(contraseña))
-                {
-                    return user;
-                }
-            }
+                return user;
+             }
         }
         throw (new ArgumentException("Los datos introducidos no coinciden con ningun usuario"));
     }

@@ -4,8 +4,29 @@ namespace Library;
 
 /// <summary> Clase para manejar el catálogo de ofertas </summary>
 public class OfertasHandler{
+    // TODO refactorizar catalog a "_catalog"
+    private CategoriasCatalog catalog = CategoriasCatalog.GetInstance();
     
-    private CategoriasCatalog catalog = new CategoriasCatalog();
+    private static OfertasHandler? _instance;
+
+    private static OfertasHandler Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new OfertasHandler();
+            }
+
+            return _instance;
+        }
+    }
+
+    private OfertasHandler(){}
+    public static OfertasHandler GetInstance()
+    {
+        return OfertasHandler.Instance;
+    }
 
     /// <summary> Constructor de la clase </summary>
     /// <param name="CategoryDesc"> Descripción de la categoría </param>

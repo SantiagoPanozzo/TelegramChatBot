@@ -4,7 +4,7 @@ using System.Text;
 
 /// <summary> Clase abstracta <see cref="Usuario"/> 
 /// para que luego hereden <see cref="Administrador"/>, <see cref="Trabajador"/> y <see cref="Empleador"/> </summary>
-public abstract class Usuario {
+public abstract class Usuario : IDesactivable {
     
     public string Nick { get; set; }
     public string Nombre {get; set;}
@@ -17,7 +17,6 @@ public abstract class Usuario {
     private bool Activo { get; set; }
     private string Contraseña { get; set; }
     protected TipoDeUsuario Tipo { get; set; }
-
 
     /// <summary> Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador </summary>
     /// <returns> Retorna el valor indicado, teniendo en cuenta el enum <see cref="TipoDeUsuario"/> 
@@ -35,27 +34,7 @@ public abstract class Usuario {
         contacto.Append($"Teléfono: {this.Telefono}");
         return contacto.ToString();
     }
-
-
-    /// <summary> Checkea si el usuario está activo </summary>
-    /// <returns> Retorna un valor de bool, True si está activo o False si no lo está </returns>
-    public bool isActivo()
-    {
-        return this.Activo;
-    }
-
-    /// <summary> Método para desactivar un usuario </summary>
-    public void Deactivate()
-    {
-        this.Activo = false;
-    }
-
-    /// <summary> Método para activar un usuario </summary>
-    public void ReActivate()
-    {
-        this.Activo = true;
-    }
-
+    
     /// <summary> Método para settear la contraseña </summary>
     protected void SetContraseña(string contraseña)
     {
@@ -69,5 +48,30 @@ public abstract class Usuario {
     {
         // Idem de SetContraseña
         return this.Contraseña.Equals(contraseña);
+    }
+
+    /// <summary> Checkea si el usuario está activo </summary>
+    /// <returns> Retorna un valor de bool, True si está activo o False si no lo está </returns>
+    public bool IsActive()
+    {
+        return this.Activo;
+    }
+
+    /// <summary> Método para desactivar un usuario </summary>
+    public void DarDeBaja(Usuario user)
+    {
+        if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            this.Activo = false;
+        }
+    }
+
+    /// <summary> Método para activar un usuario </summary>
+    public void Reactivar(Usuario user)
+    {
+        if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            this.Activo = true;
+        }
     }
 }
