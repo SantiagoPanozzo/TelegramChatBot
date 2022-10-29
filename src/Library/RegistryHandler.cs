@@ -177,4 +177,32 @@ public class RegistryHandler
         }
         throw (new ArgumentException("Los datos introducidos no coinciden con ningun usuario"));
     }
+
+    public List<string> GetTrabajadores()
+    {
+        List<string> Trabajadores = new();
+        foreach (Usuario usuario in usuarios)
+        {
+            if (usuario.GetTipo().Equals(TipoDeUsuario.Trabajador))
+            {
+                Trabajadores.Add(usuario.Nick);
+            }
+        }
+
+        return Trabajadores;
+    }
+    
+    public List<string> GetEmpleadores()
+    {
+        List<string> Empleadores = new();
+        foreach (Usuario usuario in usuarios)
+        {
+            if (usuario.GetTipo().Equals(TipoDeUsuario.Trabajador))
+            {
+                Empleadores.Add(usuario.Nick);
+            }
+        }
+
+        return Empleadores;
+    }
 }

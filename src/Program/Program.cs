@@ -6,7 +6,9 @@ using System;
 
 class Program {
     public static void Main() {
-        /* CategoriaPrinter catPrinter = new();
+        /*
+         
+        CategoriaPrinter catPrinter = new();
         List<Categoria> a = new();
 
         Categoria c1 = new("Hogar");
@@ -17,7 +19,8 @@ class Program {
         a.Add(c2);
         a.Add(c3);
 
-        catPrinter.PrintCatalog(a); */
+        
+        catPrinter.PrintCatalog(a); 
         Administrador a1 = new("nick", "contra", "tel", "a@b.c");
 
         //OfertaDeServicioPrinter ofePrinter = new();
@@ -41,5 +44,7 @@ class Program {
         o1.DarDeBaja(a1);
 
         //ofePrinter.PrintCatalog(ch.Catalogo);
+        
+        */
     }
 }
