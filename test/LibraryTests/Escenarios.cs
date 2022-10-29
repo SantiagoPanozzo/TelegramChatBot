@@ -150,7 +150,7 @@ public class Escenarios
         // Act
     
         OfertaDeServicio ofertaDeServicio = ofertaDeServicio(ubicacion);
-        bool ubicación = OfertaDeServicio.Ubicación;
+        bool ubicación = OfertaDeServicio.Ubicacion;
 
         // Assert
           Assert.That(result.Equals(ubicación));
