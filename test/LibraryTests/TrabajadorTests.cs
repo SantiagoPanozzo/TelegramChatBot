@@ -1,8 +1,7 @@
 namespace LibraryTests;
-using Library;
 
-/// <summary> Tests de la clase <see cref="Administrador"> </summary>
-public class AdministradorTests
+/// <summary> Tests de la clase <see cref="Trabajador"> </summary>
+public class TrabajadorTests
 {
     [SetUp]
     public void Setup() {}
@@ -13,4 +12,3 @@ public class AdministradorTests
         Assert.Pass();
     }
 }
-

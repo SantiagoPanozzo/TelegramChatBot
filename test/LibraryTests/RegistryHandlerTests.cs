@@ -1,8 +1,8 @@
 namespace LibraryTests;
 using Library;
 
-/// <summary> Tests de la clase <see cref="Administrador"> </summary>
-public class AdministradorTests
+/// <summary> Tests de la clase <see cref="RegistryHandler"> </summary>
+public class RegistryHandlerTests
 {
     [SetUp]
     public void Setup() {}
@@ -13,4 +13,3 @@ public class AdministradorTests
         Assert.Pass();
     }
 }
-

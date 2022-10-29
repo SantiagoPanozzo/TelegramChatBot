@@ -2,7 +2,7 @@ namespace Library;
 using System;
 using System.Text;
 
-/// <summary> Clase empleador que hereda de <see cref="Usuario"/> </summary>
+/// <summary> Clase <see cref="Empleador"/> que hereda de <see cref="Usuario"/> </summary>
 public class Empleador:Usuario,ICalificable{
     
     private List<Calificacion> Reputacion { get; set; }
