@@ -1,9 +1,4 @@
 namespace LibraryTests;
-
-
-public class CategoriaTests
-{
-
 using Library;
 
 /// <summary> Tests de la clase <see cref="Categoria"> </summary>
@@ -12,8 +7,6 @@ public class CategoriaTests{
     public void Setup() {}
 
     [Test]
-    public void Test1()
-    {
-        Assert.Pass();
+    public void Test1() {
     }
 }
