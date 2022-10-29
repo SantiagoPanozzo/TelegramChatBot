@@ -1,9 +1,9 @@
 namespace Library;
 
-/// <summary> Clase que representa una oferta de sevicio </summary>
+/// <summary> Clase que representa una oferta de servicio </summary>
 public class OfertaDeServicio
 {
-    public Trabajador Ofertante { get; set; }
+    private Trabajador Ofertante { get; set; }
     public string Descripcion { get; set; }
     public string Empleo { get; set; }
     public double Precio { get; set; }
@@ -12,6 +12,7 @@ public class OfertaDeServicio
     private int _id; // TODO implementar IDs, placeholder
     private static int Instancias { get; set; } = 0;
     private bool Activa { get; set; }
+    private Tuple<double,double> Ubicacion { get; set; }
 
     /// <summary> Constructor de la clase </summary>
     /// <param name="ofertante"> Ofertante de la oferta </param>
@@ -26,6 +27,7 @@ public class OfertaDeServicio
         this.Precio = precio;
         OfertaDeServicio.Instancias++;
         this._id = Instancias;
+        this.Ubicacion = Ofertante.Ubicacion;
     }
 
     /// <summary> Método para obtener id de <see cref="OfertaDeServicio"/> </summary>
@@ -40,6 +42,16 @@ public class OfertaDeServicio
     public bool IsActiva()
     {
         return this.Activa;
+    }
+
+    public Tuple<double, double> GetUbicacion()
+    {
+        return this.Ubicacion;
+    }
+
+    public string GetContacto()
+    {
+        return Ofertante.GetContacto();
     }
 
     /// <summary> Método para dar de baja un <see cref="Usuario"/> </summary>
