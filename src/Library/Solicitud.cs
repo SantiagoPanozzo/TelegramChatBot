@@ -1,7 +1,7 @@
 namespace Library;
 
 /// <summary> Clase <see cref="Solicitud"/> para iniciar una <see cref="OfertaDeServicio"/> </summary>
-public class Solicitud : IDesactivable{
+public class Solicitud : IDesactivable, IActualizable{
     public OfertaDeServicio Oferta { get; set;}
     public Aceptacion Aceptada { get; set;}
     public DateTime FechaAceptada { get; set;}

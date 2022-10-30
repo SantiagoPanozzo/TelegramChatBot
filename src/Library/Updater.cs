@@ -46,7 +46,7 @@ public class Updater
     private void BaseUpdate(DateTime fecha, RegistryHandler registryHandler, OfertasHandler ofertasHandler,
         ContratoHandler contratoHandler)
     {
-        foreach (Solicitud solicitud in contratoHandler.Catalogo.Solicitudes)
+        foreach (IActualizable solicitud in contratoHandler.Catalogo.Solicitudes)
         {
             solicitud.Update(DateTime.Now);
         }
