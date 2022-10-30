@@ -46,8 +46,8 @@ public class Categoria : IDesactivable
 
     /// <summary> Método para conocer la lista de ofertas </summary>
     /// <returns> Retorna la lista con las ofertas agregadas </returns>
-    public List<OfertaDeServicio> getOfertas()
-    { // TODO refactorizar para que cumpla con Case (GetOfertas())
+    public List<OfertaDeServicio> GetOfertas()
+    {
         return this.Ofertas;
     }
 

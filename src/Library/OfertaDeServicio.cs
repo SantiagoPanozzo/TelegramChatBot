@@ -10,7 +10,7 @@ public class OfertaDeServicio : IDesactivable
     public double Precio { get; set; }
     public Calificacion Rate { get; set; }
     public bool Disponible { get; set; }
-    private int _id; // TODO implementar IDs, placeholder
+    private int _id;
     private static int Instancias { get; set; } = 0;
     private bool Activa { get; set; }
     private Tuple<double,double> Ubicacion { get; set; }
@@ -65,7 +65,7 @@ public class OfertaDeServicio : IDesactivable
     /// <summary> Método para calificar la oferta en cuestión </summary>
     /// <param name="rate"> Valor de <see cref="Calificacion"/> </param>
     public void RateMe(Calificacion rate)
-    { // TODO test
+    {
         if(!this.Rate.Equals(Calificacion.NoCalificado))
         {
             this.Rate = rate;

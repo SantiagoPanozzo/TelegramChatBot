@@ -52,7 +52,6 @@ public class CategoriasCatalog
 
     }
 
-    //TODO
     /// <summary> Método para obtener una categoría por descripción </summary>
     /// <param name="descripcion"> Descripción filtro para la busqueda </param>
     /// <returns> Devuelve <see cref="Categoria"/> según el filtro de la descripción </returns>
@@ -88,10 +87,14 @@ public class CategoriasCatalog
     /// <param name="descripcion"> Descripción de la categoría </param>
     public Categoria AddCategoria(Usuario user, string descripcion)
     {
-        // TODO implementar que solo funcione si el usuario es admin
-        Categoria nuevaCategoria = new Categoria(descripcion);
-        this.Categorias.Add(nuevaCategoria);
-        return nuevaCategoria;
+        if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            Categoria nuevaCategoria = new Categoria(descripcion);
+            this.Categorias.Add(nuevaCategoria);
+            return nuevaCategoria;
+        }
+
+        throw (new("Solo un administrador puede agregar categorías"));
     }
 
     /// <summary> Método para eliminar una categoría </summary>
@@ -99,7 +102,11 @@ public class CategoriasCatalog
     /// <param name="categoria"> <see cref="Categoria"/> que se desea eliminar </param>
     public void RemoveCategoria(Usuario user, Categoria categoria)
     {
-        // TODO implementar que solo funcione si el usuario es admin
-        this.Categorias.Remove(categoria);
+        if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            this.Categorias.Remove(categoria);
+        }
+
+        throw (new("Solo un administrador puede quitar categorías"));
     }
 }

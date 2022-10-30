@@ -12,7 +12,7 @@ public abstract class Usuario : IDesactivable {
     public DateTime FechaNacimiento {get; set;}
     public string Cedula {get; set;}
     public string Telefono {get; set;}
-    public Tuple<double,double> Ubicacion {get; set;} // TODO testear cuando tengamos una clase que herede de Usuario
+    public Tuple<double,double> Ubicacion {get; set;}
     public string Correo { get; set; }
     private bool Activo { get; set; }
     private string Contraseña { get; set; }

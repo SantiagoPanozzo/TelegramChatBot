@@ -5,7 +5,7 @@ public class Solicitud : IDesactivable{
     public OfertaDeServicio Oferta { get; set;}
     public Aceptacion Aceptada { get; set;}
     public DateTime FechaAceptada { get; set;}
-    private Empleador Emp { get; set;} // TODO inconsistencia al tener una instancia de empleador pero no de trabajador ? ver si vale la pena cambiar a solo tener el nick
+    private Empleador Emp { get; set;} 
     public string Trab { get; set; }
     private DateTime FechaLimiteTrabajador { get; set; }
     private DateTime FechaLimiteEmpleador { get; set; }

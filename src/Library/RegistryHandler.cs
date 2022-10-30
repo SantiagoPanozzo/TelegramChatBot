@@ -40,7 +40,7 @@ public class RegistryHandler
     /// <param name="cedula"> Cédula del usuario </param> 
     /// <param name="telefono"> Teléfono del usuario </param> 
     /// <param name="correo"> Correo electrónico del usuario </param> 
-    /// <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
+    /// <param name="ubicacion"> Ubicación </param>
     /// <returns> Devuelve la instancia de <see cref="Trabajador"/> creada </returns>
     public Trabajador RegistrarTrabajador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, 
                                           string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
@@ -110,7 +110,7 @@ public class RegistryHandler
     /// <param name="correo"> Correo del <see cref="Usuario"/> </param>
     /// <returns> Devuelve true si el formato del correo es válido, de lo contrario devuelve false </returns>
     public bool VerificarCorreo(string correo)
-    { // TODO testear
+    {
         bool arroba = false;
         bool punto = false;
         foreach (char caracter in correo)
@@ -133,7 +133,7 @@ public class RegistryHandler
     /// <param name="cedula"> Cédula del <see cref="Usuario"/> </param>
     /// <returns> Devuelve true si el formato es válido, de lo contrario devuelve false </returns>
     public bool VerificarCedula(string cedula)
-    { // TODO testear
+    {
         cedula = cedula.Replace(".", string.Empty);
         cedula = cedula.Replace("-", string.Empty);
         string validos = "0123456789";
@@ -176,6 +176,19 @@ public class RegistryHandler
              }
         }
         throw (new ArgumentException("Los datos introducidos no coinciden con ningun usuario"));
+    }
+
+    public Calificacion GetReputacion(string nickname)
+    {
+        foreach (Usuario user in usuarios)
+        {
+            if(user.Nick.Equals(nickname))
+            {
+                if (user is Trabajador) return ((Trabajador)user).GetReputacion();
+                if (user is Empleador) return ((Empleador)user).GetReputacion();
+            }
+        }
+        throw (new("Usuario no encontrado"));
     }
     
     public Dictionary<string, string> GetUserInfo(string nickname)
@@ -232,5 +245,19 @@ public class RegistryHandler
         }
 
         return empleadores;
+    }
+
+    private List<ICalificable> NonAdmins()
+    {
+        List<ICalificable> nonAdmins = new();
+        foreach (Usuario user in usuarios)
+        {
+            if (user is ICalificable)
+            {
+                nonAdmins.Add((ICalificable)user);
+            }
+        }
+
+        return NonAdmins();
     }
 }
