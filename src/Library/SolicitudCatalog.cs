@@ -35,10 +35,11 @@ public class SolicitudCatalog
     /// <summary> Método para agregar una <see cref="Solicitud"> al catálogo </summary>
     /// <param name="Oferta"> <see cref="OfertaDeServicio"> que se busca </param>
     /// <param name="empleador"> <see cref="Empleador"> que realiza la <see cref="Solicitud"> </param>
-    public void AddSolicitud(OfertaDeServicio Oferta, Empleador empleador){
-
-        Solicitudes.Add(new Solicitud(Oferta, empleador) );
-
+    public Solicitud AddSolicitud(OfertaDeServicio Oferta, Empleador empleador)
+    {
+        Solicitud solicitud = new Solicitud(Oferta, empleador);
+        Solicitudes.Add(solicitud);
+        return solicitud;
     }
 
     /// <summary> Método para eliminar una <see cref="Solicitud"> </summary>

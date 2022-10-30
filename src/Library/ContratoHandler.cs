@@ -1,3 +1,5 @@
+using System.Security.Authentication;
+
 namespace Library;
 using System;
 
@@ -35,14 +37,22 @@ public class ContratoHandler
     /// <summary> Método que crea una solicitud de trabajo </summary>
     /// <param name="oferta"> Oferta en cuestión </param>
     /// <param name="emp"> Empleador que va a realizar la solicitud </param>
-    public void SolicitarTrabajador(OfertaDeServicio oferta, Empleador emp){
-        Catalogo.AddSolicitud(oferta, emp);
+    public Solicitud SolicitarTrabajador(OfertaDeServicio oferta, Empleador emp){
+        Solicitud solicitud = Catalogo.AddSolicitud(oferta, emp);
+        return solicitud;
     }
 
     /// <summary> Método para aceptar una solicitud </summary>
     /// <param name="solicitud"> Variable de tipo <see cref="Solicitud"> para aceptar </param>
-    public void AceptarSolicitud(Solicitud solicitud){
-        solicitud.RecibirRespuesta(Aceptacion.Aceptada);
+    public void AceptarSolicitud(Usuario user, Solicitud solicitud){
+        if(user.Nick.Equals(solicitud.Oferta.GetOfertante()))
+        {
+            solicitud.RecibirRespuesta(Aceptacion.Aceptada);
+        }
+        else
+        {
+            throw (new AuthenticationException("El trabajador no coincide con el de la oferta"));
+        }
     }
 
     /// <summary> Método para rechazar una solicitud </summary>

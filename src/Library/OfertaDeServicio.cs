@@ -30,6 +30,7 @@ public class OfertaDeServicio : IDesactivable
         this.Activa = true;
         this._id = Instancias;
         this.Ubicacion = Ofertante.Ubicacion;
+        this.Rate = Calificacion.NoCalificado;
     }
 
     /// <summary> Método para obtener id de <see cref="OfertaDeServicio"/> </summary>
@@ -39,7 +40,7 @@ public class OfertaDeServicio : IDesactivable
         return this._id;
     }
 
-    public string GetUsuario()
+    public string GetOfertante()
     {
         return this.Ofertante.Nick;
     }
@@ -65,8 +66,11 @@ public class OfertaDeServicio : IDesactivable
     /// <param name="rate"> Valor de <see cref="Calificacion"/> </param>
     public void RateMe(Calificacion rate)
     { // TODO test
-        this.Rate = rate;
-        this.Ofertante.Calificar(rate);
+        if(!this.Rate.Equals(Calificacion.NoCalificado))
+        {
+            this.Rate = rate;
+            this.Ofertante.Calificar(rate);
+        }
     }
 
     /// <summary> Método para obtener la calificación dada a la oferta tras ser finalizada </summary>
