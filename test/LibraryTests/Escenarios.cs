@@ -38,10 +38,10 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "1234", "abc@abc.com");
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
-        ofertasHandler.CrearCategoria(admin, "Tareas");
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Tareas");
         Trabajador elpepe = registryHandler.RegistrarTrabajador("Pepe", "Pepe", "Elpepe", "elpepe", "2020,10,1", "12345678", "1234",
             "elpepe@elpepe.elpepe", new Tuple<double, double>(31,9393));
-        OfertaDeServicio oferta = ofertasHandler.Ofertar("Tareas", elpepe, "un capo", "limpiador", 10);
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(categoria.GetId(), elpepe, "un capo", "limpiador", 10);
         int id = oferta.GetId();
         bool expected = false;
         
@@ -87,10 +87,10 @@ public class Escenarios
             "2001 3 14","1234567","099555555",
             "manoloreal@gmail.com",new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
         Administrador admin = registryHandler.RegistrarAdministrador("elpepeAdmin", "1234", "1234", "god@dog.com");
-        ofertasHandler.CrearCategoria(admin,"Tareas del hogar");
+        Categoria categoria = ofertasHandler.CrearCategoria(admin,"Tareas del hogar");
 
         // Act
-        OfertaDeServicio oferta = ofertasHandler.Ofertar("Tareas del hogar",(Trabajador)miUsuario,"El mejor limpiador de Salto","Limpiador",9000);
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(categoria.GetId(),(Trabajador)miUsuario,"El mejor limpiador de Salto","Limpiador",9000);
         OfertaDeServicio expected = oferta;
         OfertaDeServicio result = ofertasHandler.GetOfertaById(oferta.GetId());
         
@@ -240,7 +240,7 @@ public class Escenarios
         Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
         Trabajador pepe = registryHandler.RegistrarTrabajador("a", "a", "a", "a", "2020,2,2", "1234556", "12345", "a@a.a",
             new Tuple<double, double>(1, 1));
-        OfertaDeServicio oferta = ofertasHandler.Ofertar("categoria", pepe ,"soy pro", "gamer", 10);
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(cat.GetId(), pepe ,"soy pro", "gamer", 10);
         Empleador mrbossman = registryHandler.RegistrarEmpleador("mr", "bossman", "eljefe", "lospoios", "2010,10,10",
             "1234567", "1234", "gus@lospoiosermanos.com", new Tuple<double, double>(10, 10));
         OfertaDeServicio expected = oferta;
@@ -272,7 +272,8 @@ public class Escenarios
         Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
             "1234567",
             "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar("Categoria", trabajador, "Descripcion", "Empleo", 1000);
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
         Calificacion expected = Calificacion.Sobresaliente;
         
         // Act
@@ -304,7 +305,8 @@ public class Escenarios
         Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
             "1234567",
             "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar("Categoria", trabajador, "Descripcion", "Empleo", 1000);
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
         Calificacion expected = Calificacion.Sobresaliente;
         
         // Act
@@ -337,7 +339,8 @@ public class Escenarios
         Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
             "1234567",
             "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar("Categoria", trabajador, "Descripcion", "Empleo", 1000);
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
         Calificacion expected = Calificacion.Bueno;
 
         // Act
@@ -372,7 +375,8 @@ public class Escenarios
         Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
             "1234567",
             "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar("Categoria", trabajador, "Descripcion", "Empleo", 1000);
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
         Calificacion expected = Calificacion.Bueno;
         
         // Act
@@ -403,8 +407,8 @@ public class Escenarios
         Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
             "1970 1 1", "1234567",
             "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        OfertaDeServicio ofertaDeServicio =
-            ofertasHandler.Ofertar("Categoria", trabajador, "Descripcion", "Empleo", 1000);
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
         Calificacion expected = Calificacion.NoCalificado;
 
         // Act

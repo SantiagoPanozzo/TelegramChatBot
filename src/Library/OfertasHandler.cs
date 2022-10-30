@@ -34,9 +34,9 @@ public class OfertasHandler{
     /// <param name="empleo"> Rubro de la oferta </param>
     /// <param name="precio"> Precio de la oferta </param>
     /// <returns> Devuelve la oferta de tipo <see cref="OfertaDeServicio"/> </returns>
-    public OfertaDeServicio Ofertar(string CategoryDesc, Trabajador ofertante, string descripcion, string empleo, double precio){
+    public OfertaDeServicio Ofertar(int CategoryId, Trabajador ofertante, string descripcion, string empleo, double precio){
         /// <remarks> Por patron Creator se crea instancia de oferta de servicio en esta clase </remarks>      
-        Categoria Category = this._catalog.GetCategoria(CategoryDesc);
+        Categoria Category = this._catalog.GetCategoriaById(CategoryId);
         OfertaDeServicio Oferta = new OfertaDeServicio(ofertante, descripcion, empleo, precio);
         Category.AddOferta(Oferta);
         return Oferta;

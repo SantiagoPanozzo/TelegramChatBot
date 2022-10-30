@@ -62,16 +62,21 @@ public class OfertaDeServicio : IDesactivable
         return Ofertante.GetContacto();
     }
 
+    public bool IsRated()
+    {
+        return (!this.Rate.Equals(Calificacion.NoCalificado));
+    }
+
     /// <summary> Método para calificar la oferta en cuestión </summary>
     /// <param name="rate"> Valor de <see cref="Calificacion"/> </param>
     public void RateMe(Calificacion rate)
     {
-        if(!this.Rate.Equals(Calificacion.NoCalificado))
+        if(!this.IsRated())
         {
             this.Rate = rate;
             this.Ofertante.Calificar(rate);
         }
-    }
+    } 
 
     /// <summary> Método para obtener la calificación dada a la oferta tras ser finalizada </summary>
     /// <returns> Devuelve la <see cref="Calificacion"/> correspondiente de la oferta </returns>

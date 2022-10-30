@@ -49,6 +49,7 @@ public class RegistryHandler
         if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
         {
             Trabajador nuevoTrabajador = new Trabajador(nombre, apellido, nick, contraseña, nacimiento, cedula, telefono, correo, ubicacion);
+            usuarios.Add(nuevoTrabajador);
             return nuevoTrabajador;
         }
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
@@ -71,6 +72,7 @@ public class RegistryHandler
         if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
         {
             Empleador nuevoEmpleador = new Empleador(nombre, apellido, nick, contraseña, nacimiento, cedula, telefono, correo, ubicacion);
+            usuarios.Add(nuevoEmpleador);
             return nuevoEmpleador;
         }
 
@@ -89,6 +91,7 @@ public class RegistryHandler
         if (VerificarCorreo(correo) && VerificarNick(nick))
         {
             Administrador nuevoAdministrador = new Administrador(nick, contraseña, telefono, correo);
+            usuarios.Add(nuevoAdministrador);
             return nuevoAdministrador;
         }
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));

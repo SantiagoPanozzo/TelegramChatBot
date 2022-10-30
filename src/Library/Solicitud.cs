@@ -92,6 +92,10 @@ public class Solicitud : IDesactivable{
     /// <param name="siono"> Toma un valor del enum <see cref="Aceptacion"/> </param>
     public void RecibirRespuesta(Aceptacion siONo) {
         this.Aceptada = siONo;
+        if (this.Aceptada.Equals(Aceptacion.Aceptada))
+        {
+            IniciarTrabajo();
+        }
     }
 
     /// <summary> Método para conocer si una oferta fue calificada </summary>
@@ -142,9 +146,10 @@ public class Solicitud : IDesactivable{
         {
             Oferta.RateMe(Calificacion.Bueno);
         }
-        if (!this.IsEmpleadorRated() & CanEmpleadorBeAutoRated(fechaActual))
+        if (!this.IsEmpleadorRated() && CanEmpleadorBeAutoRated(fechaActual))
         {
             this.Emp.Calificar(Calificacion.Bueno);
+            this.EmpleadorRate = Calificacion.Bueno;
         }
     }
 
@@ -155,6 +160,6 @@ public class Solicitud : IDesactivable{
     }
     
     public bool CanEmpleadorBeAutoRated(DateTime fechaActual) {
-        return this.FechaLimiteTrabajador.CompareTo(fechaActual).Equals(-1);
+        return this.FechaLimiteEmpleador.CompareTo(fechaActual).Equals(-1);
     }
 }
