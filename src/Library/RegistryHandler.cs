@@ -4,7 +4,7 @@ using System;
 /// <summary> Clase para manejar el registro </summary>
 public class RegistryHandler
 {
-    private List<Usuario> usuarios;
+    private UsuariosCatalog usuarios;
     
     private static RegistryHandler? _instance;
 
@@ -31,7 +31,7 @@ public class RegistryHandler
     
     private RegistryHandler()
     {
-        this.usuarios = new();
+        this.usuarios = UsuariosCatalog.GetInstance();
     }
 
     public static RegistryHandler GetInstance()
@@ -56,8 +56,8 @@ public class RegistryHandler
         DateTime nacimiento = DateTime.Parse(fechaNacimiento);
         if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
         {
-            Trabajador nuevoTrabajador = new Trabajador(nombre, apellido, nick, contraseña, nacimiento, cedula, telefono, correo, ubicacion);
-            usuarios.Add(nuevoTrabajador);
+            Trabajador nuevoTrabajador = (Trabajador)usuarios.AddUsuario( TipoDeUsuario.Trabajador, nombre,  apellido,  nick,  contraseña,  nacimiento, 
+                 cedula,  telefono,  correo,  ubicacion);
             return nuevoTrabajador;
         }
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
@@ -79,8 +79,8 @@ public class RegistryHandler
         DateTime nacimiento = DateTime.Parse(fechaNacimiento);
         if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
         {
-            Empleador nuevoEmpleador = new Empleador(nombre, apellido, nick, contraseña, nacimiento, cedula, telefono, correo, ubicacion);
-            usuarios.Add(nuevoEmpleador);
+            Empleador nuevoEmpleador = (Empleador)usuarios.AddUsuario( TipoDeUsuario.Empleador, nombre,  apellido,  nick,  contraseña,  nacimiento, 
+                cedula,  telefono,  correo,  ubicacion);
             return nuevoEmpleador;
         }
 
@@ -98,8 +98,7 @@ public class RegistryHandler
     {
         if (VerificarCorreo(correo) && VerificarNick(nick))
         {
-            Administrador nuevoAdministrador = new Administrador(nick, contraseña, telefono, correo);
-            usuarios.Add(nuevoAdministrador);
+            Administrador nuevoAdministrador = (Administrador)usuarios.AddAdminstrador(nick, contraseña, telefono, correo);
             return nuevoAdministrador;
         }
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
@@ -110,7 +109,7 @@ public class RegistryHandler
     /// <returns> Devuelve true si no existe otro <see cref="Usuario"/> con ese nick, de lo contrario devuelve false </returns>
     public bool VerificarNick(string nick)
     {
-        foreach (Usuario usuario in usuarios)
+        foreach (Usuario usuario in usuarios.GetUsuarios())
         {
             if (usuario.Nick.Equals(nick)) return false;
         }
@@ -163,12 +162,15 @@ public class RegistryHandler
     
     /// <summary> Método para eliminar un <see cref="Usuario"/> </summary>
     /// <param name="usuario"> <see cref="Usuario"/> que se desea eliminar </param>
-    public void RemoveUsuario(Usuario usuario) {
-        if (!usuarios.Contains(usuario)) {
+    public void RemoveUsuario(Usuario admin, Usuario usuarioEliminar)
+    {
+        if (!admin.GetTipo().Equals(TipoDeUsuario.Administrador))
+            throw new("Solo un administrador puede eliminar usuarios");
+        if (!usuarios.GetUsuarios().Contains(usuarioEliminar)) {
             throw new ArgumentNullException("El usuario ingresado no existe");
         }
         else {
-            usuarios.Remove(usuario);
+            usuarios.RemoveUsuario(admin,usuarioEliminar);
         }
     }
 
@@ -179,7 +181,7 @@ public class RegistryHandler
     /// <returns> Devuelve el <see cref="Usuario"/> que coincida con los parámetros dados </returns>
     public Usuario GetUsuario(string nickname, string contraseña)
     {
-        foreach (Usuario user in usuarios)
+        foreach (Usuario user in usuarios.GetUsuarios())
         {
             if (user.Nick.Equals(nickname) && user.VerifyContraseña(contraseña))
             {
@@ -191,7 +193,7 @@ public class RegistryHandler
 
     public Calificacion GetReputacion(string nickname)
     {
-        foreach (Usuario user in usuarios)
+        foreach (Usuario user in usuarios.GetUsuarios())
         {
             if(user.Nick.Equals(nickname))
             {
@@ -218,7 +220,7 @@ public class RegistryHandler
     {
         Usuario? user = null;
         try {
-            foreach (Usuario usuario in usuarios) {
+            foreach (Usuario usuario in usuarios.GetUsuarios()) {
                 if (usuario.Nick.Equals(nickname)) {
                     user = usuario;
                 }
@@ -233,7 +235,7 @@ public class RegistryHandler
     public List<string> GetTrabajadores()
     {
         List<string> trabajadores = new();
-        foreach (Usuario usuario in usuarios)
+        foreach (Usuario usuario in usuarios.GetUsuarios())
         {
             if (usuario.GetTipo().Equals(TipoDeUsuario.Trabajador))
             {
@@ -247,7 +249,7 @@ public class RegistryHandler
     public List<string> GetEmpleadores()
     {
         List<string> empleadores = new();
-        foreach (Usuario usuario in usuarios)
+        foreach (Usuario usuario in usuarios.GetUsuarios())
         {
             if (usuario.GetTipo().Equals(TipoDeUsuario.Trabajador))
             {
@@ -261,7 +263,7 @@ public class RegistryHandler
     private List<ICalificable> NonAdmins()
     {
         List<ICalificable> nonAdmins = new();
-        foreach (Usuario user in usuarios)
+        foreach (Usuario user in usuarios.GetUsuarios())
         {
             if (user is ICalificable)
             {

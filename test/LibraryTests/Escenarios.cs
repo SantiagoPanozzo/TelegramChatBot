@@ -21,6 +21,7 @@ public class Escenarios
         RegistryHandler.Wipe(root);
         Solicitud.Wipe(root);
         SolicitudCatalog.Wipe(root);
+        UsuariosCatalog.Wipe(root);
         Updater.Wipe(root);
     }
     
