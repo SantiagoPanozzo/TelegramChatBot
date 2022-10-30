@@ -4,8 +4,7 @@ namespace Library;
 
 /// <summary> Clase para manejar el catálogo de ofertas </summary>
 public class OfertasHandler{
-    // TODO refactorizar catalog a "_catalog"
-    private CategoriasCatalog catalog = CategoriasCatalog.GetInstance();
+    private CategoriasCatalog _catalog = CategoriasCatalog.GetInstance();
     
     private static OfertasHandler? _instance;
 
@@ -19,6 +18,14 @@ public class OfertasHandler{
             }
 
             return _instance;
+        }
+    }
+    
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            OfertasHandler._instance = null;
         }
     }
 
@@ -35,9 +42,9 @@ public class OfertasHandler{
     /// <param name="empleo"> Rubro de la oferta </param>
     /// <param name="precio"> Precio de la oferta </param>
     /// <returns> Devuelve la oferta de tipo <see cref="OfertaDeServicio"/> </returns>
-    public OfertaDeServicio Ofertar(string CategoryDesc, Trabajador ofertante, string descripcion, string empleo, double precio){
+    public OfertaDeServicio Ofertar(int CategoryId, Trabajador ofertante, string descripcion, string empleo, double precio){
         /// <remarks> Por patron Creator se crea instancia de oferta de servicio en esta clase </remarks>      
-        Categoria Category = this.catalog.GetCategoria(CategoryDesc);
+        Categoria Category = this._catalog.GetCategoriaById(CategoryId);
         OfertaDeServicio Oferta = new OfertaDeServicio(ofertante, descripcion, empleo, precio);
         Category.AddOferta(Oferta);
         return Oferta;
@@ -56,19 +63,18 @@ public class OfertasHandler{
     /// <returns> Devuelve el catálogo de <see cref="Categoria"/> </returns>
     public List<Categoria> GetCategorias()
     {
-        return this.catalog.GetCategorias();
+        return this._catalog.GetCategorias();
     }
 
     /// <summary> Método para crear una categoria </summary>
     /// <param name="user"> Identificación de <see cref="TipoDeUsuario"/> que implementa el método </param>
     /// <param name="descripcion"> Descripcioón de la <see cref="Categoria"/> </param>
-    /// <returns> Devuelve el catálogo actualizado con la nueva categoría </returns>
+    /// <returns> Devuelve la nueva instancia de categoría creada </returns>
     public Categoria CrearCategoria(Usuario user, string descripcion)
     {
-        // TODO test que esto solo funcione si el usuario es admin
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            return this.catalog.AddCategoria(user, descripcion);
+            return this._catalog.AddCategoria(user, descripcion);
         }
 
         throw (new AuthenticationException("Solo un administrador puede crear categorías"));
@@ -79,8 +85,12 @@ public class OfertasHandler{
     /// <param name="categoria"> <see cref="Categoria"/> que se desea eliminar </param>
     public void EliminarCategoria(Usuario user, Categoria categoria)
     {
-        //TODO implementar que solo funcione si el usuario es admin
-        this.catalog.RemoveCategoria(user, categoria);
+        if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            this._catalog.RemoveCategoria(user, categoria);
+        }
+
+        throw (new("Solo un administrador puede eliminar categorías"));
     }
 
     /// <summary> Método para obtener <see cref="OfertaDeServicio"/> </summary>
@@ -88,7 +98,7 @@ public class OfertasHandler{
     /// <returns> Devuelve todas las <see cref="OfertaDeServicio"/> que coincida con la categoría ingresada </returns>
     public List<OfertaDeServicio> GetOfertas(int categoriaId)
     {
-        return GetCategoriaById(categoriaId).getOfertas();
+        return GetCategoriaById(categoriaId).GetOfertas();
         throw (new ArgumentException("El id ingresado no coincide con ninguna categoria"));
 
     }
@@ -98,7 +108,7 @@ public class OfertasHandler{
     /// <returns> Devuelve la <see cref="OfertaDeServicio"/> que coincida con el id ingresado </returns>
     public OfertaDeServicio GetOfertaById(int id)
     {
-        return this.catalog.GetOfertaById(id);
+        return this._catalog.GetOfertaById(id);
         throw (new ArgumentException("El id ingresado no coincide con ninguna oferta de servicio"));
     }
 
@@ -107,7 +117,7 @@ public class OfertasHandler{
     /// <returns> Devuelve la <see cref="Categoria"/> que coincida con el id ingresado </returns>
     public Categoria GetCategoriaById(int id)
     {
-        return this.catalog.GetCategoriaById(id);
+        return this._catalog.GetCategoriaById(id);
         throw (new ArgumentException("El id ingresado no coincide con ninguna categoria"));
     }
 }

@@ -13,6 +13,6 @@ public class Administrador : Usuario {
         this.Telefono = telefono;
         this.Correo = correo;
         this.SetContraseña(contraseña);
-
+        this.Activo = true;
     }
 }

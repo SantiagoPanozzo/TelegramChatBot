@@ -10,7 +10,7 @@ public class OfertaDeServicio : IDesactivable
     public double Precio { get; set; }
     public Calificacion Rate { get; set; }
     public bool Disponible { get; set; }
-    private int _id; // TODO implementar IDs, placeholder
+    private int _id;
     private static int Instancias { get; set; } = 0;
     private bool Activa { get; set; }
     private Tuple<double,double> Ubicacion { get; set; }
@@ -30,6 +30,12 @@ public class OfertaDeServicio : IDesactivable
         this.Activa = true;
         this._id = Instancias;
         this.Ubicacion = Ofertante.Ubicacion;
+        this.Rate = Calificacion.NoCalificado;
+    }
+    
+    public static void Wipe(Administrador admin)
+    {
+        OfertaDeServicio.Instancias = 0;
     }
 
     /// <summary> Método para obtener id de <see cref="OfertaDeServicio"/> </summary>
@@ -39,9 +45,16 @@ public class OfertaDeServicio : IDesactivable
         return this._id;
     }
 
-    public string GetUsuario()
+    public string GetOfertante()
     {
         return this.Ofertante.Nick;
+    }
+
+    /// <summary> Método para obtener la reputación del ofertante </summary>
+    /// <returns> Devuelve la <see cref="Calificacion"/> del <see cref="Trabajador"/> ofertante </returns>
+    public Calificacion GetReputacion()
+    {
+        return Ofertante.GetReputacion();
     }
 
     public Tuple<double, double> GetUbicacion()
@@ -49,21 +62,29 @@ public class OfertaDeServicio : IDesactivable
         return this.Ubicacion;
     }
 
-    public string GetContacto()
+    public Dictionary<string, string> GetContacto()
     {
         return Ofertante.GetContacto();
+    }
+
+    public bool IsRated()
+    {
+        return (!this.Rate.Equals(Calificacion.NoCalificado));
     }
 
     /// <summary> Método para calificar la oferta en cuestión </summary>
     /// <param name="rate"> Valor de <see cref="Calificacion"/> </param>
     public void RateMe(Calificacion rate)
-    { // TODO test
-        this.Rate = rate;
-        this.Ofertante.Calificar(rate);
-    }
+    {
+        if(!this.IsRated())
+        {
+            this.Rate = rate;
+            this.Ofertante.Calificar(rate);
+        }
+    } 
 
-    /// <summary> Método para obtener una calificación </summary>
-    /// <returns> Devuelve una <see cref="Calificacion"/> según sea indicada </returns>
+    /// <summary> Método para obtener la calificación dada a la oferta tras ser finalizada </summary>
+    /// <returns> Devuelve la <see cref="Calificacion"/> correspondiente de la oferta </returns>
     public Calificacion GetCalificacion()
     {
         return this.Rate;

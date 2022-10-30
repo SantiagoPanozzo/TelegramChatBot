@@ -12,9 +12,9 @@ public abstract class Usuario : IDesactivable {
     public DateTime FechaNacimiento {get; set;}
     public string Cedula {get; set;}
     public string Telefono {get; set;}
-    public Tuple<double,double> Ubicacion {get; set;} // TODO testear cuando tengamos una clase que herede de Usuario
+    public Tuple<double,double> Ubicacion {get; set;}
     public string Correo { get; set; }
-    private bool Activo { get; set; }
+    protected bool Activo { get; set; }
     private string Contraseña { get; set; }
     protected TipoDeUsuario Tipo { get; set; }
 
@@ -27,14 +27,22 @@ public abstract class Usuario : IDesactivable {
 
     /// <summary> Método para obtener el contacto de un usuario </summary>
     /// <returns> Retorna un mensaje con los datos para contactar del usuario </returns>
-    public string GetContacto() {
-        StringBuilder contacto = new StringBuilder();
-        contacto.Append($"Nombre: {this.Nombre}\n");
-        contacto.Append($"Apellido: {this.Apellido}\n");
-        contacto.Append($"Teléfono: {this.Telefono}");
-        return contacto.ToString();
+    public Dictionary<string, string> GetContacto() {
+        Dictionary<string, string> info = this.GetPublicInfo();
+        info.Add("Telefono",this.Telefono);
+        info.Add("Correo",this.Correo);
+        return info;
     }
-    
+
+    public Dictionary<string, string> GetPublicInfo()
+    {
+        Dictionary<string, string> info = new Dictionary<string, string>();
+        info.Add("Nick", this.Nombre);
+        info.Add("Nombre", this.Nombre);
+        info.Add("Apellido", this.Apellido);
+        return info;
+    }
+
     /// <summary> Método para settear la contraseña </summary>
     protected void SetContraseña(string contraseña)
     {

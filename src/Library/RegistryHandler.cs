@@ -21,6 +21,14 @@ public class RegistryHandler
         }
     }
     
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            RegistryHandler._instance = null;
+        }
+    }
+    
     private RegistryHandler()
     {
         this.usuarios = new();
@@ -40,7 +48,7 @@ public class RegistryHandler
     /// <param name="cedula"> Cédula del usuario </param> 
     /// <param name="telefono"> Teléfono del usuario </param> 
     /// <param name="correo"> Correo electrónico del usuario </param> 
-    /// <param name="ubicacion"> Ubicación //TODO(ver como) del usuario </param>
+    /// <param name="ubicacion"> Ubicación </param>
     /// <returns> Devuelve la instancia de <see cref="Trabajador"/> creada </returns>
     public Trabajador RegistrarTrabajador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, 
                                           string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
@@ -49,6 +57,7 @@ public class RegistryHandler
         if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
         {
             Trabajador nuevoTrabajador = new Trabajador(nombre, apellido, nick, contraseña, nacimiento, cedula, telefono, correo, ubicacion);
+            usuarios.Add(nuevoTrabajador);
             return nuevoTrabajador;
         }
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
@@ -71,6 +80,7 @@ public class RegistryHandler
         if (VerificarCorreo(correo) && VerificarCedula(cedula) && VerificarNick(nick))
         {
             Empleador nuevoEmpleador = new Empleador(nombre, apellido, nick, contraseña, nacimiento, cedula, telefono, correo, ubicacion);
+            usuarios.Add(nuevoEmpleador);
             return nuevoEmpleador;
         }
 
@@ -89,6 +99,7 @@ public class RegistryHandler
         if (VerificarCorreo(correo) && VerificarNick(nick))
         {
             Administrador nuevoAdministrador = new Administrador(nick, contraseña, telefono, correo);
+            usuarios.Add(nuevoAdministrador);
             return nuevoAdministrador;
         }
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
@@ -110,7 +121,7 @@ public class RegistryHandler
     /// <param name="correo"> Correo del <see cref="Usuario"/> </param>
     /// <returns> Devuelve true si el formato del correo es válido, de lo contrario devuelve false </returns>
     public bool VerificarCorreo(string correo)
-    { // TODO testear
+    {
         bool arroba = false;
         bool punto = false;
         foreach (char caracter in correo)
@@ -133,7 +144,7 @@ public class RegistryHandler
     /// <param name="cedula"> Cédula del <see cref="Usuario"/> </param>
     /// <returns> Devuelve true si el formato es válido, de lo contrario devuelve false </returns>
     public bool VerificarCedula(string cedula)
-    { // TODO testear
+    {
         cedula = cedula.Replace(".", string.Empty);
         cedula = cedula.Replace("-", string.Empty);
         string validos = "0123456789";
@@ -176,5 +187,88 @@ public class RegistryHandler
              }
         }
         throw (new ArgumentException("Los datos introducidos no coinciden con ningun usuario"));
+    }
+
+    public Calificacion GetReputacion(string nickname)
+    {
+        foreach (Usuario user in usuarios)
+        {
+            if(user.Nick.Equals(nickname))
+            {
+                if (user is Trabajador) return ((Trabajador)user).GetReputacion();
+                if (user is Empleador) return ((Empleador)user).GetReputacion();
+            }
+        }
+        throw (new("Usuario no encontrado"));
+    }
+    
+    public Dictionary<string, string> GetUserInfo(string nickname)
+    {
+        Usuario user = GetUser(nickname);
+        return user.GetPublicInfo();
+    }
+
+    public Dictionary<string, string> GetUserContact(string nickname)
+    {
+        Usuario user = GetUser(nickname);
+        return user.GetContacto();
+    }
+
+    private Usuario GetUser(string nickname)
+    {
+        Usuario? user = null;
+        try {
+            foreach (Usuario usuario in usuarios) {
+                if (usuario.Nick.Equals(nickname)) {
+                    user = usuario;
+                }
+            }
+        }
+        catch(NullReferenceException) {
+            throw (new Exception("No se encontró el usuario"));
+        }
+        return user;
+    }
+
+    public List<string> GetTrabajadores()
+    {
+        List<string> trabajadores = new();
+        foreach (Usuario usuario in usuarios)
+        {
+            if (usuario.GetTipo().Equals(TipoDeUsuario.Trabajador))
+            {
+                trabajadores.Add(usuario.Nick);
+            }
+        }
+
+        return trabajadores;
+    }
+    
+    public List<string> GetEmpleadores()
+    {
+        List<string> empleadores = new();
+        foreach (Usuario usuario in usuarios)
+        {
+            if (usuario.GetTipo().Equals(TipoDeUsuario.Trabajador))
+            {
+                empleadores.Add(usuario.Nick);
+            }
+        }
+
+        return empleadores;
+    }
+
+    private List<ICalificable> NonAdmins()
+    {
+        List<ICalificable> nonAdmins = new();
+        foreach (Usuario user in usuarios)
+        {
+            if (user is ICalificable)
+            {
+                nonAdmins.Add((ICalificable)user);
+            }
+        }
+
+        return NonAdmins();
     }
 }

@@ -8,11 +8,26 @@ public class Escenarios
     public void Setup()
     {
     }
-
+    
+    [TearDown]
+    public void Wipe()
+    {
+        Administrador root = new Administrador("", "", "", "");
+        Categoria.Wipe(root);
+        CategoriasCatalog.Wipe(root);
+        ContratoHandler.Wipe(root);
+        OfertaDeServicio.Wipe(root);
+        OfertasHandler.Wipe(root);
+        RegistryHandler.Wipe(root);
+        Solicitud.Wipe(root);
+        SolicitudCatalog.Wipe(root);
+        Updater.Wipe(root);
+    }
+    
     [Test]
     public void Caso1()
     // "Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios
-    // para que de esa forma, los trabajadoras puedan clasificarlos.
+    // para que de esa forma, los trabajadores puedan clasificarlos.
     {
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
@@ -26,22 +41,21 @@ public class Escenarios
 
         // Assert
         Assert.That(expected.Equals(result));
-
     }
 
     [Test]
     public void Caso2()
     // Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma,
-    // pueda evitar ofertas inadecudas.
+    // pueda evitar ofertas inadecuadas.
     {
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "1234", "abc@abc.com");
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
-        ofertasHandler.CrearCategoria(admin, "Tareas");
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Tareas");
         Trabajador elpepe = registryHandler.RegistrarTrabajador("Pepe", "Pepe", "Elpepe", "elpepe", "2020,10,1", "12345678", "1234",
             "elpepe@elpepe.elpepe", new Tuple<double, double>(31,9393));
-        OfertaDeServicio oferta = ofertasHandler.Ofertar("Tareas", elpepe, "un capo", "limpiador", 10);
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(categoria.GetId(), elpepe, "un capo", "limpiador", 10);
         int id = oferta.GetId();
         bool expected = false;
         
@@ -51,7 +65,7 @@ public class Escenarios
 
         // Assert
         Assert.That(expected.Equals(result));
-
+   
     }
 
     [Test]
@@ -71,7 +85,7 @@ public class Escenarios
         
         // Assert
         Assert.That(Result.Equals(Expected));
-        
+ 
     }
 
     [Test]
@@ -87,16 +101,15 @@ public class Escenarios
             "2001 3 14","1234567","099555555",
             "manoloreal@gmail.com",new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
         Administrador admin = registryHandler.RegistrarAdministrador("elpepeAdmin", "1234", "1234", "god@dog.com");
-        ofertasHandler.CrearCategoria(admin,"Tareas del hogar");
+        Categoria categoria = ofertasHandler.CrearCategoria(admin,"Tareas del hogar");
 
         // Act
-        OfertaDeServicio oferta = ofertasHandler.Ofertar("Tareas del hogar",(Trabajador)miUsuario,"El mejor limpiador de Salto","Limpiador",9000);
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(categoria.GetId(),(Trabajador)miUsuario,"El mejor limpiador de Salto","Limpiador",9000);
         OfertaDeServicio expected = oferta;
         OfertaDeServicio result = ofertasHandler.GetOfertaById(oferta.GetId());
         
         // Assert
         Assert.That(expected.Equals(result));
-
     }
 
     [Test]
@@ -116,6 +129,7 @@ public class Escenarios
         
         // Assert
         Assert.That(result.Equals(expected));
+        
     }
 
     [Test]
@@ -124,12 +138,30 @@ public class Escenarios
     // pueda contratar un servicio.
     {
         // Arrange
-        
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        Administrador adm= registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Categoria cat = ofertasHandler.CrearCategoria(adm, "categoria");
+        bool expected = true;
         
         // Act
+        // TODO buscador, cambiar el new por el return del buscador
+        List<OfertaDeServicio> OfertasFiltradasPorCategoriaPlaceholder = new List<OfertaDeServicio>();
+        Categoria categoriaAgregada = ofertasHandler.GetCategoriaById(cat.GetId());
+        bool result = true; // result es true a no ser que el contenido de la categoria no sea el mismo que el retornado por el metodo del buscador por categoria
         
-        
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorCategoriaPlaceholder)
+        {
+            if (!categoriaAgregada.GetOfertas().Contains(ofertaDeServicio)) result = false;
+        }
+
+        foreach (OfertaDeServicio ofertaDeServicio in categoriaAgregada.GetOfertas())
+        {
+            if (!cat.GetOfertas().Contains(ofertaDeServicio)) result = false;
+        }
+
         // Assert
+        Assert.That(result.Equals(expected));
 
     }
 
@@ -140,13 +172,42 @@ public class Escenarios
     // servicio.
     {
         // Arrange
-        
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "root", "1234", "abc@abc.abc");
+        Empleador empleador = registryHandler.RegistrarEmpleador("a", "a", "a", "a", "2020 1 1", "1234567", "123",
+            "a@a.a", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "Categoria");
+        bool expected = true;
+
         
         // Act
-        
-        
-        // Assert
+        // TODO buscador, cambiar el new por el return del metodo que sea y borrar el Assert.Pass
+        List<OfertaDeServicio> OfertasFiltradasPorUbicacionPlaceholder = new List<OfertaDeServicio>();
+        Assert.Pass();
+        double distanciaAnterior = 0;
+        double distanciaActual = 0;
+        int i = 0;
+        bool result = true; // result es true a no ser que en algun punto lista(n+1) sea menor que lista(n)
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorUbicacionPlaceholder)
+        {
+            distanciaAnterior = distanciaActual;
+            i++;
+            double latO = ofertaDeServicio.GetUbicacion().Item1;
+            double longO = ofertaDeServicio.GetUbicacion().Item2;
+            double latE = empleador.Ubicacion.Item1;
+            double longE = empleador.Ubicacion.Item2;
+            double term1 = Math.Pow((latE - latO), 2);
+            double term2 = Math.Pow((longE - longO), 2);
+            distanciaActual = Math.Sqrt(term1+term2);
 
+            if (i <= 1) continue;
+            if (distanciaActual < distanciaAnterior) result = false;
+        }
+
+        // Assert
+        Assert.That(expected.Equals(result));
+        
     }
 
     [Test]
@@ -154,21 +215,44 @@ public class Escenarios
     // Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por
     // reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.
     {
-        // Arrange
+        // Wipe
+        Wipe();
         
+        // Arrange
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
+        bool expected = true;
         
         // Act
-        
-        
-        // Assert
+        List<OfertaDeServicio> OfertasFiltradasPorReputacionPlaceholder = new List<OfertaDeServicio>();
+        Calificacion reputacionAnterior = 0;
+        Calificacion reputacionActual = 0;
+        bool result = true; // result es true a no ser que en algun la reputacion de list(n+1) sea mayor que la de list(n)
+        int i = 0;
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorReputacionPlaceholder)
+        {
+            i++;
+            reputacionAnterior = reputacionActual;
 
+            reputacionActual = ofertaDeServicio.GetReputacion();
+            
+            if (i <= 1) continue;
+            if (reputacionActual > reputacionAnterior) result = false;
+        }
+
+        // Assert
+        Assert.That(result.Equals(expected));
+        
     }
 
     [Test]
     public void Caso9()
     // Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de
-    // servicios determinada.
+    // servicio determinada.
     {
+
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
@@ -176,8 +260,8 @@ public class Escenarios
         Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
         Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
         Trabajador pepe = registryHandler.RegistrarTrabajador("a", "a", "a", "a", "2020,2,2", "1234556", "12345", "a@a.a",
-            new Tuple<double, double>(1, 1)); // TODO cambiar el sistema de categorias para que funcione con id en vez de descripcion
-        OfertaDeServicio oferta = ofertasHandler.Ofertar("categoria", pepe ,"soy pro", "gamer", 10);
+            new Tuple<double, double>(1, 1));
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(cat.GetId(), pepe ,"soy pro", "gamer", 10);
         Empleador mrbossman = registryHandler.RegistrarEmpleador("mr", "bossman", "eljefe", "lospoios", "2010,10,10",
             "1234567", "1234", "gus@lospoiosermanos.com", new Tuple<double, double>(10, 10));
         OfertaDeServicio expected = oferta;
@@ -188,53 +272,176 @@ public class Escenarios
 
         // Assert
         Assert.That(expected.Equals(result));
-
     }
 
     [Test]
-    public void Caso10()
-    // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mi también, si no
+    public void Caso10A()
+    // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
     // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
     // empleador.
+    // Empleador califica a trabajador.
     {
+
         // Arrange
-        
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
+        Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
+            "1970 1 1", "1234567",
+            "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador admin = registryHandler.RegistrarAdministrador("Admin", "toor", "473555555", "admin@dominio.com");
+        Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
+            "1234567",
+            "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
+        Calificacion expected = Calificacion.Sobresaliente;
         
         // Act
-        
-        
-        // Assert
+        Solicitud solicitud = contratoHandler.SolicitarTrabajador(ofertaDeServicio, empleador);
+        contratoHandler.AceptarSolicitud(trabajador, solicitud);
+        solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
+        solicitud.CalificarTrabajador(empleador,Calificacion.Sobresaliente);
+        Calificacion result = solicitud.GetTrabajadorRate();
 
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+    
+    [Test]
+    public void Caso10B()
+        // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
+        // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
+        // empleador.
+        // Trabajador califica a empleador.
+    {
+        // Arrange
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
+        Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
+            "1970 1 1", "1234567",
+            "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador admin = registryHandler.RegistrarAdministrador("Admin", "toor", "473555555", "admin@dominio.com");
+        Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
+            "1234567",
+            "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
+        Calificacion expected = Calificacion.Sobresaliente;
+        
+        // Act
+        Solicitud solicitud = contratoHandler.SolicitarTrabajador(ofertaDeServicio, empleador);
+        contratoHandler.AceptarSolicitud(trabajador, solicitud);
+        solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
+        solicitud.CalificarEmpleador(trabajador,Calificacion.Sobresaliente);
+        Calificacion result = solicitud.GetEmpleadorRate();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+        
+    }
+    
+    [Test]
+    public void Caso10C()
+        // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
+        // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
+        // empleador.
+        // Empleador NO califica a trabajador tras un mes.
+    {
+        // Arrange
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
+        Updater updater = Updater.GetInstance();
+        Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
+            "1970 1 1", "1234567",
+            "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador admin = registryHandler.RegistrarAdministrador("Admin", "toor", "473555555", "admin@dominio.com");
+        Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
+            "1234567",
+            "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
+        Calificacion expected = Calificacion.Bueno;
+
+        // Act
+        Solicitud solicitud = contratoHandler.SolicitarTrabajador(ofertaDeServicio, empleador);
+        contratoHandler.AceptarSolicitud(trabajador, solicitud);
+        solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
+        solicitud.CalificarEmpleador(trabajador,Calificacion.Sobresaliente);
+        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)), registryHandler, ofertasHandler, contratoHandler);
+        Calificacion result = solicitud.GetTrabajadorRate();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+        
+    }
+
+    [Test]
+    public void Caso10D()
+    // Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no
+    // me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del
+    // trabajador.
+    // Trabajador NO califica a empleador tras un mes.
+
+    {
+        // Arrange
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
+        Updater updater = Updater.GetInstance();
+        Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
+            "1970 1 1", "1234567",
+            "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
+            "1234567",
+            "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
+        Calificacion expected = Calificacion.Bueno;
+        
+        // Act
+        Solicitud solicitud = contratoHandler.SolicitarTrabajador(ofertaDeServicio, empleador);
+        contratoHandler.AceptarSolicitud(trabajador, solicitud);
+        solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
+        solicitud.CalificarTrabajador(empleador,Calificacion.Sobresaliente);
+        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)), registryHandler, ofertasHandler, contratoHandler);
+        Calificacion result = solicitud.GetEmpleadorRate();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+        
     }
 
     [Test]
     public void Caso11()
-    // Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mi también, si no
-    // me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputaión del
-    // trabajador.
+        // Como trabajador, quiero poder saber la reputación de un empleador que me contacte para que de esa forma, poder
+        // decidir sobre su solicitud de contratación.
     {
         // Arrange
-        
-        
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        Administrador admin = registryHandler.RegistrarAdministrador("Admin", "toor", "473555555", "admin@dominio.com");
+        Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
+            "1234567",
+            "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
+            "1970 1 1", "1234567",
+            "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Categoria categoria = ofertasHandler.CrearCategoria(admin, "Categoria");
+        OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
+        Calificacion expected = Calificacion.NoCalificado;
+
         // Act
-        
-        
+        Solicitud solicitud = contratoHandler.SolicitarTrabajador(ofertaDeServicio, empleador);
+        Calificacion result = registryHandler.GetReputacion(solicitud.GetEmpleador());
+
+
         // Assert
-
-    }
-
-    [Test]
-    public void Caso12()
-    // Como trabajador, quiero poder saber la reputación de un empleador que me contacte para que de esa forma, poder
-    // decidir sobre su solicitud de contratación.
-    {
-        // Arrange
+        Assert.That(result.Equals(expected));
         
-        
-        // Act
-        
-        
-        // Assert
-
     }
 }
