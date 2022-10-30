@@ -44,6 +44,13 @@ public class OfertaDeServicio : IDesactivable
         return this.Ofertante.Nick;
     }
 
+    /// <summary> Método para obtener la reputación del ofertante </summary>
+    /// <returns> Devuelve la <see cref="Calificacion"/> del <see cref="Trabajador"/> ofertante </returns>
+    public Calificacion GetReputacion()
+    {
+        return Ofertante.GetReputacion();
+    }
+
     public Tuple<double, double> GetUbicacion()
     {
         return this.Ubicacion;
@@ -62,8 +69,8 @@ public class OfertaDeServicio : IDesactivable
         this.Ofertante.Calificar(rate);
     }
 
-    /// <summary> Método para obtener una calificación </summary>
-    /// <returns> Devuelve una <see cref="Calificacion"/> según sea indicada </returns>
+    /// <summary> Método para obtener la calificación dada a la oferta tras ser finalizada </summary>
+    /// <returns> Devuelve la <see cref="Calificacion"/> correspondiente de la oferta </returns>
     public Calificacion GetCalificacion()
     {
         return this.Rate;

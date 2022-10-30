@@ -126,15 +126,28 @@ public class Escenarios
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
-        bool expected = true;
-
-        // Act
         Administrador adm= registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
         Categoria cat = ofertasHandler.CrearCategoria(adm, "categoria");
-        bool result = true;
+        bool expected = true;
+        
+        // Act
+        // TODO buscador, cambiar el new por el return del buscador
+        List<OfertaDeServicio> OfertasFiltradasPorCategoriaPlaceholder = new List<OfertaDeServicio>();
+        Categoria categoriaAgregada = ofertasHandler.GetCategoriaById(cat.GetId());
+        bool result = true; // result es true a no ser que el contenido de la categoria no sea el mismo que el retornado por el metodo del buscador por categoria
+        
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorCategoriaPlaceholder)
+        {
+            if (!categoriaAgregada.getOfertas().Contains(ofertaDeServicio)) result = false;
+        }
+
+        foreach (OfertaDeServicio ofertaDeServicio in categoriaAgregada.getOfertas())
+        {
+            if (!cat.getOfertas().Contains(ofertaDeServicio)) result = false;
+        }
 
         // Assert
-          Assert.That(result.Equals(expected));
+        Assert.That(result.Equals(expected));
     }
 
     [Test]
@@ -146,14 +159,39 @@ public class Escenarios
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
-        bool result = true;
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "root", "1234", "abc@abc.abc");
+        Empleador empleador = registryHandler.RegistrarEmpleador("a", "a", "a", "a", "2020 1 1", "1234567", "123",
+            "a@a.a", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "Categoria");
+        bool expected = true;
+
+        
         // Act
-    
-        OfertaDeServicio ofertaDeServicio = ofertaDeServicio(ubicacion);
-        bool ubicación = OfertaDeServicio.Ubicacion;
+        // TODO buscador, cambiar el new por el return del metodo que sea y borrar el Assert.Pass
+        List<OfertaDeServicio> OfertasFiltradasPorUbicacionPlaceholder = new List<OfertaDeServicio>();
+        Assert.Pass();
+        double distanciaAnterior = 0;
+        double distanciaActual = 0;
+        int i = 0;
+        bool result = true; // result es true a no ser que en algun punto lista(n+1) sea menor que lista(n)
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorUbicacionPlaceholder)
+        {
+            distanciaAnterior = distanciaActual;
+            i++;
+            double latO = ofertaDeServicio.GetUbicacion().Item1;
+            double longO = ofertaDeServicio.GetUbicacion().Item2;
+            double latE = empleador.Ubicacion.Item1;
+            double longE = empleador.Ubicacion.Item2;
+            double term1 = Math.Pow((latE - latO), 2);
+            double term2 = Math.Pow((longE - longO), 2);
+            distanciaActual = Math.Sqrt(term1+term2);
+
+            if (i <= 1) continue;
+            if (distanciaActual < distanciaAnterior) result = false;
+        }
 
         // Assert
-          Assert.That(result.Equals(ubicación));
+        Assert.That(expected.Equals(result));
     }
 
     [Test]
@@ -165,13 +203,28 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
-        bool result = true;
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
+        bool expected = true;
         
         // Act
-        Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
-        
+        List<OfertaDeServicio> OfertasFiltradasPorReputacionPlaceholder = new List<OfertaDeServicio>();
+        Calificacion reputacionAnterior = 0;
+        Calificacion reputacionActual = 0;
+        bool result = true; // result es true a no ser que en algun la reputacion de list(n+1) sea mayor que la de list(n)
+        int i = 0;
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorReputacionPlaceholder)
+        {
+            i++;
+            reputacionAnterior = reputacionActual;
+
+            reputacionActual = ofertaDeServicio.GetReputacion();
+            
+            if (i <= 1) continue;
+            if (reputacionActual > reputacionAnterior) result = false;
+        }
+
         // Assert
-          Assert.That(result.Equals(expected));
+        Assert.That(result.Equals(expected));
     }
 
     [Test]
@@ -215,7 +268,7 @@ public class Escenarios
         
         
         // Assert
-          Assert.That(result.Equals(expected));
+        Assert.That(result.Equals(expected));
     }
 
     [Test]

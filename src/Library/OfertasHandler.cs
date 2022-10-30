@@ -62,10 +62,9 @@ public class OfertasHandler{
     /// <summary> Método para crear una categoria </summary>
     /// <param name="user"> Identificación de <see cref="TipoDeUsuario"/> que implementa el método </param>
     /// <param name="descripcion"> Descripcioón de la <see cref="Categoria"/> </param>
-    /// <returns> Devuelve el catálogo actualizado con la nueva categoría </returns>
+    /// <returns> Devuelve la nueva instancia de categoría creada </returns>
     public Categoria CrearCategoria(Usuario user, string descripcion)
     {
-        // TODO test que esto solo funcione si el usuario es admin
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
             return this.catalog.AddCategoria(user, descripcion);
