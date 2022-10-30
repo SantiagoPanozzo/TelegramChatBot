@@ -33,6 +33,11 @@ public class Solicitud : IDesactivable{
     {
         return this._id;
     }
+    
+    public static void Wipe(Administrador admin)
+    {
+        Solicitud.Instancias = 0;
+    }
 
     /// <summary> Método para obtener <see cref="Empleador"/> que busca la <see cref="Solicitud"/> </summary>
     /// <returns> Devuelve el <see cref="Empleador"/> de una <see cref="Solicitud"/> </returns>

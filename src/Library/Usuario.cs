@@ -14,7 +14,7 @@ public abstract class Usuario : IDesactivable {
     public string Telefono {get; set;}
     public Tuple<double,double> Ubicacion {get; set;}
     public string Correo { get; set; }
-    private bool Activo { get; set; }
+    protected bool Activo { get; set; }
     private string Contraseña { get; set; }
     protected TipoDeUsuario Tipo { get; set; }
 

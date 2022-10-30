@@ -32,6 +32,11 @@ public class OfertaDeServicio : IDesactivable
         this.Ubicacion = Ofertante.Ubicacion;
         this.Rate = Calificacion.NoCalificado;
     }
+    
+    public static void Wipe(Administrador admin)
+    {
+        OfertaDeServicio.Instancias = 0;
+    }
 
     /// <summary> Método para obtener id de <see cref="OfertaDeServicio"/> </summary>
     /// <returns> Devuelve el id de la <see cref="OfertaDeServicio"/> </returns>

@@ -13,10 +13,13 @@ public class Escenarios
     public void Wipe()
     {
         Administrador root = new Administrador("", "", "", "");
+        Categoria.Wipe(root);
         CategoriasCatalog.Wipe(root);
         ContratoHandler.Wipe(root);
+        OfertaDeServicio.Wipe(root);
         OfertasHandler.Wipe(root);
         RegistryHandler.Wipe(root);
+        Solicitud.Wipe(root);
         SolicitudCatalog.Wipe(root);
         Updater.Wipe(root);
     }

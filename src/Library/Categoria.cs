@@ -17,7 +17,11 @@ public class Categoria : IDesactivable
         this.Id = Instancias;
         this.Descripcion = descripcion;
         this.Activa = true;
+    }
 
+    public static void Wipe(Administrador admin)
+    {
+        Categoria.Instancias = 0;
     }
 
     /// <summary> Método para obtener el ID de una <see cref="Categoria"/>  </summary>
