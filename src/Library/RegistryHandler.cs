@@ -21,6 +21,14 @@ public class RegistryHandler
         }
     }
     
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            RegistryHandler._instance = null;
+        }
+    }
+    
     private RegistryHandler()
     {
         this.usuarios = new();

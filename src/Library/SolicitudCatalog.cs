@@ -22,6 +22,14 @@ public class SolicitudCatalog
         }
     }
     
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            SolicitudCatalog._instance = null;
+        }
+    }
+    
     private SolicitudCatalog()
     {
         this.Solicitudes = new List<Solicitud>();

@@ -20,6 +20,13 @@ public class Updater
             return _instance;
         }
     }
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            Updater._instance = null;
+        }
+    }
     
     public static Updater GetInstance()
     {

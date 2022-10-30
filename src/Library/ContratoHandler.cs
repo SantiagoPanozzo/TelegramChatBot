@@ -34,6 +34,14 @@ public class ContratoHandler
         return ContratoHandler.Instance;
     }
 
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            ContratoHandler._instance = null;
+        }
+    }
+
     /// <summary> Método que crea una solicitud de trabajo </summary>
     /// <param name="oferta"> Oferta en cuestión </param>
     /// <param name="emp"> Empleador que va a realizar la solicitud </param>

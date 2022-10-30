@@ -8,7 +8,19 @@ public class Escenarios
     public void Setup()
     {
     }
-
+    
+    [TearDown]
+    public void Wipe()
+    {
+        Administrador root = new Administrador("", "", "", "");
+        CategoriasCatalog.Wipe(root);
+        ContratoHandler.Wipe(root);
+        OfertasHandler.Wipe(root);
+        RegistryHandler.Wipe(root);
+        SolicitudCatalog.Wipe(root);
+        Updater.Wipe(root);
+    }
+    
     [Test]
     public void Caso1()
     // "Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios
@@ -26,7 +38,6 @@ public class Escenarios
 
         // Assert
         Assert.That(expected.Equals(result));
-
     }
 
     [Test]
@@ -51,7 +62,7 @@ public class Escenarios
 
         // Assert
         Assert.That(expected.Equals(result));
-
+   
     }
 
     [Test]
@@ -71,7 +82,7 @@ public class Escenarios
         
         // Assert
         Assert.That(Result.Equals(Expected));
-        
+ 
     }
 
     [Test]
@@ -96,7 +107,6 @@ public class Escenarios
         
         // Assert
         Assert.That(expected.Equals(result));
-
     }
 
     [Test]
@@ -116,6 +126,7 @@ public class Escenarios
         
         // Assert
         Assert.That(result.Equals(expected));
+        
     }
 
     [Test]
@@ -148,6 +159,7 @@ public class Escenarios
 
         // Assert
         Assert.That(result.Equals(expected));
+
     }
 
     [Test]
@@ -192,6 +204,7 @@ public class Escenarios
 
         // Assert
         Assert.That(expected.Equals(result));
+        
     }
 
     [Test]
@@ -199,6 +212,9 @@ public class Escenarios
     // Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por
     // reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.
     {
+        // Wipe
+        Wipe();
+        
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
@@ -225,6 +241,7 @@ public class Escenarios
 
         // Assert
         Assert.That(result.Equals(expected));
+        
     }
 
     [Test]
@@ -232,6 +249,7 @@ public class Escenarios
     // Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de
     // servicio determinada.
     {
+
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
@@ -251,7 +269,6 @@ public class Escenarios
 
         // Assert
         Assert.That(expected.Equals(result));
-
     }
 
     [Test]
@@ -261,6 +278,7 @@ public class Escenarios
     // empleador.
     // Empleador califica a trabajador.
     {
+
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
@@ -318,6 +336,7 @@ public class Escenarios
 
         // Assert
         Assert.That(result.Equals(expected));
+        
     }
     
     [Test]
@@ -353,6 +372,7 @@ public class Escenarios
 
         // Assert
         Assert.That(result.Equals(expected));
+        
     }
 
     [Test]
@@ -389,10 +409,11 @@ public class Escenarios
 
         // Assert
         Assert.That(result.Equals(expected));
+        
     }
 
     [Test]
-    public void Caso12()
+    public void Caso11()
         // Como trabajador, quiero poder saber la reputación de un empleador que me contacte para que de esa forma, poder
         // decidir sobre su solicitud de contratación.
     {
@@ -418,5 +439,6 @@ public class Escenarios
 
         // Assert
         Assert.That(result.Equals(expected));
+        
     }
 }

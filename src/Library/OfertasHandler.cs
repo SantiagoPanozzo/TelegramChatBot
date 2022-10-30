@@ -20,6 +20,14 @@ public class OfertasHandler{
             return _instance;
         }
     }
+    
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            OfertasHandler._instance = null;
+        }
+    }
 
     private OfertasHandler(){}
     public static OfertasHandler GetInstance()

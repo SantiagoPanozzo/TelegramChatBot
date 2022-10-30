@@ -20,6 +20,14 @@ public class CategoriasCatalog
         }
     }
     
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            CategoriasCatalog._instance = null;
+        }
+    }
+    
     /// <summary> Constructor de la clase, inicia la lista de las categorías </summary>
     private CategoriasCatalog()
     {
