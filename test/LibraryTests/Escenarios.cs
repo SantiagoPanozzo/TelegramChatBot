@@ -142,16 +142,17 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         Administrador adm= registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Buscador buscador = new();
         Categoria cat = ofertasHandler.CrearCategoria(adm, "categoria");
         bool expected = true;
         
         // Act
         // TODO buscador, cambiar el new por el return del buscador
-        List<OfertaDeServicio> OfertasFiltradasPorCategoriaPlaceholder = new List<OfertaDeServicio>();
+        List<OfertaDeServicio> OfertasFiltradasPorCategoria = buscador.FiltrarCategoria(cat);
         Categoria categoriaAgregada = ofertasHandler.GetCategoriaById(cat.GetId());
         bool result = true; // result es true a no ser que el contenido de la categoria no sea el mismo que el retornado por el metodo del buscador por categoria
         
-        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorCategoriaPlaceholder)
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorCategoria)
         {
             if (!categoriaAgregada.GetOfertas().Contains(ofertaDeServicio)) result = false;
         }
@@ -174,6 +175,7 @@ public class Escenarios
     {
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        Buscador buscador = new();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("admin", "root", "1234", "abc@abc.abc");
         Empleador empleador = registryHandler.RegistrarEmpleador("a", "a", "a", "a", "2020 1 1", "1234567", "123",
@@ -184,13 +186,13 @@ public class Escenarios
         
         // Act
         // TODO buscador, cambiar el new por el return del metodo que sea y borrar el Assert.Pass
-        List<OfertaDeServicio> OfertasFiltradasPorUbicacionPlaceholder = new List<OfertaDeServicio>();
+        List<OfertaDeServicio> OfertasFiltradasPorUbicacion = buscador.FiltrarDistancia(empleador);
         Assert.Pass();
         double distanciaAnterior = 0;
         double distanciaActual = 0;
         int i = 0;
         bool result = true; // result es true a no ser que en algun punto lista(n+1) sea menor que lista(n)
-        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorUbicacionPlaceholder)
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorUbicacion)
         {
             distanciaAnterior = distanciaActual;
             i++;
@@ -216,23 +218,22 @@ public class Escenarios
     // Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por
     // reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.
     {
-        // Wipe
-        Wipe();
         
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
         Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
+        Buscador buscador = new();
         bool expected = true;
         
         // Act
-        List<OfertaDeServicio> OfertasFiltradasPorReputacionPlaceholder = new List<OfertaDeServicio>();
+        List<OfertaDeServicio> OfertasFiltradasPorReputacion = buscador.FiltrarReputacion();
         Calificacion reputacionAnterior = 0;
         Calificacion reputacionActual = 0;
         bool result = true; // result es true a no ser que en algun la reputacion de list(n+1) sea mayor que la de list(n)
         int i = 0;
-        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorReputacionPlaceholder)
+        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorReputacion)
         {
             i++;
             reputacionAnterior = reputacionActual;
