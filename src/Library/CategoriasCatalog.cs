@@ -37,9 +37,10 @@ public class CategoriasCatalog
         this.Categorias = new List<Categoria>();
     }
 
+
     /// <summary>Método para obtener la instancia del catálogo de categorías</summary>
     /// <returns>devuelve la instancia creada del catálogo</returns>
-
+    
     public static CategoriasCatalog GetInstance()
     {
         return CategoriasCatalog.Instance;

@@ -31,7 +31,9 @@ public class OfertasHandler{
         }
     }
 
+
     /// <summary>Cosntructor de tipo Singleton de la clase</summary>
+
     private OfertasHandler(){}
 
     /// <summary>Método para obtener la instancia de la clase</summary>
