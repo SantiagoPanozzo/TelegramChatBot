@@ -34,8 +34,8 @@ public class Solicitud : IDesactivable, IActualizable{
         return this._id;
     }
     
-    /// <summary>Método para borrar los datos de la clase</summary>
-    /// <param name="admin">tipo de usuario que llama al método</param>
+    /// <summary> Método para borrar los datos de la clase </summary>
+    /// <param name="admin"> Tipo de usuario que llama al método </param>
     public static void Wipe(Administrador admin)
     {
         Solicitud.Instancias = 0;
@@ -87,15 +87,15 @@ public class Solicitud : IDesactivable, IActualizable{
         }
     }
     
-    /// <summary>Método para obtener el promedio de calificación de un empleador</summary>
-    /// <returns>devuelve promedio de calificación</returns>
+    /// <summary> Método para obtener el promedio de calificación de un empleador </summary>
+    /// <returns> Devuelve promedio de calificación </returns>
     public Calificacion GetEmpleadorRate()
     {
         return EmpleadorRate;
     }
 
-    /// <summary>Método para obtener el promedio de calificación de un trabajador</summary>
-    /// <returns>devuelve promedio de calificación</returns>
+    /// <summary> Método para obtener el promedio de calificación de un trabajador </summary>
+    /// <returns> Devuelve promedio de calificación </returns>
     public Calificacion GetTrabajadorRate()
     {
         return Oferta.GetCalificacion();
@@ -131,8 +131,8 @@ public class Solicitud : IDesactivable, IActualizable{
         return this.Activa;
     }
 
-    /// <summary>Método para dar de baja una solicitud</summary>
-    /// <param name="user">tipo de usuario que llama al método</param>
+    /// <summary> Método para dar de baja una solicitud </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
     public void DarDeBaja(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -141,8 +141,8 @@ public class Solicitud : IDesactivable, IActualizable{
         }
     }
     
-    /// <summary>Método para reactivar una solicitud</summary>
-    /// <param name="user">tipo de usuario que llama al método</param>
+    /// <summary> Método para reactivar una solicitud </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
     public void Reactivar(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))

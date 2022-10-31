@@ -50,7 +50,6 @@ public class OfertaDeServicio : IDesactivable
 
     /// <summary> Método para obtener NickName de Ofertante</summary>
     /// <returns> Devuelve el ofertante de la <see cref="OfertaDeServicio"/> </returns>
-
     public string GetOfertante()
     {
         return this.Ofertante.Nick;
@@ -63,25 +62,22 @@ public class OfertaDeServicio : IDesactivable
         return Ofertante.GetReputacion();
     }
 
-    /// <summary>Método para obtener la ubicación de la oferta de servicio</summary>
-    /// <returns>devuelde la ubicación</returns>
-
+    /// <summary> Método para obtener la ubicación de la oferta de servicio </summary>
+    /// <returns> Devuelde la ubicación </returns>
     public Tuple<double, double> GetUbicacion()
     {
         return this.Ubicacion;
     }
 
-    /// <summary>Método para obtener el contacto del ofertante</summary>
-    /// <returns>devuelve el contacto</returns>
-
+    /// <summary> Método para obtener el contacto del ofertante </summary>
+    /// <returns> Devuelve el contacto </returns>
     public Dictionary<string, string> GetContacto()
     {
         return Ofertante.GetContacto();
     }
 
-    /// <summary>Método para verificar si fue calificada la oferta</summary>
-    /// <returns>deuelve true si fue calificado, en caso contrario será false</returns>
-
+    /// <summary> Método para verificar si fue calificada la oferta </summary>
+    /// <returns> Deuelve true si fue calificado, en caso contrario será false </returns>
     public bool IsRated()
     {
         return (!this.Rate.Equals(Calificacion.NoCalificado));

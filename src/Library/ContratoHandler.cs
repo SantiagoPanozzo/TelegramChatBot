@@ -24,21 +24,21 @@ public class ContratoHandler
         }
     }
     
-    /// <summary>Constructor tipo Singleton de la clase</summary>
+    /// <summary> Constructor tipo Singleton de la clase </summary>
     private ContratoHandler()
     {
         this.Catalogo = SolicitudCatalog.GetInstance();
     }
 
-    /// <summary>Método para obtener la instancia de la clase</summary>
-    /// <returns>devuelve la instancia</returns>
+    /// <summary> Método para obtener la instancia de la clase </summary>
+    /// <returns> Devuelve la instancia </returns>
     public static ContratoHandler GetInstance()
     {
         return ContratoHandler.Instance;
     }
 
-    /// <summary>Método para borrar los datos de la clase</summary>
-    /// <param name="user">tipo de usuario que llama al método</param>
+    /// <summary> Método para borrar los datos de la clase </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
 
     public static void Wipe(Usuario user)
     {

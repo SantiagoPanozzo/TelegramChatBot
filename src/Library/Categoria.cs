@@ -19,6 +19,8 @@ public class Categoria : IDesactivable
         this.Activa = true;
     }
 
+    /// <summary> Método para eliminar los datos de la clase </summary>
+    /// <param name="admin"> Tipo de usuario que llama el método </param>
     public static void Wipe(Administrador admin)
     {
         Categoria.Instancias = 0;
@@ -70,15 +72,13 @@ public class Categoria : IDesactivable
     
     /// <summary> Método que verifica si una categoría está activa </summary>
     /// <returns>Devuelve el estado de la categoría</returns> 
-
     public bool IsActive()
     {
         return this.Activa;
     }
 
-    /// <summary>Método para dar de baja la categoría</summary>
-    /// <param name="user">tipo de ususario que llama al método</param>
-
+    /// <summary> Método para dar de baja la categoría </summary>
+    /// <param name="user"> Tipo de ususario que llama al método </param>
     public void DarDeBaja(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -88,8 +88,8 @@ public class Categoria : IDesactivable
     }
     
 
-    /// <summary>Método para reactivar una categoría</summary>
-    /// <param name="user">tipo de usuario que llama al método</param>
+    /// <summary> Método para reactivar una categoría </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
     public void Reactivar(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))

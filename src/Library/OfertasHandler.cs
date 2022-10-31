@@ -21,8 +21,8 @@ public class OfertasHandler{
         }
     }
     
-    /// <summary>Método para borrar los datos de la clase</summary>
-    /// <param name="user">tipo de usuario que llama al método</param>
+    /// <summary> Método para borrar los datos de la clase </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
     public static void Wipe(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -31,7 +31,7 @@ public class OfertasHandler{
         }
     }
 
-    /// <summary>Cosntructor de tipo Singleton de la clase</summary>
+    /// <summary> Constructor de tipo Singleton de la clase </summary>
     private OfertasHandler(){}
 
     /// <summary>Método para obtener la instancia de la clase</summary>

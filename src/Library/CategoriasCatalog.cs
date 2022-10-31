@@ -21,8 +21,8 @@ public class CategoriasCatalog
     }
     
 
-    /// <summary>Método para borrar los datos de la clase</summary>
-    /// <param name="user">tipo de usuario que llama al método</param>
+    /// <summary> Método para borrar los datos de la clase </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
     public static void Wipe(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -37,9 +37,8 @@ public class CategoriasCatalog
         this.Categorias = new List<Categoria>();
     }
 
-    /// <summary>Método para obtener la instancia del catálogo de categorías</summary>
-    /// <returns>devuelve la instancia creada del catálogo</returns>
-
+    /// <summary> Método para obtener la instancia del catálogo de categorías </summary>
+    /// <returns> Devuelve la instancia creada del catálogo </returns>
     public static CategoriasCatalog GetInstance()
     {
         return CategoriasCatalog.Instance;
