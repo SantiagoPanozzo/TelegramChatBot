@@ -67,10 +67,17 @@ public class Categoria : IDesactivable
         throw (new Exception("No se encontró la oferta"));
     }
     
+    
+    /// <summary> Método que verifica si una categoría está activa </summary>
+    /// <returns>Devuelve el estado de la categoría</returns> 
+
     public bool IsActive()
     {
         return this.Activa;
     }
+
+    /// <summary>Método para dar de baja la categoría</summary>
+    /// <param name="user">tipo de ususario que llama al método</param>
 
     public void DarDeBaja(Usuario user)
     {
@@ -80,6 +87,9 @@ public class Categoria : IDesactivable
         }
     }
     
+
+    /// <summary>Método para reactivar una categoría</summary>
+    /// <param name="user">tipo de usuario que llama al método</param>
     public void Reactivar(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))

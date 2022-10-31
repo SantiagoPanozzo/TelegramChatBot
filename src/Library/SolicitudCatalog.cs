@@ -22,6 +22,8 @@ public class SolicitudCatalog
         }
     }
     
+    /// <summary>Método para borrar los datos de la clase</summary>
+    /// <param name="user">tipo de usuario que llama al método</param>
     public static void Wipe(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -30,11 +32,14 @@ public class SolicitudCatalog
         }
     }
     
+    /// <summary>Constructor de tipo singleton de la clase</summary>
     private SolicitudCatalog()
     {
         this.Solicitudes = new List<Solicitud>();
     }
 
+    /// <summary>Método para obtener la instancia de la clase</summary>
+    /// <returns>devuelve la instancia a crear</returns>
     public static SolicitudCatalog GetInstance()
     {
         return SolicitudCatalog.Instance;

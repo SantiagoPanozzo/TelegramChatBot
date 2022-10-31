@@ -20,6 +20,9 @@ public class CategoriasCatalog
         }
     }
     
+
+    /// <summary>Método para borrar los datos de la clase</summary>
+    /// <param name="user">tipo de usuario que llama al método</param>
     public static void Wipe(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -34,9 +37,10 @@ public class CategoriasCatalog
         this.Categorias = new List<Categoria>();
     }
 
-    /// <summary>
-    /// Retorna la instancia del objeto CategoriasCatalog invocado
-    /// </summary>
+
+    /// <summary>Método para obtener la instancia del catálogo de categorías</summary>
+    /// <returns>devuelve la instancia creada del catálogo</returns>
+    
     public static CategoriasCatalog GetInstance()
     {
         return CategoriasCatalog.Instance;
@@ -115,7 +119,7 @@ public class CategoriasCatalog
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Categorias.Remove(categoria);
+            categoria.DarDeBaja(user);
         }
 
         throw (new("Solo un administrador puede quitar categorías"));

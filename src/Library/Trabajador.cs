@@ -1,7 +1,7 @@
 namespace Library;
 
 /// <summary> Clase <see cref="Trabajador"> que hereda de <see cref="Usuario"> </summary>
-public class Trabajador:Usuario,ICalificable,IDesactivable
+public class Trabajador:Usuario,ICalificable
 {
 
     private List<Calificacion> Reputacion { get; set; }

@@ -1,6 +1,11 @@
 namespace Library;
 
+/// <summary>Método para mostrar por pantalla la lista de solicitudes</summary>
 public class SolicitudPrinter : IPrinter<Solicitud> {
+
+    /// <summary>Método que imprime el texto de la lista</summary>
+    /// <param name="solicitudes">lista de solicitudes</param>
+    /// <param name="user">tipo de usuario que llama al método</param>
     public void PrintCatalog(List<Solicitud> solicitudes, Usuario user) {
         Console.WriteLine($"Solicitudes\n");
         if (user.GetTipo().Equals(TipoDeUsuario.Empleador)){
