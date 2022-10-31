@@ -371,7 +371,7 @@ public class Escenarios
         contratoHandler.AceptarSolicitud(trabajador, solicitud);
         solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
         solicitud.CalificarEmpleador(trabajador,Calificacion.Sobresaliente);
-        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)), registryHandler, ofertasHandler, contratoHandler);
+        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)));
         Calificacion result = solicitud.GetTrabajadorRate();
 
         // Assert
@@ -408,7 +408,7 @@ public class Escenarios
         contratoHandler.AceptarSolicitud(trabajador, solicitud);
         solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
         solicitud.CalificarTrabajador(empleador,Calificacion.Sobresaliente);
-        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)), registryHandler, ofertasHandler, contratoHandler);
+        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)));
         Calificacion result = solicitud.GetEmpleadorRate();
 
         // Assert
