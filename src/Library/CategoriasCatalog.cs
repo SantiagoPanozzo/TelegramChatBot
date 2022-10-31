@@ -34,6 +34,9 @@ public class CategoriasCatalog
         this.Categorias = new List<Categoria>();
     }
 
+    /// <summary>
+    /// Retorna la instancia del objeto CategoriasCatalog invocado
+    /// </summary>
     public static CategoriasCatalog GetInstance()
     {
         return CategoriasCatalog.Instance;

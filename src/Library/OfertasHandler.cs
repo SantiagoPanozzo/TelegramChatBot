@@ -29,6 +29,9 @@ public class OfertasHandler{
         }
     }
 
+    /// <summary>
+    /// Constructor privado, por lo tanto no se puede instanciar directamente
+    /// </summary>
     private OfertasHandler(){}
     public static OfertasHandler GetInstance()
     {
