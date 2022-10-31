@@ -16,10 +16,12 @@ public class Buscador {
     ascendente de distancia a mi ubicación, es decir, las más cercanas primero para que de esa forma,
     pueda poder contratar un servicio. */
     public List<OfertaDeServicio> FiltrarDistancia(Empleador emp) {      //TODO: Emplear con API, cambiar clases para este propósito
-       List<OfertaDeServicio> offers = new();
+        List<OfertaDeServicio> offers = new();
         List<OfertaDeServicio> resultOffers = new();
         OfertasHandler handler = OfertasHandler.GetInstance();
         List<Categoria> categorias = handler.GetCategorias();
+
+        var myPos = emp.Ubicacion;
 
         foreach(Categoria categoria in categorias)
         {
@@ -27,19 +29,7 @@ public class Buscador {
             offers.AddRange(handler.GetOfertas(categoryId));
         }
 
-        for(int j = 0; j < 6; j++)
-        {
-            if(resultOffers.Count == offers.Count) return resultOffers;
-
-            foreach(OfertaDeServicio offer in offers)
-            {
-                if(offer.GetReputacion() == (Calificacion)j)
-                {
-                    resultOffers.Prepend(offer);
-                }
-            }
-        }
-        return offers; 
+        return resultOffers;
     }
 
     /* Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma
@@ -66,7 +56,7 @@ public class Buscador {
             {
                 if(offer.GetReputacion() == (Calificacion)j)
                 {
-                    resultOffers.Prepend(offer);
+                    resultOffers.Insert(0, offer);
                 }
             }
         }
