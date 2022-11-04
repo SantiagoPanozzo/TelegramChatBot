@@ -40,12 +40,13 @@ public class Updater
     // TODO documentar parametros
     
     /// <summary> Método para actualizar todas las clases que necesiten ser actualizadas periódicamente </summary>
-    /// <param name="registryHandler">  </param>
-    /// <param name="ofertasHandler">  </param>
-    /// <param name="contratoHandler">  </param>
-    private void BaseUpdate(DateTime fecha, RegistryHandler registryHandler, OfertasHandler ofertasHandler,
-        ContratoHandler contratoHandler)
+    /// <param name="fecha"> Fecha que utilizar para actualizar las clases en base a ella </param>
+ 
+    private void BaseUpdate(DateTime fecha)
     {
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
         foreach (IActualizable solicitud in contratoHandler.Catalogo.Solicitudes)
         {
             solicitud.Update(DateTime.Now);
@@ -53,21 +54,16 @@ public class Updater
     }
     
     /// <summary> Método para actualizar con la fecha actual todas las clases que necesiten ser actualizadas periódicamente </summary>
-    /// <param name="registryHandler">  </param>
-    /// <param name="ofertasHandler">  </param>
-    /// <param name="contratoHandler">  </param>
-    public void Update(RegistryHandler registryHandler, OfertasHandler ofertasHandler, ContratoHandler contratoHandler)
+    public void Update()
     {
-        BaseUpdate(DateTime.Now, registryHandler, ofertasHandler, contratoHandler);
+        BaseUpdate(DateTime.Now);
     }
     
     /// <summary> Método para actualizar con una fecha falsa todas las clases que necesiten ser actualizadas periódicamente</summary>
-    /// <param name="registryHandler">  </param>
-    /// <param name="ofertasHandler">  </param>
-    /// <param name="contratoHandler">  </param>
-    public void FakeUpdate(DateTime fecha, RegistryHandler registryHandler, OfertasHandler ofertasHandler, ContratoHandler contratoHandler)
+    /// <param name="fecha"> Fecha que utilizar para actualizar las clases en base a ella </param>
+    public void FakeUpdate(DateTime fecha)
     {
-        BaseUpdate(fecha, registryHandler, ofertasHandler, contratoHandler);
+        BaseUpdate(fecha);
     }
 
     
