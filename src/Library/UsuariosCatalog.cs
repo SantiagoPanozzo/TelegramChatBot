@@ -11,7 +11,7 @@ public class UsuariosCatalog
     {
         get
         {
-            if (_instance == null)
+            if (_instance == null)  
             {
                 _instance = new UsuariosCatalog();
             }
