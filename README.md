@@ -75,33 +75,33 @@ La elaboración del proyecto se presentó como todo un desafío, pero a su vez u
 ## Asignaciones:
 Nos repartimos las tareas en general de la siguiente forma:
 
-## Facundo Martinez:
+### Facundo Martinez:
 * Clase administrador
 * Refactorizar clase usuario (fixes en el constructor)
 * Investigar sobre API para buscador por ubicación
 * Investigar sobre formas de añadir seguridad a la información de los usuarios
 * Investigar sobre bases de datos para implementar a futuro
 
-## Mateo Rodriguez:
+### Mateo Rodriguez:
 * Clase SearchHandler (buscador)
 * Clase ContratoHandler
 * Clase Trabajador
 * Tests unitarios de las clases
 
-## Tomás Esteves:
+### Tomás Esteves:
 * Clase Usuario
 * Clase Registro (RegistryHandler)
 * Clase Solicitud
 * Clase IPrinter y sus implementaciones
 * Documentación XML y Doxygen de las clases
 
-## Alejandra Benitez:
+### Alejandra Benitez:
 * Documentación XML de métodos
 * Clase OfertasHandler
 * Clase SolicitudCatalog
 * Escenarios
 
-## Santiago Panozzo:
+### Santiago Panozzo:
 * UML
 * Sistema de ubicación por coordenadas
 * Métodos para registrar
