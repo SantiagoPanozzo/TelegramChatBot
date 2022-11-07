@@ -36,9 +36,10 @@ Quizás algunas de las clases que hicimos podrían ser mejoradas, ya que aprendi
 aprendizaje mediante trabajo.
 
 ### Mateo Rodríguez:
-- Hubo buena colaboración grupal, se me hace una buena y gratificante la experiencia ya que nos sirve para adentrarnos en el mundo de trabajar en conjunto con un equipo de desarrollo.
+- Hubo buena colaboración grupal, se me hace una buena y gratificante experiencia ya que nos sirve para adentrarnos en el mundo de trabajar en conjunto con un equipo de desarrollo.
 - Fue bueno emplear patrones y conceptos aprendidos en clase, y a su vez, nuestro propio conocimiento
 - A mi parecer, lo mas dificil del proyecto fue lograr que mis clases funcionen en conjunto con las de mis compañeros y viceversa, ya sea en su funcionamiento o simplemente hacer que ellos entiendan mi codigo y yo el de ellos
+
 
 ### Facundo Martínez:
 
@@ -51,3 +52,17 @@ aprendizaje mediante trabajo.
    en una instancia me encontré con un deadlock en el que no fue hasta más adelante que entendí el por qué siquiera ocurría o qué era. Por otro lado la importancia de
    las variables de entorno, en un momento cometí el error de pushear mi commit al repositorio con una key privada, por lo que poco después
    tuve que deshabilitarla.
+
+### Tomás Esteves:
+Hasta el momento el proyecto está siendo una experiencia desafiante a la vez que enriquecedora. Enriquecedora en el sentido de que es una experiencia
+totalmente nueva para mi y la mayoría de integrantes del equipo por el hecho de estar trabajando de la manera que los estamos haciendo, que viene a ser 
+como una primer experiencia de un equipo de desarrollo el día de mañana. Y hasta el momento lo más complicado fue lograr una buena interpretación del
+código de los demás integrantes para poder implementarlo con las demás clases y funciones. También por otro lado el hecho de intentar aplicar gran cantidad
+de los conceptos aprendidos en clase, que en la está hecha la documentación de los que se utilizaron en la realización de nuestro proyecto.
+
+En cuanto a la organización debo destacar que fue bastante buena, algunas aplicaciones nos ayudaron a manejarla de una mejor manera, como lo fue Jira
+(software de administración de proyectos similar a Trello), donde nos fuimos dividiendo las tareas que eran necesarias y así tener un mejor control sobre 
+el estado de las mismas, si están para realizar, en curso o ya fueron realizadas. Adjunto captura de pantalla del tablero.
+
+![TableroJira](Assets/TableroJira.png)
+
