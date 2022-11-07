@@ -34,3 +34,8 @@ Me parece que el proyecto es interesante y fue bastante desafiante poder incorpo
 en clase para mejorar nuestro código; por ejemplo el singleton que nos sirvió para no tener que estar "buscando" las instancias de los catálogos cada vez que interactuabamos con ellos, sin crear uno nuevo.
 Quizás algunas de las clases que hicimos podrían ser mejoradas, ya que aprendimos algunos patrones despúes de haberlas hecho y no tuvimos tiempo de volver atrás a cambiarlas. En general está siendo una experiencie enriquecedora en cuanto a
 aprendizaje mediante trabajo.
+
+### Mateo Rodríguez:
+- Hubo buena colaboración grupal, se me hace una buena y gratificante la experiencia ya que nos sirve para adentrarnos en el mundo de trabajar en conjunto con un equipo de desarrollo.
+- Fue bueno emplear patrones y conceptos aprendidos en clase, y a su vez, nuestro propio conocimiento
+- A mi parecer, lo mas dificil del proyecto fue lograr que mis clases funcionen en conjunto con las de mis compañeros y viceversa, ya sea en su funcionamiento o simplemente hacer que ellos entiendan mi codigo y yo el de ellos
