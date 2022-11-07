@@ -65,7 +65,12 @@ En cuanto a la organización debo destacar que fue bastante buena, algunas aplic
 el estado de las mismas, si están para realizar, en curso o ya fueron realizadas. Adjunto captura de pantalla del tablero.
 
 ![Jira](Assets/Jira.png)
-
+En la captura se ven algunas de las asignaciones a las tareas. Donde cada ícono representa un distinto integrante del equipo.
+AB: Alejandra Benítez
+TE: Tomás Esteves
+Imagen: Facundo Martínez
+SP: Santiago Panozzo
+MR: Mateo Rodríguez
 
 ### Alejandra Benítez:
 La elaboración del proyecto se presentó como todo un desafío, pero a su vez una excelente oportunidad para aplicar los contenidos dados en clase.  Utilizar el Git cómo herramienta para realizar comits e ir trabajando cada uno en paralelo en el mismo proyecto resultó un ser recurso muy práctico y acertado. Se pudo además, aplicar diferentes patrones aprendidos y realización de test para verificar que el código funcione correctamente. En general es una excelente experiencia práctica de colaboración y apoyo grupal.
