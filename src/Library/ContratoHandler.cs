@@ -4,6 +4,8 @@ namespace Library;
 using System;
 
 /// <summary> Clase para manejar el catalogo </summary>
+/// /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las solicitudes-->
 public class ContratoHandler
 {
 

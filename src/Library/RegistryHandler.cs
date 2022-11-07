@@ -2,6 +2,9 @@ namespace Library;
 using System;
 
 /// <summary> Clase para manejar el registro </summary>
+/// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para hacer el registro y
+/// de usuarios -->
 public class RegistryHandler
 {
     private UsuariosCatalog usuarios;
@@ -55,6 +58,10 @@ public class RegistryHandler
     /// <param name="correo"> Correo electrónico del usuario </param> 
     /// <param name="ubicacion"> Ubicación </param>
     /// <returns> Devuelve la instancia de <see cref="Trabajador"/> creada </returns>
+    /// <!-- Utilizamos el patrón Creator para crear instancias de las clases que heredan de Usuario dentro del registro,
+    /// no hay otra clase que deba crear usuarios más que esta, ya que los métodos de Registrar comprueban primero que
+    /// todos los datos sean válidos y luego almacena en esta misma clase las instancias creadas. Es la única que va a
+    /// interactuar directamente con los usuarios. Las demás clases que necesiten a los usuarios interactuarán con esta. -->
     public Trabajador RegistrarTrabajador(string nombre, string apellido, string nick, string contraseña, string fechaNacimiento, 
                                           string cedula, string telefono, string correo, Tuple<double,double> ubicacion)
     {

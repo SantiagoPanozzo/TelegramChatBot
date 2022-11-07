@@ -3,6 +3,9 @@ using System.Collections;
 namespace Library;
 
 /// <summary>  </summary>
+/// <!-- En esta clase hacemos uso del método Update() que implementamos en las clases que heredan de IActualizable por
+/// polymorphism. Gracias a haber utilizado el principio ahora podemos actualizarlas todas dentro de BaseUpdate()-->
+
 public class Updater
 {
     
@@ -36,8 +39,6 @@ public class Updater
     private Updater()
     {
     }
-
-    // TODO documentar parametros
     
     /// <summary> Método para actualizar todas las clases que necesiten ser actualizadas periódicamente </summary>
     /// <param name="fecha"> Fecha que utilizar para actualizar las clases en base a ella </param>
