@@ -66,5 +66,6 @@ el estado de las mismas, si están para realizar, en curso o ya fueron realizada
 
 ![Jira](Assets/Jira.png)
 
-###Alejandra Benítez:
+
+### Alejandra Benítez:
 La elaboración del proyecto se presentó como todo un desafío, pero a su vez una excelente oportunidad para aplicar los contenidos dados en clase.  Utilizar el Git cómo herramienta para realizar comits e ir trabajando cada uno en paralelo en el mismo proyecto resultó un ser recurso muy práctico y acertado. Se pudo además, aplicar diferentes patrones aprendidos y realización de test para verificar que el código funcione correctamente. En general es una excelente experiencia práctica de colaboración y apoyo grupal.
