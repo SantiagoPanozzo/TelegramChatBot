@@ -51,4 +51,4 @@ En cuanto a la organización debo destacar que fue bastante buena, algunas aplic
 (software de administración de proyectos similar a Trello), donde nos fuimos dividiendo las tareas que eran necesarias y así tener un mejor control sobre 
 el estado de las mismas, si están para realizar, en curso o ya fueron realizadas. Adjunto captura de pantalla del tablero.
 
-![TableroJira](../Assets/TableroJira.png)
+![TableroJira](Assets/TableroJira.png)
