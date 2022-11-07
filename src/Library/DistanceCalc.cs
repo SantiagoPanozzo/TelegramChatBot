@@ -12,8 +12,7 @@ public static class Distance
         var request = new HttpRequestMessage
         {
         Method = HttpMethod.Get,
-        //RequestUri = new Uri("https://maps.googleapis.com/maps/api/distancematrix/json?origins=Salto%20Uruguay&destinations=Montevideo%20Uruguay&language=en-EN&key=AIzaSyC7qyLvE9YbQ1wUdEaS5VgztWC9Qcvsofw"),
-        RequestUri = new Uri($"https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&language=en-EN&key=AIzaSyC7qyLvE9YbQ1wUdEaS5VgztWC9Qcvsofw"),
+        RequestUri = new Uri($"https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&language=en-EN&key=AIzaSyC7qyLvE9YbQ1wUdEaS5VgztWC9Qcvsofw"),   //Key deshabilitada
         };
         var response = await client.SendAsync(request);
         response.EnsureSuccessStatusCode();
