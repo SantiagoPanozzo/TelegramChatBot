@@ -36,6 +36,6 @@ Quizás algunas de las clases que hicimos podrían ser mejoradas, ya que aprendi
 aprendizaje mediante trabajo.
 
 ### Mateo Rodríguez:
-- Hubo buena colaboración grupal, se me hace una buena y gratificante la experiencia ya que nos sirve para adentrarnos en el mundo de trabajar en conjunto con un equipo de desarrollo.
+- Hubo buena colaboración grupal, se me hace una buena y gratificante experiencia ya que nos sirve para adentrarnos en el mundo de trabajar en conjunto con un equipo de desarrollo.
 - Fue bueno emplear patrones y conceptos aprendidos en clase, y a su vez, nuestro propio conocimiento
 - A mi parecer, lo mas dificil del proyecto fue lograr que mis clases funcionen en conjunto con las de mis compañeros y viceversa, ya sea en su funcionamiento o simplemente hacer que ellos entiendan mi codigo y yo el de ellos
