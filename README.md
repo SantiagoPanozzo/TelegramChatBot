@@ -39,3 +39,15 @@ aprendizaje mediante trabajo.
 - Hubo buena colaboración grupal, se me hace una buena y gratificante la experiencia ya que nos sirve para adentrarnos en el mundo de trabajar en conjunto con un equipo de desarrollo.
 - Fue bueno emplear patrones y conceptos aprendidos en clase, y a su vez, nuestro propio conocimiento
 - A mi parecer, lo mas dificil del proyecto fue lograr que mis clases funcionen en conjunto con las de mis compañeros y viceversa, ya sea en su funcionamiento o simplemente hacer que ellos entiendan mi codigo y yo el de ellos
+
+### Facundo Martínez:
+
+-  Bastante importante el concepto de programación asíncrona (entender await/async/Task, conceptos de threading y deadlock) que no se tocó
+   en ningún momento, en especial para la interacción con APIs.
+-  Gracias al proyecto, pudimos tocar nuevos temas, como lo son la programación asíncrona, el uso de cloud services (google cloud),
+   APIs y Keys, bases de datos no relacionales (noSQL en este caso con MongoDB), y variables de entorno (puntos que para esta entrega en particular
+   no se aplicaron completamente).
+-  La parte más desafiante, en mi caso en particular, fue todo lo relacionado a la programación asíncrona, como un ejemplo,
+   en una instancia me encontré con un deadlock en el que no fue hasta más adelante que entendí el por qué siquiera ocurría o qué era. Por otro lado la importancia de
+   las variables de entorno, en un momento cometí el error de pushear mi commit al repositorio con una key privada, por lo que poco después
+   tuve que deshabilitarla.
