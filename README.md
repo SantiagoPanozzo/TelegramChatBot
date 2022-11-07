@@ -70,3 +70,41 @@ En la captura se ven algunas de las asignaciones a las tareas. Donde cada ícono
 
 ### Alejandra Benítez:
 La elaboración del proyecto se presentó como todo un desafío, pero a su vez una excelente oportunidad para aplicar los contenidos dados en clase.  Utilizar el Git cómo herramienta para realizar comits e ir trabajando cada uno en paralelo en el mismo proyecto resultó un ser recurso muy práctico y acertado. Se pudo además, aplicar diferentes patrones aprendidos y realización de test para verificar que el código funcione correctamente. En general es una excelente experiencia práctica de colaboración y apoyo grupal.
+
+***
+## Asignaciones:
+Nos repartimos las tareas en general de la siguiente forma:
+
+## Facundo Martinez:
+* Clase administrador
+* Refactorizar clase usuario (fixes en el constructor)
+* Investigar sobre API para buscador por ubicación
+* Investigar sobre formas de añadir seguridad a la información de los usuarios
+* Investigar sobre bases de datos para implementar a futuro
+
+## Mateo Rodriguez:
+* Clase SearchHandler (buscador)
+* Clase ContratoHandler
+* Clase Trabajador
+* Tests unitarios de las clases
+
+## Tomás Esteves:
+* Clase Usuario
+* Clase Registro (RegistryHandler)
+* Clase Solicitud
+* Clase IPrinter y sus implementaciones
+* Documentación XML y Doxygen de las clases
+
+## Alejandra Benitez:
+* Documentación XML de métodos
+* Clase OfertasHandler
+* Clase SolicitudCatalog
+* Escenarios
+
+## Santiago Panozzo:
+* UML
+* Sistema de ubicación por coordenadas
+* Métodos para registrar
+* Enums (Calificacion, TipoDeUsuario, Aceptada)
+* Autenticación a través de TipoDeUsuario y sistema de nicks
+* Escenarios faltantes
