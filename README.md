@@ -26,3 +26,11 @@ Aquí veremos una explicación general e informal de las funciones del Software 
 10) Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi empleador.
 11) Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del trabajador.
 12) Como trabajador, quiero poder saber la reputación del empleador que me contacte para que de esa forma, poder decidir sobre su solicitud de contratación.
+
+***
+## Reflexiones de Grupo
+### Santiago Panozzo:
+Me parece que el proyecto es interesante y fue bastante desafiante poder incorporar todas las cosas que se pedían para esta entrega. A su vez, fue interesante el ver situaciones en las que podíamos aplicar los patrones que estabamos trabajando
+en clase para mejorar nuestro código; por ejemplo el singleton que nos sirvió para no tener que estar "buscando" las instancias de los catálogos cada vez que interactuabamos con ellos, sin crear uno nuevo.
+Quizás algunas de las clases que hicimos podrían ser mejoradas, ya que aprendimos algunos patrones despúes de haberlas hecho y no tuvimos tiempo de volver atrás a cambiarlas. En general está siendo una experiencie enriquecedora en cuanto a
+aprendizaje mediante trabajo.
