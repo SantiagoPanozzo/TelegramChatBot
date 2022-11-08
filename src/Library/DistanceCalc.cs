@@ -1,13 +1,13 @@
-namespace Library.API;
+namespace Library.DistanceMatrix;
+
 using System.Diagnostics;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web;
-using dotenv.net;
 public class Distance
 {
-    private Distance? _instance = null;
-    private string _token;
+    private static Distance? _instance = null;
+    private static string _token;
     public async Task<int> Calculate(string from, string to)
     {   
         string origin = UrlFormat(from);
@@ -34,7 +34,7 @@ public class Distance
 
     //Se espera una dirección del formato "{Ciudad} {País}"
     //Falta retocar este método
-    public string UrlFormat(string address){
+    private string UrlFormat(string address){
         string invalidChars;        //Regex de números, comas y cosas así
         if(address.Trim().Count(x => x == ' ') == 1)    //&& !(invalidChars)
         {
@@ -48,14 +48,15 @@ public class Distance
     }
 
     //Por Singleton
-    public Distance GetInstance()
+    public static Distance GetInstance()
     {
+        // Honestamente no recuerdo por qué lo hice Singleton XD, no la uso para extender de nada, después veo
         if (_instance == null)
         {
-            _instance = new Distance();
             // Posiblemente delegar la responsabilidad de lidiar con las variables de entorno a otra clase?
-            DotEnv.Load(options: new DotEnvOptions(ignoreExceptions: false));
-            _token = DotEnv.Read()["DISTANCE_KEY"];
+            //DotNetEnv.Env.TraversePath().Load();
+            _token = DotNetEnv.Env.GetString("DISTANCE_KEY");
+            _instance = new Distance();
         }
         return _instance;
     }

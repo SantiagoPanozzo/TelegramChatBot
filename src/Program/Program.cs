@@ -3,7 +3,7 @@
 
 
 using Library;
-using Library.API;
+using Library.DistanceMatrix;
 using System;
 
 class Program {
