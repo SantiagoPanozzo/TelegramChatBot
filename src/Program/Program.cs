@@ -1,11 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Console.WriteLine("Hello, World!");
-
-using Library;
+﻿using Library;
 using System;
 
 class Program {
     public static void Main() {
+
+        while(true)
+        {
+            Updater.EnableAutoUpdate();
+            Console.ReadKey();
+            Updater.DisableAutoUpdate();
+            Console.ReadKey();
+        }
+
         /*
          
         CategoriaPrinter catPrinter = new();

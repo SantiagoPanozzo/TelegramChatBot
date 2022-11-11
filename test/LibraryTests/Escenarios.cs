@@ -331,7 +331,6 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         ContratoHandler contratoHandler = ContratoHandler.GetInstance();
-        Updater updater = Updater.GetInstance();
         Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
             "1970 1 1", "1234567",
             "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
@@ -348,7 +347,7 @@ public class Escenarios
         contratoHandler.AceptarSolicitud(trabajador, solicitud);
         solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
         solicitud.CalificarEmpleador(trabajador,Calificacion.Sobresaliente);
-        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)), registryHandler, ofertasHandler, contratoHandler);
+        Updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)));
         Calificacion result = solicitud.GetTrabajadorRate();
 
         // Assert
@@ -367,7 +366,6 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         ContratoHandler contratoHandler = ContratoHandler.GetInstance();
-        Updater updater = Updater.GetInstance();
         Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
             "1970 1 1", "1234567",
             "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
@@ -384,7 +382,7 @@ public class Escenarios
         contratoHandler.AceptarSolicitud(trabajador, solicitud);
         solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
         solicitud.CalificarTrabajador(empleador,Calificacion.Sobresaliente);
-        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)), registryHandler, ofertasHandler, contratoHandler);
+        Updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)));
         Calificacion result = solicitud.GetEmpleadorRate();
 
         // Assert
@@ -411,6 +409,7 @@ public class Escenarios
         OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
         Calificacion expected = Calificacion.NoCalificado;
 
+        
         // Act
         Solicitud solicitud = contratoHandler.SolicitarTrabajador(ofertaDeServicio, empleador);
         Calificacion result = registryHandler.GetReputacion(solicitud.GetEmpleador());
