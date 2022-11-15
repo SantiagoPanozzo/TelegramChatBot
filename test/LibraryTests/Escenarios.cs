@@ -22,7 +22,6 @@ public class Escenarios
         Solicitud.Wipe(root);
         SolicitudCatalog.Wipe(root);
         UsuariosCatalog.Wipe(root);
-        Updater.Wipe(root);
     }
     
     [Test]
@@ -148,11 +147,11 @@ public class Escenarios
         
         // Act
         // TODO buscador, cambiar el new por el return del buscador
-        List<OfertaDeServicio> OfertasFiltradasPorCategoria = buscador.FiltrarCategoria(cat);
+        List<OfertaDeServicio> ofertasFiltradasPorCategoria = buscador.FiltrarCategoria(cat);
         Categoria categoriaAgregada = ofertasHandler.GetCategoriaById(cat.GetId());
         bool result = true; // result es true a no ser que el contenido de la categoria no sea el mismo que el retornado por el metodo del buscador por categoria
         
-        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorCategoria)
+        foreach (OfertaDeServicio ofertaDeServicio in ofertasFiltradasPorCategoria)
         {
             if (!categoriaAgregada.GetOfertas().Contains(ofertaDeServicio)) result = false;
         }
@@ -186,13 +185,13 @@ public class Escenarios
         
         // Act
         // TODO buscador, cambiar el new por el return del metodo que sea y borrar el Assert.Pass
-        List<OfertaDeServicio> OfertasFiltradasPorUbicacion = buscador.FiltrarDistancia(empleador);
+        List<OfertaDeServicio> ofertasFiltradasPorUbicacion = buscador.FiltrarDistancia(empleador);
         Assert.Pass();
         double distanciaAnterior = 0;
         double distanciaActual = 0;
         int i = 0;
         bool result = true; // result es true a no ser que en algun punto lista(n+1) sea menor que lista(n)
-        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorUbicacion)
+        foreach (OfertaDeServicio ofertaDeServicio in ofertasFiltradasPorUbicacion)
         {
             distanciaAnterior = distanciaActual;
             i++;

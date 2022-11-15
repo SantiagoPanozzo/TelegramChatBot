@@ -62,8 +62,6 @@ public static class Updater
         return false;
     }
 
-    
-    
     /// <summary> Método para actualizar todas las clases que necesiten ser actualizadas periódicamente </summary>
     /// <param name="fecha"> Fecha a utilizar para actualizar las clases que lo necesiten. </param>
     private static void BaseUpdate(DateTime fecha)
