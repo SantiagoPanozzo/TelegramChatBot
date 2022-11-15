@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 // Console.WriteLine("Hello, World!");
 
 
@@ -8,6 +8,15 @@ using System;
 
 class Program {
     public static void Main() {
+
+        while(true)
+        {
+            Updater.EnableAutoUpdate();
+            Console.ReadKey();
+            Updater.DisableAutoUpdate();
+            Console.ReadKey();
+        }
+
 
         //Console.WriteLine(Distance.Calculate("Salto Uruguay", "Montevideo Uruguay"));
         /*

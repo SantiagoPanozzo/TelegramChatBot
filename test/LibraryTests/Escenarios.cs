@@ -22,7 +22,6 @@ public class Escenarios
         Solicitud.Wipe(root);
         SolicitudCatalog.Wipe(root);
         UsuariosCatalog.Wipe(root);
-        Updater.Wipe(root);
     }
     
     [Test]
@@ -148,11 +147,11 @@ public class Escenarios
         
         // Act
         // TODO buscador, cambiar el new por el return del buscador
-        List<OfertaDeServicio> OfertasFiltradasPorCategoria = buscador.FiltrarCategoria(cat);
+        List<OfertaDeServicio> ofertasFiltradasPorCategoria = buscador.FiltrarCategoria(cat);
         Categoria categoriaAgregada = ofertasHandler.GetCategoriaById(cat.GetId());
         bool result = true; // result es true a no ser que el contenido de la categoria no sea el mismo que el retornado por el metodo del buscador por categoria
         
-        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorCategoria)
+        foreach (OfertaDeServicio ofertaDeServicio in ofertasFiltradasPorCategoria)
         {
             if (!categoriaAgregada.GetOfertas().Contains(ofertaDeServicio)) result = false;
         }
@@ -186,13 +185,13 @@ public class Escenarios
         
         // Act
         // TODO buscador, cambiar el new por el return del metodo que sea y borrar el Assert.Pass
-        List<OfertaDeServicio> OfertasFiltradasPorUbicacion = buscador.FiltrarDistancia(empleador);
+        List<OfertaDeServicio> ofertasFiltradasPorUbicacion = buscador.FiltrarDistancia(empleador);
         Assert.Pass();
         double distanciaAnterior = 0;
         double distanciaActual = 0;
         int i = 0;
         bool result = true; // result es true a no ser que en algun punto lista(n+1) sea menor que lista(n)
-        foreach (OfertaDeServicio ofertaDeServicio in OfertasFiltradasPorUbicacion)
+        foreach (OfertaDeServicio ofertaDeServicio in ofertasFiltradasPorUbicacion)
         {
             distanciaAnterior = distanciaActual;
             i++;
@@ -355,7 +354,6 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         ContratoHandler contratoHandler = ContratoHandler.GetInstance();
-        Updater updater = Updater.GetInstance();
         Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
             "1970 1 1", "1234567",
             "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
@@ -372,7 +370,7 @@ public class Escenarios
         contratoHandler.AceptarSolicitud(trabajador, solicitud);
         solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
         solicitud.CalificarEmpleador(trabajador,Calificacion.Sobresaliente);
-        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)));
+        Updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)));
         Calificacion result = solicitud.GetTrabajadorRate();
 
         // Assert
@@ -392,7 +390,6 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         ContratoHandler contratoHandler = ContratoHandler.GetInstance();
-        Updater updater = Updater.GetInstance();
         Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
             "1970 1 1", "1234567",
             "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
@@ -409,7 +406,7 @@ public class Escenarios
         contratoHandler.AceptarSolicitud(trabajador, solicitud);
         solicitud = contratoHandler.GetSolicitud(solicitud.GetId());
         solicitud.CalificarTrabajador(empleador,Calificacion.Sobresaliente);
-        updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)));
+        Updater.FakeUpdate(DateTime.Now.Add(new TimeSpan(31,0,0,0)));
         Calificacion result = solicitud.GetEmpleadorRate();
 
         // Assert
@@ -437,6 +434,7 @@ public class Escenarios
         OfertaDeServicio ofertaDeServicio = ofertasHandler.Ofertar(categoria.GetId(), trabajador, "Descripcion", "Empleo", 1000);
         Calificacion expected = Calificacion.NoCalificado;
 
+        
         // Act
         Solicitud solicitud = contratoHandler.SolicitarTrabajador(ofertaDeServicio, empleador);
         Calificacion result = registryHandler.GetReputacion(solicitud.GetEmpleador());
