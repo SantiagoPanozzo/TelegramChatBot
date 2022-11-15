@@ -32,6 +32,14 @@ public class OfertaDeServicio : IDesactivable
         this.Ubicacion = Ofertante.Ubicacion;
         this.Rate = Calificacion.NoCalificado;
     }
+    
+    /// <summary>Método para borrar los datos de la clase</summary>
+    /// <param name="admin">tipo de usuario que llama al método</param>
+
+    public static void Wipe(Administrador admin)
+    {
+        OfertaDeServicio.Instancias = 0;
+    }
 
     /// <summary> Método para obtener id de <see cref="OfertaDeServicio"/> </summary>
     /// <returns> Devuelve el id de la <see cref="OfertaDeServicio"/> </returns>
@@ -40,6 +48,8 @@ public class OfertaDeServicio : IDesactivable
         return this._id;
     }
 
+    /// <summary> Método para obtener NickName de Ofertante</summary>
+    /// <returns> Devuelve el ofertante de la <see cref="OfertaDeServicio"/> </returns>
     public string GetOfertante()
     {
         return this.Ofertante.Nick;
@@ -52,16 +62,22 @@ public class OfertaDeServicio : IDesactivable
         return Ofertante.GetReputacion();
     }
 
+    /// <summary> Método para obtener la ubicación de la oferta de servicio </summary>
+    /// <returns> Devuelde la ubicación </returns>
     public Tuple<double, double> GetUbicacion()
     {
         return this.Ubicacion;
     }
 
+    /// <summary> Método para obtener el contacto del ofertante </summary>
+    /// <returns> Devuelve el contacto </returns>
     public Dictionary<string, string> GetContacto()
     {
         return Ofertante.GetContacto();
     }
 
+    /// <summary> Método para verificar si fue calificada la oferta </summary>
+    /// <returns> Deuelve true si fue calificado, en caso contrario será false </returns>
     public bool IsRated()
     {
         return (!this.Rate.Equals(Calificacion.NoCalificado));

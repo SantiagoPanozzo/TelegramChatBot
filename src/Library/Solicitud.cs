@@ -1,7 +1,7 @@
 namespace Library;
 
 /// <summary> Clase <see cref="Solicitud"/> para iniciar una <see cref="OfertaDeServicio"/> </summary>
-public class Solicitud : IDesactivable,IActualizable{
+public class Solicitud : IDesactivable{
     public OfertaDeServicio Oferta { get; set;}
     public Aceptacion Aceptada { get; set;}
     public DateTime FechaAceptada { get; set;}
@@ -33,6 +33,13 @@ public class Solicitud : IDesactivable,IActualizable{
     {
         return this._id;
     }
+    
+    /// <summary> Método para borrar los datos de la clase </summary>
+    /// <param name="admin"> Tipo de usuario que llama al método </param>
+    public static void Wipe(Administrador admin)
+    {
+        Solicitud.Instancias = 0;
+    }
 
     /// <summary> Método para obtener <see cref="Empleador"/> que busca la <see cref="Solicitud"/> </summary>
     /// <returns> Devuelve el <see cref="Empleador"/> de una <see cref="Solicitud"/> </returns>
@@ -58,7 +65,7 @@ public class Solicitud : IDesactivable,IActualizable{
         Oferta.Disponible = false;
     }
 
-    /// <summary> Método para calificar una oferta </summary>
+    /// <summary> Método para calificar un trabajador </summary>
     /// <param name="rate"> Es un valor del enum <see cref="Calificacion"/> </param>
     public void CalificarTrabajador(Empleador user, Calificacion rate) {
         if(user.Nick.Equals(Emp.Nick) && !IsRated())
@@ -68,6 +75,8 @@ public class Solicitud : IDesactivable,IActualizable{
         }
     }
     
+    /// <summary> Método para calificar un empleador </summary>
+    /// <param name="rate"> Es un valor del enum <see cref="Calificacion"/> </param>
     public void CalificarEmpleador(Trabajador user, Calificacion rate)
     {
         if(user.Nick.Equals(Trab) && !IsEmpleadorRated())
@@ -78,11 +87,15 @@ public class Solicitud : IDesactivable,IActualizable{
         }
     }
     
+    /// <summary> Método para obtener el promedio de calificación de un empleador </summary>
+    /// <returns> Devuelve promedio de calificación </returns>
     public Calificacion GetEmpleadorRate()
     {
         return EmpleadorRate;
     }
 
+    /// <summary> Método para obtener el promedio de calificación de un trabajador </summary>
+    /// <returns> Devuelve promedio de calificación </returns>
     public Calificacion GetTrabajadorRate()
     {
         return Oferta.GetCalificacion();
@@ -104,16 +117,22 @@ public class Solicitud : IDesactivable,IActualizable{
         return !(Oferta.GetCalificacion().Equals(Calificacion.NoCalificado));
     }
 
+    /// <summary> Método para conocer si un empleador fue calificado </summary>
+    /// <returns> Retorna True si el empleador está calificado o False si no lo está </returns>
     public bool IsEmpleadorRated()
     {
         return (!this.EmpleadorRate.Equals(Calificacion.NoCalificado));
     }
     
+    /// <summary> Método para conocer si una solicitud está activa </summary>
+    /// <returns> Retorna True si la solicitud está activa o False si no lo está </returns>
     public bool IsActive()
     {
         return this.Activa;
     }
 
+    /// <summary> Método para dar de baja una solicitud </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
     public void DarDeBaja(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -122,6 +141,8 @@ public class Solicitud : IDesactivable,IActualizable{
         }
     }
     
+    /// <summary> Método para reactivar una solicitud </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
     public void Reactivar(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -159,6 +180,8 @@ public class Solicitud : IDesactivable,IActualizable{
         return this.FechaLimiteTrabajador.CompareTo(fechaActual).Equals(-1);
     }
     
+     /// <summary> Compara la fecha actual con la fecha límite para calificar </summary>
+    /// <returns> Devuelve true si ya pasó un mes (30 días) desde que se hizo la <see cref="Solicitud">, de lo contrario devuelve false </returns>
     public bool CanEmpleadorBeAutoRated(DateTime fechaActual) {
         return this.FechaLimiteEmpleador.CompareTo(fechaActual).Equals(-1);
     }

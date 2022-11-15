@@ -3,6 +3,9 @@ using System.Security.Authentication;
 namespace Library;
 
 /// <summary> Clase para manejar el catálogo de ofertas </summary>
+/// /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las
+/// ofertas -->
 public class OfertasHandler{
     private CategoriasCatalog _catalog = CategoriasCatalog.GetInstance();
     
@@ -20,8 +23,23 @@ public class OfertasHandler{
             return _instance;
         }
     }
+    
+    /// <summary> Método para borrar los datos de la clase </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            OfertasHandler._instance = null;
+        }
+    }
 
+    /// <summary> Constructor de tipo Singleton de la clase </summary>
     private OfertasHandler(){}
+
+    /// <summary>Método para obtener la instancia de la clase</summary>
+    /// <returns>devuelve la instancia</returns>
+
     public static OfertasHandler GetInstance()
     {
         return OfertasHandler.Instance;
@@ -34,8 +52,10 @@ public class OfertasHandler{
     /// <param name="empleo"> Rubro de la oferta </param>
     /// <param name="precio"> Precio de la oferta </param>
     /// <returns> Devuelve la oferta de tipo <see cref="OfertaDeServicio"/> </returns>
+    /// <!-- Por patron Creator se crea instancia de oferta de servicio en esta clase, ya que es la que va a
+    /// interactuar más directamente con las mismas y que va a almacenarlas. -->
+
     public OfertaDeServicio Ofertar(int CategoryId, Trabajador ofertante, string descripcion, string empleo, double precio){
-        /// <remarks> Por patron Creator se crea instancia de oferta de servicio en esta clase </remarks>      
         Categoria Category = this._catalog.GetCategoriaById(CategoryId);
         OfertaDeServicio Oferta = new OfertaDeServicio(ofertante, descripcion, empleo, precio);
         Category.AddOferta(Oferta);

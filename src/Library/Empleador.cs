@@ -21,9 +21,10 @@ public class Empleador:Usuario,ICalificable{
         this.Ubicacion = ubicacion;
         this.Correo = correo;
         this.Reputacion = new List<Calificacion>();
+        this.Activo = true;
         this.SetContraseña(contraseña);
     }
-    
+
     /// <summary> Método para calificar un usuario </summary>
     /// <param name="Rate"> Valor del enum <see cref="Calificacion"/> </param>
     public void Calificar(Calificacion Rate)

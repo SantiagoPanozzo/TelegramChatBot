@@ -448,3 +448,8 @@ $RECYCLE.BIN/
 ## Visual Studio Code
 ##
 .vscode/*
+
+##
+## Environment Variables (dotenv)
+##
+.env

@@ -27,6 +27,84 @@ Aquí veremos una explicación general e informal de las funciones del Software 
 11) Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del trabajador.
 12) Como trabajador, quiero poder saber la reputación del empleador que me contacte para que de esa forma, poder decidir sobre su solicitud de contratación.
 
-<hr>
+***
+## Reflexiones de Grupo
+### Santiago Panozzo:
+Me parece que el proyecto es interesante y fue bastante desafiante poder incorporar todas las cosas que se pedían para esta entrega. A su vez, fue interesante el ver situaciones en las que podíamos aplicar los patrones que estabamos trabajando
+en clase para mejorar nuestro código; por ejemplo el singleton que nos sirvió para no tener que estar "buscando" las instancias de los catálogos cada vez que interactuabamos con ellos, sin crear uno nuevo.
+Quizás algunas de las clases que hicimos podrían ser mejoradas, ya que aprendimos algunos patrones despúes de haberlas hecho y no tuvimos tiempo de volver atrás a cambiarlas. En general está siendo una experiencie enriquecedora en cuanto a
+aprendizaje mediante trabajo.
 
-# Reflexiones del Grupo:
+### Mateo Rodríguez:
+- Hubo buena colaboración grupal, se me hace una buena y gratificante experiencia ya que nos sirve para adentrarnos en el mundo de trabajar en conjunto con un equipo de desarrollo.
+- Fue bueno emplear patrones y conceptos aprendidos en clase, y a su vez, nuestro propio conocimiento
+- A mi parecer, lo mas dificil del proyecto fue lograr que mis clases funcionen en conjunto con las de mis compañeros y viceversa, ya sea en su funcionamiento o simplemente hacer que ellos entiendan mi codigo y yo el de ellos
+
+
+### Facundo Martínez:
+
+-  Bastante importante el concepto de programación asíncrona (entender await/async/Task, conceptos de threading y deadlock) que no se tocó
+   en ningún momento, en especial para la interacción con APIs.
+-  Gracias al proyecto, pudimos tocar nuevos temas, como lo son la programación asíncrona, el uso de cloud services (google cloud),
+   APIs y Keys, bases de datos no relacionales (noSQL en este caso con MongoDB), y variables de entorno (puntos que para esta entrega en particular
+   no se aplicaron completamente).
+-  La parte más desafiante, en mi caso en particular, fue todo lo relacionado a la programación asíncrona, como un ejemplo,
+   en una instancia me encontré con un deadlock en el que no fue hasta más adelante que entendí el por qué siquiera ocurría o qué era. Por otro lado la importancia de
+   las variables de entorno, en un momento cometí el error de pushear mi commit al repositorio con una key privada, por lo que poco después
+   tuve que deshabilitarla.
+
+### Tomás Esteves:
+Hasta el momento el proyecto está siendo una experiencia desafiante a la vez que enriquecedora. Enriquecedora en el sentido de que es una experiencia
+totalmente nueva para mi y la mayoría de integrantes del equipo por el hecho de estar trabajando de la manera que los estamos haciendo, que viene a ser 
+como una primer experiencia de un equipo de desarrollo el día de mañana. Y hasta el momento lo más complicado fue lograr una buena interpretación del
+código de los demás integrantes para poder implementarlo con las demás clases y funciones. También por otro lado el hecho de intentar aplicar gran cantidad
+de los conceptos aprendidos en clase, que en la está hecha la documentación de los que se utilizaron en la realización de nuestro proyecto.
+
+En cuanto a la organización debo destacar que fue bastante buena, algunas aplicaciones nos ayudaron a manejarla de una mejor manera, como lo fue Jira
+(software de administración de proyectos similar a Trello), donde nos fuimos dividiendo las tareas que eran necesarias y así tener un mejor control sobre 
+el estado de las mismas, si están para realizar, en curso o ya fueron realizadas. Adjunto captura de pantalla del tablero.
+
+![Jira](Assets/Jira.png)
+En la captura se ven algunas de las asignaciones a las tareas. Donde cada ícono representa un distinto integrante del equipo.
+(AB: Alejandra Benítez - TE: Tomás Esteves - Imagen: Facundo Martínez - SP: Santiago Panozzo - MR: Mateo Rodríguez)
+
+### Alejandra Benítez:
+La elaboración del proyecto se presentó como todo un desafío, pero a su vez una excelente oportunidad para aplicar los contenidos dados en clase.  Utilizar el Git cómo herramienta para realizar comits e ir trabajando cada uno en paralelo en el mismo proyecto resultó un ser recurso muy práctico y acertado. Se pudo además, aplicar diferentes patrones aprendidos y realización de test para verificar que el código funcione correctamente. En general es una excelente experiencia práctica de colaboración y apoyo grupal.
+
+***
+## Asignaciones:
+Nos repartimos las tareas en general de la siguiente forma:
+
+### Facundo Martinez:
+* Clase administrador
+* Refactorizar clase usuario (fixes en el constructor)
+* Investigar sobre API para buscador por ubicación
+* Investigar sobre formas de añadir seguridad a la información de los usuarios
+* Investigar sobre bases de datos para implementar a futuro
+
+### Mateo Rodriguez:
+* Clase SearchHandler (buscador)
+* Clase ContratoHandler
+* Clase Trabajador
+* Tests unitarios de las clases
+
+### Tomás Esteves:
+* Clase Usuario
+* Clase Registro (RegistryHandler)
+* Clase Solicitud
+* Clase IPrinter y sus implementaciones
+* Documentación XML y Doxygen de las clases
+
+### Alejandra Benitez:
+* Documentación XML de métodos
+* Clase OfertasHandler
+* Clase SolicitudCatalog
+* Escenarios
+
+### Santiago Panozzo:
+* UML
+* Sistema de ubicación por coordenadas
+* Métodos para registrar
+* Enums (Calificacion, TipoDeUsuario, Aceptada)
+* Autenticación a través de TipoDeUsuario y sistema de nicks
+* Escenarios faltantes

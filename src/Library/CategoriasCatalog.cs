@@ -1,6 +1,8 @@
 namespace Library;
 
 /// <summary> Clase para manejar el catálogo de categorías </summary>
+/// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las categorías -->
 public class CategoriasCatalog
 {
     protected List<Categoria> Categorias;
@@ -20,11 +22,25 @@ public class CategoriasCatalog
         }
     }
     
+
+    /// <summary> Método para borrar los datos de la clase </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            CategoriasCatalog._instance = null;
+        }
+    }
+    
     /// <summary> Constructor de la clase, inicia la lista de las categorías </summary>
     private CategoriasCatalog()
     {
         this.Categorias = new List<Categoria>();
     }
+
+    /// <summary>Método para obtener la instancia del catálogo de categorías</summary>
+    /// <returns>devuelve la instancia creada del catálogo</returns>
 
     public static CategoriasCatalog GetInstance()
     {
@@ -104,7 +120,7 @@ public class CategoriasCatalog
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Categorias.Remove(categoria);
+            categoria.DarDeBaja(user);
         }
 
         throw (new("Solo un administrador puede quitar categorías"));

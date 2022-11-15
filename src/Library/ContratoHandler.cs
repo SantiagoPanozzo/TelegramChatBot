@@ -4,6 +4,8 @@ namespace Library;
 using System;
 
 /// <summary> Clase para manejar el catalogo </summary>
+/// /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las solicitudes-->
 public class ContratoHandler
 {
 
@@ -24,14 +26,28 @@ public class ContratoHandler
         }
     }
     
+    /// <summary> Constructor tipo Singleton de la clase </summary>
     private ContratoHandler()
     {
         this.Catalogo = SolicitudCatalog.GetInstance();
     }
 
+    /// <summary> Método para obtener la instancia de la clase </summary>
+    /// <returns> Devuelve la instancia </returns>
     public static ContratoHandler GetInstance()
     {
         return ContratoHandler.Instance;
+    }
+
+    /// <summary> Método para borrar los datos de la clase </summary>
+    /// <param name="user"> Tipo de usuario que llama al método </param>
+
+    public static void Wipe(Usuario user)
+    {
+        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        {
+            ContratoHandler._instance = null;
+        }
     }
 
     /// <summary> Método que crea una solicitud de trabajo </summary>
