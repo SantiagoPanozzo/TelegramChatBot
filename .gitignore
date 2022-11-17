@@ -453,3 +453,8 @@ $RECYCLE.BIN/
 ## Environment Variables (dotenv)
 ##
 .env
+
+!src/Program/bin/Debug/net6.0/appsettings.json
+!appsettings.json
+!**/appsettings.json
+!*/appsettings.json
