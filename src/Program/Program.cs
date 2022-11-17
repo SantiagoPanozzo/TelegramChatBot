@@ -21,14 +21,11 @@ using Library.DistanceMatrix;
 
 public class Program {
     public static void Main() {
-    
-        UcuTelegramBot.Main();
+        
         while(true)
         {
             Updater.EnableAutoUpdate();
-            Console.ReadKey();
-            Updater.DisableAutoUpdate();
-            Console.ReadKey();
+            UcuTelegramBot.Main();
         }
 
 

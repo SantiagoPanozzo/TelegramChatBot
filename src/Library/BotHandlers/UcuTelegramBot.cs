@@ -51,7 +51,7 @@ public class UcuTelegramBot {
     }
 
     /// <summary> Configura la aplicación </summary>//
-    private static void Start()
+    private async static void Start()
     {
         // Lee una variable de entorno NETCORE_ENVIRONMENT que si no existe o tiene el valor 'development' indica
         // que estamos en un ambiente de desarrollo.
@@ -62,8 +62,8 @@ public class UcuTelegramBot {
 
         var builder = new ConfigurationBuilder();
         builder
-            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory);
+            //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
         // En el ambiente de desarrollo el token secreto del bot se toma de la configuración secreta
         if (isDevelopment)
