@@ -13,8 +13,7 @@ namespace Library;
 /// responsabilidad, que pueden ser concretos, no dependan de una clase "handler" que potencialmente es abstracta.
 /// <remarks/>
 /// </summary>
-public interface IHandler
-{
+public interface IHandler {
     /// <summary>
     /// Obtiene el próximo "handler".
     /// </summary>

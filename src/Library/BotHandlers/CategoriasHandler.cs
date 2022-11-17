@@ -14,7 +14,7 @@ public class CategoriasHandler : BaseHandler {
     private TelegramBotClient bot;
 
     /// <summary>
-    /// Inicializa una nueva instancia de la clase <see cref="HelloHandler"/>. Esta clase procesa el mensaje "hola".
+    /// Inicializa una nueva instancia de la clase <see cref="HelloHandler"/>. Esta clase procesa el mensaje "Categorias".
     /// </summary>
     /// <param name="next">El próximo "handler".</param>
     public CategoriasHandler(TelegramBotClient bot, BaseHandler next) : base(next) {

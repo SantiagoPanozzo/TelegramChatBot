@@ -5,7 +5,7 @@ namespace Library;
 /// <summary> Un "handler" del patrón Chain of Responsibility que implementa el comando "info". </summary>
 public class InfoHandler : BaseHandler {
     /// <summary>
-    /// Inicializa una nueva instancia de la clase <see cref="HelloHandler"/>. Esta clase procesa el mensaje "hola".
+    /// Inicializa una nueva instancia de la clase <see cref="HelloHandler"/>. Esta clase procesa el mensaje "Información".
     /// </summary>
     /// <param name="next">El próximo "handler".</param>
     public InfoHandler(BaseHandler next) : base(next) {
