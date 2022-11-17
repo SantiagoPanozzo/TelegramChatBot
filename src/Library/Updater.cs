@@ -3,69 +3,98 @@ using System.Collections;
 namespace Library;
 
 /// <summary>  </summary>
-/// <!-- En esta clase hacemos uso del método Update() que implementamos en las clases que heredan de IActualizable por
-/// polymorphism. Gracias a haber utilizado el principio ahora podemos actualizarlas todas dentro de BaseUpdate()-->
-
-public class Updater
+public static class Updater
 {
-    
-    private static Updater? _instance;
 
-    private static Updater Instance
+    private static Timer? _timer = null;
+
+    private static RegistryHandler _registryHandler = RegistryHandler.GetInstance();
+    private static OfertasHandler _ofertasHandler = OfertasHandler.GetInstance();
+    private static ContratoHandler _contratoHandler = ContratoHandler.GetInstance();
+
+    /// <summary> Define cada cuánto tiempo se realizarán las actualizaciones automáticas si están habilitadas </summary>
+    private static readonly TimeSpan DelayActualizacion = new TimeSpan(seconds: 10, hours: 0, minutes: 0);
+    
+    private static bool _updating = false;
+    /// <summary>
+    /// Variable cuyo valor representa si el Updater está en modo automático
+    /// </summary>
+    public static bool IsUpdating
     {
         get
         {
-            if (_instance == null)
-            {
-                _instance = new Updater();
-            }
+            return _updating;
+        }
+    }
+    
+    /// <summary> Método para habilitar la actualización automática </summary>
+    public static async void EnableAutoUpdate()
+    {
+        Updater._updating = true;
+        while(_updating)
+        {
+            await Task.Run(AutoUpdate);
+        }
+    }
+    /// <summary> Método para deshabilitar la actualización automática </summary>
+    public static void DisableAutoUpdate()
+    {
+        Updater._updating = false;
+        Console.WriteLine("Subsistema de actualización automática desactivado, esperando a que se complete la última tarea...");
+    }
 
-            return _instance;
-        }
-    }
-    public static void Wipe(Usuario user)
+    /// <summary> Crea un búcle en el que se actualizan los objetos de tipo <see cref="IActualizable"/> </summary>
+    /// <returns></returns>
+    private static async Task<bool> AutoUpdate() // TODO el async tira warning y no se como arreglarlo
     {
-        if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+        Console.WriteLine($"Iniciado el subsistema de actualización automática con un temporizador de {Updater.DelayActualizacion.TotalSeconds} segundos");
+        while (IsUpdating)
         {
-            Updater._instance = null;
+            if(Updater._timer == null){
+                Console.WriteLine($"Actualizando de manera automática en {Updater.DelayActualizacion.TotalSeconds} segundos");
+                Updater._timer = new Timer(
+                    callback: new TimerCallback(UpdateCycle),
+                    state: null,
+                    dueTime: Updater.DelayActualizacion,
+                    period: TimeSpan.Zero);
+            }
         }
+        return false;
     }
-    
-    public static Updater GetInstance()
-    {
-        return Updater.Instance;
-    }
-    
-    private Updater()
-    {
-    }
-    
+
     /// <summary> Método para actualizar todas las clases que necesiten ser actualizadas periódicamente </summary>
-    /// <param name="fecha"> Fecha que utilizar para actualizar las clases en base a ella </param>
- 
-    private void BaseUpdate(DateTime fecha)
+    /// <param name="fecha"> Fecha a utilizar para actualizar las clases que lo necesiten. </param>
+    private static void BaseUpdate(DateTime fecha)
     {
-        RegistryHandler registryHandler = RegistryHandler.GetInstance();
-        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
-        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
-        foreach (IActualizable solicitud in contratoHandler.Catalogo.Solicitudes)
+        foreach (IActualizable solicitud in _contratoHandler.Catalogo.Solicitudes)
         {
-            solicitud.Update(DateTime.Now);
+            solicitud.Update(fecha);
         }
     }
     
     /// <summary> Método para actualizar con la fecha actual todas las clases que necesiten ser actualizadas periódicamente </summary>
-    public void Update()
+    public static void Update()
     {
         BaseUpdate(DateTime.Now);
     }
+
+    /// <summary> Método para realizar un ciclo de la actualización automática </summary>
+    /// <param name="dummy"> Objeto utilizado por método async </param>
+    private static void UpdateCycle(object? dummy) // TODO ver necesidad de object? a
+    {
+        Console.WriteLine("Actualizando todos los módulos...");
+        DateTime fecha = DateTime.Now;
+        BaseUpdate(fecha);
+        Console.WriteLine($"Actualizado según la fecha {fecha.Year}-{fecha.Month}-{fecha.Day} a las {fecha.Hour}:{fecha.Minute}:{fecha.Second}");
+        Updater._timer = null;
+
+    }
     
     /// <summary> Método para actualizar con una fecha falsa todas las clases que necesiten ser actualizadas periódicamente</summary>
-    /// <param name="fecha"> Fecha que utilizar para actualizar las clases en base a ella </param>
-    public void FakeUpdate(DateTime fecha)
+    /// <param name="fecha"> Fecha que simular para actualizar las clases que lo necesiten. </param>
+    public static void FakeUpdate(DateTime fecha)
     {
         BaseUpdate(fecha);
     }
-
     
 }
