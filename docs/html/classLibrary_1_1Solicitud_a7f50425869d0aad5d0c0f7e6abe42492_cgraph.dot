@@ -1,0 +1,20 @@
+digraph "Library.Solicitud.CalificarTrabajador"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Library.Solicitud.Calificar\lTrabajador",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para calificar un trabajador"];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Library.Solicitud.IsRated",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a3f28506b2bd1231cf55a2652d876d2ea",tooltip="Método para conocer si una oferta fue calificada"];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Library.OfertaDeServicio.\lGetCalificacion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertaDeServicio.html#a7d3b09276de28b53109097ca44c76ac8",tooltip="Método para obtener la calificación dada a la oferta tras ser finalizada"];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Library.OfertaDeServicio.\lRateMe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertaDeServicio.html#aeed25698e68c88cf5374dd5afe732b5f",tooltip="Método para calificar la oferta en cuestión"];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Library.Trabajador.Calificar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Trabajador.html#a6f55f5fa1d9bdd301639a0ac3d87b58e",tooltip="Método para calificar un usuario"];
+  Node4 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="Library.OfertaDeServicio.\lIsRated",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertaDeServicio.html#a492d374e602fdcdc4053c1dc182ad32c",tooltip="Método para verificar si fue calificada la oferta"];
+}

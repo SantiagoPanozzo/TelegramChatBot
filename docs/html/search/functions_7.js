@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['rateme_0',['RateMe',['../classOfertaDeServicio.html#a402115d7767af8bbe973fd0238108710',1,'OfertaDeServicio']]],
-  ['reactivar_1',['Reactivar',['../classOfertaDeServicio.html#a083bfdd34de8c47e86b600463b3d6df7',1,'OfertaDeServicio']]],
-  ['reactivate_2',['ReActivate',['../classUsuario.html#a0dbe5db31bf0e1b7f6dc5956d7ab20f1',1,'Usuario']]],
-  ['rechazarsolicitud_3',['RechazarSolicitud',['../classContratoHandler.html#a8fc8c6b575c63153f65c96461f120aa4',1,'ContratoHandler']]],
-  ['recibirrespuesta_4',['RecibirRespuesta',['../classSolicitud.html#a0b8fe23fefe4d1fa1ff6c9d054d51631',1,'Solicitud']]],
-  ['registraradministrador_5',['RegistrarAdministrador',['../classRegistryHandler.html#a34b0f1b9b4acc46173e8df18b6d13daf',1,'RegistryHandler']]],
-  ['registrarempleador_6',['RegistrarEmpleador',['../classRegistryHandler.html#a7d3db6da50fd5991c864aad52ba21a2b',1,'RegistryHandler']]],
-  ['registrartrabajador_7',['RegistrarTrabajador',['../classRegistryHandler.html#a385fec37ba8343a4d75225f0451218e6',1,'RegistryHandler']]],
-  ['removecategoria_8',['RemoveCategoria',['../classCategoriasCatalog.html#ad0b5c36522f6c81c69aceea4c07c9ac0',1,'CategoriasCatalog']]],
-  ['removeoferta_9',['RemoveOferta',['../classCategoria.html#add75f082a67fe1e5ef141092881697fc',1,'Categoria']]],
-  ['removesolicitud_10',['RemoveSolicitud',['../classSolicitudCatalog.html#ad441a1c578b0eebdec7527028281fca8',1,'SolicitudCatalog']]],
-  ['removeusuario_11',['RemoveUsuario',['../classRegistryHandler.html#aea5c1fe0a71f0c7910f010d9ee85dd1a',1,'RegistryHandler']]]
+  ['infohandler_0',['InfoHandler',['../classLibrary_1_1InfoHandler.html#a0bdc5e3741d567423fe68e5c129530d2',1,'Library::InfoHandler']]],
+  ['iniciartrabajo_1',['IniciarTrabajo',['../classLibrary_1_1Solicitud.html#abd52f9a5723d6d08e2b3c4b1effc3bb3',1,'Library::Solicitud']]],
+  ['internalcancel_2',['InternalCancel',['../classLibrary_1_1BaseHandler.html#a573ceb3115be4331dc60c0dd94ebf74a',1,'Library::BaseHandler']]],
+  ['internalhandle_3',['InternalHandle',['../classLibrary_1_1BaseHandler.html#a3c9be9c87d458588b108790b13758887',1,'Library.BaseHandler.InternalHandle()'],['../classLibrary_1_1CategoriasHandler.html#a19e0a3d4440a368aacad736268d81032',1,'Library.CategoriasHandler.InternalHandle()'],['../classLibrary_1_1InfoHandler.html#ac8073b7691d22cb579345de1fb51507f',1,'Library.InfoHandler.InternalHandle()']]],
+  ['isactive_4',['IsActive',['../classLibrary_1_1Categoria.html#a1540814172e5cf3a82851cbb8542388a',1,'Library.Categoria.IsActive()'],['../classLibrary_1_1OfertaDeServicio.html#a387ec34543c0bf27a63d463d53b5b32e',1,'Library.OfertaDeServicio.IsActive()'],['../classLibrary_1_1Solicitud.html#a049ad8aa162e0767d85c1b6172bc6c45',1,'Library.Solicitud.IsActive()'],['../classLibrary_1_1Usuario.html#ac8b2eb0988dacbb62b09f0abfdd8e3f6',1,'Library.Usuario.IsActive()']]],
+  ['isempleadorrated_5',['IsEmpleadorRated',['../classLibrary_1_1Solicitud.html#ad96bd18918513d6785345cda681fd644',1,'Library::Solicitud']]],
+  ['israted_6',['IsRated',['../classLibrary_1_1OfertaDeServicio.html#a492d374e602fdcdc4053c1dc182ad32c',1,'Library.OfertaDeServicio.IsRated()'],['../classLibrary_1_1Solicitud.html#a3f28506b2bd1231cf55a2652d876d2ea',1,'Library.Solicitud.IsRated()']]]
 ];

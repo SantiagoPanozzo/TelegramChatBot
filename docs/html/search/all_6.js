@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['icalificable_0',['ICalificable',['../interfaceICalificable.html',1,'']]],
-  ['iniciartrabajo_1',['IniciarTrabajo',['../classSolicitud.html#a751400e7b7d7d7eb1da8b5a6ebd917cb',1,'Solicitud']]],
-  ['isactiva_2',['IsActiva',['../classOfertaDeServicio.html#a0b53841a98ec382d5943fa4cae40e9a2',1,'OfertaDeServicio']]],
-  ['isactivo_3',['isActivo',['../classUsuario.html#a73197a78134af4d9bad2848fc7fc34c3',1,'Usuario']]],
-  ['israted_4',['IsRated',['../classSolicitud.html#a8349db017e45ee12e6fbcd60a85b503e',1,'Solicitud']]]
+  ['handle_0',['Handle',['../classLibrary_1_1BaseHandler.html#ab22b2fb5cc9e6488901d5a54e3db02af',1,'Library.BaseHandler.Handle()'],['../interfaceLibrary_1_1IHandler.html#abd9d7320dc805f417992ab74f2c70777',1,'Library.IHandler.Handle()']]],
+  ['handleerrorasync_1',['HandleErrorAsync',['../classLibrary_1_1UcuTelegramBot.html#a8d74bfcef15f6c0d3690adcb294e7091',1,'Library::UcuTelegramBot']]],
+  ['handleupdateasync_2',['HandleUpdateAsync',['../classLibrary_1_1UcuTelegramBot.html#a4f8776720bc36da6c726d6f842c92c5e',1,'Library::UcuTelegramBot']]],
+  ['historiasdeusuarios_3',['HistoriasDeUsuarios',['../md_HistoriasDeUsuarios.html',1,'']]]
 ];

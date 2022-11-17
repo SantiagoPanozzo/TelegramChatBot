@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['eliminarcategoria_0',['EliminarCategoria',['../classOfertasHandler.html#a5e4a2a347fd4f2861d3d976bef9844c1',1,'OfertasHandler']]],
-  ['empleador_1',['Empleador',['../classEmpleador.html',1,'Empleador'],['../classEmpleador.html#af2659e8f8d224961d6352962341e6f68',1,'Empleador.Empleador()']]],
-  ['escenarios_2',['Escenarios',['../classEscenarios.html',1,'']]]
+  ['dardebaja_0',['DarDeBaja',['../classLibrary_1_1Categoria.html#ac49a20997f4a7ca69f06e9e7e5914e94',1,'Library.Categoria.DarDeBaja()'],['../classLibrary_1_1OfertaDeServicio.html#a05fd36175b1f8f268eca50f06be8931f',1,'Library.OfertaDeServicio.DarDeBaja()'],['../classLibrary_1_1Solicitud.html#a8626ea612862185a6564d14d4804b51a',1,'Library.Solicitud.DarDeBaja()'],['../classLibrary_1_1Usuario.html#a94ab2e6613b6d2127c8fc90d161cd127',1,'Library.Usuario.DarDeBaja()']]],
+  ['dardebajaoferta_1',['DarDeBajaOferta',['../classLibrary_1_1OfertasHandler.html#a419fc6b93ef7235e39449f38494d7d1f',1,'Library::OfertasHandler']]],
+  ['distance_2',['Distance',['../classDistance.html',1,'']]],
+  ['distancetests_3',['DistanceTests',['../classLibraryTests_1_1DistanceTests.html',1,'LibraryTests']]]
 ];

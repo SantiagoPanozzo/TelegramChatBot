@@ -1,20 +1,7 @@
 var searchData=
 [
-  ['getcalificacion_0',['GetCalificacion',['../classOfertaDeServicio.html#acf974ce3ff084e50fb2ff98bc12c14ce',1,'OfertaDeServicio']]],
-  ['getcategoria_1',['GetCategoria',['../classCategoriasCatalog.html#afb83daeea932ba5c2162513cddb58dbf',1,'CategoriasCatalog']]],
-  ['getcategoriabyid_2',['GetCategoriaById',['../classCategoriasCatalog.html#a1275f6565562402725de3b14b665f622',1,'CategoriasCatalog.GetCategoriaById()'],['../classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872',1,'OfertasHandler.GetCategoriaById()']]],
-  ['getcategorias_3',['GetCategorias',['../classCategoriasCatalog.html#ae79da35b16690c192b5e7f006d419b69',1,'CategoriasCatalog.GetCategorias()'],['../classOfertasHandler.html#a33c2ecdf69907a45a5ec13c254c41dea',1,'OfertasHandler.GetCategorias()']]],
-  ['getcontacto_4',['GetContacto',['../classUsuario.html#a0a00d251a62e97ebc4f7ed0029958a28',1,'Usuario']]],
-  ['getcontecto_5',['GetContecto',['../classTrabajador.html#a0e42140dddb48848ece842c8a01b2819',1,'Trabajador']]],
-  ['getempleador_6',['GetEmpleador',['../classSolicitud.html#a8546bbd9081c5c28b6769df9fa71c0e3',1,'Solicitud']]],
-  ['getid_7',['GetId',['../classCategoria.html#aca21bd468a27caa944fd44707ae08e40',1,'Categoria.GetId()'],['../classOfertaDeServicio.html#a08ddd2ddbf7350edba02c0df6479e3be',1,'OfertaDeServicio.GetId()'],['../classSolicitud.html#a2d009757c617793c0718de978d3207b9',1,'Solicitud.GetId()']]],
-  ['getofertabyid_8',['GetOfertaById',['../classCategoria.html#a89901a153f0f3b2b29be4edd8e3e2435',1,'Categoria.GetOfertaById()'],['../classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7',1,'OfertasHandler.GetOfertaById()'],['../classCategoriasCatalog.html#a19cc28dc8303a7d6d5b77db7a57d503d',1,'CategoriasCatalog.GetOfertaById()']]],
-  ['getofertas_9',['GetOfertas',['../classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1',1,'OfertasHandler']]],
-  ['getofertas_10',['getOfertas',['../classCategoria.html#a4fe37127f3c8e0678c475c3dcbd917c6',1,'Categoria']]],
-  ['getreputacion_11',['GetReputacion',['../classEmpleador.html#aebd4cd043ecaa99299d48b63a24529f8',1,'Empleador.GetReputacion()'],['../classTrabajador.html#aff73d27e40b55c6b134a837095d65d18',1,'Trabajador.GetReputacion()']]],
-  ['getsolicitud_12',['GetSolicitud',['../classContratoHandler.html#a6ed025ef4cfaf9927ead59baec181b6c',1,'ContratoHandler']]],
-  ['getsolicitudes_13',['GetSolicitudes',['../classContratoHandler.html#a5b4f4057c4cb04de26ce17de67a1599a',1,'ContratoHandler']]],
-  ['gettipo_14',['GetTipo',['../classUsuario.html#aa70b73e1281e3dd34903a37fc426108f',1,'Usuario']]],
-  ['gettrabajador_15',['GetTrabajador',['../classSolicitud.html#afbb90dea67fba25a1fa56e13eb50ccc4',1,'Solicitud']]],
-  ['getusuario_16',['GetUsuario',['../classRegistryHandler.html#a1abb2030983c5d3146b86b26f57212e7',1,'RegistryHandler']]]
+  ['eliminarcategoria_0',['EliminarCategoria',['../classLibrary_1_1OfertasHandler.html#afefa462e1fe30165a2985f3ec5daa760',1,'Library::OfertasHandler']]],
+  ['empleador_1',['Empleador',['../classLibrary_1_1Empleador.html#a0455b7b82f05b0dae6f8e08ef4d50c72',1,'Library.Empleador.Empleador()'],['../classLibrary_1_1Empleador.html',1,'Library.Empleador']]],
+  ['empleadortests_2',['EmpleadorTests',['../classLibraryTests_1_1EmpleadorTests.html',1,'LibraryTests']]],
+  ['escenarios_3',['Escenarios',['../classLibraryTests_1_1Escenarios.html',1,'LibraryTests']]]
 ];

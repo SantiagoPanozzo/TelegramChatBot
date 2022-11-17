@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['aceptarsolicitud_0',['AceptarSolicitud',['../classContratoHandler.html#ab728365c23f26d17b84309fe9b63e7d5',1,'ContratoHandler']]],
-  ['addcategoria_1',['AddCategoria',['../classCategoriasCatalog.html#a54e30ec64bc063d3da712ed9fed84127',1,'CategoriasCatalog']]],
-  ['addoferta_2',['AddOferta',['../classCategoria.html#a0a1e3ed572d89c7d1abd4a7b9fec6b00',1,'Categoria']]],
-  ['addsolicitud_3',['AddSolicitud',['../classSolicitudCatalog.html#af6145cdfa1cbd7a6f6d1446d6f5d325c',1,'SolicitudCatalog']]],
-  ['administrador_4',['Administrador',['../classAdministrador.html',1,'Administrador'],['../classAdministrador.html#a7bbfb9e1180af5b4e931025ce0ce1a74',1,'Administrador.Administrador()']]]
+  ['aceptacion_0',['Aceptacion',['../namespaceLibrary.html#a4c7f28ff825d88c9550c79269dc65d49',1,'Library']]],
+  ['aceptarsolicitud_1',['AceptarSolicitud',['../classLibrary_1_1ContratoHandler.html#a9da1c5ea2f4b9eb3ebe351fa0dac67d5',1,'Library::ContratoHandler']]],
+  ['addadminstrador_2',['AddAdminstrador',['../classLibrary_1_1UsuariosCatalog.html#a0bc70b7565dd52d48a63682c567ab902',1,'Library::UsuariosCatalog']]],
+  ['addcategoria_3',['AddCategoria',['../classLibrary_1_1CategoriasCatalog.html#a9cfffa528cb849e731015b40d8040672',1,'Library::CategoriasCatalog']]],
+  ['addoferta_4',['AddOferta',['../classLibrary_1_1Categoria.html#a76625bf1c77b7b7be79bb18dc30317a7',1,'Library::Categoria']]],
+  ['addsolicitud_5',['AddSolicitud',['../classLibrary_1_1SolicitudCatalog.html#a3331fe5811ee8e1bbfa26b0175cb5095',1,'Library::SolicitudCatalog']]],
+  ['addusuario_6',['AddUsuario',['../classLibrary_1_1UsuariosCatalog.html#afda536f591a331a1c6ece35ce24cdd9b',1,'Library::UsuariosCatalog']]],
+  ['administrador_7',['Administrador',['../classLibrary_1_1Administrador.html#a49887c9b642fad80228af502edf6f8ca',1,'Library.Administrador.Administrador()'],['../classLibrary_1_1Administrador.html',1,'Library.Administrador']]],
+  ['administradortests_8',['AdministradorTests',['../classLibraryTests_1_1AdministradorTests.html',1,'LibraryTests']]]
 ];

@@ -1,0 +1,16 @@
+digraph "Library.Trabajador.Calificar"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.Trabajador.Calificar",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para calificar un usuario"];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.OfertaDeServicio.\lRateMe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertaDeServicio.html#aeed25698e68c88cf5374dd5afe732b5f",tooltip="Método para calificar la oferta en cuestión"];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.Solicitud.Calificar\lTrabajador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a7f50425869d0aad5d0c0f7e6abe42492",tooltip="Método para calificar un trabajador"];
+  Node2 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.Solicitud.Update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
+}

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['categoria_0',['Categoria',['../classCategoria.html',1,'']]],
-  ['categoriascatalog_1',['CategoriasCatalog',['../classCategoriasCatalog.html',1,'']]],
-  ['contratohandler_2',['ContratoHandler',['../classContratoHandler.html',1,'']]]
+  ['basehandler_0',['BaseHandler',['../classLibrary_1_1BaseHandler.html',1,'Library']]],
+  ['buscador_1',['Buscador',['../classLibrary_1_1Buscador.html',1,'Library']]]
 ];

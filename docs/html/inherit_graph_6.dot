@@ -2,8 +2,15 @@ digraph "Graphical Class Hierarchy"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [label="OfertasHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html",tooltip="Clase para manejar el catálogo de ofertas"];
+  Node0 [label="Library.IHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1IHandler.html",tooltip="Interfaz para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a travé..."];
+  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node1 [label="Library.BaseHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1BaseHandler.html",tooltip="Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra..."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.CategoriasHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasHandler.html",tooltip="Un \"handler\" del patrón Chain of Responsibility que implementa el comando \"categorias\"."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.InfoHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1InfoHandler.html",tooltip="Un \"handler\" del patrón Chain of Responsibility que implementa el comando \"info\"."];
 }

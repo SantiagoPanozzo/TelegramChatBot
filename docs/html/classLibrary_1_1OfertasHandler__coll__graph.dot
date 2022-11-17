@@ -1,0 +1,9 @@
+digraph "Library.OfertasHandler"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="{Library.OfertasHandler\n|+ Instance\l|+ Ofertar()\l+ DarDeBajaOferta()\l+ GetCategorias()\l+ CrearCategoria()\l+ EliminarCategoria()\l+ GetOfertas()\l+ GetOfertaById()\l+ GetCategoriaById()\l+ Wipe()\l+ GetInstance()\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Clase para manejar el catálogo de ofertas"];
+}

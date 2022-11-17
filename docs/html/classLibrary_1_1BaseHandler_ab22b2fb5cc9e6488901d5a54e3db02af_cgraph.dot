@@ -1,0 +1,16 @@
+digraph "Library.BaseHandler.Handle"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Library.BaseHandler.Handle",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Procesa el mensaje o lo pasa al siguiente \"handler\" si existe."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Library.BaseHandler.CanHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1BaseHandler.html#a77cfb55207412de295f3e038dd63b9a6",tooltip="Determina si este \"handler\" puede procesar el mensaje. En la clase base se utiliza el array BaseHandl..."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Library.IHandler.Handle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1IHandler.html#abd9d7320dc805f417992ab74f2c70777",tooltip="Procesa el mensaje o la pasa al siguiente \"handler\" si existe."];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Library.BaseHandler.Internal\lHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1BaseHandler.html#a3c9be9c87d458588b108790b13758887",tooltip="Este método debe ser sobreescrito por las clases sucesores. La clase sucesora procesa el mensaje y as..."];
+}

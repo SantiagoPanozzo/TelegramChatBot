@@ -1,0 +1,20 @@
+digraph "Library.OfertaDeServicio.GetId"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.OfertaDeServicio.\lGetId",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para obtener id de OfertaDeServicio"];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.Categoria.GetOfertaById",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Categoria.html#abfee7bcdbeb886b1993fdfaf14efe6d7",tooltip="Filtrar OfertaDeServicio por id"];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.CategoriasCatalog.\lGetOfertaById",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#a02d667d79dc6c941d7ab276c88259ff2",tooltip="Método para obtener OfertaDeServicio por id"];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.OfertasHandler.Get\lOfertaById",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a77e846642d71cc0848a111e21fd20bbf",tooltip="Método para obtener una OfertaDeServicio por id"];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="Library.OfertasHandler.Dar\lDeBajaOferta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a419fc6b93ef7235e39449f38494d7d1f",tooltip="Método para dar de baja una OfertaDeServicio"];
+  Node2 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="Library.Categoria.Remove\lOferta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Categoria.html#a395e51b351aeb577b6371110ceec8abd",tooltip="Método para quitar una oferta, en caso de que la misma no exista no hará nada"];
+}

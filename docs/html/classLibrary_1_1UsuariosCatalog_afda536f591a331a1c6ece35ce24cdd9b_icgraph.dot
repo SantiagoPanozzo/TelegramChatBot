@@ -1,0 +1,14 @@
+digraph "Library.UsuariosCatalog.AddUsuario"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.UsuariosCatalog.\lAddUsuario",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método que agrega un usuario"];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.RegistryHandler.\lRegistrarEmpleador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#a9cea158f44e96feb3ee3b4cf8a2c166c",tooltip="Método para registrar un empleador"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.RegistryHandler.\lRegistrarTrabajador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#a0bf9704d7dc2ab9bf3cde59b66012d69",tooltip="Método para registrar un trabajador"];
+}
