@@ -13,12 +13,10 @@ public static class Updater
     private static ContratoHandler _contratoHandler = ContratoHandler.GetInstance();
 
     /// <summary> Define cada cuánto tiempo se realizarán las actualizaciones automáticas si están habilitadas </summary>
-    private static readonly TimeSpan DelayActualizacion = new TimeSpan(seconds: 10, hours: 0, minutes: 0);
+    private static readonly TimeSpan DelayActualizacion = new TimeSpan(seconds: 30, hours: 0, minutes: 0);
     
     private static bool _updating = false;
-    /// <summary>
-    /// Variable cuyo valor representa si el Updater está en modo automático
-    /// </summary>
+    /// <summary> Variable cuyo valor representa si el Updater está en modo automático </summary>
     public static bool IsUpdating
     {
         get
@@ -95,6 +93,5 @@ public static class Updater
     public static void FakeUpdate(DateTime fecha)
     {
         BaseUpdate(fecha);
-    }
-    
+    } 
 }

@@ -10,15 +10,15 @@ using Nito.AsyncEx;
 namespace Library;
 
 /// <summary> Un "handler" del patrón Chain of Responsibility que implementa el comando "categorias". </summary>
-public class CategoriasHandler : BaseHandler {
+public class StartHandler : BaseHandler {
     private TelegramBotClient bot;
 
     /// <summary>
-    /// Inicializa una nueva instancia de la clase <see cref="CategoriasHandler"/>. Esta clase procesa el mensaje "Categorias".
+    /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "Categorias".
     /// </summary>
     /// <param name="next">El próximo "handler".</param>
-    public CategoriasHandler(TelegramBotClient bot, BaseHandler next) : base(next) {
-        this.Keywords = new string[] {"categorias"};
+    public StartHandler(TelegramBotClient bot, BaseHandler next) : base(next) {
+        this.Keywords = new string[] {"start"};
     }
 
     /// <summary> Procesa el mensaje "Categorias" y retorna true; retorna false en caso contrario. </summary>
@@ -26,6 +26,6 @@ public class CategoriasHandler : BaseHandler {
     /// <param name="response">La respuesta al mensaje procesado.</param>
     /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
     protected override void InternalHandle(Message message, out string response) {
-        response = "Categorias: --a-a-a--a-a-a-a-";
+        response = "Comandos: info\ncategorias\namong\nus";
     }
 }
