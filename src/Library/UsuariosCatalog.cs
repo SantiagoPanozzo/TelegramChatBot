@@ -3,8 +3,7 @@ namespace Library;
 /// <summary>Método para el manejo del catálogo del usuario</summary>
 /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
 /// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para "almacenar" los usuarios -->
-public class UsuariosCatalog
-{
+public class UsuariosCatalog {
     protected List<Usuario> Usuarios;
 
     private static UsuariosCatalog? _instance;
