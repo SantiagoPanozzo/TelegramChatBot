@@ -9,7 +9,7 @@ public class InfoHandler : BaseHandler {
     /// </summary>
     /// <param name="next">El próximo "handler".</param>
     public InfoHandler(BaseHandler next) : base(next) {
-        this.Keywords = new string[] {"info"};
+        this.Keywords = new string[] {"/info", "info"};
     }
 
     /// <summary> Procesa el mensaje "info" y retorna true; retorna false en caso contrario. </summary>

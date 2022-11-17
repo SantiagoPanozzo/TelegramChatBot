@@ -27,7 +27,6 @@ public class Program {
             UcuTelegramBot.Main();
         }
 
-
         //Console.WriteLine(Distance.Calculate("Salto Uruguay", "Montevideo Uruguay"));
         /*
         Administrador admin = new("sd", "sd", "9231015", "sfa@sda.com");
