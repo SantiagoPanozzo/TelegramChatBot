@@ -17,8 +17,7 @@ namespace Library;
 /// <summary>
 /// Un programa que implementa un bot de Telegram.
 /// </summary>
-public class UcuTelegramBot
-{
+public class UcuTelegramBot {
     // La instancia del bot.
     private static TelegramBotClient Bot;
 
@@ -26,20 +25,19 @@ public class UcuTelegramBot
     // obtener indicaciones sobre cómo configurarlo.
     private static string token;
 
-    // Esta clase es un POCO -vean https://en.wikipedia.org/wiki/Plain_old_CLR_object- para representar el token
-    // secreto del bot.
+    /// <summary> Representa el token secreto del bot </summary>
     private class BotSecret
     {
         public string Token { get; set; }
     }
 
-    // Una interfaz requerida para configurar el servicio que lee el token secreto del bot.
+    /// <summary> Configura el servicio que lee el token secreto del bot </summary>
     private interface ISecretService
     {
         string Token { get; }
     }
 
-    // Una clase que provee el servicio de leer el token secreto del bot.
+    /// <summary> Lee el token secreto del bot. </summary>
     private class SecretService : ISecretService
     {
         private readonly BotSecret _secrets;
@@ -52,7 +50,7 @@ public class UcuTelegramBot
         public string Token { get { return _secrets.Token; } }
     }
 
-    // Configura la aplicación.
+    /// <summary> Configura la aplicación </summary>//
     private static void Start()
     {
         // Lee una variable de entorno NETCORE_ENVIRONMENT que si no existe o tiene el valor 'development' indica
@@ -89,9 +87,7 @@ public class UcuTelegramBot
 
     private static IHandler firstHandler;
 
-    /// <summary>
-    /// Punto de entrada al programa.
-    /// </summary>
+    /// <summary> Punto de entrada al programa. </summary>
     public static void Main()
     {
         Start();
@@ -118,7 +114,7 @@ public class UcuTelegramBot
             cts.Token
         );
 
-        Console.WriteLine($"Bot is up!");
+        Console.WriteLine($"¡Bot está arriba!");
 
         // Esperamos a que el usuario aprete Enter en la consola para terminar el bot.
         Console.ReadLine();
@@ -127,10 +123,8 @@ public class UcuTelegramBot
         cts.Cancel();
     }
 
-    /// <summary>
-    /// Maneja las actualizaciones del bot (todo lo que llega), incluyendo mensajes, ediciones de mensajes,
-    /// respuestas a botones, etc. En este ejemplo sólo manejamos mensajes de texto.
-    /// </summary>
+    /// <summary> Maneja las actualizaciones del bot (todo lo que llega), incluyendo mensajes, ediciones de mensajes,
+    /// respuestas a botones, etc. En este ejemplo sólo manejamos mensajes de texto. </summary>
     public static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
     {
         try
@@ -147,19 +141,17 @@ public class UcuTelegramBot
         }
     }
 
-    /// <summary>
-    /// Maneja los mensajes que se envían al bot a través de handlers de una chain of responsibility.
-    /// </summary>
-    /// <param name="message">El mensaje recibido</param>
-    /// <returns></returns>
+    /// <summary> Maneja los mensajes que se envían al bot a través de handlers de una chain of responsibility. </summary>
+    /// <param name="message"> El mensaje recibido </param>
+    /// <returns>Devuelve la task</returns>
     private static async Task HandleMessageReceived(ITelegramBotClient botClient, Message message)
     {
-        //EStas tres líneas es para serializar message a ver que trae.
-        // var options = new JsonSerializerOptions { WriteIndented = true };
-        // string jsonString = JsonSerializer.Serialize(message);
+        // Estas tres líneas es para serializar message a ver que trae.
+        var options = new JsonSerializerOptions { WriteIndented = true };
+        string jsonString = JsonSerializer.Serialize(message, options);
         // Console.WriteLine(jsonString);
 
-        Console.WriteLine($"Received a message from {message.From.FirstName} saying: {message.Text}");
+        Console.WriteLine($"Se recibió un mensaje de {message.From.FirstName} consultando por: {message.Text}");
 
         string response = string.Empty;
 
@@ -171,9 +163,7 @@ public class UcuTelegramBot
         }
     }
 
-    /// <summary>
-    /// Manejo de excepciones. Por ahora simplemente la imprimimos en la consola.
-    /// </summary>
+    /// <summary> Manejo de excepciones. Por ahora simplemente la imprimimos en la consola. </summary>
     public static Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
     {
         Console.WriteLine(exception.Message);
