@@ -76,7 +76,7 @@ public abstract class BaseHandler : IHandler
     public IHandler Handle(Message message, out string response)
     {
         TelegramBot.Posiciones[message.From.Id] = this._id;
-        Console.WriteLine("El usuario "+message.From.FirstName+" está en "+this._id);
+        Console.WriteLine($"El usuario {message.From.FirstName} está en {this._id}");
         if (this.CanHandle(message))
         {
             this.InternalHandle(message, out response);
