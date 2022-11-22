@@ -8,7 +8,9 @@ public class InfoHandler : BaseHandler {
     /// Inicializa una nueva instancia de la clase <see cref="InfoHandler"/>. Esta clase procesa el mensaje "Información".
     /// </summary>
     /// <param name="next">El próximo "handler".</param>
-    public InfoHandler(BaseHandler next) : base(next) {
+    public InfoHandler(BaseHandler next) : base(next)
+    {
+        this._id = "Info Handler";
         this.Keywords = new string[] {"/info", "info"};
     }
 

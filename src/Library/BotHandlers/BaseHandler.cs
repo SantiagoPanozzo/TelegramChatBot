@@ -13,7 +13,7 @@ namespace Library;
 /// </summary>
 public abstract class BaseHandler : IHandler
 {
-    protected int _id { get; set; }
+    protected string _id { get; set; }
     
     /// <summary> Obtiene el próximo "handler". </summary>
     /// <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
@@ -75,6 +75,8 @@ public abstract class BaseHandler : IHandler
     /// <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
     public IHandler Handle(Message message, out string response)
     {
+        TelegramBot.Posiciones[message.From.Id] = this._id;
+        Console.WriteLine("El usuario "+message.From.FirstName+" está en "+this._id);
         if (this.CanHandle(message))
         {
             this.InternalHandle(message, out response);

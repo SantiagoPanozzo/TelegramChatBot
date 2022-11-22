@@ -13,7 +13,7 @@ public class RegistrarHandler : BaseHandler
     // Elegir tipo trabajador/empleador
     public RegistrarHandler(BaseHandler next) : base(next) {
         this.Keywords = new string[] {"registrar", "/registrar" };
-        this._id = 2;
+        this._id = "Registrar Handler";
     }
     // volver a bienvenida
     protected override void InternalHandle(Message message, out string response) {

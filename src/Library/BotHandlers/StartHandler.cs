@@ -19,7 +19,7 @@ public class StartHandler : BaseHandler {
     /// <param name="next">El próximo "handler".</param>
     public StartHandler(BaseHandler next) : base(next) {
         this.Keywords = new string[] {"start", "/start"};
-        this._id = 1;
+        this._id = "Start Handler";
     }
 
     /// <summary> Procesa el mensaje "Categorias" y retorna true; retorna false en caso contrario. </summary>

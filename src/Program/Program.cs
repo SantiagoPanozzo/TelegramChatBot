@@ -24,7 +24,7 @@ public class Program {
         while(true)
         {
             Updater.EnableAutoUpdate();
-            UcuTelegramBot.Main();
+            TelegramBot.Main();
         }
 
         //Console.WriteLine(Distance.Calculate("Salto Uruguay", "Montevideo Uruguay"));
