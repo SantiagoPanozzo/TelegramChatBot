@@ -14,15 +14,11 @@ namespace Library;
 /// <remarks/>
 /// </summary>
 public interface IHandler {
-    /// <summary>
-    /// Obtiene el próximo "handler".
-    /// </summary>
+    /// <summary> Obtiene el próximo "handler". </summary>
     /// <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
     IHandler Next { get; set; }
 
-    /// <summary>
-    /// Procesa el mensaje o la pasa al siguiente "handler" si existe.
-    /// </summary>
+    /// <summary> Procesa el mensaje o la pasa al siguiente "handler" si existe. </summary>
     /// <param name="message">El mensaje a procesar.</param>
     /// <param name="response">La respuesta al mensaje procesado.</param>
     /// <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>

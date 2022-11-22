@@ -93,9 +93,7 @@ public class UcuTelegramBot {
         Bot = new TelegramBotClient(token);
 
         firstHandler =
-            new InfoHandler(
-            new CategoriasHandler(Bot, null)
-        );
+            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, null)));
 
         var cts = new CancellationTokenSource();
 

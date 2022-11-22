@@ -12,13 +12,14 @@ namespace Library;
 /// <summary> Un "handler" del patrón Chain of Responsibility que implementa el comando "categorias". </summary>
 public class StartHandler : BaseHandler {
     private TelegramBotClient bot;
-
+    
     /// <summary>
     /// Inicializa una nueva instancia de la clase <see cref="StartHandler"/>. Esta clase procesa el mensaje "Categorias".
     /// </summary>
     /// <param name="next">El próximo "handler".</param>
-    public StartHandler(TelegramBotClient bot, BaseHandler next) : base(next) {
-        this.Keywords = new string[] {"start"};
+    public StartHandler(BaseHandler next) : base(next) {
+        this.Keywords = new string[] {"start", "/start"};
+        this._id = 1;
     }
 
     /// <summary> Procesa el mensaje "Categorias" y retorna true; retorna false en caso contrario. </summary>
@@ -26,6 +27,6 @@ public class StartHandler : BaseHandler {
     /// <param name="response">La respuesta al mensaje procesado.</param>
     /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
     protected override void InternalHandle(Message message, out string response) {
-        response = "Comandos: info\ncategorias\namong\nus";
+        response = "Para ver todos los comandos ingrese la palabra \"info\", o ejecute el comando /info";
     }
 }

@@ -13,6 +13,8 @@ namespace Library;
 /// </summary>
 public abstract class BaseHandler : IHandler
 {
+    protected int _id { get; set; }
+    
     /// <summary> Obtiene el próximo "handler". </summary>
     /// <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
     public IHandler Next { get; set; }
