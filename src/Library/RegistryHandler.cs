@@ -1,5 +1,6 @@
 namespace Library;
 using System;
+using System.Text.RegularExpressions;
 
 /// <summary> Clase para manejar el registro </summary>
 /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
@@ -23,6 +24,8 @@ public class RegistryHandler
             return _instance;
         }
     }
+
+    static Regex ValidEmailRegex = RegexValidarEmail();
     
     /// <summary> Método para borrar los datos de la clase </summary>
     /// <param name="user"> Tipo de usuario que llama al método </param>
@@ -128,7 +131,24 @@ public class RegistryHandler
         return true;
     }
     
-    /// <summary> Método para verificar el correo de un <see cref="Usuario"/> </summary>
+    /// <summary> Referencia: http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx </summary>
+    private static Regex RegexValidarEmail() {
+        string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
+            + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
+            + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+
+        return new Regex(validEmailPattern, RegexOptions.IgnoreCase);
+    }
+
+    /// <summary> Método para verificar un correo </summary>
+    /// <param name="correo"> Correo para verificar </param>
+    /// <returns> Devuelve true si el correo es valido, en caso contrario false </returns>
+    public bool VerificarCorreo(string correo) {
+        bool isValid = ValidEmailRegex.IsMatch(correo);
+        return isValid;
+    }
+
+    /* /// <summary> Método para verificar el correo de un <see cref="Usuario"/> </summary>
     /// <param name="correo"> Correo del <see cref="Usuario"/> </param>
     /// <returns> Devuelve true si el formato del correo es válido, de lo contrario devuelve false </returns>
     public bool VerificarCorreo(string correo)
@@ -149,7 +169,7 @@ public class RegistryHandler
         }
         if (punto) return true;
         return false;
-    }
+    } */
 
     /// <summary> Método para verificar la cédula de un <see cref="Usuario"/> </summary>
     /// <param name="cedula"> Cédula del <see cref="Usuario"/> </param>
@@ -222,16 +242,15 @@ public class RegistryHandler
     /// <summary> Método para obtener la información pública de un usuario </summary>
     /// <param name="nickname"> Nickname del usuario </param>
     /// <returns> Devuelve la información del usuario </returns>
-
     public Dictionary<string, string> GetUserInfo(string nickname)
     {
         Usuario user = GetUser(nickname);
         return user.GetPublicInfo();
     }
+
     /// <summary> Método para obtener el contacto de un usuario </summary>
     /// <param name="nickname"> Nickname del usuario </param>
     /// <returns> Devuelve el contacto del usuario </returns>
-
     public Dictionary<string, string> GetUserContact(string nickname)
     {
         Usuario user = GetUser(nickname);
