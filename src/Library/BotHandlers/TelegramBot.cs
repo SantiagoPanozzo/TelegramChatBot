@@ -21,8 +21,6 @@ public class TelegramBot {
     // La instancia del bot.
     private static TelegramBotClient Bot;
 
-    public static Dictionary<long, string> Posiciones = new Dictionary<long, string>();
-
     // El token provisto por Telegram al crear el bot. Mira el archivo README.md en la raíz de este repo para
     // obtener indicaciones sobre cómo configurarlo.
     private static string token;
@@ -97,7 +95,7 @@ public class TelegramBot {
         Bot = new TelegramBotClient(token);
 
         firstHandler =
-            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(null))));
+            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(null)))));
 
         var cts = new CancellationTokenSource();
 

@@ -75,10 +75,10 @@ public abstract class BaseHandler : IHandler
     /// <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
     public IHandler Handle(Message message, out string response)
     {
-        TelegramBot.Posiciones[message.From.Id] = this._id;
-        Console.WriteLine($"El usuario {message.From.FirstName} está en {this._id}");
         if (this.CanHandle(message))
         {
+            // TelegramBot.Posiciones[message.From.Id] = this._id;
+            // Console.WriteLine($"El usuario {message.From.FirstName} está en {this._id}");
             this.InternalHandle(message, out response);
             return this;
         }
