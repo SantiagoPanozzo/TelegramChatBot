@@ -12,6 +12,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
 using System.Text.Json;
+using Library.BotHandlers;
 using Library.Registro;
 
 namespace Library;
@@ -95,7 +96,7 @@ public class TelegramBot {
         Bot = new TelegramBotClient(token);
 
         firstHandler =
-            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(null)))));
+            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(new DefaultHandler(null,Bot))))));
 
         var cts = new CancellationTokenSource();
 

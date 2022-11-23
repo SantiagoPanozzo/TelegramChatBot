@@ -37,24 +37,18 @@ public BuscarHandler(BaseHandler next) : base(next) {
 /// <param name="message">  </param>
 /// <returns>  </returns>
 protected override bool CanHandle(Message message) {
-    switch (this.State)
+    if (!this.Posiciones.ContainsKey(message.From.Id))
+    {
+        this.Posiciones[message.From.Id] = BuscarState.Start;
+    }
+    switch (this.Posiciones[message.From.Id])
     {
         case BuscarState.Start:
             return base.CanHandle(message);
-        case BuscarState.Filtro:
-            return true;
-        case BuscarState.Distancia:
-            return true;
-        case BuscarState.Categoria:
-            return true;
-        case BuscarState.Reputacion:
-            return true;
-        case BuscarState.Solicitar:
-            return true;
         default:
-            break;
+            return true;
     }
-    return this.Keywords.Any(s => message.Text.Equals(s, StringComparison.InvariantCultureIgnoreCase));
+    // return this.Keywords.Any(s => message.Text.Equals(s, StringComparison.InvariantCultureIgnoreCase));
     /*
     if (this.State ==  BuscarState.Start) {
         return base.CanHandle(message);
@@ -73,33 +67,30 @@ protected override void InternalHandle(Message message, out string response) {
     if (message == null || message.From == null) {
         throw new Exception("No se recibió un mensaje");
     }
-
-    if (!this.Posiciones.ContainsKey(message.From.Id)) {
-        this.Posiciones.Add(message.From.Id, BuscarState.Start);
-    }
+    
 
     response = "Error desconocido";
     
-    BuscarState state = this.Posiciones[message.From.Id];
+    this.State = this.Posiciones[message.From.Id];
 
-    switch(state) {
+    switch(State) {
         case BuscarState.Start:
             this.Posiciones[message.From.Id] = BuscarState.Filtro;
-            response = $"Filtrar por:\n1) Categoria\n2) Distancia\n3) Reputación {this.Posiciones[message.From.Id]}";
+            response = $"Filtrar por:\n1) Categoria\n2) Distancia\n3) Reputación";
             break;
         case BuscarState.Filtro:
             switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = BuscarState.Categoria;
-                    response = "categoria";
+                    response = "imaginate que aca hay una lista filtrada por categoria \nque oferta ver?";
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = BuscarState.Distancia;
-                    response = "distancia";
+                    response = "imaginate que aca hay una lista filtrada por distancia \nque oferta ver?";
                     break;
                 case "3":
                     this.Posiciones[message.From.Id] = BuscarState.Reputacion;
-                    response = "reputacion";
+                    response = "imaginate que aca hay una lista filtrada por reputacion \nque oferta ver?";
                     break;
                 case "volver":
                     this.Posiciones[message.From.Id] = BuscarState.Filtro;
@@ -107,37 +98,33 @@ protected override void InternalHandle(Message message, out string response) {
                 default:
                     response = "Verifique que el estado ingresado sea correcto";
                     this.Posiciones[message.From.Id] = BuscarState.Filtro;
-                    response = $"Filtrar por:\n1) Categoria\n2) Distancia\n3) Reputación {this.Posiciones[message.From.Id]}";
+                    response = $"Filtrar por:\n1) Categoria\n2) Distancia\n3) Reputación";
                     break;
             }
-            Console.WriteLine(response);
             break;
         case BuscarState.Categoria:
             this.Posiciones[message.From.Id] = BuscarState.VerOferta;
             this.Oferta = message.Text;
-            response = "categoria";  //TODO falta implementar printer
+            response = $"ver oferta \"{this.Oferta}\", desea solicitarla?";  //TODO falta implementar printer
             break;
         case BuscarState.Distancia:
             this.Posiciones[message.From.Id] = BuscarState.VerOferta;
             this.Oferta = message.Text;
-            response = "distancia";  //TODO falta implementar printer
+            response = $"ver oferta \"{this.Oferta}\", desea solicitarla?";  //TODO falta implementar printer
             break;
         case BuscarState.Reputacion:
             this.Posiciones[message.From.Id] = BuscarState.VerOferta;
             this.Oferta = message.Text;
-            response = "reputacion";  //TODO falta implementar printer
+            response = $"ver oferta \"{this.Oferta}\", desea solicitarla?";  //TODO falta implementar printer
             break;
         case BuscarState.VerOferta:
-            response = $"ver oferta {this.Oferta}, desea solicitarla?";  //TODO ver esto
-            break;
-        case BuscarState.Solicitar:
-            response = "Ok";
-            this.Posiciones[message.From.Id] = BuscarState.Filtro;
-            response = $"Filtrar por:\n1) Categoria\n2) Distancia\n3) Reputación {this.Posiciones[message.From.Id]}";
+            response = "ok";  //TODO ver esto
+            this.Posiciones[message.From.Id] = BuscarState.Start;
             break;
         default:
             response = "a";
             break;
         }
+    Console.WriteLine(response);
     }
 }
