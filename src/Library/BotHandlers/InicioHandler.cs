@@ -2,13 +2,11 @@ using Telegram.Bot.Types;
 using System;
 namespace Library.BotHandlers;
 
-/// <summary>
-/// Dependiendo del <see cref="TipoDeUsuario"/> del <see cref="Usuario"/> muestra distintas opciones.
+/// <summary> Dependiendo del <see cref="TipoDeUsuario"/> del <see cref="Usuario"/> muestra distintas opciones.
 /// Para un <see cref="Trabajador"/> muestra <see cref="OfertarServicioHandler"/>, <see cref="VerOfertasHandler"/>,
 /// <see cref="VerInfoHandler"/> y <see cref="VerSolicitudesHandler"/>.
 /// Para un <see cref="Empleador"/> muestra <see cref="VerContratosHandler"/>, <see cref="VerInfoHandler"/> y
-/// y <see cref="BuscarHandler"/>
-/// </summary>
+/// y <see cref="BuscarHandler"/> </summary>
 public class InicioHandler : BaseHandler {
     // Dependiendo del tipo muestra opciones
     // trabajador muestra Ofertar Servicio, Ver mis ofertas, Ver mi informacion, Ver mis solicitudes pendientes
@@ -17,9 +15,7 @@ public class InicioHandler : BaseHandler {
         Start,
         Empleador,
         Trabajador,
-        Identificarse,
-        TrabajadorQueHago,
-        EmpleadorQueHago
+        Identificarse
     }
 
     /// <summary> El estado del comando. </summary>
@@ -68,26 +64,20 @@ public class InicioHandler : BaseHandler {
                 switch(message.Text) {
                     case "1":
                         this.Posiciones[message.From.Id] = InicioState.Trabajador;
-                        response = "Identificandose";
+                        response = "¿Que operación desea realizar?\n1) Ofertar un servicio\n2) Ver mis ofertas\n3) Ver mis datos personales\n4) Ver mis solicitudes pendientes\n5) Volver al inicio";
                         break;
                     case "2":
                         this.Posiciones[message.From.Id] = InicioState.Empleador;
-                        response = "Identificandose";
+                        response = "¿Que operación desea realizar?\n1) Ver mis contratos\n2) Ver mis datos personales\n3) Buscar ofertas\n4) Volver al inicio";
                         break;
                     default:
-                        response = "Verifique que la identificación sea correcta";
                         this.Posiciones[message.From.Id] = InicioState.Identificarse;
-                        response = "Identificarse como:\n1) Empleador\n2) Trabajador";
+                        response = "Verifique que la identificación sea correcta, ingrese solo el número\n\nIdentificarse como:\n1) Empleador\n2) Trabajador";
                         break;
                 }
                 break;
 
             case InicioState.Trabajador:
-                this.Posiciones[message.From.Id] = InicioState.TrabajadorQueHago;
-                response = $"¿Que operación desea realizar?\n1) Ofertar un servicio\n2) Ver mis ofertas\n3) Ver mis datos personales\n4) Ver mis solicitudes pendientes\n5) Volver al inicio";  //TODO falta implementar printer
-                break;
-
-            case InicioState.TrabajadorQueHago:
                 switch (message.Text) {
                     case "1":
                         response = "Elija una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
@@ -95,7 +85,7 @@ public class InicioHandler : BaseHandler {
                             case "":
                                 break;
                             default:
-                                response = "Asegurese de que la categoría seleccionada exista\nEliga una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
+                                response = "Asegurese de que la categoría seleccionada exista, ingrese solo el número\nEliga una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
                                 break;
                         }
                         break;
@@ -126,18 +116,13 @@ public class InicioHandler : BaseHandler {
                         break;
 
                     default:
-                        response = "Asegurese de que la opción elegida sea valida";
-                        this.Posiciones[message.From.Id] = InicioState.TrabajadorQueHago;
+                        response = "Asegurese de que la opción elegida sea valida, ingrese solo el número";
+                        this.Posiciones[message.From.Id] = InicioState.Trabajador;
                         break;
                 }
                 break;
-
+            
             case InicioState.Empleador:
-                this.Posiciones[message.From.Id] = InicioState.EmpleadorQueHago;
-                response = $"¿Que operación desea realizar?\n1) Ver mis contratos\n2) Ver mis datos personales\n3) Buscar ofertas\n4) Volver al inicio";
-                break;
-
-            case InicioState.EmpleadorQueHago:
                 switch (message.Text) {
                     case "1":
                         response = "(Lista de contratos)";  //TODO Mostrar lista de contratos
@@ -152,13 +137,13 @@ public class InicioHandler : BaseHandler {
                         break;
                     
                     case "4":
-                        this.Posiciones[message.From.Id] = InicioState.Start; 
-                        response = "Identificarse como:\n1) Empleador\n2) Trabajador";
+                        this.Posiciones[message.From.Id] = InicioState.Start;
+                        response = "Volviendo al inicio";
                         break;
 
                     default:
-                        response = "Asegurese de que la opción elegida sea valida";
-                        this.Posiciones[message.From.Id] = InicioState.EmpleadorQueHago;
+                        response = "Asegurese de que la opción elegida sea valida, ingrese solo el número";
+                        this.Posiciones[message.From.Id] = InicioState.Empleador;
                         break;
                     }
                     break;

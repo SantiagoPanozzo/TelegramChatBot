@@ -18,7 +18,7 @@ public class CategoriasHandler : BaseHandler {
     /// </summary>
     /// <param name="next">El próximo "handler".</param>
     public CategoriasHandler(TelegramBotClient bot, BaseHandler next) : base(next) {
-        this.Keywords = new string[] {"categorias"};
+        this.Keywords = new string[] {"categorias", "/categorias"};
     }
 
     /// <summary> Procesa el mensaje "Categorias" y retorna true; retorna false en caso contrario. </summary>

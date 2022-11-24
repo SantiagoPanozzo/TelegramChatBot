@@ -51,7 +51,7 @@ public class DefaultHandler: BaseHandler
                 response = string.Empty;
                 break;
             default:
-                response = "???????? q decis mogolico";
+                response = "Mensaje desconocido, para conocer todos los comandos ingrese \"info\" o ejecute el comando /info";
                 break;
         }
     }
