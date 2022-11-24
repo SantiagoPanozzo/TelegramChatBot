@@ -12,7 +12,6 @@ public class IniciarSesionHandler : BaseHandler
         Start,
         Username,
         Password,
-        Checker,
         Success,
         Error
     }
@@ -26,8 +25,9 @@ public class IniciarSesionHandler : BaseHandler
     /// <param name="next">El próximo "handler".</param>
     public IniciarSesionHandler(BaseHandler next) : base(next)
     {
-        this.Keywords = new string[] { "iniciar", "login", "/login" };
+        this.Keywords = new string[] { "iniciar", "login", "/login", "iniciar sesion", "iniciar sesión"};
         this.State = LoginState.Start;
+        this._id= "iniciarsesion";
     }
     /// <summary>  </summary>
     /// <param name="message">  </param>
@@ -87,6 +87,10 @@ public class IniciarSesionHandler : BaseHandler
                         this.Posiciones[message.From.Id] = LoginState.Username;
                         break;
                 }
+            break;
+            default:
+                response = "Error desconocido, /login para volver a logearte";
+                this.Posiciones[message.From.Id] = LoginState.Start;
                 break;
         }
     }

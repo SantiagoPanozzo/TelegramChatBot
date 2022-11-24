@@ -95,7 +95,7 @@ public class TelegramBot {
         Bot = new TelegramBotClient(token);
 
         firstHandler =
-            new InfoHandler(new StartHandler(new IniciarSesionHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(null))))));
+            new InfoHandler(new StartHandler(new PanelDeControl(new IniciarSesionHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(null)))))));
 
         var cts = new CancellationTokenSource();
 
