@@ -18,7 +18,7 @@ public enum BuscarState {
 }
 
 /// <summary> El estado del comando. </summary>
-public BuscarState State { get; set; }
+public BuscarState state { get; set; }
 
 private Dictionary<long, BuscarState> Posiciones = new Dictionary<long, BuscarState>();
 
@@ -27,17 +27,17 @@ private Dictionary<long, BuscarState> Posiciones = new Dictionary<long, BuscarSt
 /// <param name="next">El próximo "handler".</param>
 public BuscarHandler(BaseHandler next) : base(next) {
     this.Keywords = new string[] {"buscar", "/buscar"};
-    this.State = BuscarState.Start;
+    this.state = BuscarState.Start;
 }
 
 /// <summary>  </summary>
 /// <param name="message">  </param>
 /// <returns>  </returns>
 protected override bool CanHandle(Message message) {
-    if (this.State ==  BuscarState.Start) {
+    if (this.state ==  BuscarState.Start) {
         return base.CanHandle(message);
     }
-    else if (this.State ==  BuscarState.Filtro) {
+    else if (this.state ==  BuscarState.Filtro) {
         return base.CanHandle(message);
     }
     else {
@@ -61,10 +61,10 @@ protected override void InternalHandle(Message message, out string response) {
     switch(state) {
         case BuscarState.Start:
             this.Posiciones[message.From.Id] = BuscarState.Filtro;
-            response = $"Filtrar por:\n1) Categoria\n2) Distancia\n3) Reputación {this.Posiciones[message.From.Id]}";
+            response = $"Filtrar por:\n1) Categoria\n2) Distancia\n3) Reputación";
             break;
         case BuscarState.Filtro:
-            switch(message.Text.Trim()) {
+            switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = BuscarState.Categoria;
                     response = "categoria";
