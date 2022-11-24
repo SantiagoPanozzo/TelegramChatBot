@@ -25,7 +25,7 @@ public class InicioHandler : BaseHandler {
     /// <summary> El estado del comando. </summary>
     public InicioState State { get; set; }
 
-    /// <summary> Inicializa una nueva instancia de la clase <see cref="InicioHandler"/>. Esta clase procesa el mensaje "Información". </summary>
+    /// <summary> Inicializa una nueva instancia de la clase <see cref="InicioHandler"/>. Esta clase procesa el mensaje "Inicio". </summary>
     /// <param name="next">El próximo "handler".</param>
     public InicioHandler(BaseHandler next) : base(next) {
         this.Keywords = new string[] {"/inicio", "inicio"};
@@ -68,11 +68,11 @@ public class InicioHandler : BaseHandler {
                 switch(message.Text) {
                     case "1":
                         this.Posiciones[message.From.Id] = InicioState.Empleador;
-                        response = "imaginate que aca hay una lista filtrada por categoria \nque oferta ver?";
+                        response = "Empleador";
                         break;
                     case "2":
                         this.Posiciones[message.From.Id] = InicioState.Trabajador;
-                        response = "imaginate que aca hay una lista filtrada por distancia \nque oferta ver?";
+                        response = "Trabajador";
                         break;
                     default:
                         response = "Verifique que la identificación sea correcta";
@@ -89,7 +89,7 @@ public class InicioHandler : BaseHandler {
                 case InicioState.TrabajadorQueHago:
                     switch (message.Text) {
                         case "1":
-                            response = "Eliga una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
+                            response = "Elija una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
                             switch (message.Text) {
                                 case "":
                                     break;
@@ -135,7 +135,6 @@ public class InicioHandler : BaseHandler {
                     switch (message.Text) {
                         case "1":
                             response = "(Lista de contratos)";  //TODO Mostrar lista de contratos
-                            
                             break;
 
                         case "2":
@@ -144,7 +143,6 @@ public class InicioHandler : BaseHandler {
 
                         case "3":
                             response = "(Buscador ofertas)";
-                            
                             break;
 
                         default:
