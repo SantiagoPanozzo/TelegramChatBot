@@ -86,7 +86,7 @@ public class RegistrarHandler : BaseHandler
                         break;
                     case "3":
                         response = "Regresando al menu";
-                        this.State = RegistrarState.Start;
+                        this.Posiciones[message.From.Id] = RegistrarState.Start;
                         break;
                     default:
                         response = "Error, intentalo de nuevo";
