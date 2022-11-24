@@ -87,6 +87,7 @@ public class TelegramBot {
     }
 
     private static IHandler firstHandler;
+    // private static IHandler secondHandler;
 
     /// <summary> Punto de entrada al programa. </summary>
     public static void Main()
@@ -96,7 +97,9 @@ public class TelegramBot {
         Bot = new TelegramBotClient(token);
 
         firstHandler =
-            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(new DefaultHandler(null,Bot))))));
+            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(new DefaultHandler(null, Bot))))));
+
+        // secondHandler = new InicioHandler(new DefaultHandler(null, Bot));
 
         var cts = new CancellationTokenSource();
 
