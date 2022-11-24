@@ -10,11 +10,12 @@ public enum LoginState {
     Start,
     Username,
     Password,
+    Checker,
     Success,
     Error   
 }
 /// <summary> El estado del comando. </summary>
-public LoginState state { get; set; }
+public LoginState State { get; set; }
 
 private Dictionary<long, LoginState> Posiciones = new Dictionary<long, LoginState>();
 
@@ -23,21 +24,21 @@ private Dictionary<long, LoginState> Posiciones = new Dictionary<long, LoginStat
 /// <param name="next">El próximo "handler".</param>
 public IniciarSesionHandler(BaseHandler next) : base(next) {
     this.Keywords = new string[] {"iniciar", "login", "/login"};
-    // this.state = LoginState.Start;
+    this.State = LoginState.Start;
 }  
 /// <summary>  </summary>
 /// <param name="message">  </param>
 /// <returns>  </returns>
 
 protected override bool CanHandle(Message message) {
-    if (this.state ==  LoginState.Start) {
-        return base.CanHandle(message);
+    if (!this.Posiciones.ContainsKey(message.From.Id)) {
+        this.Posiciones[message.From.Id] = LoginState.Start;
     }
-    else if (this.state ==  LoginState.Username) {
-        return base.CanHandle(message);
-    }
-    else {
-        return true;
+    switch (this.Posiciones[message.From.Id]) {
+        case LoginState.Start:
+            return base.CanHandle(message);
+        default:
+            return true;
     }
 }
 
@@ -63,14 +64,18 @@ protected override void InternalHandle(Message message, out string response) {
                 this.Posiciones[message.From.Id] = LoginState.Password;
                 response = $"Ingresa tu contraseña";
                 break;
-            case LoginState.Success:
-                response = $"Success";
-                break;
-            case LoginState.Error:
-                this.Posiciones[message.From.Id] = LoginState.Username;
-                response = $"Usuario o contraseña no encontrada, vuelve a introducirlos";
-                break;
+            case LoginState.Password:
+                switch(message.Text) {
+                    case "contraseña correcta":
+                        this.Posiciones[message.From.Id] = LoginState.Success;
+                        response = "Iniciando sesion...";
+                        break;
+                    case "!contraseña correcta":
+                        this.Posiciones[message.From.Id] = LoginState.Start;
+                        response = "Nombre de usuario o contraseña incorrecta, vuelve a intentarlo";
+                        break;
+            }
+            break;
         }
     }
 }
-
