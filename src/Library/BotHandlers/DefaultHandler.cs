@@ -12,6 +12,7 @@ public class DefaultHandler: BaseHandler
     public DefaultHandler(BaseHandler next, TelegramBotClient bot) : base(next) {
         this.Keywords = new string[] {"default"};
         this.bot = bot;
+        _id = "default";
     }
 
     /// <summary>  </summary>
