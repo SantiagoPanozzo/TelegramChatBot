@@ -71,7 +71,7 @@ public class RegistrarHandler : BaseHandler
         {
             case RegistrarState.Start:
                 response = "Selecciona tu rol:\n1) Trabajador \n2) Empleador\n3) Regresar al inicio";
-                this.State = RegistrarState.LecturaRol;
+                this.Posiciones[message.From.Id] = RegistrarState.LecturaRol;
                 break;
             case RegistrarState.LecturaRol:
                 response = "Ingresa tu(s) nombre(s), escribe cancelar para volver al inicio";
@@ -134,6 +134,19 @@ public class RegistrarHandler : BaseHandler
                 }
 
                 break;
+            case RegistrarState.LecturaContraseña:
+                this.TempInfo["contraseña"] = message.Text;
+                response = "Ingresa tu fecha de nacimiento (formato \"dia mes año\"), escribe cancelar parar volver al inicio";
+                this.Posiciones[message.From.Id] = RegistrarState.LecturaFechaNacimiento;
+                if(message.Text.ToLower().Equals("cancelar"))
+                {
+                    this.Posiciones[message.From.Id] = RegistrarState.Start;
+                    response = "Volviendo al inicio"; // TODO idem
+                    //this.TempInfo = new Dictionary<string, string>();
+                    //this.TempTipo = null;
+                }
+
+                break;
             case RegistrarState.LecturaFechaNacimiento:
                 this.TempInfo["fechaNacimiento"] = message.Text;
                 response = "Ingresa tu cedula (con puntos y guion), escribe cancelar parar volver al inicio";
@@ -175,7 +188,7 @@ public class RegistrarHandler : BaseHandler
                 }
 
                 break;
-            case RegistrarState.LecturaUbicacion:
+            case RegistrarState.LecturaCorreo:
                 this.TempInfo["correo"] = message.Text;
                 response = "Ingresa tu dirección (calle y numero), escribe cancelar parar volver al inicio";
                 this.Posiciones[message.From.Id] = RegistrarState.Confirmar;
@@ -188,9 +201,10 @@ public class RegistrarHandler : BaseHandler
                 }
 
                 break;
+            
             case RegistrarState.Confirmar:
                 this.TempInfo["ubicacion"] = message.Text;
-                response = "Ingresaste la siguiente información: blabalbalabl\n ¿Guardar tu usuario? (Si/No)";
+                response = "Ingresaste la siguiente información: blabalbalabl\n¿Guardar tu usuario? (Si/No)";
                 this.Posiciones[message.From.Id] = RegistrarState.Fin;
                 if(message.Text.ToLower().Equals("cancelar"))
                 {
@@ -203,6 +217,7 @@ public class RegistrarHandler : BaseHandler
                 break;
             case RegistrarState.Fin:
                 // TODO guardar aca la info
+                response = "Volviendo al inicio";
                 this.Posiciones[message.From.Id] = RegistrarState.Start;
                 break;
             default:

@@ -61,18 +61,18 @@ public class InicioHandler : BaseHandler {
         switch(State) {
             case InicioState.Start:
                 this.Posiciones[message.From.Id] = InicioState.Identificarse;
-                response = "Identificarse como:\n1) Empleador\n2) Trabajador";
+                response = "Identificarse como:\n1) Trabajador\n2) Empleador";
                 break;
 
             case InicioState.Identificarse:
                 switch(message.Text) {
                     case "1":
-                        this.Posiciones[message.From.Id] = InicioState.Empleador;
-                        response = "Empleador";
+                        this.Posiciones[message.From.Id] = InicioState.Trabajador;
+                        response = "Identificandose";
                         break;
                     case "2":
-                        this.Posiciones[message.From.Id] = InicioState.Trabajador;
-                        response = "Trabajador";
+                        this.Posiciones[message.From.Id] = InicioState.Empleador;
+                        response = "Identificandose";
                         break;
                     default:
                         response = "Verifique que la identificación sea correcta";
@@ -81,74 +81,85 @@ public class InicioHandler : BaseHandler {
                         break;
                 }
                 break;
+
             case InicioState.Trabajador:
                 this.Posiciones[message.From.Id] = InicioState.TrabajadorQueHago;
-                response = $"¿Que operación desea realizar?\n1) Ofertar un servicio\n2) Ver mis ofertas\n3) Ver mis datos personales\n4) Ver mis solicitudes pendientes";  //TODO falta implementar printer
+                response = $"¿Que operación desea realizar?\n1) Ofertar un servicio\n2) Ver mis ofertas\n3) Ver mis datos personales\n4) Ver mis solicitudes pendientes\n5) Volver al inicio";  //TODO falta implementar printer
                 break;
 
-                case InicioState.TrabajadorQueHago:
-                    switch (message.Text) {
-                        case "1":
-                            response = "Elija una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
-                            switch (message.Text) {
-                                case "":
-                                    break;
-                                default:
-                                    response = "Asegurese de que la categoría seleccionada exista\nEliga una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
-                                    break;
-                            }
-                            break;
+            case InicioState.TrabajadorQueHago:
+                switch (message.Text) {
+                    case "1":
+                        response = "Elija una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
+                        switch (message.Text) {
+                            case "":
+                                break;
+                            default:
+                                response = "Asegurese de que la categoría seleccionada exista\nEliga una categoría de las siguientes para ofertar\n (Lista de las ofertas) ";
+                                break;
+                        }
+                        break;
 
-                        case "2":
-                            response = "";
-                            break;
+                    case "2":
+                        response = "";
+                        break;
 
-                        case "3":
-                            response = "(Información acá)\n\n¿Desea realizar alguna operación más?\n1) Darse de baja\n2) No";
-                            switch (message.Text) {
-                                case "1":
-                                    response = "Ingrese a continuación su contraseña\n» ";
-                                    // TODO Verificación de contraseña
-                                    break;
-                                case "2":
-                                    break;
-                            }
-                            break;
+                    case "3":
+                        response = "(Información acá)\n\n¿Desea realizar alguna operación más?\n1) Darse de baja\n2) No";
+                        switch (message.Text) {
+                            case "1":
+                                response = "Ingrese a continuación su contraseña\n» ";
+                                // TODO Verificación de contraseña
+                                break;
+                            case "2":
+                                break;
+                        }
+                        break;
 
-                        case "4":
-                            response = "(Solicitudes pendientes)";
-                            break;
+                    case "4":
+                        response = "(Solicitudes pendientes)";
+                        break;
+                    
+                    case "5":
+                        this.Posiciones[message.From.Id] = InicioState.Start; 
+                        response = "Identificarse como:\n1) Empleador\n2) Trabajador";
+                        break;
 
-                        default:
-                            response = "Asegurese de que la opción elegida sea valida";
-                            this.Posiciones[message.From.Id] = InicioState.TrabajadorQueHago;
-                            break;
-                    }
-                    break;
+                    default:
+                        response = "Asegurese de que la opción elegida sea valida";
+                        this.Posiciones[message.From.Id] = InicioState.TrabajadorQueHago;
+                        break;
+                }
+                break;
 
             case InicioState.Empleador:
                 this.Posiciones[message.From.Id] = InicioState.EmpleadorQueHago;
-                response = $"¿Que operación desea realizar?\n1) Ver mis contratos\n2) Ver mis datos personales\n3) Buscar ofertas";
+                response = $"¿Que operación desea realizar?\n1) Ver mis contratos\n2) Ver mis datos personales\n3) Buscar ofertas\n4) Volver al inicio";
                 break;
 
-                case InicioState.EmpleadorQueHago:
-                    switch (message.Text) {
-                        case "1":
-                            response = "(Lista de contratos)";  //TODO Mostrar lista de contratos
-                            break;
+            case InicioState.EmpleadorQueHago:
+                switch (message.Text) {
+                    case "1":
+                        response = "(Lista de contratos)";  //TODO Mostrar lista de contratos
+                        break;
 
-                        case "2":
-                            response = "(Datos personales)"; //TODO Mostrar datos
-                            break;
+                    case "2":
+                        response = "(Datos personales)"; //TODO Mostrar datos
+                        break;
 
-                        case "3":
-                            response = "(Buscador ofertas)";
-                            break;
+                    case "3":
+                        response = "(Buscador ofertas)";
+                        break;
+                    
+                    case "4":
+                        this.Posiciones[message.From.Id] = InicioState.Start; 
+                        response = "Identificarse como:\n1) Empleador\n2) Trabajador";
+                        break;
 
-                        default:
-                            response = "Asegurese de que la opción elegida sea valida";
-                            this.Posiciones[message.From.Id] = InicioState.EmpleadorQueHago;
-                            break;
+                    default:
+                        response = "Asegurese de que la opción elegida sea valida";
+                        this.Posiciones[message.From.Id] = InicioState.EmpleadorQueHago;
+                        break;
                     }
                     break;
             }
