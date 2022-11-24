@@ -64,11 +64,13 @@ public class RegistrarHandler : BaseHandler
         if (message == null || message.From == null || message.Text == null) {
             throw new Exception("No se recibió un mensaje");
         }
+
+        response = "Error desconocido vuelva a intentarlo";
         
         switch (this.Posiciones[message.From.Id])
         {
             case RegistrarState.Start:
-                response = "Selecciona tu rol:\n1) Trabajador \n2) Empleador\n 3) Regresar al inicio";
+                response = "Selecciona tu rol:\n1) Trabajador \n2) Empleador\n3) Regresar al inicio";
                 this.State = RegistrarState.LecturaRol;
                 break;
             case RegistrarState.LecturaRol:
@@ -203,10 +205,8 @@ public class RegistrarHandler : BaseHandler
                 // TODO guardar aca la info
                 this.Posiciones[message.From.Id] = RegistrarState.Start;
                 break;
+            default:
+                break;
         }
-        
-        
-        response = "Selecciona tu rol (Trabajador/Empleador)";
-        Console.WriteLine(message.Text);
     }
 }
