@@ -3,7 +3,7 @@ using Telegram.Bot;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
 
-namespace Library.BotHandlers;
+namespace Library;
 using Telegram.Bot.Types;
 
 public class DefaultHandler: BaseHandler
@@ -26,6 +26,7 @@ public class DefaultHandler: BaseHandler
     protected override void InternalHandle(Message message, out string response)
     {
         response = "????????? q";
+        message.Text = message.Text.ToLower();
         switch (message.Text)
         {
             case "tu madre":
@@ -48,7 +49,15 @@ public class DefaultHandler: BaseHandler
                 response = "de nada";
                 break;
             case "free bird":
+                AsyncContext.Run(() => SendVideo(message));
+                response = string.Empty;
+                break;
+            case "supuse":
                 AsyncContext.Run(() => SendImage(message));
+                response = string.Empty;
+                break;
+            case "godin":
+                AsyncContext.Run(() => SendImageU(message));
                 response = string.Empty;
                 break;
             default:
@@ -57,7 +66,7 @@ public class DefaultHandler: BaseHandler
         }
     }
     
-     private async Task SendImage(Message message)
+     private async Task SendVideo(Message message)
      {
          // Can be null during testing
             if (bot != null)
@@ -75,4 +84,42 @@ public class DefaultHandler: BaseHandler
                 );
             }
         }
+     
+     private async Task SendImage(Message message)
+     {
+         // Can be null during testing
+         if (bot != null)
+         {
+             await bot.SendChatActionAsync(message.Chat.Id, ChatAction.UploadPhoto);
+
+             const string filePath = @"../../../../../Assets/supuse.jpg";
+             using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+             var fileName = filePath.Split(Path.DirectorySeparatorChar).Last();
+
+             await bot.SendPhotoAsync(
+                 chatId: message.Chat.Id,
+                 photo: new InputOnlineFile(fileStream, fileName),
+                 caption: "🏳🌈?"
+             );
+         }
+     }
+     
+     private async Task SendImageU(Message message)
+     {
+         // Can be null during testing
+         if (bot != null)
+         {
+             await bot.SendChatActionAsync(message.Chat.Id, ChatAction.UploadPhoto);
+
+             const string filePath = @"../../../../../Assets/urugod.png";
+             using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
+             var fileName = filePath.Split(Path.DirectorySeparatorChar).Last();
+
+             await bot.SendPhotoAsync(
+                 chatId: message.Chat.Id,
+                 photo: new InputOnlineFile(fileStream, fileName),
+                 caption: "Uruguay noma (nos nerfearon el escudo)"
+             );
+         }
+     }
 }
