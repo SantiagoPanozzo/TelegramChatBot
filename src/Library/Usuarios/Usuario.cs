@@ -15,7 +15,7 @@ public abstract class Usuario : IDesactivable {
     public Tuple<double,double> Ubicacion {get; set;}
     public string Correo { get; set; }
     protected bool Activo { get; set; }
-    private string Contraseña { get; set; }
+    public string Contraseña { get; set; }
     protected TipoDeUsuario Tipo { get; set; }
 
     /// <summary> Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador </summary>
