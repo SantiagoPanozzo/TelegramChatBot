@@ -64,7 +64,7 @@ public class TelegramBot {
         var builder = new ConfigurationBuilder();
         builder
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory);
-            // .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
         // En el ambiente de desarrollo el token secreto del bot se toma de la configuración secreta
         if (isDevelopment)
@@ -153,7 +153,7 @@ public class TelegramBot {
         string jsonString = JsonSerializer.Serialize(message, options);
         // Console.WriteLine(jsonString);
 
-        Console.WriteLine($"Se recibió un mensaje de {message.From.FirstName} {message.From.LastName} consultando por: {message.Text}");
+        Console.WriteLine($"Se recibió un mensaje de {message.From.FirstName} consultando por: {message.Text}");
 
         string response = string.Empty;
 
