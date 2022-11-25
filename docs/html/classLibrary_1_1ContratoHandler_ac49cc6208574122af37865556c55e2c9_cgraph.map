@@ -1,0 +1,5 @@
+<map id="Library.ContratoHandler.RechazarSolicitud" name="Library.ContratoHandler.RechazarSolicitud">
+<area shape="rect" id="node1" title="Método para rechazar una solicitud" coords="5,5,177,45"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Solicitud.html#af5a3701c9bf3a3272239cfdbad4ca44c" title="Método para conocer el estado de una oferta" coords="225,5,391,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Solicitud.html#abd52f9a5723d6d08e2b3c4b1effc3bb3" title="Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar También cam..." coords="439,5,600,45"/>
+</map>

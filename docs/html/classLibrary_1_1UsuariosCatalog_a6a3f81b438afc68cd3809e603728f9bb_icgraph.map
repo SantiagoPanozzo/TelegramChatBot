@@ -1,0 +1,12 @@
+<map id="Library.UsuariosCatalog.GetUsuarios" name="Library.UsuariosCatalog.GetUsuarios">
+<area shape="rect" id="node1" title="Método para conocer los usuarios" coords="443,165,613,205"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1RegistryHandler.html#a1a2cd2aa0e0c52e9edf3f7fa1d532d9e" title="Método para obtener la lista de empleadores" coords="224,5,395,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1RegistryHandler.html#a3f0d200ef62a50bebf5f6c91ea7a4e36" title="Método para obtener reputación de un trabajador o empleador" coords="224,69,395,109"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1RegistryHandler.html#ae52d7593bb8a63139a1d4aed856a61c6" title="Método para obtener la lista de trabajadores" coords="224,133,395,173"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1RegistryHandler.html#ab102a5d3011a478c5e6b60401941d429" title="Método para obtener los datos de un Usuario" coords="224,197,395,237"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1RegistryHandler.html#a5437661b3a2bc53db95ce02947b4a59a" title="Método para eliminar un Usuario" coords="224,261,395,301"/>
+<area shape="rect" id="node7" href="$classLibrary_1_1RegistryHandler.html#ab807cbae1dac0a1a8d26a3d3dab44b20" title="Método para verificar el nickname de un Usuario" coords="224,325,395,365"/>
+<area shape="rect" id="node8" href="$classLibrary_1_1RegistryHandler.html#a3a3c8dbcc470376d7f9082ed727e9cad" title="Método para registrar un administrador" coords="5,261,176,301"/>
+<area shape="rect" id="node9" href="$classLibrary_1_1RegistryHandler.html#a9cea158f44e96feb3ee3b4cf8a2c166c" title="Método para registrar un empleador" coords="5,325,176,365"/>
+<area shape="rect" id="node10" href="$classLibrary_1_1RegistryHandler.html#a0bf9704d7dc2ab9bf3cde59b66012d69" title="Método para registrar un trabajador" coords="5,389,176,429"/>
+</map>

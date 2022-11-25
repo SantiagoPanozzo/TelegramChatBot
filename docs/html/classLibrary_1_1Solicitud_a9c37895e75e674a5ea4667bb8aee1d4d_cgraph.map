@@ -1,0 +1,4 @@
+<map id="Library.Solicitud.GetTrabajadorRate" name="Library.Solicitud.GetTrabajadorRate">
+<area shape="rect" id="node1" title="Método para obtener el promedio de calificación de un trabajador" coords="5,13,244,38"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertaDeServicio.html#a7d3b09276de28b53109097ca44c76ac8" title="Método para obtener la calificación dada a la oferta tras ser finalizada" coords="292,5,471,45"/>
+</map>

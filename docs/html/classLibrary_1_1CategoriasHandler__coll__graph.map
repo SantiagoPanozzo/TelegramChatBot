@@ -1,0 +1,5 @@
+<map id="Library.CategoriasHandler" name="Library.CategoriasHandler">
+<area shape="rect" id="node1" title="Un &quot;handler&quot; del patrón Chain of Responsibility que implementa el comando &quot;categorias&quot;." coords="5,387,193,456"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1BaseHandler.html" title="Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra..." coords="31,137,167,339"/>
+<area shape="rect" id="node3" href="$interfaceLibrary_1_1IHandler.html" title="Interfaz para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a travé..." coords="53,5,145,89"/>
+</map>

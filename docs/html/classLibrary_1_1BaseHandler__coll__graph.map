@@ -1,0 +1,4 @@
+<map id="Library.BaseHandler" name="Library.BaseHandler">
+<area shape="rect" id="node1" title="Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra..." coords="5,137,159,339"/>
+<area shape="rect" id="node2" href="$interfaceLibrary_1_1IHandler.html" title="Interfaz para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a travé..." coords="36,5,128,89"/>
+</map>

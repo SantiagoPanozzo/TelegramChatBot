@@ -1,0 +1,5 @@
+<map id="Library.OfertasHandler.GetCategoriaById" name="Library.OfertasHandler.GetCategoriaById">
+<area shape="rect" id="node1" title="Método para obtener una Categoria por id" coords="5,5,192,45"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1CategoriasCatalog.html#a9bedf1f8b23af24ef3515c48b7d05200" title="Método para obtener una categoría por id" coords="240,5,423,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Categoria.html#a391925bcef104bf634b266e75310aedf" title="Método para obtener el ID de una Categoria" coords="471,13,637,38"/>
+</map>

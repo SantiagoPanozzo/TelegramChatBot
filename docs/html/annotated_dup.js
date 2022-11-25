@@ -4,6 +4,7 @@ var annotated_dup =
       [ "Administrador", "classLibrary_1_1Administrador.html", "classLibrary_1_1Administrador" ],
       [ "BaseHandler", "classLibrary_1_1BaseHandler.html", "classLibrary_1_1BaseHandler" ],
       [ "Buscador", "classLibrary_1_1Buscador.html", null ],
+      [ "BuscarHandler", "classLibrary_1_1BuscarHandler.html", "classLibrary_1_1BuscarHandler" ],
       [ "Categoria", "classLibrary_1_1Categoria.html", "classLibrary_1_1Categoria" ],
       [ "CategoriaPrinter", "classLibrary_1_1CategoriaPrinter.html", "classLibrary_1_1CategoriaPrinter" ],
       [ "CategoriasCatalog", "classLibrary_1_1CategoriasCatalog.html", "classLibrary_1_1CategoriasCatalog" ],
@@ -22,8 +23,9 @@ var annotated_dup =
       [ "Solicitud", "classLibrary_1_1Solicitud.html", "classLibrary_1_1Solicitud" ],
       [ "SolicitudCatalog", "classLibrary_1_1SolicitudCatalog.html", "classLibrary_1_1SolicitudCatalog" ],
       [ "SolicitudPrinter", "classLibrary_1_1SolicitudPrinter.html", "classLibrary_1_1SolicitudPrinter" ],
+      [ "StartHandler", "classLibrary_1_1StartHandler.html", "classLibrary_1_1StartHandler" ],
+      [ "TelegramBot", "classLibrary_1_1TelegramBot.html", null ],
       [ "Trabajador", "classLibrary_1_1Trabajador.html", "classLibrary_1_1Trabajador" ],
-      [ "UcuTelegramBot", "classLibrary_1_1UcuTelegramBot.html", null ],
       [ "Usuario", "classLibrary_1_1Usuario.html", "classLibrary_1_1Usuario" ],
       [ "UsuariosCatalog", "classLibrary_1_1UsuariosCatalog.html", "classLibrary_1_1UsuariosCatalog" ]
     ] ],
@@ -47,5 +49,20 @@ var annotated_dup =
     [ "Program", "namespaceProgram.html", [
       [ "Program", "classProgram_1_1Program.html", null ]
     ] ],
-    [ "Distance", "classDistance.html", null ]
+    [ "BaseHandler", "classBaseHandler.html", null ],
+    [ "DefaultHandler", "classDefaultHandler.html", "classDefaultHandler" ],
+    [ "Distance", "classDistance.html", null ],
+    [ "HandlerHandler", "classHandlerHandler.html", null ],
+    [ "IniciarSesionHandler", "classIniciarSesionHandler.html", null ],
+    [ "InicioHandler", "classInicioHandler.html", "classInicioHandler" ],
+    [ "OfertarHandler", "classOfertarHandler.html", null ],
+    [ "OfertarServicioHandler", "classOfertarServicioHandler.html", null ],
+    [ "PanelDeControlHandler", "classPanelDeControlHandler.html", null ],
+    [ "RegistrarHandler", "classRegistrarHandler.html", null ],
+    [ "VerCategoriasHandler", "classVerCategoriasHandler.html", null ],
+    [ "VerContratosHandler", "classVerContratosHandler.html", null ],
+    [ "VerInfoHandler", "classVerInfoHandler.html", null ],
+    [ "VerOfertasHandler", "classVerOfertasHandler.html", null ],
+    [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", null ],
+    [ "VerUsuariosHandler", "classVerUsuariosHandler.html", null ]
 ];

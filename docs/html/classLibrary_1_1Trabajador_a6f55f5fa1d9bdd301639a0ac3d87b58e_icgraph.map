@@ -1,0 +1,6 @@
+<map id="Library.Trabajador.Calificar" name="Library.Trabajador.Calificar">
+<area shape="rect" id="node1" title="Método para calificar un usuario" coords="451,42,632,67"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertaDeServicio.html#aeed25698e68c88cf5374dd5afe732b5f" title="Método para calificar la oferta en cuestión" coords="224,35,403,75"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Solicitud.html#a7f50425869d0aad5d0c0f7e6abe42492" title="Método para calificar un trabajador" coords="5,5,176,45"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e" title="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..." coords="7,70,175,95"/>
+</map>

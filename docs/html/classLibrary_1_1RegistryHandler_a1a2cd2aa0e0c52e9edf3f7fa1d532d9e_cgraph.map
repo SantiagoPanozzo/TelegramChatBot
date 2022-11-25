@@ -1,0 +1,5 @@
+<map id="Library.RegistryHandler.GetEmpleadores" name="Library.RegistryHandler.GetEmpleadores">
+<area shape="rect" id="node1" title="Método para obtener la lista de empleadores" coords="5,27,176,67"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="226,5,393,31"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1UsuariosCatalog.html#a6a3f81b438afc68cd3809e603728f9bb" title="Método para conocer los usuarios" coords="224,55,395,95"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Library.ContratoHandler.GetSolicitudes" name="Library.ContratoHandler.GetSolicitudes">
+<area shape="rect" id="node1" title="Método para mostrar solicitudes" coords="5,23,177,63"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Solicitud.html#acfd0867b18bdf7dffacbcfa8ecad0b5b" title="Método para obtener Empleador que busca la Solicitud" coords="225,5,437,31"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="248,55,415,80"/>
+</map>

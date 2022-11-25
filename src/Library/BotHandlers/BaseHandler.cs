@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Library.BotHandlers;
 using Telegram.Bot.Types;
 
 namespace Library;
@@ -13,9 +14,9 @@ namespace Library;
 /// </summary>
 public abstract class BaseHandler : IHandler
 {
-    protected string _id { get; set; }
+    protected Handlers _id { get; set; }
 
-    public string GetId()
+    public Handlers GetId()
     {
         return this._id;
     }
@@ -85,6 +86,7 @@ public abstract class BaseHandler : IHandler
             // TelegramBot.Posiciones[message.From.Id] = this._id;
             // Console.WriteLine($"El usuario {message.From.FirstName} está en {this._id}");
             this.InternalHandle(message, out response);
+            HandlerHandler.ActiveHandler[message.From.Id] = _id;
             return this;
         }
         else if (this.Next != null)

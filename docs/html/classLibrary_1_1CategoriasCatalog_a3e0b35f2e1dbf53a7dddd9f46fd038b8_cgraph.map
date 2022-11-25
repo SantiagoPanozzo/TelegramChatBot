@@ -1,0 +1,5 @@
+<map id="Library.CategoriasCatalog.RemoveCategoria" name="Library.CategoriasCatalog.RemoveCategoria">
+<area shape="rect" id="node1" title="Método para eliminar una categoría" coords="5,23,188,63"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Categoria.html#ac49a20997f4a7ca69f06e9e7e5914e94" title="Método para dar de baja la categoría" coords="236,5,435,31"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="483,31,649,56"/>
+</map>

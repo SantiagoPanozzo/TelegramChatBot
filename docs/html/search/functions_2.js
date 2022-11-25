@@ -5,7 +5,7 @@ var searchData=
   ['calificartrabajador_2',['CalificarTrabajador',['../classLibrary_1_1Solicitud.html#a7f50425869d0aad5d0c0f7e6abe42492',1,'Library::Solicitud']]],
   ['cancel_3',['Cancel',['../classLibrary_1_1BaseHandler.html#a0265e1cf44b91cc161412c8eada5bfdd',1,'Library.BaseHandler.Cancel()'],['../interfaceLibrary_1_1IHandler.html#a02b03dede9d3e26c294d15d8f6163dcd',1,'Library.IHandler.Cancel()']]],
   ['canempleadorbeautorated_4',['CanEmpleadorBeAutoRated',['../classLibrary_1_1Solicitud.html#abef8160453ba23dd43195d34d5dab535',1,'Library::Solicitud']]],
-  ['canhandle_5',['CanHandle',['../classLibrary_1_1BaseHandler.html#a77cfb55207412de295f3e038dd63b9a6',1,'Library::BaseHandler']]],
+  ['canhandle_5',['CanHandle',['../classLibrary_1_1BaseHandler.html#a77cfb55207412de295f3e038dd63b9a6',1,'Library.BaseHandler.CanHandle()'],['../classLibrary_1_1BuscarHandler.html#a724f5b743dfb0575f0acc2654f22e613',1,'Library.BuscarHandler.CanHandle()'],['../classDefaultHandler.html#a0e75b85824579f9b496de3a60431f62f',1,'DefaultHandler.CanHandle()'],['../classInicioHandler.html#a7c382fc0fbc7840ea05d3eb04a5d6468',1,'InicioHandler.CanHandle()']]],
   ['cantrabajadorbeautorated_6',['CanTrabajadorBeAutoRated',['../classLibrary_1_1Solicitud.html#a055dea1c122c135f738e6d9d0a7df76f',1,'Library::Solicitud']]],
   ['categoria_7',['Categoria',['../classLibrary_1_1Categoria.html#a97a2c11285bf1921c4720a86a30be735',1,'Library::Categoria']]],
   ['categoriashandler_8',['CategoriasHandler',['../classLibrary_1_1CategoriasHandler.html#afda2dad828f6906b1e3206a1e5ea3318',1,'Library::CategoriasHandler']]],

@@ -1,0 +1,4 @@
+<map id="Library.IHandler.Handle" name="Library.IHandler.Handle">
+<area shape="rect" id="node1" title="Procesa el mensaje o la pasa al siguiente &quot;handler&quot; si existe." coords="247,5,415,31"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1BaseHandler.html#ab22b2fb5cc9e6488901d5a54e3db02af" title="Procesa el mensaje o lo pasa al siguiente &quot;handler&quot; si existe." coords="5,5,199,31"/>
+</map>

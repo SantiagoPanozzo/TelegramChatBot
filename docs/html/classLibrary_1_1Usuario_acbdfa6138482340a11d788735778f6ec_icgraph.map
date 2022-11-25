@@ -1,0 +1,4 @@
+<map id="Library.Usuario.VerifyContraseña" name="Library.Usuario.VerifyContraseña">
+<area shape="rect" id="node1" title="Método verificar que la contraseña sea igual a la anteriormente ingresada al iniciar sesión" coords="224,13,449,38"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1RegistryHandler.html#ab102a5d3011a478c5e6b60401941d429" title="Método para obtener los datos de un Usuario" coords="5,5,176,45"/>
+</map>

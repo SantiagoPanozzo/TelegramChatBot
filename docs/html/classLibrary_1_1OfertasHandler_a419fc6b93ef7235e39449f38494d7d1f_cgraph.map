@@ -1,0 +1,9 @@
+<map id="Library.OfertasHandler.DarDeBajaOferta" name="Library.OfertasHandler.DarDeBajaOferta">
+<area shape="rect" id="node1" title="Método para dar de baja una OfertaDeServicio" coords="5,37,193,77"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertaDeServicio.html#a05fd36175b1f8f268eca50f06be8931f" title="Método para dar de baja un Usuario" coords="245,5,424,45"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1OfertasHandler.html#a77e846642d71cc0848a111e21fd20bbf" title="Método para obtener una OfertaDeServicio por id" coords="241,69,428,109"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="484,13,651,38"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1CategoriasCatalog.html#a02d667d79dc6c941d7ab276c88259ff2" title="Método para obtener OfertaDeServicio por id" coords="476,69,659,109"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1Categoria.html#abfee7bcdbeb886b1993fdfaf14efe6d7" title="Filtrar OfertaDeServicio por id" coords="707,77,929,102"/>
+<area shape="rect" id="node7" href="$classLibrary_1_1OfertaDeServicio.html#a3aabf94b79625937babc2196b5ffa71e" title="Método para obtener id de OfertaDeServicio" coords="977,69,1156,109"/>
+</map>

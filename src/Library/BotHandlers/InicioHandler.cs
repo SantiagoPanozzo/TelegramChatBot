@@ -26,6 +26,7 @@ public class InicioHandler : BaseHandler {
     public InicioHandler(BaseHandler next) : base(next) {
         this.Keywords = new string[] {"/inicio", "inicio"};
         this.State = InicioState.Start;
+        this._id = Handlers.InicioHandler;
     }
 
     private Dictionary<long, InicioState> Posiciones = new Dictionary<long, InicioState>();

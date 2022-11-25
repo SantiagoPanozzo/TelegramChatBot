@@ -1,0 +1,5 @@
+<map id="Library.Administrador" name="Library.Administrador">
+<area shape="rect" id="node1" title="Clase Administrador que hereda de Usuario" coords="5,504,167,559"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Usuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador" coords="12,137,160,456"/>
+<area shape="rect" id="node3" href="$interfaceLibrary_1_1IDesactivable.html" title="Interfaz para el manejo de actividad de un usuario, una categoría, etc." coords="25,5,147,89"/>
+</map>

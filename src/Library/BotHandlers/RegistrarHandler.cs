@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Library.BotHandlers;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -40,6 +41,7 @@ public class RegistrarHandler : BaseHandler
     public RegistrarHandler(BaseHandler next) : base(next) {
         this.Keywords = new string[] {"registrar", "/registrar" };
         this.State = RegistrarState.Start;
+        this._id = Handlers.RegistrarHandler;
     }
 
     protected override bool CanHandle(Message message)

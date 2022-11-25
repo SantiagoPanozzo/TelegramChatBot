@@ -1,0 +1,7 @@
+<map id="Library.Categoria.RemoveOferta" name="Library.Categoria.RemoveOferta">
+<area shape="rect" id="node1" title="Método para quitar una oferta, en caso de que la misma no exista no hará nada" coords="5,35,188,75"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertaDeServicio.html#a05fd36175b1f8f268eca50f06be8931f" title="Método para dar de baja un Usuario" coords="258,5,437,45"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1Categoria.html#abfee7bcdbeb886b1993fdfaf14efe6d7" title="Filtrar OfertaDeServicio por id" coords="236,70,459,95"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="513,13,679,38"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1OfertaDeServicio.html#a3aabf94b79625937babc2196b5ffa71e" title="Método para obtener id de OfertaDeServicio" coords="507,63,685,103"/>
+</map>

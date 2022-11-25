@@ -1,0 +1,5 @@
+<map id="Library.RegistryHandler.GetUsuario" name="Library.RegistryHandler.GetUsuario">
+<area shape="rect" id="node1" title="Método para obtener los datos de un Usuario" coords="5,35,176,75"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1UsuariosCatalog.html#a6a3f81b438afc68cd3809e603728f9bb" title="Método para conocer los usuarios" coords="251,5,422,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Usuario.html#acbdfa6138482340a11d788735778f6ec" title="Método verificar que la contraseña sea igual a la anteriormente ingresada al iniciar sesión" coords="224,70,449,95"/>
+</map>

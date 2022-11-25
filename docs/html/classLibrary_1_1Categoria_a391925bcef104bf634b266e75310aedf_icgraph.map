@@ -1,0 +1,7 @@
+<map id="Library.Categoria.GetId" name="Library.Categoria.GetId">
+<area shape="rect" id="node1" title="Método para obtener el ID de una Categoria" coords="729,42,896,67"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1CategoriasCatalog.html#a9bedf1f8b23af24ef3515c48b7d05200" title="Método para obtener una categoría por id" coords="499,35,681,75"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1OfertasHandler.html#a6de3d8aae171fe68766039aefcbd5bb4" title="Método para obtener una Categoria por id" coords="252,5,439,45"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1OfertasHandler.html#a9179cfbeb903dbc77128b40d77782d82" title="Constructor de la clase" coords="240,70,451,95"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1OfertasHandler.html#a4b8c9e0b2ae1720933457f3862c0a231" title="Método para obtener OfertaDeServicio" coords="5,5,192,45"/>
+</map>

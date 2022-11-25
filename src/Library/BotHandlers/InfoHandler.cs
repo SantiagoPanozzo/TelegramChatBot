@@ -1,3 +1,4 @@
+using Library.BotHandlers;
 using Telegram.Bot.Types;
 
 namespace Library;
@@ -10,7 +11,7 @@ public class InfoHandler : BaseHandler {
     /// <param name="next">El próximo "handler".</param>
     public InfoHandler(BaseHandler next) : base(next)
     {
-        this._id = "Info Handler";
+        this._id = Handlers.InfoHandler;
         this.Keywords = new string[] {"/info", "info"};
     }
 
