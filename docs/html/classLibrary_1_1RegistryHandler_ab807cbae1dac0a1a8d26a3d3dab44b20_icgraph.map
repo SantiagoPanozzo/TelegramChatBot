@@ -1,0 +1,6 @@
+<map id="Library.RegistryHandler.VerificarNick" name="Library.RegistryHandler.VerificarNick">
+<area shape="rect" id="node1" title="Método para verificar el nickname de un Usuario" coords="224,69,395,109"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1RegistryHandler.html#a3a3c8dbcc470376d7f9082ed727e9cad" title="Método para registrar un administrador" coords="5,5,176,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1RegistryHandler.html#a9cea158f44e96feb3ee3b4cf8a2c166c" title="Método para registrar un empleador" coords="5,69,176,109"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1RegistryHandler.html#a0bf9704d7dc2ab9bf3cde59b66012d69" title="Método para registrar un trabajador" coords="5,133,176,173"/>
+</map>

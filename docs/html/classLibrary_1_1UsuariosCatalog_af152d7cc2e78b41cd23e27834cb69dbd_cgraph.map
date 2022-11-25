@@ -1,0 +1,6 @@
+<map id="Library.UsuariosCatalog.RemoveUsuario" name="Library.UsuariosCatalog.RemoveUsuario">
+<area shape="rect" id="node1" title="Método para eliminar un usuario" coords="5,23,176,63"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Usuario.html#a94ab2e6613b6d2127c8fc90d161cd127" title="Método para desactivar un usuario" coords="224,5,411,31"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1Usuario.html#ac8b2eb0988dacbb62b09f0abfdd8e3f6" title="Checkea si el usuario está activo" coords="233,55,401,80"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="459,5,625,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Library.Solicitud.IsRated" name="Library.Solicitud.IsRated">
+<area shape="rect" id="node1" title="Método para conocer si una oferta fue calificada" coords="5,13,176,38"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertaDeServicio.html#a7d3b09276de28b53109097ca44c76ac8" title="Método para obtener la calificación dada a la oferta tras ser finalizada" coords="224,5,403,45"/>
+</map>

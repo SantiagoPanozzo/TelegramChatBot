@@ -1,0 +1,5 @@
+<map id="Library.OfertaDeServicio.DarDeBaja" name="Library.OfertaDeServicio.DarDeBaja">
+<area shape="rect" id="node1" title="Método para dar de baja un Usuario" coords="241,37,420,77"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertasHandler.html#a419fc6b93ef7235e39449f38494d7d1f" title="Método para dar de baja una OfertaDeServicio" coords="5,5,193,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Categoria.html#a395e51b351aeb577b6371110ceec8abd" title="Método para quitar una oferta, en caso de que la misma no exista no hará nada" coords="8,69,191,109"/>
+</map>

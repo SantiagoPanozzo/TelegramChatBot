@@ -1,0 +1,5 @@
+<map id="Library.Solicitud.CalificarEmpleador" name="Library.Solicitud.CalificarEmpleador">
+<area shape="rect" id="node1" title="Método para calificar un empleador" coords="5,27,176,67"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Empleador.html#af855415550ea99a1f69bad954292d916" title="Método para calificar un usuario" coords="233,5,416,31"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Solicitud.html#ad96bd18918513d6785345cda681fd644" title="Método para conocer si un empleador fue calificado" coords="224,55,425,95"/>
+</map>

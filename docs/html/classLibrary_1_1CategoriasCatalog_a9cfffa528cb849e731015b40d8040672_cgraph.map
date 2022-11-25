@@ -1,0 +1,4 @@
+<map id="Library.CategoriasCatalog.AddCategoria" name="Library.CategoriasCatalog.AddCategoria">
+<area shape="rect" id="node1" title="Método para agregar una nueva categoría al catálogo" coords="5,5,188,45"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="236,13,403,38"/>
+</map>

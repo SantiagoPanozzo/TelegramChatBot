@@ -1,0 +1,4 @@
+<map id="Library.TelegramBot.HandleUpdateAsync" name="Library.TelegramBot.HandleUpdateAsync">
+<area shape="rect" id="node1" title="Maneja las actualizaciones del bot (todo lo que llega), incluyendo mensajes, ediciones de mensajes,..." coords="233,5,428,45"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1TelegramBot.html#a9b235532974f823235e1fccba5ee2f91" title="Punto de entrada al programa." coords="5,13,185,38"/>
+</map>

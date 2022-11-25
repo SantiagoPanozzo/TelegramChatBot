@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfaceLibrary_1_1IHandler.html" title="Interfaz para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a travé..." coords="5,80,128,105"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1BaseHandler.html" title="Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra..." coords="176,80,324,105"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1BuscarHandler.html" title="Muestra una lista de OfertaDeServicio disponibles según su ID y el trabajo. El usuario puede seleccio..." coords="383,5,543,31"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1CategoriasHandler.html" title="Un &quot;handler&quot; del patrón Chain of Responsibility que implementa el comando &quot;categorias&quot;." coords="372,55,555,80"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1InfoHandler.html" title="Un &quot;handler&quot; del patrón Chain of Responsibility que implementa el comando &quot;info&quot;." coords="391,104,535,129"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1StartHandler.html" title="Un &quot;handler&quot; del patrón Chain of Responsibility que implementa el comando &quot;categorias&quot;." coords="389,153,537,179"/>
+</map>

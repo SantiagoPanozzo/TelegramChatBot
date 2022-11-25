@@ -1,0 +1,5 @@
+<map id="Library.Usuario.GetContacto" name="Library.Usuario.GetContacto">
+<area shape="rect" id="node1" title="Método para obtener el contacto de un usuario" coords="232,45,428,70"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertaDeServicio.html#a824cec6c78534e0886ad48df4aad4387" title="Método para obtener el contacto del ofertante" coords="5,5,184,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1RegistryHandler.html#a84981fb8a897e98895cbe8b06763f324" title="Método para obtener el contacto de un usuario" coords="9,69,180,109"/>
+</map>

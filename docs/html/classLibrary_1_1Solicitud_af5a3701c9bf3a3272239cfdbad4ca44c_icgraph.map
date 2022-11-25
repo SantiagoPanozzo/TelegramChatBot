@@ -1,0 +1,5 @@
+<map id="Library.Solicitud.RecibirRespuesta" name="Library.Solicitud.RecibirRespuesta">
+<area shape="rect" id="node1" title="Método para conocer el estado de una oferta" coords="225,37,391,77"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1ContratoHandler.html#a9da1c5ea2f4b9eb3ebe351fa0dac67d5" title="Método para aceptar una solicitud" coords="5,5,177,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1ContratoHandler.html#ac49cc6208574122af37865556c55e2c9" title="Método para rechazar una solicitud" coords="5,69,177,109"/>
+</map>

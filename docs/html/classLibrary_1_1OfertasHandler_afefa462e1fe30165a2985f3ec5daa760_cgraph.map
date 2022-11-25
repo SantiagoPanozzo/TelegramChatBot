@@ -1,0 +1,6 @@
+<map id="Library.OfertasHandler.EliminarCategoria" name="Library.OfertasHandler.EliminarCategoria">
+<area shape="rect" id="node1" title="Método para eliminar una categoría" coords="5,5,220,45"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="745,34,912,59"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1CategoriasCatalog.html#a3e0b35f2e1dbf53a7dddd9f46fd038b8" title="Método para eliminar una categoría" coords="268,33,451,73"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1Categoria.html#ac49a20997f4a7ca69f06e9e7e5914e94" title="Método para dar de baja la categoría" coords="499,85,697,110"/>
+</map>

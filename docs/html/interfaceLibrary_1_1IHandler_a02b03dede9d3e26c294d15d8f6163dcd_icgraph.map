@@ -1,0 +1,4 @@
+<map id="Library.IHandler.Cancel" name="Library.IHandler.Cancel">
+<area shape="rect" id="node1" title="Retorna este &quot;handler&quot; al estado inicial y cancela el próximo &quot;handler&quot; si existe...." coords="241,5,404,31"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1BaseHandler.html#a0265e1cf44b91cc161412c8eada5bfdd" title="Retorna este &quot;handler&quot; al estado inicial. En los &quot;handler&quot; sin estado no hace nada...." coords="5,5,193,31"/>
+</map>

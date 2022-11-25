@@ -1,0 +1,4 @@
+<map id="Library.Solicitud" name="Library.Solicitud">
+<area shape="rect" id="node1" title="Clase Solicitud para iniciar una OfertaDeServicio" coords="5,137,188,500"/>
+<area shape="rect" id="node2" href="$interfaceLibrary_1_1IDesactivable.html" title="Interfaz para el manejo de actividad de un usuario, una categoría, etc." coords="35,5,158,89"/>
+</map>

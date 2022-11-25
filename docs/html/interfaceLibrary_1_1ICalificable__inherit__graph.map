@@ -1,0 +1,5 @@
+<map id="Library.ICalificable" name="Library.ICalificable">
+<area shape="rect" id="node1" title="Interfaz para calificar entre Trabajador/es y Empleador/es" coords="83,5,230,75"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Empleador.html" title="Clase Empleador que hereda de Usuario" coords="5,137,145,236"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Trabajador.html" title="Clase que hereda de" coords="170,123,309,251"/>
+</map>

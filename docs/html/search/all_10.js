@@ -6,5 +6,7 @@ var searchData=
   ['solicitudcatalog_3',['SolicitudCatalog',['../classLibrary_1_1SolicitudCatalog.html',1,'Library']]],
   ['solicitudcatalogtests_4',['SolicitudCatalogTests',['../classLibraryTests_1_1SolicitudCatalogTests.html',1,'LibraryTests']]],
   ['solicitudprinter_5',['SolicitudPrinter',['../classLibrary_1_1SolicitudPrinter.html',1,'Library']]],
-  ['solicitudtests_6',['SolicitudTests',['../classLibraryTests_1_1SolicitudTests.html',1,'LibraryTests']]]
+  ['solicitudtests_6',['SolicitudTests',['../classLibraryTests_1_1SolicitudTests.html',1,'LibraryTests']]],
+  ['starthandler_7',['StartHandler',['../classLibrary_1_1StartHandler.html',1,'Library.StartHandler'],['../classLibrary_1_1StartHandler.html#a83cebc80bf33fe240e8895c2ab5ac6b1',1,'Library.StartHandler.StartHandler()']]],
+  ['state_8',['State',['../classLibrary_1_1BuscarHandler.html#a107e0075d52c07980ffe7c7071bca2ec',1,'Library.BuscarHandler.State()'],['../classInicioHandler.html#afd76d7db873ce476dd5ca86dbff3d929',1,'InicioHandler.State()']]]
 ];

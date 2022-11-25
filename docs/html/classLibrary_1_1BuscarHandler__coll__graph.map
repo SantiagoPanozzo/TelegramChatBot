@@ -1,0 +1,5 @@
+<map id="Library.BuscarHandler" name="Library.BuscarHandler">
+<area shape="rect" id="node1" title="Muestra una lista de OfertaDeServicio disponibles según su ID y el trabajo. El usuario puede seleccio..." coords="5,387,171,500"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1BaseHandler.html" title="Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra..." coords="20,137,156,339"/>
+<area shape="rect" id="node3" href="$interfaceLibrary_1_1IHandler.html" title="Interfaz para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a travé..." coords="42,5,134,89"/>
+</map>

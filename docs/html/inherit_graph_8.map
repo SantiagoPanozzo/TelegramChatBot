@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfaceLibrary_1_1ICalificable.html" title="Interfaz para calificar entre Trabajador/es y Empleador/es" coords="224,5,359,31"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Empleador.html" title="Clase Empleador que hereda de Usuario" coords="437,104,572,129"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Trabajador.html" title="Clase que hereda de" coords="438,31,571,56"/>
+<area shape="rect" id="node4" href="$interfaceLibrary_1_1IDesactivable.html" title="Interfaz para el manejo de actividad de un usuario, una categoría, etc." coords="5,129,156,155"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1Categoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio" coords="228,55,355,80"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1OfertaDeServicio.html" title="Clase que representa una oferta de servicio" coords="204,104,379,129"/>
+<area shape="rect" id="node7" href="$classLibrary_1_1Solicitud.html" title="Clase Solicitud para iniciar una OfertaDeServicio" coords="232,153,351,179"/>
+<area shape="rect" id="node8" href="$classLibrary_1_1Usuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador" coords="234,203,349,228"/>
+<area shape="rect" id="node9" href="$classLibrary_1_1Administrador.html" title="Clase Administrador que hereda de Usuario" coords="427,203,583,228"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Library.OfertaDeServicio" name="Library.OfertaDeServicio">
+<area shape="rect" id="node1" title="Clase que representa una oferta de servicio" coords="5,137,184,500"/>
+<area shape="rect" id="node2" href="$interfaceLibrary_1_1IDesactivable.html" title="Interfaz para el manejo de actividad de un usuario, una categoría, etc." coords="33,5,156,89"/>
+</map>

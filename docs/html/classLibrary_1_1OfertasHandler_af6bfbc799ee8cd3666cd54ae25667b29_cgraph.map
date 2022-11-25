@@ -1,0 +1,5 @@
+<map id="Library.OfertasHandler.CrearCategoria" name="Library.OfertasHandler.CrearCategoria">
+<area shape="rect" id="node1" title="Método para crear una categoria" coords="5,35,204,75"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1CategoriasCatalog.html#a9cfffa528cb849e731015b40d8040672" title="Método para agregar una nueva categoría al catálogo" coords="252,5,435,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="483,42,649,67"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Library.Solicitud.IsEmpleadorRated" name="Library.Solicitud.IsEmpleadorRated">
+<area shape="rect" id="node1" title="Método para conocer si un empleador fue calificado" coords="224,35,425,75"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Solicitud.html#a617cf24ed3c6ec6dc2b5e9149966c599" title="Método para calificar un empleador" coords="5,5,176,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e" title="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..." coords="7,70,175,95"/>
+</map>
