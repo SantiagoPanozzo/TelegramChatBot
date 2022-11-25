@@ -12,14 +12,16 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
 using System.Text.Json;
+using Library.Registro;
+
 namespace Library;
 
-/// <summary>
-/// Un programa que implementa un bot de Telegram.
-/// </summary>
-public class UcuTelegramBot {
+/// <summary> Un programa que implementa un bot de Telegram. </summary>
+public class TelegramBot {
     // La instancia del bot.
     private static TelegramBotClient Bot;
+
+    public static Dictionary<long, string> Posiciones = new Dictionary<long, string>();
 
     // El token provisto por Telegram al crear el bot. Mira el archivo README.md en la raíz de este repo para
     // obtener indicaciones sobre cómo configurarlo.
@@ -51,7 +53,7 @@ public class UcuTelegramBot {
     }
 
     /// <summary> Configura la aplicación </summary>//
-    private async static void Start()
+    private static void Start()
     {
         // Lee una variable de entorno NETCORE_ENVIRONMENT que si no existe o tiene el valor 'development' indica
         // que estamos en un ambiente de desarrollo.
@@ -68,7 +70,7 @@ public class UcuTelegramBot {
         // En el ambiente de desarrollo el token secreto del bot se toma de la configuración secreta
         if (isDevelopment)
         {
-            builder.AddUserSecrets<UcuTelegramBot>();
+            builder.AddUserSecrets<TelegramBot>();
         }
 
         var configuration = builder.Build();
@@ -95,9 +97,7 @@ public class UcuTelegramBot {
         Bot = new TelegramBotClient(token);
 
         firstHandler =
-            new InfoHandler(
-            new CategoriasHandler(Bot, null)
-        );
+            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(null))));
 
         var cts = new CancellationTokenSource();
 
