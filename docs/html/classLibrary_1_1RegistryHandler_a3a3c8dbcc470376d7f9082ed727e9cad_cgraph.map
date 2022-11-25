@@ -1,0 +1,7 @@
+<map id="Library.RegistryHandler.RegistrarAdministrador" name="Library.RegistryHandler.RegistrarAdministrador">
+<area shape="rect" id="node1" title="Método para registrar un administrador" coords="5,69,176,109"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1UsuariosCatalog.html#a0bc70b7565dd52d48a63682c567ab902" title="Método para agregar un administrador" coords="224,5,395,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1RegistryHandler.html#a8a92d13456238efd340e8e3c678763e0" title="Método para verificar un correo" coords="224,69,395,109"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1RegistryHandler.html#ab807cbae1dac0a1a8d26a3d3dab44b20" title="Método para verificar el nickname de un Usuario" coords="224,133,395,173"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1UsuariosCatalog.html#a6a3f81b438afc68cd3809e603728f9bb" title="Método para conocer los usuarios" coords="443,133,613,173"/>
+</map>

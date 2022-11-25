@@ -1,0 +1,8 @@
+<map id="Library.RegistryHandler.RegistrarTrabajador" name="Library.RegistryHandler.RegistrarTrabajador">
+<area shape="rect" id="node1" title="Método para registrar un trabajador" coords="5,101,176,141"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1UsuariosCatalog.html#afda536f591a331a1c6ece35ce24cdd9b" title="Método que agrega un usuario" coords="224,5,395,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1RegistryHandler.html#a0c15a9f4f299b78bdacc69dedb427a7d" title="Método para verificar la cédula de un Usuario" coords="224,69,395,109"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1RegistryHandler.html#a8a92d13456238efd340e8e3c678763e0" title="Método para verificar un correo" coords="224,133,395,173"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1RegistryHandler.html#ab807cbae1dac0a1a8d26a3d3dab44b20" title="Método para verificar el nickname de un Usuario" coords="224,197,395,237"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1UsuariosCatalog.html#a6a3f81b438afc68cd3809e603728f9bb" title="Método para conocer los usuarios" coords="443,197,613,237"/>
+</map>

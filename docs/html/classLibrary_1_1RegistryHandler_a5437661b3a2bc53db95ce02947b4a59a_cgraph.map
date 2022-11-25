@@ -1,0 +1,8 @@
+<map id="Library.RegistryHandler.RemoveUsuario" name="Library.RegistryHandler.RemoveUsuario">
+<area shape="rect" id="node1" title="Método para eliminar un Usuario" coords="5,29,176,69"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="677,10,844,35"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1UsuariosCatalog.html#a6a3f81b438afc68cd3809e603728f9bb" title="Método para conocer los usuarios" coords="224,29,395,69"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1UsuariosCatalog.html#af152d7cc2e78b41cd23e27834cb69dbd" title="Método para eliminar un usuario" coords="224,93,395,133"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1Usuario.html#a94ab2e6613b6d2127c8fc90d161cd127" title="Método para desactivar un usuario" coords="443,40,629,66"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1Usuario.html#ac8b2eb0988dacbb62b09f0abfdd8e3f6" title="Checkea si el usuario está activo" coords="452,100,620,126"/>
+</map>

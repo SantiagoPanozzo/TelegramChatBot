@@ -1,0 +1,5 @@
+<map id="Library.OfertaDeServicio.GetOfertante" name="Library.OfertaDeServicio.GetOfertante">
+<area shape="rect" id="node1" title="Método para obtener NickName de Ofertante" coords="228,35,407,75"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1ContratoHandler.html#a9da1c5ea2f4b9eb3ebe351fa0dac67d5" title="Método para aceptar una solicitud" coords="7,5,179,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Solicitud.html#a291a5870fcc93cd8aec3af84833956f1" title="Constructor de la clase Solicitud" coords="5,70,180,95"/>
+</map>

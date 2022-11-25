@@ -8,8 +8,24 @@ public class RegistryHandlerTests
     public void Setup() {}
 
     [Test]
-    public void Test1()
-    {
-        Assert.Pass();
+    public void ValidCorreo() {
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+
+        var result = registryHandler.VerificarCorreo("someone@somewhere.com");
+
+        bool expected = true; 
+
+        Assert.That(expected.Equals(result));
+    }
+
+    [Test]
+    public void InvalidCorreo() {
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+
+        var result = registryHandler.VerificarCorreo("fdsa@fdsa.");
+
+        bool expected = false; 
+
+        Assert.That(expected.Equals(result));
     }
 }

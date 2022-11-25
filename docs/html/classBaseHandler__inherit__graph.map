@@ -1,0 +1,6 @@
+<map id="BaseHandler" name="BaseHandler">
+<area shape="rect" id="node1" title=" " coords="195,5,302,45"/>
+<area shape="rect" id="node2" href="$classDefaultHandler.html" title=" " coords="5,115,156,199"/>
+<area shape="rect" id="node3" href="$classInicioHandler.html" title="Dependiendo del TipoDeUsuario del Usuario muestra distintas opciones. Para un Trabajador muestra Ofer..." coords="181,108,317,207"/>
+<area shape="rect" id="node4" href="$classRegistrarHandler.html" title=" " coords="341,93,495,221"/>
+</map>

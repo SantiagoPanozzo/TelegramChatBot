@@ -1,0 +1,28 @@
+<map id="Library.Usuario.GetTipo" name="Library.Usuario.GetTipo">
+<area shape="rect" id="node1" title="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador" coords="776,590,943,615"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1CategoriasCatalog.html#a9cfffa528cb849e731015b40d8040672" title="Método para agregar una nueva categoría al catálogo" coords="530,5,713,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1OfertasHandler.html#af6bfbc799ee8cd3666cd54ae25667b29" title="Método para crear una categoria" coords="268,35,467,75"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1Categoria.html#ac49a20997f4a7ca69f06e9e7e5914e94" title="Método para dar de baja la categoría" coords="522,121,721,146"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1CategoriasCatalog.html#a3e0b35f2e1dbf53a7dddd9f46fd038b8" title="Método para eliminar una categoría" coords="276,136,459,176"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1OfertasHandler.html#afefa462e1fe30165a2985f3ec5daa760" title="Método para eliminar una categoría" coords="5,165,220,205"/>
+<area shape="rect" id="node7" href="$classLibrary_1_1OfertaDeServicio.html#a05fd36175b1f8f268eca50f06be8931f" title="Método para dar de baja un Usuario" coords="532,272,711,312"/>
+<area shape="rect" id="node10" href="$classLibrary_1_1Solicitud.html#a8626ea612862185a6564d14d4804b51a" title="Método para dar de baja una solicitud" coords="526,337,717,362"/>
+<area shape="rect" id="node11" href="$classLibrary_1_1Usuario.html#a94ab2e6613b6d2127c8fc90d161cd127" title="Método para desactivar un usuario" coords="528,386,715,411"/>
+<area shape="rect" id="node13" href="$classLibrary_1_1RegistryHandler.html#a5437661b3a2bc53db95ce02947b4a59a" title="Método para eliminar un Usuario" coords="27,407,198,447"/>
+<area shape="rect" id="node14" href="$classLibrary_1_1RegistryHandler.html#a1a2cd2aa0e0c52e9edf3f7fa1d532d9e" title="Método para obtener la lista de empleadores" coords="536,487,707,527"/>
+<area shape="rect" id="node15" href="$classLibrary_1_1ContratoHandler.html#a7d07db24f12c446d1983ad27466fcd92" title="Método para mostrar solicitudes" coords="535,551,707,591"/>
+<area shape="rect" id="node16" href="$classLibrary_1_1RegistryHandler.html#ae52d7593bb8a63139a1d4aed856a61c6" title="Método para obtener la lista de trabajadores" coords="536,615,707,655"/>
+<area shape="rect" id="node17" href="$classLibrary_1_1SolicitudPrinter.html#a3d190eb143238e9d17c85c7f05485fd8" title="Método que imprime el texto de la lista" coords="539,679,703,719"/>
+<area shape="rect" id="node18" href="$classLibrary_1_1Categoria.html#a9a5b4899556f8bab9818dfb288b51287" title="Método para reactivar una categoría" coords="527,743,715,769"/>
+<area shape="rect" id="node19" href="$classLibrary_1_1OfertaDeServicio.html#a789ed2d43fbd73c8379894f7f12eb96f" title="Método para reactivar un Usuario" coords="532,793,711,833"/>
+<area shape="rect" id="node20" href="$classLibrary_1_1Solicitud.html#ab49e18741e69a23545ed6de3e3b4670b" title="Método para reactivar una solicitud" coords="531,858,711,883"/>
+<area shape="rect" id="node21" href="$classLibrary_1_1Usuario.html#afd7b0ccc30d52e82c804873c15fc65a3" title="Método para activar un usuario" coords="533,907,709,933"/>
+<area shape="rect" id="node22" href="$classLibrary_1_1ContratoHandler.html#ad630defa0fa3d95a1261855d4a96e8c0" title="Método para borrar los datos de la clase" coords="520,957,723,982"/>
+<area shape="rect" id="node23" href="$classLibrary_1_1CategoriasCatalog.html#a545c5fa5e182ff288af5f7a6679e380a" title="Método para borrar los datos de la clase" coords="515,1006,728,1031"/>
+<area shape="rect" id="node24" href="$classLibrary_1_1OfertasHandler.html#a85e8f00c4e9c7e5b72cbac541b55f754" title="Método para borrar los datos de la clase" coords="524,1055,719,1081"/>
+<area shape="rect" id="node25" href="$classLibrary_1_1RegistryHandler.html#a0c29a69500a72355605df52f11f2ef1a" title="Método para borrar los datos de la clase" coords="521,1105,721,1130"/>
+<area shape="rect" id="node26" href="$classLibrary_1_1SolicitudCatalog.html#a499d23028c51c6420baa6b0d74558524" title="Método para borrar los datos de la clase" coords="522,1154,721,1179"/>
+<area shape="rect" id="node8" href="$classLibrary_1_1OfertasHandler.html#a419fc6b93ef7235e39449f38494d7d1f" title="Método para dar de baja una OfertaDeServicio" coords="273,251,461,291"/>
+<area shape="rect" id="node9" href="$classLibrary_1_1Categoria.html#a395e51b351aeb577b6371110ceec8abd" title="Método para quitar una oferta, en caso de que la misma no exista no hará nada" coords="276,315,459,355"/>
+<area shape="rect" id="node12" href="$classLibrary_1_1UsuariosCatalog.html#af152d7cc2e78b41cd23e27834cb69dbd" title="Método para eliminar un usuario" coords="282,379,453,419"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Library.Usuario.IsActive" name="Library.Usuario.IsActive">
+<area shape="rect" id="node1" title="Checkea si el usuario está activo" coords="443,13,611,38"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1UsuariosCatalog.html#af152d7cc2e78b41cd23e27834cb69dbd" title="Método para eliminar un usuario" coords="224,5,395,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1RegistryHandler.html#a5437661b3a2bc53db95ce02947b4a59a" title="Método para eliminar un Usuario" coords="5,5,176,45"/>
+</map>

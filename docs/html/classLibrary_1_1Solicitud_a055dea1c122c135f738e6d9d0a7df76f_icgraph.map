@@ -1,0 +1,4 @@
+<map id="Library.Solicitud.CanTrabajadorBeAutoRated" name="Library.Solicitud.CanTrabajadorBeAutoRated">
+<area shape="rect" id="node1" title="Compara la fecha actual con la fecha límite para calificar" coords="221,5,432,45"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e" title="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..." coords="5,13,173,38"/>
+</map>

@@ -1,6 +1,11 @@
 var hierarchy =
 [
     [ "LibraryTests.AdministradorTests", "classLibraryTests_1_1AdministradorTests.html", null ],
+    [ "BaseHandler", "classBaseHandler.html", [
+      [ "DefaultHandler", "classDefaultHandler.html", null ],
+      [ "InicioHandler", "classInicioHandler.html", null ],
+      [ "RegistrarHandler", "classRegistrarHandler.html", null ]
+    ] ],
     [ "Library.Buscador", "classLibrary_1_1Buscador.html", null ],
     [ "LibraryTests.CategoriaCatalogTests", "classLibraryTests_1_1CategoriaCatalogTests.html", null ],
     [ "Library.CategoriasCatalog", "classLibrary_1_1CategoriasCatalog.html", null ],
@@ -11,6 +16,7 @@ var hierarchy =
     [ "LibraryTests.DistanceTests", "classLibraryTests_1_1DistanceTests.html", null ],
     [ "LibraryTests.EmpleadorTests", "classLibraryTests_1_1EmpleadorTests.html", null ],
     [ "LibraryTests.Escenarios", "classLibraryTests_1_1Escenarios.html", null ],
+    [ "HandlerHandler", "classHandlerHandler.html", null ],
     [ "Library.IActualizable", "interfaceLibrary_1_1IActualizable.html", null ],
     [ "Library.ICalificable", "interfaceLibrary_1_1ICalificable.html", [
       [ "Library.Empleador", "classLibrary_1_1Empleador.html", null ],
@@ -28,10 +34,13 @@ var hierarchy =
     ] ],
     [ "Library.IHandler", "interfaceLibrary_1_1IHandler.html", [
       [ "Library.BaseHandler", "classLibrary_1_1BaseHandler.html", [
+        [ "Library.BuscarHandler", "classLibrary_1_1BuscarHandler.html", null ],
         [ "Library.CategoriasHandler", "classLibrary_1_1CategoriasHandler.html", null ],
-        [ "Library.InfoHandler", "classLibrary_1_1InfoHandler.html", null ]
+        [ "Library.InfoHandler", "classLibrary_1_1InfoHandler.html", null ],
+        [ "Library.StartHandler", "classLibrary_1_1StartHandler.html", null ]
       ] ]
     ] ],
+    [ "IniciarSesionHandler", "classIniciarSesionHandler.html", null ],
     [ "Library.IPrinter< T >", "interfaceLibrary_1_1IPrinter.html", null ],
     [ "Library.IPrinter< Categoria >", "interfaceLibrary_1_1IPrinter.html", [
       [ "Library.CategoriaPrinter", "classLibrary_1_1CategoriaPrinter.html", null ]
@@ -40,17 +49,26 @@ var hierarchy =
       [ "Library.SolicitudPrinter", "classLibrary_1_1SolicitudPrinter.html", null ]
     ] ],
     [ "LibraryTests.OfertaDeServicioTests", "classLibraryTests_1_1OfertaDeServicioTests.html", null ],
+    [ "OfertarHandler", "classOfertarHandler.html", null ],
+    [ "OfertarServicioHandler", "classOfertarServicioHandler.html", null ],
     [ "Library.OfertasHandler", "classLibrary_1_1OfertasHandler.html", null ],
     [ "LibraryTests.OfertasHandlerTests", "classLibraryTests_1_1OfertasHandlerTests.html", null ],
+    [ "PanelDeControlHandler", "classPanelDeControlHandler.html", null ],
     [ "Program.Program", "classProgram_1_1Program.html", null ],
     [ "Library.RegistryHandler", "classLibrary_1_1RegistryHandler.html", null ],
     [ "LibraryTests.RegistryHandlerTests", "classLibraryTests_1_1RegistryHandlerTests.html", null ],
     [ "Library.SolicitudCatalog", "classLibrary_1_1SolicitudCatalog.html", null ],
     [ "LibraryTests.SolicitudCatalogTests", "classLibraryTests_1_1SolicitudCatalogTests.html", null ],
     [ "LibraryTests.SolicitudTests", "classLibraryTests_1_1SolicitudTests.html", null ],
+    [ "Library.TelegramBot", "classLibrary_1_1TelegramBot.html", null ],
     [ "LibraryTests.TrabajadorTests", "classLibraryTests_1_1TrabajadorTests.html", null ],
-    [ "Library.UcuTelegramBot", "classLibrary_1_1UcuTelegramBot.html", null ],
     [ "LibraryTests.UpdaterTests", "classLibraryTests_1_1UpdaterTests.html", null ],
     [ "Library.UsuariosCatalog", "classLibrary_1_1UsuariosCatalog.html", null ],
-    [ "LibraryTests.UsuarioTests", "classLibraryTests_1_1UsuarioTests.html", null ]
+    [ "LibraryTests.UsuarioTests", "classLibraryTests_1_1UsuarioTests.html", null ],
+    [ "VerCategoriasHandler", "classVerCategoriasHandler.html", null ],
+    [ "VerContratosHandler", "classVerContratosHandler.html", null ],
+    [ "VerInfoHandler", "classVerInfoHandler.html", null ],
+    [ "VerOfertasHandler", "classVerOfertasHandler.html", null ],
+    [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", null ],
+    [ "VerUsuariosHandler", "classVerUsuariosHandler.html", null ]
 ];

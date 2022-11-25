@@ -12,6 +12,7 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
 using System.Text.Json;
+using Library.BotHandlers;
 using Library.Registro;
 
 namespace Library;
@@ -20,8 +21,6 @@ namespace Library;
 public class TelegramBot {
     // La instancia del bot.
     private static TelegramBotClient Bot;
-
-    public static Dictionary<long, string> Posiciones = new Dictionary<long, string>();
 
     // El token provisto por Telegram al crear el bot. Mira el archivo README.md en la raíz de este repo para
     // obtener indicaciones sobre cómo configurarlo.
@@ -88,6 +87,7 @@ public class TelegramBot {
     }
 
     private static IHandler firstHandler;
+    // private static IHandler secondHandler;
 
     /// <summary> Punto de entrada al programa. </summary>
     public static void Main()
@@ -97,7 +97,9 @@ public class TelegramBot {
         Bot = new TelegramBotClient(token);
 
         firstHandler =
-            new InfoHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(null))));
+            new InfoHandler(new InicioHandler(new StartHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(new DefaultHandler(null, Bot)))))));
+
+        // secondHandler = new InicioHandler(new DefaultHandler(null, Bot));
 
         var cts = new CancellationTokenSource();
 

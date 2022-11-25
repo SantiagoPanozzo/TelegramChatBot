@@ -1,0 +1,6 @@
+<map id="Library.OfertasHandler.Ofertar" name="Library.OfertasHandler.Ofertar">
+<area shape="rect" id="node1" title="Constructor de la clase" coords="5,35,216,60"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Categoria.html#a76625bf1c77b7b7be79bb18dc30317a7" title="Método para agregar una oferta en caso de que la misma no exista todavía en la lista" coords="264,5,461,31"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1CategoriasCatalog.html#a9bedf1f8b23af24ef3515c48b7d05200" title="Método para obtener una categoría por id" coords="271,55,454,95"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1Categoria.html#a391925bcef104bf634b266e75310aedf" title="Método para obtener el ID de una Categoria" coords="509,63,676,88"/>
+</map>

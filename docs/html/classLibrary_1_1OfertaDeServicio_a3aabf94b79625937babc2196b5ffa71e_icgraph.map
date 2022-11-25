@@ -1,0 +1,8 @@
+<map id="Library.OfertaDeServicio.GetId" name="Library.OfertaDeServicio.GetId">
+<area shape="rect" id="node1" title="Método para obtener id de OfertaDeServicio" coords="977,37,1156,77"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Categoria.html#abfee7bcdbeb886b1993fdfaf14efe6d7" title="Filtrar OfertaDeServicio por id" coords="707,45,929,70"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1CategoriasCatalog.html#a02d667d79dc6c941d7ab276c88259ff2" title="Método para obtener OfertaDeServicio por id" coords="476,5,659,45"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1Categoria.html#a395e51b351aeb577b6371110ceec8abd" title="Método para quitar una oferta, en caso de que la misma no exista no hará nada" coords="476,69,659,109"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1OfertasHandler.html#a77e846642d71cc0848a111e21fd20bbf" title="Método para obtener una OfertaDeServicio por id" coords="241,5,428,45"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1OfertasHandler.html#a419fc6b93ef7235e39449f38494d7d1f" title="Método para dar de baja una OfertaDeServicio" coords="5,5,193,45"/>
+</map>

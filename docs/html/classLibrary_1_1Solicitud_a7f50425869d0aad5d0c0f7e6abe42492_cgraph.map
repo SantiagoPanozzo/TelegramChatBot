@@ -1,0 +1,8 @@
+<map id="Library.Solicitud.CalificarTrabajador" name="Library.Solicitud.CalificarTrabajador">
+<area shape="rect" id="node1" title="Método para calificar un trabajador" coords="5,35,176,75"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Solicitud.html#a3f28506b2bd1231cf55a2652d876d2ea" title="Método para conocer si una oferta fue calificada" coords="228,13,399,38"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1OfertaDeServicio.html#aeed25698e68c88cf5374dd5afe732b5f" title="Método para calificar la oferta en cuestión" coords="224,63,403,103"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1OfertaDeServicio.html#a7d3b09276de28b53109097ca44c76ac8" title="Método para obtener la calificación dada a la oferta tras ser finalizada" coords="452,5,631,45"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1Trabajador.html#a6f55f5fa1d9bdd301639a0ac3d87b58e" title="Método para calificar un usuario" coords="451,70,632,95"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1OfertaDeServicio.html#a492d374e602fdcdc4053c1dc182ad32c" title="Método para verificar si fue calificada la oferta" coords="452,120,631,160"/>
+</map>

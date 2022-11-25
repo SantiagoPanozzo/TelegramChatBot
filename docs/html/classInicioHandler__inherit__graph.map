@@ -1,0 +1,4 @@
+<map id="InicioHandler" name="InicioHandler">
+<area shape="rect" id="node1" title="Dependiendo del TipoDeUsuario del Usuario muestra distintas opciones. Para un Trabajador muestra Ofer..." coords="5,93,141,192"/>
+<area shape="rect" id="node2" href="$classBaseHandler.html" title=" " coords="20,5,127,45"/>
+</map>

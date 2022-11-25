@@ -1,0 +1,12 @@
+<map id="Library.Solicitud.Update" name="Library.Solicitud.Update">
+<area shape="rect" id="node1" title="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..." coords="5,159,173,184"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1Empleador.html#af855415550ea99a1f69bad954292d916" title="Método para calificar un usuario" coords="236,5,419,31"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Solicitud.html#abef8160453ba23dd43195d34d5dab535" title="Compara la fecha actual con la fecha límite para calificar" coords="221,55,433,95"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1Solicitud.html#a055dea1c122c135f738e6d9d0a7df76f" title="Compara la fecha actual con la fecha límite para calificar" coords="222,119,433,159"/>
+<area shape="rect" id="node5" href="$classLibrary_1_1Solicitud.html#ad96bd18918513d6785345cda681fd644" title="Método para conocer si un empleador fue calificado" coords="227,183,428,223"/>
+<area shape="rect" id="node6" href="$classLibrary_1_1Solicitud.html#a3f28506b2bd1231cf55a2652d876d2ea" title="Método para conocer si una oferta fue calificada" coords="242,248,413,273"/>
+<area shape="rect" id="node8" href="$classLibrary_1_1OfertaDeServicio.html#aeed25698e68c88cf5374dd5afe732b5f" title="Método para calificar la oferta en cuestión" coords="238,298,417,338"/>
+<area shape="rect" id="node7" href="$classLibrary_1_1OfertaDeServicio.html#a7d3b09276de28b53109097ca44c76ac8" title="Método para obtener la calificación dada a la oferta tras ser finalizada" coords="483,241,661,281"/>
+<area shape="rect" id="node9" href="$classLibrary_1_1Trabajador.html#a6f55f5fa1d9bdd301639a0ac3d87b58e" title="Método para calificar un usuario" coords="481,305,663,331"/>
+<area shape="rect" id="node10" href="$classLibrary_1_1OfertaDeServicio.html#a492d374e602fdcdc4053c1dc182ad32c" title="Método para verificar si fue calificada la oferta" coords="483,355,661,395"/>
+</map>

@@ -1,6 +1,6 @@
 namespace Library;
 
-/// <summary>Clase para mostrar por pantalla las cetegorías</summary>
+/// <summary>Clase para mostrar por pantalla las categorías</summary>
 
 public class CategoriaPrinter : IPrinter<Categoria> {
 

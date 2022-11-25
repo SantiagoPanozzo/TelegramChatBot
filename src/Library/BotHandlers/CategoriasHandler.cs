@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Library.BotHandlers;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -18,7 +19,8 @@ public class CategoriasHandler : BaseHandler {
     /// </summary>
     /// <param name="next">El próximo "handler".</param>
     public CategoriasHandler(TelegramBotClient bot, BaseHandler next) : base(next) {
-        this.Keywords = new string[] {"categorias"};
+        this.Keywords = new string[] {"categorias", "/categorias"};
+        this._id = Handlers.CategoriasHandler;
     }
 
     /// <summary> Procesa el mensaje "Categorias" y retorna true; retorna false en caso contrario. </summary>

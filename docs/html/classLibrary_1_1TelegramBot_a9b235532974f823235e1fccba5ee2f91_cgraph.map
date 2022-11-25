@@ -1,0 +1,5 @@
+<map id="Library.TelegramBot.Main" name="Library.TelegramBot.Main">
+<area shape="rect" id="node1" title="Punto de entrada al programa." coords="5,13,185,38"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1TelegramBot.html#a0e26289e5cab7a4939474602d34830dc" title="Manejo de excepciones. Por ahora simplemente la imprimimos en la consola." coords="476,5,671,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1TelegramBot.html#a393bed01cc1264f45f5d03af79c8dd0f" title="Maneja las actualizaciones del bot (todo lo que llega), incluyendo mensajes, ediciones de mensajes,..." coords="233,33,428,73"/>
+</map>

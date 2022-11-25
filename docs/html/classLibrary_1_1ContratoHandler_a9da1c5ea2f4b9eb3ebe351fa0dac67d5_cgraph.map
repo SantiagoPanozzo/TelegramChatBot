@@ -1,0 +1,6 @@
+<map id="Library.ContratoHandler.AceptarSolicitud" name="Library.ContratoHandler.AceptarSolicitud">
+<area shape="rect" id="node1" title="Método para aceptar una solicitud" coords="5,37,177,77"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertaDeServicio.html#a317a1a53e5d0446eab1627651120cb02" title="Método para obtener NickName de Ofertante" coords="225,5,404,45"/>
+<area shape="rect" id="node3" href="$classLibrary_1_1Solicitud.html#af5a3701c9bf3a3272239cfdbad4ca44c" title="Método para conocer el estado de una oferta" coords="232,69,397,109"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1Solicitud.html#abd52f9a5723d6d08e2b3c4b1effc3bb3" title="Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar También cam..." coords="452,69,613,109"/>
+</map>

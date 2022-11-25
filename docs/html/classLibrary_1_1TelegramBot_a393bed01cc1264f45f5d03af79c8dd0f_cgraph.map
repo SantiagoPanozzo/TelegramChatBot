@@ -1,0 +1,4 @@
+<map id="Library.TelegramBot.HandleUpdateAsync" name="Library.TelegramBot.HandleUpdateAsync">
+<area shape="rect" id="node1" title="Maneja las actualizaciones del bot (todo lo que llega), incluyendo mensajes, ediciones de mensajes,..." coords="5,5,200,45"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1TelegramBot.html#a0e26289e5cab7a4939474602d34830dc" title="Manejo de excepciones. Por ahora simplemente la imprimimos en la consola." coords="248,5,443,45"/>
+</map>

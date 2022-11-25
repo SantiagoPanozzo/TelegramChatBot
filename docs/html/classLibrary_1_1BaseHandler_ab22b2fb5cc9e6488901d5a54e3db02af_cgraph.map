@@ -1,0 +1,6 @@
+<map id="Library.BaseHandler.Handle" name="Library.BaseHandler.Handle">
+<area shape="rect" id="node1" title="Procesa el mensaje o lo pasa al siguiente &quot;handler&quot; si existe." coords="5,55,199,80"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1BaseHandler.html#a77cfb55207412de295f3e038dd63b9a6" title="Determina si este &quot;handler&quot; puede procesar el mensaje. En la clase base se utiliza el array BaseHandl..." coords="247,5,461,31"/>
+<area shape="rect" id="node3" href="$interfaceLibrary_1_1IHandler.html#abd9d7320dc805f417992ab74f2c70777" title="Procesa el mensaje o la pasa al siguiente &quot;handler&quot; si existe." coords="270,55,438,80"/>
+<area shape="rect" id="node4" href="$classLibrary_1_1BaseHandler.html#a3c9be9c87d458588b108790b13758887" title="Este método debe ser sobreescrito por las clases sucesores. La clase sucesora procesa el mensaje y as..." coords="255,105,453,145"/>
+</map>

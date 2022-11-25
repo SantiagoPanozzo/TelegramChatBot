@@ -1,0 +1,4 @@
+<map id="Library.Categoria.GetOfertaById" name="Library.Categoria.GetOfertaById">
+<area shape="rect" id="node1" title="Filtrar OfertaDeServicio por id" coords="5,13,228,38"/>
+<area shape="rect" id="node2" href="$classLibrary_1_1OfertaDeServicio.html#a3aabf94b79625937babc2196b5ffa71e" title="Método para obtener id de OfertaDeServicio" coords="276,5,455,45"/>
+</map>

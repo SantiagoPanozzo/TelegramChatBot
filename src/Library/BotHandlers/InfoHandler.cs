@@ -1,3 +1,4 @@
+using Library.BotHandlers;
 using Telegram.Bot.Types;
 
 namespace Library;
@@ -10,7 +11,7 @@ public class InfoHandler : BaseHandler {
     /// <param name="next">El próximo "handler".</param>
     public InfoHandler(BaseHandler next) : base(next)
     {
-        this._id = "Info Handler";
+        this._id = Handlers.InfoHandler;
         this.Keywords = new string[] {"/info", "info"};
     }
 
@@ -19,6 +20,6 @@ public class InfoHandler : BaseHandler {
     /// <param name="response">La respuesta al mensaje procesado.</param>
     /// <returns>true si el mensaje fue procesado; false en caso contrario.</returns>
     protected override void InternalHandle(Message message, out string response) {
-        response = "A continuación te dejamos una lista con los comandos y sus acciones:\n» Registrarme\n» Iniciar sesión\n» Bla bla";
+        response = "A continuación te dejamos una lista con los comandos y sus acciones:\n» Buscar\n» Categorias\n» Info\n» Login\n» Panel de control\n» Registrar\n» Start";
     }
 }
