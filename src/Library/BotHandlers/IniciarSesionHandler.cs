@@ -1,5 +1,7 @@
 using Telegram.Bot.Types;
 using System;
+using Library.BotHandlers;
+
 namespace Library;
 /// <summary>
 /// Solicita al usuario su Nick y su Contraseña y si coinciden con la base de datos procede a <see cref="InicioHandler"/>
@@ -27,7 +29,7 @@ public class IniciarSesionHandler : BaseHandler
     {
         this.Keywords = new string[] { "iniciar", "login", "/login", "iniciar sesion", "iniciar sesión"};
         this.State = LoginState.Start;
-        this._id= "iniciarsesion";
+        this._id= Handlers.IniciarSesionHandler;
     }
     /// <summary>  </summary>
     /// <param name="message">  </param>

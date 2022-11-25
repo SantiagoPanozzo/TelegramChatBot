@@ -1,5 +1,7 @@
 using Telegram.Bot.Types;
 using System;
+using Library.BotHandlers;
+
 namespace Library;
 /// <summary>
 /// Se fija si el Telegram ID de la persona corresponde a un administrador y le pide su contraseña de administrador y la
@@ -39,6 +41,7 @@ public class PanelDeControl : BaseHandler
     {
         this.Keywords = new string[] {"admin","admin login","login admin","/admin"};
         this.State = PanelState.Start;
+        this._id = Handlers.PanelDeControlHandler;
     }
     /// <summary>  </summary>
     /// <param name="message">  </param>
