@@ -31,6 +31,7 @@ public class OfertaDeServicio : IDesactivable
         this._id = Instancias;
         this.Ubicacion = Ofertante.Ubicacion;
         this.Rate = Calificacion.NoCalificado;
+        this.Disponible = true;
     }
     
     /// <summary>Método para borrar los datos de la clase</summary>

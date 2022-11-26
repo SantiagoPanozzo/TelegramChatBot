@@ -56,9 +56,13 @@ public class SolicitudCatalog
     /// solicitudes. -->
     public Solicitud AddSolicitud(OfertaDeServicio Oferta, Empleador empleador)
     {
-        Solicitud solicitud = new Solicitud(Oferta, empleador);
-        Solicitudes.Add(solicitud);
-        return solicitud;
+        foreach (Solicitud solicitud in Solicitudes)
+        {
+            if (solicitud.Oferta.Equals(Oferta)) throw (new("Esa oferta no está disponible"));
+        }
+        Solicitud nuevaSolicitud = new Solicitud(Oferta, empleador);
+        Solicitudes.Add(nuevaSolicitud);
+        return nuevaSolicitud;
     }
 
     /// <summary> Método para eliminar una <see cref="Solicitud"> </summary>
