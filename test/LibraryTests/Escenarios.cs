@@ -25,7 +25,7 @@ public class Escenarios
     }
     
     [Test]
-    public void Caso1()
+    public void AdministradorCrearCategoria()
     // "Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios
     // para que de esa forma, los trabajadores puedan clasificarlos.
     {
@@ -44,7 +44,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso2()
+    public void AdministradorDarDeBajaOferta()
     // Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma,
     // pueda evitar ofertas inadecuadas.
     {
@@ -69,7 +69,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso3()
+    public void TrabajadorRegistrarse()
     // Como trabajador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto
     // para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.
     { 
@@ -89,7 +89,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso4()
+    public void TrabajadorCrearOferta()
     // Como trabajador, quiero poder hacer ofertas de servicios; mi oferta indicará en qué categoría quiero publicar,
     // tendrá una descripción del servicio ofertado, y un precio para que de esa forma, mis ofertas sean ofrecidas a
     // quienes quieren contratar servicios.
@@ -113,7 +113,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso5()
+    public void EmpleadorRegistrarse()
     // Como empleador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto
     // para que de esa forma, pueda proveer información de contacto a los trabajadores que quiero contratar.
     {
@@ -133,7 +133,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso6()
+    public void EmpleadorBuscarOfertaPorCategoria()
     // Como empleador, quiero buscar ofertas de trabajo, opcionalmente filtrando por categoría para que de esa forma,
     // pueda contratar un servicio.
     {
@@ -167,7 +167,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso7()
+    public void EmpleadorBuscarOfertaPorDistancia()
     // Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma ascendente de
     // distancia a mi ubicación, es decir, las más cercanas primero para que de esa forma, pueda poder contratar un
     // servicio.
@@ -213,7 +213,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso8()
+    public void EmpleadorBuscarOfertaPorReputacion()
     // Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por
     // reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.
     {
@@ -249,7 +249,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso9()
+    public void EmpleadorContactarTrabajador()
     // Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de
     // servicio determinada.
     {
@@ -276,7 +276,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso10A()
+    public void TrabajadorCalificarEmpleador1()
     // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
     // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
     // empleador.
@@ -310,7 +310,7 @@ public class Escenarios
     }
     
     [Test]
-    public void Caso10B()
+    public void TrabajadorCalificarEmpleador2()
         // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
         // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
         // empleador.
@@ -344,7 +344,7 @@ public class Escenarios
     }
     
     [Test]
-    public void Caso10C()
+    public void TrabajadorCalificarEmpleador3()
         // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
         // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
         // empleador.
@@ -379,7 +379,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso10D()
+    public void TrabajadorCalificarEmpleador4()
     // Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no
     // me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del
     // trabajador.
@@ -415,7 +415,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso11()
+    public void TrabajadorVerReputacionEmpleador()
         // Como trabajador, quiero poder saber la reputación de un empleador que me contacte para que de esa forma, poder
         // decidir sobre su solicitud de contratación.
     {
