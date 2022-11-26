@@ -141,13 +141,13 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         Administrador adm= registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
-        Buscador buscador = new();
+        SearchHandler searchHandler = new();
         Categoria cat = ofertasHandler.CrearCategoria(adm, "categoria");
         bool expected = true;
         
         // Act
         // TODO buscador, cambiar el new por el return del buscador
-        List<OfertaDeServicio> ofertasFiltradasPorCategoria = buscador.FiltrarCategoria(cat);
+        List<OfertaDeServicio> ofertasFiltradasPorCategoria = searchHandler.FiltrarCategoria(cat);
         Categoria categoriaAgregada = ofertasHandler.GetCategoriaById(cat.GetId());
         bool result = true; // result es true a no ser que el contenido de la categoria no sea el mismo que el retornado por el metodo del buscador por categoria
         
@@ -174,7 +174,7 @@ public class Escenarios
     {
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
-        Buscador buscador = new();
+        SearchHandler searchHandler = new();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("admin", "root", "1234", "abc@abc.abc");
         Empleador empleador = registryHandler.RegistrarEmpleador("a", "a", "a", "a", "2020 1 1", "1234567", "123",
@@ -185,7 +185,7 @@ public class Escenarios
         
         // Act
         // TODO buscador, cambiar el new por el return del metodo que sea y borrar el Assert.Pass
-        List<OfertaDeServicio> ofertasFiltradasPorUbicacion = buscador.FiltrarDistancia(empleador);
+        List<OfertaDeServicio> ofertasFiltradasPorUbicacion = searchHandler.FiltrarDistancia(empleador);
         Assert.Pass();
         double distanciaAnterior = 0;
         double distanciaActual = 0;
@@ -223,11 +223,11 @@ public class Escenarios
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
         Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
-        Buscador buscador = new();
+        SearchHandler searchHandler = new();
         bool expected = true;
         
         // Act
-        List<OfertaDeServicio> OfertasFiltradasPorReputacion = buscador.FiltrarReputacion();
+        List<OfertaDeServicio> OfertasFiltradasPorReputacion = searchHandler.FiltrarReputacion();
         Calificacion reputacionAnterior = 0;
         Calificacion reputacionActual = 0;
         bool result = true; // result es true a no ser que en algun la reputacion de list(n+1) sea mayor que la de list(n)

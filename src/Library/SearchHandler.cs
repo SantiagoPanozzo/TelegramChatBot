@@ -2,7 +2,7 @@ using Library.DistanceMatrix;
 
 namespace Library;
 
-public class Buscador { 
+public class SearchHandler { 
     public List<OfertaDeServicio> FiltrarCategoria(Categoria category) {
         List<OfertaDeServicio> filteredOffers = new();
         OfertasHandler handler = OfertasHandler.GetInstance();
