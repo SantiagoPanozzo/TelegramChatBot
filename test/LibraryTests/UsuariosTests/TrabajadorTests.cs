@@ -9,6 +9,6 @@ public class TrabajadorTests
     [Test]
     public void Test1()
     {
-        Assert.Pass();
+        Assert.That(1.Equals(1));
     }
 }
