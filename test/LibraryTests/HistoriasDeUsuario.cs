@@ -2,7 +2,7 @@ namespace LibraryTests;
 using Library;
 
 /// <summary> Tests de los escenarios (casos de usuario) dados </summary>
-public class Escenarios
+public class HistoriasDeUsuario
 {
     [SetUp]
     public void Setup()
