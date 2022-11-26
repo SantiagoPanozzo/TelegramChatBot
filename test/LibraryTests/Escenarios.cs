@@ -25,7 +25,7 @@ public class Escenarios
     }
     
     [Test]
-    public void Caso1()
+    public void AdministradorCrearCategoria()
     // "Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios
     // para que de esa forma, los trabajadores puedan clasificarlos.
     {
@@ -44,7 +44,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso2()
+    public void AdministradorDarDeBajaOferta()
     // Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma,
     // pueda evitar ofertas inadecuadas.
     {
@@ -69,7 +69,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso3()
+    public void TrabajadorRegistrarse()
     // Como trabajador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto
     // para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.
     { 
@@ -89,7 +89,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso4()
+    public void TrabajadorCrearOferta()
     // Como trabajador, quiero poder hacer ofertas de servicios; mi oferta indicará en qué categoría quiero publicar,
     // tendrá una descripción del servicio ofertado, y un precio para que de esa forma, mis ofertas sean ofrecidas a
     // quienes quieren contratar servicios.
@@ -113,7 +113,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso5()
+    public void EmpleadorRegistrarse()
     // Como empleador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto
     // para que de esa forma, pueda proveer información de contacto a los trabajadores que quiero contratar.
     {
@@ -133,14 +133,14 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso6()
+    public void EmpleadorBuscarOfertaPorCategoria()
     // Como empleador, quiero buscar ofertas de trabajo, opcionalmente filtrando por categoría para que de esa forma,
     // pueda contratar un servicio.
     {
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
-        Administrador adm= registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Administrador adm= registryHandler.RegistrarAdministrador("admin", "toor", "1234", "aaa@aaa.com");
         SearchHandler searchHandler = new();
         Categoria cat = ofertasHandler.CrearCategoria(adm, "categoria");
         bool expected = true;
@@ -167,7 +167,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso7()
+    public void EmpleadorBuscarOfertaPorDistancia()
     // Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma ascendente de
     // distancia a mi ubicación, es decir, las más cercanas primero para que de esa forma, pueda poder contratar un
     // servicio.
@@ -178,7 +178,7 @@ public class Escenarios
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         Administrador admin = registryHandler.RegistrarAdministrador("admin", "root", "1234", "abc@abc.abc");
         Empleador empleador = registryHandler.RegistrarEmpleador("a", "a", "a", "a", "2020 1 1", "1234567", "123",
-            "a@a.a", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+            "alb@aa.asd", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
         Categoria cat = ofertasHandler.CrearCategoria(admin, "Categoria");
         bool expected = true;
 
@@ -213,7 +213,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso8()
+    public void EmpleadorBuscarOfertaPorReputacion()
     // Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por
     // reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.
     {
@@ -221,7 +221,7 @@ public class Escenarios
         // Arrange
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
-        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "ada@aa.aa");
         Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
         SearchHandler searchHandler = new();
         bool expected = true;
@@ -249,7 +249,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso9()
+    public void EmpleadorContactarTrabajador()
     // Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de
     // servicio determinada.
     {
@@ -258,9 +258,9 @@ public class Escenarios
         RegistryHandler registryHandler = RegistryHandler.GetInstance();
         OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
         ContratoHandler contratoHandler = ContratoHandler.GetInstance();
-        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "administrado@gmail.com");
         Categoria cat = ofertasHandler.CrearCategoria(admin, "categoria");
-        Trabajador pepe = registryHandler.RegistrarTrabajador("a", "a", "a", "a", "2020,2,2", "1234556", "12345", "a@a.a",
+        Trabajador pepe = registryHandler.RegistrarTrabajador("a", "a", "a", "a", "2020,2,2", "1234556", "12345", "aaa@sda.ssa",
             new Tuple<double, double>(1, 1));
         OfertaDeServicio oferta = ofertasHandler.Ofertar(cat.GetId(), pepe ,"soy pro", "gamer", 10);
         Empleador mrbossman = registryHandler.RegistrarEmpleador("mr", "bossman", "eljefe", "lospoios", "2010,10,10",
@@ -276,7 +276,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso10A()
+    public void TrabajadorCalificarEmpleador1()
     // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
     // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
     // empleador.
@@ -310,7 +310,7 @@ public class Escenarios
     }
     
     [Test]
-    public void Caso10B()
+    public void TrabajadorCalificarEmpleador2()
         // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
         // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
         // empleador.
@@ -344,7 +344,7 @@ public class Escenarios
     }
     
     [Test]
-    public void Caso10C()
+    public void TrabajadorCalificarEmpleador3()
         // Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no
         // me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi
         // empleador.
@@ -379,7 +379,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso10D()
+    public void TrabajadorCalificarEmpleador4()
     // Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no
     // me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del
     // trabajador.
@@ -393,7 +393,7 @@ public class Escenarios
         Trabajador trabajador = registryHandler.RegistrarTrabajador("TNombre", "TApellido", "TNick", "TPass",
             "1970 1 1", "1234567",
             "473555555", "trabajador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
-        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "a@a.a");
+        Administrador admin = registryHandler.RegistrarAdministrador("admin", "toor", "1234", "aasds@aasda.aco");
         Empleador empleador = registryHandler.RegistrarEmpleador("ENombre", "EApellido", "ENick", "EPass", "1970 1 1",
             "1234567",
             "473555555", "empleador@dominio.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
@@ -415,7 +415,7 @@ public class Escenarios
     }
 
     [Test]
-    public void Caso11()
+    public void TrabajadorVerReputacionEmpleador()
         // Como trabajador, quiero poder saber la reputación de un empleador que me contacte para que de esa forma, poder
         // decidir sobre su solicitud de contratación.
     {
@@ -444,4 +444,118 @@ public class Escenarios
         Assert.That(result.Equals(expected));
         
     }
+
+    [Test]
+    public void TrabajadorAceptaSolicitud()
+    // El trabajador crea una oferta de servicio, el empleador la solicita y el trabajador acepta esa solicitud 
+    {
+        // Arrange
+        
+        // Obtenemos las instancias de los handlers del core
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        // Creamos un administrador para que cree una categoria
+        Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "123", "aa@aa.co");
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "Categoria");
+        // Creamos el trabajador y empleador que van a interactuar
+        Trabajador t1 = registryHandler.RegistrarTrabajador("Pepe", "Pepito", "Elpepe", "1234", "1 10 2000", "54204115", "473555555",
+            "correo@valido.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Empleador e1 = registryHandler.RegistrarEmpleador("Juan", "Sech", "Etesech", "4321", "1 11 1197", "58594115", "472555555",
+            "correo@confiable.net", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        // El trabajador crea una oferta
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(cat.GetId(), t1, "un trabajo", "trabajado", 10);
+        // El empleador la solicita
+        Solicitud solicitud = contratoHandler.SolicitarTrabajador(oferta, e1);
+        bool expected = false;
+        
+        // Act
+        
+        // El trabajador acepta la solicitud
+        contratoHandler.AceptarSolicitud(t1,solicitud);
+        bool result = oferta.Disponible;
+        
+        // Assert
+        Assert.That(expected.Equals(result));
+
+    }
+    
+    [Test]
+    public void TrabajadorNoAceptaSolicitud()
+        // El trabajador crea una oferta de servicio, el empleador la solicita y el trabajador no acepta esa solicitud 
+    {
+        // Arrange
+        
+        // Obtenemos las instancias de los handlers del core
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        // Creamos un administrador para que cree una categoria
+        Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "123", "aa@aa.co");
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "Categoria");
+        // Creamos el trabajador y empleador que van a interactuar
+        Trabajador t1 = registryHandler.RegistrarTrabajador("Pepe", "Pepito", "Elpepe", "1234", "1 10 2000", "54204115", "473555555",
+            "correo@valido.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Empleador e1 = registryHandler.RegistrarEmpleador("Juan", "Sech", "Etesech", "4321", "1 11 1197", "58594115", "472555555",
+            "correo@confiable.net", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        // El trabajador crea una oferta
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(cat.GetId(), t1, "un trabajo", "trabajado", 10);
+        // El empleador la solicita
+        Solicitud solicitud = contratoHandler.SolicitarTrabajador(oferta, e1);
+        bool expected = true;
+        
+        // Act
+        
+        // El trabajador acepta la solicitud
+        contratoHandler.RechazarSolicitud(t1,solicitud);
+        bool result = oferta.Disponible;
+        
+        // Assert
+        Assert.That(expected.Equals(result));
+
+    }
+    
+    // Test de que el trabajador crea una oferta de servicio, un empleador la solicita y el trabajador acepta la solicitud. Después otro empleador
+    // la intenta solicitar
+    private void ErrorEmpleadorSolicitaOfertaNoDisponible()
+    {
+        // Arrange 
+        
+        // Obtenemos las instancias de los handlers del core
+        RegistryHandler registryHandler = RegistryHandler.GetInstance();
+        ContratoHandler contratoHandler = ContratoHandler.GetInstance();
+        OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
+        // Creamos un administrador para que cree una categoria
+        Administrador admin = registryHandler.RegistrarAdministrador("root", "toor", "123", "aa@aa.co");
+        Categoria cat = ofertasHandler.CrearCategoria(admin, "Categoria");
+        // Creamos el trabajador y los empleadores que van a interactuar
+        Trabajador t1 = registryHandler.RegistrarTrabajador("Pepe", "Pepito", "Elpepe", "1234", "1 10 2000", "54204115", "473555555",
+            "correo@valido.com", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Empleador e1 = registryHandler.RegistrarEmpleador("Juan", "Sech", "Etesech", "4321", "1 11 1197", "58594115", "472555555",
+            "correo@confiable.net", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Empleador e2 = registryHandler.RegistrarEmpleador("OtroJuan", "Sech", "Etesech2", "4321", "1 11 1197", "58594115", "472555555",
+            "correo@correo.net", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        // El trabajador crea una oferta
+        OfertaDeServicio oferta = ofertasHandler.Ofertar(cat.GetId(), t1, "un trabajo", "trabajado", 10);
+        // El empleador la solicita y el trabajador acepta
+        Solicitud solicitud = contratoHandler.SolicitarTrabajador(oferta, e1);
+        contratoHandler.AceptarSolicitud(t1,solicitud);
+        
+        // Act
+        
+        // El segundo empleador solicita la oferta ya aceptada
+        contratoHandler.SolicitarTrabajador(oferta, e2);
+    }
+    
+    [Test]
+    public void EmpleadorSolicitaOfertaNoDisponible()
+    // continuacion del test
+    {
+        
+        // Assert
+        Assert.Throws<Exception>(ErrorEmpleadorSolicitaOfertaNoDisponible);
+
+    }
+    
+    
 }

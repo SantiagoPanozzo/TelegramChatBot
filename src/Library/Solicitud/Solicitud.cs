@@ -1,13 +1,17 @@
 namespace Library;
 
 /// <summary> Clase <see cref="Solicitud"/> para iniciar una <see cref="OfertaDeServicio"/> </summary>
-public class Solicitud : IDesactivable{
+public class Solicitud : IDesactivable, IActualizable {
     public OfertaDeServicio Oferta { get; set;}
     public Aceptacion Aceptada { get; set;}
     public DateTime FechaAceptada { get; set;}
     private Empleador Emp { get; set;} 
     public string Trab { get; set; }
+    
+    /// <summary>  Es la fecha limite que tiene un <see cref="Trabajador"/> para calificar a un <see cref="Empleador"/> </summary>
     private DateTime FechaLimiteTrabajador { get; set; }
+    
+    /// <summary>  Es la fecha limite que tiene un <see cref="Empleador"/> para calificar a un <see cref="Trabajador"/> </summary>
     private DateTime FechaLimiteEmpleador { get; set; }
     public TimeSpan TiempoMaximoCalificar = new (30, 0, 0, 0);
     private static int Instancias { get; set; } = 0;
@@ -25,6 +29,7 @@ public class Solicitud : IDesactivable{
         this.Trab = oferta.GetOfertante();
         this.Activa = true;
         EmpleadorRate = Calificacion.NoCalificado;
+        this.Oferta.Rate = Calificacion.NoCalificado;
     }
 
     /// <summary> Método para obtener el id de una <see cref="Solicitud"/> </summary>
@@ -177,12 +182,12 @@ public class Solicitud : IDesactivable{
     /// <summary> Compara la fecha actual con la fecha límite para calificar </summary>
     /// <returns> Devuelve true si ya pasó un mes (30 días) desde que se hizo la <see cref="Solicitud">, de lo contrario devuelve false </returns>
     public bool CanTrabajadorBeAutoRated(DateTime fechaActual) {
-        return this.FechaLimiteTrabajador.CompareTo(fechaActual).Equals(-1);
+        return this.FechaLimiteEmpleador.CompareTo(fechaActual).Equals(-1);
     }
     
      /// <summary> Compara la fecha actual con la fecha límite para calificar </summary>
     /// <returns> Devuelve true si ya pasó un mes (30 días) desde que se hizo la <see cref="Solicitud">, de lo contrario devuelve false </returns>
     public bool CanEmpleadorBeAutoRated(DateTime fechaActual) {
-        return this.FechaLimiteEmpleador.CompareTo(fechaActual).Equals(-1);
+        return this.FechaLimiteTrabajador.CompareTo(fechaActual).Equals(-1);
     }
 }

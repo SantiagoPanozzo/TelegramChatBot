@@ -9,6 +9,7 @@ public class UpdaterTests
     {
         // Arrange
         Updater.EnableAutoUpdate();
-        Console.ReadKey();
+        // Console.ReadKey();
+        Assert.Pass();
     }
 }

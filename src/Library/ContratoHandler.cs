@@ -9,7 +9,7 @@ using System;
 public class ContratoHandler
 {
 
-    public SolicitudCatalog Catalogo;
+    public SolicitudCatalog Catalogo { get { return SolicitudCatalog.GetInstance(); } }
     
     private static ContratoHandler? _instance;
 
@@ -29,7 +29,6 @@ public class ContratoHandler
     /// <summary> Constructor tipo Singleton de la clase </summary>
     private ContratoHandler()
     {
-        this.Catalogo = SolicitudCatalog.GetInstance();
     }
 
     /// <summary> Método para obtener la instancia de la clase </summary>
@@ -73,8 +72,15 @@ public class ContratoHandler
 
     /// <summary> Método para rechazar una solicitud </summary>
     /// <param name="solicitud"> Variable de tipo <see cref="Solicitud"> para rechazar </param>
-    public void RechazarSolicitud(Solicitud solicitud){
-        solicitud.RecibirRespuesta(Aceptacion.Rechazada);
+    public void RechazarSolicitud(Usuario user, Solicitud solicitud){
+        if(user.Nick.Equals(solicitud.Oferta.GetOfertante()))
+        {
+            solicitud.RecibirRespuesta(Aceptacion.Rechazada);
+        }
+        else
+        {
+            throw (new AuthenticationException("El trabajador no coincide con el de la oferta"));
+        }
     }
 
     /// <summary> Método para obtener una solicitud por id </summary>

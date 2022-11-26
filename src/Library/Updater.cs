@@ -8,9 +8,10 @@ public static class Updater
 
     private static Timer? _timer = null;
 
-    private static RegistryHandler _registryHandler = RegistryHandler.GetInstance();
-    private static OfertasHandler _ofertasHandler = OfertasHandler.GetInstance();
-    private static ContratoHandler _contratoHandler = ContratoHandler.GetInstance();
+    private static RegistryHandler _registryHandler { get { return RegistryHandler.GetInstance(); } }
+
+    private static OfertasHandler _ofertasHandler { get { return OfertasHandler.GetInstance(); } }
+    private static ContratoHandler _contratoHandler { get { return ContratoHandler.GetInstance(); } }
 
     /// <summary> Define cada cuánto tiempo se realizarán las actualizaciones automáticas si están habilitadas </summary>
     private static readonly TimeSpan DelayActualizacion = new TimeSpan(seconds: 30, hours: 0, minutes: 0);

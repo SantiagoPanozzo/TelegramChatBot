@@ -7,7 +7,8 @@ namespace Library;
 /// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las
 /// ofertas -->
 public class OfertasHandler{
-    private CategoriasCatalog _catalog = CategoriasCatalog.GetInstance();
+    
+    private CategoriasCatalog _catalog { get { return CategoriasCatalog.GetInstance(); } }
     
     private static OfertasHandler? _instance;
 
