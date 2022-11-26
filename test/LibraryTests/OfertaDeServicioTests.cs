@@ -99,5 +99,25 @@ public class OfertaDeServicioTests
         // Assert
         Assert.That(expected.Equals(result));
     }
+
+    [Test]
+    public void IdsCoinciden()
+    // Test de que los Ids vayan aumentando de manera que sean todos únicos para cada oferta
+    {
+        // Arrange
+        Trabajador trabajador =
+            new Trabajador("", "", "", "", DateTime.Now, "", "", "", new Tuple<double, double>(10, 10));
+        int expected = 4;       
+        
+        // Act
+        OfertaDeServicio oferta1 = new OfertaDeServicio(trabajador, "", "", 10);
+        OfertaDeServicio oferta2 = new OfertaDeServicio(trabajador, "", "", 10);
+        OfertaDeServicio oferta3 = new OfertaDeServicio(trabajador, "", "", 10);
+        OfertaDeServicio oferta4 = new OfertaDeServicio(trabajador, "", "", 10);
+        int result = oferta4.GetId();
+
+        // Assert
+        Assert.That(expected.Equals(result));
+    }
     
 }
