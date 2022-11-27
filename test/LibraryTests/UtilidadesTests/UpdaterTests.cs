@@ -74,5 +74,26 @@ public class UpdaterTests
         // Assert
         Assert.That(expected.Equals(result));
     }
-    
+
+    /// <summary>
+    /// Tests de que el método <see cref="Updater.FastForward"/> funcione bien en conjunto con una fecha falsa establecida
+    /// por <see cref="Updater.FakeUpdate"/>.
+    /// </summary>
+    [Test]
+    public void FastForwardFechaFake()
+    {
+        // Arrange
+        Updater.Update();
+        DateTime fecha = new DateTime(2029, 09, 02);
+        TimeSpan aumento = new TimeSpan(days:20,0, 0, 0);
+        DateTime expected = new DateTime(2029, 09, 22);
+        
+        // Act
+        Updater.FakeUpdate(fecha);
+        Updater.FastForward(aumento);
+        DateTime result = Updater.FechaActual;
+        
+        // Assert
+        Assert.That(expected.Equals(result));
+    }
 }
