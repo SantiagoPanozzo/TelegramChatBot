@@ -16,38 +16,40 @@ public abstract class BaseHandler : IHandler
 {
     protected Handlers _id { get; set; }
 
+    /// <summary> Método para obtener el id de un <see cref="IHandler"/>. </summary>
+    /// <returns> Devuelve el id correspondiente. </returns>
     public Handlers GetId()
     {
         return this._id;
     }
     
     /// <summary> Obtiene el próximo "handler". </summary>
-    /// <value>El "handler" que será invocado si este "handler" no procesa el mensaje.</value>
+    /// <value> El "handler" que será invocado si este "handler" no procesa el mensaje. </value>
     public IHandler Next { get; set; }
 
     /// <summary> Obtiene o asigna el conjunto de palabras clave que este "handler" puede procesar. </summary>
-    /// <value>Un array de palabras clave.</value>
+    /// <value> Un array de palabras clave. </value>
     public string[] Keywords { get; set; }
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="BaseHandler"/>. </summary>
-    /// <param name="next">El próximo "handler".</param>
+    /// <param name="next"> El próximo "handler". </param>
     public BaseHandler(IHandler next)
     {
         this.Next = next;
     }
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="BaseHandler"/> con una lista de comandos. </summary>
-    /// <param name="keywords">La lista de comandos.</param>
-    /// <param name="next">El próximo "handler".</param>
+    /// <param name="keywords"> La lista de comandos. </param>
+    /// <param name="next"> El próximo "handler". </param>
     public BaseHandler(string[] keywords, BaseHandler next)
     {
         this.Keywords = keywords;
         this.Next = next;
     }
 
-    /// <summary> Este método debe ser sobreescrito por las clases sucesores. La clase sucesora procesa el mensaje y asigna la respuesta al mensaje. </summary>
-    /// <param name="message">El mensaje a procesar.</param>
-    /// <param name="response">La respuesta al mensaje procesado.</param>
+    /// <summary> Se procesa el mensaje y asigna la respuesta al mensaje. </summary>
+    /// <param name="message"> El mensaje a procesar. </param>
+    /// <param name="response"> La respuesta al mensaje procesado. </param>
     protected abstract void InternalHandle(Message message, out string response);
 
     /// <summary> Este método puede ser sobreescrito en las clases sucesores que procesan varios mensajes cambiando de estado
