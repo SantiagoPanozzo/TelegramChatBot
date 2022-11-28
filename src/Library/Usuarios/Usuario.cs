@@ -1,3 +1,5 @@
+using Library.Excepciones;
+
 namespace Library;
 using System;
 using System.Text;
@@ -68,7 +70,12 @@ public abstract class Usuario : IDesactivable {
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Activo = false;
+            if (this.Activo) this.Activo = false;
+            else throw (new AccionInnecesariaException("El usuario ya fue dado de baja"));
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método DarDeBaja() de Usuario"));
         }
     }
 
@@ -77,7 +84,12 @@ public abstract class Usuario : IDesactivable {
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Activo = true;
+            if (!this.Activo) this.Activo = true;
+            else throw (new AccionInnecesariaException("El usuario ya está activo"));
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Reactivar() de Usuario"));
         }
     }
 }

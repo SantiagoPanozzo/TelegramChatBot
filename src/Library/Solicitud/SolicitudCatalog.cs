@@ -1,3 +1,5 @@
+using Library.Excepciones;
+
 namespace Library;
 using System.Collections.Generic;
 
@@ -33,6 +35,10 @@ public class SolicitudCatalog
         {
             SolicitudCatalog._instance = null;
         }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Wipe() de SolicitudCatalog"));
+        }
     }
     
     /// <summary> Constructor de tipo singleton de la clase, inicia la lista de solicitudes. </summary>
@@ -65,8 +71,22 @@ public class SolicitudCatalog
         return nuevaSolicitud;
     }
 
-    /// <summary> Método para eliminar una <see cref="Solicitud">. </summary>
-    /// <param name="solicitud"> <see cref="Solicitud"> que se desea eliminar. </param>
+
+    /// <summary> Método para obtener una solicitud por id </summary>
+    /// <param name="id"> Valor de id para filtrar <see cref="Solicitud"/> </param>
+    /// <returns> Devuelve la <see cref="Solicitud"/> por valor de id </returns>
+    public Solicitud GetSolicitud(int id)
+    {
+        foreach (Solicitud solicitud in Solicitudes)
+        {
+            if (solicitud.GetId().Equals(id)) return solicitud;
+        }
+        throw (new NotFoundException("No se encontró la solicitud correspondiente a ese ID"));
+    }
+
+    /// <summary> Método para eliminar una <see cref="Solicitud"> </summary>
+    /// <param name="solicitud"> <see cref="Solicitud"> que se desea eliminar </param>
+
     public void RemoveSolicitud (Solicitud solicitud){
         Solicitudes.Remove(solicitud);
     }
