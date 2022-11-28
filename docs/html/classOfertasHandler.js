@@ -7,5 +7,5 @@ var classOfertasHandler =
     [ "GetCategorias", "classOfertasHandler.html#a33c2ecdf69907a45a5ec13c254c41dea", null ],
     [ "GetOfertaById", "classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7", null ],
     [ "GetOfertas", "classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1", null ],
-    [ "Ofertar", "classOfertasHandler.html#a876adfc49f6e1b5fd35aa57f38ea65ac", null ]
+    [ "Ofertar", "classOfertasHandler.html#a4171d183ad7e5356a35881f8078fd5c1", null ]
 ];

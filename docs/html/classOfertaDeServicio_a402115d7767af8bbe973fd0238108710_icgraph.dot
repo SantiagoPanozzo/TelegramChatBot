@@ -5,11 +5,9 @@ digraph "OfertaDeServicio.RateMe"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="OfertaDeServicio.RateMe",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para calificar la oferta en cuestión"];
+  Node1 [label="OfertaDeServicio.RateMe",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para calificar la oferta en cuestión."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Solicitud.Calificar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a99c9a8a76b4045fb5ddc4cc5376696b7",tooltip="Método para calificar una oferta"];
-  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="Solicitud.Update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a1c7e7e17d1549d2b6618a14a6b4e2c5d",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
-  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="Updater.Update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUpdater.html#a61857607a7e54b46cb298f2fe37705a1",tooltip=" "];
+  Node2 [label="Solicitud.CalificarTrabajador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a9e4791332407be38cded2c602eaabe4c",tooltip="Método para calificar un trabajador."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Solicitud.Update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a856d7dd874dcc3a81bae9baaf19809ad",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
 }

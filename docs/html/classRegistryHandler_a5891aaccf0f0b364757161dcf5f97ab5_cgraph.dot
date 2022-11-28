@@ -1,0 +1,20 @@
+digraph "RegistryHandler.RemoveUsuario"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="RegistryHandler.RemoveUsuario",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para eliminar un Usuario."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Usuario.GetTipo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#aa70b73e1281e3dd34903a37fc426108f",tooltip="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="UsuariosCatalog.GetUsuarios",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuariosCatalog.html#a8e094f4767408bb913048cda08568886",tooltip="Método para conocer los usuarios."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="UsuariosCatalog.RemoveUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuariosCatalog.html#a961c4715374589f1eef9ff7a65dd8866",tooltip="Método para eliminar un usuario, en realidad para simplificar simplemente se le daría de baja."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Usuario.DarDeBaja",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#a27cda50e359fbd5269d418679ad38828",tooltip="Método para desactivar un usuario."];
+  Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Usuario.IsActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#a4a963618b4817eadfc6117830e37a39e",tooltip="Checkea si el usuario está activo."];
+}

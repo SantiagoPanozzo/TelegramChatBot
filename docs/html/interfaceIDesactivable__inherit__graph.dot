@@ -1,0 +1,22 @@
+digraph "IDesactivable"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{IDesactivable\n||+ DarDeBaja()\l+ Reactivar()\l+ IsActive()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Interfaz para el manejo de actividad de un usuario, una categoría, etc."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Categoria\n|+ Descripcion\l+ Ofertas\l+ Id\l+ Instancias\l+ Activa\l|+ Categoria()\l+ GetId()\l+ AddOferta()\l+ RemoveOferta()\l+ GetOfertas()\l+ GetOfertaById()\l+ IsActive()\l+ DarDeBaja()\l+ Reactivar()\l+ Wipe()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoria.html",tooltip="Clase para conocer y agregar categorias de ofertas de servicio."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{OfertaDeServicio\n|+ Ofertante\l+ Descripcion\l+ Empleo\l+ Precio\l+ Rate\l+ Disponible\l+ Instancias\l+ Activa\l+ Ubicacion\l|+ OfertaDeServicio()\l+ GetId()\l+ GetOfertante()\l+ GetReputacion()\l+ GetUbicacion()\l+ GetContacto()\l+ IsRated()\l+ RateMe()\l+ GetCalificacion()\l+ IsActive()\l+ DarDeBaja()\l+ Reactivar()\l+ Wipe()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html",tooltip="Clase que representa una oferta de servicio"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{Solicitud\n|+ TiempoMaximoCalificar\l+ Oferta\l+ Aceptada\l+ FechaAceptada\l+ Emp\l+ Trab\l+ FechaLimiteTrabajador\l+ FechaLimiteEmpleador\l+ Instancias\l+ EmpleadorRate\l|+ Solicitud()\l+ GetId()\l+ GetEmpleador()\l+ CalificarTrabajador()\l+ CalificarEmpleador()\l+ GetEmpleadorRate()\l+ GetTrabajadorRate()\l+ RecibirRespuesta()\l+ IsRated()\l+ IsEmpleadorRated()\land 7 more...\l+ Wipe()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html",tooltip="Clase Solicitud para iniciar una OfertaDeServicio."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{Usuario\n|+ Nick\l+ Nombre\l+ Apellido\l+ FechaNacimiento\l+ Cedula\l+ Telefono\l+ Ubicacion\l+ Correo\l+ Activo\l+ Contraseña\l+ Tipo\l|+ GetTipo()\l+ GetContacto()\l+ GetPublicInfo()\l+ VerifyContraseña()\l+ IsActive()\l+ DarDeBaja()\l+ Reactivar()\l# SetContraseña()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html",tooltip="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{Administrador\n||+ Administrador()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAdministrador.html",tooltip="Clase Administrador que hereda de Usuario."];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node7 [label="{Empleador\n|+ Reputacion\l|+ Empleador()\l+ Calificar()\l+ GetReputacion()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEmpleador.html",tooltip="Clase Empleador que hereda de Usuario."];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node8 [label="{Trabajador\n|+ Reputacion\l+ Activo\l|+ Trabajador()\l+ Calificar()\l+ GetReputacion()\l+ GetContecto()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html",tooltip="Clase que hereda de ."];
+}

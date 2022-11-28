@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next_0',['Next',['../classLibrary_1_1BaseHandler.html#ace6b12d838aa1697edafbca4c19c064e',1,'Library.BaseHandler.Next()'],['../interfaceLibrary_1_1IHandler.html#ab4125b061c533a7ca935f2c32f8e8f57',1,'Library.IHandler.Next()']]]
+  ['next_0',['Next',['../classBaseHandler.html#a94132988f5258710a9c7d60e44d1ede3',1,'BaseHandler.Next()'],['../interfaceIHandler.html#ad47cc64984339da996f0fa956a445b5d',1,'IHandler.Next()']]]
 ];

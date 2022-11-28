@@ -5,11 +5,13 @@ digraph "RegistryHandler.RegistrarTrabajador"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="RegistryHandler.Registrar\lTrabajador",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para registrar un trabajador"];
+  Node1 [label="RegistryHandler.Registrar\lTrabajador",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para registrar un trabajador."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="RegistryHandler.Verificar\lCedula",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a4ba76c1e045bdb0c91f86046ccd7d013",tooltip="Método para verificar la cédula de un Usuario"];
+  Node2 [label="RegistryHandler.Verificar\lCedula",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a4ba76c1e045bdb0c91f86046ccd7d013",tooltip="Método para verificar la cédula de un Usuario."];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="RegistryHandler.Verificar\lCorreo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#af10d84e8aa21d69e609c9c89a36cab65",tooltip="Método para verificar el correo de un Usuario"];
+  Node3 [label="RegistryHandler.Verificar\lCorreo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#af10d84e8aa21d69e609c9c89a36cab65",tooltip="Método para verificar un correo."];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="RegistryHandler.VerificarNick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a37e94f8f67ac04e96431d9dfe7c0d64a",tooltip="Método para verificar el nickname de un Usuario"];
+  Node4 [label="RegistryHandler.VerificarNick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a37e94f8f67ac04e96431d9dfe7c0d64a",tooltip="Método para verificar el nickname de un Usuario."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="UsuariosCatalog.GetUsuarios",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuariosCatalog.html#a8e094f4767408bb913048cda08568886",tooltip="Método para conocer los usuarios."];
 }

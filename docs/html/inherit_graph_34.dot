@@ -2,9 +2,8 @@ digraph "Graphical Class Hierarchy"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="VerCategoriasHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerCategoriasHandler.html",tooltip="Presenta al administrador las categrorías disponibles y le permite borrarlas o crear nuevas"];
+  Node0 [label="UsuariosCatalog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuariosCatalog.html",tooltip="Método para el manejo del catálogo del usuario."];
 }

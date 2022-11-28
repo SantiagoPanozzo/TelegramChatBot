@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['paneldecontrol_0',['PanelDeControl',['../classLibrary_1_1PanelDeControl.html',1,'Library.PanelDeControl'],['../classLibrary_1_1PanelDeControl.html#a6728a999511e85e8c1d84993e72048bd',1,'Library.PanelDeControl.PanelDeControl(BaseHandler next)']]],
-  ['panelstate_1',['PanelState',['../classLibrary_1_1PanelDeControl.html#a580cd9ee1f76ee867d52fff83f1cc379',1,'Library::PanelDeControl']]],
-  ['plaintextcategoriaprinter_2',['PlainTextCategoriaPrinter',['../classLibrary_1_1PlainTextCategoriaPrinter.html',1,'Library']]],
-  ['print_3',['Print',['../classLibrary_1_1SolicitudPrinter.html#ab3e3b1d5036a214090e065c645ecbefe',1,'Library::SolicitudPrinter']]],
-  ['printcatalog_4',['PrintCatalog',['../classLibrary_1_1CategoriaPrinter.html#ac193be1bbddb8ffe85bb73377dd33518',1,'Library::CategoriaPrinter']]],
-  ['program_5',['Program',['../namespaceProgram.html',1,'Program'],['../classProgram_1_1Program.html',1,'Program.Program']]],
-  ['proyecto_20chatbot_20programación_20ii_6',['Proyecto ChatBot Programación II',['../md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html',1,'']]]
+  ['paneldecontrolhandler_0',['PanelDeControlHandler',['../classPanelDeControlHandler.html',1,'PanelDeControlHandler'],['../classPanelDeControlHandler.html#acb06846be73582bf493390bb71668295',1,'PanelDeControlHandler.PanelDeControlHandler(BaseHandler next)']]],
+  ['panelstate_1',['PanelState',['../classPanelDeControlHandler.html#a3e55c49f0bc6f1f0e4beb6005eb44057',1,'PanelDeControlHandler']]],
+  ['plaintextcategoriaprinter_2',['PlainTextCategoriaPrinter',['../classPlainTextCategoriaPrinter.html',1,'']]],
+  ['plaintextsolicitudprinter_3',['PlainTextSolicitudPrinter',['../classPlainTextSolicitudPrinter.html',1,'']]],
+  ['print_4',['Print',['../classConsoleCategoriaPrinter.html#aa413fbf376c35ef8c789260047901064',1,'ConsoleCategoriaPrinter.Print()'],['../interfaceITextPrinter.html#a52511bd8f5c6395e8c97a46bc73fa7f8',1,'ITextPrinter.Print()'],['../classSolicitudPrinter.html#a7d88c152d3daa4c5be3762ceb1360ae8',1,'SolicitudPrinter.Print()']]],
+  ['program_5',['Program',['../classProgram.html',1,'']]],
+  ['proyecto_20chatbot_20programación_20ii_6',['Proyecto ChatBot Programación II',['../md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html',1,'']]]
 ];

@@ -1,0 +1,11 @@
+digraph "RegistryHandler.GetUserContact"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="RegistryHandler.GetUserContact",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener el contacto de un usuario."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Usuario.GetContacto",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#a26aef3d18800a268674255dc11a3097e",tooltip="Método para obtener el contacto de un usuario."];
+}

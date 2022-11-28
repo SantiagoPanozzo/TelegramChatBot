@@ -1,0 +1,15 @@
+digraph "OfertasHandler.Ofertar"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="OfertasHandler.Ofertar",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Constructor de la clase."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Categoria.AddOferta",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoria.html#a0a1e3ed572d89c7d1abd4a7b9fec6b00",tooltip="Método para agregar una oferta en caso de que la misma no exista todavía en la lista."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CategoriasCatalog.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#a1275f6565562402725de3b14b665f622",tooltip="Método para obtener una categoría por id."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Categoria.GetId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoria.html#aca21bd468a27caa944fd44707ae08e40",tooltip="Método para obtener el ID de una Categoria."];
+}

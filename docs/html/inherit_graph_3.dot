@@ -2,11 +2,8 @@ digraph "Graphical Class Hierarchy"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ITextPrinter",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classITextPrinter.html",tooltip=" "];
-  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
-  Node1 [label="Library.PlainTextCategoria\lPrinter",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1PlainTextCategoriaPrinter.html",tooltip=" "];
+  Node0 [label="CategoriaTests",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriaTests.html",tooltip="Tests de la clase Categoria"];
 }

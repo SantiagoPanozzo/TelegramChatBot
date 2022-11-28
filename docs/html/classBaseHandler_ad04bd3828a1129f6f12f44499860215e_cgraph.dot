@@ -1,0 +1,15 @@
+digraph "BaseHandler.Handle"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="BaseHandler.Handle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Procesa el mensaje o lo pasa al siguiente \"handler\" si existe."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="BaseHandler.CanHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBaseHandler.html#a83e2217a04ac9eaffa0368179b250ece",tooltip="Determina si el mensaje puede ser procesado por el IHandler, se busca el texto en el mensaje ignorand..."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="IHandler.Handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfaceIHandler.html#a968ae44058663059b24b6721b1e7c110",tooltip="Procesa el mensaje o la pasa al siguiente \"handler\" si existe."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="BaseHandler.InternalHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBaseHandler.html#ae20b3eb5dc7bd13a95b8e583a2a6c694",tooltip="Se procesa el mensaje y asigna la respuesta al mensaje."];
+}

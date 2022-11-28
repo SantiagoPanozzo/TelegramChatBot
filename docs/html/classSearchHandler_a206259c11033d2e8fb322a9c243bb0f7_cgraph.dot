@@ -1,0 +1,21 @@
+digraph "SearchHandler.FiltrarReputacion"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SearchHandler.FiltrarReputacion",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para filtrar las OfertaDeServicio por reputación"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="OfertasHandler.GetCategorias",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a33c2ecdf69907a45a5ec13c254c41dea",tooltip="Método para obtener la lista de categorías."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CategoriasCatalog.GetCategorias",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#ae79da35b16690c192b5e7f006d419b69",tooltip="Método para conocer las categorias."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Categoria.GetId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoria.html#aca21bd468a27caa944fd44707ae08e40",tooltip="Método para obtener el ID de una Categoria."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="OfertasHandler.GetInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#ae5ec8218485c0a9c560e34682404d229",tooltip="Método para obtener la instancia de la clase."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="OfertaDeServicio.GetReputacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#a200f6192086dbddd1455e54a1a7ab214",tooltip="Método para obtener la reputación del ofertante."];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Trabajador.GetReputacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html#aff73d27e40b55c6b134a837095d65d18",tooltip="Método para obtener las calificaciones del usuario."];
+}
