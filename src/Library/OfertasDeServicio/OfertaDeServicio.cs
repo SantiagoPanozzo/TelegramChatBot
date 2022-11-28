@@ -1,3 +1,5 @@
+using Library.Excepciones;
+
 namespace Library;
 
 /// <summary> Clase que representa una oferta de servicio </summary>
@@ -93,6 +95,10 @@ public class OfertaDeServicio : IDesactivable
             this.Rate = rate;
             this.Ofertante.Calificar(rate);
         }
+        else
+        {
+            throw (new YaCalificadoException("La oferta ya fue calificada"));
+        }
     } 
 
     /// <summary> Método para obtener la calificación dada a la oferta tras ser finalizada </summary>
@@ -115,16 +121,27 @@ public class OfertaDeServicio : IDesactivable
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Activa = false;
+            if (this.Activa) this.Activa = false;
+            else throw (new AccionInnecesariaException("Esta oferta ya fue dada de baja"));
         }
-
-        if (user.GetTipo().Equals(TipoDeUsuario.Trabajador))
+        else if (user.GetTipo().Equals(TipoDeUsuario.Trabajador))
         {
             if (user.Nick.Equals(Ofertante.Nick))
             {
-                this.Activa = false;
+                if (this.Activa) this.Activa = false;
+                else throw (new AccionInnecesariaException("Esta oferta ya fue dada de baja"));
+            }
+            else
+            {
+                throw (new UsuarioIncorrectoException(
+                    "Solo un administrador o el Trabajador que creó la oferta puede utilzar el método DarDeBaja()"));
             }
         }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador o el Trabajador que creó la oferta puede utilizar el método DarDeBaja()"));
+        }
+        
     }
 
     /// <summary> Método para reactivar un <see cref="Usuario"/> </summary>
@@ -133,15 +150,18 @@ public class OfertaDeServicio : IDesactivable
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Activa = true;
+            if (!this.Activa) this.Activa = true;
+            else throw (new AccionInnecesariaException("Esta oferta ya esta activa"));
         }
-
-        if (user.GetTipo().Equals(TipoDeUsuario.Trabajador))
+        else if (user.GetTipo().Equals(TipoDeUsuario.Trabajador) && user.Nick.Equals(Ofertante.Nick))
         {
-            if (user.Nick.Equals(Ofertante.Nick))
-            {
-                this.Activa = true;
-            }
+            if (!this.Activa) this.Activa = false;
+            else throw (new AccionInnecesariaException("Esta oferta ya está activa"));
         }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador o un usuario autorizado puede utilizar el método Reactivar() de OfertaDeServicio"));
+        }
+        
     }
 }

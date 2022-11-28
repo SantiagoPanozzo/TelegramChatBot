@@ -1,3 +1,5 @@
+using Library.Excepciones;
+
 namespace Library;
 
 /// <summary>Método para el manejo del catálogo del usuario</summary>
@@ -57,7 +59,7 @@ public class UsuariosCatalog {
             if (usuario.Nick.Equals(nick)) return usuario;
         }
 
-        throw (new("No se encontró la oferta"));
+        throw (new NotFoundException("No se encontró el usuario correspondiente a ese ID"));
 
     }
 

@@ -1,4 +1,5 @@
 namespace Library;
+using Library.Excepciones;
 
 /// <summary> Clase <see cref="Solicitud"/> para iniciar una <see cref="OfertaDeServicio"/> </summary>
 public class Solicitud : IDesactivable, IActualizable {
@@ -16,7 +17,7 @@ public class Solicitud : IDesactivable, IActualizable {
     public TimeSpan TiempoMaximoCalificar = new (30, 0, 0, 0);
     private static int Instancias { get; set; } = 0;
     private readonly int _id;
-    private bool Activa;
+    private bool _activa;
     private Calificacion EmpleadorRate { get; set; }
 
     /// <summary> Constructor de la clase <see cref="Solicitud"/> </summary>
@@ -27,7 +28,7 @@ public class Solicitud : IDesactivable, IActualizable {
         Solicitud.Instancias++;
         this._id = Instancias;
         this.Trab = oferta.GetOfertante();
-        this.Activa = true;
+        this._activa = true;
         EmpleadorRate = Calificacion.NoCalificado;
         this.Oferta.Rate = Calificacion.NoCalificado;
     }
@@ -63,9 +64,8 @@ public class Solicitud : IDesactivable, IActualizable {
         return this.Trab;
     } */
 
-    /// <summary> Método que inicia un trabajo, settea la fecha que fue aceptada y la máxima para calificar
-    /// También cambia la disponibilidad de la oferta </summary>
-    public void IniciarTrabajo() {
+    /// <summary> Método que inicia un trabajo, settea la fecha que fue aceptado y cambia la disponibilidad de la oferta </summary>
+    private void IniciarTrabajo() {
         this.FechaAceptada = DateTime.Now;
         Oferta.Disponible = false;
     }
@@ -73,11 +73,26 @@ public class Solicitud : IDesactivable, IActualizable {
     /// <summary> Método para calificar un trabajador </summary>
     /// <param name="rate"> Es un valor del enum <see cref="Calificacion"/> </param>
     public void CalificarTrabajador(Empleador user, Calificacion rate) {
-        if(user.Nick.Equals(Emp.Nick) && !IsRated())
+        if(user.Nick.Equals(Emp.Nick))
         {
-            Oferta.RateMe(rate);
-            this.FechaLimiteTrabajador = FechaAceptada.Add(TiempoMaximoCalificar);
+            if (!IsRated())
+            {
+                Oferta.RateMe(rate);
+                this.FechaLimiteTrabajador = FechaAceptada.Add(TiempoMaximoCalificar);
+            }
+            else
+            {
+                throw (new YaCalificadoException("El trabajador ya fue calificado"));
+            }
+            
         }
+        else
+        {
+            throw (new UsuarioIncorrectoException(
+                "Solo el Empleador que creó la solicitud puede utilzar el método CalificarTrabajador()"));
+        }
+        
+        // UsuarioIncorrectoException
     }
     
     /// <summary> Método para calificar un empleador </summary>
@@ -86,9 +101,21 @@ public class Solicitud : IDesactivable, IActualizable {
     {
         if(user.Nick.Equals(Trab) && !IsEmpleadorRated())
         {
-            EmpleadorRate = rate;
-            Emp.Calificar(rate);
-            this.FechaLimiteEmpleador = FechaAceptada.Add(TiempoMaximoCalificar);
+            if (!IsEmpleadorRated())
+            {
+                EmpleadorRate = rate;
+                Emp.Calificar(rate);
+                this.FechaLimiteEmpleador = FechaAceptada.Add(TiempoMaximoCalificar);
+            }
+            else
+            {
+                throw (new YaCalificadoException("El empleador ya fue calificado"));
+            }
+        }
+        else
+        {
+            throw (new UsuarioIncorrectoException(
+                "Solo el Trabajador que creó la oferta original puede utilzar el método CalificarEmpleador()"));
         }
     }
     
@@ -107,7 +134,7 @@ public class Solicitud : IDesactivable, IActualizable {
     }
     
     /// <summary> Método para conocer el estado de una oferta </summary>
-    /// <param name="siono"> Toma un valor del enum <see cref="Aceptacion"/> </param>
+    /// <param name="siONo"> Toma un valor del enum <see cref="Aceptacion"/> </param>
     public void RecibirRespuesta(Aceptacion siONo) {
         this.Aceptada = siONo;
         if (this.Aceptada.Equals(Aceptacion.Aceptada))
@@ -133,7 +160,7 @@ public class Solicitud : IDesactivable, IActualizable {
     /// <returns> Retorna True si la solicitud está activa o False si no lo está </returns>
     public bool IsActive()
     {
-        return this.Activa;
+        return this._activa;
     }
 
     /// <summary> Método para dar de baja una solicitud </summary>
@@ -142,7 +169,18 @@ public class Solicitud : IDesactivable, IActualizable {
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Activa = false;
+            if (this._activa) this._activa = false;
+            else throw (new AccionInnecesariaException("Esta solicitud ya fue dada de baja."));
+        }
+        else if (user.GetTipo().Equals(TipoDeUsuario.Empleador))
+        {
+            if (!this.Emp.Equals(user))throw (new UsuarioIncorrectoException("Solo un administrador o un empleador autorizado puede utilizar el método DarDeBaja() de Solicitud"));
+            if (this._activa) this._activa = false;
+            else throw (new AccionInnecesariaException("Esta solicitud ya fue dada de baja"));
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador o un empleador autorizado puede utilizar el método DarDeBaja() de Solicitud"));
         }
     }
     
@@ -152,7 +190,12 @@ public class Solicitud : IDesactivable, IActualizable {
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Activa = true;
+            if (!this._activa) this._activa = true;
+            else throw (new AccionInnecesariaException("Esta solicitud ya está aciva"));
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Reactivar() de Solicitud"));
         }
     }
 

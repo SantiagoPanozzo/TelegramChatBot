@@ -1,4 +1,5 @@
 using System.Security.Authentication;
+using Library.Excepciones;
 
 namespace Library;
 
@@ -32,6 +33,10 @@ public class OfertasHandler{
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
             OfertasHandler._instance = null;
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Wipe() de OfertasHandler"));
         }
     }
 
@@ -90,7 +95,10 @@ public class OfertasHandler{
             return this._catalog.AddCategoria(user, descripcion);
         }
 
-        throw (new AuthenticationException("Solo un administrador puede crear categorías"));
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método CrearCategoria() de OfertasHandler"));
+        }
     }
     
     /// <summary> Método para eliminar una categoría </summary>
@@ -103,7 +111,11 @@ public class OfertasHandler{
             this._catalog.RemoveCategoria(user, categoria);
         }
 
-        throw (new("Solo un administrador puede eliminar categorías"));
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método EliminarCategoria() de OfertasHandler"));
+        }
+        
     }
 
     /// <summary> Método para obtener <see cref="OfertaDeServicio"/> </summary>
