@@ -1,3 +1,5 @@
+using Library.Excepciones;
+
 namespace Library;
 
 /// <summary> Clase para manejar el catálogo de categorías </summary>
@@ -30,6 +32,10 @@ public class CategoriasCatalog
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
             CategoriasCatalog._instance = null;
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Wipe() de CategoriasCatalog"));
         }
     }
     
@@ -64,7 +70,7 @@ public class CategoriasCatalog
             return categoria.GetOfertaById(id);
         }
 
-        throw (new("No se encontró la oferta"));
+        throw (new NotFoundException("No se encontró la oferta correspondiente a ese ID"));
 
     }
 

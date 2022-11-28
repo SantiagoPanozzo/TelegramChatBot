@@ -1,3 +1,5 @@
+using Library.Excepciones;
+
 namespace Library;
 
 /// <summary> Clase para conocer y agregar categorias de ofertas de servicio </summary>
@@ -83,7 +85,12 @@ public class Categoria : IDesactivable
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Activa = false;
+            if (this.Activa) this.Activa = false;
+            else throw (new AccionInnecesariaException("Esta Categoria ya fue dada de baja"));
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método DarDeBaja() de Categoria"));
         }
     }
     
@@ -94,7 +101,12 @@ public class Categoria : IDesactivable
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
-            this.Activa = false;
+            if (!this.Activa) this.Activa = true;
+            else throw (new AccionInnecesariaException("Esta oferta ya está activa"));
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Reactivar() de Categoria"));
         }
     }
     
