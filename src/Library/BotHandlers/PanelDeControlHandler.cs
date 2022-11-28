@@ -8,7 +8,7 @@ namespace Library;
 /// contrasta con la base de datos. Hecho esto le muestra la opción de ir a <see cref="VerCategoriasHandler"/>, <see cref="VerOfertasHandler"/>
 /// <see cref="VerSolicitudesHandler"/>, <see cref="VerUsuariosHandler"/>, o volver a <see cref="StartHandler"/>.
 /// </summary>
-public class PanelDeControl : BaseHandler
+public class PanelDeControlHandler : BaseHandler
 {
     /// <summary> Indica los filtros </summary>
     public enum PanelState
@@ -31,13 +31,18 @@ public class PanelDeControl : BaseHandler
     }
    /// <summary> El estado del comando. </summary>
     public PanelState State { get; set; }
+    PlainTextCategoriaPrinter CatPrinter = new();
+   CategoriasCatalog catalog = CategoriasCatalog.GetInstance();
+  static OfertasHandler handlerof = OfertasHandler.GetInstance();
+  static Administrador admin = new("a","b","c","d");
+   static Categoria cateego = handlerof.CrearCategoria(admin, "bro");
 
     private Dictionary<long, PanelState> Posiciones = new Dictionary<long, PanelState>();
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="BuscarHandler"/>. </summary>
     /// <param name="next">Un buscador de direcciones.</param>
     /// <param name="next">El próximo "handler".</param>
-    public PanelDeControl(BaseHandler next) : base(next)
+    public PanelDeControlHandler(BaseHandler next) : base(next)
     {
         this.Keywords = new string[] {"admin","admin login","login admin","/admin"};
         this.State = PanelState.Start;
@@ -113,7 +118,7 @@ public class PanelDeControl : BaseHandler
             switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = PanelState.VerCategorias;
-                    response=$"-Lista de categorias\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
+                    response=$"{CatPrinter.Print(catalog.GetCategorias() , admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
