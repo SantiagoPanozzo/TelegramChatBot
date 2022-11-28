@@ -1,3 +1,4 @@
+using Library;
 namespace LibraryTests;
 
 /// <summary> Tests de la clase <see cref="Usuario"> </summary>
@@ -7,8 +8,7 @@ public class UsuarioTests
     public void Setup() {}
 
     [Test]
-    public void Test1()
-    {
+    public void Test1() {
         Assert.Pass();
     }
 }
