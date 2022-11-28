@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Object Lifecycle", "index.html", [
+  [ "Proyecto Chatbot Grupo 21", "index.html", [
     [ "HistoriasDeUsuarios", "md_HistoriasDeUsuarios.html", null ],
     [ "Justificaciones", "md_Justificaciones.html", null ],
     [ "Manual", "md_Manual.html", null ],
