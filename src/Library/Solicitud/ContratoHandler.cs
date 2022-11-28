@@ -4,9 +4,9 @@ using Library.Excepciones;
 namespace Library;
 using System;
 
-/// <summary> Clase para manejar el catalogo </summary>
+/// <summary> Clase para manejar el catálogo. </summary>
 /// /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
-/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las solicitudes-->
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las solicitudes .-->
 public class ContratoHandler
 {
 
@@ -27,20 +27,20 @@ public class ContratoHandler
         }
     }
     
-    /// <summary> Constructor tipo Singleton de la clase </summary>
+    /// <summary> Constructor tipo Singleton de la clase. </summary>
     private ContratoHandler()
     {
     }
 
-    /// <summary> Método para obtener la instancia de la clase </summary>
-    /// <returns> Devuelve la instancia </returns>
+    /// <summary> Método para obtener la instancia de la clase. </summary>
+    /// <returns> Devuelve la instancia. </returns>
     public static ContratoHandler GetInstance()
     {
         return ContratoHandler.Instance;
     }
 
-    /// <summary> Método para borrar los datos de la clase </summary>
-    /// <param name="user"> Tipo de usuario que llama al método </param>
+    /// <summary> Método para borrar los datos de la clase. </summary>
+    /// <param name="user"> Tipo de usuario que llama al método. </param>
 
     public static void Wipe(Usuario user)
     {
@@ -54,16 +54,16 @@ public class ContratoHandler
         }
     }
 
-    /// <summary> Método que crea una solicitud de trabajo </summary>
-    /// <param name="oferta"> Oferta en cuestión </param>
-    /// <param name="emp"> Empleador que va a realizar la solicitud </param>
+    /// <summary> Método que crea una solicitud de trabajo. </summary>
+    /// <param name="oferta"> Oferta en cuestión. </param>
+    /// <param name="emp"> Empleador que va a realizar la solicitud. </param>
     public Solicitud SolicitarTrabajador(OfertaDeServicio oferta, Empleador emp){
         Solicitud solicitud = Catalogo.AddSolicitud(oferta, emp);
         return solicitud;
     }
 
-    /// <summary> Método para aceptar una solicitud </summary>
-    /// <param name="solicitud"> Variable de tipo <see cref="Solicitud"> para aceptar </param>
+    /// <summary> Método para aceptar una solicitud. </summary>
+    /// <param name="solicitud"> Variable de tipo <see cref="Solicitud"> para aceptar. </param>
     public void AceptarSolicitud(Usuario user, Solicitud solicitud){
         if(user.Nick.Equals(solicitud.Oferta.GetOfertante()))
         {
@@ -75,8 +75,8 @@ public class ContratoHandler
         }
     }
 
-    /// <summary> Método para rechazar una solicitud </summary>
-    /// <param name="solicitud"> Variable de tipo <see cref="Solicitud"> para rechazar </param>
+    /// <summary> Método para rechazar una solicitud. </summary>
+    /// <param name="solicitud"> Variable de tipo <see cref="Solicitud"> para rechazar. </param>
     public void RechazarSolicitud(Usuario user, Solicitud solicitud){
         if(user.Nick.Equals(solicitud.Oferta.GetOfertante()))
         {
@@ -88,6 +88,7 @@ public class ContratoHandler
         }
     }
 
+
     /// <summary> Método para obtener una solicitud por id </summary>
     /// <param name="id"> Valor de id para filtrar <see cref="Solicitud"/> </param>
     /// <returns> Devuelve la <see cref="Solicitud"/> por valor de id </returns>
@@ -96,9 +97,9 @@ public class ContratoHandler
         return this.Catalogo.GetSolicitud(id);
     }
     
-    /// <summary> Método para mostrar solicitudes </summary>
-    /// <param name="user"> Variable de tipo <see cref="Usuario"/> </param>
-    /// <returns> Devuelve las solicitudes según que tipo de <see cref="Usuario"/> se </returns>
+    /// <summary> Método para mostrar solicitudes. </summary>
+    /// <param name="user"> Variable de tipo <see cref="Usuario"/>. </param>
+    /// <returns> Devuelve las solicitudes según que tipo de <see cref="Usuario"/> se. </returns>
     public List<Solicitud> GetSolicitudes(Usuario user)
     {
         List<Solicitud> solicitudesDelUsuario = new();

@@ -5,7 +5,7 @@ using System;
 using System.Text;
 
 /// <summary> Clase abstracta <see cref="Usuario"/> 
-/// para que luego hereden <see cref="Administrador"/>, <see cref="Trabajador"/> y <see cref="Empleador"/> </summary>
+/// para que luego hereden <see cref="Administrador"/>, <see cref="Trabajador"/> y <see cref="Empleador"/>. </summary>
 public abstract class Usuario : IDesactivable {
     
     public string Nick { get; set; }
@@ -20,15 +20,15 @@ public abstract class Usuario : IDesactivable {
     public string Contraseña { get; set; }
     protected TipoDeUsuario Tipo { get; set; }
 
-    /// <summary> Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador </summary>
+    /// <summary> Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador. </summary>
     /// <returns> Retorna el valor indicado, teniendo en cuenta el enum <see cref="TipoDeUsuario"/> 
-    /// 0 = Administrador, 1 = Trabajador, 2 = Empleador </returns>
+    /// 0 = Administrador, 1 = Trabajador, 2 = Empleador. </returns>
     public TipoDeUsuario GetTipo() {
         return this.Tipo;
     }
 
-    /// <summary> Método para obtener el contacto de un usuario </summary>
-    /// <returns> Retorna un mensaje con los datos para contactar del usuario </returns>
+    /// <summary> Método para obtener el contacto de un usuario. </summary>
+    /// <returns> Retorna un mensaje con los datos para contactar del usuario. </returns>
     public Dictionary<string, string> GetContacto() {
         Dictionary<string, string> info = this.GetPublicInfo();
         info.Add("Telefono",this.Telefono);
@@ -45,29 +45,27 @@ public abstract class Usuario : IDesactivable {
         return info;
     }
 
-    /// <summary> Método para settear la contraseña </summary>
+    /// <summary> Método para settear la contraseña. </summary>
     protected void SetContraseña(string contraseña)
     {
-        // Este metodo solo existe por modularidad
-        // Sugerencia: implementar un sistema mejor.
         this.Contraseña = contraseña;
     }
 
-    /// <summary> Método verificar que la contraseña sea igual a la anteriormente ingresada al iniciar sesión </summary>
+    /// <summary> Método verificar que la contraseña sea igual a la anteriormente ingresada al iniciar sesión. </summary>
     public bool VerifyContraseña(string contraseña)
     {
         // Idem de SetContraseña
         return this.Contraseña.Equals(contraseña);
     }
 
-    /// <summary> Checkea si el usuario está activo </summary>
-    /// <returns> Retorna un valor de bool, True si está activo o False si no lo está </returns>
+    /// <summary> Checkea si el usuario está activo. </summary>
+    /// <returns> Retorna un valor de bool, True si está activo o False si no lo está. </returns>
     public bool IsActive()
     {
         return this.Activo;
     }
 
-    /// <summary> Método para desactivar un usuario </summary>
+    /// <summary> Método para desactivar un usuario. </summary>
     public void DarDeBaja(Usuario user)
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -81,7 +79,7 @@ public abstract class Usuario : IDesactivable {
         }
     }
 
-    /// <summary> Método para activar un usuario </summary>
+    /// <summary> Método para activar un usuario. </summary>
     public void Reactivar(Usuario user)
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))

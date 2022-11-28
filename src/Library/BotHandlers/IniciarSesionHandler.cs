@@ -3,12 +3,10 @@ using System;
 using Library.BotHandlers;
 
 namespace Library;
-/// <summary>
-/// Solicita al usuario su Nick y su Contraseña y si coinciden con la base de datos procede a <see cref="InicioHandler"/>
-/// </summary>
+/// <summary> Solicita al usuario su Nick y su Contraseña y si coinciden con la base de datos pasa a <see cref="InicioHandler"/>. </summary>
 public class IniciarSesionHandler : BaseHandler
 {
-    /// <summary> Indica los filtros </summary>
+    /// <summary> Enum para indicar el estado de <see cref="IniciarSesionHandler"/> </summary>
     public enum LoginState
     {
         Start,
@@ -20,21 +18,23 @@ public class IniciarSesionHandler : BaseHandler
     /// <summary> El estado del comando. </summary>
     public LoginState State { get; set; }
 
+    /// <summary> Diccionario que guarda el estado en el <see cref="IHandler"/> según el ID de Telegram. </summary>
+    /// <typeparam name="long"> ID de usuario de Telegram. </typeparam>
+    /// <typeparam name="LoginState"> Estado del <see cref="IHandler"/>. </typeparam>
     private Dictionary<long, LoginState> Posiciones = new Dictionary<long, LoginState>();
 
-    /// <summary> Inicializa una nueva instancia de la clase <see cref="BuscarHandler"/>. </summary>
-    /// <param name="next">Un buscador de direcciones.</param>
-    /// <param name="next">El próximo "handler".</param>
+    /// <summary> Inicializa una nueva instancia de la clase <see cref="IniciarSesionHandler"/>. </summary>
+    /// <param name="next"> El próximo <see cref="IHandler"/>. </param>
     public IniciarSesionHandler(BaseHandler next) : base(next)
     {
         this.Keywords = new string[] { "iniciar", "login", "/login", "iniciar sesion", "iniciar sesión"};
         this.State = LoginState.Start;
         this._id= Handlers.IniciarSesionHandler;
     }
-    /// <summary>  </summary>
-    /// <param name="message">  </param>
-    /// <returns>  </returns>
-
+    
+    /// <summary> Verifica que se pueda procesar el mensaje </summary>
+    /// <param name="message"> Mensaje a procesar </param>
+    /// <returns> true si puede procesar el mensaje, false en caso contrario </returns>
     protected override bool CanHandle(Message message)
     {
         if (!this.Posiciones.ContainsKey(message.From.Id))
@@ -50,6 +50,9 @@ public class IniciarSesionHandler : BaseHandler
         }
     }
 
+    /// <summary> Procesamiento de los mensajes. </summary>
+    /// <param name="message"> Mensaje a procesar </param>
+    /// <param name="response"> Respuesta al mensaje procesado </param>
     protected override void InternalHandle(Message message, out string response)
     {
         if (message == null || message.From == null)
