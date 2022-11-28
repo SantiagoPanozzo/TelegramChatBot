@@ -8,7 +8,7 @@ public class PlainTextCategoriaPrinter : ITextPrinter<Categoria>
 
         foreach (var cat in catalog)
         {
-            response += $"\n»» ID: {cat.GetId()} ║ Descripción: {cat.Descripcion}";
+            response += $"\n»» ID: {cat.GetId()} ║ Descripción: {cat.Descripcion}\n";
         }
         return response;
     }
