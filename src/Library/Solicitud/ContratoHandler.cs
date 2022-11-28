@@ -1,4 +1,5 @@
 using System.Security.Authentication;
+using Library.Excepciones;
 
 namespace Library;
 using System;
@@ -47,6 +48,10 @@ public class ContratoHandler
         {
             ContratoHandler._instance = null;
         }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Wipe() de ContratoHandler"));
+        }
     }
 
     /// <summary> Método que crea una solicitud de trabajo. </summary>
@@ -66,7 +71,7 @@ public class ContratoHandler
         }
         else
         {
-            throw (new AuthenticationException("El trabajador no coincide con el de la oferta"));
+            throw (new UsuarioIncorrectoException("El trabajador no coincide con el de la oferta"));
         }
     }
 
@@ -79,7 +84,7 @@ public class ContratoHandler
         }
         else
         {
-            throw (new AuthenticationException("El trabajador no coincide con el de la oferta"));
+            throw (new UsuarioIncorrectoException("El trabajador no coincide con el de la oferta"));
         }
     }
 

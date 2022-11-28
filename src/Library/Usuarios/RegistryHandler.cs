@@ -1,3 +1,5 @@
+using Library.Excepciones;
+
 namespace Library;
 using System;
 using System.Text.RegularExpressions;
@@ -34,6 +36,10 @@ public class RegistryHandler
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
             RegistryHandler._instance = null;
+        }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Wipe() de RegistryHandler"));
         }
     }
     
@@ -173,7 +179,8 @@ public class RegistryHandler
     public void RemoveUsuario(Usuario admin, Usuario usuarioEliminar)
     {
         if (!admin.GetTipo().Equals(TipoDeUsuario.Administrador))
-            throw new("Solo un administrador puede eliminar usuarios");
+            throw (new ElevacionException("Solo un administrador puede utilizar el método RemoveUsuario() de RegistryHandler"));
+        
         if (!usuarios.GetUsuarios().Contains(usuarioEliminar)) {
             throw new ArgumentNullException("El usuario ingresado no existe");
         }

@@ -5,10 +5,11 @@ using Library.BotHandlers;
 namespace Library;
 /// <summary> Se fija si el Telegram ID de la persona corresponde a un administrador y le pide su contraseña de administrador y la
 /// contrasta con la base de datos. Hecho esto le muestra la opción de ir a <see cref="VerCategoriasHandler"/>, <see cref="VerOfertasHandler"/>
-/// <see cref="VerSolicitudesHandler"/>, <see cref="VerUsuariosHandler"/>, o volver a <see cref="StartHandler"/>. </summary>
-public class PanelDeControl : BaseHandler
+/// <see cref="VerSolicitudesHandler"/>, <see cref="VerUsuariosHandler"/>, o volver a <see cref="StartHandler"/>.
+/// </summary>
+public class PanelDeControlHandler : BaseHandler
 {
-    /// <summary> Enum para indicar el estado de <see cref="PanelDeControlHandler"/> </summary>
+    /// <summary> Indica los filtros </summary>
     public enum PanelState
     {
         Start,
@@ -30,6 +31,11 @@ public class PanelDeControl : BaseHandler
 
     /// <summary> Estado de <see cref="PanelDeControlHandler"/> </summary>
     public PanelState State { get; set; }
+    PlainTextCategoriaPrinter CatPrinter = new();
+   CategoriasCatalog catalog = CategoriasCatalog.GetInstance();
+  static OfertasHandler handlerof = OfertasHandler.GetInstance();
+  static Administrador admin = new("a","b","c","d");
+   static Categoria cateego = handlerof.CrearCategoria(admin, "bro");
 
     /// <summary> Diccionario que guarda el estado en el <see cref="IHandler"/> según el ID de Telegram. </summary>
     /// <typeparam name="long"> ID de usuario de Telegram. </typeparam>
@@ -38,7 +44,7 @@ public class PanelDeControl : BaseHandler
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="PanelDeControlHandler"/>. </summary>
     /// <param name="next"> Próximo <see cref="IHandler"/> </param>
-    public PanelDeControl(BaseHandler next) : base(next)
+    public PanelDeControlHandler(BaseHandler next) : base(next)
     {
         this.Keywords = new string[] {"admin","admin login","login admin","/admin"};
         this.State = PanelState.Start;
@@ -118,7 +124,7 @@ public class PanelDeControl : BaseHandler
             switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = PanelState.VerCategorias;
-                    response=$"-Lista de categorias\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
+                    response=$"{CatPrinter.Print(catalog.GetCategorias() , admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
