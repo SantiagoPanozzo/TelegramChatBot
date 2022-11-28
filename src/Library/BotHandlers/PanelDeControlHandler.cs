@@ -32,10 +32,10 @@ public class PanelDeControlHandler : BaseHandler
    /// <summary> El estado del comando. </summary>
     public PanelState State { get; set; }
     PlainTextCategoriaPrinter CatPrinter = new();
-   CategoriasCatalog catalog = CategoriasCatalog.GetInstance();
-  static OfertasHandler handlerof = OfertasHandler.GetInstance();
-  static Administrador admin = new("a","b","c","d");
-   static Categoria cateego = handlerof.CrearCategoria(admin, "bro");
+    PlainTextSolicitudPrinter SolPrinter = new();
+    ContratoHandler SolCatalog = ContratoHandler.GetInstance();
+   CategoriasCatalog CatCatalog = CategoriasCatalog.GetInstance();
+    static Administrador admin = new("a","b","c","d");
 
     private Dictionary<long, PanelState> Posiciones = new Dictionary<long, PanelState>();
 
@@ -118,15 +118,17 @@ public class PanelDeControlHandler : BaseHandler
             switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = PanelState.VerCategorias;
-                    response=$"{CatPrinter.Print(catalog.GetCategorias() , admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
+                    response=$"{CatPrinter.Print(CatCatalog.GetCategorias(), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
-                    response=$"-Lista de Ofertas\n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
+                    response=$"Ingresa el ID de categoria de las ofertas que deseas ver";
+                    // response=$"\n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
                     break;
+                
                 case "3":
                     this.Posiciones[message.From.Id] = PanelState.VerSolicitudes;
-                    response=$"-Lista de solicitudes\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
+                    response=$"{SolPrinter.Print(SolCatalog.GetSolicitudes(admin), admin )}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
                     break;
                 case "4":
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
@@ -174,7 +176,7 @@ public class PanelDeControlHandler : BaseHandler
                     break;
             }
             break;
-
+            }
         }
 
     }      
