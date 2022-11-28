@@ -2,27 +2,21 @@ using System.Collections;
 
 namespace Library;
 
-/// <summary>
-/// Clase estática que actúa como reloj del programa, encargada de actualizar todos los objetos que requieran saber
-/// la fecha actual.
-/// </summary>
+/// <summary> Clase estática que actúa como reloj del programa, encargada de actualizar todos los objetos que requieran saber
+/// la fecha actual. </summary>
 public static class Updater
 {
-
     private static Timer? _timer = null;
     
-    /// <summary>
-    /// Fecha actual del programa. Es la establecida por <see cref="Updater.BaseUpdate"/> para ser pasada a todos los objetos que
-    /// necesiten conocerla.
-    /// </summary>
+    /// <summary> Fecha actual del programa. Es la establecida por <see cref="Updater.BaseUpdate"/> para ser pasada a 
+    /// todos los objetos que necesiten conocerla. </summary>
     public static DateTime FechaActual { get; private set; }
 
     private static RegistryHandler RegistryHandler { get { return RegistryHandler.GetInstance(); } }
-
     private static OfertasHandler OfertasHandler { get { return OfertasHandler.GetInstance(); } }
     private static ContratoHandler ContratoHandler { get { return ContratoHandler.GetInstance(); } }
 
-    /// <summary> Define cada cuánto tiempo se realizarán las actualizaciones automáticas si están habilitadas </summary>
+    /// <summary> Define cada cuánto tiempo se realizarán las actualizaciones automáticas si están habilitadas. </summary>
     private static readonly TimeSpan DelayActualizacion = new TimeSpan(seconds: 30, hours: 0, minutes: 0);
     
     private static bool _updating = false;
@@ -46,7 +40,7 @@ public static class Updater
             await Task.Run(AutoUpdate);
         }
     }
-    /// <summary> Método para deshabilitar la actualización automática </summary>
+    /// <summary> Método para deshabilitar la actualización automática. </summary>
     public static void DisableAutoUpdate()
     {
         Updater._updating = false;
@@ -54,7 +48,7 @@ public static class Updater
     }
 
     /// <summary> Crea un búcle en el que se actualizan los objetos de tipo <see cref="IActualizable"/> con la fecha real. </summary>
-    /// <returns></returns>
+    /// <returns>  </returns>
     private static async Task<bool> AutoUpdate() // TODO el async tira warning y no se como arreglarlo
     {
         Console.WriteLine($"Iniciado el subsistema de actualización automática con un temporizador de {Updater.DelayActualizacion.TotalSeconds} segundos");
@@ -72,7 +66,7 @@ public static class Updater
         return false;
     }
 
-    /// <summary> Método para actualizar todas las clases que necesiten ser actualizadas periódicamente </summary>
+    /// <summary> Método para actualizar todas las clases que necesiten ser actualizadas periódicamente. </summary>
     /// <param name="fecha"> Fecha a utilizar para actualizar las clases que lo necesiten. </param>
     private static void BaseUpdate(DateTime fecha)
     {
@@ -83,14 +77,14 @@ public static class Updater
         }
     }
     
-    /// <summary> Método para actualizar con la fecha actual todas las clases que necesiten ser actualizadas periódicamente </summary>
+    /// <summary> Método para actualizar con la fecha actual todas las clases que necesiten ser actualizadas periódicamente. </summary>
     public static void Update()
     {
         BaseUpdate(DateTime.Now);
     }
 
-    /// <summary> Método para realizar un ciclo de la actualización automática </summary>
-    /// <param name="dummy"> Objeto utilizado por método async </param>
+    /// <summary> Método para realizar un ciclo de la actualización automática. </summary>
+    /// <param name="dummy"> Objeto utilizado por método async. </param>
     private static void UpdateCycle(object? dummy) // TODO ver necesidad de object? a
     {
         Console.WriteLine("Actualizando todos los módulos...");
@@ -100,17 +94,15 @@ public static class Updater
 
     }
     
-    /// <summary> Método para actualizar con una fecha falsa todas las clases que necesiten ser actualizadas periódicamente</summary>
+    /// <summary> Método para actualizar con una fecha falsa todas las clases que necesiten ser actualizadas periódicamente. </summary>
     /// <param name="fecha"> Fecha que simular para actualizar las clases que lo necesiten. </param>
     public static void FakeUpdate(DateTime fecha)
     {
         BaseUpdate(fecha);
     }
 
-    /// <summary>
-    /// Método para avanzar el reloj del programa una cantidad dada de tiempo. No refleja el tiempo real, solo suma el <see cref="TimeSpan"/> dado
-    /// al <see cref="DateTime"/> almacenado en <see cref="FechaActual"/>.
-    /// </summary>
+    /// <summary> Método para avanzar el reloj del programa una cantidad dada de tiempo. No refleja el tiempo real, solo suma el <see cref="TimeSpan"/> dado
+    /// al <see cref="DateTime"/> almacenado en <see cref="FechaActual"/>. </summary>
     /// <param name="tiempo"> Cantidad de tiempo que sumar a <see cref="FechaActual"/>. </param>
     public static void FastForward(TimeSpan tiempo)
     {

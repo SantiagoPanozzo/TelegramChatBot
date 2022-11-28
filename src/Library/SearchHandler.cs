@@ -2,6 +2,7 @@ using Library.DistanceMatrix;
 
 namespace Library;
 
+//TODO comentar esto no me dan las bolas ahora xd
 public class SearchHandler { 
     public List<OfertaDeServicio> FiltrarCategoria(Categoria category) {
         List<OfertaDeServicio> filteredOffers = new();
