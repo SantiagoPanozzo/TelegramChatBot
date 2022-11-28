@@ -2,8 +2,11 @@ using Library.DistanceMatrix;
 
 namespace Library;
 
-//TODO comentar esto no me dan las bolas ahora xd
+/// <summary>  </summary>
 public class SearchHandler { 
+    /// <summary> Método para filtrar las <see cref="OfertaDeServicio"/> por <see cref="Categoria"/> </summary>
+    /// <param name="category"> <see cref="Categoria"/> de la cual se quieren ver las ofertas </param>
+    /// <returns> Lista con las ofertas filtradas </returns>
     public List<OfertaDeServicio> FiltrarCategoria(Categoria category) {
         List<OfertaDeServicio> filteredOffers = new();
         OfertasHandler handler = OfertasHandler.GetInstance();
@@ -16,6 +19,10 @@ public class SearchHandler {
     /* Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma
     ascendente de distancia a mi ubicación, es decir, las más cercanas primero para que de esa forma,
     pueda poder contratar un servicio. */
+
+    /// <summary> Método para filtrar las <see cref="OfertaDeServicio"/> por distancia </summary>
+    /// <param name="emp"> Empleador que llama al método </param>
+    /// <returns> Lista con las ofertas filtradas por distancia </returns>
     public List<OfertaDeServicio> FiltrarDistancia(Empleador emp) {      //TODO: Emplear con API, cambiar clases para este propósito
         List<OfertaDeServicio> offers = new();
         List<OfertaDeServicio> resultOffers = new();
@@ -39,6 +46,10 @@ public class SearchHandler {
         return resultOffers;
     }
 
+    /// <summary> Método para obtener la <see cref="OfertaDeServicio"/> más cercana </summary>
+    /// <param name="myPos"> Posición actual del <see cref="Usuario"/> </param>
+    /// <param name="lista"> Lista de la que se está filtrando </param>
+    /// <returns></returns>
     private OfertaDeServicio? GetShortest(Tuple<double,double> myPos, List<OfertaDeServicio> lista)
     {
         int i = 0;
@@ -70,6 +81,9 @@ public class SearchHandler {
     /* Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma
     descendente por reputación, es decir, las de mejor reputación primero para que de esa forma, pueda
     contratar un servicio. */
+
+    /// <summary> Método para filtrar las <see cref="OfertaDeServicio"/> por reputación </summary>
+    /// <returns> Lista con las ofertas filtradas por reputación </returns>
     public List<OfertaDeServicio> FiltrarReputacion() {
 
         List<OfertaDeServicio> offers = new();

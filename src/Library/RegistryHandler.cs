@@ -50,7 +50,6 @@ public class RegistryHandler
         return RegistryHandler.Instance;
     }
 
-    // TODO documentar que el "fechaNacimiento" se tiene que introducir como "año,mes,dia". Idem para la cedula, correo, etc
     /// <summary> Método para registrar un trabajador. </summary>
     /// <param name="nombre"> Nombre del trabajador. </param> 
     /// <param name="apellido"> Apellido del trabajador. </param> 

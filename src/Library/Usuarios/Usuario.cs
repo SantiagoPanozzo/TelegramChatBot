@@ -46,8 +46,6 @@ public abstract class Usuario : IDesactivable {
     /// <summary> Método para settear la contraseña. </summary>
     protected void SetContraseña(string contraseña)
     {
-        // Este metodo solo existe por modularidad
-        // Sugerencia: implementar un sistema mejor. //TODO
         this.Contraseña = contraseña;
     }
 
