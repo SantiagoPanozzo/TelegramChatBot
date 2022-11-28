@@ -9,10 +9,10 @@ using Telegram.Bot.Types.InputFiles;
 using Nito.AsyncEx;
 namespace Library.Registro;
 
+/// <summary> Handler para manejar el ingreso de datos del <see cref="Usuario"/>. </summary>
 public class RegistrarHandler : BaseHandler
 {
-    // string nombre, string apellido, string nick, string contraseña, string fechaNacimiento,
-    // string cedula, string telefono, string correo, Tuple<double,double> ubicacion
+    /// <summary> Enum para conocer el estado de <see cref="RegistrarHandler"/> </summary>
     public enum RegistrarState
     {
         Start,
@@ -30,20 +30,33 @@ public class RegistrarHandler : BaseHandler
         Fin,
     }
     
+    /// <summary> Obtiene el <see cref="TipoDeUsuario"/> que accede al handler. </summary>
     public TipoDeUsuario TempTipo { get; set; }
+
+    /// <summary> Diccionario al que se añaden los datos del nuevo <see cref="Usuario"/> que se está creando </summary>
+    /// <typeparam name="string"> Dato </typeparam>
+    /// <typeparam name="string"> Valor del dato </typeparam>
     public Dictionary<string, string> TempInfo = new Dictionary<string, string>();
 
+    /// <summary> Estado de <see cref="RegistrarHandler"/> </summary>
     public RegistrarState State { get; set; }
     
+    /// <summary> Diccionario que guarda el estado en el <see cref="IHandler"/> según el ID de Telegram. </summary>
+    /// <typeparam name="long"> ID de usuario de Telegram. </typeparam>
+    /// <typeparam name="LoginState"> Estado del <see cref="IHandler"/>. </typeparam>
     private Dictionary<long, RegistrarState> Posiciones = new Dictionary<long, RegistrarState>();
 
-    // Elegir tipo trabajador/empleador
+    /// <summary> Inicializa una nueva instancia de la clase <see cref="RegistrarHandler"/>. </summary>
+    /// <param name="next"> Próximo <see cref="IHandler"/> </param>
     public RegistrarHandler(BaseHandler next) : base(next) {
         this.Keywords = new string[] {"registrar", "/registrar" };
         this.State = RegistrarState.Start;
         this._id = Handlers.RegistrarHandler;
     }
 
+    /// <summary> Verifica que se pueda procesar el mensaje </summary>
+    /// <param name="message"> Mensaje a procesar </param>
+    /// <returns> true si puede procesar el mensaje, false en caso contrario </returns>
     protected override bool CanHandle(Message message)
     {
         if (!this.Posiciones.ContainsKey(message.From.Id))
@@ -60,7 +73,10 @@ public class RegistrarHandler : BaseHandler
         }
     }
     
-    // volver a bienvenida
+    
+    /// <summary> Procesamiento de los mensajes. </summary>
+    /// <param name="message"> Mensaje a procesar </param>
+    /// <param name="response"> Respuesta al mensaje procesado </param>
     protected override void InternalHandle(Message message, out string response) {
         
         if (message == null || message.From == null || message.Text == null) {

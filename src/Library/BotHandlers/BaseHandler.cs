@@ -5,15 +5,14 @@ using Telegram.Bot.Types;
 
 namespace Library;
 
-/// <summary>
-/// Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una
+/// <summary> Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una
 /// cadena de "handlers" que pueden procesar o no el mensaje. Cada "handler" decide si procesa el mensaje, o si se lo
 /// pasa al siguiente. Esta clase base implmementa la responsabilidad de recibir el mensaje y pasarlo al siguiente
 /// "handler" en caso que el mensaje no sea procesado. La responsabilidad de decidir si el mensaje se procesa o no, y
-/// de procesarlo, se delega a las clases sucesoras de esta clase base.
-/// </summary>
+/// de procesarlo, se delega a las clases sucesoras de esta clase base. </summary>
 public abstract class BaseHandler : IHandler
 {
+    //TODO que es esto??????
     protected Handlers _id { get; set; }
 
     /// <summary> Método para obtener el id de un <see cref="IHandler"/>. </summary>
@@ -52,19 +51,16 @@ public abstract class BaseHandler : IHandler
     /// <param name="response"> La respuesta al mensaje procesado. </param>
     protected abstract void InternalHandle(Message message, out string response);
 
-    /// <summary> Este método puede ser sobreescrito en las clases sucesores que procesan varios mensajes cambiando de estado
-    /// entre mensajes deben sobreescribir este método para volver al estado inicial. En la clase base no hace nada. </summary>
+    /// <summary> Permite volver al estado inicial de un <see cref="IHandler"/>. </summary>
     protected virtual void InternalCancel()
     {
         // Intencionalmente en blanco.
     }
 
-    /// <summary> Determina si este "handler" puede procesar el mensaje. En la clase base se utiliza el array
-    /// <see cref="BaseHandler.Keywords"/> para buscar el texto en el mensaje ignorando mayúsculas y minúsculas. Las
-    /// clases sucesores pueden sobreescribir este método para proveer otro mecanismo para determina si procesan o no
-    /// un mensaje. </summary>
-    /// <param name="message">El mensaje a procesar.</param>
-    /// <returns>true si el mensaje puede ser pocesado; false en caso contrario.</returns>
+    /// <summary> Determina si el mensaje puede ser procesado por el <see cref="IHandler"/>, 
+    /// se busca el texto en el mensaje ignorando mayúsculas y miúsculas. </summary>
+    /// <param name="message"> El mensaje a procesar. </param>
+    /// <returns> true si el mensaje puede ser pocesado, false en caso contrario. </returns>
     protected virtual bool CanHandle(Message message)
     {
         // Cuando no hay palabras clave este método debe ser sobreescrito por las clases sucesoras y por lo tanto
@@ -78,9 +74,9 @@ public abstract class BaseHandler : IHandler
     }
 
     /// <summary> Procesa el mensaje o lo pasa al siguiente "handler" si existe. </summary>
-    /// <param name="message">El mensaje a procesar.</param>
-    /// <param name="response">La respuesta al mensaje procesado.</param>
-    /// <returns>El "handler" que procesó el mensaje si el mensaje fue procesado; null en caso contrario.</returns>
+    /// <param name="message"> El mensaje a procesar. </param>
+    /// <param name="response"> La respuesta al mensaje procesado. </param>
+    /// <returns> El "handler" que procesó el mensaje si el mensaje fue procesado, null en caso contrario. </returns>
     public IHandler Handle(Message message, out string response)
     {
         if (this.CanHandle(message))

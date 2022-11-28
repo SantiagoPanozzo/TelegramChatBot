@@ -3,14 +3,12 @@ using System;
 using Library.BotHandlers;
 
 namespace Library;
-/// <summary>
-/// Se fija si el Telegram ID de la persona corresponde a un administrador y le pide su contraseña de administrador y la
+/// <summary> Se fija si el Telegram ID de la persona corresponde a un administrador y le pide su contraseña de administrador y la
 /// contrasta con la base de datos. Hecho esto le muestra la opción de ir a <see cref="VerCategoriasHandler"/>, <see cref="VerOfertasHandler"/>
-/// <see cref="VerSolicitudesHandler"/>, <see cref="VerUsuariosHandler"/>, o volver a <see cref="StartHandler"/>.
-/// </summary>
+/// <see cref="VerSolicitudesHandler"/>, <see cref="VerUsuariosHandler"/>, o volver a <see cref="StartHandler"/>. </summary>
 public class PanelDeControl : BaseHandler
 {
-    /// <summary> Indica los filtros </summary>
+    /// <summary> Enum para indicar el estado de <see cref="PanelDeControlHandler"/> </summary>
     public enum PanelState
     {
         Start,
@@ -29,24 +27,27 @@ public class PanelDeControl : BaseHandler
         VerUsuarios,
         EliminarUsuario
     }
-   /// <summary> El estado del comando. </summary>
+
+    /// <summary> Estado de <see cref="PanelDeControlHandler"/> </summary>
     public PanelState State { get; set; }
 
+    /// <summary> Diccionario que guarda el estado en el <see cref="IHandler"/> según el ID de Telegram. </summary>
+    /// <typeparam name="long"> ID de usuario de Telegram. </typeparam>
+    /// <typeparam name="LoginState"> Estado del <see cref="IHandler"/>. </typeparam>
     private Dictionary<long, PanelState> Posiciones = new Dictionary<long, PanelState>();
 
-    /// <summary> Inicializa una nueva instancia de la clase <see cref="BuscarHandler"/>. </summary>
-    /// <param name="next">Un buscador de direcciones.</param>
-    /// <param name="next">El próximo "handler".</param>
+    /// <summary> Inicializa una nueva instancia de la clase <see cref="PanelDeControlHandler"/>. </summary>
+    /// <param name="next"> Próximo <see cref="IHandler"/> </param>
     public PanelDeControl(BaseHandler next) : base(next)
     {
         this.Keywords = new string[] {"admin","admin login","login admin","/admin"};
         this.State = PanelState.Start;
         this._id = Handlers.PanelDeControlHandler;
     }
-    /// <summary>  </summary>
-    /// <param name="message">  </param>
-    /// <returns>  </returns>
 
+    /// <summary> Verifica que se pueda procesar el mensaje </summary>
+    /// <param name="message"> Mensaje a procesar </param>
+    /// <returns> true si puede procesar el mensaje, false en caso contrario </returns>
     protected override bool CanHandle(Message message)
     {
         if (!this.Posiciones.ContainsKey(message.From.Id))
@@ -61,6 +62,10 @@ public class PanelDeControl : BaseHandler
                 return true;
         }
     }
+
+    /// <summary> Procesamiento de los mensajes. </summary>
+    /// <param name="message"> Mensaje a procesar </param>
+    /// <param name="response"> Respuesta al mensaje procesado </param>
     protected override void InternalHandle(Message message, out string response)
     {
         if (message == null || message.From == null)
@@ -171,6 +176,5 @@ public class PanelDeControl : BaseHandler
             break;
 
         }
-
     }      
 }

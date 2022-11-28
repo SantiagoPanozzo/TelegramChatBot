@@ -1,6 +1,6 @@
 namespace Library.BotHandlers;
 
-/// <summary> Presenta al administrador las categrorías disponibles y le permite borrarlas o crear nuevas </summary>
+/// <summary> Presenta al administrador las categeorías disponibles y le permite borrarlas o crear nuevas </summary>
 public class VerCategoriasHandler {
     
 }
