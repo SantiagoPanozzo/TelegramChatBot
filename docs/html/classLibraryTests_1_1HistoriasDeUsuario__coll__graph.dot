@@ -1,0 +1,9 @@
+digraph "LibraryTests.HistoriasDeUsuario"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="{LibraryTests.HistoriasDe\lUsuario\n||+ Setup()\l+ Wipe()\l+ AdministradorCrearCategoria()\l+ AdministradorDarDeBajaOferta()\l+ TrabajadorRegistrarse()\l+ TrabajadorCrearOferta()\l+ EmpleadorRegistrarse()\l+ EmpleadorBuscarOfertaPor\lCategoria()\l+ EmpleadorBuscarOfertaPor\lDistancia()\l+ EmpleadorBuscarOfertaPor\lReputacion()\land 9 more...\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Tests de los escenarios (casos de usuario) dados"];
+}

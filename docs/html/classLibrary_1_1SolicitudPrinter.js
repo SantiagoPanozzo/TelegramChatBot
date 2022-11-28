@@ -1,4 +1,4 @@
 var classLibrary_1_1SolicitudPrinter =
 [
-    [ "PrintCatalog", "classLibrary_1_1SolicitudPrinter.html#a3d190eb143238e9d17c85c7f05485fd8", null ]
+    [ "Print", "classLibrary_1_1SolicitudPrinter.html#ab3e3b1d5036a214090e065c645ecbefe", null ]
 ];

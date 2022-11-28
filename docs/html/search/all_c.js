@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['next_0',['Next',['../classLibrary_1_1BaseHandler.html#ace6b12d838aa1697edafbca4c19c064e',1,'Library.BaseHandler.Next()'],['../interfaceLibrary_1_1IHandler.html#ab4125b061c533a7ca935f2c32f8e8f57',1,'Library.IHandler.Next()']]]
+  ['main_0',['Main',['../classLibrary_1_1TelegramBot.html#a9b235532974f823235e1fccba5ee2f91',1,'Library::TelegramBot']]],
+  ['manual_1',['Manual',['../md_Manual.html',1,'']]]
 ];

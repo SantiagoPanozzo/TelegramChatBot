@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tipodeusuario_0',['TipoDeUsuario',['../namespaceLibrary.html#a4cb7ae7753cda2aecc9365eead4518c9',1,'Library']]]
+  ['loginstate_0',['LoginState',['../classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167',1,'Library::IniciarSesionHandler']]]
 ];

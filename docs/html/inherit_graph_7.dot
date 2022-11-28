@@ -1,0 +1,26 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [label="Library.IHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1IHandler.html",tooltip="Interfaz para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a travé..."];
+  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node1 [label="Library.BaseHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1BaseHandler.html",tooltip="Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra..."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.BuscarHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1BuscarHandler.html",tooltip="Muestra una lista de OfertaDeServicio disponibles según su ID y el trabajo. El usuario puede seleccio..."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.CategoriasHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasHandler.html",tooltip="Un \"handler\" del patrón Chain of Responsibility que implementa el comando \"categorias\"."];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.DefaultHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1DefaultHandler.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="Library.InfoHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1InfoHandler.html",tooltip="Un \"handler\" del patrón Chain of Responsibility que implementa el comando \"info\"."];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="Library.IniciarSesionHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1IniciarSesionHandler.html",tooltip="Solicita al usuario su Nick y su Contraseña y si coinciden con la base de datos procede a InicioHandl..."];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="Library.PanelDeControl",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1PanelDeControl.html",tooltip="Se fija si el Telegram ID de la persona corresponde a un administrador y le pide su contraseña de adm..."];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="Library.StartHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1StartHandler.html",tooltip="Un \"handler\" del patrón Chain of Responsibility que implementa el comando \"categorias\"."];
+}

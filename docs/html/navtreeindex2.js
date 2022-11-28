@@ -1,0 +1,19 @@
+var NAVTREEINDEX2 =
+{
+"md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md7":[3,3,2],
+"md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md8":[3,3,3],
+"md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md9":[3,3,4],
+"namespaceLibrary.html":[4,0,0],
+"namespaceLibrary.html#a4c7f28ff825d88c9550c79269dc65d49":[4,0,0,31],
+"namespaceLibrary.html#a4cb7ae7753cda2aecc9365eead4518c9":[4,0,0,33],
+"namespaceLibrary.html#ab1f074010f510a22115a4ef8b23e7c92":[4,0,0,32],
+"namespaceLibraryTests.html":[4,0,1],
+"namespaceProgram.html":[4,0,2],
+"namespacemembers.html":[4,1,0],
+"namespacemembers_enum.html":[4,1,1],
+"namespaces.html":[4,0],
+"pages.html":[],
+"src_2Library_2obj_2Debug_2net6_80_2_8NETCoreApp_00Version_0av6_80_8AssemblyAttributes_8cs_source.html":[6,0,0,0,1,0,0,0],
+"src_2Program_2obj_2Debug_2net6_80_2_8NETCoreApp_00Version_0av6_80_8AssemblyAttributes_8cs_source.html":[6,0,0,1,0,0,0,0],
+"test_2LibraryTests_2obj_2Debug_2net6_80_2_8NETCoreApp_00Version_0av6_80_8AssemblyAttributes_8cs_source.html":[6,0,1,0,0,0,0,0]
+};

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Object Lifecycle: /home/snowiemischief/projects/Programacion2/pii_2022_2_equipo_21/test/LibraryTests/UpdaterTests.cs Source File</title>
+<title>Object Lifecycle: /home/snowiemischief/projects/programacion2/pii_2022_2_equipo_21/test/LibraryTests/UtilidadesTests/UpdaterTests.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,23 +100,97 @@ $(document).ready(function(){initNavTree('UpdaterTests_8cs_source.html',''); ini
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classLibraryTests_1_1UpdaterTests.html">    5</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classLibraryTests_1_1UpdaterTests.html">UpdaterTests</a></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    [Test]</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">public</span> <span class="keywordtype">void</span> CheckWorking()</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="comment">// Arrange</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        Updater.EnableAutoUpdate();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        Console.ReadKey();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    }</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">    [Test]</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">    public void CheckWorking()</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">    {</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">        // Arrange</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">        Updater.EnableAutoUpdate();</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">        // Console.ReadKey();</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">        Assert.Pass();</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">    }</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    [Test]</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classLibraryTests_1_1UpdaterTests.html#a8e57d7c22e31dbf0a5bbee667f1e935c">   22</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLibraryTests_1_1UpdaterTests.html#a8e57d7c22e31dbf0a5bbee667f1e935c">FechaActualCheck</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="comment">// Arrange</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        Updater.Update();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        DateTime ahora = DateTime.Now;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">bool</span> expected = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">// Act</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">// Comparamos la fecha del año, horas, minutos y segundos del programa con los de la fecha real.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">bool</span> result = (Updater.FechaActual.Date.Equals(ahora.Date)) &amp;&amp; (Updater.FechaActual.Hour.Equals(ahora.Hour)) &amp;&amp;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                      (Updater.FechaActual.Minute.Equals(ahora.Minute)) &amp;&amp; (Updater.FechaActual.Second.Equals(ahora.Second));</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="comment">// Assert</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        Assert.That(expected.Equals(result));</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    [Test]</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classLibraryTests_1_1UpdaterTests.html#a64373404bd9938aeda914406ddef8790">   43</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLibraryTests_1_1UpdaterTests.html#a64373404bd9938aeda914406ddef8790">FakeUpdate</a>()</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="comment">// Arrange</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        Updater.Update();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        DateTime fecha = <span class="keyword">new</span> DateTime(2025, 10, 31);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        DateTime expected = fecha;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="comment">// Act</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Updater.FakeUpdate(fecha);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        DateTime result = Updater.FechaActual;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="comment">// Assert</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        Assert.That(expected.Equals(result));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    [Test]</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classLibraryTests_1_1UpdaterTests.html#a4fd1295ffd364d98e349728b9b7e036e">   63</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLibraryTests_1_1UpdaterTests.html#a4fd1295ffd364d98e349728b9b7e036e">FastForwardFechaActual</a>()</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="comment">// Arrange</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        Updater.Update();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        TimeSpan aumento = <span class="keyword">new</span> TimeSpan(10, 0, 0);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        DateTime expected = Updater.FechaActual.Add(aumento);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="comment">// Act</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        Updater.FastForward(aumento);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        DateTime result = Updater.FechaActual;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="comment">// Assert</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        Assert.That(expected.Equals(result));</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    [Test]</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classLibraryTests_1_1UpdaterTests.html#a24b1cd78185df4f601ff4d7ee5060ce2">   83</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLibraryTests_1_1UpdaterTests.html#a24b1cd78185df4f601ff4d7ee5060ce2">FastForwardFechaFake</a>()</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="comment">// Arrange</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        Updater.Update();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        DateTime fecha = <span class="keyword">new</span> DateTime(2029, 09, 02);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        TimeSpan aumento = <span class="keyword">new</span> TimeSpan(days:20,0, 0, 0);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        DateTime expected = <span class="keyword">new</span> DateTime(2029, 09, 22);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="comment">// Act</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        Updater.FakeUpdate(fecha);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        Updater.FastForward(aumento);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        DateTime result = Updater.FechaActual;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="comment">// Assert</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        Assert.That(expected.Equals(result));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
 <div class="ttc" id="aclassLibraryTests_1_1UpdaterTests_html"><div class="ttname"><a href="classLibraryTests_1_1UpdaterTests.html">LibraryTests.UpdaterTests</a></div><div class="ttdef"><b>Definition:</b> <a href="UpdaterTests_8cs_source.html#l00005">UpdaterTests.cs:6</a></div></div>
-<div class="ttc" id="anamespaceLibraryTests_html"><div class="ttname"><a href="namespaceLibraryTests.html">LibraryTests</a></div><div class="ttdef"><b>Definition:</b> <a href="AdministradorTests_8cs_source.html#l00001">AdministradorTests.cs:1</a></div></div>
+<div class="ttc" id="aclassLibraryTests_1_1UpdaterTests_html_a24b1cd78185df4f601ff4d7ee5060ce2"><div class="ttname"><a href="classLibraryTests_1_1UpdaterTests.html#a24b1cd78185df4f601ff4d7ee5060ce2">LibraryTests.UpdaterTests.FastForwardFechaFake</a></div><div class="ttdeci">void FastForwardFechaFake()</div><div class="ttdoc">Tests de que el método Updater.FastForward funcione bien en conjunto con una fecha falsa establecida ...</div><div class="ttdef"><b>Definition:</b> <a href="UpdaterTests_8cs_source.html#l00083">UpdaterTests.cs:83</a></div></div>
+<div class="ttc" id="aclassLibraryTests_1_1UpdaterTests_html_a4fd1295ffd364d98e349728b9b7e036e"><div class="ttname"><a href="classLibraryTests_1_1UpdaterTests.html#a4fd1295ffd364d98e349728b9b7e036e">LibraryTests.UpdaterTests.FastForwardFechaActual</a></div><div class="ttdeci">void FastForwardFechaActual()</div><div class="ttdoc">Test de que el método Updater.FastForward avance la Updater.FechaActual la cantidad de tiempo pasada ...</div><div class="ttdef"><b>Definition:</b> <a href="UpdaterTests_8cs_source.html#l00063">UpdaterTests.cs:63</a></div></div>
+<div class="ttc" id="aclassLibraryTests_1_1UpdaterTests_html_a64373404bd9938aeda914406ddef8790"><div class="ttname"><a href="classLibraryTests_1_1UpdaterTests.html#a64373404bd9938aeda914406ddef8790">LibraryTests.UpdaterTests.FakeUpdate</a></div><div class="ttdeci">void FakeUpdate()</div><div class="ttdoc">Test de que el método Updater.FakeUpdate establezca en el reloj del programa la fecha pasada como par...</div><div class="ttdef"><b>Definition:</b> <a href="UpdaterTests_8cs_source.html#l00043">UpdaterTests.cs:43</a></div></div>
+<div class="ttc" id="aclassLibraryTests_1_1UpdaterTests_html_a8e57d7c22e31dbf0a5bbee667f1e935c"><div class="ttname"><a href="classLibraryTests_1_1UpdaterTests.html#a8e57d7c22e31dbf0a5bbee667f1e935c">LibraryTests.UpdaterTests.FechaActualCheck</a></div><div class="ttdeci">void FechaActualCheck()</div><div class="ttdoc">Test de que la Updater.FechaActual esté al día con la fecha real (apreciacion de 1 segundo).</div><div class="ttdef"><b>Definition:</b> <a href="UpdaterTests_8cs_source.html#l00022">UpdaterTests.cs:22</a></div></div>
+<div class="ttc" id="anamespaceLibraryTests_html"><div class="ttname"><a href="namespaceLibraryTests.html">LibraryTests</a></div><div class="ttdef"><b>Definition:</b> <a href="HistoriasDeUsuario_8cs_source.html#l00001">HistoriasDeUsuario.cs:1</a></div></div>
 <div class="ttc" id="anamespaceLibrary_html"><div class="ttname"><a href="namespaceLibrary.html">Library</a></div><div class="ttdef"><b>Definition:</b> <a href="Aceptacion_8cs_source.html#l00001">Aceptacion.cs:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="dir_6c8e1213d96547949c4ad1dee757a549.html">LibraryTests</a></li><li class="navelem"><b>UpdaterTests.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_13e138d54eb8818da29c3992edef070a.html">test</a></li><li class="navelem"><a class="el" href="dir_6c8e1213d96547949c4ad1dee757a549.html">LibraryTests</a></li><li class="navelem"><a class="el" href="dir_4d6ff3f392fbe4f4eb63d4645ed90cd1.html">UtilidadesTests</a></li><li class="navelem"><b>UpdaterTests.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>

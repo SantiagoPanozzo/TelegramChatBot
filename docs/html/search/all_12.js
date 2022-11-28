@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['update_0',['Update',['../classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e',1,'Library::Solicitud']]],
-  ['updatertests_1',['UpdaterTests',['../classLibraryTests_1_1UpdaterTests.html',1,'LibraryTests']]],
-  ['usuario_2',['Usuario',['../classLibrary_1_1Usuario.html',1,'Library']]],
-  ['usuarioscatalog_3',['UsuariosCatalog',['../classLibrary_1_1UsuariosCatalog.html',1,'Library']]],
-  ['usuariotests_4',['UsuarioTests',['../classLibraryTests_1_1UsuarioTests.html',1,'LibraryTests']]]
+  ['telegrambot_0',['TelegramBot',['../classLibrary_1_1TelegramBot.html',1,'Library']]],
+  ['tipodeusuario_1',['TipoDeUsuario',['../namespaceLibrary.html#a4cb7ae7753cda2aecc9365eead4518c9',1,'Library']]],
+  ['trabajador_2',['Trabajador',['../classLibrary_1_1Trabajador.html',1,'Library.Trabajador'],['../classLibrary_1_1Trabajador.html#a97983678e5335fd1fa6080459376a51b',1,'Library.Trabajador.Trabajador()']]],
+  ['trabajadortests_3',['TrabajadorTests',['../classLibraryTests_1_1TrabajadorTests.html',1,'LibraryTests']]]
 ];

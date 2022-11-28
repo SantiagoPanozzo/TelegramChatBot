@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Object Lifecycle: /home/snowiemischief/projects/Programacion2/pii_2022_2_equipo_21/src/Library/BotHandlers/IniciarSesionHandler.cs Source File</title>
+<title>Object Lifecycle: /home/snowiemischief/projects/programacion2/pii_2022_2_equipo_21/src/Library/BotHandlers/IniciarSesionHandler.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,12 +94,102 @@ $(document).ready(function(){initNavTree('IniciarSesionHandler_8cs_source.html',
   <div class="headertitle"><div class="title">IniciarSesionHandler.cs</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span>Library.BotHandlers;</div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classIniciarSesionHandler.html">    6</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classIniciarSesionHandler.html">IniciarSesionHandler</a>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
-<div class="ttc" id="aclassIniciarSesionHandler_html"><div class="ttname"><a href="classIniciarSesionHandler.html">IniciarSesionHandler</a></div><div class="ttdoc">Solicita al usuario su Nick y su Contraseña y si coinciden con la base de datos procede a InicioHandl...</div><div class="ttdef"><b>Definition:</b> <a href="IniciarSesionHandler_8cs_source.html#l00006">IniciarSesionHandler.cs:6</a></div></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>Telegram.Bot.Types;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>Library.BotHandlers;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceLibrary.html">Library</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classLibrary_1_1IniciarSesionHandler.html">    9</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classLibrary_1_1IniciarSesionHandler.html">IniciarSesionHandler</a> : <a class="code hl_class" href="classLibrary_1_1BaseHandler.html">BaseHandler</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">   12</a></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        Start,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        Username,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        Password,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        Success,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        Error</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classLibrary_1_1IniciarSesionHandler.html#acd6f19cd2609fb46cc9dc25b770acbf1">   21</a></span>    <span class="keyword">public</span> <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a> <a class="code hl_property" href="classLibrary_1_1IniciarSesionHandler.html#acd6f19cd2609fb46cc9dc25b770acbf1">State</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">private</span> Dictionary&lt;long, LoginState&gt; Posiciones = <span class="keyword">new</span> Dictionary&lt;long, LoginState&gt;();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classLibrary_1_1IniciarSesionHandler.html#ac0e91f26c214454ae15d049a4e7eeebd">   28</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classLibrary_1_1IniciarSesionHandler.html#ac0e91f26c214454ae15d049a4e7eeebd">IniciarSesionHandler</a>(<a class="code hl_class" href="classLibrary_1_1BaseHandler.html">BaseHandler</a> next) : base(next)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        this.Keywords = <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;iniciar&quot;</span>, <span class="stringliteral">&quot;login&quot;</span>, <span class="stringliteral">&quot;/login&quot;</span>, <span class="stringliteral">&quot;iniciar sesion&quot;</span>, <span class="stringliteral">&quot;iniciar sesión&quot;</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        this.State = <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Start;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        this._id= Handlers.IniciarSesionHandler;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classLibrary_1_1IniciarSesionHandler.html#aa1e650a5cd0f4a9dab471abdfadc470e">   38</a></span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classLibrary_1_1IniciarSesionHandler.html#aa1e650a5cd0f4a9dab471abdfadc470e">CanHandle</a>(Message message)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">if</span> (!this.Posiciones.ContainsKey(message.From.Id))</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            this.Posiciones[message.From.Id] = <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Start;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">switch</span> (this.Posiciones[message.From.Id])</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Start:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <span class="keywordflow">return</span> base.CanHandle(message);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classLibrary_1_1IniciarSesionHandler.html#a566f96ad9b1d3b6b2fa9d0640d7e924e">   53</a></span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classLibrary_1_1IniciarSesionHandler.html#a566f96ad9b1d3b6b2fa9d0640d7e924e">InternalHandle</a>(Message message, out <span class="keywordtype">string</span> response)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">if</span> (message == <span class="keyword">null</span> || message.From == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;No se recibió un mensaje&quot;</span>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span> (!this.Posiciones.ContainsKey(message.From.Id))</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            this.Posiciones.Add(message.From.Id, <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Start);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        response = <span class="stringliteral">&quot;Error desconocido&quot;</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a> state = this.Posiciones[message.From.Id];</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">switch</span> (state)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Start:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                response = $<span class="stringliteral">&quot;Ingresa tu nombre de usuario&quot;</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                this.Posiciones[message.From.Id] = <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Username;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Username:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                response = $<span class="stringliteral">&quot;Ingresa tu contraseña&quot;</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                this.Posiciones[message.From.Id] = <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Password;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Password:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">switch</span> (message.Text)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    <span class="keywordflow">case</span> <span class="stringliteral">&quot;contraseña correcta&quot;</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                        response = <span class="stringliteral">&quot;Iniciando sesion...&quot;</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                        this.Posiciones[message.From.Id] = <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Success;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                        <span class="comment">// this.Posiciones[message.From.Id] = InicioState.Start;</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    <span class="keywordflow">case</span> <span class="stringliteral">&quot;!contraseña correcta&quot;</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        response = $<span class="stringliteral">&quot;Nombre de usuario o contraseña incorrecta, vuelve a intentarlo\n\nIngresa tu nombre de usuario&quot;</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                        this.Posiciones[message.From.Id] = <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Username;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                response = <span class="stringliteral">&quot;Error desconocido, /login para volver a logearte&quot;</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                this.Posiciones[message.From.Id] = <a class="code hl_enumeration" href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">LoginState</a>.Start;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+<div class="ttc" id="aclassLibrary_1_1BaseHandler_html"><div class="ttname"><a href="classLibrary_1_1BaseHandler.html">Library.BaseHandler</a></div><div class="ttdoc">Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra...</div><div class="ttdef"><b>Definition:</b> <a href="BaseHandler_8cs_source.html#l00015">BaseHandler.cs:16</a></div></div>
+<div class="ttc" id="aclassLibrary_1_1IniciarSesionHandler_html"><div class="ttname"><a href="classLibrary_1_1IniciarSesionHandler.html">Library.IniciarSesionHandler</a></div><div class="ttdoc">Solicita al usuario su Nick y su Contraseña y si coinciden con la base de datos procede a InicioHandl...</div><div class="ttdef"><b>Definition:</b> <a href="IniciarSesionHandler_8cs_source.html#l00009">IniciarSesionHandler.cs:10</a></div></div>
+<div class="ttc" id="aclassLibrary_1_1IniciarSesionHandler_html_a566f96ad9b1d3b6b2fa9d0640d7e924e"><div class="ttname"><a href="classLibrary_1_1IniciarSesionHandler.html#a566f96ad9b1d3b6b2fa9d0640d7e924e">Library.IniciarSesionHandler.InternalHandle</a></div><div class="ttdeci">override void InternalHandle(Message message, out string response)</div><div class="ttdoc">Este método debe ser sobreescrito por las clases sucesores. La clase sucesora procesa el mensaje y as...</div><div class="ttdef"><b>Definition:</b> <a href="IniciarSesionHandler_8cs_source.html#l00053">IniciarSesionHandler.cs:53</a></div></div>
+<div class="ttc" id="aclassLibrary_1_1IniciarSesionHandler_html_a5ad23e11fc3083709ab91019fa7a2167"><div class="ttname"><a href="classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167">Library.IniciarSesionHandler.LoginState</a></div><div class="ttdeci">LoginState</div><div class="ttdoc">Indica los filtros</div><div class="ttdef"><b>Definition:</b> <a href="IniciarSesionHandler_8cs_source.html#l00012">IniciarSesionHandler.cs:13</a></div></div>
+<div class="ttc" id="aclassLibrary_1_1IniciarSesionHandler_html_aa1e650a5cd0f4a9dab471abdfadc470e"><div class="ttname"><a href="classLibrary_1_1IniciarSesionHandler.html#aa1e650a5cd0f4a9dab471abdfadc470e">Library.IniciarSesionHandler.CanHandle</a></div><div class="ttdeci">override bool CanHandle(Message message)</div><div class="ttdef"><b>Definition:</b> <a href="IniciarSesionHandler_8cs_source.html#l00038">IniciarSesionHandler.cs:38</a></div></div>
+<div class="ttc" id="aclassLibrary_1_1IniciarSesionHandler_html_ac0e91f26c214454ae15d049a4e7eeebd"><div class="ttname"><a href="classLibrary_1_1IniciarSesionHandler.html#ac0e91f26c214454ae15d049a4e7eeebd">Library.IniciarSesionHandler.IniciarSesionHandler</a></div><div class="ttdeci">IniciarSesionHandler(BaseHandler next)</div><div class="ttdoc">Inicializa una nueva instancia de la clase BuscarHandler.</div><div class="ttdef"><b>Definition:</b> <a href="IniciarSesionHandler_8cs_source.html#l00028">IniciarSesionHandler.cs:28</a></div></div>
+<div class="ttc" id="aclassLibrary_1_1IniciarSesionHandler_html_acd6f19cd2609fb46cc9dc25b770acbf1"><div class="ttname"><a href="classLibrary_1_1IniciarSesionHandler.html#acd6f19cd2609fb46cc9dc25b770acbf1">Library.IniciarSesionHandler.State</a></div><div class="ttdeci">LoginState State</div><div class="ttdoc">El estado del comando.</div><div class="ttdef"><b>Definition:</b> <a href="IniciarSesionHandler_8cs_source.html#l00021">IniciarSesionHandler.cs:21</a></div></div>
+<div class="ttc" id="anamespaceLibrary_html"><div class="ttname"><a href="namespaceLibrary.html">Library</a></div><div class="ttdef"><b>Definition:</b> <a href="Aceptacion_8cs_source.html#l00001">Aceptacion.cs:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

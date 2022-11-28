@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main_0',['Main',['../classLibrary_1_1TelegramBot.html#a9b235532974f823235e1fccba5ee2f91',1,'Library::TelegramBot']]],
-  ['manual_1',['Manual',['../md_Manual.html',1,'']]]
+  ['library_0',['Library',['../namespaceLibrary.html',1,'']]],
+  ['librarytests_1',['LibraryTests',['../namespaceLibraryTests.html',1,'']]],
+  ['loginstate_2',['LoginState',['../classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167',1,'Library::IniciarSesionHandler']]]
 ];

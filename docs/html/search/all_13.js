@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['vercategoriashandler_0',['VerCategoriasHandler',['../classVerCategoriasHandler.html',1,'']]],
-  ['vercontratoshandler_1',['VerContratosHandler',['../classVerContratosHandler.html',1,'']]],
-  ['verificarcedula_2',['VerificarCedula',['../classLibrary_1_1RegistryHandler.html#a0c15a9f4f299b78bdacc69dedb427a7d',1,'Library::RegistryHandler']]],
-  ['verificarcorreo_3',['VerificarCorreo',['../classLibrary_1_1RegistryHandler.html#a8a92d13456238efd340e8e3c678763e0',1,'Library::RegistryHandler']]],
-  ['verificarnick_4',['VerificarNick',['../classLibrary_1_1RegistryHandler.html#ab807cbae1dac0a1a8d26a3d3dab44b20',1,'Library::RegistryHandler']]],
-  ['verifycontraseña_5',['VerifyContraseña',['../classLibrary_1_1Usuario.html#acbdfa6138482340a11d788735778f6ec',1,'Library::Usuario']]],
-  ['verinfohandler_6',['VerInfoHandler',['../classVerInfoHandler.html',1,'']]],
-  ['verofertashandler_7',['VerOfertasHandler',['../classVerOfertasHandler.html',1,'']]],
-  ['versolicitudeshandler_8',['VerSolicitudesHandler',['../classVerSolicitudesHandler.html',1,'']]],
-  ['verusuarioshandler_9',['VerUsuariosHandler',['../classVerUsuariosHandler.html',1,'']]]
+  ['update_0',['Update',['../classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e',1,'Library::Solicitud']]],
+  ['updatertests_1',['UpdaterTests',['../classLibraryTests_1_1UpdaterTests.html',1,'LibraryTests']]],
+  ['usuario_2',['Usuario',['../classLibrary_1_1Usuario.html',1,'Library']]],
+  ['usuarioscatalog_3',['UsuariosCatalog',['../classLibrary_1_1UsuariosCatalog.html',1,'Library']]],
+  ['usuariotests_4',['UsuarioTests',['../classLibraryTests_1_1UsuarioTests.html',1,'LibraryTests']]]
 ];

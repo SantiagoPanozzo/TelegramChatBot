@@ -7,7 +7,6 @@ var dir_f741251061e5c7c7ed48ab45c3348f11 =
     [ "Solicitud", "dir_a22383398612a44f9393e00bb3faf067.html", "dir_a22383398612a44f9393e00bb3faf067" ],
     [ "Usuarios", "dir_4d88b21f930827c62b4a9d21c48da663.html", "dir_4d88b21f930827c62b4a9d21c48da663" ],
     [ "Aceptacion.cs", "Aceptacion_8cs_source.html", null ],
-    [ "Buscador.cs", "Buscador_8cs_source.html", null ],
     [ "Calificacion.cs", "Calificacion_8cs_source.html", null ],
     [ "ContratoHandler.cs", "ContratoHandler_8cs_source.html", null ],
     [ "DistanceCalc.cs", "DistanceCalc_8cs_source.html", null ],
@@ -15,5 +14,6 @@ var dir_f741251061e5c7c7ed48ab45c3348f11 =
     [ "ICalificable.cs", "ICalificable_8cs_source.html", null ],
     [ "IDesactivable.cs", "IDesactivable_8cs_source.html", null ],
     [ "RegistryHandler.cs", "RegistryHandler_8cs_source.html", null ],
+    [ "SearchHandler.cs", "SearchHandler_8cs_source.html", null ],
     [ "Updater.cs", "Updater_8cs_source.html", null ]
 ];

@@ -10,7 +10,6 @@ var dir_715004a672e71e5c1ede9cd73515afb5 =
     [ "IniciarSesionHandler.cs", "IniciarSesionHandler_8cs_source.html", null ],
     [ "InicioHandler.cs", "InicioHandler_8cs_source.html", null ],
     [ "OfertarHandler.cs", "OfertarHandler_8cs_source.html", null ],
-    [ "OfertarServicioHandler.cs", "OfertarServicioHandler_8cs_source.html", null ],
     [ "PanelDeControlHandler.cs", "PanelDeControlHandler_8cs_source.html", null ],
     [ "RegistrarHandler.cs", "RegistrarHandler_8cs_source.html", null ],
     [ "StartHandler.cs", "StartHandler_8cs_source.html", null ],
