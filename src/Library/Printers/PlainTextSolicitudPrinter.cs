@@ -1,8 +1,8 @@
 namespace Library;
 
-public class PlainTextSolicitudPrinter : ITextPrinter<Solicitud>
+public class PlainTextSolicitudPrinter : ITextPrinter<Solicitud, Usuario>
 {
-    public string Print(List<Solicitud> solicitudes, Usuario user) {
+    public string PrintAll(List<Solicitud> solicitudes, Usuario user) {
         string response= ($"Solicitudes en total {solicitudes.Count}\n");
         if (user.GetTipo().Equals(TipoDeUsuario.Empleador)){
             foreach (var sol in solicitudes) {
@@ -21,4 +21,5 @@ public class PlainTextSolicitudPrinter : ITextPrinter<Solicitud>
         }
         return response;
     }
+    
 }

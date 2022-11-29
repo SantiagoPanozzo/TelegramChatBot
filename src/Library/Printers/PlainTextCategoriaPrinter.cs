@@ -1,9 +1,9 @@
 namespace Library;
 
 
-public class PlainTextCategoriaPrinter : ITextPrinter<Categoria>
+public class PlainTextCategoriaPrinter : ITextPrinter<Categoria, Usuario>
 {
-    public string Print(List<Categoria> catalog, Usuario user)
+    public string PrintAll(List<Categoria> catalog, Usuario user)
     {
         string response = $"Categorías ({catalog.Count} en total)";
 

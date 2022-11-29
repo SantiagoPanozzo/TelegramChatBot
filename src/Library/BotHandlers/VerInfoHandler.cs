@@ -1,8 +1,37 @@
+using Telegram.Bot.Types;
+
 namespace Library.BotHandlers;
 
 /// <summary> Muestra toda la información correspondiente al <see cref="Usuario"/> que tiene la sesión iniciada, ya sea
 /// <see cref="Trabajador"/> o <see cref="Administrador"/>. Le permite también darse de baja de la plataforma o
 /// volver al <see cref="InicioHandler"/>. </summary>
-public class VerInfoHandler {
+public class VerInfoHandler : BaseHandler
+{
+    protected string id;
+    public VerInfoHandler(BaseHandler next): base(next)
+    {
+        Keywords = new string[] { "ver info", "verinfo", "/verinfo" };
+        id = "VerInfoHandler";
+    }
+
+    protected override void InternalHandle(Message message, out string response)
+    {
+        bool isLogged = HandlerHandler.CachedLogins.ContainsKey(message.From.Id);
+        
+        if (isLogged)
+        {
+            Usuario user = HandlerHandler.CachedLogins[message.From.Id];
+            /*
+            ITextPrinter<Usuario, Usuario> printer = new PlainTextUserPrinter();
+            response = printer.PrintOne(user);
+            */
+            ITextPrinter<Usuario, Usuario> printer = new PlainTextUserPrinter();
+            List<Usuario> users = new();
+            users.Add(user);
+            response = $"{printer.PrintAll(users, user)}";  //Muy feo, arreglarlo mañana
+            return;
+        }
+        response = "El usuario no ha iniciado sesión. Inicie sesión con /login";
+    }
     
 }

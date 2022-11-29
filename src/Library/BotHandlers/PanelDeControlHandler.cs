@@ -124,7 +124,7 @@ public class PanelDeControlHandler : BaseHandler
             switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = PanelState.VerCategorias;
-                    response=$"{CatPrinter.Print(catalog.GetCategorias() , admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
+                    response=$"{CatPrinter.PrintAll(catalog.GetCategorias() , admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
