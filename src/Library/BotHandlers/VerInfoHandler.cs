@@ -10,12 +10,21 @@ public class VerInfoHandler : BaseHandler
     protected string id;
     public VerInfoHandler(BaseHandler next): base(next)
     {
-        Keywords = new string[] { "ver info", "verinfo", "/verinfo" };
+        Keywords = new string[] {"ver info", "verinfo", "/verinfo" };
         id = "VerInfoHandler";
+    }
+
+    protected override bool CanHandle(Message message)
+    {
+        return base.CanHandle(message);
     }
 
     protected override void InternalHandle(Message message, out string response)
     {
+        if (message == null || message.From == null || message.Text == null) {
+            throw new Exception("No se recibió un mensaje");
+        }
+
         bool isLogged = HandlerHandler.CachedLogins.ContainsKey(message.From.Id);
         
         if (isLogged)
@@ -29,6 +38,7 @@ public class VerInfoHandler : BaseHandler
             List<Usuario> users = new();
             users.Add(user);
             response = $"{printer.PrintAll(users, user)}";  //Muy feo, arreglarlo mañana
+            response = "a?";
             return;
         }
         response = "El usuario no ha iniciado sesión. Inicie sesión con /login";

@@ -96,7 +96,7 @@ public class TelegramBot {
 
         Bot = new TelegramBotClient(token);
 
-        firstHandler = new InfoHandler( new IniciarSesionHandler(new StartHandler(new PanelDeControlHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler(new DefaultHandler(null, Bot))))))));
+        firstHandler = new InfoHandler( new IniciarSesionHandler(new StartHandler(new PanelDeControlHandler(new CategoriasHandler(Bot, new RegistrarHandler(new BuscarHandler((new VerInfoHandler(new DefaultHandler(null, Bot))))))))));
 
         // secondHandler = new InicioHandler(new DefaultHandler(null, Bot));
 
