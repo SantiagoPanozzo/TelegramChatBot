@@ -111,6 +111,11 @@ public class CategoriasCatalog
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
+            foreach (Categoria cat in Categorias) {
+                if (cat.Descripcion.Equals(descripcion)) {
+                    throw new AccionInnecesariaException("La categoria ya existe");
+                }
+            }
             Categoria nuevaCategoria = new Categoria(descripcion);
             this.Categorias.Add(nuevaCategoria);
             return nuevaCategoria;

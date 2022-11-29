@@ -1,6 +1,6 @@
 namespace Library;
 
-public class PlainTextAdminSolicitudPrinter<Administrador> {
+public class PlainTextAdminSolicitudPrinter : IPlainTextSolicitudPrinter<Administrador> {
     public string Print(List<Solicitud> solicitudes) {
         string result = "Solicitudes:\n";
         foreach (Solicitud sol in solicitudes) {
