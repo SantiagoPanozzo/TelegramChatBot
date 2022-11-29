@@ -1,11 +1,13 @@
 using Telegram.Bot.Types;
 using System;
 using Library.BotHandlers;
+using Library.Excepciones;
 
 namespace Library;
 /// <summary> Solicita al usuario su Nick y su Contraseña y si coinciden con la base de datos pasa a <see cref="InicioHandler"/>. </summary>
 public class IniciarSesionHandler : BaseHandler
 {
+    private RegistryHandler RegistryHandler { get { return RegistryHandler.GetInstance(); } }
     /// <summary> Enum para indicar el estado de <see cref="IniciarSesionHandler"/> </summary>
     public enum LoginState
     {
@@ -17,6 +19,8 @@ public class IniciarSesionHandler : BaseHandler
     }
     /// <summary> El estado del comando. </summary>
     public LoginState State { get; set; }
+
+    private string _tempLogin = String.Empty;
 
     /// <summary> Diccionario que guarda el estado en el <see cref="IHandler"/> según el ID de Telegram. </summary>
     /// <typeparam name="long"> ID de usuario de Telegram. </typeparam>
@@ -55,7 +59,7 @@ public class IniciarSesionHandler : BaseHandler
     /// <param name="response"> Respuesta al mensaje procesado </param>
     protected override void InternalHandle(Message message, out string response)
     {
-        if (message == null || message.From == null)
+        if (message == null || message.From == null || message.Text == null)
         {
             throw new Exception("No se recibió un mensaje");
         }
@@ -76,23 +80,42 @@ public class IniciarSesionHandler : BaseHandler
                 this.Posiciones[message.From.Id] = LoginState.Username;
                 break;
             case LoginState.Username:
-                response = $"Ingresa tu contraseña";
-                this.Posiciones[message.From.Id] = LoginState.Password;
+                if (message.Text.ToLower().Equals("volver"))
+                {
+                    this.Posiciones[message.From.Id] = LoginState.Start;
+                    response = "Volviendo a inicio";
+                    break;
+                }
+                if (!RegistryHandler.VerificarNick(message.Text))
+                {
+                    _tempLogin = message.Text;
+                    response = $"Ingresa tu contraseña";
+                    this.Posiciones[message.From.Id] = LoginState.Password;
+                }
+                else response = "No existe un usuario correspondiente al nombre de usuario ingresado, vuelve a intentarlo o escribe \"volver\" para volver al inicio.";
                 break;
             case LoginState.Password:
-                switch (message.Text)
+                if (message.Text.ToLower().Equals("volver"))
                 {
-                    case "contraseña correcta":
-                        response = "Iniciando sesion...";
-                        this.Posiciones[message.From.Id] = LoginState.Success;
-                        // this.Posiciones[message.From.Id] = InicioState.Start;
-                        break;
-                    case "!contraseña correcta":
-                        response = $"Nombre de usuario o contraseña incorrecta, vuelve a intentarlo\n\nIngresa tu nombre de usuario";
-                        this.Posiciones[message.From.Id] = LoginState.Username;
-                        break;
+                    this.Posiciones[message.From.Id] = LoginState.Start;
+                    response = "Volviendo a inicio";
+                    break;
                 }
-            break;
+                Usuario user;
+                try
+                {
+                    user = RegistryHandler.GetUsuario(_tempLogin, message.Text);
+                }
+                catch (FalloDeAutenticacionException e)
+                {
+                    Console.WriteLine(e);
+                    response = "Contraseña incorrecta, vuelve a intentarlo o escribe \"volver\" para regresar al inicio.";
+                    break;
+                }
+                HandlerHandler.CachedLogins[message.From.Id] = user;
+                response = "Sesion iniciada correctamente";
+                this.Posiciones[message.From.Id] = LoginState.Success;
+                break;
             default:
                 response = "Error desconocido, /login para volver a logearte";
                 this.Posiciones[message.From.Id] = LoginState.Start;
