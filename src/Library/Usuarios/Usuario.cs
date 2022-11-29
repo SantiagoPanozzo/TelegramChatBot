@@ -39,7 +39,7 @@ public abstract class Usuario : IDesactivable {
     public Dictionary<string, string> GetPublicInfo()
     {
         Dictionary<string, string> info = new Dictionary<string, string>();
-        info.Add("Nick", this.Nombre);
+        info.Add("Nick", this.Nick);
         info.Add("Nombre", this.Nombre);
         info.Add("Apellido", this.Apellido);
         return info;

@@ -6,7 +6,7 @@ public class SolicitudPrinter : IConsolePrinter<Solicitud> {
     /// <summary> Método que imprime el texto de la lista. </summary>
     /// <param name="solicitudes"> Lista de solicitudes. </param>
     /// <param name="user"> Tipo de usuario que llama al método. </param>
-    public void Print(List<Solicitud> solicitudes, Usuario user) {
+    public void PrintAll(List<Solicitud> solicitudes, Usuario user) {
         Console.WriteLine($"Solicitudes\n");
         if (user.GetTipo().Equals(TipoDeUsuario.Empleador)){
             foreach (var sol in solicitudes) {
