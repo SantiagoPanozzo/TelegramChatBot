@@ -21,8 +21,10 @@ public class PanelDeControlHandler : BaseHandler
         Panel,
         VerCategorias,
         EliminarCategoria,
+        AgregarCategoria,
         CrearCategoria,
         VerOfertas,
+        VerOfertasID,
         EliminarOferta,
         VerSolicitudes,
         EliminarSolicitud,
@@ -31,11 +33,15 @@ public class PanelDeControlHandler : BaseHandler
     }
    /// <summary> El estado del comando. </summary>
     public PanelState State { get; set; }
+    protected Dictionary<string,string> TempPanelInfo = new();
     PlainTextCategoriaPrinter CatPrinter = new();
     PlainTextSolicitudPrinter SolPrinter = new();
+    PlainTextCategoriaPrinter OfPrinter = new();
     ContratoHandler SolCatalog = ContratoHandler.GetInstance();
-   CategoriasCatalog CatCatalog = CategoriasCatalog.GetInstance();
+    CategoriasCatalog CatCatalog = CategoriasCatalog.GetInstance();
+
     static Administrador admin = new("a","b","c","d");
+    int catremove;
 
     private Dictionary<long, PanelState> Posiciones = new Dictionary<long, PanelState>();
 
@@ -89,10 +95,12 @@ public class PanelDeControlHandler : BaseHandler
                 this.Posiciones[message.From.Id] = PanelState.Username;
                 break;
             case PanelState.Username:
+                this.TempPanelInfo["adminusername"]=message.Text;
                 response = $"Ingresa tu contraseña";
                 this.Posiciones[message.From.Id] = PanelState.Password;
                 break;
             case PanelState.Password:
+                this.TempPanelInfo["adminpassword"]=message.Text;
                 switch (message.Text)
                 {
                     case "contraseña correcta":
@@ -122,8 +130,7 @@ public class PanelDeControlHandler : BaseHandler
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
-                    response=$"Ingresa el ID de categoria de las ofertas que deseas ver";
-                    // response=$"\n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
+                    response=$"\n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
                     break;
                 
                 case "3":
@@ -143,11 +150,23 @@ public class PanelDeControlHandler : BaseHandler
             switch(message.Text) {
                 case "1":
                     response=$"¿Que categoría deseas eliminar?";
-                    this.Posiciones[message.From.Id] = PanelState.VerCategorias;
+                    this.Posiciones[message.From.Id] = PanelState.EliminarCategoria;
+                    switch(state){
+                        case PanelState.EliminarCategoria:
+                        catremove=Int32.Parse(message.Text);
+                        CatCatalog.RemoveCategoria(admin, CatCatalog.GetCategoriaById(catremove) );
+                        break;
+                    }
                     break;
                case "2":
-                    response=$"Ingresa los datos de la nueva categoría";
-                    this.Posiciones[message.From.Id] = PanelState.VerCategorias;
+                    response=$"Ingresa la descripción de la categoría";
+                    this.Posiciones[message.From.Id] = PanelState.AgregarCategoria;
+                    switch(state){
+                        case PanelState.AgregarCategoria:
+                        this.TempPanelInfo["addcategoria"]=message.Text;
+                        CatCatalog.AddCategoria(admin, this.TempPanelInfo["addcategoria"] );
+                        break;
+                    }
                     break;
             }
             break;
@@ -177,7 +196,7 @@ public class PanelDeControlHandler : BaseHandler
             }
             break;
             }
-        }
+        Console.WriteLine(string.Join(", ", TempPanelInfo));
 
+        }
     }      
-}

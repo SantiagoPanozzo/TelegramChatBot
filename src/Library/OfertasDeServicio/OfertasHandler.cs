@@ -115,6 +115,21 @@ public class OfertasHandler{
         throw (new ArgumentException("El id ingresado no coincide con ninguna categoria"));
 
     }
+    /// <summary>
+    /// Método para obtener una lista de todas las <see cref="OfertaDeServicio"/>
+    /// </summary>
+    /// <returns></returns>
+    public List<OfertaDeServicio> GetOfertasIgnoreId()
+    {
+        var inst = CategoriasCatalog.GetInstance();
+        var cats = inst.GetCategorias();
+        List<OfertaDeServicio> final = new();
+        foreach (var cat in cats)
+        {
+            final.Concat(GetOfertas(cat.GetId()));
+        }
+        return final;
+    }
 
     /// <summary> Método para obtener una <see cref="OfertaDeServicio"/> por id </summary>
     /// <param name="id"> Id de la <see cref="OfertaDeServicio"/> que se busca </param>
