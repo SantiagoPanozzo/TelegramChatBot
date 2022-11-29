@@ -143,7 +143,7 @@ public class PanelDeControlHandler : BaseHandler
             switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = PanelState.VerCategorias;
-                    response=$"{CatPrinter.Print(CatCatalog.GetCategorias(), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría\n3)Cancelar";
+                    response=$"{CatPrinter.Print(CatCatalog.GetCategorias())}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría\n3)Cancelar";
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
@@ -152,16 +152,16 @@ public class PanelDeControlHandler : BaseHandler
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
                     }
-                    response=$"{OfPrinter.Print(OfCatalog.GetOfertasIgnoreId(), admin)} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
+                    response=$"{OfPrinter.Print(OfCatalog.GetOfertasIgnoreId())} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
                     break;
                 
                 case "3":
                     this.Posiciones[message.From.Id] = PanelState.VerSolicitudes;
-                    response=$"{SolPrinter.Print(SolHandler.GetSolicitudes(admin), admin )}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
+                    response=$"{SolPrinter.Print(SolHandler.GetSolicitudes(admin), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
                     break;
                 case "4":
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
-                    response=$"{UsPrinter.Print(UsCatalog.GetUsuariosIgnoreId(), admin) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";
+                    response=$"{UsPrinter.Print(UsCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";
                     break;
                 case "5":
                     this.Posiciones[message.From.Id] = PanelState.PanelStart;
@@ -320,4 +320,4 @@ public class PanelDeControlHandler : BaseHandler
     return false;
 
     }
-    }      
+}      

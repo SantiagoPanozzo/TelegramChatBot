@@ -1,7 +1,7 @@
 namespace Library;
 public class PlainTextUsuariosPrinter : ITextPrinter<Usuario>
 {
-    public string Print(List<Usuario> users, Usuario user)
+    public string Print(List<Usuario> users)
     {
         string response = "";
 

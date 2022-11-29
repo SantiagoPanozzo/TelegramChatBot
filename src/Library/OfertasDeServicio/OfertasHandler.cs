@@ -115,9 +115,7 @@ public class OfertasHandler{
         throw (new ArgumentException("El id ingresado no coincide con ninguna categoria"));
 
     }
-    /// <summary>
-    /// Método para obtener una lista de todas las <see cref="OfertaDeServicio"/>
-    /// </summary>
+    /// <summary> Método para obtener una lista de todas las <see cref="OfertaDeServicio"/> </summary>
     /// <returns></returns>
     public List<OfertaDeServicio> GetOfertasIgnoreId()
     {

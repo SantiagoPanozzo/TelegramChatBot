@@ -1,7 +1,7 @@
 namespace Library;
 public class PlainTextOfertasPrinter : ITextPrinter<OfertaDeServicio>
 {
-    public string Print(List<OfertaDeServicio> ofertas, Usuario user)
+    public string Print(List<OfertaDeServicio> ofertas)
     {
         string response = "";
 
