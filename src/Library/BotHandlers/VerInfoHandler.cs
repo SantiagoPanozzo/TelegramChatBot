@@ -28,7 +28,7 @@ public class VerInfoHandler : BaseHandler {
         if (isLogged)
         {
             Usuario user = HandlerHandler.CachedLogins[message.From.Id];
-            ITextPrinter<Usuario, Usuario> printer = new PlainTextUserPrinter();
+            ITextPrinter<Usuario> printer = new PlainTextUsuariosPrinter();
 
             //ITextPrinter<Usuario, Usuario> printer = new PlainTextUserInfoPrinter();
             //response = $"{printer.Print(user)}"; Mejor así
@@ -36,10 +36,9 @@ public class VerInfoHandler : BaseHandler {
             List<Usuario> users = new();    //Esto se saca
             users.Add(user);                //Esto se saca
 
-            response = $"{printer.PrintAll(users, user)}";  //Muy feo, arreglarlo mañana
+            response = $"{printer.Print(users)}";  //Muy feo, arreglarlo mañana
             return;
         }
         response = "El usuario no ha iniciado sesión. Inicie sesión con /login";
     }
-    
 }

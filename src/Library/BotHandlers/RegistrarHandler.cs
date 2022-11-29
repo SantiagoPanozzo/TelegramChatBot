@@ -1,4 +1,5 @@
 using Telegram.Bot.Types;
+using System.Text;
 namespace Library.BotHandlers;
 
 /// <summary> Handler para manejar el ingreso de datos del <see cref="Usuario"/>. </summary>
