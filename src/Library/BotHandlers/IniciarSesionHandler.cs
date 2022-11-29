@@ -31,7 +31,7 @@ public class IniciarSesionHandler : BaseHandler
     /// <param name="next"> El próximo <see cref="IHandler"/>. </param>
     public IniciarSesionHandler(BaseHandler next) : base(next)
     {
-        this.Keywords = new string[] { "iniciar", "login", "/login", "iniciar sesion", "iniciar sesión"};
+        this.Keywords = new string[] { "iniciar", "login", "/login", "iniciar sesion", "iniciar sesión", "cerrar sesion", "cerrar sesión", "logout"};
         this.State = LoginState.Start;
         this._id= Handlers.IniciarSesionHandler;
     }
@@ -49,8 +49,6 @@ public class IniciarSesionHandler : BaseHandler
         {
             case LoginState.Start:
                 return base.CanHandle(message);
-            case LoginState.Success:
-                return false;
             default:
                 return true;
         }
@@ -119,6 +117,13 @@ public class IniciarSesionHandler : BaseHandler
                 this.Posiciones[message.From.Id] = LoginState.Success;
                 break;
             case LoginState.Success:
+                if (message.Text.Equals("cerrar sesion") || message.Text.Equals("cerrar sesión") ||
+                    message.Text.Equals("logout"))
+                {
+                    HandlerHandler.CachedLogins.Remove(message.From.Id);
+                    response = "Sesión cerrada correctamente, volviendo a inicio";
+                    this.Posiciones[message.From.Id] = LoginState.Start;
+                }
                 break;
             default:
                 response = "Error desconocido, /login para volver a logearte";
