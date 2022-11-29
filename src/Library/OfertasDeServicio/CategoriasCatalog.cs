@@ -2,9 +2,9 @@ using Library.Excepciones;
 
 namespace Library;
 
-/// <summary> Clase para manejar el catálogo de categorías. </summary>
-/// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
-/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las categorías. -->
+/// <summary> <remarks> Clase para manejar el catálogo de categorías. 
+/// Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las categorías. </summary> </remarks>
 public class CategoriasCatalog
 {
     protected List<Categoria> Categorias;
