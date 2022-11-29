@@ -1,7 +1,7 @@
 using Library.BotHandlers;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-namespace Library;
+namespace Library.BotHandlers;
 
 /// <summary> <see cref="IHandler"/> del patrón Chain of Responsibility que implementa lee la palabra categoria/s
 /// y muestra al usuario una lista con las respectivas categorías. </summary>

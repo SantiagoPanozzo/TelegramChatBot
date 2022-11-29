@@ -13,7 +13,6 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
 using System.Text.Json;
 using Library.BotHandlers;
-using Library.Registro;
 
 namespace Library;
 

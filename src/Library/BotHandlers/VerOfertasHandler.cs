@@ -1,13 +1,9 @@
-using Telegram.Bot;
 using Telegram.Bot.Types;
-using Library;
 namespace Library.BotHandlers;
 
-/// <summary>
-/// Presenta al trabajador cada <see cref="OfertaDeServicio"/> vigente ligada al mismo y le permite calificar al
+/// <summary> Presenta al trabajador cada <see cref="OfertaDeServicio"/> vigente ligada al mismo y le permite calificar al
 /// <see cref="Empleador"/> correspondiente. En caso de un <see cref="Administrador"/> le muestra todas las existentes
-/// y le permite dar de baja alguna.
-/// </summary>
+/// y le permite dar de baja alguna. </summary>
 public class VerOfertasHandler : BaseHandler {
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="CategoriasHandler"/>. Esta clase procesa el mensaje "categorias". </summary>
@@ -35,6 +31,6 @@ public class VerOfertasHandler : BaseHandler {
     protected override void InternalHandle(Message message, out string response) {
         OfertasHandler ofCatalog = OfertasHandler.GetInstance();
         PlainTextOfertasPrinter ofPrinter = new();
-        response = ofPrinter.Print(ofCatalog.GetOfertas()); //TODO xd
+        response = ofPrinter.Print(ofCatalog.GetOfertasIgnoreId()); //TODO xd
     }
 }

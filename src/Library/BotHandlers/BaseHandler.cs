@@ -1,9 +1,6 @@
-using System;
-using System.Linq;
-using Library.BotHandlers;
+using Telegram.Bot;
 using Telegram.Bot.Types;
-
-namespace Library;
+namespace Library.BotHandlers;
 
 /// <summary>
 /// Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una

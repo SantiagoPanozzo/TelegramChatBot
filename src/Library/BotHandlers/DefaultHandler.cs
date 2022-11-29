@@ -1,11 +1,9 @@
-﻿using Library.BotHandlers;
-using Nito.AsyncEx;
+﻿using Nito.AsyncEx;
 using Telegram.Bot;
+using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
-
-namespace Library;
-using Telegram.Bot.Types;
+namespace Library.BotHandlers;
 
 public class DefaultHandler: BaseHandler
 {

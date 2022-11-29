@@ -1,7 +1,5 @@
-using Library.BotHandlers;
 using Telegram.Bot.Types;
-
-namespace Library;
+namespace Library.BotHandlers;
 
 /// <summary> Un "handler" del patrón Chain of Responsibility que implementa el comando "info". </summary>
 public class InfoHandler : BaseHandler {

@@ -1,8 +1,6 @@
 using Telegram.Bot.Types;
-using System;
-using Library.BotHandlers;
+namespace Library.BotHandlers;
 
-namespace Library;
 /// <summary>
 /// Se fija si el Telegram ID de la persona corresponde a un administrador y le pide su contraseña de administrador y la
 /// contrasta con la base de datos. Hecho esto le muestra la opción de ir a <see cref="VerCategoriasHandler"/>, <see cref="VerOfertasHandler"/>
@@ -31,18 +29,20 @@ public class PanelDeControlHandler : BaseHandler
         VerUsuarios,
         EliminarUsuario
     }
-   /// <summary> El estado del comando. </summary>
+    
+    /// <summary> El estado del comando. </summary>
     public PanelState State { get; set; }
-    protected Dictionary<string,string> TempPanelInfo = new();
-    protected PlainTextCategoriaPrinter CatPrinter = new();
-    protected PlainTextSolicitudPrinter SolPrinter = new();
-    protected PlainTextOfertasPrinter OfPrinter = new();
-    protected PlainTextUsuariosPrinter UsPrinter = new();
-    protected ContratoHandler SolHandler = ContratoHandler.GetInstance();
-    protected SolicitudCatalog SolCatalog = SolicitudCatalog.GetInstance();
-    protected CategoriasCatalog CatCatalog = CategoriasCatalog.GetInstance();
-    protected OfertasHandler OfCatalog = OfertasHandler.GetInstance();
-    protected UsuariosCatalog UsCatalog = UsuariosCatalog.GetInstance();
+
+    protected Dictionary<string,string> tempPanelInfo = new();
+    protected PlainTextCategoriaPrinter catPrinter = new();
+    protected PlainTextSolicitudPrinter solPrinter = new();
+    protected PlainTextOfertasPrinter ofPrinter = new();
+    protected PlainTextUsuariosPrinter usPrinter = new();
+    protected ContratoHandler solHandler = ContratoHandler.GetInstance();
+    protected SolicitudCatalog solCatalog = SolicitudCatalog.GetInstance();
+    protected CategoriasCatalog catCatalog = CategoriasCatalog.GetInstance();
+    protected OfertasHandler ofCatalog = OfertasHandler.GetInstance();
+    protected UsuariosCatalog usCatalog = UsuariosCatalog.GetInstance();
 
     static Administrador admin = new("a","b","c","d");
     protected int catremover;
@@ -99,12 +99,12 @@ public class PanelDeControlHandler : BaseHandler
                 this.Posiciones[message.From.Id] = PanelState.Username;
                 break;
             case PanelState.Username:
-                this.TempPanelInfo["adminusername"]=message.Text;
+                this.tempPanelInfo["adminusername"]=message.Text;
                 response = $"Ingresa tu contraseña";
                 this.Posiciones[message.From.Id] = PanelState.Password;
                 break;
             case PanelState.Password:
-                this.TempPanelInfo["adminpassword"]=message.Text;
+                this.tempPanelInfo["adminpassword"]=message.Text;
                 // switch (LoginAdminChecker())
                 switch (message.Text)
 
@@ -143,7 +143,7 @@ public class PanelDeControlHandler : BaseHandler
             switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = PanelState.VerCategorias;
-                    response=$"{CatPrinter.Print(CatCatalog.GetCategorias())}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría\n3)Cancelar";
+                    response=$"{catPrinter.Print(catCatalog.GetCategorias())}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría\n3)Cancelar";
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
@@ -152,16 +152,16 @@ public class PanelDeControlHandler : BaseHandler
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
                     }
-                    response=$"{OfPrinter.Print(OfCatalog.GetOfertasIgnoreId())} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
+                    response=$"{ofPrinter.Print(ofCatalog.GetOfertasIgnoreId())} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
                     break;
                 
                 case "3":
                     this.Posiciones[message.From.Id] = PanelState.VerSolicitudes;
-                    response=$"{SolPrinter.Print(SolHandler.GetSolicitudes(admin), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
+                    response=$"{solPrinter.Print(solHandler.GetSolicitudes(admin), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
                     break;
                 case "4":
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
-                    response=$"{UsPrinter.Print(UsCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";
+                    response=$"{usPrinter.Print(usCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";
                     break;
                 case "5":
                     this.Posiciones[message.From.Id] = PanelState.PanelStart;
@@ -196,7 +196,7 @@ public class PanelDeControlHandler : BaseHandler
                             response = "Volviendo al inicio";
                         }
                         catremover=Int32.Parse(message.Text);
-                        CatCatalog.RemoveCategoria(admin, CatCatalog.GetCategoriaById(catremover));
+                        catCatalog.RemoveCategoria(admin, catCatalog.GetCategoriaById(catremover));
                         response=$"Categoria Eliminada";
                         break;
                     }
@@ -221,8 +221,8 @@ public class PanelDeControlHandler : BaseHandler
                             this.Posiciones[message.From.Id] = PanelState.Panel;
                             response = "Volviendo al inicio";
                         }
-                        this.TempPanelInfo["addcategoria"]=message.Text;
-                        CatCatalog.AddCategoria(admin, this.TempPanelInfo["addcategoria"] );
+                        this.tempPanelInfo["addcategoria"]=message.Text;
+                        catCatalog.AddCategoria(admin, this.tempPanelInfo["addcategoria"] );
                         response=$"Categoria añadida";
                         break;
                     }
@@ -251,7 +251,7 @@ public class PanelDeControlHandler : BaseHandler
                             response = "Volviendo al inicio";
                         }
                         ofremover=Int32.Parse(message.Text);
-                        OfCatalog.DarDeBajaOferta(admin, ofremover);
+                        ofCatalog.DarDeBajaOferta(admin, ofremover);
                         response=$"Oferta eliminada";
                         break;
                     }
@@ -276,7 +276,7 @@ public class PanelDeControlHandler : BaseHandler
                             response = "Volviendo al inicio";
                         }
                         solremover=Int32.Parse(message.Text);
-                        SolCatalog.RemoveSolicitud(SolHandler.GetSolicitud(solremover));
+                        solCatalog.RemoveSolicitud(solHandler.GetSolicitud(solremover));
                         response=$"Solicitud eliminada";
                         break;
                     }
@@ -301,8 +301,8 @@ public class PanelDeControlHandler : BaseHandler
                             this.Posiciones[message.From.Id] = PanelState.Panel;
                             response = "Volviendo al inicio";
                         }
-                        this.TempPanelInfo["usuarioeliminado"]=message.Text;
-                        UsCatalog.RemoveUsuario(admin, UsCatalog.GetUsuarioById(this.TempPanelInfo["usuarioeliminado"]));
+                        this.tempPanelInfo["usuarioeliminado"]=message.Text;
+                        usCatalog.RemoveUsuario(admin, usCatalog.GetUsuarioById(this.tempPanelInfo["usuarioeliminado"]));
                         response=$"Usuario eliminado";
                         break;
                     }
@@ -313,9 +313,9 @@ public class PanelDeControlHandler : BaseHandler
         }
     protected bool LoginAdminChecker()
     {
-    foreach (Usuario user in UsCatalog.GetUsuarios()){
+    foreach (Usuario user in usCatalog.GetUsuarios()){
 
-    if (user.Nick.Equals(this.TempPanelInfo["adminusername"]) && user.VerifyContraseña(this.TempPanelInfo["adminpassword"])){return true;}
+    if (user.Nick.Equals(this.tempPanelInfo["adminusername"]) && user.VerifyContraseña(this.tempPanelInfo["adminpassword"])){return true;}
     }
     return false;
 
