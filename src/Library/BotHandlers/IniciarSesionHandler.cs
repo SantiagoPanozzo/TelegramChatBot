@@ -49,6 +49,8 @@ public class IniciarSesionHandler : BaseHandler
         {
             case LoginState.Start:
                 return base.CanHandle(message);
+            case LoginState.Success:
+                return false;
             default:
                 return true;
         }
@@ -116,10 +118,13 @@ public class IniciarSesionHandler : BaseHandler
                 response = "Sesion iniciada correctamente";
                 this.Posiciones[message.From.Id] = LoginState.Success;
                 break;
+            case LoginState.Success:
+                break;
             default:
                 response = "Error desconocido, /login para volver a logearte";
                 this.Posiciones[message.From.Id] = LoginState.Start;
                 break;
+            
         }
     }
 }
