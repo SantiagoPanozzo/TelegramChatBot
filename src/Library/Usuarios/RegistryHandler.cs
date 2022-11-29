@@ -26,8 +26,6 @@ public class RegistryHandler
             return _instance;
         }
     }
-
-    static Regex ValidEmailRegex = RegexValidarEmail();
     
     /// <summary> Método para borrar los datos de la clase. </summary>
     /// <param name="user"> Tipo de usuario que llama al método. </param>
@@ -136,6 +134,8 @@ public class RegistryHandler
         return true;
     }
     
+    static Regex ValidEmailRegex = RegexValidarEmail();
+
     /// <summary> Referencia: http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx. </summary>
     private static Regex RegexValidarEmail() {
         string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
@@ -144,6 +144,8 @@ public class RegistryHandler
 
         return new Regex(validEmailPattern, RegexOptions.IgnoreCase);
     }
+
+    private static Regex ValidCedulaRegex = new Regex(@"\d.\d\d\d.\d\d\d.\d", RegexOptions.None);
 
     /// <summary> Método para verificar un correo. </summary>
     /// <param name="correo"> Correo para verificar. </param>
@@ -158,20 +160,45 @@ public class RegistryHandler
     /// <returns> Devuelve true si el formato es válido, de lo contrario devuelve false. </returns>
     public bool VerificarCedula(string cedula)
     {
-        cedula = cedula.Replace(".", string.Empty);
-        cedula = cedula.Replace("-", string.Empty);
+        string parsed = ParseCedula(cedula);
+        if (parsed.Contains(".")) return true;
+        return false;
+    }
+
+    /// <summary>
+    /// Método para convertir un string a un formato apropiado de cédula.
+    /// </summary>
+    /// <param name="cedula"> Cedula a ser convertida</param>
+    /// <returns>
+    /// String cedula con puntos y guiones si la entrada es de 7 u 8 caracteres, solo los dígitos si tiene otra
+    /// longitud.
+    /// </returns>
+    public string ParseCedula(string cedula)
+    {
         string validos = "0123456789";
+        string parsed = String.Empty;
+
         foreach (char caracteres in cedula)
         {
-            if (validos.Contains(caracteres))
-            {
-                if (cedula.Length > 6 && cedula.Length <= 8)
-                {
-                    return true;
-                }
-            }
+            if (validos.Contains(caracteres)) parsed += caracteres;
         }
-        return false;
+
+        switch (parsed.Length)
+        {
+            case (7):
+                parsed = parsed.Insert(3, ".");
+                parsed = parsed.Insert(7, "-");
+                break;
+            case (8):
+                parsed = parsed.Insert(1, ".");
+                parsed = parsed.Insert(5, ".");
+                parsed = parsed.Insert(9, "-");
+                break;
+            default:
+                break;
+        }
+
+        return parsed;
     }
     
     /// <summary> Método para eliminar un <see cref="Usuario"/>. </summary>

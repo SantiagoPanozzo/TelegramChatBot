@@ -1,3 +1,4 @@
+using System.Text;
 using Library.BotHandlers;
 using Telegram.Bot.Types;
 
@@ -17,7 +18,24 @@ public class InfoHandler : BaseHandler {
     /// <param name="message"> El mensaje a procesar. </param>
     /// <param name="response"> La respuesta al mensaje procesado. </param>
     /// <returns> true si el mensaje fue procesado; false en caso contrario. </returns>
-    protected override void InternalHandle(Message message, out string response) {
-        response = "A continuación te dejamos una lista con los comandos y sus acciones:\n» Buscar\n» Categorias\n» Info\n» Login\n» Panel de control\n» Registrar\n» Start";
+    protected override void InternalHandle(Message message, out string response)
+    {
+        if (message == null || message.From == null || message.Text == null)
+        {
+            throw new Exception("No se recibió un mensaje");
+        }
+        StringBuilder respuesta = new StringBuilder();
+        respuesta.Append("A continuación te dejamos una lista con los comandos y sus acciones:\n");
+        if (!HandlerHandler.CachedLogins.ContainsKey(message.From.Id))
+        {
+            respuesta.Append("» Registrar\n");
+            respuesta.Append("» Iniciar sesión\n");
+        }
+        else
+        {
+            respuesta.Append("» Cerrar sesión\n» Buscar\n» Categorias\n» Info\n» Panel de control\n» Start");
+        }
+
+        response = respuesta.ToString();
     }
 }
