@@ -4,5 +4,5 @@ digraph "RegistryHandler"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{RegistryHandler\n||+ RegistrarTrabajador()\l+ RegistrarEmpleador()\l+ RegistrarAdministrador()\l+ VerificarNick()\l+ VerificarCorreo()\l+ VerificarCedula()\l+ RemoveUsuario()\l+ GetUsuario()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Clase para manejar el registro"];
+  Node1 [label="{RegistryHandler\n|+ Instance\l|+ RegistrarTrabajador()\l+ RegistrarEmpleador()\l+ RegistrarAdministrador()\l+ VerificarNick()\l+ VerificarCorreo()\l+ VerificarCedula()\l+ RemoveUsuario()\l+ GetUsuario()\l+ GetReputacion()\l+ GetUserInfo()\l+ GetUserContact()\l+ GetTrabajadores()\l+ GetEmpleadores()\l+ Wipe()\l+ GetInstance()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Clase para manejar el registro."];
 }

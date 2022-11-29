@@ -1,17 +1,18 @@
 var searchData=
 [
-  ['rateme_0',['RateMe',['../classLibrary_1_1OfertaDeServicio.html#aeed25698e68c88cf5374dd5afe732b5f',1,'Library::OfertaDeServicio']]],
-  ['reactivar_1',['Reactivar',['../classLibrary_1_1Categoria.html#a9a5b4899556f8bab9818dfb288b51287',1,'Library.Categoria.Reactivar()'],['../classLibrary_1_1OfertaDeServicio.html#a789ed2d43fbd73c8379894f7f12eb96f',1,'Library.OfertaDeServicio.Reactivar()'],['../classLibrary_1_1Solicitud.html#ab49e18741e69a23545ed6de3e3b4670b',1,'Library.Solicitud.Reactivar()'],['../classLibrary_1_1Usuario.html#afd7b0ccc30d52e82c804873c15fc65a3',1,'Library.Usuario.Reactivar()']]],
-  ['rechazarsolicitud_2',['RechazarSolicitud',['../classLibrary_1_1ContratoHandler.html#ad07b990d40d49dc3a2fba8e63289e465',1,'Library::ContratoHandler']]],
-  ['recibirrespuesta_3',['RecibirRespuesta',['../classLibrary_1_1Solicitud.html#af5a3701c9bf3a3272239cfdbad4ca44c',1,'Library::Solicitud']]],
-  ['registraradministrador_4',['RegistrarAdministrador',['../classLibrary_1_1RegistryHandler.html#a3a3c8dbcc470376d7f9082ed727e9cad',1,'Library::RegistryHandler']]],
-  ['registrarempleador_5',['RegistrarEmpleador',['../classLibrary_1_1RegistryHandler.html#a9cea158f44e96feb3ee3b4cf8a2c166c',1,'Library::RegistryHandler']]],
-  ['registrarhandler_6',['RegistrarHandler',['../classRegistrarHandler.html',1,'']]],
-  ['registrartrabajador_7',['RegistrarTrabajador',['../classLibrary_1_1RegistryHandler.html#a0bf9704d7dc2ab9bf3cde59b66012d69',1,'Library::RegistryHandler']]],
-  ['registryhandler_8',['RegistryHandler',['../classLibrary_1_1RegistryHandler.html',1,'Library']]],
-  ['registryhandlertests_9',['RegistryHandlerTests',['../classLibraryTests_1_1RegistryHandlerTests.html',1,'LibraryTests']]],
-  ['removecategoria_10',['RemoveCategoria',['../classLibrary_1_1CategoriasCatalog.html#a3e0b35f2e1dbf53a7dddd9f46fd038b8',1,'Library::CategoriasCatalog']]],
-  ['removeoferta_11',['RemoveOferta',['../classLibrary_1_1Categoria.html#a395e51b351aeb577b6371110ceec8abd',1,'Library::Categoria']]],
-  ['removesolicitud_12',['RemoveSolicitud',['../classLibrary_1_1SolicitudCatalog.html#a24cd6be7e206a35d245bdd8c76671e94',1,'Library::SolicitudCatalog']]],
-  ['removeusuario_13',['RemoveUsuario',['../classLibrary_1_1RegistryHandler.html#a5437661b3a2bc53db95ce02947b4a59a',1,'Library.RegistryHandler.RemoveUsuario()'],['../classLibrary_1_1UsuariosCatalog.html#af152d7cc2e78b41cd23e27834cb69dbd',1,'Library.UsuariosCatalog.RemoveUsuario()']]]
+  ['rateme_0',['RateMe',['../classOfertaDeServicio.html#a402115d7767af8bbe973fd0238108710',1,'OfertaDeServicio']]],
+  ['reactivar_1',['Reactivar',['../classCategoria.html#a71fa1699bec5bb331b8c9ba0e87c3306',1,'Categoria.Reactivar()'],['../classOfertaDeServicio.html#a083bfdd34de8c47e86b600463b3d6df7',1,'OfertaDeServicio.Reactivar()'],['../classSolicitud.html#af35f71427ad9ed4ab1240338b9ea6044',1,'Solicitud.Reactivar()'],['../classUsuario.html#ab14c3bb6224754c307a1a093e946dd44',1,'Usuario.Reactivar()']]],
+  ['rechazarsolicitud_2',['RechazarSolicitud',['../classContratoHandler.html#a22c683b52c1a747fb0c9f2f1b22974f8',1,'ContratoHandler']]],
+  ['recibirrespuesta_3',['RecibirRespuesta',['../classSolicitud.html#a0b8fe23fefe4d1fa1ff6c9d054d51631',1,'Solicitud']]],
+  ['registraradministrador_4',['RegistrarAdministrador',['../classRegistryHandler.html#a34b0f1b9b4acc46173e8df18b6d13daf',1,'RegistryHandler']]],
+  ['registrarempleador_5',['RegistrarEmpleador',['../classRegistryHandler.html#a7d3db6da50fd5991c864aad52ba21a2b',1,'RegistryHandler']]],
+  ['registrarhandler_6',['RegistrarHandler',['../classRegistrarHandler.html',1,'RegistrarHandler'],['../classRegistrarHandler.html#a8f36d441876cb3b9e179c77ff21cb49d',1,'RegistrarHandler.RegistrarHandler(BaseHandler next)']]],
+  ['registrarstate_7',['RegistrarState',['../classRegistrarHandler.html#a27f6029b4d042012ed2d8522ca200a36',1,'RegistrarHandler']]],
+  ['registrartrabajador_8',['RegistrarTrabajador',['../classRegistryHandler.html#a385fec37ba8343a4d75225f0451218e6',1,'RegistryHandler']]],
+  ['registryhandler_9',['RegistryHandler',['../classRegistryHandler.html',1,'']]],
+  ['registryhandlertests_10',['RegistryHandlerTests',['../classRegistryHandlerTests.html',1,'']]],
+  ['removecategoria_11',['RemoveCategoria',['../classCategoriasCatalog.html#ad0b5c36522f6c81c69aceea4c07c9ac0',1,'CategoriasCatalog']]],
+  ['removeoferta_12',['RemoveOferta',['../classCategoria.html#aa1b195de0095e51387402976244b4934',1,'Categoria']]],
+  ['removesolicitud_13',['RemoveSolicitud',['../classSolicitudCatalog.html#ad441a1c578b0eebdec7527028281fca8',1,'SolicitudCatalog']]],
+  ['removeusuario_14',['RemoveUsuario',['../classRegistryHandler.html#a5891aaccf0f0b364757161dcf5f97ab5',1,'RegistryHandler.RemoveUsuario()'],['../classUsuariosCatalog.html#a961c4715374589f1eef9ff7a65dd8866',1,'UsuariosCatalog.RemoveUsuario()']]]
 ];

@@ -2,9 +2,8 @@ digraph "Graphical Class Hierarchy"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="VerSolicitudesHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerSolicitudesHandler.html",tooltip="Muestra cada Solicitud no-finalizada que esté ligada al Empleador que tenga la sesión iniciada y le p..."];
+  Node0 [label="VerInfoHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVerInfoHandler.html",tooltip="Muestra toda la información correspondiente al Usuario que tiene la sesión iniciada,..."];
 }

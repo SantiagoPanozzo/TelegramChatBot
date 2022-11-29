@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['basehandler_0',['BaseHandler',['../classLibrary_1_1BaseHandler.html#a2679bb9777934a343402143c8c9d3790',1,'Library.BaseHandler.BaseHandler(IHandler next)'],['../classLibrary_1_1BaseHandler.html#a1ef2ab46879d4c0cd867b183d711d7e0',1,'Library.BaseHandler.BaseHandler(string[] keywords, BaseHandler next)']]],
-  ['buscarhandler_1',['BuscarHandler',['../classLibrary_1_1BuscarHandler.html#ad8bcebd3a3efc35dfa80928463dbe455',1,'Library::BuscarHandler']]]
+  ['basehandler_0',['BaseHandler',['../classBaseHandler.html#af7624435c9344b7c7db2522574edf1ad',1,'BaseHandler.BaseHandler(IHandler next)'],['../classBaseHandler.html#a178f229f11c83e7039cc1b806ea6a62e',1,'BaseHandler.BaseHandler(string[] keywords, BaseHandler next)']]],
+  ['buscarhandler_1',['BuscarHandler',['../classBuscarHandler.html#a1c09870a9690bfcb5ecbc5f7ab1d4599',1,'BuscarHandler']]]
 ];

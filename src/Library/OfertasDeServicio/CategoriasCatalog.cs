@@ -1,8 +1,10 @@
+using Library.Excepciones;
+
 namespace Library;
 
-/// <summary> Clase para manejar el catálogo de categorías </summary>
+/// <summary> Clase para manejar el catálogo de categorías. </summary>
 /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
-/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las categorías -->
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las categorías. -->
 public class CategoriasCatalog
 {
     protected List<Categoria> Categorias;
@@ -23,40 +25,44 @@ public class CategoriasCatalog
     }
     
 
-    /// <summary> Método para borrar los datos de la clase </summary>
-    /// <param name="user"> Tipo de usuario que llama al método </param>
+    /// <summary> Método para borrar los datos de la clase. </summary>
+    /// <param name="user"> Tipo de usuario que llama al método. </param>
     public static void Wipe(Usuario user)
     {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
             CategoriasCatalog._instance = null;
         }
+        else
+        {
+            throw (new ElevacionException("Solo un administrador puede utilizar el método Wipe() de CategoriasCatalog"));
+        }
     }
     
-    /// <summary> Constructor de la clase, inicia la lista de las categorías </summary>
+    /// <summary> Constructor de la clase, inicia la lista de las categorías. </summary>
     private CategoriasCatalog()
     {
         this.Categorias = new List<Categoria>();
     }
 
-    /// <summary>Método para obtener la instancia del catálogo de categorías</summary>
-    /// <returns>devuelve la instancia creada del catálogo</returns>
+    /// <summary> Método para obtener la instancia del catálogo de categorías. </summary>
+    /// <returns> Devuelve la instancia creada del catálogo. </returns>
 
     public static CategoriasCatalog GetInstance()
     {
         return CategoriasCatalog.Instance;
     }
 
-    /// <summary> Método para conocer las categorias </summary>
-    /// <returns> Retorna la lista de categorías </returns>
+    /// <summary> Método para conocer las categorias. </summary>
+    /// <returns> Retorna la lista de categorías. </returns>
     public List<Categoria> GetCategorias()
     {
         return this.Categorias;
     }
 
-    /// <summary> Método para obtener <see cref="OfertaDeServicio"/> por id </summary>
-    /// <param name="id"> Valor del id que se quiere filtrar </param>
-    /// <returns> Devuelve la <see cref="OfertaDeServicio"/> filtrada por el id dado </returns>
+    /// <summary> Método para obtener <see cref="OfertaDeServicio"/> por id. </summary>
+    /// <param name="id"> Valor del id que se quiere filtrar. </param>
+    /// <returns> Devuelve la <see cref="OfertaDeServicio"/> filtrada por el id dado. </returns>
     public OfertaDeServicio GetOfertaById(int id)
     {
         foreach (Categoria categoria in Categorias)
@@ -64,13 +70,13 @@ public class CategoriasCatalog
             return categoria.GetOfertaById(id);
         }
 
-        throw (new("No se encontró la oferta"));
+        throw (new NotFoundException("No se encontró la oferta correspondiente a ese ID"));
 
     }
 
-    /// <summary> Método para obtener una categoría por descripción </summary>
-    /// <param name="descripcion"> Descripción filtro para la busqueda </param>
-    /// <returns> Devuelve <see cref="Categoria"/> según el filtro de la descripción </returns>
+    /// <summary> Método para obtener una categoría por descripción. </summary>
+    /// <param name="descripcion"> Descripción filtro para la busqueda. </param>
+    /// <returns> Devuelve <see cref="Categoria"/> según el filtro de la descripción. </returns>
     public Categoria GetCategoria(string descripcion)
     {
         foreach (Categoria categoria in Categorias)
@@ -83,9 +89,9 @@ public class CategoriasCatalog
         throw (new ArgumentException("Los datos introducidos no corresponen a ninguna categoria existente"));
     }
 
-    /// <summary> Método para obtener una categoría por id </summary>
-    /// <param name="id"> Id filtro para la busqueda </param>
-    /// <returns> Devuelve <see cref="Categoria"/> según el filtro de id </returns>
+    /// <summary> Método para obtener una categoría por id. </summary>
+    /// <param name="id"> Id filtro para la busqueda. </param>
+    /// <returns> Devuelve <see cref="Categoria"/> según el filtro de id. </returns>
     public Categoria GetCategoriaById(int id)
     {
         foreach (Categoria categoria in Categorias)
@@ -98,9 +104,9 @@ public class CategoriasCatalog
         throw (new ArgumentException("Los datos introducidos no corresponen a ninguna categoria existente"));
     }
 
-    /// <summary> Método para agregar una nueva categoría al catálogo </summary>
-    /// <param name="user"> Tipo de <see cref="Usuario"/> </param>
-    /// <param name="descripcion"> Descripción de la categoría </param>
+    /// <summary> Método para agregar una nueva categoría al catálogo. </summary>
+    /// <param name="user"> Tipo de <see cref="Usuario"/>. </param>
+    /// <param name="descripcion"> Descripción de la categoría. </param>
     public Categoria AddCategoria(Usuario user, string descripcion)
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
@@ -113,9 +119,9 @@ public class CategoriasCatalog
         throw (new("Solo un administrador puede agregar categorías"));
     }
 
-    /// <summary> Método para eliminar una categoría </summary>
-    /// <param name="user"> Tipo de <see cref="Usuario"/> </param>
-    /// <param name="categoria"> <see cref="Categoria"/> que se desea eliminar </param>
+    /// <summary> Método para eliminar una categoría. </summary>
+    /// <param name="user"> Tipo de <see cref="Usuario"/>. </param>
+    /// <param name="categoria"> <see cref="Categoria"/> que se desea eliminar. </param>
     public void RemoveCategoria(Usuario user, Categoria categoria)
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))

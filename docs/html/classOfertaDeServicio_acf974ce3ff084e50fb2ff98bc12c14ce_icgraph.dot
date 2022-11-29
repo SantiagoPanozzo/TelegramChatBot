@@ -5,11 +5,13 @@ digraph "OfertaDeServicio.GetCalificacion"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="OfertaDeServicio.GetCalificacion",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener una calificación"];
+  Node1 [label="OfertaDeServicio.GetCalificacion",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener la calificación dada a la oferta tras ser finalizada."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Solicitud.IsRated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a8349db017e45ee12e6fbcd60a85b503e",tooltip="Método para conocer si una oferta fue calificada"];
-  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="Solicitud.Update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a1c7e7e17d1549d2b6618a14a6b4e2c5d",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
+  Node2 [label="Solicitud.GetTrabajadorRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a7ca229dec82153a49889280810342fc5",tooltip="Método para obtener el promedio de calificación de un trabajador."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Solicitud.IsRated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a8349db017e45ee12e6fbcd60a85b503e",tooltip="Método para conocer si una oferta fue calificada."];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="Updater.Update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUpdater.html#a61857607a7e54b46cb298f2fe37705a1",tooltip=" "];
+  Node4 [label="Solicitud.CalificarTrabajador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a9e4791332407be38cded2c602eaabe4c",tooltip="Método para calificar un trabajador."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Solicitud.Update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a856d7dd874dcc3a81bae9baaf19809ad",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
 }

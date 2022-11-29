@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['wipe_0',['Wipe',['../classLibrary_1_1ContratoHandler.html#ad630defa0fa3d95a1261855d4a96e8c0',1,'Library.ContratoHandler.Wipe()'],['../classLibrary_1_1Categoria.html#a9dc64ac957bac65b36af961ff8452bd7',1,'Library.Categoria.Wipe()'],['../classLibrary_1_1CategoriasCatalog.html#a545c5fa5e182ff288af5f7a6679e380a',1,'Library.CategoriasCatalog.Wipe()'],['../classLibrary_1_1OfertaDeServicio.html#a65d1334c2fda213d77789f1de8b2e15d',1,'Library.OfertaDeServicio.Wipe()'],['../classLibrary_1_1OfertasHandler.html#a85e8f00c4e9c7e5b72cbac541b55f754',1,'Library.OfertasHandler.Wipe()'],['../classLibrary_1_1RegistryHandler.html#a0c29a69500a72355605df52f11f2ef1a',1,'Library.RegistryHandler.Wipe()'],['../classLibrary_1_1Solicitud.html#acfbfa706443736c8165543ad9ba09b18',1,'Library.Solicitud.Wipe()'],['../classLibrary_1_1SolicitudCatalog.html#a499d23028c51c6420baa6b0d74558524',1,'Library.SolicitudCatalog.Wipe()'],['../classLibrary_1_1UsuariosCatalog.html#abb9c9adf35b3a7ed363649520f4ed853',1,'Library.UsuariosCatalog.Wipe()']]]
+  ['verificarcedula_0',['VerificarCedula',['../classRegistryHandler.html#a4ba76c1e045bdb0c91f86046ccd7d013',1,'RegistryHandler']]],
+  ['verificarcorreo_1',['VerificarCorreo',['../classRegistryHandler.html#af10d84e8aa21d69e609c9c89a36cab65',1,'RegistryHandler']]],
+  ['verificarnick_2',['VerificarNick',['../classRegistryHandler.html#a37e94f8f67ac04e96431d9dfe7c0d64a',1,'RegistryHandler']]],
+  ['verifycontraseña_3',['VerifyContraseña',['../classUsuario.html#a71c224018699866280b429e4b7e00cb7',1,'Usuario']]]
 ];

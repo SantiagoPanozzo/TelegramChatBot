@@ -1,6 +1,7 @@
 namespace Library;
 
-public class PlainTextCategoriaPrinter : ITextPrinter<Categoria>
+
+public class PlainTextCategoriaPrinter : ITextPrinter<Categoria, Usuario>
 {
     public string Print(List<Categoria> catalog)
     {

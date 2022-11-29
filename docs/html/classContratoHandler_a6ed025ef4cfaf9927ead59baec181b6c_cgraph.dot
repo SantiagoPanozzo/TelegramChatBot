@@ -7,5 +7,7 @@ digraph "ContratoHandler.GetSolicitud"
   rankdir="LR";
   Node1 [label="ContratoHandler.GetSolicitud",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener una solicitud por id"];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Solicitud.GetId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a2d009757c617793c0718de978d3207b9",tooltip="Método para obtener el id de una Solicitud"];
+  Node2 [label="SolicitudCatalog.GetSolicitud",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudCatalog.html#a174e2a43a0c6ba335b735e6ee0e3ac0c",tooltip="Método para obtener una solicitud por id"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Solicitud.GetId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a2d009757c617793c0718de978d3207b9",tooltip="Método para obtener el id de una Solicitud."];
 }

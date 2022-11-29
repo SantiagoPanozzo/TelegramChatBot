@@ -4,7 +4,7 @@ digraph "CategoriasCatalog"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{CategoriasCatalog\n||+ CategoriasCatalog()\l+ GetCategorias()\l+ GetOfertaById()\l+ GetCategoria()\l+ GetCategoriaById()\l+ AddCategoria()\l+ RemoveCategoria()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Clase para manejar el catálogo de categorías"];
+  Node1 [label="{CategoriasCatalog\n|+ Instance\l|+ GetCategorias()\l+ GetOfertaById()\l+ GetCategoria()\l+ GetCategoriaById()\l+ AddCategoria()\l+ RemoveCategoria()\l+ Wipe()\l+ GetInstance()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Clase para manejar el catálogo de categorías."];
   Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" #Categorias" ,arrowhead="odiamond",fontname="Helvetica"];
   Node2 [label="{List\< Categoria \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
 }

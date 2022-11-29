@@ -12,7 +12,7 @@ public class HistoriasDeUsuario
     [TearDown]
     public void Wipe()
     {
-        Administrador root = new Administrador("", "", "", "");
+        Administrador root = new Administrador("root", "toor", "0130123", "abc@acb.cba");
         Categoria.Wipe(root);
         CategoriasCatalog.Wipe(root);
         ContratoHandler.Wipe(root);

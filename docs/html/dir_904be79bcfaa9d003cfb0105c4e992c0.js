@@ -4,5 +4,6 @@ var dir_904be79bcfaa9d003cfb0105c4e992c0 =
     [ "IConsolePrinter.cs", "IConsolePrinter_8cs_source.html", null ],
     [ "ITextPrinter.cs", "ITextPrinter_8cs_source.html", null ],
     [ "PlainTextCategoriaPrinter.cs", "PlainTextCategoriaPrinter_8cs_source.html", null ],
+    [ "PlainTextSolicitudPrinter.cs", "PlainTextSolicitudPrinter_8cs_source.html", null ],
     [ "SolicitudPrinter.cs", "SolicitudPrinter_8cs_source.html", null ]
 ];

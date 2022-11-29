@@ -1,0 +1,11 @@
+digraph "IHandler.Handle"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="IHandler.Handle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Procesa el mensaje o la pasa al siguiente \"handler\" si existe."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="BaseHandler.Handle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBaseHandler.html#ad04bd3828a1129f6f12f44499860215e",tooltip="Procesa el mensaje o lo pasa al siguiente \"handler\" si existe."];
+}

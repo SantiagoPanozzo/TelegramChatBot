@@ -2,28 +2,8 @@ digraph "Graphical Class Hierarchy"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="Library.IActualizable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1IActualizable.html",tooltip="Interfaz para actualizar una fecha"];
-  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
-  Node1 [label="Library.Solicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html",tooltip="Clase Solicitud para iniciar una OfertaDeServicio"];
-  Node8 [label="Library.ICalificable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1ICalificable.html",tooltip="Interfaz para calificar entre Trabajador/es y Empleador/es"];
-  Node8 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node7 [label="Library.Empleador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Empleador.html",tooltip="Clase Empleador que hereda de Usuario"];
-  Node8 -> Node9 [dir="back",color="steelblue1",style="solid"];
-  Node9 [label="Library.Trabajador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Trabajador.html",tooltip="Clase que hereda de"];
-  Node2 [label="Library.IDesactivable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1IDesactivable.html",tooltip="Interfaz para el manejo de actividad de un usuario, una categoría, etc."];
-  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="Library.Categoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Categoria.html",tooltip="Clase para conocer y agregar categorias de ofertas de servicio"];
-  Node2 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="Library.OfertaDeServicio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertaDeServicio.html",tooltip="Clase que representa una oferta de servicio"];
-  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
-  Node2 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node5 [label="Library.Usuario",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Usuario.html",tooltip="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador"];
-  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node6 [label="Library.Administrador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Administrador.html",tooltip="Clase Administrador que hereda de Usuario"];
-  Node5 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node5 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node0 [label="Distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDistance.html",tooltip=" "];
 }

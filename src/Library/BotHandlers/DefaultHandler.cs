@@ -5,23 +5,33 @@ using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
 namespace Library.BotHandlers;
 
-public class DefaultHandler: BaseHandler
+/// <summary> <see cref="IHandler"/> "default", procesa una respuesta a cualquier mensaje que no lo haga otro handler. </summary>
+public class DefaultHandler : BaseHandler
 {
+    /// <summary> Instancia del bot de Telegram. </summary>
     private TelegramBotClient bot;
+
+    /// <summary> Inicializa una nueva instancia de la clase <see cref="DefaultHandler"/>, 
+    /// procesa todo mensaje que no pueda procesar otro <see cref="IHandler"/>. </summary>
+    /// <param name="next"> Próximo <see cref="IHandler"/>. </param>
+    /// <param name="bot"> Bot de Telegram utilizado. </param>
     public DefaultHandler(BaseHandler next, TelegramBotClient bot) : base(next) {
         this.Keywords = new string[] {"default"};
         this.bot = bot;
         _id = Handlers.DefaultHandler;
     }
 
-    /// <summary>  </summary>
-    /// <param name="message">  </param>
-    /// <returns>  </returns>
+    /// <summary> Verifica que se pueda procesar el mensaje </summary>
+    /// <param name="message"> Mensaje a procesar. </param>.
+    /// <returns> Siempre devuelve true, es la idea para que procese cualquier mensaje. </returns>
     protected override bool CanHandle(Message message)
     {
         return true;
     }
 
+    /// <summary> Procesamiento de los mensajes. </summary>
+    /// <param name="message"> Mensaje a procesar. </param>
+    /// <param name="response"> Respuesta al mensaje. </param>
     protected override void InternalHandle(Message message, out string response)
     {
         response = "????????? q";

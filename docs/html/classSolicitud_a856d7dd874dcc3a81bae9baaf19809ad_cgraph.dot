@@ -1,0 +1,27 @@
+digraph "Solicitud.Update"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Solicitud.Update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Empleador.Calificar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEmpleador.html#a369cfc477afd79472189f923a1ac4700",tooltip="Método para calificar un usuario."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Solicitud.CanEmpleadorBe\lAutoRated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a95ed1355eba68f4ae28e38d66438764b",tooltip="Compara la fecha actual con la fecha límite para calificar."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Solicitud.CanTrabajadorBe\lAutoRated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a7e970fbc2a96b21ab9ab729764da27ff",tooltip="Compara la fecha actual con la fecha límite para calificar."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Solicitud.IsEmpleadorRated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a5d48584d4ec962295b4602c4f2229f30",tooltip="Método para conocer si un empleador fue calificado."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Solicitud.IsRated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitud.html#a8349db017e45ee12e6fbcd60a85b503e",tooltip="Método para conocer si una oferta fue calificada."];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="OfertaDeServicio.GetCalificacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#acf974ce3ff084e50fb2ff98bc12c14ce",tooltip="Método para obtener la calificación dada a la oferta tras ser finalizada."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="OfertaDeServicio.RateMe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#a402115d7767af8bbe973fd0238108710",tooltip="Método para calificar la oferta en cuestión."];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Trabajador.Calificar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html#a21bcdccac73ad3736c05ffa90454788d",tooltip="Método para calificar un usuario."];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="OfertaDeServicio.IsRated",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#a0159059ce4cf04b435113f767efecf59",tooltip="Método para verificar si fue calificada la oferta."];
+}

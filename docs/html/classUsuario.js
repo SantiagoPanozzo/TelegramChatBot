@@ -1,10 +1,10 @@
 var classUsuario =
 [
-    [ "Deactivate", "classUsuario.html#a971485851b1b323fdffc6727799920fa", null ],
-    [ "GetContacto", "classUsuario.html#a0a00d251a62e97ebc4f7ed0029958a28", null ],
+    [ "DarDeBaja", "classUsuario.html#a27cda50e359fbd5269d418679ad38828", null ],
+    [ "GetContacto", "classUsuario.html#a26aef3d18800a268674255dc11a3097e", null ],
     [ "GetTipo", "classUsuario.html#aa70b73e1281e3dd34903a37fc426108f", null ],
-    [ "isActivo", "classUsuario.html#a73197a78134af4d9bad2848fc7fc34c3", null ],
-    [ "ReActivate", "classUsuario.html#a0dbe5db31bf0e1b7f6dc5956d7ab20f1", null ],
+    [ "IsActive", "classUsuario.html#a4a963618b4817eadfc6117830e37a39e", null ],
+    [ "Reactivar", "classUsuario.html#ab14c3bb6224754c307a1a093e946dd44", null ],
     [ "SetContraseña", "classUsuario.html#acdd577090315f498fa8565a4c3b22eb0", null ],
     [ "VerifyContraseña", "classUsuario.html#a71c224018699866280b429e4b7e00cb7", null ]
 ];

@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['telegrambot_0',['TelegramBot',['../classLibrary_1_1TelegramBot.html',1,'Library']]],
-  ['trabajador_1',['Trabajador',['../classLibrary_1_1Trabajador.html',1,'Library']]],
-  ['trabajadortests_2',['TrabajadorTests',['../classLibraryTests_1_1TrabajadorTests.html',1,'LibraryTests']]]
+  ['searchhandler_0',['SearchHandler',['../classSearchHandler.html',1,'']]],
+  ['searchhandlertests_1',['SearchHandlerTests',['../classSearchHandlerTests.html',1,'']]],
+  ['solicitud_2',['Solicitud',['../classSolicitud.html',1,'']]],
+  ['solicitudcatalog_3',['SolicitudCatalog',['../classSolicitudCatalog.html',1,'']]],
+  ['solicitudcatalogtests_4',['SolicitudCatalogTests',['../classSolicitudCatalogTests.html',1,'']]],
+  ['solicitudprinter_5',['SolicitudPrinter',['../classSolicitudPrinter.html',1,'']]],
+  ['solicitudtests_6',['SolicitudTests',['../classSolicitudTests.html',1,'']]],
+  ['starthandler_7',['StartHandler',['../classStartHandler.html',1,'']]]
 ];

@@ -5,7 +5,7 @@ digraph "Trabajador.Trabajador"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="Trabajador.Trabajador",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Constructor de la clase"];
+  Node1 [label="Trabajador.Trabajador",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Constructor de la clase."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Usuario.SetContraseña",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#acdd577090315f498fa8565a4c3b22eb0",tooltip="Método para settear la contraseña"];
+  Node2 [label="Usuario.SetContraseña",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#acdd577090315f498fa8565a4c3b22eb0",tooltip="Método para settear la contraseña."];
 }

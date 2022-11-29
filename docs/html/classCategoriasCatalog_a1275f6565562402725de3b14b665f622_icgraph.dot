@@ -5,9 +5,11 @@ digraph "CategoriasCatalog.GetCategoriaById"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="CategoriasCatalog.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener una categoría por id"];
+  Node1 [label="CategoriasCatalog.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener una categoría por id."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="OfertasHandler.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872",tooltip="Método para obtener una Categoria por id"];
+  Node2 [label="OfertasHandler.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872",tooltip="Método para obtener una Categoria por id."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="OfertasHandler.GetOfertas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1",tooltip="Método para obtener OfertaDeServicio"];
+  Node3 [label="OfertasHandler.GetOfertas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1",tooltip="Método para obtener OfertaDeServicio."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="OfertasHandler.Ofertar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a4171d183ad7e5356a35881f8078fd5c1",tooltip="Constructor de la clase."];
 }

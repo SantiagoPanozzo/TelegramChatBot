@@ -5,11 +5,11 @@ digraph "RegistryHandler.VerificarNick"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="RegistryHandler.VerificarNick",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para verificar el nickname de un Usuario"];
+  Node1 [label="RegistryHandler.VerificarNick",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para verificar el nickname de un Usuario."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="RegistryHandler.Registrar\lAdministrador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a34b0f1b9b4acc46173e8df18b6d13daf",tooltip=" "];
+  Node2 [label="RegistryHandler.Registrar\lAdministrador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a34b0f1b9b4acc46173e8df18b6d13daf",tooltip="Método para registrar un administrador."];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="RegistryHandler.Registrar\lEmpleador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a7d3db6da50fd5991c864aad52ba21a2b",tooltip="Método para registrar un empleador"];
+  Node3 [label="RegistryHandler.Registrar\lEmpleador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a7d3db6da50fd5991c864aad52ba21a2b",tooltip="Método para registrar un empleador."];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="RegistryHandler.Registrar\lTrabajador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a385fec37ba8343a4d75225f0451218e6",tooltip="Método para registrar un trabajador"];
+  Node4 [label="RegistryHandler.Registrar\lTrabajador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a385fec37ba8343a4d75225f0451218e6",tooltip="Método para registrar un trabajador."];
 }

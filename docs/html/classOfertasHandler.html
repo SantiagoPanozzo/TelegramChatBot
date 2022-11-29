@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Object Lifecycle: OfertasHandler Class Reference</title>
+<title>Proyecto Chatbot Grupo 21: OfertasHandler Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Object Lifecycle
+   <div id="projectname">Proyecto Chatbot Grupo 21
    </div>
   </td>
  </tr>
@@ -84,12 +86,13 @@ $(document).ready(function(){initNavTree('classOfertasHandler.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classOfertasHandler-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">OfertasHandler Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Clase para manejar el catálogo de ofertas  
+<p>Clase para manejar el catálogo de ofertas.  
  <a href="classOfertasHandler.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for OfertasHandler:</div>
@@ -100,35 +103,45 @@ Collaboration diagram for OfertasHandler:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a876adfc49f6e1b5fd35aa57f38ea65ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a876adfc49f6e1b5fd35aa57f38ea65ac">Ofertar</a> (string CategoryDesc, <a class="el" href="classTrabajador.html">Trabajador</a> ofertante, string descripcion, string empleo, double precio)</td></tr>
-<tr class="memdesc:a876adfc49f6e1b5fd35aa57f38ea65ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la clase  <a href="classOfertasHandler.html#a876adfc49f6e1b5fd35aa57f38ea65ac">More...</a><br /></td></tr>
-<tr class="separator:a876adfc49f6e1b5fd35aa57f38ea65ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4171d183ad7e5356a35881f8078fd5c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a4171d183ad7e5356a35881f8078fd5c1">Ofertar</a> (int CategoryId, <a class="el" href="classTrabajador.html">Trabajador</a> ofertante, string descripcion, string empleo, double precio)</td></tr>
+<tr class="memdesc:a4171d183ad7e5356a35881f8078fd5c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la clase.  <a href="classOfertasHandler.html#a4171d183ad7e5356a35881f8078fd5c1">More...</a><br /></td></tr>
+<tr class="separator:a4171d183ad7e5356a35881f8078fd5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a2ad6d9d2db484f18d71e3b50c486c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a8a2ad6d9d2db484f18d71e3b50c486c3">DarDeBajaOferta</a> (<a class="el" href="classUsuario.html">Usuario</a> user, int id)</td></tr>
-<tr class="memdesc:a8a2ad6d9d2db484f18d71e3b50c486c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para dar de baja una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a>  <a href="classOfertasHandler.html#a8a2ad6d9d2db484f18d71e3b50c486c3">More...</a><br /></td></tr>
+<tr class="memdesc:a8a2ad6d9d2db484f18d71e3b50c486c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para dar de baja una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a>.  <a href="classOfertasHandler.html#a8a2ad6d9d2db484f18d71e3b50c486c3">More...</a><br /></td></tr>
 <tr class="separator:a8a2ad6d9d2db484f18d71e3b50c486c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33c2ecdf69907a45a5ec13c254c41dea"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classCategoria.html">Categoria</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a33c2ecdf69907a45a5ec13c254c41dea">GetCategorias</a> ()</td></tr>
-<tr class="memdesc:a33c2ecdf69907a45a5ec13c254c41dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener la lista de categorías  <a href="classOfertasHandler.html#a33c2ecdf69907a45a5ec13c254c41dea">More...</a><br /></td></tr>
+<tr class="memdesc:a33c2ecdf69907a45a5ec13c254c41dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener la lista de categorías.  <a href="classOfertasHandler.html#a33c2ecdf69907a45a5ec13c254c41dea">More...</a><br /></td></tr>
 <tr class="separator:a33c2ecdf69907a45a5ec13c254c41dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa69e17fd7233272c4c04c31ae6dad742"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCategoria.html">Categoria</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#aa69e17fd7233272c4c04c31ae6dad742">CrearCategoria</a> (<a class="el" href="classUsuario.html">Usuario</a> user, string descripcion)</td></tr>
-<tr class="memdesc:aa69e17fd7233272c4c04c31ae6dad742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para crear una categoria  <a href="classOfertasHandler.html#aa69e17fd7233272c4c04c31ae6dad742">More...</a><br /></td></tr>
+<tr class="memdesc:aa69e17fd7233272c4c04c31ae6dad742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para crear una categoria.  <a href="classOfertasHandler.html#aa69e17fd7233272c4c04c31ae6dad742">More...</a><br /></td></tr>
 <tr class="separator:aa69e17fd7233272c4c04c31ae6dad742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e4a2a347fd4f2861d3d976bef9844c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a5e4a2a347fd4f2861d3d976bef9844c1">EliminarCategoria</a> (<a class="el" href="classUsuario.html">Usuario</a> user, <a class="el" href="classCategoria.html">Categoria</a> categoria)</td></tr>
-<tr class="memdesc:a5e4a2a347fd4f2861d3d976bef9844c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para eliminar una categoría  <a href="classOfertasHandler.html#a5e4a2a347fd4f2861d3d976bef9844c1">More...</a><br /></td></tr>
+<tr class="memdesc:a5e4a2a347fd4f2861d3d976bef9844c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para eliminar una categoría.  <a href="classOfertasHandler.html#a5e4a2a347fd4f2861d3d976bef9844c1">More...</a><br /></td></tr>
 <tr class="separator:a5e4a2a347fd4f2861d3d976bef9844c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee064b912d719b92da28610ca6c002c1"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1">GetOfertas</a> (int categoriaId)</td></tr>
-<tr class="memdesc:aee064b912d719b92da28610ca6c002c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a>  <a href="classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1">More...</a><br /></td></tr>
+<tr class="memdesc:aee064b912d719b92da28610ca6c002c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a>.  <a href="classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1">More...</a><br /></td></tr>
 <tr class="separator:aee064b912d719b92da28610ca6c002c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42d3b05e970ca29e77161980832193b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7">GetOfertaById</a> (int id)</td></tr>
-<tr class="memdesc:a42d3b05e970ca29e77161980832193b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> por id  <a href="classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7">More...</a><br /></td></tr>
+<tr class="memdesc:a42d3b05e970ca29e77161980832193b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a> por id.  <a href="classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7">More...</a><br /></td></tr>
 <tr class="separator:a42d3b05e970ca29e77161980832193b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd0f922cabb68e54f3a72a4761925872"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCategoria.html">Categoria</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872">GetCategoriaById</a> (int id)</td></tr>
-<tr class="memdesc:acd0f922cabb68e54f3a72a4761925872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> por id  <a href="classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872">More...</a><br /></td></tr>
+<tr class="memdesc:acd0f922cabb68e54f3a72a4761925872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio.">Categoria</a> por id.  <a href="classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872">More...</a><br /></td></tr>
 <tr class="separator:acd0f922cabb68e54f3a72a4761925872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a1bc4a10a97b653d0e81019a6699b9900"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a1bc4a10a97b653d0e81019a6699b9900">Wipe</a> (<a class="el" href="classUsuario.html">Usuario</a> user)</td></tr>
+<tr class="memdesc:a1bc4a10a97b653d0e81019a6699b9900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para borrar los datos de la clase.  <a href="classOfertasHandler.html#a1bc4a10a97b653d0e81019a6699b9900">More...</a><br /></td></tr>
+<tr class="separator:a1bc4a10a97b653d0e81019a6699b9900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ec8218485c0a9c560e34682404d229"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classOfertasHandler.html">OfertasHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#ae5ec8218485c0a9c560e34682404d229">GetInstance</a> ()</td></tr>
+<tr class="memdesc:ae5ec8218485c0a9c560e34682404d229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener la instancia de la clase.  <a href="classOfertasHandler.html#ae5ec8218485c0a9c560e34682404d229">More...</a><br /></td></tr>
+<tr class="separator:ae5ec8218485c0a9c560e34682404d229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Clase para manejar el catálogo de ofertas </p>
+<div class="textblock"><p >Clase para manejar el catálogo de ofertas. </p>
+<p >/// </p>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00006">6</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00009">9</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa69e17fd7233272c4c04c31ae6dad742" name="aa69e17fd7233272c4c04c31ae6dad742"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa69e17fd7233272c4c04c31ae6dad742">&#9670;&nbsp;</a></span>CrearCategoria()</h2>
@@ -156,17 +169,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Método para crear una categoria </p>
+<p>Método para crear una categoria. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">user</td><td>Identificación de TipoDeUsuario que implementa el método </td></tr>
-    <tr><td class="paramname">descripcion</td><td>Descripcioón de la <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> </td></tr>
+    <tr><td class="paramname">user</td><td>Identificación de TipoDeUsuario que implementa el método. </td></tr>
+    <tr><td class="paramname">descripcion</td><td>Descripcioón de la <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio.">Categoria</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Devuelve el catálogo actualizado con la nueva categoría </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve la nueva instancia de categoría creada. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00045">45</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00090">90</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -202,16 +215,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Método para dar de baja una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> </p>
+<p>Método para dar de baja una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">user</td><td>Identificación de TipoDeUsuario que implementa el método </td></tr>
-    <tr><td class="paramname">id</td><td>Id de la oferta </td></tr>
+    <tr><td class="paramname">user</td><td>Identificación de TipoDeUsuario que implementa el método. </td></tr>
+    <tr><td class="paramname">id</td><td>Id de la oferta. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00028">28</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00073">73</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -247,16 +260,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Método para eliminar una categoría </p>
+<p>Método para eliminar una categoría. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">user</td><td>Identificación de TipoDeUsuario que implementa el método </td></tr>
-    <tr><td class="paramname">categoria</td><td><a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> que se desea eliminar </td></tr>
+    <tr><td class="paramname">user</td><td>Identificación de TipoDeUsuario que implementa el método. </td></tr>
+    <tr><td class="paramname">categoria</td><td><a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio.">Categoria</a> que se desea eliminar. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00059">59</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00106">106</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -282,16 +295,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Método para obtener una <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> por id </p>
+<p>Método para obtener una <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio.">Categoria</a> por id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id de la <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> que se busca </td></tr>
+    <tr><td class="paramname">id</td><td>Id de la <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio.">Categoria</a> que se busca. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Devuelve la <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> que coincida con el id ingresado </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve la <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio.">Categoria</a> que coincida con el id ingresado. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00087">87</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00142">142</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -322,14 +335,56 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Método para obtener la lista de categorías </p>
-<dl class="section return"><dt>Returns</dt><dd>Devuelve el catálogo de <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio">Categoria</a> </dd></dl>
+<p>Método para obtener la lista de categorías. </p>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve el catálogo de <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio.">Categoria</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00036">36</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00081">81</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><!-- SVG 6 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 7 -->
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae5ec8218485c0a9c560e34682404d229" name="ae5ec8218485c0a9c560e34682404d229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5ec8218485c0a9c560e34682404d229">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classOfertasHandler.html">OfertasHandler</a> OfertasHandler.GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método para obtener la instancia de la clase. </p>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve la instancia. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00048">48</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 8 -->
 </div>
 </div>
 
@@ -351,26 +406,26 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Método para obtener una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> por id </p>
+<p>Método para obtener una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a> por id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Id de la <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> que se busca </td></tr>
+    <tr><td class="paramname">id</td><td>Id de la <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a> que se busca. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Devuelve la <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> que coincida con el id ingresado </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve la <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a> que coincida con el id ingresado. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00078">78</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00133">133</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 7 -->
+<div class="center"><!-- SVG 9 -->
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 8 -->
+<div class="center"><!-- SVG 10 -->
 </div>
 </div>
 
@@ -392,27 +447,27 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Método para obtener <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> </p>
+<p>Método para obtener <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">categoriaId</td><td>Categoría filtro de la búsqueda </td></tr>
+    <tr><td class="paramname">categoriaId</td><td>Categoría filtro de la búsqueda. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Devuelve todas las <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> que coincida con la categoría ingresada </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve todas las <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a> que coincida con la categoría ingresada. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00068">68</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00123">123</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 9 -->
+<div class="center"><!-- SVG 11 -->
 </div>
 </div>
 
 </div>
 </div>
-<a id="a876adfc49f6e1b5fd35aa57f38ea65ac" name="a876adfc49f6e1b5fd35aa57f38ea65ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a876adfc49f6e1b5fd35aa57f38ea65ac">&#9670;&nbsp;</a></span>Ofertar()</h2>
+<a id="a4171d183ad7e5356a35881f8078fd5c1" name="a4171d183ad7e5356a35881f8078fd5c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4171d183ad7e5356a35881f8078fd5c1">&#9670;&nbsp;</a></span>Ofertar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,8 +475,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a> OfertasHandler.Ofertar </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>CategoryDesc</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>CategoryId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -455,34 +510,73 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor de la clase </p>
+<p>Constructor de la clase. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">CategoryDesc</td><td>Descripción de la categoría </td></tr>
-    <tr><td class="paramname">ofertante</td><td><a class="el" href="classUsuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador">Usuario</a> que oferta su trabajo </td></tr>
-    <tr><td class="paramname">descripcion</td><td>Descripción de la oferta </td></tr>
-    <tr><td class="paramname">empleo</td><td>Rubro de la oferta </td></tr>
-    <tr><td class="paramname">precio</td><td>Precio de la oferta </td></tr>
+    <tr><td class="paramname">CategoryDesc</td><td>Descripción de la categoría. </td></tr>
+    <tr><td class="paramname">ofertante</td><td><a class="el" href="classUsuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador.">Usuario</a> que oferta su trabajo. </td></tr>
+    <tr><td class="paramname">descripcion</td><td>Descripción de la oferta. </td></tr>
+    <tr><td class="paramname">empleo</td><td>Rubro de la oferta. </td></tr>
+    <tr><td class="paramname">precio</td><td>Precio de la oferta. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Devuelve la oferta de tipo <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de sevicio">OfertaDeServicio</a> </dd></dl>
-<p >Por patron Creator se crea instancia de oferta de servicio en esta clase </p>
-<p ><br  />
-</p>
+<dl class="section return"><dt>Returns</dt><dd>Devuelve la oferta de tipo <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00017">17</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00063">63</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 10 -->
+<div class="center"><!-- SVG 12 -->
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1bc4a10a97b653d0e81019a6699b9900" name="a1bc4a10a97b653d0e81019a6699b9900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc4a10a97b653d0e81019a6699b9900">&#9670;&nbsp;</a></span>Wipe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void OfertasHandler.Wipe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUsuario.html">Usuario</a>&#160;</td>
+          <td class="paramname"><em>user</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método para borrar los datos de la clase. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>Tipo de usuario que llama al método. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00030">30</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 13 -->
 </div>
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/mnt/c/Users/Bastet/Projects/WinProgramacion2/pii_2022_2_equipo_21/src/Library/<a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a></li>
+<li>/mnt/c/Users/Bastet/Projects/WinProgramacion2/pii_2022_2_equipo_21/src/Library/OfertasDeServicio/<a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

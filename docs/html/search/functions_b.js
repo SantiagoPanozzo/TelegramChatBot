@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['paneldecontrol_0',['PanelDeControl',['../classLibrary_1_1PanelDeControl.html#a6728a999511e85e8c1d84993e72048bd',1,'Library::PanelDeControl']]],
-  ['print_1',['Print',['../classLibrary_1_1SolicitudPrinter.html#ab3e3b1d5036a214090e065c645ecbefe',1,'Library::SolicitudPrinter']]],
-  ['printcatalog_2',['PrintCatalog',['../classLibrary_1_1CategoriaPrinter.html#ac193be1bbddb8ffe85bb73377dd33518',1,'Library::CategoriaPrinter']]]
+  ['ofertadeservicio_0',['OfertaDeServicio',['../classOfertaDeServicio.html#a1ed8525b42bda970b86ae9827ebaad28',1,'OfertaDeServicio']]],
+  ['ofertar_1',['Ofertar',['../classOfertasHandler.html#a4171d183ad7e5356a35881f8078fd5c1',1,'OfertasHandler']]]
 ];

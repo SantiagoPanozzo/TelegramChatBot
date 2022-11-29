@@ -1,0 +1,11 @@
+digraph "TelegramBot.HandleErrorAsync"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="TelegramBot.HandleErrorAsync",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Manejo de excepciones. Por ahora simplemente la imprimimos en la consola."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="TelegramBot.HandleUpdate\lAsync",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTelegramBot.html#a206f00facccf1a7f5cc1726854a2016e",tooltip="Maneja las actualizaciones del bot (todo lo que llega), incluyendo mensajes, ediciones de mensajes,..."];
+}

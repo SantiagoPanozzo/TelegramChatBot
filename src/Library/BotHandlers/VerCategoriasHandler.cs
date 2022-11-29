@@ -38,3 +38,4 @@ public class VerCategoriasHandler : BaseHandler {
         response = catPrinter.Print(catCatalog.GetCategorias());
     }
 }
+

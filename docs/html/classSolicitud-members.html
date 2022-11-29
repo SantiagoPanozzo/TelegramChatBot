@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Object Lifecycle: Member List</title>
+<title>Proyecto Chatbot Grupo 21: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,8 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Object Lifecycle
+   <div id="projectname">Proyecto Chatbot Grupo 21
    </div>
   </td>
  </tr>
@@ -89,19 +91,28 @@ $(document).ready(function(){initNavTree('classSolicitud.html',''); initResizabl
 <p>This is the complete list of members for <a class="el" href="classSolicitud.html">Solicitud</a>, including all inherited members.</p>
 <table class="directory">
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Aceptada</b> (defined in <a class="el" href="classSolicitud.html">Solicitud</a>)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a99c9a8a76b4045fb5ddc4cc5376696b7">Calificar</a>(Calificacion rate)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#aec4c0dca046a55ee8923bc1816352a38">CanBeAutoRated</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>FechaAceptada</b> (defined in <a class="el" href="classSolicitud.html">Solicitud</a>)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a8546bbd9081c5c28b6769df9fa71c0e3">GetEmpleador</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a8dd1d381715fbd07200803853b18a782">CalificarEmpleador</a>(Trabajador user, Calificacion rate)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a9e4791332407be38cded2c602eaabe4c">CalificarTrabajador</a>(Empleador user, Calificacion rate)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a95ed1355eba68f4ae28e38d66438764b">CanEmpleadorBeAutoRated</a>(DateTime fechaActual)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a7e970fbc2a96b21ab9ab729764da27ff">CanTrabajadorBeAutoRated</a>(DateTime fechaActual)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#aa3870698cfefc250b5a4e07cdf422e41">DarDeBaja</a>(Usuario user)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>FechaAceptada</b> (defined in <a class="el" href="classSolicitud.html">Solicitud</a>)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a1441d8f79a00e304482dd2ac84da33ae">GetEmpleador</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a44cca108dae78893b63314fb07c3aebf">GetEmpleadorRate</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a2d009757c617793c0718de978d3207b9">GetId</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#afbb90dea67fba25a1fa56e13eb50ccc4">GetTrabajador</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a751400e7b7d7d7eb1da8b5a6ebd917cb">IniciarTrabajo</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a7ca229dec82153a49889280810342fc5">GetTrabajadorRate</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#abf979957610d18c3bf71a90ac4ca50f1">GetUbicacion</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#ac9f7db9891a2451e2ed369aaccdc144e">IsActive</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a5d48584d4ec962295b4602c4f2229f30">IsEmpleadorRated</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a8349db017e45ee12e6fbcd60a85b503e">IsRated</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>Oferta</b> (defined in <a class="el" href="classSolicitud.html">Solicitud</a>)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a0b8fe23fefe4d1fa1ff6c9d054d51631">RecibirRespuesta</a>(Aceptacion siONo)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a73b740d3576bc86a4991b51e2b69a797">Solicitud</a>(OfertaDeServicio oferta, Empleador emp)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>TiempoMaximoCalificar</b> (defined in <a class="el" href="classSolicitud.html">Solicitud</a>)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a1c7e7e17d1549d2b6618a14a6b4e2c5d">Update</a>()</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#af35f71427ad9ed4ab1240338b9ea6044">Reactivar</a>(Usuario user)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a0b8fe23fefe4d1fa1ff6c9d054d51631">RecibirRespuesta</a>(Aceptacion siONo)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a73b740d3576bc86a4991b51e2b69a797">Solicitud</a>(OfertaDeServicio oferta, Empleador emp)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>TiempoMaximoCalificar</b> (defined in <a class="el" href="classSolicitud.html">Solicitud</a>)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Trab</b> (defined in <a class="el" href="classSolicitud.html">Solicitud</a>)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSolicitud.html#a856d7dd874dcc3a81bae9baaf19809ad">Update</a>(DateTime fechaActual)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSolicitud.html#a1fd88bed5560cf0db4a2e1d023260463">Wipe</a>(Administrador admin)</td><td class="entry"><a class="el" href="classSolicitud.html">Solicitud</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

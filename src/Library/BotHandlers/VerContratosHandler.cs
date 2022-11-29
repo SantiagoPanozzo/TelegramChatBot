@@ -1,7 +1,8 @@
 using Telegram.Bot.Types;
 namespace Library.BotHandlers;
 
-public class VerContratosHandler
-{
+
+/// <summary> <see cref="IHandler"/> para mostrar contratos según el <see cref="TipoDeUsuario"/> que ingrese </summary>
+public class VerContratosHandler {
     
 }

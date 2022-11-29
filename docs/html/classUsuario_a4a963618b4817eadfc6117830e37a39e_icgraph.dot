@@ -1,0 +1,13 @@
+digraph "Usuario.IsActive"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Usuario.IsActive",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Checkea si el usuario está activo."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="UsuariosCatalog.RemoveUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuariosCatalog.html#a961c4715374589f1eef9ff7a65dd8866",tooltip="Método para eliminar un usuario, en realidad para simplificar simplemente se le daría de baja."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="RegistryHandler.RemoveUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a5891aaccf0f0b364757161dcf5f97ab5",tooltip="Método para eliminar un Usuario."];
+}

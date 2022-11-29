@@ -5,17 +5,17 @@ digraph "OfertasHandler.DarDeBajaOferta"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="OfertasHandler.DarDeBaja\lOferta",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para dar de baja una OfertaDeServicio"];
+  Node1 [label="OfertasHandler.DarDeBaja\lOferta",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para dar de baja una OfertaDeServicio."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="OfertaDeServicio.DarDeBaja",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#aaca8dc149dd2c0bcd2ab4c70aa592486",tooltip="Método para dar de baja un Usuario"];
+  Node2 [label="OfertaDeServicio.DarDeBaja",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#aaca8dc149dd2c0bcd2ab4c70aa592486",tooltip="Método para dar de baja un Usuario."];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="Usuario.GetTipo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#aa70b73e1281e3dd34903a37fc426108f",tooltip="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador"];
+  Node3 [label="Usuario.GetTipo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#aa70b73e1281e3dd34903a37fc426108f",tooltip="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador."];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="OfertasHandler.GetOfertaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7",tooltip="Método para obtener una OfertaDeServicio por id"];
+  Node4 [label="OfertasHandler.GetOfertaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7",tooltip="Método para obtener una OfertaDeServicio por id."];
   Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="CategoriasCatalog.GetOfertaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#a19cc28dc8303a7d6d5b77db7a57d503d",tooltip="Método para obtener OfertaDeServicio por id"];
+  Node5 [label="CategoriasCatalog.GetOfertaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#a19cc28dc8303a7d6d5b77db7a57d503d",tooltip="Método para obtener OfertaDeServicio por id."];
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="Categoria.GetOfertaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoria.html#a89901a153f0f3b2b29be4edd8e3e2435",tooltip="Filtrar OfertaDeServicio por id"];
+  Node6 [label="Categoria.GetOfertaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoria.html#a89901a153f0f3b2b29be4edd8e3e2435",tooltip="Filtrar OfertaDeServicio por id."];
   Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="OfertaDeServicio.GetId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#a08ddd2ddbf7350edba02c0df6479e3be",tooltip="Método para obtener id de OfertaDeServicio"];
+  Node7 [label="OfertaDeServicio.GetId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#a08ddd2ddbf7350edba02c0df6479e3be",tooltip="Método para obtener id de OfertaDeServicio."];
 }

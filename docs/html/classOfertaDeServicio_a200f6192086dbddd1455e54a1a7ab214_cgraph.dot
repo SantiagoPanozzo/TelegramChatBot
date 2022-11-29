@@ -1,0 +1,11 @@
+digraph "OfertaDeServicio.GetReputacion"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="OfertaDeServicio.GetReputacion",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener la reputación del ofertante."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Trabajador.GetReputacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html#aff73d27e40b55c6b134a837095d65d18",tooltip="Método para obtener las calificaciones del usuario."];
+}

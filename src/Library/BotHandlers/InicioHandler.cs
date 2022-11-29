@@ -7,9 +7,7 @@ namespace Library.BotHandlers;
 /// Para un <see cref="Empleador"/> muestra <see cref="VerContratosHandler"/>, <see cref="VerInfoHandler"/> y
 /// y <see cref="BuscarHandler"/> </summary>
 public class InicioHandler : BaseHandler {
-    // Dependiendo del tipo muestra opciones
-    // trabajador muestra Ofertar Servicio, Ver mis ofertas, Ver mi informacion, Ver mis solicitudes pendientes
-    // empleador muestra Ver mis contratos, Ver mi informacion, Buscar
+    /// <summary> Enum para indicar el estado del <see cref="InicioHandler"/>. </summary>
     public enum InicioState {
         Start,
         Empleador,
@@ -17,7 +15,7 @@ public class InicioHandler : BaseHandler {
         Identificarse
     }
 
-    /// <summary> El estado del comando. </summary>
+    /// <summary> Estado de <see cref="InicioHandler"/> </summary>
     public InicioState State { get; set; }
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="InicioHandler"/>. Esta clase procesa el mensaje "Inicio". </summary>
@@ -28,11 +26,14 @@ public class InicioHandler : BaseHandler {
         this._id = Handlers.InicioHandler;
     }
 
+    /// <summary> Diccionario que guarda el estado en el <see cref="IHandler"/> según el ID de Telegram. </summary>
+    /// <typeparam name="long"> ID de usuario de Telegram. </typeparam>
+    /// <typeparam name="LoginState"> Estado del <see cref="IHandler"/>. </typeparam>
     private Dictionary<long, InicioState> Posiciones = new Dictionary<long, InicioState>();
 
-    /// <summary>  </summary>
-    /// <param name="message">  </param>
-    /// <returns>  </returns>
+    /// <summary> Verifica que se pueda procesar el mensaje </summary>
+    /// <param name="message"> Mensaje a procesar </param>
+    /// <returns> true si puede procesar el mensaje, false en caso contrario </returns>
     protected override bool CanHandle(Message message) {
         if (!this.Posiciones.ContainsKey(message.From.Id)) {
             this.Posiciones[message.From.Id] = InicioState.Start;
@@ -45,6 +46,9 @@ public class InicioHandler : BaseHandler {
         }
     }
 
+    /// <summary> Procesamiento de los mensajes. </summary>
+    /// <param name="message"> Mensaje a procesar </param>
+    /// <param name="response"> Respuesta al mensaje procesado </param>
     protected override void InternalHandle(Message message, out string response) {
         if (message == null || message.From == null) {
             throw new Exception("No se recibió un mensaje");
