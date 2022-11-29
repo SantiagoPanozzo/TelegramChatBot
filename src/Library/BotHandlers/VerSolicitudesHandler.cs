@@ -1,3 +1,4 @@
+using Telegram.Bot.Types;
 namespace Library.BotHandlers;
 
 /// <summary> Muestra cada <see cref="Solicitud"/> no-finalizada que esté ligada al <see cref="Empleador"/> que tenga la sesión

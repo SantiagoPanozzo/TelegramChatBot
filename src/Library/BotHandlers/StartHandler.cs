@@ -1,14 +1,12 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Library.BotHandlers;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
 using Nito.AsyncEx;
-
-namespace Library;
+namespace Library.BotHandlers;
 
 /// <summary> Un "handler" del patrón Chain of Responsibility que lee la palabra "start", o el comando /start,
 /// que es lo que se manda si o si al iniciar el chat con el bot en Telegram. </summary>

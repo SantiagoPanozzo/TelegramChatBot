@@ -1,5 +1,4 @@
 using Telegram.Bot.Types;
-using System;
 namespace Library.BotHandlers;
 
 /// <summary> Dependiendo del <see cref="TipoDeUsuario"/> del <see cref="Usuario"/> muestra distintas opciones.

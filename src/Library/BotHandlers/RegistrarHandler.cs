@@ -1,14 +1,5 @@
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Library.BotHandlers;
-using Telegram.Bot;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InputFiles;
-using Nito.AsyncEx;
-namespace Library.Registro;
+namespace Library.BotHandlers;
 
 /// <summary> Handler para manejar el ingreso de datos del <see cref="Usuario"/>. </summary>
 public class RegistrarHandler : BaseHandler
