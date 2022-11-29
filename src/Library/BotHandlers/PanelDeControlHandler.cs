@@ -34,15 +34,20 @@ public class PanelDeControlHandler : BaseHandler
    /// <summary> El estado del comando. </summary>
     public PanelState State { get; set; }
     protected Dictionary<string,string> TempPanelInfo = new();
-    PlainTextCategoriaPrinter CatPrinter = new();
-    PlainTextSolicitudPrinter SolPrinter = new();
-    PlainTextCategoriaPrinter OfPrinter = new();
-    ContratoHandler SolCatalog = ContratoHandler.GetInstance();
-    CategoriasCatalog CatCatalog = CategoriasCatalog.GetInstance();
+    protected PlainTextCategoriaPrinter CatPrinter = new();
+    protected PlainTextSolicitudPrinter SolPrinter = new();
+    protected PlainTextOfertasPrinter OfPrinter = new();
+    protected PlainTextUsuariosPrinter UsPrinter = new();
+    protected ContratoHandler SolHandler = ContratoHandler.GetInstance();
+    protected SolicitudCatalog SolCatalog = SolicitudCatalog.GetInstance();
+    protected CategoriasCatalog CatCatalog = CategoriasCatalog.GetInstance();
+    protected OfertasHandler OfCatalog = OfertasHandler.GetInstance();
+    protected UsuariosCatalog UsCatalog = UsuariosCatalog.GetInstance();
 
     static Administrador admin = new("a","b","c","d");
-    int catremove;
-
+    protected int catremover;
+    protected int ofremover;
+    protected int solremover;
     private Dictionary<long, PanelState> Posiciones = new Dictionary<long, PanelState>();
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="BuscarHandler"/>. </summary>
@@ -87,7 +92,6 @@ public class PanelDeControlHandler : BaseHandler
         response = "Error desconocido";
 
         PanelState state = this.Posiciones[message.From.Id];
-
         switch (state)
         {
             case PanelState.Start:
@@ -101,45 +105,67 @@ public class PanelDeControlHandler : BaseHandler
                 break;
             case PanelState.Password:
                 this.TempPanelInfo["adminpassword"]=message.Text;
+                // switch (LoginAdminChecker())
                 switch (message.Text)
+
                 {
-                    case "contraseña correcta":
-                        response = $"Iniciando sesion...\n\nElige una acción:\n1) Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios";
+                    // case true:
+                    case "si":
+                        response = $"Iniciando sesion...\n\nElige una acción:\n1) Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
                         this.Posiciones[message.From.Id] = PanelState.Panel;
-                        // this.Posiciones[message.From.Id] = InicioState.Start;
+                        if(message.Text.Equals("5"))
+                        {
+                            this.Posiciones[message.From.Id] = PanelState.Panel;
+                            response = "Volviendo al inicio";
+                        }
                         break;
-                    case "!contraseña correcta":
+                    // case false:
+                    case "no":
                         response = $"Nombre de usuario o contraseña incorrecta, vuelve a intentarlo\n\nIngresa tu nombre de usuario";
                         this.Posiciones[message.From.Id] = PanelState.Username;
                         break;
                 }
             break;
-            default:
-                response = "Error desconocido, /admin para volver a logearte";
-                this.Posiciones[message.From.Id] = PanelState.Start;
-                break;
+            // default:
+            //     response = "Error desconocido, /admin para volver a logearte";
+            //     this.Posiciones[message.From.Id] = PanelState.Start;
+            //     break;
         case PanelState.PanelStart:
             this.Posiciones[message.From.Id] = PanelState.Panel;
-            response = $"Elige una acción:\n1) Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios";
+            response = $"Elige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+            if(message.Text.Equals("5"))
+            {
+                this.Posiciones[message.From.Id] = PanelState.Panel;
+                response = "Volviendo al inicio";
+            }
             break;
         case PanelState.Panel:
             switch(message.Text) {
                 case "1":
                     this.Posiciones[message.From.Id] = PanelState.VerCategorias;
-                    response=$"{CatPrinter.Print(CatCatalog.GetCategorias(), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría";
+                    response=$"{CatPrinter.Print(CatCatalog.GetCategorias(), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría\n3)Cancelar";
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
-                    response=$"\n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
+                    if(message.Text.Equals("3"))
+                    {
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Volviendo al inicio";
+                    }
+                    response=$"{OfPrinter.Print(OfCatalog.GetOfertasIgnoreId(), admin)} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
                     break;
                 
                 case "3":
                     this.Posiciones[message.From.Id] = PanelState.VerSolicitudes;
-                    response=$"{SolPrinter.Print(SolCatalog.GetSolicitudes(admin), admin )}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
+                    response=$"{SolPrinter.Print(SolHandler.GetSolicitudes(admin), admin )}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
                     break;
                 case "4":
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
-                    response=$"-Lista de usuarios\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";
+                    response=$"{UsPrinter.Print(UsCatalog.GetUsuariosIgnoreId(), admin) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";
+                    break;
+                case "5":
+                    this.Posiciones[message.From.Id] = PanelState.PanelStart;
+                    response = "Volviendo al inicio";
                     break;
                 default:
                     response = "Verifique que el estado ingresado sea correcto";
@@ -149,40 +175,111 @@ public class PanelDeControlHandler : BaseHandler
         case PanelState.VerCategorias:
             switch(message.Text) {
                 case "1":
-                    response=$"¿Que categoría deseas eliminar?";
+                    response=$"¿Que categoría deseas eliminar? Escribe \"cancelar\" para volver al inicio";
                     this.Posiciones[message.From.Id] = PanelState.EliminarCategoria;
+                    switch(message.Text){
+                        case "cancelar":
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Volviendo al inicio";
+                        break;
+                    }
+                    if(message.Text.Equals("cancelar"))
+                    {
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Volviendo al inicio";
+                    }
                     switch(state){
                         case PanelState.EliminarCategoria:
-                        catremove=Int32.Parse(message.Text);
-                        CatCatalog.RemoveCategoria(admin, CatCatalog.GetCategoriaById(catremove) );
+                        if(message.Text.Equals("cancelar"))
+                        {
+                            this.Posiciones[message.From.Id] = PanelState.Panel;
+                            response = "Volviendo al inicio";
+                        }
+                        catremover=Int32.Parse(message.Text);
+                        CatCatalog.RemoveCategoria(admin, CatCatalog.GetCategoriaById(catremover));
+                        response=$"Categoria Eliminada";
                         break;
                     }
                     break;
                case "2":
-                    response=$"Ingresa la descripción de la categoría";
+                    if(message.Text.Equals("cancelar"))
+                    {
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Volviendo al inicio";
+                    }
+                    response=$"Ingresa la descripción de la categoría. Escribe \"cancelar\" para volver al inicio";
                     this.Posiciones[message.From.Id] = PanelState.AgregarCategoria;
+                    if(message.Text.Equals("cancelar"))
+                    {
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Volviendo al inicio";
+                    }
                     switch(state){
                         case PanelState.AgregarCategoria:
+                        if(message.Text.Equals("5"))
+                        {
+                            this.Posiciones[message.From.Id] = PanelState.Panel;
+                            response = "Volviendo al inicio";
+                        }
                         this.TempPanelInfo["addcategoria"]=message.Text;
                         CatCatalog.AddCategoria(admin, this.TempPanelInfo["addcategoria"] );
+                        response=$"Categoria añadida";
                         break;
                     }
                     break;
+                case "3":
+                    this.Posiciones[message.From.Id] = PanelState.PanelStart;
+                    response = "Volviendo al inicio";
+                break;
             }
             break;
         case PanelState.VerOfertas:
             switch(message.Text) {
                 case "1":
-                    response=$"¿Que oferta deseas eliminar?";
-                    this.Posiciones[message.From.Id] = PanelState.VerOfertas;
+                    response=$"¿Que oferta deseas eliminar? Escribe \"cancelar\" para volver al inicio";
+                    this.Posiciones[message.From.Id] = PanelState.EliminarOferta;
+                    if(message.Text.Equals("cancelar"))
+                {
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Volviendo al inicio";
+                }
+                    switch(state){
+                        case PanelState.EliminarOferta:
+                        if(message.Text.Equals("cancelar"))
+                        {
+                            this.Posiciones[message.From.Id] = PanelState.Panel;
+                            response = "Volviendo al inicio";
+                        }
+                        ofremover=Int32.Parse(message.Text);
+                        OfCatalog.DarDeBajaOferta(admin, ofremover);
+                        response=$"Oferta eliminada";
+                        break;
+                    }
                     break;
             }
             break;
         case PanelState.VerSolicitudes:
             switch(message.Text) {
                 case "1":
-                    response=$"¿Que solicitud deseas eliminar?";
-                    this.Posiciones[message.From.Id] = PanelState.VerSolicitudes;
+                    response=$"¿Que solicitud deseas eliminar? Escribe \"cancelar\" para volver al inicio";
+                    this.Posiciones[message.From.Id] = PanelState.EliminarSolicitud;
+                    if(message.Text.Equals("cancelar"))
+                {
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Volviendo al inicio";
+                }
+                    switch(state){
+                        case PanelState.EliminarSolicitud:
+                        if(message.Text.Equals("cancelar"))
+                        {
+                            this.Posiciones[message.From.Id] = PanelState.Panel;
+                            response = "Volviendo al inicio";
+                        }
+                        solremover=Int32.Parse(message.Text);
+                        SolCatalog.RemoveSolicitud(SolHandler.GetSolicitud(solremover));
+                        response=$"Solicitud eliminada";
+                        break;
+                    }
                     break;
             }
             break;
@@ -190,13 +287,37 @@ public class PanelDeControlHandler : BaseHandler
         case PanelState.VerUsuarios:
             switch(message.Text) {
                 case "1":
-                    response=$"¿Que usuario deseas eliminar?";
-                    this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
+                    response=$"Ingresa el nick del usuario a eliminar. Escribe \"cancelar\" para volver al inicio";
+                    this.Posiciones[message.From.Id] = PanelState.EliminarUsuario;
+                    if(message.Text.Equals("cancelar"))
+                {
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Volviendo al inicio";
+                }
+                    switch(state){
+                        case PanelState.EliminarUsuario:
+                        if(message.Text.Equals("cancelar"))
+                        {
+                            this.Posiciones[message.From.Id] = PanelState.Panel;
+                            response = "Volviendo al inicio";
+                        }
+                        this.TempPanelInfo["usuarioeliminado"]=message.Text;
+                        UsCatalog.RemoveUsuario(admin, UsCatalog.GetUsuarioById(this.TempPanelInfo["usuarioeliminado"]));
+                        response=$"Usuario eliminado";
+                        break;
+                    }
                     break;
             }
             break;
             }
-        Console.WriteLine(string.Join(", ", TempPanelInfo));
-
         }
+    protected bool LoginAdminChecker()
+    {
+    foreach (Usuario user in UsCatalog.GetUsuarios()){
+
+    if (user.Nick.Equals(this.TempPanelInfo["adminusername"]) && user.VerifyContraseña(this.TempPanelInfo["adminpassword"])){return true;}
+    }
+    return false;
+
+    }
     }      

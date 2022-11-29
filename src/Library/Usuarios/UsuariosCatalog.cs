@@ -47,8 +47,22 @@ public class UsuariosCatalog {
         return this.Usuarios;
     }
 
-    /// <summary> Método para obtener <see cref="OfertaDeServicio"/> por id </summary>
+
+    /// <summary> Método para obtener <see cref="Usuario"/> por id </summary>
     /// <param name="id"> Valor del id que se quiere filtrar </param>
+    /// <returns> Devuelve los <see cref="Usuario"/> existentes </returns>
+    public List<Usuario> GetUsuariosIgnoreId()
+    {
+        var users = GetUsuarios();
+        List<Usuario> final = new();
+        foreach (var user in users)
+        {
+            final.Add(GetUsuarioById(user.Nick));
+        }
+        return final;
+    }
+    /// <summary> Método para obtener <see cref="OfertaDeServicio"/> por id </summary>
+    /// <param name="nick"> Valor del id que se quiere filtrar </param>
     /// <returns> Devuelve la <see cref="OfertaDeServicio"/> filtrada por el id dado </returns>
     public Usuario GetUsuarioById(string nick)
     {
