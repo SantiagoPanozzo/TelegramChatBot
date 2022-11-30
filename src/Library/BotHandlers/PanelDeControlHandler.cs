@@ -163,8 +163,8 @@ public class PanelDeControlHandler : BaseHandler
                     response=$"{ofPrinter.Print(ofCatalog.GetOfertasIgnoreId())} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
                     break;
                 
-                /* case "3": //TODO ver los solPrinter
-                    this.Posiciones[message.From.Id] = PanelState.VerSolicitudes; //TODO cambiar el printer
+                     case "3": 
+                    this.Posiciones[message.From.Id] = PanelState.VerSolicitudes; 
                     response=$"{solPrinter.Print(solHandler.GetSolicitudes(admin))}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
                     break;
 
