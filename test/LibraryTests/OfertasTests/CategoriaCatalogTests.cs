@@ -109,7 +109,7 @@ public class CategoriaCatalogTests {
         OfertaDeServicio result = c1.GetOfertaById(id); 
 
         // Assert
-        Assert.That(result.Equals(expected));
+        Assert.That(result.Equals(expected)); 
     }
 
     [Test]
