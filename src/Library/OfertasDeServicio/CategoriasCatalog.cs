@@ -121,7 +121,7 @@ public class CategoriasCatalog
             return nuevaCategoria;
         }
 
-        throw (new("Solo un administrador puede agregar categorías"));
+        throw (new ElevacionException("Solo un administrador puede agregar categorías"));
     }
 
     /// <summary> Método para eliminar una categoría. </summary>
@@ -134,6 +134,6 @@ public class CategoriasCatalog
             categoria.DarDeBaja(user);
         }
 
-        throw (new("Solo un administrador puede quitar categorías"));
+        throw (new ElevacionException("Solo un administrador puede quitar categorías"));
     }
 }
