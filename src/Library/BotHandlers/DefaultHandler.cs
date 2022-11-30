@@ -1,11 +1,9 @@
-﻿using Library.BotHandlers;
-using Nito.AsyncEx;
+﻿using Nito.AsyncEx;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InputFiles;
-
-namespace Library;
+namespace Library.BotHandlers;
 
 /// <summary> <see cref="IHandler"/> "default", procesa una respuesta a cualquier mensaje que no lo haga otro handler. </summary>
 public class DefaultHandler : BaseHandler

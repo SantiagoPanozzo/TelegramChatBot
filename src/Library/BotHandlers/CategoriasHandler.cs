@@ -1,14 +1,6 @@
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Library.BotHandlers;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InputFiles;
-using Nito.AsyncEx;
-
-namespace Library;
+namespace Library.BotHandlers;
 
 /// <summary> <see cref="IHandler"/> del patrón Chain of Responsibility que implementa lee la palabra categoria/s
 /// y muestra al usuario una lista con las respectivas categorías. </summary>

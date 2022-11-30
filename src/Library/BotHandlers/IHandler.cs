@@ -1,6 +1,5 @@
 using Telegram.Bot.Types;
-
-namespace Library;
+namespace Library.BotHandlers;
 
 /// <summary> Interfaz para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a través de una
 /// cadena de "handlers" que pueden procesar o no el mensaje. Cada "handler" decide si procesa el mensaje, o si se lo

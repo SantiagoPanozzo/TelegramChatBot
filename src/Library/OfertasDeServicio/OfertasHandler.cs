@@ -1,11 +1,11 @@
 using System.Security.Authentication;
 using Library.Excepciones;
-
 namespace Library;
 
-/// <summary> Clase para manejar el catálogo de ofertas. </summary>
-/// /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
-/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las ofertas. -->
+/// <summary> </remarks> Clase para manejar el catálogo de ofertas 
+/// Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las ofertas </summary> </remarks>
+
 public class OfertasHandler{
     
     private CategoriasCatalog _catalog { get { return CategoriasCatalog.GetInstance(); } }
@@ -125,6 +125,19 @@ public class OfertasHandler{
         return GetCategoriaById(categoriaId).GetOfertas();
         throw (new ArgumentException("El id ingresado no coincide con ninguna categoria"));
 
+    }
+    /// <summary> Método para obtener una lista de todas las <see cref="OfertaDeServicio"/> </summary>
+    /// <returns></returns>
+    public List<OfertaDeServicio> GetOfertasIgnoreId()
+    {
+        var inst = CategoriasCatalog.GetInstance();
+        var cats = inst.GetCategorias();
+        List<OfertaDeServicio> final = new();
+        foreach (var cat in cats)
+        {
+            final.Concat(GetOfertas(cat.GetId()));
+        }
+        return final;
     }
 
     /// <summary> Método para obtener una <see cref="OfertaDeServicio"/> por id. </summary>
