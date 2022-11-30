@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "Proyecto Chatbot Grupo 21", "index.html", [
     [ "HistoriasDeUsuarios", "md_HistoriasDeUsuarios.html", null ],
-    [ "Justificaciones:", "md_Justificaciones.html", [
+    [ "Justificaciones", "md_Justificaciones.html", [
       [ "Utilización de patrones:", "md_Justificaciones.html#autotoc_md1", [
         [ "Patrones y principios utilizados:", "md_Justificaciones.html#autotoc_md2", null ]
       ] ],
@@ -39,25 +39,32 @@ var NAVTREE =
         [ "Singleton Wipes:", "md_Justificaciones.html#autotoc_md9", null ]
       ] ]
     ] ],
-    [ "Manual", "md_Manual.html", null ],
+    [ "Manual de Usuario", "md_Manual.html", [
+      [ "Ejecución del programa:", "md_Manual.html#autotoc_md11", null ],
+      [ "Utilización del bot por Telegram:", "md_Manual.html#autotoc_md12", [
+        [ "Inicio:", "md_Manual.html#autotoc_md13", null ],
+        [ "Comandos iniciales:", "md_Manual.html#autotoc_md14", null ],
+        [ "Funciones del bot:", "md_Manual.html#autotoc_md15", null ]
+      ] ]
+    ] ],
     [ "Proyecto ChatBot Programación II", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html", [
-      [ "Integrantes del equipo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md12", null ],
-      [ "Consigna", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md13", null ],
-      [ "Escenarios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md14", null ],
-      [ "Reflexiones de Grupo", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md15", [
-        [ "Implementación de un chatbot para ayudar a la gente encontrar trabajo y/o servicios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md11", null ],
-        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md16", null ],
-        [ "Mateo Rodríguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md17", null ],
-        [ "Facundo Martínez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md18", null ],
-        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md19", null ],
-        [ "Alejandra Benítez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md20", null ]
+      [ "Integrantes del equipo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md18", null ],
+      [ "Consigna", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md19", null ],
+      [ "Escenarios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md20", null ],
+      [ "Reflexiones de Grupo", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md21", [
+        [ "Implementación de un chatbot para ayudar a la gente encontrar trabajo y/o servicios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md17", null ],
+        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md22", null ],
+        [ "Mateo Rodríguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md23", null ],
+        [ "Facundo Martínez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md24", null ],
+        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md25", null ],
+        [ "Alejandra Benítez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md26", null ]
       ] ],
-      [ "Asignaciones:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md21", [
-        [ "Facundo Martinez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md22", null ],
-        [ "Mateo Rodriguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md23", null ],
-        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md24", null ],
-        [ "Alejandra Benitez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md25", null ],
-        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md26", null ]
+      [ "Asignaciones:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md27", [
+        [ "Facundo Martinez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md28", null ],
+        [ "Mateo Rodriguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md29", null ],
+        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md30", null ],
+        [ "Alejandra Benitez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md31", null ],
+        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md32", null ]
       ] ]
     ] ],
     [ "Packages", "namespaces.html", [
@@ -73,7 +80,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ]
@@ -88,8 +95,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AccionInnecesariaException_8cs_source.html",
-"classLibrary_1_1CategoriasCatalog.html#a02d667d79dc6c941d7ab276c88259ff2",
-"classRegistrarHandler.html#a7fa765d7842c9cd3524fd20e907a2cb9"
+"classLibrary_1_1Categoria.html#a391925bcef104bf634b266e75310aedf",
+"classLibrary_1_1UsuariosCatalog.html#afda536f591a331a1c6ece35ce24cdd9b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

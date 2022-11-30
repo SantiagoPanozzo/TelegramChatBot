@@ -25,9 +25,7 @@ digraph "Library.UsuariosCatalog.GetUsuarios"
   Node9 [label="Library.RegistryHandler.\lVerificarNick",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#ab807cbae1dac0a1a8d26a3d3dab44b20",tooltip="Método para verificar el nickname de un Usuario."];
   Node9 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node9 -> Node10 [dir="back",color="steelblue1",style="solid"];
-  Node10 [label="Library.RegistryHandler.\lRegistrarAdministrador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#a3a3c8dbcc470376d7f9082ed727e9cad",tooltip="Método para registrar un administrador."];
+  Node10 [label="Library.RegistryHandler.\lRegistrarEmpleador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#a9cea158f44e96feb3ee3b4cf8a2c166c",tooltip="Método para registrar un empleador."];
   Node9 -> Node11 [dir="back",color="steelblue1",style="solid"];
-  Node11 [label="Library.RegistryHandler.\lRegistrarEmpleador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#a9cea158f44e96feb3ee3b4cf8a2c166c",tooltip="Método para registrar un empleador."];
-  Node9 -> Node12 [dir="back",color="steelblue1",style="solid"];
-  Node12 [label="Library.RegistryHandler.\lRegistrarTrabajador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#a0bf9704d7dc2ab9bf3cde59b66012d69",tooltip="Método para registrar un trabajador."];
+  Node11 [label="Library.RegistryHandler.\lRegistrarTrabajador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#a0bf9704d7dc2ab9bf3cde59b66012d69",tooltip="Método para registrar un trabajador."];
 }

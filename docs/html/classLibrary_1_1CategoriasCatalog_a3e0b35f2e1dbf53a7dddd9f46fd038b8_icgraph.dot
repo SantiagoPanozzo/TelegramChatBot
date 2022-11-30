@@ -8,5 +8,7 @@ digraph "Library.CategoriasCatalog.RemoveCategoria"
   rankdir="RL";
   Node1 [label="Library.CategoriasCatalog.\lRemoveCategoria",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para eliminar una categoría."];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="Library.OfertasHandler.Eliminar\lCategoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#afefa462e1fe30165a2985f3ec5daa760",tooltip="Método para eliminar una categoría."];
+  Node2 [label="LibraryTests.CategoriaCatalog\lTests.AdminEliminarCategoriaTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#a5c93a6aadec1d2d8bfdd46a2e41d4514",tooltip="Test para cuando se elimina una categoría"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.OfertasHandler.Eliminar\lCategoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#afefa462e1fe30165a2985f3ec5daa760",tooltip="Método para eliminar una categoría."];
 }

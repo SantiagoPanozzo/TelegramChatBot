@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Proyecto Chatbot Grupo 21: Justificaciones:</title>
+<title>Proyecto Chatbot Grupo 21: Justificaciones</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,11 +91,10 @@ $(document).ready(function(){initNavTree('md_Justificaciones.html',''); initResi
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Justificaciones: </div></div>
+  <div class="headertitle"><div class="title">Justificaciones </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><hr  />
-<h1><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
 Utilización de patrones:</h1>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Patrones y principios utilizados:</h2>
@@ -118,7 +117,7 @@ API de Ubicación:</h2>
 <p >Utilizamos la API DistanceMatrix de Google Maps ya que fue la que encontramos tiempo antes de que nos fuera presentada la recomendada por la Universidad. Esta API requiere el uso de Google Cloud por lo que su uso está limitado a la cantidad de datos que nos permite este servicio por mes. Para este proyecto creemos que esto es más que suficiente y nos da unas herramientas bastante útiles para calcular la distancia entre dos puntos a un nivel bastante preciso y confiable.</p>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Administrador:</h2>
-<p >Los administradores los hicimos hardcodeados, enlazados a un ID de Telegram en concreto. Esto fue porque creemos que a una escala reducida no hay necesidad de que haya una gran cantidad de administradores, por lo cual es bastante realista que la persona u organización que utilice el bot se pueda dar a la tarea a añadir manualmente a cada administrador. Sin embargo, para agregar seguridad el administrador va a estar ligado a un ID de Telegram, por lo cual en este caso el administrador solo podrá iniciar sesión utilizando su propia cuenta de Telegram autorizada.</p>
+<p >Los administradores los hicimos hardcodeados ya que creemos que a una escala reducida no hay necesidad de que haya una gran cantidad de administradores, por lo cual es bastante realista que la persona u organización que utilice el bot se pueda dar a la tarea a añadir manualmente a cada administrador. Por lo cual, solo se podrá iniciar sesión como administrador utilizando una cuenta ya existente autorizada.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Updater:</h2>
 <p >Para poder gestionar los tiempos requeridos por el programa (por ejemplo, que cuando un usuario califique a otro habrá un plazo de un mes para que el usuario calificado haga lo mismo), creamos una clase estática Updater. Esta clase se encarga de periódicamente "avisarle" a todas las clases que requieran llevar una cuenta del tiempo (IActualizables) la fecha actual. Updater tiene un método asíncrono para iniciar actualizaciones automáticas cada X cantidad de tiempo establecida como variable de tipo TimeSpan dentro de la clase; esto inicia timers con esa cantidad de tiempo que, cuando finalizada, le pasa a todos los IActualizable la fecha actual dada por DateTime.Now de forma que estos realicen sus tareas acorde a la fecha. El punto es tener una sola clase con un método asíncrono que se encargue actualizar a las otras, para para que estas otras no tengan que tener, por ejemplo, un timer que cuente 30 días (el cual se detendría si se detiene el programa). Con un solo timer periódico que solo actualice la fecha, y una comparación en las clases actualizables de si ya llegó la fecha que están esperando, nos ahorramos estos problemas.</p>

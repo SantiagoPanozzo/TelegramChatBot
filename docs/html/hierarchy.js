@@ -55,7 +55,8 @@ var hierarchy =
         [ "StartHandler", "classStartHandler.html", null ],
         [ "VerCategoriasHandler", "classVerCategoriasHandler.html", null ],
         [ "VerInfoHandler", "classVerInfoHandler.html", null ],
-        [ "VerOfertasHandler", "classVerOfertasHandler.html", null ]
+        [ "VerOfertasHandler", "classVerOfertasHandler.html", null ],
+        [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", null ]
       ] ]
     ] ],
     [ "Library.IPlainTextSolicitudPrinter< Administrador >", "interfaceLibrary_1_1IPlainTextSolicitudPrinter.html", [
@@ -97,6 +98,5 @@ var hierarchy =
     [ "Library.UsuariosCatalog", "classLibrary_1_1UsuariosCatalog.html", null ],
     [ "LibraryTests.UsuarioTests", "classLibraryTests_1_1UsuarioTests.html", null ],
     [ "VerContratosHandler", "classVerContratosHandler.html", null ],
-    [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", null ],
     [ "VerUsuariosHandler", "classVerUsuariosHandler.html", null ]
 ];
