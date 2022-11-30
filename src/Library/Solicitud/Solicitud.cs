@@ -100,7 +100,7 @@ public class Solicitud : IDesactivable, IActualizable {
     /// <param name="rate"> Es un valor del enum <see cref="Calificacion"/>. </param>
     public void CalificarEmpleador(Trabajador user, Calificacion rate)
     {
-        if(user.Nick.Equals(Trab) && !IsEmpleadorRated())
+        if(user.Nick.Equals(Trab))
         {
             if (!IsEmpleadorRated())
             {
