@@ -334,4 +334,158 @@ public class SolicitudTests {
         // Assert
         Assert.That(result.Equals(expected));
     }
+
+    [Test]
+    /// <summary> Test para cuando un trabajador puede ser autocalificado con la calificación neutra </summary>
+    /// <remarks> Updater.FastForward() simula una fecha que no es para la actualización de la clase,
+    /// para que pueda ser autocalificado deben pasar 30 días, y en este caso se adelantan 30 días.
+    /// Es por eso que el trabajador puede ser autocalificado </remarks>
+    public void AutocalificacionTrabajadorTest() {
+        // Arrange
+        // Se crean nuevas instancias de: solicitud (s1), empleador (e1), trabajador (t1), 
+        // oferta de servicio (o1), solicitud (s2) y catálogo de solicitudes (sc)
+        // Son parámetros necesarios para poder crear una nueva solicitud
+        SolicitudCatalog sc = SolicitudCatalog.GetInstance();
+        Empleador e1 = new Empleador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador t1 = new Trabajador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador a1 = new Administrador("nick", "con", "tel", "corr");
+        OfertaDeServicio o1 = new OfertaDeServicio(t1, "cortar el pasto a domicilio", "cortar pasto", 100.50);
+        Solicitud s1 = sc.AddSolicitud(o1, e1);
+        bool expected = true;
+
+        // Act
+        s1.CalificarEmpleador(t1, Calificacion.Regular);
+        Updater.FastForward(new TimeSpan(days: 31, 0, 0, 0));
+        bool result = s1.Oferta.IsRated();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    /// <summary> Test para cuando un trabajador no puede ser autocalificado con la calificación neutra </summary>
+    /// <remarks> Updater.FastForward() simula una fecha que no es para la actualización de la clase,
+    /// para que pueda ser autocalificado deben pasar 30 días, y en este caso se adelantan 15 días.
+    /// Es por eso que el trabajador no puede ser autocalificado </remarks>
+    public void NoSePuedeAutocalificacionTrabajadorTest() {
+        // Arrange
+        // Se crean nuevas instancias de: solicitud (s1), empleador (e1), trabajador (t1), 
+        // oferta de servicio (o1), solicitud (s2) y catálogo de solicitudes (sc)
+        // Son parámetros necesarios para poder crear una nueva solicitud
+        SolicitudCatalog sc = SolicitudCatalog.GetInstance();
+        Empleador e1 = new Empleador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador t1 = new Trabajador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador a1 = new Administrador("nick", "con", "tel", "corr");
+        OfertaDeServicio o1 = new OfertaDeServicio(t1, "cortar el pasto a domicilio", "cortar pasto", 100.50);
+        Solicitud s1 = sc.AddSolicitud(o1, e1);
+        bool expected = false;
+
+        // Act
+        s1.CalificarEmpleador(t1, Calificacion.Regular);
+        Updater.FastForward(new TimeSpan(days: 15, 0, 0, 0));
+        bool result = s1.Oferta.IsRated();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    /// <summary> Test para cuando un empleador puede ser autocalificado con la calificación neutra </summary>
+    /// <remarks> Updater.FastForward() simula una fecha que no es para la actualización de la clase,
+    /// para que pueda ser autocalificado deben pasar 30 días, y en este caso se adelantan 30 días.
+    /// Es por eso que el empleador puede ser autocalificado </remarks>
+    public void AutocalificacionEmpleadorTest() {
+        // Arrange
+        // Se crean nuevas instancias de: solicitud (s1), empleador (e1), trabajador (t1), 
+        // oferta de servicio (o1), solicitud (s2) y catálogo de solicitudes (sc)
+        // Son parámetros necesarios para poder crear una nueva solicitud
+        SolicitudCatalog sc = SolicitudCatalog.GetInstance();
+        Empleador e1 = new Empleador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador t1 = new Trabajador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador a1 = new Administrador("nick", "con", "tel", "corr");
+        OfertaDeServicio o1 = new OfertaDeServicio(t1, "cortar el pasto a domicilio", "cortar pasto", 100.50);
+        Solicitud s1 = sc.AddSolicitud(o1, e1);
+        bool expected = true;
+
+        // Act
+        s1.CalificarEmpleador(t1, Calificacion.Regular);
+        Updater.FastForward(new TimeSpan(days: 31, 0, 0, 0));
+        bool result = s1.IsRated();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    /// <summary> Test para cuando un empleador no puede ser autocalificado con la calificación neutra </summary>
+    /// <remarks> Updater.FastForward() simula una fecha que no es para la actualización de la clase,
+    /// para que pueda ser autocalificado deben pasar 30 días, y en este caso se adelantan 15 días.
+    /// Es por eso que el empleador no puede ser autocalificado </remarks>
+    public void NoSePuedeAutocalificacionEmpleadorTest() {
+        // Arrange
+        // Se crean nuevas instancias de: solicitud (s1), empleador (e1), trabajador (t1), 
+        // oferta de servicio (o1), solicitud (s2) y catálogo de solicitudes (sc)
+        // Son parámetros necesarios para poder crear una nueva solicitud
+        SolicitudCatalog sc = SolicitudCatalog.GetInstance();
+        Empleador e1 = new Empleador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador t1 = new Trabajador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador a1 = new Administrador("nick", "con", "tel", "corr");
+        OfertaDeServicio o1 = new OfertaDeServicio(t1, "cortar el pasto a domicilio", "cortar pasto", 100.50);
+        Solicitud s1 = sc.AddSolicitud(o1, e1);
+        bool expected = false;
+
+        // Act
+        s1.CalificarEmpleador(t1, Calificacion.Regular);
+        Updater.FastForward(new TimeSpan(days: 15, 0, 0, 0));
+        bool result = s1.Oferta.IsRated();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    /// <summary> Test para conocer la calificación de un empleador autocalificado </summary>
+    public void ValorAutocalificacionEmpleadorTest() {
+        // Arrange
+        // Se crean nuevas instancias de: solicitud (s1), empleador (e1), trabajador (t1), 
+        // oferta de servicio (o1), solicitud (s2) y catálogo de solicitudes (sc)
+        // Son parámetros necesarios para poder crear una nueva solicitud
+        SolicitudCatalog sc = SolicitudCatalog.GetInstance();
+        Empleador e1 = new Empleador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador t1 = new Trabajador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador a1 = new Administrador("nick", "con", "tel", "corr");
+        OfertaDeServicio o1 = new OfertaDeServicio(t1, "cortar el pasto a domicilio", "cortar pasto", 100.50);
+        Solicitud s1 = sc.AddSolicitud(o1, e1);
+        Calificacion expected = Calificacion.Bueno;
+
+        // Act
+        Updater.FastForward(new TimeSpan(days: 31, 0, 0, 0));
+        Calificacion result = s1.GetEmpleadorRate();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
+
+    [Test]
+    /// <summary> Test para conocer la calificación de un empleador autocalificado </summary>
+    public void ValorAutocalificacionTrabajadorTest() {
+        // Arrange
+        // Se crean nuevas instancias de: solicitud (s1), empleador (e1), trabajador (t1), 
+        // oferta de servicio (o1), solicitud (s2) y catálogo de solicitudes (sc)
+        // Son parámetros necesarios para poder crear una nueva solicitud
+        SolicitudCatalog sc = SolicitudCatalog.GetInstance();
+        Empleador e1 = new Empleador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Trabajador t1 = new Trabajador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador a1 = new Administrador("nick", "con", "tel", "corr");
+        OfertaDeServicio o1 = new OfertaDeServicio(t1, "cortar el pasto a domicilio", "cortar pasto", 100.50);
+        Solicitud s1 = sc.AddSolicitud(o1, e1);
+        Calificacion expected = Calificacion.Bueno;
+
+        // Act
+        Updater.FastForward(new TimeSpan(days: 31, 0, 0, 0));
+        Calificacion result = s1.Oferta.GetCalificacion();
+
+        // Assert
+        Assert.That(result.Equals(expected));
+    }
 }
