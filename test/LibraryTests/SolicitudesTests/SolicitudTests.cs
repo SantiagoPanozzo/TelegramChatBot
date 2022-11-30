@@ -3,7 +3,6 @@ using Library.Excepciones;
 using System;
 namespace LibraryTests;
 
-
 /// <summary> Tests de la clase <see cref="Solicitud">. </summary>
 public class SolicitudTests {
     [SetUp]
