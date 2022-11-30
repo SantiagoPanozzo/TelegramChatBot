@@ -1,6 +1,4 @@
-# Justificaciones:
-
-***
+# Justificaciones
 
 ## Utilización de patrones:
 
@@ -53,11 +51,10 @@ de datos que nos permite este servicio por mes. Para este proyecto creemos que e
 herramientas bastante útiles para calcular la distancia entre dos puntos a un nivel bastante preciso y confiable.
 
 ### Administrador:
-Los administradores los hicimos hardcodeados, enlazados a un ID de Telegram en concreto. Esto fue porque creemos que a
-una escala reducida no hay necesidad de que haya una gran cantidad de administradores, por lo cual es bastante realista
-que la persona u organización que utilice el bot se pueda dar a la tarea a añadir manualmente a cada administrador. Sin
-embargo, para agregar seguridad el administrador va a estar ligado a un ID de Telegram, por lo cual en este caso el
-administrador solo podrá iniciar sesión utilizando su propia cuenta de Telegram autorizada.
+Los administradores los hicimos hardcodeados ya que creemos que a una escala reducida no hay necesidad de que haya una
+gran cantidad de administradores, por lo cual es bastante realista que la persona u organización que utilice el bot se
+pueda dar a la tarea a añadir manualmente a cada administrador. Por lo cual, solo se podrá iniciar sesión como administrador
+utilizando una cuenta ya existente autorizada.
 
 ### Updater:
 Para poder gestionar los tiempos requeridos por el programa (por ejemplo, que cuando un usuario califique a otro habrá
