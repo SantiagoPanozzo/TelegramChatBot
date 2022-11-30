@@ -1,0 +1,12 @@
+digraph "Library.Solicitud.Reactivar"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.Solicitud.Reactivar",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para reactivar una solicitud."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="LibraryTests.SolicitudTests.\lAdminReactivarUsuarioTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#ac50cc59bd14cff3b2fc90dcb9a809990",tooltip="Test para cuando un administrador reactiva una solicitud"];
+}

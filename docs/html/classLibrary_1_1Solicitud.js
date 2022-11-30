@@ -11,7 +11,6 @@ var classLibrary_1_1Solicitud =
     [ "GetId", "classLibrary_1_1Solicitud.html#ab9187247666d0ece299b2eae8d4bb91c", null ],
     [ "GetTrabajadorRate", "classLibrary_1_1Solicitud.html#a9c37895e75e674a5ea4667bb8aee1d4d", null ],
     [ "GetUbicacion", "classLibrary_1_1Solicitud.html#ad76f396679fbd1210caf2e6c2326906d", null ],
-    [ "IniciarTrabajo", "classLibrary_1_1Solicitud.html#abd52f9a5723d6d08e2b3c4b1effc3bb3", null ],
     [ "IsActive", "classLibrary_1_1Solicitud.html#a049ad8aa162e0767d85c1b6172bc6c45", null ],
     [ "IsEmpleadorRated", "classLibrary_1_1Solicitud.html#ad96bd18918513d6785345cda681fd644", null ],
     [ "IsRated", "classLibrary_1_1Solicitud.html#a3f28506b2bd1231cf55a2652d876d2ea", null ],

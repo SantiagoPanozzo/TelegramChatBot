@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tempinfo_0',['TempInfo',['../classRegistrarHandler.html#a840b17061d8390766f443efe30b86c95',1,'RegistrarHandler']]]
+  ['globaltempinfo_0',['GlobalTempInfo',['../classRegistrarHandler.html#a06a77c422d68646f8b81eda062d66460',1,'RegistrarHandler']]]
 ];

@@ -4,7 +4,6 @@ namespace Library;
 
 /// <summary> Clase que representa una oferta de servicio </summary>
 public class OfertaDeServicio : IDesactivable
-
 {
     private Trabajador Ofertante { get; set; }
     public string Descripcion { get; set; }
@@ -38,7 +37,6 @@ public class OfertaDeServicio : IDesactivable
     
     /// <summary> Método para borrar los datos de la clase. </summary>
     /// <param name="admin"> Tipo de usuario que llama al método. </param>
-
     public static void Wipe(Administrador admin)
     {
         OfertaDeServicio.Instancias = 0;

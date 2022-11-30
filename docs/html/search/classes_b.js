@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['searchhandler_0',['SearchHandler',['../classSearchHandler.html',1,'']]],
-  ['searchhandlertests_1',['SearchHandlerTests',['../classSearchHandlerTests.html',1,'']]],
-  ['solicitud_2',['Solicitud',['../classSolicitud.html',1,'']]],
-  ['solicitudcatalog_3',['SolicitudCatalog',['../classSolicitudCatalog.html',1,'']]],
-  ['solicitudcatalogtests_4',['SolicitudCatalogTests',['../classSolicitudCatalogTests.html',1,'']]],
-  ['solicitudprinter_5',['SolicitudPrinter',['../classSolicitudPrinter.html',1,'']]],
-  ['solicitudtests_6',['SolicitudTests',['../classSolicitudTests.html',1,'']]],
-  ['starthandler_7',['StartHandler',['../classStartHandler.html',1,'']]]
+  ['registrarhandler_0',['RegistrarHandler',['../classRegistrarHandler.html',1,'']]],
+  ['registryhandler_1',['RegistryHandler',['../classLibrary_1_1RegistryHandler.html',1,'Library']]],
+  ['registryhandlertests_2',['RegistryHandlerTests',['../classLibraryTests_1_1RegistryHandlerTests.html',1,'LibraryTests']]]
 ];

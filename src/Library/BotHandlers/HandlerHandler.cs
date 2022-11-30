@@ -27,4 +27,5 @@ public enum Handlers
     VerOfertasHandler,
     VerSolicitudesHandler,
     VerUsuarioHandler,
+    NoneHandler,
 }

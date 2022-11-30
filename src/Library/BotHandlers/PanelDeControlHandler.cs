@@ -34,6 +34,8 @@ public class PanelDeControlHandler : BaseHandler
 
     protected Dictionary<string,string> tempPanelInfo = new();
     protected PlainTextCategoriaPrinter catPrinter = new();
+
+    //protected ITextPrinter<Solicitud> solPrinter = new PlainTextAdminSolicitudPrinter();
     protected PlainTextOfertasPrinter ofPrinter = new();
     protected PlainTextUsuariosPrinter usPrinter = new();
     protected PlainTextAdminSolicitudPrinter solPrinter = new();
@@ -161,10 +163,11 @@ public class PanelDeControlHandler : BaseHandler
                     response=$"{ofPrinter.Print(ofCatalog.GetOfertasIgnoreId())} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
                     break;
                 
-                case "3":
+                /* case "3": //TODO ver los solPrinter
                     this.Posiciones[message.From.Id] = PanelState.VerSolicitudes; //TODO cambiar el printer
                     response=$"{solPrinter.Print(solHandler.GetSolicitudes(admin))}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
                     break;
+
                 case "4":
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
                     response=$"{usPrinter.Print(usCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";

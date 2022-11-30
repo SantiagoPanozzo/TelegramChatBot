@@ -6,6 +6,7 @@ var classLibrary_1_1RegistryHandler =
     [ "GetUserContact", "classLibrary_1_1RegistryHandler.html#a84981fb8a897e98895cbe8b06763f324", null ],
     [ "GetUserInfo", "classLibrary_1_1RegistryHandler.html#a8f543247eb33080f8a62f8fb4d8b858d", null ],
     [ "GetUsuario", "classLibrary_1_1RegistryHandler.html#ab102a5d3011a478c5e6b60401941d429", null ],
+    [ "ParseCedula", "classLibrary_1_1RegistryHandler.html#ac9641ffa2669a41c7eeb20f713ddd625", null ],
     [ "RegistrarAdministrador", "classLibrary_1_1RegistryHandler.html#a3a3c8dbcc470376d7f9082ed727e9cad", null ],
     [ "RegistrarEmpleador", "classLibrary_1_1RegistryHandler.html#a9cea158f44e96feb3ee3b4cf8a2c166c", null ],
     [ "RegistrarTrabajador", "classLibrary_1_1RegistryHandler.html#a0bf9704d7dc2ab9bf3cde59b66012d69", null ],

@@ -2,8 +2,11 @@ digraph "Graphical Class Hierarchy"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [label="HistoriasDeUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHistoriasDeUsuario.html",tooltip="Tests de los escenarios (casos de usuario) dados"];
+  Node0 [label="Library.IPlainTextSolicitud\lPrinter\< Empleador \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1IPlainTextSolicitudPrinter.html",tooltip=" "];
+  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node1 [label="Library.PlainTextEmpleador\lSolicitudPrinter",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1PlainTextEmpleadorSolicitudPrinter.html",tooltip=" "];
 }

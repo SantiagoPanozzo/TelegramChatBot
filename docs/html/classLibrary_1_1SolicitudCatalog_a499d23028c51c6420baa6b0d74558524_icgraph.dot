@@ -1,0 +1,16 @@
+digraph "Library.SolicitudCatalog.Wipe"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.SolicitudCatalog.Wipe",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para borrar los datos de la clase."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="LibraryTests.SolicitudCatalog\lTests.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudCatalogTests.html#a5609b76239d86d234142d6e47585e786",tooltip="Al terminar un test borra todas las instancias de singleton."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="LibraryTests.SolicitudTests.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#aedde992e8fec9cadeac769cd47ef98f9",tooltip="Al terminar un test borra todas las instancias de singleton."];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="LibraryTests.SolicitudCatalog\lTests.WipearSolicitudCatalogTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudCatalogTests.html#ac6bcc1450ed2b9850144ef38d2b6227c",tooltip="Test de que el método Wipe() borra la instancia."];
+}

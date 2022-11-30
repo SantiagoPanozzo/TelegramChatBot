@@ -8,7 +8,9 @@ digraph "Library.Solicitud.RecibirRespuesta"
   rankdir="RL";
   Node1 [label="Library.Solicitud.Recibir\lRespuesta",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para conocer el estado de una oferta"];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="Library.ContratoHandler.\lAceptarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#a9da1c5ea2f4b9eb3ebe351fa0dac67d5",tooltip="Método para aceptar una solicitud"];
+  Node2 [label="Library.ContratoHandler.\lAceptarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#a9da1c5ea2f4b9eb3ebe351fa0dac67d5",tooltip="Método para aceptar una solicitud."];
   Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="Library.ContratoHandler.\lRechazarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad07b990d40d49dc3a2fba8e63289e465",tooltip="Método para rechazar una solicitud"];
+  Node3 [label="LibraryTests.SolicitudTests.\lIniciarTrabajoTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a976996bc94eea813de46957ff056e2ff",tooltip="Test para dar una solicitud como iniciada."];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.ContratoHandler.\lRechazarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad07b990d40d49dc3a2fba8e63289e465",tooltip="Método para rechazar una solicitud."];
 }

@@ -1,0 +1,16 @@
+digraph "Library.OfertasHandler.GetInstance"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.OfertasHandler.Get\lInstance",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para obtener la instancia de la clase."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.SearchHandler.Filtrar\lCategoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#af8cc0f6c663bafdaf0ecb6b74ee39c4b",tooltip="Método para filtrar las OfertaDeServicio por Categoria"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.SearchHandler.Filtrar\lDistancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ae23bf754caa5377f5ee254a2b6036566",tooltip="Método para filtrar las OfertaDeServicio por distancia"];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.SearchHandler.Filtrar\lReputacion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ad0758e235efcc09dfec4bb2b3b8ff0ab",tooltip="Método para filtrar las OfertaDeServicio por reputación"];
+}

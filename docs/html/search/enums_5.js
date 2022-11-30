@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tipodeusuario_0',['TipoDeUsuario',['../namespaceLibrary.html#a4cb7ae7753cda2aecc9365eead4518c9',1,'Library']]]
+  ['panelstate_0',['PanelState',['../classPanelDeControlHandler.html#a3e55c49f0bc6f1f0e4beb6005eb44057',1,'PanelDeControlHandler']]]
 ];
