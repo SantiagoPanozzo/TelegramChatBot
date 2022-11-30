@@ -135,7 +135,7 @@ public class OfertasHandler{
         List<OfertaDeServicio> final = new();
         foreach (var cat in cats)
         {
-            final.Concat(GetOfertas(cat.GetId()));
+            final.AddRange(GetOfertas(cat.GetId()));
         }
         return final;
     }

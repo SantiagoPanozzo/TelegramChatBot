@@ -114,11 +114,10 @@ public class RegistryHandler
     /// <returns> Devuelve la instancia de <see cref="Trabajador"/> creada. </returns>
     public Administrador RegistrarAdministrador(string nick, string contraseña, string telefono, string correo)
     {
-        if (VerificarCorreo(correo) && VerificarNick(nick))
-        {
-            Administrador nuevoAdministrador = (Administrador)usuarios.AddAdminstrador(nick, contraseña, telefono, correo);
-            return nuevoAdministrador;
-        }
+
+        Administrador nuevoAdministrador = (Administrador)usuarios.AddAdminstrador(nick, contraseña, telefono, correo);
+        return nuevoAdministrador;
+   
         throw (new ArgumentException("Alguno de los valores introducidos no fue válido"));
     }
 
