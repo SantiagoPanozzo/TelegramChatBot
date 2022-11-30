@@ -130,7 +130,7 @@ public class CategoriaCatalogTests {
 
     [Test]
     /// <summary> Test para cuando se elimina una categoría </summary>
-    public void EliminarCategoria() {
+    public void AdminEliminarCategoriaTest() {
         // Arrange
         CategoriasCatalog c1 = CategoriasCatalog.GetInstance();
         Administrador a1 = new Administrador("n", "con", "tel", "corr");
@@ -144,5 +144,22 @@ public class CategoriaCatalogTests {
         // Assert
         Assert.That(result.Equals(expected));
     }
+
+    [Test]
+    /// <summary> Test para cuando un no admin quiere eliminar una categoría </summary>
+    public void NoAdminEliminarCategoriaTest() {
+        // Assert
+        Assert.Throws<ElevacionException>(ErrorEliminarCategoria);
+    }
     
+    public void ErrorEliminarCategoria() {
+        // Arrange
+        CategoriasCatalog c1 = CategoriasCatalog.GetInstance();
+        Administrador a1 = new Administrador("n", "con", "tel", "corr");
+        Trabajador t1 = new Trabajador("nom", "ape", "nick", "con", DateTime.Now, "ced", "tel", "corr", new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Categoria c2 = c1.AddCategoria(a1, "cortar el pasto a domicilio");
+
+        // Act
+        c1.RemoveCategoria(t1, c2);
+    }
 }
