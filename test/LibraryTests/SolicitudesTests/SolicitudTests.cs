@@ -354,7 +354,6 @@ public class SolicitudTests {
 
         // Act
         Solicitud s1 = sc.AddSolicitud(o1, e1);
-        s1.CalificarEmpleador(t1, Calificacion.Regular);
         Updater.FastForward(new TimeSpan(days: 31, 0, 0, 0));
         bool result = s1.Oferta.IsRated();
 
@@ -378,12 +377,12 @@ public class SolicitudTests {
         Administrador a1 = new Administrador("nick", "con", "tel", "corr");
         OfertaDeServicio o1 = new OfertaDeServicio(t1, "cortar el pasto a domicilio", "cortar pasto", 100.50);
         Updater.Update();
-        Calificacion expected = Calificacion.Bueno;
+        bool expected = true;
 
         // Act
         Solicitud s1 = sc.AddSolicitud(o1, e1);
         Updater.FastForward(new TimeSpan(days: 31, 0, 0, 0));
-        Calificacion result = s1.GetEmpleadorRate();
+        bool result = s1.IsRated();
 
         // Assert
         Assert.That(result.Equals(expected));
