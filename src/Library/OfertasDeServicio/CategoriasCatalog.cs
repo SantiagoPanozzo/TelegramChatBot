@@ -2,9 +2,9 @@ using Library.Excepciones;
 
 namespace Library;
 
-/// <summary> Clase para manejar el catálogo de categorías. </summary>
-/// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
-/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las categorías. -->
+/// <summary> <remarks> Clase para manejar el catálogo de categorías. 
+/// Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las categorías. </summary> </remarks>
 public class CategoriasCatalog
 {
     protected List<Categoria> Categorias;
@@ -111,6 +111,11 @@ public class CategoriasCatalog
     {
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
+            foreach (Categoria cat in Categorias) {
+                if (cat.Descripcion.Equals(descripcion)) {
+                    throw new AccionInnecesariaException("La categoria ya existe");
+                }
+            }
             Categoria nuevaCategoria = new Categoria(descripcion);
             this.Categorias.Add(nuevaCategoria);
             return nuevaCategoria;

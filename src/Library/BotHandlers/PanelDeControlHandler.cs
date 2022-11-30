@@ -161,10 +161,11 @@ public class PanelDeControlHandler : BaseHandler
                     response=$"{ofPrinter.Print(ofCatalog.GetOfertasIgnoreId())} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
                     break;
                 
-                case "3":
+                /* case "3": //TODO ver los solPrinter
                     this.Posiciones[message.From.Id] = PanelState.VerSolicitudes; //TODO cambiar el printer
                     //response=$"{solPrinter.Print(solHandler.GetSolicitudes(admin), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
-                    break;
+                    break; */
+
                 case "4":
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
                     response=$"{usPrinter.Print(usCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";

@@ -155,7 +155,7 @@ public class Solicitud : IDesactivable, IActualizable {
     /// <returns> Retorna True si el empleador está calificado o False si no lo está. </returns>
     public bool IsEmpleadorRated()
     {
-        return (!this.EmpleadorRate.Equals(Calificacion.NoCalificado));
+        return !(this.EmpleadorRate.Equals(Calificacion.NoCalificado));
     }
     
     /// <summary> Método para conocer si una solicitud está activa. </summary>
@@ -193,7 +193,7 @@ public class Solicitud : IDesactivable, IActualizable {
         if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
             if (!this._activa) this._activa = true;
-            else throw (new AccionInnecesariaException("Esta solicitud ya está aciva"));
+            else throw (new AccionInnecesariaException("Esta solicitud ya está activa"));
         }
         else
         {
@@ -230,7 +230,7 @@ public class Solicitud : IDesactivable, IActualizable {
         return this.FechaLimiteEmpleador.CompareTo(fechaActual).Equals(-1);
     }
     
-     /// <summary> Compara la fecha actual con la fecha límite para calificar. </summary>
+    /// <summary> Compara la fecha actual con la fecha límite para calificar. </summary>
     /// <returns> Devuelve true si ya pasó un mes (30 días) desde que se hizo la <see cref="Solicitud">, de lo contrario devuelve false. </returns>
     public bool CanEmpleadorBeAutoRated(DateTime fechaActual) {
         return this.FechaLimiteTrabajador.CompareTo(fechaActual).Equals(-1);
