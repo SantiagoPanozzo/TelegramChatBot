@@ -1,0 +1,16 @@
+digraph "Library.Categoria.GetOfertas"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.Categoria.GetOfertas",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para conocer la lista de ofertas."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.SearchHandler.Filtrar\lDistancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ae23bf754caa5377f5ee254a2b6036566",tooltip="Método para filtrar las OfertaDeServicio por distancia"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.OfertasHandler.Get\lOfertas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a4b8c9e0b2ae1720933457f3862c0a231",tooltip="Método para obtener OfertaDeServicio."];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.OfertasHandler.Get\lOfertasIgnoreId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a5e48f9d4950d21460c3b07364746c5dc",tooltip="Método para obtener una lista de todas las OfertaDeServicio"];
+}

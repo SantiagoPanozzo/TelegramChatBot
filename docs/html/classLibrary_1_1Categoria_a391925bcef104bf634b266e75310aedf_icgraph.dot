@@ -1,0 +1,22 @@
+digraph "Library.Categoria.GetId"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.Categoria.GetId",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para obtener el ID de una Categoria."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.SearchHandler.Filtrar\lReputacion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ad0758e235efcc09dfec4bb2b3b8ff0ab",tooltip="Método para filtrar las OfertaDeServicio por reputación"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Library.CategoriasCatalog.\lGetCategoriaById",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#a9bedf1f8b23af24ef3515c48b7d05200",tooltip="Método para obtener una categoría por id."];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.OfertasHandler.Get\lCategoriaById",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a6de3d8aae171fe68766039aefcbd5bb4",tooltip="Método para obtener una Categoria por id."];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="Library.OfertasHandler.Get\lOfertas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a4b8c9e0b2ae1720933457f3862c0a231",tooltip="Método para obtener OfertaDeServicio."];
+  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="Library.OfertasHandler.Get\lOfertasIgnoreId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a5e48f9d4950d21460c3b07364746c5dc",tooltip="Método para obtener una lista de todas las OfertaDeServicio"];
+  Node3 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="Library.OfertasHandler.Ofertar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a9179cfbeb903dbc77128b40d77782d82",tooltip="Constructor de la clase."];
+}

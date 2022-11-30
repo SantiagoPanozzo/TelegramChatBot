@@ -7,5 +7,5 @@ digraph "Library.PlainTextCategoriaPrinter"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [label="{Library.PlainTextCategoria\lPrinter\n||+ Print()\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node2 -> Node1 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];
-  Node2 [label="{ITextPrinter\< Categoria \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classITextPrinter.html",tooltip=" "];
+  Node2 [label="{ITextPrinter\< Categoria \>\n||+ Print()\l}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1ITextPrinter.html",tooltip=" "];
 }

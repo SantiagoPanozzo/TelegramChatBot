@@ -1,0 +1,14 @@
+digraph "Library.SolicitudCatalog.GetSolicitud"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.SolicitudCatalog.\lGetSolicitud",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para obtener una solicitud por id"];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.ContratoHandler.\lGetSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad7ea07a39a3d74804c2ba82ef20bc557",tooltip="Método para obtener una solicitud por id"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="LibraryTests.SolicitudCatalog\lTests.ObtenerSolicitudPorIdTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudCatalogTests.html#a71262b42fa65f30a6548046194253754",tooltip="Test para cuando se quiere obtener una solicitud por un valor de id."];
+}

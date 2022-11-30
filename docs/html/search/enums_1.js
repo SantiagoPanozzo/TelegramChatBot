@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iniciostate_0',['InicioState',['../classInicioHandler.html#a2ea59b6b841c5cfbb91e269358a46eff',1,'InicioHandler']]]
+  ['buscarstate_0',['BuscarState',['../classBuscarHandler.html#a343ef3759e9a8781c3b53867f771b183',1,'BuscarHandler']]]
 ];

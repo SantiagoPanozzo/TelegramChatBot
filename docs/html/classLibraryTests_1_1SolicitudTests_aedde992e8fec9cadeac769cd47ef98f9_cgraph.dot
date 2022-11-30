@@ -1,0 +1,31 @@
+digraph "LibraryTests.SolicitudTests.Wipe"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="LibraryTests.SolicitudTests.Wipe",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Al terminar un test borra todas las instancias de singleton."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Library.Categoria.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Categoria.html#a9dc64ac957bac65b36af961ff8452bd7",tooltip="Método para eliminar los datos de la clase."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Library.OfertaDeServicio.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertaDeServicio.html#a65d1334c2fda213d77789f1de8b2e15d",tooltip="Método para borrar los datos de la clase."];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Library.Solicitud.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#acfbfa706443736c8165543ad9ba09b18",tooltip="Método para borrar los datos de la clase."];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Library.UsuariosCatalog.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1UsuariosCatalog.html#abb9c9adf35b3a7ed363649520f4ed853",tooltip="Método para borrar los datos de la clase."];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="Library.OfertasHandler.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a85e8f00c4e9c7e5b72cbac541b55f754",tooltip="Método para borrar los datos de la clase."];
+  Node6 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="Library.Usuario.GetTipo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb",tooltip="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador."];
+  Node1 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="Library.ContratoHandler.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad630defa0fa3d95a1261855d4a96e8c0",tooltip="Método para borrar los datos de la clase."];
+  Node8 -> Node7 [color="steelblue1",style="solid"];
+  Node1 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="Library.SolicitudCatalog.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SolicitudCatalog.html#a499d23028c51c6420baa6b0d74558524",tooltip="Método para borrar los datos de la clase."];
+  Node9 -> Node7 [color="steelblue1",style="solid"];
+  Node1 -> Node10 [color="steelblue1",style="solid"];
+  Node10 [label="Library.RegistryHandler.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#a0c29a69500a72355605df52f11f2ef1a",tooltip="Método para borrar los datos de la clase."];
+  Node10 -> Node7 [color="steelblue1",style="solid"];
+}

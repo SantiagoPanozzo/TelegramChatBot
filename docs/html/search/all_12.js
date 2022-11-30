@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['telegrambot_0',['TelegramBot',['../classTelegramBot.html',1,'']]],
-  ['tempinfo_1',['TempInfo',['../classRegistrarHandler.html#a840b17061d8390766f443efe30b86c95',1,'RegistrarHandler']]],
-  ['temptipo_2',['TempTipo',['../classRegistrarHandler.html#ae41b21df41c159b2b70bd58731b3121d',1,'RegistrarHandler']]],
-  ['trabajador_3',['Trabajador',['../classTrabajador.html',1,'Trabajador'],['../classTrabajador.html#a140a28b7a44a90048a01bc4bb5749e49',1,'Trabajador.Trabajador()']]],
-  ['trabajadortests_4',['TrabajadorTests',['../classTrabajadorTests.html',1,'']]]
+  ['telegrambot_0',['TelegramBot',['../classLibrary_1_1TelegramBot.html',1,'Library']]],
+  ['temptipo_1',['TempTipo',['../classRegistrarHandler.html#ab8c8b893744eaafa257226d7d80d916c',1,'RegistrarHandler']]],
+  ['tipodeusuario_2',['TipoDeUsuario',['../namespaceLibrary.html#a4cb7ae7753cda2aecc9365eead4518c9',1,'Library']]],
+  ['trabajador_3',['Trabajador',['../classLibrary_1_1Trabajador.html',1,'Library.Trabajador'],['../classLibrary_1_1Trabajador.html#a97983678e5335fd1fa6080459376a51b',1,'Library.Trabajador.Trabajador()']]],
+  ['trabajadortests_4',['TrabajadorTests',['../classLibraryTests_1_1TrabajadorTests.html',1,'LibraryTests']]]
 ];

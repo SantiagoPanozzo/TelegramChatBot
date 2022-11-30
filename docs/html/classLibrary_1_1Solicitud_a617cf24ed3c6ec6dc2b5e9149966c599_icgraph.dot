@@ -1,0 +1,18 @@
+digraph "Library.Solicitud.CalificarEmpleador"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.Solicitud.Calificar\lEmpleador",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para calificar un empleador."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="LibraryTests.SolicitudTests.\lAutocalificacionEmpleadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a70f6fe8c1b8ec69bc9135e26d58b9766",tooltip="Test para cuando un empleador puede ser autocalificado con la calificación neutra"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="LibraryTests.SolicitudTests.\lAutocalificacionTrabajadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a9a339ca388cf06488f0b7d1c7f3f25e6",tooltip="Test para cuando un trabajador puede ser autocalificado con la calificación neutra"];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="LibraryTests.SolicitudTests.\lEmpleadorYaCalificadoTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a0f15a9d28e0c5a6417536b8c7add017c",tooltip="Test para verificar que un empleador queda calificado."];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="LibraryTests.SolicitudTests.\lObtenerCalificacionEmpleadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a358576beefab1b854aa06e81d950fbd3",tooltip="Test para obtener la calificación de un empleador."];
+}
