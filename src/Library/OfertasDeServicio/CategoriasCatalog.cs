@@ -132,6 +132,7 @@ public class CategoriasCatalog
         if(user.GetTipo().Equals(TipoDeUsuario.Administrador))
         {
             categoria.DarDeBaja(user);
+            return;
         }
 
         throw (new ElevacionException("Solo un administrador puede quitar categorías"));
