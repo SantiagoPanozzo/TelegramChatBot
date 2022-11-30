@@ -4,14 +4,13 @@ using System.Linq;
 using System;
 namespace LibraryTests;
 
-
-/// <summary> Tests de la clase <see cref="SolicitudCatalog"> </summary>
+/// <summary> Tests de la clase <see cref="SolicitudCatalog">. </summary>
 public class SolicitudCatalogTests {
     [SetUp]
     public void Setup() {}
 
     [TearDown]
-    /// <summary> Al terminar un test borra todas las instancias de singleton </summary>
+    /// <summary> Al terminar un test borra todas las instancias de singleton. </summary>
     public void Wipe() {
         Administrador root = new Administrador("ROOT", "TOOR", "34023", "aaa@bbb.ccc");
         Categoria.Wipe(root);
@@ -43,7 +42,7 @@ public class SolicitudCatalogTests {
     }
 
     [Test]
-    /// <summary> Test de que el método Wipe() borra la instancia </summary>
+    /// <summary> Test de que el método Wipe() borra la instancia. </summary>
     public void WipearSolicitudCatalogTest() {
         // Arrange
         // Se crean nuevas instancias de catálogo de solicitudes(s1) y administrador (a1)
@@ -62,7 +61,7 @@ public class SolicitudCatalogTests {
     }
 
     [Test]
-    /// <summary> Test de que se agrega una solicitud al catálogo </summary>
+    /// <summary> Test de que se agrega una solicitud al catálogo. </summary>
     public void AgregarSolicitudTest() {
         // Arrange
         SolicitudCatalog s1 = SolicitudCatalog.GetInstance();
@@ -83,7 +82,7 @@ public class SolicitudCatalogTests {
     }
 
     [Test]
-    /// <summary> Test para eliminar una solicitud agregada al catálogo </summary>
+    /// <summary> Test para eliminar una solicitud agregada al catálogo. </summary>
     public void EliminarSolicitudTest() {
         // Arrange
         SolicitudCatalog s1 = SolicitudCatalog.GetInstance();
@@ -105,7 +104,7 @@ public class SolicitudCatalogTests {
     }
 
     [Test]
-    /// <summary> Test de cuando se elimina una solicitud creada pero agregada al catálogo </summary>
+    /// <summary> Test de cuando se elimina una solicitud creada pero agregada al catálogo. </summary>
     public void EliminarSolicitudNoAgregadaTest() {
         //Assert
         Assert.Throws<AccionInnecesariaException>(ErrorEliminarSolicitud);
@@ -127,7 +126,7 @@ public class SolicitudCatalogTests {
     }
 
     [Test]
-
+    /// <summary> Test para cuando se quiere obtener una solicitud por un valor de id. </summary>
     public void ObtenerSolicitudPorIdTest() {
         // Arrange
         // Se crean nuevas instancias de: catálogo de solicitudes(s1), empleador (e1), trabajador (t1), 
