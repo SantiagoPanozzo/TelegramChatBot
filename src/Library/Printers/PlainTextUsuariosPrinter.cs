@@ -3,12 +3,18 @@ public class PlainTextUsuariosPrinter : ITextPrinter<Usuario>
 {
     public string Print(List<Usuario> users)
     {
-        string response = "";
+        string result = "";
 
-        foreach (var us in users)
+        foreach (var usuario in users)
         {
-            response += $"\n»» ID: {us.Nick} ║ Tipo: {us.GetTipo()}\n";
+            var pubInfo = usuario.GetPublicInfo();
+            var contactInfo = usuario.GetContacto();
+            result += $"\nNick: {pubInfo["Nick"]}";
+            result += $"\nNombre: {pubInfo["Nombre"]}";
+            result += $"\nApellido: {pubInfo["Apellido"]}";
+            result += $"\nTeléfono: {contactInfo["Telefono"]}";
+            result += $"\nCorreo: {contactInfo["Correo"]}";
         }
-        return response;
+        return result;
     }
 }
