@@ -21,7 +21,7 @@ public abstract class BaseHandler : IHandler
     
     /// <summary> Obtiene el próximo "handler". </summary>
     /// <value> El "handler" que será invocado si este "handler" no procesa el mensaje. </value>
-    public IHandler Next { get; set; }
+    public IHandler? Next { get; set; }
 
     /// <summary> Obtiene o asigna el conjunto de palabras clave que este "handler" puede procesar. </summary>
     /// <value> Un array de palabras clave. </value>
@@ -29,7 +29,7 @@ public abstract class BaseHandler : IHandler
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="BaseHandler"/>. </summary>
     /// <param name="next"> El próximo "handler". </param>
-    public BaseHandler(IHandler next)
+    public BaseHandler(IHandler? next)
     {
         this.Next = next;
     }
