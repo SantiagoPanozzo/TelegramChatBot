@@ -1,4 +1,4 @@
-namespace LibraryTests;
+/* namespace LibraryTests;
 using Library;
 
 /// <summary> Tests de la clase <see cref="Categoria"> </summary>
@@ -7,11 +7,9 @@ public class CategoriaTests{
     public void Setup() {}
 
     [Test]
-    public void  GetOfertaById() {
+    public void GetOfertaById() {
 
-    
     //Arrange
-
     OfertasHandler ofertasHandler = OfertasHandler.GetInstance();
     RegistryHandler registryHandler = RegistryHandler.GetInstance();
     Administrador admin = registryHandler.RegistrarAdministrador("lolo", "1111","098268188","hello@gmail.com");
@@ -29,4 +27,6 @@ public class CategoriaTests{
      // Assert
     
     Assert.That(expected.Equals(result));
-
+    }
+}
+ */
