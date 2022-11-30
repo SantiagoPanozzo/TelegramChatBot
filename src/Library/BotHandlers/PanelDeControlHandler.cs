@@ -34,19 +34,21 @@ public class PanelDeControlHandler : BaseHandler
 
     protected Dictionary<string,string> tempPanelInfo = new();
     protected PlainTextCategoriaPrinter catPrinter = new();
+
     //protected ITextPrinter<Solicitud> solPrinter = new PlainTextAdminSolicitudPrinter();
     protected PlainTextOfertasPrinter ofPrinter = new();
     protected PlainTextUsuariosPrinter usPrinter = new();
+    protected PlainTextAdminSolicitudPrinter solPrinter = new();
     protected ContratoHandler solHandler = ContratoHandler.GetInstance();
     protected SolicitudCatalog solCatalog = SolicitudCatalog.GetInstance();
     protected CategoriasCatalog catCatalog = CategoriasCatalog.GetInstance();
     protected OfertasHandler ofCatalog = OfertasHandler.GetInstance();
     protected UsuariosCatalog usCatalog = UsuariosCatalog.GetInstance();
-
-    static Administrador admin = new("a","b","c","d");
-    protected int catremover;
-    protected int ofremover;
-    protected int solremover;
+    static RegistryHandler regHandler = RegistryHandler.GetInstance();
+    Administrador admin = new("a","b","c","d");
+    protected int catRemover;
+    protected int ofRemover;
+    protected int solRemover;
 
     /// <summary> Diccionario que guarda el estado en el <see cref="IHandler"/> según el ID de Telegram. </summary>
     /// <typeparam name="long"> ID de usuario de Telegram. </typeparam>
@@ -98,7 +100,7 @@ public class PanelDeControlHandler : BaseHandler
         response = "Error desconocido";
 
         PanelState state = this.Posiciones[message.From.Id];
-        switch (state)
+        switch(this.Posiciones[message.From.Id])
         {
             case PanelState.Start:
                 response = $"Ingresa tu nombre de usuario";
@@ -163,8 +165,8 @@ public class PanelDeControlHandler : BaseHandler
                 
                 /* case "3": //TODO ver los solPrinter
                     this.Posiciones[message.From.Id] = PanelState.VerSolicitudes; //TODO cambiar el printer
-                    //response=$"{solPrinter.Print(solHandler.GetSolicitudes(admin), admin)}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
-                    break; */
+                    response=$"{solPrinter.Print(solHandler.GetSolicitudes(admin))}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
+                    break;
 
                 case "4":
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
@@ -195,15 +197,15 @@ public class PanelDeControlHandler : BaseHandler
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
                     }
-                    switch(state){
+                    switch(this.Posiciones[message.From.Id]){
                         case PanelState.EliminarCategoria:
                         if(message.Text.Equals("cancelar"))
                         {
                             this.Posiciones[message.From.Id] = PanelState.Panel;
                             response = "Volviendo al inicio";
                         }
-                        catremover=Int32.Parse(message.Text);
-                        catCatalog.RemoveCategoria(admin, catCatalog.GetCategoriaById(catremover));
+                        catRemover=Int32.Parse(message.Text);
+                        catCatalog.RemoveCategoria(regHandler.RegistrarAdministrador("mateo","mateo123","098765432","mateo@gmail.com"), catCatalog.GetCategoriaById(catRemover));
                         response=$"Categoria Eliminada";
                         break;
                     }
@@ -221,7 +223,7 @@ public class PanelDeControlHandler : BaseHandler
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
                     }
-                    switch(state){
+                    switch(this.Posiciones[message.From.Id]){
                         case PanelState.AgregarCategoria:
                         if(message.Text.Equals("5"))
                         {
@@ -238,7 +240,15 @@ public class PanelDeControlHandler : BaseHandler
                     this.Posiciones[message.From.Id] = PanelState.PanelStart;
                     response = "Volviendo al inicio";
                 break;
+                default:
+                this.Posiciones[message.From.Id] = PanelState.Panel;
+                response = "Verifique que el estado ingresado sea correcto";
+            break;
             }
+            break;
+           default:
+                this.Posiciones[message.From.Id] = PanelState.Panel;
+                response = "Verifique que el estado ingresado sea correcto";
             break;
         case PanelState.VerOfertas:
             switch(message.Text) {
@@ -250,21 +260,26 @@ public class PanelDeControlHandler : BaseHandler
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
                 }
-                    switch(state){
+                    switch(this.Posiciones[message.From.Id]){
                         case PanelState.EliminarOferta:
                         if(message.Text.Equals("cancelar"))
                         {
                             this.Posiciones[message.From.Id] = PanelState.Panel;
                             response = "Volviendo al inicio";
                         }
-                        ofremover=Int32.Parse(message.Text);
-                        ofCatalog.DarDeBajaOferta(admin, ofremover);
+                        ofRemover=Int32.Parse(message.Text);
+                        ofCatalog.DarDeBajaOferta(admin, ofRemover);
                         response=$"Oferta eliminada";
                         break;
+                    default:
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Verifique que el estado ingresado sea correcto";
+                    break;
                     }
                     break;
             }
             break;
+
         case PanelState.VerSolicitudes:
             switch(message.Text) {
                 case "1":
@@ -275,22 +290,26 @@ public class PanelDeControlHandler : BaseHandler
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
                 }
-                    switch(state){
+                    switch(this.Posiciones[message.From.Id])
+                    {
                         case PanelState.EliminarSolicitud:
                         if(message.Text.Equals("cancelar"))
                         {
                             this.Posiciones[message.From.Id] = PanelState.Panel;
                             response = "Volviendo al inicio";
                         }
-                        solremover=Int32.Parse(message.Text);
-                        solCatalog.RemoveSolicitud(solHandler.GetSolicitud(solremover));
+                        solRemover=Int32.Parse(message.Text);
+                        solCatalog.RemoveSolicitud(solHandler.GetSolicitud(solRemover));
                         response=$"Solicitud eliminada";
                         break;
+                    default:
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Verifique que el estado ingresado sea correcto";
+                        break;
                     }
-                    break;
+                        break;
             }
-            break;
-
+        break;
         case PanelState.VerUsuarios:
             switch(message.Text) {
                 case "1":
@@ -301,7 +320,7 @@ public class PanelDeControlHandler : BaseHandler
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
                 }
-                    switch(state){
+                    switch(this.Posiciones[message.From.Id]){
                         case PanelState.EliminarUsuario:
                         if(message.Text.Equals("cancelar"))
                         {
@@ -313,9 +332,13 @@ public class PanelDeControlHandler : BaseHandler
                         response=$"Usuario eliminado";
                         break;
                     }
+                break;
+                    default:
+                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        response = "Verifique que el estado ingresado sea correcto";
                     break;
             }
-            break;
+        break;
             }
         }
 
