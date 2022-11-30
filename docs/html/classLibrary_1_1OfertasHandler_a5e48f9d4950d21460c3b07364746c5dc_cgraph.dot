@@ -1,0 +1,24 @@
+digraph "Library.OfertasHandler.GetOfertasIgnoreId"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Library.OfertasHandler.Get\lOfertasIgnoreId",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para obtener una lista de todas las OfertaDeServicio"];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Library.CategoriasCatalog.\lGetCategorias",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#af2be7107b5d7b98f07843d11433a3b80",tooltip="Método para conocer las categorias."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Library.CategoriasCatalog.\lGetInstance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#ac8ea1856af5e8d3a2a0566ce38dd1025",tooltip="Método para obtener la instancia del catálogo de categorías."];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Library.OfertasHandler.Get\lOfertas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a4b8c9e0b2ae1720933457f3862c0a231",tooltip="Método para obtener OfertaDeServicio."];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Library.OfertasHandler.Get\lCategoriaById",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a6de3d8aae171fe68766039aefcbd5bb4",tooltip="Método para obtener una Categoria por id."];
+  Node5 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="Library.CategoriasCatalog.\lGetCategoriaById",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#a9bedf1f8b23af24ef3515c48b7d05200",tooltip="Método para obtener una categoría por id."];
+  Node6 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="Library.Categoria.GetId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Categoria.html#a391925bcef104bf634b266e75310aedf",tooltip="Método para obtener el ID de una Categoria."];
+  Node4 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="Library.Categoria.GetOfertas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Categoria.html#a4afc53d36c30f85579ddec37db5698ba",tooltip="Método para conocer la lista de ofertas."];
+}

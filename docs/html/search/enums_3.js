@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['panelstate_0',['PanelState',['../classPanelDeControlHandler.html#a3e55c49f0bc6f1f0e4beb6005eb44057',1,'PanelDeControlHandler']]]
+  ['iniciostate_0',['InicioState',['../classInicioHandler.html#a2ea59b6b841c5cfbb91e269358a46eff',1,'InicioHandler']]]
 ];

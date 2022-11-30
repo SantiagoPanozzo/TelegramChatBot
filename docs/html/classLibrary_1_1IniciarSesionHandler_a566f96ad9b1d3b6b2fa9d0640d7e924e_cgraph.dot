@@ -1,0 +1,19 @@
+digraph "Library.IniciarSesionHandler.InternalHandle"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Library.IniciarSesionHandler.\lInternalHandle",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Procesamiento de los mensajes."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Library.RegistryHandler.\lGetUsuario",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#ab102a5d3011a478c5e6b60401941d429",tooltip="Método para obtener los datos de un Usuario."];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Library.UsuariosCatalog.\lGetUsuarios",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1UsuariosCatalog.html#a6a3f81b438afc68cd3809e603728f9bb",tooltip="Método para conocer los usuarios."];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Library.Usuario.VerifyContraseña",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Usuario.html#acbdfa6138482340a11d788735778f6ec",tooltip="Método verificar que la contraseña sea igual a la anteriormente ingresada al iniciar sesión."];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Library.RegistryHandler.\lVerificarNick",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1RegistryHandler.html#ab807cbae1dac0a1a8d26a3d3dab44b20",tooltip="Método para verificar el nickname de un Usuario."];
+  Node5 -> Node3 [color="steelblue1",style="solid"];
+}

@@ -1,5 +1,6 @@
 var searchData=
 [
   ['paneldecontrolhandler_0',['PanelDeControlHandler',['../classPanelDeControlHandler.html#acb06846be73582bf493390bb71668295',1,'PanelDeControlHandler']]],
-  ['print_1',['Print',['../classConsoleCategoriaPrinter.html#aa413fbf376c35ef8c789260047901064',1,'ConsoleCategoriaPrinter.Print()'],['../interfaceITextPrinter.html#a52511bd8f5c6395e8c97a46bc73fa7f8',1,'ITextPrinter.Print()'],['../classSolicitudPrinter.html#a7d88c152d3daa4c5be3762ceb1360ae8',1,'SolicitudPrinter.Print()']]]
+  ['parsecedula_1',['ParseCedula',['../classLibrary_1_1RegistryHandler.html#ac9641ffa2669a41c7eeb20f713ddd625',1,'Library::RegistryHandler']]],
+  ['printall_2',['PrintAll',['../classLibrary_1_1ConsoleCategoriaPrinter.html#add9f98fef710177359ddf522797da206',1,'Library.ConsoleCategoriaPrinter.PrintAll()'],['../classLibrary_1_1SolicitudPrinter.html#a0167025cf5a10b6791ef0bd3d59a0019',1,'Library.SolicitudPrinter.PrintAll()']]]
 ];

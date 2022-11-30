@@ -1,0 +1,27 @@
+digraph "Library.OfertaDeServicio.GetCalificacion"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Library.OfertaDeServicio.\lGetCalificacion",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para obtener la calificación dada a la oferta tras ser finalizada."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Library.Solicitud.GetTrabajadorRate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a9c37895e75e674a5ea4667bb8aee1d4d",tooltip="Método para obtener el promedio de calificación de un trabajador."];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="LibraryTests.SolicitudTests.\lObtenerCalificacionTrabajadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a13584e2804329bd86928b91d6f6e2670",tooltip="Test para obtener la calificación de un trabajador."];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.Solicitud.IsRated",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a3f28506b2bd1231cf55a2652d876d2ea",tooltip="Método para conocer si una oferta fue calificada."];
+  Node4 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="LibraryTests.SolicitudTests.\lAutocalificacionEmpleadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a70f6fe8c1b8ec69bc9135e26d58b9766",tooltip="Test para cuando un empleador puede ser autocalificado con la calificación neutra"];
+  Node4 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="Library.Solicitud.Calificar\lTrabajador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a7f50425869d0aad5d0c0f7e6abe42492",tooltip="Método para calificar un trabajador."];
+  Node6 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node6 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="LibraryTests.SolicitudTests.\lOfertaYaCalificadaTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#ad912bd4d5ed920e25f5cbb1dfe8c2804",tooltip="Test para verificar que una oferta quede calificada."];
+  Node4 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="Library.Solicitud.Update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="LibraryTests.SolicitudTests.\lValorAutocalificacionTrabajadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#aca7b1821289fc047c742c2e609c1ab08",tooltip="Test para conocer la calificación de un empleador autocalificado"];
+}
