@@ -44,7 +44,8 @@ public class OfertarHandler : BaseHandler
 
         response = "El usuario loggeado debe ser un Trabajador para poder ofertar un servicio.";
 
-        if (user.GetTipo() == TipoDeUsuario.Trabajador){
+        if (user.GetTipo() == TipoDeUsuario.Trabajador)
+        {
             switch (state)
             {
                 case OfertarStates.Start:
@@ -83,7 +84,7 @@ public class OfertarHandler : BaseHandler
                 default:
                     response = "Error desconocido (switch)";
                     break;
-            }   
+            }  
         }
     }
 }
