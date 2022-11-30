@@ -60,9 +60,8 @@ public abstract class Usuario : IDesactivable {
 
     /// <summary> Checkea si el usuario está activo. </summary>
     /// <returns> Retorna un valor de bool, True si está activo o False si no lo está. </returns>
-    public bool IsActive()
-    {
-        return this.Activo;
+    public virtual bool IsActive(){
+        return Activo;
     }
 
     /// <summary> Método para desactivar un usuario. </summary>

@@ -5,7 +5,6 @@ public class Trabajador : Usuario, ICalificable
 {
 
     private List<Calificacion> Reputacion { get; set; }
-    private bool Activo { get; set; }
 
     /// <summary> Constructor de la clase. </summary>
     /// <param name="nombre"> Nombre del usuario. </param> 
@@ -16,7 +15,7 @@ public class Trabajador : Usuario, ICalificable
     /// <param name="telefono"> Teléfono del usuario. </param> 
     /// <param name="correo"> Correo electrónico del usuario. </param> 
     /// <param name="ubicacion"> Ubicación del usuario. </param>
-    /// <returns> Devuelve instancia de <see cref="Trabajador"> creada. </returns>
+    /// <returns> Devuelve instancia de <see cref="Trabajador"> creada. </returns>    
     public Trabajador(string nombre, string apellido, string nick, string contraseña, DateTime fechaNacimiento, string cedula,
      string telefono, string correo, Tuple<double, double>  ubicacion)
     {
@@ -32,6 +31,11 @@ public class Trabajador : Usuario, ICalificable
         this.SetContraseña(contraseña);
         this.Reputacion = new List<Calificacion>();
         this.Activo = true;
+    }
+
+    public override bool IsActive()
+    {
+        return this.Activo;
     }
     
     /// <summary> Método para calificar un usuario. </summary>

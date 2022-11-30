@@ -115,12 +115,9 @@ public class PanelDeControlHandler : BaseHandler
                 break;
             case PanelState.Password:
                 this.tempPanelInfo["adminpassword"]=message.Text;
-                // switch (LoginAdminChecker())
-                switch (message.Text)
-
+                switch (LoginAdminChecker())
                 {
-                    // case true:
-                    case "si":
+                    case true:
                         response = $"Iniciando sesion...\n\nElige una acción:\n1) Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         if(message.Text.Equals("5"))
@@ -129,8 +126,7 @@ public class PanelDeControlHandler : BaseHandler
                             response = "Volviendo al inicio";
                         }
                         break;
-                    // case false:
-                    case "no":
+                    case false:
                         response = $"Nombre de usuario o contraseña incorrecta, vuelve a intentarlo\n\nIngresa tu nombre de usuario";
                         this.Posiciones[message.From.Id] = PanelState.Username;
                         break;
@@ -174,6 +170,10 @@ public class PanelDeControlHandler : BaseHandler
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
                     response=$"{usPrinter.Print(usCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario\n2)Cancelar";
                     break;
+                case "5":
+                    this.Posiciones[message.From.Id] = PanelState.Panel;
+                    response = "Volviendo al inicio";
+                    break;
                 default:
                     response = "Verifique que el estado ingresado sea correcto";
                     break;
@@ -199,10 +199,10 @@ public class PanelDeControlHandler : BaseHandler
                 case "3":
                     this.Posiciones[message.From.Id] = PanelState.Panel;
                     response = "Volviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios";
-                break;
+                    break;
                 default:
-                this.Posiciones[message.From.Id] = PanelState.PanelStart;
-                response = "Verifique que el estado ingresado sea correcto";
+                    this.Posiciones[message.From.Id] = PanelState.PanelStart;
+                    response = "Verifique que el estado ingresado sea correcto";
             break;
             }
             break;
