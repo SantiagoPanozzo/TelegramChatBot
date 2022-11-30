@@ -38,7 +38,6 @@ public class OfertaDeServicio : IDesactivable
     
     /// <summary> Método para borrar los datos de la clase. </summary>
     /// <param name="admin"> Tipo de usuario que llama al método. </param>
-
     public static void Wipe(Administrador admin)
     {
         OfertaDeServicio.Instancias = 0;
