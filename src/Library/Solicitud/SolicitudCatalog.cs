@@ -4,9 +4,8 @@ namespace Library;
 using System.Collections.Generic;
 
 /// <summary> Clase para para manejar el catálogo de solicitudes. </summary>
-/// /// <!-- Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
-/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las solicitudes. -->
-
+/// <remarks> Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más
+/// se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las solicitudes. </remarks> 
 public class SolicitudCatalog
 {
 
@@ -54,12 +53,12 @@ public class SolicitudCatalog
         return SolicitudCatalog.Instance;
     }
     
-    /// <summary> Método para agregar una <see cref="Solicitud"> al catálogo. </summary>
-    /// <param name="Oferta"> <see cref="OfertaDeServicio"> que se busca. </param>
-    /// <param name="empleador"> <see cref="Empleador"> que realiza la <see cref="Solicitud">. </param>
-    /// <!-- Utilizamos creator ya que al ser esta clase el catálogo que almacenará instancias de solicitud, es la
+    /// <summary> Método para agregar una <see cref="Solicitud"> al catálogo. 
+    /// <remarks> Utilizamos creator ya que al ser esta clase el catálogo que almacenará instancias de solicitud, es la
     /// clase que más sentido tiene que cree estas instancias, es la que trabajará de manera más directa con las
-    /// solicitudes. -->
+    /// solicitudes. </remarks> </summary>
+    /// <param name="Oferta"> <see cref="OfertaDeServicio"> que se quiere agregar. </param>
+    /// <param name="empleador"> <see cref="Empleador"> que realiza la <see cref="Solicitud">. </param>
     public Solicitud AddSolicitud(OfertaDeServicio Oferta, Empleador empleador)
     {
         foreach (Solicitud solicitud in Solicitudes)
@@ -70,7 +69,6 @@ public class SolicitudCatalog
         Solicitudes.Add(nuevaSolicitud);
         return nuevaSolicitud;
     }
-
 
     /// <summary> Método para obtener una solicitud por id </summary>
     /// <param name="id"> Valor de id para filtrar <see cref="Solicitud"/> </param>
@@ -86,8 +84,10 @@ public class SolicitudCatalog
 
     /// <summary> Método para eliminar una <see cref="Solicitud"> </summary>
     /// <param name="solicitud"> <see cref="Solicitud"> que se desea eliminar </param>
-
-    public void RemoveSolicitud (Solicitud solicitud){
+    public void RemoveSolicitud (Solicitud solicitud) {
+        if (!Solicitudes.Contains(solicitud)) {
+            throw new AccionInnecesariaException();
+        }
         Solicitudes.Remove(solicitud);
     }
 }
