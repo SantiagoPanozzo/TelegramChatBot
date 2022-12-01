@@ -33,19 +33,23 @@ public class PanelDeControlHandler : BaseHandler
     public PanelState State { get; set; }
 
     protected Dictionary<string,string> tempPanelInfo = new();
+
+
     protected PlainTextCategoriaPrinter catPrinter = new();
-    
-    //protected ITextPrinter<Solicitud> solPrinter = new PlainTextAdminSolicitudPrinter();
+
     protected PlainTextOfertasPrinter ofPrinter = new();
     protected PlainTextUsuariosPrinter usPrinter = new();
     protected PlainTextAdminSolicitudPrinter solPrinter = new();
+
     protected ContratoHandler solHandler = ContratoHandler.GetInstance();
     protected SolicitudCatalog solCatalog = SolicitudCatalog.GetInstance();
     protected CategoriasCatalog catCatalog = CategoriasCatalog.GetInstance();
     protected OfertasHandler ofCatalog = OfertasHandler.GetInstance();
     protected UsuariosCatalog usCatalog = UsuariosCatalog.GetInstance();
     static RegistryHandler regHandler = RegistryHandler.GetInstance();
+
     Administrador admin = new("a","b","c","d");
+
     protected int catRemover;
     protected int ofRemover;
     protected int solRemover;
@@ -113,12 +117,9 @@ public class PanelDeControlHandler : BaseHandler
                 break;
             case PanelState.Password:
                 this.tempPanelInfo["adminpassword"]=message.Text;
-                // switch (LoginAdminChecker())
-                switch (message.Text)
-
+                switch (LoginAdminChecker())
                 {
-                    // case true:
-                    case "si":
+                    case true:
                         response = $"Iniciando sesion...\n\nElige una acción:\n1) Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         if(message.Text.Equals("5"))
@@ -127,8 +128,7 @@ public class PanelDeControlHandler : BaseHandler
                             response = "Volviendo al inicio";
                         }
                         break;
-                    // case false:
-                    case "no":
+                    case false:
                         response = $"Nombre de usuario o contraseña incorrecta, vuelve a intentarlo\n\nIngresa tu nombre de usuario";
                         this.Posiciones[message.From.Id] = PanelState.Username;
                         break;
@@ -140,7 +140,7 @@ public class PanelDeControlHandler : BaseHandler
             //     break;
         case PanelState.PanelStart:
             this.Posiciones[message.From.Id] = PanelState.Panel;
-            response = $"Elige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+            response = $"Elige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios";
             if(message.Text.Equals("5"))
             {
                 this.Posiciones[message.From.Id] = PanelState.Panel;
@@ -150,8 +150,8 @@ public class PanelDeControlHandler : BaseHandler
         case PanelState.Panel:
             switch(message.Text) {
                 case "1":
-                    this.Posiciones[message.From.Id] = PanelState.VerCategorias;
                     response=$"{catPrinter.Print(catCatalog.GetCategorias())}\n¿Deseas realizar otra acción?\n1)Eliminar Categoría\n2)Agregar Categoría\n3)Cancelar";
+                    this.Posiciones[message.From.Id] = PanelState.VerCategorias;
                     break;
                 case "2":
                     this.Posiciones[message.From.Id] = PanelState.VerOfertas;
@@ -160,20 +160,20 @@ public class PanelDeControlHandler : BaseHandler
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
                     }
-                    response=$"{ofPrinter.Print(ofCatalog.GetOfertasIgnoreId())} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta";
+                    response=$"{ofPrinter.Print(ofCatalog.GetOfertasIgnoreId())} \n¿Deseas realizar otra acción?\n1)Eliminar Oferta\n2)Cancelar";
                     break;
                 
                      case "3": 
                     this.Posiciones[message.From.Id] = PanelState.VerSolicitudes; 
-                    response=$"{solPrinter.Print(solHandler.GetSolicitudes(admin))}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud";
+                    response=$"{solPrinter.Print(solHandler.GetSolicitudes(admin))}\n¿Deseas realizar otra acción?\n1)Eliminar Solicitud\n2)Cancelar";
                     break;
 
                 case "4":
                     this.Posiciones[message.From.Id] = PanelState.VerUsuarios;
-                    response=$"{usPrinter.Print(usCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario";
+                    response=$"{usPrinter.Print(usCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario\n2)Cancelar";
                     break;
                 case "5":
-                    this.Posiciones[message.From.Id] = PanelState.PanelStart;
+                    this.Posiciones[message.From.Id] = PanelState.Panel;
                     response = "Volviendo al inicio";
                     break;
                 default:
@@ -184,98 +184,65 @@ public class PanelDeControlHandler : BaseHandler
         case PanelState.VerCategorias:
             switch(message.Text) {
                 case "1":
-                    response=$"¿Que categoría deseas eliminar? Escribe \"cancelar\" para volver al inicio";
+                    response=$"¿Que categoría deseas eliminar?";
                     this.Posiciones[message.From.Id] = PanelState.EliminarCategoria;
                     switch(message.Text){
                         case "cancelar":
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
+                        this.Posiciones[message.From.Id] = PanelState.PanelStart;
                         response = "Volviendo al inicio";
-                        break;
-                    }
-                    if(message.Text.Equals("cancelar"))
-                    {
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
-                        response = "Volviendo al inicio";
-                    }
-                    switch(this.Posiciones[message.From.Id]){
-                        case PanelState.EliminarCategoria:
-                        if(message.Text.Equals("cancelar"))
-                        {
-                            this.Posiciones[message.From.Id] = PanelState.Panel;
-                            response = "Volviendo al inicio";
-                        }
-                        catRemover=Int32.Parse(message.Text);
-                        catCatalog.RemoveCategoria(regHandler.RegistrarAdministrador("mateo","mateo123","098765432","mateo@gmail.com"), catCatalog.GetCategoriaById(catRemover));
-                        response=$"Categoria Eliminada";
                         break;
                     }
                     break;
+
                case "2":
-                    if(message.Text.Equals("cancelar"))
-                    {
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
-                        response = "Volviendo al inicio";
-                    }
-                    response=$"Ingresa la descripción de la categoría. Escribe \"cancelar\" para volver al inicio";
+                    response=$"Ingresa la descripción de la categoría";
                     this.Posiciones[message.From.Id] = PanelState.AgregarCategoria;
-                    if(message.Text.Equals("cancelar"))
-                    {
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
-                        response = "Volviendo al inicio";
-                    }
-                    switch(this.Posiciones[message.From.Id]){
-                        case PanelState.AgregarCategoria:
-                        if(message.Text.Equals("5"))
-                        {
-                            this.Posiciones[message.From.Id] = PanelState.Panel;
-                            response = "Volviendo al inicio";
-                        }
-                        this.tempPanelInfo["addcategoria"]=message.Text;
-                        catCatalog.AddCategoria(admin, this.tempPanelInfo["addcategoria"] );
-                        response=$"Categoria añadida";
-                        break;
-                    }
                     break;
                 case "3":
-                    this.Posiciones[message.From.Id] = PanelState.PanelStart;
-                    response = "Volviendo al inicio";
-                break;
+                    this.Posiciones[message.From.Id] = PanelState.Panel;
+                    response = "Volviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios";
+                    break;
                 default:
-                this.Posiciones[message.From.Id] = PanelState.Panel;
-                response = "Verifique que el estado ingresado sea correcto";
+                    this.Posiciones[message.From.Id] = PanelState.PanelStart;
+                    response = "Verifique que el estado ingresado sea correcto";
             break;
             }
             break;
            default:
-                this.Posiciones[message.From.Id] = PanelState.Panel;
+                this.Posiciones[message.From.Id] = PanelState.PanelStart;
                 response = "Verifique que el estado ingresado sea correcto";
+            break;
+        case PanelState.EliminarCategoria:
+            catRemover=Int32.Parse(message.Text);
+            catCatalog.RemoveCategoria(regHandler.RegistrarAdministrador("mateo","mateo123","098765432","mateo@gmail.com"), catCatalog.GetCategoriaById(catRemover));
+            response=$"Categoria Eliminada\n{catPrinter.Print(catCatalog.GetCategorias())}\nVoviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+            this.Posiciones[message.From.Id] = PanelState.Panel;
+
+            break;
+        case PanelState.AgregarCategoria:
+            if(message.Text.Equals("5"))
+            {
+                this.Posiciones[message.From.Id] = PanelState.PanelStart;
+                response = "Volviendo al inicio";
+            }
+            this.tempPanelInfo["addcategoria"]=message.Text;
+            catCatalog.AddCategoria(admin, this.tempPanelInfo["addcategoria"] );
+            response=$"Categoria añadida\n{catPrinter.Print(catCatalog.GetCategorias())}\nVoviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+            this.Posiciones[message.From.Id] = PanelState.Panel;
+
             break;
         case PanelState.VerOfertas:
             switch(message.Text) {
                 case "1":
-                    response=$"¿Que oferta deseas eliminar? Escribe \"cancelar\" para volver al inicio";
+                    response=$"¿Que oferta deseas eliminar?";
                     this.Posiciones[message.From.Id] = PanelState.EliminarOferta;
-                    if(message.Text.Equals("cancelar"))
-                {
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
-                        response = "Volviendo al inicio";
-                }
-                    switch(this.Posiciones[message.From.Id]){
-                        case PanelState.EliminarOferta:
-                        if(message.Text.Equals("cancelar"))
-                        {
-                            this.Posiciones[message.From.Id] = PanelState.Panel;
-                            response = "Volviendo al inicio";
-                        }
-                        ofRemover=Int32.Parse(message.Text);
-                        ofCatalog.DarDeBajaOferta(admin, ofRemover);
-                        response=$"Oferta eliminada";
-                        break;
-                    default:
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
-                        response = "Verifique que el estado ingresado sea correcto";
-                    break;
-                    }
+                break;
+                case "2":
+                    response=$"Volviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+                   this.Posiciones[message.From.Id] = PanelState.Panel;
+                break;
+                default:
+                    response = "Verifique que el estado ingresado sea correcto";
                     break;
             }
             break;
@@ -283,62 +250,66 @@ public class PanelDeControlHandler : BaseHandler
         case PanelState.VerSolicitudes:
             switch(message.Text) {
                 case "1":
-                    response=$"¿Que solicitud deseas eliminar? Escribe \"cancelar\" para volver al inicio";
+                    response=$"¿Que solicitud deseas eliminar?";
                     this.Posiciones[message.From.Id] = PanelState.EliminarSolicitud;
                     if(message.Text.Equals("cancelar"))
-                {
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
-                        response = "Volviendo al inicio";
-                }
-                    switch(this.Posiciones[message.From.Id])
                     {
-                        case PanelState.EliminarSolicitud:
-                        if(message.Text.Equals("cancelar"))
-                        {
-                            this.Posiciones[message.From.Id] = PanelState.Panel;
-                            response = "Volviendo al inicio";
-                        }
-                        solRemover=Int32.Parse(message.Text);
-                        solCatalog.RemoveSolicitud(solHandler.GetSolicitud(solRemover));
-                        response=$"Solicitud eliminada";
-                        break;
-                    default:
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
-                        response = "Verifique que el estado ingresado sea correcto";
-                        break;
-                    }
-                        break;
-            }
-        break;
-        case PanelState.VerUsuarios:
-            switch(message.Text) {
-                case "1":
-                    response=$"Ingresa el nick del usuario a eliminar. Escribe \"cancelar\" para volver al inicio";
-                    this.Posiciones[message.From.Id] = PanelState.EliminarUsuario;
-                    if(message.Text.Equals("cancelar"))
-                {
                         this.Posiciones[message.From.Id] = PanelState.Panel;
                         response = "Volviendo al inicio";
-                }
-                    switch(this.Posiciones[message.From.Id]){
-                        case PanelState.EliminarUsuario:
-                        if(message.Text.Equals("cancelar"))
-                        {
-                            this.Posiciones[message.From.Id] = PanelState.Panel;
-                            response = "Volviendo al inicio";
-                        }
-                        this.tempPanelInfo["usuarioeliminado"]=message.Text;
-                        usCatalog.RemoveUsuario(admin, usCatalog.GetUsuarioById(this.tempPanelInfo["usuarioeliminado"]));
-                        response=$"Usuario eliminado";
-                        break;
                     }
+                    break;
+                case "2":
+                    response=$"Volviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+                   this.Posiciones[message.From.Id] = PanelState.Panel;
                 break;
-                    default:
-                        this.Posiciones[message.From.Id] = PanelState.Panel;
-                        response = "Verifique que el estado ingresado sea correcto";
+                default:
+                    response = "Verifique que el estado ingresado sea correcto";
                     break;
             }
         break;
+        case PanelState.EliminarOferta:
+            ofRemover=Int32.Parse(message.Text);
+            ofCatalog.DarDeBajaOferta(admin, ofRemover);
+            response=$"Oferta eliminada\n{ofPrinter.Print(ofCatalog.GetOfertasIgnoreId())}\nVoviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+            this.Posiciones[message.From.Id] = PanelState.Panel;
+            break;
+        case PanelState.EliminarSolicitud:
+            solRemover=Int32.Parse(message.Text);
+            solCatalog.RemoveSolicitud(solHandler.GetSolicitud(solRemover));
+            response=$"Solicitud eliminada\n{solPrinter.Print(solHandler.GetSolicitudes(admin))}\nVoviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+            this.Posiciones[message.From.Id] = PanelState.Panel;
+            break;
+
+        case PanelState.VerUsuarios:
+            switch(message.Text) {
+                case "1":
+                    response=$"Ingresa el nick del usuario a eliminar";
+                    this.Posiciones[message.From.Id] = PanelState.EliminarUsuario;
+                    if(message.Text.Equals("cancelar"))
+                {
+                        this.Posiciones[message.From.Id] = PanelState.PanelStart;
+                        response = "Volviendo al inicio";
+                }
+                break;
+                case "2":
+                    response=$"Volviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+                   this.Posiciones[message.From.Id] = PanelState.Panel;
+                break;
+                default:
+                    this.Posiciones[message.From.Id] = PanelState.PanelStart;
+                    response = "Verifique que el estado ingresado sea correcto";
+                break;
+
+            }
+        break;
+
+        case PanelState.EliminarUsuario:
+            this.tempPanelInfo["usuarioeliminado"]=message.Text;
+            regHandler.RemoveUsuario(admin, usCatalog.GetUsuarioById(this.tempPanelInfo["usuarioeliminado"]));
+            response=$"Usuario eliminado\n{usPrinter.Print(usCatalog.GetUsuariosIgnoreId())}\nVoviendo al inicio\n\nElige una acción:\n1)Ver Categorías\n2)Ver Ofertas\n3)Ver Solicitudes\n4)Ver Usuarios\n5)Cancelar";
+            this.Posiciones[message.From.Id] = PanelState.Panel;
+        break;
+
             }
         }
 
