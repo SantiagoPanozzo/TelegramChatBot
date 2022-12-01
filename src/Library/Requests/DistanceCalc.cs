@@ -54,7 +54,6 @@ public class Distance
         // Honestamente no recuerdo por qué lo hice Singleton XD, no la uso para extender de nada, después veo
         if (_instance == null)
         {
-            _token = DotNetEnv.Env.GetString("DISTANCE_KEY");
             _instance = new Distance();
         }
         return _instance;
