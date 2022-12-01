@@ -50,6 +50,7 @@ public class OfertarHandler : BaseHandler
 
         response = "El usuario loggeado debe ser un Trabajador para poder ofertar un servicio.";
 
+
         //Cancela el flujo del handler y retorna al estado anterior o inicial.
 
         switch(message.Text){
@@ -67,8 +68,9 @@ public class OfertarHandler : BaseHandler
                 posiciones[message.From.Id] = OfertarStates.Start;
                 return;
         }
-
-        if (user.GetTipo() == TipoDeUsuario.Trabajador){
+        
+        if (user.GetTipo() == TipoDeUsuario.Trabajador)
+        {
             switch (state)
             {
                 case OfertarStates.Start:
@@ -121,7 +123,7 @@ public class OfertarHandler : BaseHandler
                 default:
                     response = "Error desconocido";
                     break;
-            }   
+            }  
         }
     }
 }

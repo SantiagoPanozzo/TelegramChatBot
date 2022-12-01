@@ -284,6 +284,14 @@ public class RegistryHandler
         }
         return user;
     }
+    public Usuario GetUserForAdmin(Usuario admin, string nickname)
+    {
+        if (admin.GetTipo() == TipoDeUsuario.Administrador)
+        {
+            return GetUser(nickname);
+        }
+        throw new Exception("Sólo un administrador puede ejecutar esta acción");
+    }
 
     /// <summary> Método para obtener la lista de trabajadores. </summary>
     /// <returns> Devuelve lista de trabajadores. </returns>
