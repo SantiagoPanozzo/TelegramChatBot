@@ -42,7 +42,7 @@ public class RegistrarHandler : BaseHandler
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="RegistrarHandler"/>. </summary>
     /// <param name="next"> Próximo <see cref="IHandler"/> </param>
-    public RegistrarHandler(BaseHandler next) : base(next) {
+    public RegistrarHandler(BaseHandler? next) : base(next) {
         this.Keywords = new string[] {"registrar", "/registrar" };
         this.State = RegistrarState.Start;
         this._id = Handlers.RegistrarHandler;
