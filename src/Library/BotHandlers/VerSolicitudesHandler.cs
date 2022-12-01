@@ -11,9 +11,17 @@ public class VerSolicitudesHandler : BaseHandler
     {
         Start,
         ElegidaEmp,
+        ElegidaEmp2,
         ElegidaTrab,
+        ElegidaTrab2,
         ContestarEmp,
-        ContestarTrab
+        ContestarTrab,
+        CalificarEmp,
+        CalificarTrab,
+        QueHacerEmp,
+        QueHacerTrab,
+        CalificarSolEmp,
+        CalificarSolTrab
     }
     public TipoDeUsuario Tipo { get; set; }
 
@@ -24,6 +32,8 @@ public class VerSolicitudesHandler : BaseHandler
     private List <Solicitud> trabList = new();
     private int solGetterEmp;
     private int solGetterTrab;
+    private Calificacion calif { get; set; }
+    private ContratoHandler conHandler = ContratoHandler.GetInstance();
 
     protected override bool CanHandle(Message message)
     {
@@ -46,7 +56,7 @@ public class VerSolicitudesHandler : BaseHandler
     public VerSolicitudesHandler(BaseHandler next) : base(next)
     {
         this.Keywords = new string[] {"Ver solicitudes", "/versolicitudes", "/ver solicitudes","solicitudes","/solicitudes"};
-        this._id = Handlers.StartHandler;
+        this._id = Handlers.VerSolicitudesHandler;
     }
 
     /// <summary> Procesa el mensaje "Categorias" y retorna true; retorna false en caso contrario. </summary>
@@ -60,17 +70,36 @@ public class VerSolicitudesHandler : BaseHandler
         switch (this.Posiciones[message.From.Id])
         {
             case SolicitudState.Start:
-                switch(Tipo){
-                    case TipoDeUsuario.Empleador:
-                        response = $"{empSolPrinter.Print(solCatalog.GetSolicitudes(user)) }\nIntroduzca el ID de la solicitud que quiere ver o ingrese \"volver\" para regresar.";
-                        this.Posiciones[message.From.Id] = SolicitudState.ElegidaEmp;
+                response=$"¿Que deseas hacer?\n1)Ver mis solicitudes\n2)Calificar mis solicitudes";
+                switch(message.Text){
+                    case "1":
+                        switch(Tipo)
+                        {
+                            case TipoDeUsuario.Empleador:
+                                response = $"{empSolPrinter.Print(solCatalog.GetSolicitudes(user)) }\nIntroduzca el ID de la solicitud que quiere ver o ingrese \"volver\" para regresar.";
+                                this.Posiciones[message.From.Id] = SolicitudState.ElegidaEmp;
+                            break;
+                            case TipoDeUsuario.Trabajador:
+                                response = $"{trabSolPrinter.Print(solCatalog.GetSolicitudes(user)) }\nIntroduzca el ID de la solicitud que quiere ver o ingrese \"volver\" para regresar.";
+                                this.Posiciones[message.From.Id] = SolicitudState.ElegidaTrab;
+                            break;
+                        }
                     break;
-                    case TipoDeUsuario.Trabajador:
-                        response = $"{trabSolPrinter.Print(solCatalog.GetSolicitudes(user)) }\nIntroduzca el ID de la solicitud que quiere ver o ingrese \"volver\" para regresar.";
-                        this.Posiciones[message.From.Id] = SolicitudState.ElegidaTrab;
+                    case "2":
+                        switch(Tipo)
+                        {
+                            case TipoDeUsuario.Empleador:
+                                response = $"{empSolPrinter.Print(solCatalog.GetSolicitudes(user)) }\nIntroduzca el ID de la solicitud que quiere ver o ingrese \"volver\" para regresar.";
+                                this.Posiciones[message.From.Id] = SolicitudState.ElegidaEmp2;
+                            break;
+                            case TipoDeUsuario.Trabajador:
+                                response = $"{trabSolPrinter.Print(solCatalog.GetSolicitudes(user)) }\nIntroduzca el ID de la solicitud que quiere ver o ingrese \"volver\" para regresar.";
+                                this.Posiciones[message.From.Id] = SolicitudState.ElegidaTrab2;
+                            break;
+                        }
                         break;
                 }
-                break;
+            break;
             
             case SolicitudState.ElegidaEmp:
                 if (message.Text.Equals("volver"))
@@ -81,7 +110,7 @@ public class VerSolicitudesHandler : BaseHandler
                 }
                 solGetterEmp= Int32.Parse(message.Text);
                 empList.Add(solCatalog.GetSolicitud(solGetterEmp));
-                response = $"{empSolPrinter.Print(empList)} aca se muestra la solicitud \n1) Aceptarla \n2)Rechazarla \n3)Volver";
+                response = $"{empSolPrinter.Print(empList)} aca se muestra la solicitud\n1) Aceptarla\n2)Rechazarla\n3)Volver";
                 this.Posiciones[message.From.Id] = SolicitudState.ContestarEmp;
                 break;
 
@@ -94,7 +123,7 @@ public class VerSolicitudesHandler : BaseHandler
                 }
                 solGetterTrab= Int32.Parse(message.Text);
                 trabList.Add(solCatalog.GetSolicitud(solGetterTrab));
-                response = $"{empSolPrinter.Print(trabList)} aca se muestra la solicitud \n1) Aceptarla \n2)Rechazarla \n3)Volver";
+                response = $"{empSolPrinter.Print(trabList)} aca se muestra la solicitud\n1) Aceptarla\n2)Rechazarla\n3)Volver";
                 this.Posiciones[message.From.Id] = SolicitudState.ContestarTrab;
                 break;
             case SolicitudState.ContestarEmp:
@@ -105,24 +134,27 @@ public class VerSolicitudesHandler : BaseHandler
                         response = "Solicitud aceptada, volviendo a inicio";
                         this.Posiciones[message.From.Id] = SolicitudState.Start;
                         HandlerHandler.ActiveHandler[message.From.Id] = Handlers.NoneHandler;
-
                         break;
+
                     case "2":
                         solCatalog.RechazarSolicitud(user, solCatalog.GetSolicitud(solGetterEmp));
                         response = "Solicitud rechazada, volviendo a inicio";
                         this.Posiciones[message.From.Id] = SolicitudState.Start;
                         HandlerHandler.ActiveHandler[message.From.Id] = Handlers.NoneHandler;
                         break;
+
                     case "3":
                         response = "Volviendo a inicio";
                         this.Posiciones[message.From.Id] = SolicitudState.Start;
                         HandlerHandler.ActiveHandler[message.From.Id] = Handlers.NoneHandler;
                         break;
+
                     default:
                         response = "Vuelve a intentarlo";
                         break;
                 }
                 break;
+
             case SolicitudState.ContestarTrab:
                 switch (message.Text)
                 {
@@ -132,21 +164,94 @@ public class VerSolicitudesHandler : BaseHandler
                         this.Posiciones[message.From.Id] = SolicitudState.Start;
                         HandlerHandler.ActiveHandler[message.From.Id] = Handlers.NoneHandler;
                         break;
+                        
                     case "2":
                         solCatalog.RechazarSolicitud(user, solCatalog.GetSolicitud(solGetterTrab));
                         response = "Solicitud rechazada, volviendo a inicio";
                         this.Posiciones[message.From.Id] = SolicitudState.Start;
                         HandlerHandler.ActiveHandler[message.From.Id] = Handlers.NoneHandler;
                         break;
+
                     case "3":
                         response = "Volviendo a inicio";
                         this.Posiciones[message.From.Id] = SolicitudState.Start;
                         HandlerHandler.ActiveHandler[message.From.Id] = Handlers.NoneHandler;
                         break;
+
                     default:
                         response = "Vuelve a intentarlo";
                         break;
                 }
+                break;
+           case SolicitudState.ElegidaEmp2:
+                if (message.Text.Equals("volver"))
+                {
+                    response = "Volviendo al inicio";
+                    this.Posiciones[message.From.Id] = SolicitudState.Start;
+                    break;
+                }
+                solGetterEmp= Int32.Parse(message.Text);
+                empList.Add(solCatalog.GetSolicitud(solGetterEmp));
+                response = $"{empSolPrinter.Print(empList)} aca se muestra la solicitud\n1) Calificarla\n2) Volver";
+                this.Posiciones[message.From.Id] = SolicitudState.QueHacerEmp;
+                break;
+
+            case SolicitudState.ElegidaTrab2:
+                if (message.Text.Equals("volver"))
+                {
+                    response = "Volviendo al inicio";
+                    this.Posiciones[message.From.Id] = SolicitudState.Start;
+                    break;
+                }
+                solGetterTrab= Int32.Parse(message.Text);
+                trabList.Add(solCatalog.GetSolicitud(solGetterTrab));
+                response = $"{empSolPrinter.Print(trabList)} aca se muestra la solicitud\n1) Calificarla\n2) Volver";
+                this.Posiciones[message.From.Id] = SolicitudState.QueHacerTrab;
+
+                break;
+            case SolicitudState.QueHacerEmp:
+                switch(message.Text){
+                    case "1":
+                        response = $"Que calificación deseas darle?\n1)Deficiente\n2)Regular\n3)Bueno\n4)Muy Bueno\n5)Sobresaliente";
+                        this.Posiciones[message.From.Id] = SolicitudState.CalificarSolEmp;
+                        break;
+                    case "2":
+                        response = "Volviendo a inicio";
+                        this.Posiciones[message.From.Id] = SolicitudState.Start;
+                        HandlerHandler.ActiveHandler[message.From.Id] = Handlers.NoneHandler;
+                        break;
+                }
+                break;
+            case SolicitudState.QueHacerTrab:
+                switch(message.Text){
+                    case "1":
+                        response = $"Que calificación deseas darle?\n1)Deficiente\n2)Regular\n3)Bueno\n4)Muy Bueno\n5)Sobresaliente";
+                        this.Posiciones[message.From.Id] = SolicitudState.CalificarSolTrab;
+                        break;
+                    case "2":
+                        response = "Volviendo a inicio";
+                        this.Posiciones[message.From.Id] = SolicitudState.Start;
+                        HandlerHandler.ActiveHandler[message.From.Id] = Handlers.NoneHandler;
+                        break;
+                }
+                break;
+            case SolicitudState.CalificarSolEmp:
+             if (new string[] {"1", "2", "3", "4", "5"}.Contains(message.Text)) calif = (Calificacion)(Int32.Parse(message.Text));
+                conHandler.GetSolicitud(solGetterEmp).CalificarTrabajador((Empleador)user,calif);
+
+
+
+
+                break;
+            case SolicitudState.CalificarSolTrab:
+             if (new string[] {"1", "2", "3", "4", "5"}.Contains(message.Text)) calif = (Calificacion)(Int32.Parse(message.Text));
+                conHandler.GetSolicitud(solGetterTrab).CalificarEmpleador((Trabajador)user,calif);
+
+                // if (message.Text.Equals("1")){calif=Calificacion.Deficiente;}
+                // if (message.Text.Equals("2")){calif=Calificacion.Regular;}
+                // if (message.Text.Equals("3")){calif=Calificacion.Bueno;}
+                // if (message.Text.Equals("4")){calif=Calificacion.MuyBueno;}
+                // if (message.Text.Equals("5")){calif=Calificacion.Sobresaliente;}
                 break;
             default:
                 response = "Asegurate que el estado ingresado sea correcto";
