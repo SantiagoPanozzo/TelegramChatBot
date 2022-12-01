@@ -27,9 +27,9 @@ public static class AddressValidation
     {
         var body = Request(address);
         var deserialized = JObject.Parse(body);
-        Console.WriteLine(deserialized);
+        //Console.WriteLine(deserialized);
         var cofidenceLevel = double.Parse(deserialized["results"][0]["rank"]["confidence"].ToString());
-        Console.WriteLine(cofidenceLevel);
+        //Console.WriteLine(cofidenceLevel);
         return (cofidenceLevel >= 0.95) ? true : false;
     }
 }
