@@ -38,18 +38,12 @@ public class DefaultHandler : BaseHandler
         message.Text = message.Text.ToLower();
         switch (message.Text)
         {
-            case "tu madre":
-                response = "tiene una polla";
-                break;
             case "que":
                 response = "so";
                 break;
             case "faker":
                 response =
                     "GIGACHAD Who is Faker? For the blind, He is the vision. For the hungry, He is the chef. For the thirsty, He is the water. If Faker thinks, I agree. If Faker speaks, I’m listening. If Faker has one fan, it is me. If Faker has no fans, I don’t exist. GIGACHAD";
-                break;
-            case "puto":
-                response = "tu vieja";
                 break;
             case "comandos":
                 response = "Usa /info";
@@ -61,14 +55,7 @@ public class DefaultHandler : BaseHandler
                 AsyncContext.Run(() => SendVideo(message));
                 response = string.Empty;
                 break;
-            case "supuse":
-                AsyncContext.Run(() => SendImage(message));
-                response = string.Empty;
-                break;
-            case "godin":
-                AsyncContext.Run(() => SendImageU(message));
-                response = string.Empty;
-                break;
+            
             default:
                 response = "Mensaje desconocido, para conocer todos los comandos ingrese \"info\" o ejecute el comando /info";
                 break;
