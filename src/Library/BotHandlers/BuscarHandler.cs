@@ -125,10 +125,11 @@ public class BuscarHandler : BaseHandler {
                 if (new string[]{"1", "2", "3", "4", "5"}.Contains(message.Text))
                 {
                     filteredByCalif = filtered.Where(x => x.GetReputacion() == ((Calificacion)(cal))).ToList();
+                    response = $"Ofertas por reputación iguales a {((Calificacion)(cal)).ToString()}:\n"
+                    + printer.Print(filteredByCalif);
+                    break;
                 }
-                response = $"Ofertas por reputación iguales a {((Calificacion)(cal)).ToString()}:\n"
-                + printer.Print(filteredByCalif);
-                // response = $"{ofPrinter.Print(seaHandler.FiltrarReputacion())}"; //TODO fixear metodo
+                response = "Mensaje inválido, inténtelo de nuevo";
                 break;
             case BuscarState.VerOferta:
                 response = "ok";  //TODO ver esto
