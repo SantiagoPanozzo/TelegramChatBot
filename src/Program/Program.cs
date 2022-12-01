@@ -24,6 +24,7 @@ public class Program {
         RegistryHandler.GetInstance().RegistrarTrabajador("TESTNombre", "TESTApellido", "TEST", "TEST",
             "01 01 2000", "1234567", "555555555", "alguien@example.com",
             new Tuple<double, double>(-31.389425985682045, -57.959432913914476));
+        Administrador admin = RegistryHandler.GetInstance().RegistrarAdministrador("Admin", "toor", "473555555", "admin@dominio.com");
         bool ejecutar = true;
         
         Updater.EnableAutoUpdate();
