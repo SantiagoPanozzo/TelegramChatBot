@@ -171,7 +171,7 @@ public class RegistrarHandler : BaseHandler
                     break;
                 }
                 this.GlobalTempInfo[message.From.Id]["contraseña"] = message.Text;
-                response = "Ingresa tu fecha de nacimiento (formato \"mes dia año\"), escribe \"cancelar\" parar volver al inicio";
+                response = "Ingresa tu fecha de nacimiento (formato \"día/mes/año\"), escribe \"cancelar\" parar volver al inicio";
                 this.Posiciones[message.From.Id] = RegistrarState.LecturaFechaNacimiento;
                 if(message.Text.Equals("cancelar"))
                 {
@@ -186,13 +186,13 @@ public class RegistrarHandler : BaseHandler
             case RegistrarState.LecturaFechaNacimiento:
                 try
                 {
-                    DateTime.Parse(message.Text);
+                    DateTime.ParseExact(message.Text, "dd/MM/yyyy", null);
                 }
                 catch (FormatException e)
                 {
                     Console.WriteLine(e);
                     response =
-                        "Formato no aceptado, vuelve a intentarlo usando el formado \"mes dia año\" sin comillas";
+                        "Formato no aceptado, vuelve a intentarlo usando el formado \"día/mes/año\" sin comillas";
                     break;
                 }
                 this.GlobalTempInfo[message.From.Id]["fechaNacimiento"] = message.Text;

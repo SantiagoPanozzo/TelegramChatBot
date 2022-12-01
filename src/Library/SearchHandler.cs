@@ -23,28 +23,28 @@ public class SearchHandler {
     /// <summary> Método para filtrar las <see cref="OfertaDeServicio"/> por distancia </summary>
     /// <param name="emp"> Empleador que llama al método </param>
     /// <returns> Lista con las ofertas filtradas por distancia </returns>
-    public List<OfertaDeServicio> FiltrarDistancia(Empleador emp) {      //TODO: Emplear con API, cambiar clases para este propósito
-        List<OfertaDeServicio> offers = new();
-        List<OfertaDeServicio> resultOffers = new();
-        OfertasHandler handler = OfertasHandler.GetInstance();
-        List<Categoria> categorias = handler.GetCategorias();
+    // public List<OfertaDeServicio> FiltrarDistancia(Empleador emp) {      //TODO: Emplear con API, cambiar clases para este propósito
+    //     List<OfertaDeServicio> offers = new();
+    //     List<OfertaDeServicio> resultOffers = new();
+    //     OfertasHandler handler = OfertasHandler.GetInstance();
+    //     List<Categoria> categorias = handler.GetCategorias();
 
-        Tuple<double,double> myPos = emp.Ubicacion;
-        foreach(Categoria cat in categorias)
-        {
-            foreach(OfertaDeServicio oferta in cat.GetOfertas()){
-                offers.Add(oferta);}
-        }
+    //     Tuple<double,double> myPos = emp.Ubicacion;
+    //     foreach(Categoria cat in categorias)
+    //     {
+    //         foreach(OfertaDeServicio oferta in cat.GetOfertas()){
+    //             offers.Add(oferta);}
+    //     }
 
-        OfertaDeServicio shortest;
-        int ofertas = offers.Count;
-        for(int k = 0; k < ofertas; k ++){
-            shortest = GetShortest(myPos, offers);
-            resultOffers.Add(shortest);
-            offers.Remove(shortest);
-        }
-        return resultOffers;
-    }
+    //     OfertaDeServicio shortest;
+    //     int ofertas = offers.Count;
+    //     for(int k = 0; k < ofertas; k ++){
+    //         shortest = GetShortest(myPos, offers);
+    //         resultOffers.Add(shortest);
+    //         offers.Remove(shortest);
+    //     }
+    //     return resultOffers;
+    // }
 
     /// <summary> Método para obtener la <see cref="OfertaDeServicio"/> más cercana </summary>
     /// <param name="myPos"> Posición actual del <see cref="Usuario"/> </param>

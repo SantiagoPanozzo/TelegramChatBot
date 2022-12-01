@@ -1,5 +1,6 @@
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using System.Linq;
 namespace Library.BotHandlers;
 
 /// <summary> Muestra una lista de <see cref="OfertaDeServicio"/> disponibles según su ID y el trabajo. El usuario puede seleccionar
@@ -116,11 +117,17 @@ public class BuscarHandler : BaseHandler {
                 response = $"ver oferta \"{this.Oferta}\", desea solicitarla?";  //TODO falta implementar printer
                 break;
             case BuscarState.Reputacion:
-                if (message.Text.Equals("1")){calif=Calificacion.Deficiente;}
-                if (message.Text.Equals("2")){calif=Calificacion.Regular;}
-                if (message.Text.Equals("3")){calif=Calificacion.Bueno;}
-                if (message.Text.Equals("4")){calif=Calificacion.MuyBueno;}
-                if (message.Text.Equals("5")){calif=Calificacion.Sobresaliente;}
+                SearchHandler inst = new();
+                var filtered = inst.FiltrarReputacion();
+                List<OfertaDeServicio> filteredByCalif = new();
+                ITextPrinter<OfertaDeServicio> printer = new PlainTextOfertasPrinter();
+                var cal = Int32.Parse(message.Text);
+                if (new string[]{"1", "2", "3", "4", "5"}.Contains(message.Text))
+                {
+                    filteredByCalif = filtered.Where(x => x.GetReputacion() == ((Calificacion)(cal))).ToList();
+                }
+                response = $"Ofertas por reputación iguales a {((Calificacion)(cal)).ToString()}:\n"
+                + printer.Print(filteredByCalif);
                 // response = $"{ofPrinter.Print(seaHandler.FiltrarReputacion())}"; //TODO fixear metodo
                 break;
             case BuscarState.VerOferta:
