@@ -63,6 +63,7 @@ esta información de todos los usuarios y además modificarla.
 
 -Todos estos comandos se realizan una vez que se inició sesión-
 
+
 **• Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios para que de esa forma, los trabajadores puedan clasificarlos.**
 
 -admin
@@ -72,6 +73,7 @@ esta información de todos los usuarios y además modificarla.
 -2
 
 -\descripcion de la categoria\
+
 
 **• Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma, pueda evitar ofertas inadecuadas.**
 
@@ -83,11 +85,13 @@ esta información de todos los usuarios y además modificarla.
 
 -\ID de la oferta\
 
+
 **• Como trabajador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.**
 
 -registrar
 
 -\completar datos\
+
 
 **• Como trabajador, quiero poder hacer ofertas de servicios; mi oferta indicará en qué categoría quiero publicar, tendrá una descripción del servicio ofertado, y un precio para que de esa forma, mis ofertas sean ofrecidas a quienes quieren contratar servicios.**
 
@@ -97,17 +101,20 @@ esta información de todos los usuarios y además modificarla.
 
 -\completar datos\
 
+
 **• Como empleador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto para que de esa forma, pueda proveer información de contacto a los trabajadores que quiero contratar. *Como empleador, quiero buscar ofertas de trabajo, opcionalmente filtrando por categoría para que de esa forma, pueda contratar un servicio.**
 
 -registrar
 
 -\completar datos\
 
+
 **• Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma ascendente de distancia a mi ubicación, es decir, las más cercanas primero para que de esa forma, pueda poder contratar un servicio.**
 
 -buscar
 
 -2
+
 
 **• Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.**
 
@@ -117,9 +124,11 @@ esta información de todos los usuarios y además modificarla.
 
 -\Ingresar reputacion a filtrar\
 
+
 **• Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de servicio determinada.**
 
 -a implementar
+
 
 **• Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi empleador.**
 
@@ -133,6 +142,7 @@ esta información de todos los usuarios y además modificarla.
 
 -\calificacion\
 
+
 **• Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del trabajador.**
 
 -Ver solicitudes
@@ -144,6 +154,7 @@ esta información de todos los usuarios y además modificarla.
 -1
 
 -\calificacion\
+
 
 • Como trabajador, quiero poder saber la reputación del empleador que me contacte para que de esa forma, poder decidir sobre su solicitud de contratación.
 
