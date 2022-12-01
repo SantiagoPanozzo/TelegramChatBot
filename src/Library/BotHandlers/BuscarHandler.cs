@@ -90,7 +90,7 @@ public class BuscarHandler : BaseHandler {
                         break;
                     case "2":
                         this.Posiciones[message.From.Id] = BuscarState.Distancia;
-                        response = "imaginate que aca hay una lista filtrada por distancia \nque oferta ver?";
+                        response = "Organizando ofertas... Ingrese la posición de una oferta que quiere encontrar (número entero)";
                         break;
                     case "3":
                         this.Posiciones[message.From.Id] = BuscarState.Reputacion;
@@ -112,27 +112,31 @@ public class BuscarHandler : BaseHandler {
                 response = $"{ofPrinter.Print(seaHandler.FiltrarCategoria(ofHandler.GetCategoriaById(catId)) )}";  //TODO falta implementar printer
                 break;
             case BuscarState.Distancia:
+                ITextPrinter<OfertaDeServicio> printer = new PlainTextOfertasPrinter();
+                var offers = seaHandler.FiltrarDistanciaTotal((Empleador)HandlerHandler.CachedLogins[message.From.Id]);
+                printer.Print(offers);
                 this.Posiciones[message.From.Id] = BuscarState.VerOferta;
                 this.Oferta = message.Text;
                 response = $"ver oferta \"{this.Oferta}\", desea solicitarla?";  //TODO falta implementar printer
                 break;
             case BuscarState.Reputacion:
-                SearchHandler inst = new();
-                var filtered = inst.FiltrarReputacion();
+                var filtered = seaHandler.FiltrarReputacion();
                 List<OfertaDeServicio> filteredByCalif = new();
-                ITextPrinter<OfertaDeServicio> printer = new PlainTextOfertasPrinter();
+                ITextPrinter<OfertaDeServicio> printerOf = new PlainTextOfertasPrinter();
                 var cal = Int32.Parse(message.Text);
                 if (new string[]{"1", "2", "3", "4", "5"}.Contains(message.Text))
                 {
                     filteredByCalif = filtered.Where(x => x.GetReputacion() == ((Calificacion)(cal))).ToList();
                     response = $"Ofertas por reputación iguales a {((Calificacion)(cal)).ToString()}:\n"
-                    + printer.Print(filteredByCalif);
+                    + printerOf.Print(filteredByCalif);
                     break;
                 }
                 response = "Mensaje inválido, inténtelo de nuevo";
                 break;
             case BuscarState.VerOferta:
-                response = "ok";  //TODO ver esto
+                var offersAgn = seaHandler.FiltrarDistanciaTotal((Empleador)HandlerHandler.CachedLogins[message.From.Id]);
+                response = "Error de conversión, inténtelo de nuevo.";
+                response = $"{offersAgn[Int32.Parse(message.Text)]}";
                 this.Posiciones[message.From.Id] = BuscarState.Start;
                 break;
             default:

@@ -45,7 +45,7 @@ public class SearchHandler {
         }
         return resultOffers;
     }
-    public List<OfertaDeServicio> FiltrarDistanciaFinal(Empleador emp) {      //TODO: Emplear con API, cambiar clases para este propósito
+    public List<OfertaDeServicio> FiltrarDistanciaTotal(Empleador emp) {
         Administrador adm = new("aasfasfqwef", "saaggfqwfdqa", "092999222", "aoisfn@gmail.com");
         Dictionary<OfertaDeServicio, double> finalOffers = new();
         var regHandler = RegistryHandler.GetInstance();
@@ -70,8 +70,9 @@ public class SearchHandler {
         }
 
         var sortedFinalOffers = from entry in finalOffers orderby entry.Value ascending select entry;
-        sortedFinalOffers = sortedFinalOffers.ToDictionary<KeyValuePair<List<OfertaDeServicio>, double>, OfertaDeServicio, double>(pair => pair.Key, pair => pair.Value);
-        return sortedFinalOffers;
+        var sortedDict = sortedFinalOffers.ToDictionary(pair => pair.Key, pair => pair.Value);
+        var sortedResultList = sortedDict.Keys.ToList();
+        return sortedResultList;
     }
 
     /// <summary> Método para obtener la <see cref="OfertaDeServicio"/> más cercana </summary>
