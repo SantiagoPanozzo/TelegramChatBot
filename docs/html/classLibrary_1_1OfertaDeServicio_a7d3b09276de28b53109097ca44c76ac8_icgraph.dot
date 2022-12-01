@@ -17,11 +17,13 @@ digraph "Library.OfertaDeServicio.GetCalificacion"
   Node5 [label="LibraryTests.SolicitudTests.\lAutocalificacionEmpleadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a70f6fe8c1b8ec69bc9135e26d58b9766",tooltip="Test para cuando un empleador puede ser autocalificado con la calificación neutra"];
   Node4 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node6 [label="Library.Solicitud.Calificar\lTrabajador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a7f50425869d0aad5d0c0f7e6abe42492",tooltip="Método para calificar un trabajador."];
-  Node6 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node6 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node7 [label="LibraryTests.SolicitudTests.\lOfertaYaCalificadaTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#ad912bd4d5ed920e25f5cbb1dfe8c2804",tooltip="Test para verificar que una oferta quede calificada."];
-  Node4 -> Node8 [dir="back",color="steelblue1",style="solid"];
-  Node8 [label="Library.Solicitud.Update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
-  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
-  Node9 [label="LibraryTests.SolicitudTests.\lValorAutocalificacionTrabajadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#aca7b1821289fc047c742c2e609c1ab08",tooltip="Test para conocer la calificación de un empleador autocalificado"];
+  Node7 [label="VerSolicitudesHandler.Internal\lHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerSolicitudesHandler.html#a1e63b22d8a14776e4d0e796fd2ce9e85",tooltip="Procesa el mensaje \"Categorias\" y retorna true; retorna false en caso contrario."];
+  Node6 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node6 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="LibraryTests.SolicitudTests.\lOfertaYaCalificadaTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#ad912bd4d5ed920e25f5cbb1dfe8c2804",tooltip="Test para verificar que una oferta quede calificada."];
+  Node4 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="Library.Solicitud.Update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
+  Node1 -> Node10 [dir="back",color="steelblue1",style="solid"];
+  Node10 [label="LibraryTests.SolicitudTests.\lValorAutocalificacionTrabajadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#aca7b1821289fc047c742c2e609c1ab08",tooltip="Test para conocer la calificación de un empleador autocalificado"];
 }

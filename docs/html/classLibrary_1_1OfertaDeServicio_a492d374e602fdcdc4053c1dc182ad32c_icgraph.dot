@@ -18,8 +18,10 @@ digraph "Library.OfertaDeServicio.IsRated"
   Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
   Node6 [label="Library.Solicitud.Calificar\lTrabajador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a7f50425869d0aad5d0c0f7e6abe42492",tooltip="Método para calificar un trabajador."];
   Node6 -> Node7 [dir="back",color="steelblue1",style="solid"];
-  Node7 [label="LibraryTests.SolicitudTests.\lObtenerCalificacionTrabajadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a13584e2804329bd86928b91d6f6e2670",tooltip="Test para obtener la calificación de un trabajador."];
+  Node7 [label="VerSolicitudesHandler.Internal\lHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerSolicitudesHandler.html#a1e63b22d8a14776e4d0e796fd2ce9e85",tooltip="Procesa el mensaje \"Categorias\" y retorna true; retorna false en caso contrario."];
+  Node6 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="LibraryTests.SolicitudTests.\lObtenerCalificacionTrabajadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a13584e2804329bd86928b91d6f6e2670",tooltip="Test para obtener la calificación de un trabajador."];
   Node6 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node5 -> Node8 [dir="back",color="steelblue1",style="solid"];
-  Node8 [label="Library.Solicitud.Update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
+  Node5 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="Library.Solicitud.Update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a2b9a4efefd35c16aca1099d7997c286e",tooltip="Método para actualizar una calificación en caso que se haga dentro del plazo. Si excede la fecha lími..."];
 }

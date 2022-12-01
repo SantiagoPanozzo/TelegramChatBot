@@ -12,9 +12,7 @@ digraph "Library.CategoriasCatalog.GetCategorias"
   Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node3 [label="Library.OfertasHandler.Get\lCategorias",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a5c8d43d8ca4ffdd9cef27103ad012830",tooltip="Método para obtener la lista de categorías."];
   Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="Library.SearchHandler.Filtrar\lDistancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ae23bf754caa5377f5ee254a2b6036566",tooltip="Método para filtrar las OfertaDeServicio por distancia"];
-  Node3 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node5 [label="Library.SearchHandler.Filtrar\lReputacion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ad0758e235efcc09dfec4bb2b3b8ff0ab",tooltip="Método para filtrar las OfertaDeServicio por reputación"];
-  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node6 [label="Library.OfertasHandler.Get\lOfertasIgnoreId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a5e48f9d4950d21460c3b07364746c5dc",tooltip="Método para obtener una lista de todas las OfertaDeServicio"];
+  Node4 [label="Library.SearchHandler.Filtrar\lReputacion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ad0758e235efcc09dfec4bb2b3b8ff0ab",tooltip="Método para filtrar las OfertaDeServicio por reputación"];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="Library.OfertasHandler.Get\lOfertasIgnoreId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a5e48f9d4950d21460c3b07364746c5dc",tooltip="Método para obtener una lista de todas las OfertaDeServicio"];
 }

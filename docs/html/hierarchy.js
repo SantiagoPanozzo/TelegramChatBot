@@ -45,7 +45,6 @@ var hierarchy =
     [ "IHandler", "interfaceIHandler.html", [
       [ "BaseHandler", "classBaseHandler.html", [
         [ "BuscarHandler", "classBuscarHandler.html", null ],
-        [ "CategoriasHandler", "classCategoriasHandler.html", null ],
         [ "DefaultHandler", "classDefaultHandler.html", null ],
         [ "InfoHandler", "classInfoHandler.html", null ],
         [ "InicioHandler", "classInicioHandler.html", null ],

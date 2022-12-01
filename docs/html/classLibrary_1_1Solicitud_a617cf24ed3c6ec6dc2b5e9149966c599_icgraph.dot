@@ -14,5 +14,7 @@ digraph "Library.Solicitud.CalificarEmpleador"
   Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
   Node4 [label="LibraryTests.SolicitudTests.\lEmpleadorYaCalificadoTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a0f15a9d28e0c5a6417536b8c7add017c",tooltip="Test para verificar que un empleador queda calificado."];
   Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node5 [label="LibraryTests.SolicitudTests.\lObtenerCalificacionEmpleadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a358576beefab1b854aa06e81d950fbd3",tooltip="Test para obtener la calificación de un empleador."];
+  Node5 [label="VerSolicitudesHandler.Internal\lHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerSolicitudesHandler.html#a1e63b22d8a14776e4d0e796fd2ce9e85",tooltip="Procesa el mensaje \"Categorias\" y retorna true; retorna false en caso contrario."];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="LibraryTests.SolicitudTests.\lObtenerCalificacionEmpleadorTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a358576beefab1b854aa06e81d950fbd3",tooltip="Test para obtener la calificación de un empleador."];
 }

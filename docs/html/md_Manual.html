@@ -150,8 +150,129 @@ La posibilidad que tiene cada rol de acceder a estas opciones son tal que:
 <ul>
 <li>* Los trabajadores pueden ver todas las solicitudes que los empleadores hayan hecho para las ofertas del propio trabajador, pero no pueden ver otras solicitudes que no los tengan a ellos como "objetivo".</li>
 <li>** Los empleadores no tienen la opción de ver ofertas como tal, ya que ellos no crean ofertas, sin embargo, disponen del buscador que les permite ver las ofertas creadas por los demás para así poder solicitarlas.</li>
-<li>*** Las opciones de los administradores parecen limitadas ya que, similar al empleador con el comando de ver ofertas, no pueden directamente utilizar estos métodos reservados para los otros usuarios; sin embargo, si que disponen de su propia forma de hacer algo similar mediante el Panel de Control, donde si pueden ver toda esta información de todos los usuarios y además modificarla. </li>
+<li>*** Las opciones de los administradores parecen limitadas ya que, similar al empleador con el comando de ver ofertas, no pueden directamente utilizar estos métodos reservados para los otros usuarios; sin embargo, si que disponen de su propia forma de hacer algo similar mediante el Panel de Control, donde si pueden ver toda esta información de todos los usuarios y además modificarla.</li>
 </ul>
+<hr  />
+<p >&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD </p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Historias de usuario:</h1>
+<p >Para verificar que se pueden realizar las historias de usuario se deben ingresar los siguientes comandos una vez loggeado:</p>
+<ul>
+<li><p class="startli">Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios para que de esa forma, los trabajadores puedan clasificarlos:</p>
+<p class="startli">1) "admin"</p>
+<p class="startli">2) "1"</p>
+<p class="startli">3) "2"</p>
+<p class="startli">4) Ingresar la descripción de la categoría</p>
+</li>
+<li><p class="startli">Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma, pueda evitar ofertas inadecuadas.**</p>
+<p class="startli">1) "admin"</p>
+<p class="startli">2) "2"</p>
+<p class="startli">3) "1"</p>
+<p class="startli">4) Ingresar ID de la oferta</p>
+</li>
+<li><p class="startli">Como trabajador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.**</p>
+<p class="startli">1) "registrar"</p>
+<p class="startli">2) Completar datos</p>
+</li>
+<li><p class="startli">Como trabajador, quiero poder hacer ofertas de servicios; mi oferta indicará en qué categoría quiero publicar, tendrá una descripción del servicio ofertado, y un precio para que de esa forma, mis ofertas sean ofrecidas a quienes quieren contratar servicios.**</p>
+<p class="startli">1) "ofertar"</p>
+<p class="startli">2) Ingresar ID de categoria</p>
+<p class="startli">3) Completar datos</p>
+</li>
+<li><p class="startli">Como empleador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto para que de esa forma, pueda proveer información de contacto a los trabajadores que quiero contratar. *Como empleador, quiero buscar ofertas de trabajo, opcionalmente filtrando por categoría para que de esa forma, pueda contratar un servicio.**</p>
+<p class="startli">1) "registrar"</p>
+<p class="startli">2) Completar datos</p>
+</li>
+<li><p class="startli">Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma ascendente de distancia a mi ubicación, es decir, las más cercanas primero para que de esa forma, pueda poder contratar un servicio.**</p>
+<p class="startli">1) "buscar"</p>
+<p class="startli">2) "2"</p>
+</li>
+<li><p class="startli">Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.**</p>
+<p class="startli">1) "buscar"</p>
+<p class="startli">2) "3"</p>
+<p class="startli">3) Ingresar reputacion a filtrar</p>
+</li>
+<li><p class="startli">Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de servicio determinada.**</p>
+<p class="startli">1) implementar</p>
+</li>
+<li><p class="startli">Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi empleador.**</p>
+<p class="startli">1) "Ver solicitudes"</p>
+<p class="startli">2) "2"</p>
+<p class="startli">3) Ingresar ID de la solicitud</p>
+<p class="startli">4) "1"</p>
+<p class="startli">5) Ingresar calificacion</p>
+</li>
+<li><p class="startli">Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del trabajador.**</p>
+<p class="startli">1) "Ver solicitudes"</p>
+<p class="startli">2) "2"</p>
+<p class="startli">3) Ingresar ID de la solicitud</p>
+<p class="startli">4) "1"</p>
+<p class="startli">5) Ingresar calificación</p>
+</li>
+<li>Como trabajador, quiero poder saber la reputación del empleador que me contacte para que de esa forma, poder decidir sobre su solicitud de contratación.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md19"></a>
+1) Implementar</h1>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Comandos para realizar historias de ususario:</h1>
+<p >-Todos estos comandos se realizan una vez que se inició sesión-</p>
+<p ><b>• Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios para que de esa forma, los trabajadores puedan clasificarlos.</b></p>
+<p >-admin</p>
+<p >-1</p>
+<p >-2</p>
+<p >-\descripcion de la categoria\</p>
+<p ><b>• Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma, pueda evitar ofertas inadecuadas.</b></p>
+<p >-admin</p>
+<p >-2</p>
+<p >-1</p>
+<p >-\ID de la oferta\</p>
+<p ><b>• Como trabajador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.</b></p>
+<p >-registrar</p>
+<p >-\completar datos\</p>
+<p ><b>• Como trabajador, quiero poder hacer ofertas de servicios; mi oferta indicará en qué categoría quiero publicar, tendrá una descripción del servicio ofertado, y un precio para que de esa forma, mis ofertas sean ofrecidas a quienes quieren contratar servicios.</b></p>
+<p >-ofertar</p>
+<p >-\ID de categoria\</p>
+<p >-\completar datos\</p>
+<p ><b>• Como empleador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto para que de esa forma, pueda proveer información de contacto a los trabajadores que quiero contratar. *Como empleador, quiero buscar ofertas de trabajo, opcionalmente filtrando por categoría para que de esa forma, pueda contratar un servicio.</b></p>
+<p >-registrar</p>
+<p >-\completar datos\</p>
+<p ><b>• Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma ascendente de distancia a mi ubicación, es decir, las más cercanas primero para que de esa forma, pueda poder contratar un servicio.</b></p>
+<p >-buscar</p>
+<p >-2</p>
+<p ><b>• Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.</b></p>
+<p >-buscar</p>
+<p >-3</p>
+<p >-\Ingresar reputacion a filtrar\</p>
+<p ><b>• Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de servicio determinada.</b></p>
+<p >-a implementar</p>
+<p ><b>• Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi empleador.</b></p>
+<p >-Ver solicitudes</p>
+<p >-2</p>
+<p >-\ID de la solicitud\</p>
+<p >-1</p>
+<p >-\calificacion\</p>
+<p ><b>• Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del trabajador.</b></p>
+<p >-Ver solicitudes</p>
+<p >-2</p>
+<p >-\ID de la solicitud\</p>
+<p >-1</p>
+<p >-\calificacion\</p>
+<p >• Como trabajador, quiero poder saber la reputación del empleador que me contacte para que de esa forma, poder decidir sobre su solicitud de contratación.</p>
+<p >-a implementar </p><blockquote class="doxtable">
+<blockquote class="doxtable">
+<blockquote class="doxtable">
+<blockquote class="doxtable">
+<blockquote class="doxtable">
+<blockquote class="doxtable">
+<blockquote class="doxtable">
+<p >&zwj;82aca79d03d751e082100b3b16343797f4a46512 </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -10,9 +10,7 @@ digraph "Library.OfertasHandler.GetInstance"
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
   Node2 [label="Library.SearchHandler.Filtrar\lCategoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#af8cc0f6c663bafdaf0ecb6b74ee39c4b",tooltip="Método para filtrar las OfertaDeServicio por Categoria"];
   Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="Library.SearchHandler.Filtrar\lDistancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ae23bf754caa5377f5ee254a2b6036566",tooltip="Método para filtrar las OfertaDeServicio por distancia"];
+  Node3 [label="Library.SearchHandler.Filtrar\lReputacion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ad0758e235efcc09dfec4bb2b3b8ff0ab",tooltip="Método para filtrar las OfertaDeServicio por reputación"];
   Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="Library.SearchHandler.Filtrar\lReputacion",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SearchHandler.html#ad0758e235efcc09dfec4bb2b3b8ff0ab",tooltip="Método para filtrar las OfertaDeServicio por reputación"];
-  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node5 [label="LibraryTests.CategoriaCatalog\lTests.ObtenerOfertaPorIdTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#acfdf86cb096080762e6b57f7a7dc37bb",tooltip="Test para cuando se quiere obtener una oferta por su valor de id"];
+  Node4 [label="LibraryTests.CategoriaCatalog\lTests.ObtenerOfertaPorIdTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#acfdf86cb096080762e6b57f7a7dc37bb",tooltip="Test para cuando se quiere obtener una oferta por su valor de id"];
 }

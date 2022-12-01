@@ -58,7 +58,6 @@ var annotated_dup =
     [ "AccionInnecesariaException", "classAccionInnecesariaException.html", null ],
     [ "BaseHandler", "classBaseHandler.html", "classBaseHandler" ],
     [ "BuscarHandler", "classBuscarHandler.html", "classBuscarHandler" ],
-    [ "CategoriasHandler", "classCategoriasHandler.html", "classCategoriasHandler" ],
     [ "DefaultHandler", "classDefaultHandler.html", "classDefaultHandler" ],
     [ "Distance", "classDistance.html", null ],
     [ "ElevacionException", "classElevacionException.html", null ],
