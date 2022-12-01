@@ -34,7 +34,9 @@ public class PanelDeControlHandler : BaseHandler
 
     protected Dictionary<string,string> tempPanelInfo = new();
 
+
     protected PlainTextCategoriaPrinter catPrinter = new();
+
     protected PlainTextOfertasPrinter ofPrinter = new();
     protected PlainTextUsuariosPrinter usPrinter = new();
     protected PlainTextAdminSolicitudPrinter solPrinter = new();

@@ -1,0 +1,26 @@
+digraph "VerSolicitudesHandler.InternalHandle"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="VerSolicitudesHandler.Internal\lHandle",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Procesa el mensaje \"Categorias\" y retorna true; retorna false en caso contrario."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Library.ContratoHandler.\lAceptarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#a9da1c5ea2f4b9eb3ebe351fa0dac67d5",tooltip="Método para aceptar una solicitud."];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Library.OfertaDeServicio.\lGetOfertante",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertaDeServicio.html#a317a1a53e5d0446eab1627651120cb02",tooltip="Método para obtener NickName de Ofertante."];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Library.Solicitud.Recibir\lRespuesta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#af5a3701c9bf3a3272239cfdbad4ca44c",tooltip="Método para conocer el estado de una oferta"];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Library.ContratoHandler.\lGetSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad7ea07a39a3d74804c2ba82ef20bc557",tooltip="Método para obtener una solicitud por id"];
+  Node5 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="Library.SolicitudCatalog.\lGetSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SolicitudCatalog.html#a0e97a598341427a7eb17f32de89e45eb",tooltip="Método para obtener una solicitud por id"];
+  Node6 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="Library.Solicitud.GetId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#ab9187247666d0ece299b2eae8d4bb91c",tooltip="Método para obtener el id de una Solicitud."];
+  Node1 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="Library.ContratoHandler.\lRechazarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad07b990d40d49dc3a2fba8e63289e465",tooltip="Método para rechazar una solicitud."];
+  Node8 -> Node3 [color="steelblue1",style="solid"];
+  Node8 -> Node4 [color="steelblue1",style="solid"];
+}

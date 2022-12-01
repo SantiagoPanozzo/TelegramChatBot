@@ -34,7 +34,7 @@ var annotated_dup =
     ] ],
     [ "LibraryTests", "namespaceLibraryTests.html", [
       [ "AdministradorTests", "classLibraryTests_1_1AdministradorTests.html", "classLibraryTests_1_1AdministradorTests" ],
-      [ "CategoriaCatalogTests", "classLibraryTests_1_1CategoriaCatalogTests.html", null ],
+      [ "CategoriaCatalogTests", "classLibraryTests_1_1CategoriaCatalogTests.html", "classLibraryTests_1_1CategoriaCatalogTests" ],
       [ "ContratoHandlerTests", "classLibraryTests_1_1ContratoHandlerTests.html", null ],
       [ "DistanceTests", "classLibraryTests_1_1DistanceTests.html", null ],
       [ "EmpleadorTests", "classLibraryTests_1_1EmpleadorTests.html", null ],
@@ -74,7 +74,7 @@ var annotated_dup =
     [ "VerContratosHandler", "classVerContratosHandler.html", null ],
     [ "VerInfoHandler", "classVerInfoHandler.html", "classVerInfoHandler" ],
     [ "VerOfertasHandler", "classVerOfertasHandler.html", "classVerOfertasHandler" ],
-    [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", null ],
+    [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", "classVerSolicitudesHandler" ],
     [ "VerUsuariosHandler", "classVerUsuariosHandler.html", null ],
     [ "YaCalificadoException", "classYaCalificadoException.html", null ]
 ];

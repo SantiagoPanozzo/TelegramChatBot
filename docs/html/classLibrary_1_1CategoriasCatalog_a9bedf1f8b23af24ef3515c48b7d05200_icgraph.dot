@@ -15,4 +15,6 @@ digraph "Library.CategoriasCatalog.GetCategoriaById"
   Node4 [label="Library.OfertasHandler.Get\lOfertasIgnoreId",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a5e48f9d4950d21460c3b07364746c5dc",tooltip="Método para obtener una lista de todas las OfertaDeServicio"];
   Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
   Node5 [label="Library.OfertasHandler.Ofertar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#a9179cfbeb903dbc77128b40d77782d82",tooltip="Constructor de la clase."];
+  Node5 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="LibraryTests.CategoriaCatalog\lTests.ObtenerOfertaPorIdTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#acfdf86cb096080762e6b57f7a7dc37bb",tooltip="Test para cuando se quiere obtener una oferta por su valor de id"];
 }

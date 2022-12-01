@@ -28,6 +28,13 @@ public class BuscarHandler : BaseHandler {
     /// <typeparam name="long"> ID de usuario de Telegram. </typeparam>
     /// <typeparam name="BuscarState"> Estado en un <see cref="IHandler"/>. </typeparam>
     private Dictionary<long, BuscarState> Posiciones = new Dictionary<long, BuscarState>();
+    private PlainTextOfertasPrinter ofPrinter = new();
+    private PlainTextCategoriaPrinter catPrinter = new();
+    private CategoriasCatalog catCatalog = CategoriasCatalog.GetInstance();
+    private OfertasHandler ofHandler = OfertasHandler.GetInstance();
+    private SearchHandler seaHandler = new SearchHandler();
+    private int catId;
+    private Calificacion calif { get; set; }
 
     /// <summary> Inicializa una nueva instancia de la clase <see cref="BuscarHandler"/>. </summary>
     /// <param name="next"> Un buscador de direcciones. </param>
@@ -41,11 +48,13 @@ public class BuscarHandler : BaseHandler {
     /// <summary> Verifica si el mensaje puede ser procesado por el <see cref="IHandler"/>. </summary>
     /// <param name="message"> Mensaje a procesar. </param>
     /// <returns> true si puede procesar el mensaje, false en caso contrario. </returns>
-    protected override bool CanHandle(Message message) {
+    protected override bool CanHandle(Message message)
+    {
         if (!this.Posiciones.ContainsKey(message.From.Id))
         {
             this.Posiciones[message.From.Id] = BuscarState.Start;
         }
+
         switch (this.Posiciones[message.From.Id])
         {
             case BuscarState.Start:
@@ -53,19 +62,6 @@ public class BuscarHandler : BaseHandler {
             default:
                 return true;
         }
-        // return this.Keywords.Any(s => message.Text.Equals(s, StringComparison.InvariantCultureIgnoreCase));
-        /*
-        if (this.State ==  BuscarState.Start) {
-            return base.CanHandle(message);
-        }
-        else if (this.State ==  BuscarState.Filtro)
-        {
-            return true;
-        }
-        else {
-            return false;
-        }
-        */
     }
 
     /// <summary> Procesamiento del mensaje recibido. </summary>
@@ -89,7 +85,7 @@ public class BuscarHandler : BaseHandler {
                 switch(message.Text) {
                     case "1":
                         this.Posiciones[message.From.Id] = BuscarState.Categoria;
-                        response = "imaginate que aca hay una lista filtrada por categoria \nque oferta ver?"; //TODO implementar printers
+                        response = $"{catPrinter.Print(catCatalog.GetCategorias())}\nEstas son las categorias, ingresa el ID de las ofertas que quieres ver en dicha categoria"; //TODO implementar printers
                         break;
                     case "2":
                         this.Posiciones[message.From.Id] = BuscarState.Distancia;
@@ -97,7 +93,7 @@ public class BuscarHandler : BaseHandler {
                         break;
                     case "3":
                         this.Posiciones[message.From.Id] = BuscarState.Reputacion;
-                        response = "imaginate que aca hay una lista filtrada por reputacion \nque oferta ver?";
+                        response = "Por que reputación quieres buscar?\n1)Deficiente\n2)Regular\n3)Bueno\n4)Muy Bueno\n5)Sobresaliente";
                         break;
                     case "volver":
                         this.Posiciones[message.From.Id] = BuscarState.Filtro;
@@ -111,8 +107,8 @@ public class BuscarHandler : BaseHandler {
                 break;
             case BuscarState.Categoria:
                 this.Posiciones[message.From.Id] = BuscarState.VerOferta;
-                this.Oferta = message.Text;
-                response = $"ver oferta \"{this.Oferta}\", desea solicitarla?";  //TODO falta implementar printer
+                catId= Int32.Parse(message.Text);
+                response = $"{ofPrinter.Print(seaHandler.FiltrarCategoria(ofHandler.GetCategoriaById(catId)) )}";  //TODO falta implementar printer
                 break;
             case BuscarState.Distancia:
                 this.Posiciones[message.From.Id] = BuscarState.VerOferta;
@@ -120,9 +116,12 @@ public class BuscarHandler : BaseHandler {
                 response = $"ver oferta \"{this.Oferta}\", desea solicitarla?";  //TODO falta implementar printer
                 break;
             case BuscarState.Reputacion:
-                this.Posiciones[message.From.Id] = BuscarState.VerOferta;
-                this.Oferta = message.Text;
-                response = $"ver oferta \"{this.Oferta}\", desea solicitarla?";  //TODO falta implementar printer
+                if (message.Text.Equals("1")){calif=Calificacion.Deficiente;}
+                if (message.Text.Equals("2")){calif=Calificacion.Regular;}
+                if (message.Text.Equals("3")){calif=Calificacion.Bueno;}
+                if (message.Text.Equals("4")){calif=Calificacion.MuyBueno;}
+                if (message.Text.Equals("5")){calif=Calificacion.Sobresaliente;}
+                // response = $"{ofPrinter.Print(seaHandler.FiltrarReputacion())}"; //TODO fixear metodo
                 break;
             case BuscarState.VerOferta:
                 response = "ok";  //TODO ver esto

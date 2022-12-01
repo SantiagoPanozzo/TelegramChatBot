@@ -9,8 +9,11 @@ digraph "Library.OfertaDeServicio.GetOfertante"
   Node1 [label="Library.OfertaDeServicio.\lGetOfertante",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para obtener NickName de Ofertante."];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
   Node2 [label="Library.ContratoHandler.\lAceptarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#a9da1c5ea2f4b9eb3ebe351fa0dac67d5",tooltip="Método para aceptar una solicitud."];
-  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="Library.ContratoHandler.\lRechazarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad07b990d40d49dc3a2fba8e63289e465",tooltip="Método para rechazar una solicitud."];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="VerSolicitudesHandler.Internal\lHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerSolicitudesHandler.html#a1e63b22d8a14776e4d0e796fd2ce9e85",tooltip="Procesa el mensaje \"Categorias\" y retorna true; retorna false en caso contrario."];
   Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="Library.Solicitud.Solicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a291a5870fcc93cd8aec3af84833956f1",tooltip="Constructor de la clase Solicitud."];
+  Node4 [label="Library.ContratoHandler.\lRechazarSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad07b990d40d49dc3a2fba8e63289e465",tooltip="Método para rechazar una solicitud."];
+  Node4 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="Library.Solicitud.Solicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Solicitud.html#a291a5870fcc93cd8aec3af84833956f1",tooltip="Constructor de la clase Solicitud."];
 }

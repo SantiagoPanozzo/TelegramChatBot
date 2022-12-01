@@ -11,8 +11,10 @@ digraph "Library.Solicitud.GetId"
   Node2 [label="Library.SolicitudCatalog.\lGetSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1SolicitudCatalog.html#a0e97a598341427a7eb17f32de89e45eb",tooltip="Método para obtener una solicitud por id"];
   Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
   Node3 [label="Library.ContratoHandler.\lGetSolicitud",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1ContratoHandler.html#ad7ea07a39a3d74804c2ba82ef20bc557",tooltip="Método para obtener una solicitud por id"];
-  Node2 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="LibraryTests.SolicitudCatalog\lTests.ObtenerSolicitudPorIdTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudCatalogTests.html#a71262b42fa65f30a6548046194253754",tooltip="Test para cuando se quiere obtener una solicitud por un valor de id."];
-  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node5 [label="LibraryTests.SolicitudTests.\lObtenerIdSolicitudTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a465b483a7d703a7b5d751f29ff152d69",tooltip="Test para obtener una solicitud por id."];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="VerSolicitudesHandler.Internal\lHandle",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerSolicitudesHandler.html#a1e63b22d8a14776e4d0e796fd2ce9e85",tooltip="Procesa el mensaje \"Categorias\" y retorna true; retorna false en caso contrario."];
+  Node2 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="LibraryTests.SolicitudCatalog\lTests.ObtenerSolicitudPorIdTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudCatalogTests.html#a71262b42fa65f30a6548046194253754",tooltip="Test para cuando se quiere obtener una solicitud por un valor de id."];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="LibraryTests.SolicitudTests.\lObtenerIdSolicitudTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1SolicitudTests.html#a465b483a7d703a7b5d751f29ff152d69",tooltip="Test para obtener una solicitud por id."];
 }

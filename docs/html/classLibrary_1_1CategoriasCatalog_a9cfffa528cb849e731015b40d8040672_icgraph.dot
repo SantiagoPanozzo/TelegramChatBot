@@ -8,5 +8,13 @@ digraph "Library.CategoriasCatalog.AddCategoria"
   rankdir="RL";
   Node1 [label="Library.CategoriasCatalog.\lAddCategoria",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para agregar una nueva categoría al catálogo."];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="Library.OfertasHandler.Crear\lCategoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#af6bfbc799ee8cd3666cd54ae25667b29",tooltip="Método para crear una categoria."];
+  Node2 [label="LibraryTests.CategoriaCatalog\lTests.AdminAgregarCategoriaTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#a9583ffc47c041ab0cbb32d0869934ba6",tooltip="Test para cuando un admin agrega una categoría"];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="LibraryTests.CategoriaCatalog\lTests.AdminEliminarCategoriaTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#a5c93a6aadec1d2d8bfdd46a2e41d4514",tooltip="Test para cuando se elimina una categoría"];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Library.OfertasHandler.Crear\lCategoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1OfertasHandler.html#af6bfbc799ee8cd3666cd54ae25667b29",tooltip="Método para crear una categoria."];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="LibraryTests.CategoriaCatalog\lTests.ObtenerCategoriaPorDescripcionTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#abaa4d697938f1a8e540c85c4c4531b85",tooltip="Test para cuando se quiere obtener una categoría por su descripción"];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="LibraryTests.CategoriaCatalog\lTests.ObtenerOfertaPorIdTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#acfdf86cb096080762e6b57f7a7dc37bb",tooltip="Test para cuando se quiere obtener una oferta por su valor de id"];
 }

@@ -182,6 +182,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:adba3ceae25019b483e1c64b18ae073fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14d3eeb6032e5f73067cd6112da4751b"><td class="memItemLeft" align="right" valign="top">PlainTextUsuariosPrinter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a14d3eeb6032e5f73067cd6112da4751b">usPrinter</a> = new()</td></tr>
 <tr class="separator:a14d3eeb6032e5f73067cd6112da4751b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ee729f172dc79b2ac61dc0d9ef01838"><td class="memItemLeft" align="right" valign="top">PlainTextAdminSolicitudPrinter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a3ee729f172dc79b2ac61dc0d9ef01838">solPrinter</a> = new()</td></tr>
+<tr class="separator:a3ee729f172dc79b2ac61dc0d9ef01838"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a808d4a231903c77f99b55fcabc86fdcd"><td class="memItemLeft" align="right" valign="top">ContratoHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a808d4a231903c77f99b55fcabc86fdcd">solHandler</a> = ContratoHandler.GetInstance()</td></tr>
 <tr class="separator:a808d4a231903c77f99b55fcabc86fdcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c75bffa291e87b4589d4c8896eb6dc4"><td class="memItemLeft" align="right" valign="top">SolicitudCatalog&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a9c75bffa291e87b4589d4c8896eb6dc4">solCatalog</a> = SolicitudCatalog.GetInstance()</td></tr>
@@ -192,12 +194,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a04942cb762f3585349a94b1653770633"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3beaf143fb7aa34b6fd771c080f5abc2"><td class="memItemLeft" align="right" valign="top">UsuariosCatalog&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a3beaf143fb7aa34b6fd771c080f5abc2">usCatalog</a> = UsuariosCatalog.GetInstance()</td></tr>
 <tr class="separator:a3beaf143fb7aa34b6fd771c080f5abc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0268b3131d69bb652ffe289e944e0a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#ac0268b3131d69bb652ffe289e944e0a5">catremover</a></td></tr>
-<tr class="separator:ac0268b3131d69bb652ffe289e944e0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac076cf30799029a8332826b490a7fac7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#ac076cf30799029a8332826b490a7fac7">ofremover</a></td></tr>
-<tr class="separator:ac076cf30799029a8332826b490a7fac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87137ba18bfb670d928ee46167fba5eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a87137ba18bfb670d928ee46167fba5eb">solremover</a></td></tr>
-<tr class="separator:a87137ba18bfb670d928ee46167fba5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a488ef2e8dbff9771a24781d1400de88b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a488ef2e8dbff9771a24781d1400de88b">catRemover</a></td></tr>
+<tr class="separator:a488ef2e8dbff9771a24781d1400de88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c0c536623cb557d53a19106f33a22f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a2c0c536623cb557d53a19106f33a22f2">ofRemover</a></td></tr>
+<tr class="separator:a2c0c536623cb557d53a19106f33a22f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc4fe67fef0ea6627e8c8d5c09f6b27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPanelDeControlHandler.html#a1dc4fe67fef0ea6627e8c8d5c09f6b27">solRemover</a></td></tr>
+<tr class="separator:a1dc4fe67fef0ea6627e8c8d5c09f6b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -266,7 +268,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00058">58</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00060">60</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -306,7 +308,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classBaseHandler.html#a83e2217a04ac9eaffa0368179b250ece">BaseHandler</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00068">68</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00070">70</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -355,7 +357,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="classBaseHandler.html#ae20b3eb5dc7bd13a95b8e583a2a6c694">BaseHandler</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00086">86</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00088">88</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -382,7 +384,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00322">322</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00345">345</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -407,7 +409,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00042">42</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00044">44</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -435,8 +437,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="ac0268b3131d69bb652ffe289e944e0a5" name="ac0268b3131d69bb652ffe289e944e0a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0268b3131d69bb652ffe289e944e0a5">&#9670;&#160;</a></span>catremover</h2>
+<a id="a488ef2e8dbff9771a24781d1400de88b" name="a488ef2e8dbff9771a24781d1400de88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a488ef2e8dbff9771a24781d1400de88b">&#9670;&#160;</a></span>catRemover</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +447,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int PanelDeControlHandler.catremover</td>
+          <td class="memname">int PanelDeControlHandler.catRemover</td>
         </tr>
       </table>
   </td>
@@ -455,7 +457,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00047">47</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00049">49</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -479,7 +481,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00043">43</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00045">45</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -503,12 +505,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00038">38</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00039">39</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
-<a id="ac076cf30799029a8332826b490a7fac7" name="ac076cf30799029a8332826b490a7fac7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac076cf30799029a8332826b490a7fac7">&#9670;&#160;</a></span>ofremover</h2>
+<a id="a2c0c536623cb557d53a19106f33a22f2" name="a2c0c536623cb557d53a19106f33a22f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c0c536623cb557d53a19106f33a22f2">&#9670;&#160;</a></span>ofRemover</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -517,7 +519,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int PanelDeControlHandler.ofremover</td>
+          <td class="memname">int PanelDeControlHandler.ofRemover</td>
         </tr>
       </table>
   </td>
@@ -527,7 +529,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00048">48</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00050">50</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -551,7 +553,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00041">41</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00043">43</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -575,12 +577,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00040">40</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00042">42</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
-<a id="a87137ba18bfb670d928ee46167fba5eb" name="a87137ba18bfb670d928ee46167fba5eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87137ba18bfb670d928ee46167fba5eb">&#9670;&#160;</a></span>solremover</h2>
+<a id="a3ee729f172dc79b2ac61dc0d9ef01838" name="a3ee729f172dc79b2ac61dc0d9ef01838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ee729f172dc79b2ac61dc0d9ef01838">&#9670;&#160;</a></span>solPrinter</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -589,7 +591,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int PanelDeControlHandler.solremover</td>
+          <td class="memname">PlainTextAdminSolicitudPrinter PanelDeControlHandler.solPrinter = new()</td>
         </tr>
       </table>
   </td>
@@ -599,7 +601,31 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00049">49</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00041">41</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1dc4fe67fef0ea6627e8c8d5c09f6b27" name="a1dc4fe67fef0ea6627e8c8d5c09f6b27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc4fe67fef0ea6627e8c8d5c09f6b27">&#9670;&#160;</a></span>solRemover</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PanelDeControlHandler.solRemover</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00051">51</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -647,7 +673,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00044">44</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00046">46</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -671,7 +697,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00039">39</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PanelDeControlHandler_8cs_source.html#l00040">40</a> of file <a class="el" href="PanelDeControlHandler_8cs_source.html">PanelDeControlHandler.cs</a>.</p>
 
 </div>
 </div>

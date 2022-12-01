@@ -1,0 +1,16 @@
+digraph "LibraryTests.CategoriaCatalogTests.WipearCategoriasCatalogTest"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="LibraryTests.CategoriaCatalog\lTests.WipearCategoriasCatalogTest",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Test de que el método Wipe() borra la instancia."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Library.CategoriasCatalog.\lGetInstance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#ac8ea1856af5e8d3a2a0566ce38dd1025",tooltip="Método para obtener la instancia del catálogo de categorías."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Library.CategoriasCatalog.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#a545c5fa5e182ff288af5f7a6679e380a",tooltip="Método para borrar los datos de la clase."];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Library.Usuario.GetTipo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb",tooltip="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador."];
+}

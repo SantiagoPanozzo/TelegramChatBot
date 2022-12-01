@@ -1,0 +1,24 @@
+digraph "LibraryTests.CategoriaCatalogTests.AdminEliminarCategoriaTest"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="LibraryTests.CategoriaCatalog\lTests.AdminEliminarCategoriaTest",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Test para cuando se elimina una categoría"];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Library.CategoriasCatalog.\lAddCategoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#a9cfffa528cb849e731015b40d8040672",tooltip="Método para agregar una nueva categoría al catálogo."];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Library.Usuario.GetTipo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb",tooltip="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador."];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Library.CategoriasCatalog.\lGetInstance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#ac8ea1856af5e8d3a2a0566ce38dd1025",tooltip="Método para obtener la instancia del catálogo de categorías."];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Library.Categoria.IsActive",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Categoria.html#a1540814172e5cf3a82851cbb8542388a",tooltip="Método que verifica si una categoría está activa."];
+  Node1 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="Library.CategoriasCatalog.\lRemoveCategoria",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1CategoriasCatalog.html#a3e0b35f2e1dbf53a7dddd9f46fd038b8",tooltip="Método para eliminar una categoría."];
+  Node6 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="Library.Categoria.DarDeBaja",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Categoria.html#ac49a20997f4a7ca69f06e9e7e5914e94",tooltip="Método para dar de baja la categoría."];
+  Node7 -> Node3 [color="steelblue1",style="solid"];
+  Node6 -> Node3 [color="steelblue1",style="solid"];
+}
