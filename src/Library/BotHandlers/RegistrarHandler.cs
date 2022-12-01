@@ -261,7 +261,25 @@ public class RegistrarHandler : BaseHandler
                 break;
             
             case RegistrarState.Confirmar:
-                this.GlobalTempInfo[message.From.Id]["ubicacion"] = message.Text;
+                bool confidence;
+                try{
+                    confidence = AddressValidation.Process(message.Text);
+                    if (!confidence) {
+                        response = "Ubicación inválida, escríbala nuevamente.";
+                        return;
+                    }
+                } catch (Exception e)
+                {
+                    Console.WriteLine("Error con la request");
+                }
+                var latLong= Geocode.Process(message.Text);
+
+                string lng = latLong.Item1.ToString();
+                string lat = latLong.Item2.ToString();
+                
+                this.GlobalTempInfo[message.From.Id]["ubicacionLng"] = lng;
+                this.GlobalTempInfo[message.From.Id]["ubicacionLat"] = lat;
+
                 StringBuilder respuesta = new StringBuilder();
                 respuesta.Append("Ingresaste la siguiente información:\n");
                 foreach (KeyValuePair<string,string> keyValuePair in GlobalTempInfo[message.From.Id])
@@ -307,7 +325,9 @@ public class RegistrarHandler : BaseHandler
                 string cedula = this.GlobalTempInfo[message.From.Id]["cedula"];
                 string telefono = this.GlobalTempInfo[message.From.Id]["telefono"];
                 string correo = this.GlobalTempInfo[message.From.Id]["correo"];
-                Tuple<double, double> ubicacion = new Tuple<double, double>(123,123);
+                double doubleLat = double.Parse(GlobalTempInfo[message.From.Id]["ubicacionLat"]);
+                double doubleLng = double.Parse(GlobalTempInfo[message.From.Id]["ubicacionLng"]);
+                Tuple<double, double> ubicacion = new Tuple<double, double>(doubleLat, doubleLng);
                 // TODO usar un método que cree una tupla de coordenadas a partir del string de dirección del usuario
                 switch (TempTipo[message.From.Id])
                 {
