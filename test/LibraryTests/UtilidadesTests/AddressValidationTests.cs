@@ -13,7 +13,7 @@ public class AddressValidationTests
     public void TestLocation()
     {
         var expected = true;
-        var actual = AddressValidation.Process("Av. Esteban Gautrón 1287");
+        var actual = AddressValidation.Process("Artigas 1251, Salto, Salto");
         Assert.That(expected, Is.EqualTo(actual));
     }
 }
