@@ -31,6 +31,11 @@ public class Empleador:Usuario,ICalificable{
     {
         this.Reputacion.Add(Rate);
     }
+
+    public override bool IsActive()
+    {
+        return this.Activo;
+    }
     
     /// <summary> Método para obtener las calificaciones del usuario. </summary>
     /// <returns> Retorna el promedio de las calificaciones de un usuario, cualquiera que sea. </returns>
