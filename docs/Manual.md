@@ -57,7 +57,11 @@ ver ofertas, no pueden directamente utilizar estos métodos reservados para los 
 que disponen de su propia forma de hacer algo similar mediante el Panel de Control, donde si pueden ver toda
 esta información de todos los usuarios y además modificarla.
 
--Todos estos comandos se realizan una vez logeado-
+***
+
+# Comandos para realizar historias de ususario:
+
+-Todos estos comandos se realizan una vez que se inició sesión-
 
 **• Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios para que de esa forma, los trabajadores puedan clasificarlos.**
 
