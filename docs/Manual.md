@@ -1,7 +1,8 @@
 # Manual de Usuario
 
 En este apartado daremos las instrucciones para el correo uso del bot:
-
+(Este archivo se ve mejor abierto como su versión Markdown dentro de la carpeta `docs`, no
+desde Doxygen).
 ***
 
 # Ejecución del programa:
@@ -42,6 +43,7 @@ algunas de las cuales son:
 La posibilidad que tiene cada rol de acceder a estas opciones son tal que:
 
 (Acá hay una tabla que no se ve bien en Doxygen)
+
 
 |        Rol        |      Buscar       |    Ver ofertas    |  Ver solicitudes  |     Ver Info      |
 |-------------------|-------------------|-------------------|-------------------|-------------------|
