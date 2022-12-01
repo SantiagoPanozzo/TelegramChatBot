@@ -122,6 +122,7 @@ public class UsuariosCatalog {
     public Usuario AddAdminstrador(string nick, string contraseña, string telefono, string correo)
     { 
         Usuario nuevoUsuario = new Administrador(nick, contraseña, telefono, correo);
+        Usuarios.Add(nuevoUsuario);
         return nuevoUsuario;
     }
 

@@ -101,6 +101,23 @@ public class PanelDeControlHandler : BaseHandler
             this.Posiciones.Add(message.From.Id, PanelState.Start);
         }
 
+        switch(message.Text){
+            case "volver":
+                int stateIndex = (int)Posiciones[message.From.Id];
+                if (stateIndex > 0)
+                {
+                    response = "Volviendo al estado anterior.";
+                    Posiciones[message.From.Id] = (PanelState)(stateIndex-1);
+                    return;
+                }
+                response = "Ya se encuentra en el estado inicial.";
+                return;
+            case "cancelar":
+                Posiciones[message.From.Id] = PanelState.Start;
+                response = "Volviendo a inicio";
+                return;
+        }
+        
         response = "Error desconocido";
 
         PanelState state = this.Posiciones[message.From.Id];
@@ -173,7 +190,7 @@ public class PanelDeControlHandler : BaseHandler
                     response=$"{usPrinter.Print(usCatalog.GetUsuariosIgnoreId()) }\n¿Deseas realizar otra acción?\n1)Eliminar Usuario\n2)Cancelar";
                     break;
                 case "5":
-                    this.Posiciones[message.From.Id] = PanelState.Panel;
+                    this.Posiciones[message.From.Id] = PanelState.Start;
                     response = "Volviendo al inicio";
                     break;
                 default:
@@ -315,12 +332,17 @@ public class PanelDeControlHandler : BaseHandler
 
     protected bool LoginAdminChecker()
     {
-    foreach (Usuario user in usCatalog.GetUsuarios()){
-
-    if (user.Nick.Equals(this.tempPanelInfo["adminusername"]) && user.VerifyContraseña(this.tempPanelInfo["adminpassword"])){return true;}
-    }
-    return false;
-
+        foreach (Usuario user in usCatalog.GetUsuarios()){
+            if (user.GetTipo().Equals(TipoDeUsuario.Administrador))
+            {
+                if (user.Nick.Equals(this.tempPanelInfo["adminusername"]) &&
+                    user.VerifyContraseña(this.tempPanelInfo["adminpassword"]))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }      
 
