@@ -59,6 +59,7 @@ esta información de todos los usuarios y además modificarla.
 
 ***
 
+<<<<<<< HEAD
 # Historias de usuario:
 Para verificar que se pueden realizar las historias de usuario se deben ingresar los siguientes comandos una vez loggeado:
 
@@ -148,3 +149,105 @@ esa forma, los trabajadores puedan clasificarlos:
 * Como trabajador, quiero poder saber la reputación del empleador que me contacte para que de esa forma, poder decidir sobre su solicitud de contratación.
 
     1) Implementar
+=======
+# Comandos para realizar historias de ususario:
+
+-Todos estos comandos se realizan una vez que se inició sesión-
+
+
+**• Cómo administrador, quiero poder indicar categorías sobre las cuales se realizarán las ofertas de servicios para que de esa forma, los trabajadores puedan clasificarlos.**
+
+-admin
+
+-1
+
+-2
+
+-\descripcion de la categoria\
+
+
+**• Como administrador, quiero poder dar de baja ofertas de servicios, avisando al oferente para que de esa forma, pueda evitar ofertas inadecuadas.**
+
+-admin
+
+-2
+
+-1
+
+-\ID de la oferta\
+
+
+**• Como trabajador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto para que de esa forma, pueda proveer información de contacto a quienes quieran contratar mis servicios.**
+
+-registrar
+
+-\completar datos\
+
+
+**• Como trabajador, quiero poder hacer ofertas de servicios; mi oferta indicará en qué categoría quiero publicar, tendrá una descripción del servicio ofertado, y un precio para que de esa forma, mis ofertas sean ofrecidas a quienes quieren contratar servicios.**
+
+-ofertar
+
+-\ID de categoria\
+
+-\completar datos\
+
+
+**• Como empleador, quiero registrarme en la plataforma, indicando mis datos personales e información de contacto para que de esa forma, pueda proveer información de contacto a los trabajadores que quiero contratar. *Como empleador, quiero buscar ofertas de trabajo, opcionalmente filtrando por categoría para que de esa forma, pueda contratar un servicio.**
+
+-registrar
+
+-\completar datos\
+
+
+**• Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma ascendente de distancia a mi ubicación, es decir, las más cercanas primero para que de esa forma, pueda poder contratar un servicio.**
+
+-buscar
+
+-2
+
+
+**• Como empleador, quiero ver el resultado de las búsquedas de ofertas de trabajo ordenado en forma descendente por reputación, es decir, las de mejor reputación primero para que de esa forma, pueda contratar un servicio.**
+
+-buscar
+
+-3
+
+-\Ingresar reputacion a filtrar\
+
+
+**• Como empleador, quiero poder contactar a un trabajador para que de esa forma pueda, contratar una oferta de servicio determinada.**
+
+-a implementar
+
+
+**• Como trabajador, quiero poder calificar a un empleador; el empleador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma pueda definir la reputación de mi empleador.**
+
+-Ver solicitudes
+
+-2
+
+-\ID de la solicitud\
+
+-1
+
+-\calificacion\
+
+
+**• Como empleador, quiero poder calificar a un trabajador; el trabajador me tiene que calificar a mí también, si no me califica en un mes, la calificación será neutral, para que de esa forma, pueda definir la reputación del trabajador.**
+
+-Ver solicitudes
+
+-2
+
+-\ID de la solicitud\
+
+-1
+
+-\calificacion\
+
+
+• Como trabajador, quiero poder saber la reputación del empleador que me contacte para que de esa forma, poder decidir sobre su solicitud de contratación.
+
+-a implementar
+>>>>>>> 82aca79d03d751e082100b3b16343797f4a46512
