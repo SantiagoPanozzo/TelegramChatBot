@@ -13,7 +13,7 @@ public class VerCategoriasHandler : BaseHandler {
     /// <summary> Inicializa una nueva instancia de la clase <see cref="CategoriasHandler"/>. Esta clase procesa el mensaje "categorias". </summary>
     /// <param name="next"> Próximo <see cref="IHandler"/>. </param>
     public VerCategoriasHandler(TelegramBotClient bot, BaseHandler next) : base(next) {
-        this.Keywords = new string[] {};
+        this.Keywords = new string[] {"Categorias", "categorias", "ver categorias","Ver Categorias"};
         this._id = Handlers.CategoriasHandler;
     }
 

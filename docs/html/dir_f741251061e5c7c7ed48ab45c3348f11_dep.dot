@@ -16,6 +16,7 @@ digraph "/home/snowiemischief/projects/programacion2/pii_2022_2_equipo_21/src/Li
   dir_489a34f874ee199237b4241587f8b6f5 [label="obj", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_489a34f874ee199237b4241587f8b6f5.html",tooltip=""];
   dir_4c822dd4fb50cc2f095e722487a73287 [label="OfertasDeServicio", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_4c822dd4fb50cc2f095e722487a73287.html",tooltip=""];
   dir_904be79bcfaa9d003cfb0105c4e992c0 [label="Printers", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_904be79bcfaa9d003cfb0105c4e992c0.html",tooltip=""];
+  dir_e0a298e138fe852650297d7ed832577c [label="Requests", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_e0a298e138fe852650297d7ed832577c.html",tooltip=""];
   dir_a22383398612a44f9393e00bb3faf067 [label="Solicitud", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_a22383398612a44f9393e00bb3faf067.html",tooltip=""];
   dir_4d88b21f930827c62b4a9d21c48da663 [label="Usuarios", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_4d88b21f930827c62b4a9d21c48da663.html",tooltip=""];
   }

@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "LibraryTests.AddressValidationTests", "classLibraryTests_1_1AddressValidationTests.html", null ],
     [ "LibraryTests.AdministradorTests", "classLibraryTests_1_1AdministradorTests.html", null ],
     [ "LibraryTests.CategoriaCatalogTests", "classLibraryTests_1_1CategoriaCatalogTests.html", null ],
     [ "Library.CategoriasCatalog", "classLibrary_1_1CategoriasCatalog.html", null ],
@@ -56,7 +57,8 @@ var hierarchy =
         [ "VerCategoriasHandler", "classVerCategoriasHandler.html", null ],
         [ "VerInfoHandler", "classVerInfoHandler.html", null ],
         [ "VerOfertasHandler", "classVerOfertasHandler.html", null ],
-        [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", null ]
+        [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", null ],
+        [ "VerUsuariosHandler", "classVerUsuariosHandler.html", null ]
       ] ]
     ] ],
     [ "Library.IPlainTextSolicitudPrinter< Administrador >", "interfaceLibrary_1_1IPlainTextSolicitudPrinter.html", [
@@ -78,6 +80,10 @@ var hierarchy =
     [ "Library.ITextPrinter< Solicitud >", "interfaceLibrary_1_1ITextPrinter.html", [
       [ "Library.IPlainTextSolicitudPrinter< U >", "interfaceLibrary_1_1IPlainTextSolicitudPrinter.html", null ]
     ] ],
+    [ "Library.ITextPrinter< string >", "interfaceLibrary_1_1ITextPrinter.html", [
+      [ "Library.PlainTextUsersEmpleadoresPrinter", "classLibrary_1_1PlainTextUsersEmpleadoresPrinter.html", null ],
+      [ "Library.PlainTextUsersTrabajadoresPrinter", "classLibrary_1_1PlainTextUsersTrabajadoresPrinter.html", null ]
+    ] ],
     [ "Library.ITextPrinter< Usuario >", "interfaceLibrary_1_1ITextPrinter.html", [
       [ "Library.PlainTextUsuariosPrinter", "classLibrary_1_1PlainTextUsuariosPrinter.html", null ]
     ] ],
@@ -97,6 +103,5 @@ var hierarchy =
     [ "LibraryTests.UpdaterTests", "classLibraryTests_1_1UpdaterTests.html", null ],
     [ "Library.UsuariosCatalog", "classLibrary_1_1UsuariosCatalog.html", null ],
     [ "LibraryTests.UsuarioTests", "classLibraryTests_1_1UsuarioTests.html", null ],
-    [ "VerContratosHandler", "classVerContratosHandler.html", null ],
-    [ "VerUsuariosHandler", "classVerUsuariosHandler.html", null ]
+    [ "VerContratosHandler", "classVerContratosHandler.html", null ]
 ];

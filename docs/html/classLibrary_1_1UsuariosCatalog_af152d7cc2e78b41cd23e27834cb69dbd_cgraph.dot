@@ -12,5 +12,5 @@ digraph "Library.UsuariosCatalog.RemoveUsuario"
   Node2 -> Node3 [color="steelblue1",style="solid"];
   Node3 [label="Library.Usuario.GetTipo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Usuario.html#a33099664c3da6b61454db7c3343deceb",tooltip="Checkea que tipo de usuario es, puede ser Administrador, Trabajador o Empleador."];
   Node1 -> Node4 [color="steelblue1",style="solid"];
-  Node4 [label="Library.Usuario.IsActive",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Usuario.html#ac8b2eb0988dacbb62b09f0abfdd8e3f6",tooltip="Checkea si el usuario está activo."];
+  Node4 [label="Library.Usuario.IsActive",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1Usuario.html#a4f88b07079dea0f4462704b89c8c2fea",tooltip="Checkea si el usuario está activo."];
 }

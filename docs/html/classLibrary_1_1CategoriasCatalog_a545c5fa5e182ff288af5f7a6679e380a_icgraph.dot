@@ -8,5 +8,7 @@ digraph "Library.CategoriasCatalog.Wipe"
   rankdir="RL";
   Node1 [label="Library.CategoriasCatalog.Wipe",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Método para borrar los datos de la clase."];
   Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="LibraryTests.CategoriaCatalog\lTests.WipearCategoriasCatalogTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#a4fd0450a32991f16ed5bfcfdb4c09754",tooltip="Test de que el método Wipe() borra la instancia."];
+  Node2 [label="LibraryTests.CategoriaCatalog\lTests.Wipe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#abc98b8705ad0dbf6119101c0d18943a0",tooltip="Al terminar un test borra todas las instancias de singleton."];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="LibraryTests.CategoriaCatalog\lTests.WipearCategoriasCatalogTest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibraryTests_1_1CategoriaCatalogTests.html#a4fd0450a32991f16ed5bfcfdb4c09754",tooltip="Test de que el método Wipe() borra la instancia."];
 }

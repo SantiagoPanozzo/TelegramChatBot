@@ -96,8 +96,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AccionInnecesariaException_8cs_source.html",
-"classLibrary_1_1Categoria.html#a391925bcef104bf634b266e75310aedf",
-"classLibrary_1_1UsuariosCatalog.html#afda536f591a331a1c6ece35ce24cdd9b"
+"classLibrary_1_1Administrador.html",
+"classLibrary_1_1Usuario.html#acbdfa6138482340a11d788735778f6ec"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

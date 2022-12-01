@@ -1,5 +1,6 @@
 var namespaceLibraryTests =
 [
+    [ "AddressValidationTests", "classLibraryTests_1_1AddressValidationTests.html", null ],
     [ "AdministradorTests", "classLibraryTests_1_1AdministradorTests.html", "classLibraryTests_1_1AdministradorTests" ],
     [ "CategoriaCatalogTests", "classLibraryTests_1_1CategoriaCatalogTests.html", "classLibraryTests_1_1CategoriaCatalogTests" ],
     [ "ContratoHandlerTests", "classLibraryTests_1_1ContratoHandlerTests.html", null ],

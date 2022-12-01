@@ -20,6 +20,7 @@ public class CategoriaCatalogTests {
         Solicitud.Wipe(root);
         SolicitudCatalog.Wipe(root);
         UsuariosCatalog.Wipe(root);
+        CategoriasCatalog.Wipe(root);
     }
 
     [Test]

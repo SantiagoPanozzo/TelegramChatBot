@@ -5,11 +5,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web;
 
-//TODO comentar esto (Facundo en lo posible xd)
 public class Distance
 {
     private static Distance? _instance = null;
     private static string _token = "AIzaSyAsJ_WMO3_s45aNYNJ6jmj01UmVMa7mBVg";
+
     public async Task<int> Calculate(string from, string to)
     {   
         string origin = UrlFormat(from);

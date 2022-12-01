@@ -5,7 +5,7 @@ digraph "BuscarHandler"
   bgcolor="transparent";
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  Node1 [label="{BuscarHandler\n|+ Oferta\l+ State\l|+ BuscarHandler()\l# CanHandle()\l# InternalHandle()\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Muestra una lista de OfertaDeServicio disponibles según su ID y el trabajo. El usuario puede seleccio..."];
+  Node1 [label="{BuscarHandler\n|+ Oferta\l+ State\l+ calif\l|+ BuscarHandler()\l# CanHandle()\l# InternalHandle()\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Muestra una lista de OfertaDeServicio disponibles según su ID y el trabajo. El usuario puede seleccio..."];
   Node2 -> Node1 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];
   Node2 [label="{BaseHandler\n|+ _id\l+ Next\l+ Keywords\l|+ GetId()\l+ BaseHandler()\l+ BaseHandler()\l+ Handle()\l+ Cancel()\l# InternalHandle()\l# InternalCancel()\l# CanHandle()\l}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classBaseHandler.html",tooltip="Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra..."];
   Node3 -> Node2 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];

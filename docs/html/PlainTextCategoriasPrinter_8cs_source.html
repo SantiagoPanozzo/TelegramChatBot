@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('PlainTextCategoriasPrinter_8cs_source.
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keywordflow">foreach</span> (var cat <span class="keywordflow">in</span> catalog)</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            response += $<span class="stringliteral">&quot;\n»» ID: {cat.GetId()} ║ Descripción: {cat.Descripcion}\n&quot;</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            response += $<span class="stringliteral">&quot;\n»» ID: {cat.GetId()} ║ Descripción: {cat.Descripcion}║ Estado: {cat.IsActive()}\n&quot;</span>;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        }</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">return</span> response;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>

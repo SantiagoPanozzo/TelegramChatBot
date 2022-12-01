@@ -20,6 +20,8 @@ var namespaceLibrary =
     [ "PlainTextEmpleadorSolicitudPrinter", "classLibrary_1_1PlainTextEmpleadorSolicitudPrinter.html", null ],
     [ "PlainTextOfertasPrinter", "classLibrary_1_1PlainTextOfertasPrinter.html", null ],
     [ "PlainTextTrabajadorSolicitudPrinter", "classLibrary_1_1PlainTextTrabajadorSolicitudPrinter.html", null ],
+    [ "PlainTextUsersEmpleadoresPrinter", "classLibrary_1_1PlainTextUsersEmpleadoresPrinter.html", null ],
+    [ "PlainTextUsersTrabajadoresPrinter", "classLibrary_1_1PlainTextUsersTrabajadoresPrinter.html", null ],
     [ "PlainTextUsuariosPrinter", "classLibrary_1_1PlainTextUsuariosPrinter.html", null ],
     [ "RegistryHandler", "classLibrary_1_1RegistryHandler.html", "classLibrary_1_1RegistryHandler" ],
     [ "SearchHandler", "classLibrary_1_1SearchHandler.html", "classLibrary_1_1SearchHandler" ],

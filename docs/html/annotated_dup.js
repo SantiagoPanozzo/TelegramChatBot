@@ -21,6 +21,8 @@ var annotated_dup =
       [ "PlainTextEmpleadorSolicitudPrinter", "classLibrary_1_1PlainTextEmpleadorSolicitudPrinter.html", null ],
       [ "PlainTextOfertasPrinter", "classLibrary_1_1PlainTextOfertasPrinter.html", null ],
       [ "PlainTextTrabajadorSolicitudPrinter", "classLibrary_1_1PlainTextTrabajadorSolicitudPrinter.html", null ],
+      [ "PlainTextUsersEmpleadoresPrinter", "classLibrary_1_1PlainTextUsersEmpleadoresPrinter.html", null ],
+      [ "PlainTextUsersTrabajadoresPrinter", "classLibrary_1_1PlainTextUsersTrabajadoresPrinter.html", null ],
       [ "PlainTextUsuariosPrinter", "classLibrary_1_1PlainTextUsuariosPrinter.html", null ],
       [ "RegistryHandler", "classLibrary_1_1RegistryHandler.html", "classLibrary_1_1RegistryHandler" ],
       [ "SearchHandler", "classLibrary_1_1SearchHandler.html", "classLibrary_1_1SearchHandler" ],
@@ -33,6 +35,7 @@ var annotated_dup =
       [ "UsuariosCatalog", "classLibrary_1_1UsuariosCatalog.html", "classLibrary_1_1UsuariosCatalog" ]
     ] ],
     [ "LibraryTests", "namespaceLibraryTests.html", [
+      [ "AddressValidationTests", "classLibraryTests_1_1AddressValidationTests.html", null ],
       [ "AdministradorTests", "classLibraryTests_1_1AdministradorTests.html", "classLibraryTests_1_1AdministradorTests" ],
       [ "CategoriaCatalogTests", "classLibraryTests_1_1CategoriaCatalogTests.html", "classLibraryTests_1_1CategoriaCatalogTests" ],
       [ "ContratoHandlerTests", "classLibraryTests_1_1ContratoHandlerTests.html", null ],
@@ -75,6 +78,6 @@ var annotated_dup =
     [ "VerInfoHandler", "classVerInfoHandler.html", "classVerInfoHandler" ],
     [ "VerOfertasHandler", "classVerOfertasHandler.html", "classVerOfertasHandler" ],
     [ "VerSolicitudesHandler", "classVerSolicitudesHandler.html", "classVerSolicitudesHandler" ],
-    [ "VerUsuariosHandler", "classVerUsuariosHandler.html", null ],
+    [ "VerUsuariosHandler", "classVerUsuariosHandler.html", "classVerUsuariosHandler" ],
     [ "YaCalificadoException", "classYaCalificadoException.html", null ]
 ];

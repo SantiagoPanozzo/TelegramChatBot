@@ -18,5 +18,6 @@ var searchData=
   ['itextprinter_3c_20categoria_20_3e_15',['ITextPrinter&lt; Categoria &gt;',['../interfaceLibrary_1_1ITextPrinter.html',1,'Library']]],
   ['itextprinter_3c_20ofertadeservicio_20_3e_16',['ITextPrinter&lt; OfertaDeServicio &gt;',['../interfaceLibrary_1_1ITextPrinter.html',1,'Library']]],
   ['itextprinter_3c_20solicitud_20_3e_17',['ITextPrinter&lt; Solicitud &gt;',['../interfaceLibrary_1_1ITextPrinter.html',1,'Library']]],
-  ['itextprinter_3c_20usuario_20_3e_18',['ITextPrinter&lt; Usuario &gt;',['../interfaceLibrary_1_1ITextPrinter.html',1,'Library']]]
+  ['itextprinter_3c_20string_20_3e_18',['ITextPrinter&lt; string &gt;',['../interfaceLibrary_1_1ITextPrinter.html',1,'Library']]],
+  ['itextprinter_3c_20usuario_20_3e_19',['ITextPrinter&lt; Usuario &gt;',['../interfaceLibrary_1_1ITextPrinter.html',1,'Library']]]
 ];
