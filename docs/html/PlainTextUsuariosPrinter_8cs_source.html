@@ -106,14 +106,16 @@ $(document).ready(function(){initNavTree('PlainTextUsuariosPrinter_8cs_source.ht
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>            var pubInfo = usuario.GetPublicInfo();</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            var contactInfo = usuario.GetContacto();</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            result += $<span class="stringliteral">&quot;\nNick: {pubInfo[&quot;</span>Nick<span class="stringliteral">&quot;]}&quot;</span>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            result += $<span class="stringliteral">&quot;\nNombre: {pubInfo[&quot;</span>Nombre<span class="stringliteral">&quot;]}&quot;</span>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            result += $<span class="stringliteral">&quot;\nApellido: {pubInfo[&quot;</span>Apellido<span class="stringliteral">&quot;]}&quot;</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            result += $<span class="stringliteral">&quot;\nTeléfono: {contactInfo[&quot;</span>Telefono<span class="stringliteral">&quot;]}&quot;</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            result += $<span class="stringliteral">&quot;\nCorreo: {contactInfo[&quot;</span>Correo<span class="stringliteral">&quot;]}&quot;</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            result += $<span class="stringliteral">&quot;\nTipo: {usuario.GetTipo()}&quot;</span>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            result += $<span class="stringliteral">&quot;\nNombre: {pubInfo[&quot;</span>Nombre<span class="stringliteral">&quot;]}&quot;</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            result += $<span class="stringliteral">&quot;\nApellido: {pubInfo[&quot;</span>Apellido<span class="stringliteral">&quot;]}&quot;</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            result += $<span class="stringliteral">&quot;\nTeléfono: {contactInfo[&quot;</span>Telefono<span class="stringliteral">&quot;]}&quot;</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            result += $<span class="stringliteral">&quot;\nCorreo: {contactInfo[&quot;</span>Correo<span class="stringliteral">&quot;]}&quot;</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            result += $<span class="stringliteral">&quot;\nEstado: {usuario.IsActive()}&quot;</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
 <div class="ttc" id="aclassLibrary_1_1PlainTextUsuariosPrinter_html"><div class="ttname"><a href="classLibrary_1_1PlainTextUsuariosPrinter.html">Library.PlainTextUsuariosPrinter</a></div><div class="ttdef"><b>Definition:</b> <a href="PlainTextUsuariosPrinter_8cs_source.html#l00002">PlainTextUsuariosPrinter.cs:3</a></div></div>
 <div class="ttc" id="ainterfaceLibrary_1_1ITextPrinter_html"><div class="ttname"><a href="interfaceLibrary_1_1ITextPrinter.html">Library.ITextPrinter</a></div><div class="ttdoc">Interfaz para mostrar datos en el bot de Telegram.</div><div class="ttdef"><b>Definition:</b> <a href="ITextPrinter_8cs_source.html#l00005">ITextPrinter.cs:5</a></div></div>
 <div class="ttc" id="anamespaceLibrary_html"><div class="ttname"><a href="namespaceLibrary.html">Library</a></div><div class="ttdef"><b>Definition:</b> <a href="Aceptacion_8cs_source.html#l00001">Aceptacion.cs:1</a></div></div>

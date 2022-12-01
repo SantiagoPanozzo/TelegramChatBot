@@ -37,4 +37,6 @@ digraph "Graphical Class Hierarchy"
   Node14 [label="VerOfertasHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerOfertasHandler.html",tooltip="Presenta al trabajador cada OfertaDeServicio vigente ligada al mismo y le permite calificar al Emplea..."];
   Node1 -> Node15 [dir="back",color="steelblue1",style="solid"];
   Node15 [label="VerSolicitudesHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerSolicitudesHandler.html",tooltip="Muestra cada Solicitud no-finalizada que esté ligada al Empleador que tenga la sesión iniciada y le p..."];
+  Node1 -> Node16 [dir="back",color="steelblue1",style="solid"];
+  Node16 [label="VerUsuariosHandler",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classVerUsuariosHandler.html",tooltip="Muestra al administrador una lista de cada Usuario registrado y le da la opción de dar de baja a algu..."];
 }

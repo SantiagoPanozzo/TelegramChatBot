@@ -9,6 +9,8 @@ var dir_904be79bcfaa9d003cfb0105c4e992c0 =
     [ "PlainTextEmpleadorSolicitudPrinter.cs", "PlainTextEmpleadorSolicitudPrinter_8cs_source.html", null ],
     [ "PlainTextOfertasPrinter.cs", "PlainTextOfertasPrinter_8cs_source.html", null ],
     [ "PlainTextTrabajadorSolicitudPrinter.cs", "PlainTextTrabajadorSolicitudPrinter_8cs_source.html", null ],
+    [ "PlainTextUsersEmpleadoresPrinter.cs", "PlainTextUsersEmpleadoresPrinter_8cs_source.html", null ],
+    [ "PlainTextUsersTrabajadoresPrinter.cs", "PlainTextUsersTrabajadoresPrinter_8cs_source.html", null ],
     [ "PlainTextUsuariosPrinter.cs", "PlainTextUsuariosPrinter_8cs_source.html", null ],
     [ "SolicitudPrinter.cs", "SolicitudPrinter_8cs_source.html", null ]
 ];

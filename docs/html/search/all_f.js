@@ -8,8 +8,10 @@ var searchData=
   ['plaintextempleadorsolicitudprinter_5',['PlainTextEmpleadorSolicitudPrinter',['../classLibrary_1_1PlainTextEmpleadorSolicitudPrinter.html',1,'Library']]],
   ['plaintextofertasprinter_6',['PlainTextOfertasPrinter',['../classLibrary_1_1PlainTextOfertasPrinter.html',1,'Library']]],
   ['plaintexttrabajadorsolicitudprinter_7',['PlainTextTrabajadorSolicitudPrinter',['../classLibrary_1_1PlainTextTrabajadorSolicitudPrinter.html',1,'Library']]],
-  ['plaintextusuariosprinter_8',['PlainTextUsuariosPrinter',['../classLibrary_1_1PlainTextUsuariosPrinter.html',1,'Library']]],
-  ['printall_9',['PrintAll',['../classLibrary_1_1ConsoleCategoriaPrinter.html#add9f98fef710177359ddf522797da206',1,'Library.ConsoleCategoriaPrinter.PrintAll()'],['../classLibrary_1_1SolicitudPrinter.html#a0167025cf5a10b6791ef0bd3d59a0019',1,'Library.SolicitudPrinter.PrintAll()']]],
-  ['program_10',['Program',['../namespaceProgram.html',1,'Program'],['../classProgram_1_1Program.html',1,'Program.Program']]],
-  ['proyecto_20chatbot_20programación_20ii_11',['Proyecto ChatBot Programación II',['../md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html',1,'']]]
+  ['plaintextusersempleadoresprinter_8',['PlainTextUsersEmpleadoresPrinter',['../classLibrary_1_1PlainTextUsersEmpleadoresPrinter.html',1,'Library']]],
+  ['plaintextuserstrabajadoresprinter_9',['PlainTextUsersTrabajadoresPrinter',['../classLibrary_1_1PlainTextUsersTrabajadoresPrinter.html',1,'Library']]],
+  ['plaintextusuariosprinter_10',['PlainTextUsuariosPrinter',['../classLibrary_1_1PlainTextUsuariosPrinter.html',1,'Library']]],
+  ['printall_11',['PrintAll',['../classLibrary_1_1ConsoleCategoriaPrinter.html#add9f98fef710177359ddf522797da206',1,'Library.ConsoleCategoriaPrinter.PrintAll()'],['../classLibrary_1_1SolicitudPrinter.html#a0167025cf5a10b6791ef0bd3d59a0019',1,'Library.SolicitudPrinter.PrintAll()']]],
+  ['program_12',['Program',['../namespaceProgram.html',1,'Program'],['../classProgram_1_1Program.html',1,'Program.Program']]],
+  ['proyecto_20chatbot_20programación_20ii_13',['Proyecto ChatBot Programación II',['../md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html',1,'']]]
 ];
