@@ -32,7 +32,7 @@ public class InfoHandler : BaseHandler {
         }
         else
         {
-            respuesta.Append("» Cerrar sesión\n» Buscar\n» Categorias\n» Info\n» Panel de control\n» Start");
+            respuesta.Append("» Cerrar sesión\n» Buscar\n» Categorias\n» Info\n» Panel de control\n» Start\n» Ver solicitudes\n» Ver info\n» Ver ofertas\n» Ver usuarios ");
         }
 
         response = respuesta.ToString();

@@ -9,7 +9,7 @@ public class VerOfertasHandler : BaseHandler {
     /// <summary> Inicializa una nueva instancia de la clase <see cref="CategoriasHandler"/>. Esta clase procesa el mensaje "categorias". </summary>
     /// <param name="next"> Próximo <see cref="IHandler"/>. </param>
     public VerOfertasHandler(BaseHandler next) : base(next) {
-        this.Keywords = new string[] {};
+        this.Keywords = new string[] {"ofertas","ver ofertas","Ver ofertas"};
         this._id = Handlers.CategoriasHandler;
     }
 
