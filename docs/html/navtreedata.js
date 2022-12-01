@@ -25,46 +25,47 @@
 var NAVTREE =
 [
   [ "Proyecto Chatbot Grupo 21", "index.html", [
-    [ "HistoriasDeUsuarios", "md_HistoriasDeUsuarios.html", null ],
+    [ "Historias de Usuario", "md_HistoriasDeUsuarios.html", null ],
     [ "Justificaciones", "md_Justificaciones.html", [
-      [ "Utilización de patrones:", "md_Justificaciones.html#autotoc_md1", [
-        [ "Patrones y principios utilizados:", "md_Justificaciones.html#autotoc_md2", null ]
+      [ "Utilización de patrones:", "md_Justificaciones.html#autotoc_md2", [
+        [ "Patrones y principios utilizados:", "md_Justificaciones.html#autotoc_md3", null ]
       ] ],
-      [ "Otras decisiones tomadas:", "md_Justificaciones.html#autotoc_md3", [
-        [ "Registro:", "md_Justificaciones.html#autotoc_md4", null ],
-        [ "API de Ubicación:", "md_Justificaciones.html#autotoc_md5", null ],
-        [ "Administrador:", "md_Justificaciones.html#autotoc_md6", null ],
-        [ "Updater:", "md_Justificaciones.html#autotoc_md7", null ],
-        [ "Panel de Control:", "md_Justificaciones.html#autotoc_md8", null ],
-        [ "Singleton Wipes:", "md_Justificaciones.html#autotoc_md9", null ]
+      [ "Otras decisiones tomadas:", "md_Justificaciones.html#autotoc_md4", [
+        [ "Registro:", "md_Justificaciones.html#autotoc_md5", null ],
+        [ "API de Ubicación:", "md_Justificaciones.html#autotoc_md6", null ],
+        [ "Administrador:", "md_Justificaciones.html#autotoc_md7", null ],
+        [ "Updater:", "md_Justificaciones.html#autotoc_md8", null ],
+        [ "Panel de Control:", "md_Justificaciones.html#autotoc_md9", null ],
+        [ "Aceptacion:", "md_Justificaciones.html#autotoc_md10", null ],
+        [ "Singleton Wipes:", "md_Justificaciones.html#autotoc_md11", null ]
       ] ]
     ] ],
     [ "Manual de Usuario", "md_Manual.html", [
-      [ "Ejecución del programa:", "md_Manual.html#autotoc_md11", null ],
-      [ "Utilización del bot por Telegram:", "md_Manual.html#autotoc_md12", [
-        [ "Inicio:", "md_Manual.html#autotoc_md13", null ],
-        [ "Comandos iniciales:", "md_Manual.html#autotoc_md14", null ],
-        [ "Funciones del bot:", "md_Manual.html#autotoc_md15", null ]
+      [ "Ejecución del programa:", "md_Manual.html#autotoc_md13", null ],
+      [ "Utilización del bot por Telegram:", "md_Manual.html#autotoc_md14", [
+        [ "Inicio:", "md_Manual.html#autotoc_md15", null ],
+        [ "Comandos iniciales:", "md_Manual.html#autotoc_md16", null ],
+        [ "Funciones del bot:", "md_Manual.html#autotoc_md17", null ]
       ] ]
     ] ],
     [ "Proyecto ChatBot Programación II", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html", [
-      [ "Integrantes del equipo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md18", null ],
-      [ "Consigna", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md19", null ],
-      [ "Escenarios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md20", null ],
-      [ "Reflexiones de Grupo", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md21", [
-        [ "Implementación de un chatbot para ayudar a la gente encontrar trabajo y/o servicios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md17", null ],
-        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md22", null ],
-        [ "Mateo Rodríguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md23", null ],
-        [ "Facundo Martínez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md24", null ],
-        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md25", null ],
-        [ "Alejandra Benítez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md26", null ]
+      [ "Integrantes del equipo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md20", null ],
+      [ "Consigna", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md21", null ],
+      [ "Escenarios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md22", null ],
+      [ "Reflexiones de Grupo", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md23", [
+        [ "Implementación de un chatbot para ayudar a la gente encontrar trabajo y/o servicios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md19", null ],
+        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md24", null ],
+        [ "Mateo Rodríguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md25", null ],
+        [ "Facundo Martínez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md26", null ],
+        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md27", null ],
+        [ "Alejandra Benítez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md28", null ]
       ] ],
-      [ "Asignaciones:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md27", [
-        [ "Facundo Martinez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md28", null ],
-        [ "Mateo Rodriguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md29", null ],
-        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md30", null ],
-        [ "Alejandra Benitez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md31", null ],
-        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md32", null ]
+      [ "Asignaciones:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md29", [
+        [ "Facundo Martinez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md30", null ],
+        [ "Mateo Rodriguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md31", null ],
+        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md32", null ],
+        [ "Alejandra Benitez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md33", null ],
+        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md34", null ]
       ] ]
     ] ],
     [ "Packages", "namespaces.html", [

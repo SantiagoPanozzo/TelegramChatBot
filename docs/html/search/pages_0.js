@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['historiasdeusuarios_0',['HistoriasDeUsuarios',['../md_HistoriasDeUsuarios.html',1,'']]]
+  ['historias_20de_20usuario_0',['Historias de Usuario',['../md_HistoriasDeUsuarios.html',1,'']]]
 ];

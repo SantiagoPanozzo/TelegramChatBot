@@ -75,6 +75,11 @@ y todos los datos de ofertas, categorías y solicitudes existentes para poder da
 el resto de usuarios tendrán sus métodos que mostrarán solo la información pertinente a ellos y sin este control exclusivo
 de los administradores.
 
+### Aceptacion:
+Creamos también un enum "Aceptacion" que sirve representar los estados en los que puede estar una Solicitud. Esto se debe
+a que consideramos importante que un Trabajador pueda decidir aceptar o no cada solicitud que le llega, y una misma oferta
+de trabajo puede tener varias solicitudes, de las cuales el trabajador puede elegir cual aceptar.
+
 ### Singleton Wipes:
 Ya que implementamos el patrón Singleton en varias de nuestras clases, esto causó problemas inesperados a la hora de
 testear, ya que dentro de un mismo archivo de Test se mantenía la instancia a través de cada test individual, lo cual
