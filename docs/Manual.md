@@ -41,6 +41,7 @@ algunas de las cuales son:
 
 La posibilidad que tiene cada rol de acceder a estas opciones son tal que:
 
+(Acá hay una tabla que no se ve bien en Doxygen)
 
 |        Rol        |      Buscar       |    Ver ofertas    |  Ver solicitudes  |     Ver Info      |
 |-------------------|-------------------|-------------------|-------------------|-------------------|
