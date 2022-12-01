@@ -1,5 +1,5 @@
 using Library.DistanceMatrix;
-
+using System.Linq;
 namespace Library;
 
 /// <summary>  </summary>
@@ -23,28 +23,56 @@ public class SearchHandler {
     /// <summary> Método para filtrar las <see cref="OfertaDeServicio"/> por distancia </summary>
     /// <param name="emp"> Empleador que llama al método </param>
     /// <returns> Lista con las ofertas filtradas por distancia </returns>
-    // public List<OfertaDeServicio> FiltrarDistancia(Empleador emp) {      //TODO: Emplear con API, cambiar clases para este propósito
-    //     List<OfertaDeServicio> offers = new();
-    //     List<OfertaDeServicio> resultOffers = new();
-    //     OfertasHandler handler = OfertasHandler.GetInstance();
-    //     List<Categoria> categorias = handler.GetCategorias();
+    public List<OfertaDeServicio> FiltrarDistancia(Empleador emp) {      //TODO: Emplear con API, cambiar clases para este propósito
+        List<OfertaDeServicio> offers = new();
+        List<OfertaDeServicio> resultOffers = new();
+        OfertasHandler handler = OfertasHandler.GetInstance();
+        List<Categoria> categorias = handler.GetCategorias();
 
-    //     Tuple<double,double> myPos = emp.Ubicacion;
-    //     foreach(Categoria cat in categorias)
-    //     {
-    //         foreach(OfertaDeServicio oferta in cat.GetOfertas()){
-    //             offers.Add(oferta);}
-    //     }
+        Tuple<double,double> myPos = emp.Ubicacion;
+        foreach(Categoria cat in categorias)
+        {
+            foreach(OfertaDeServicio oferta in cat.GetOfertas()){
+                offers.Add(oferta);}
+        }
 
-    //     OfertaDeServicio shortest;
-    //     int ofertas = offers.Count;
-    //     for(int k = 0; k < ofertas; k ++){
-    //         shortest = GetShortest(myPos, offers);
-    //         resultOffers.Add(shortest);
-    //         offers.Remove(shortest);
-    //     }
-    //     return resultOffers;
-    // }
+        OfertaDeServicio shortest;
+        int ofertas = offers.Count;
+        for(int k = 0; k < ofertas; k ++){
+            shortest = GetShortest(myPos, offers);
+            resultOffers.Add(shortest);
+            offers.Remove(shortest);
+        }
+        return resultOffers;
+    }
+    public List<OfertaDeServicio> FiltrarDistanciaFinal(Empleador emp) {      //TODO: Emplear con API, cambiar clases para este propósito
+        Administrador adm = new("aasfasfqwef", "saaggfqwfdqa", "092999222", "aoisfn@gmail.com");
+        Dictionary<OfertaDeServicio, double> finalOffers = new();
+        var regHandler = RegistryHandler.GetInstance();
+        List<OfertaDeServicio> resultOffers = new();
+        OfertasHandler handler = OfertasHandler.GetInstance();
+
+        var ofertasTot = handler.GetOfertasIgnoreId();
+
+        var lat = emp.Ubicacion.Item1;
+        var lng = emp.Ubicacion.Item2;
+
+        foreach(var offer in ofertasTot)
+        {
+            var user = regHandler.GetUserForAdmin(adm, offer.GetOfertante());
+            var userLat = user.Ubicacion.Item1;
+            var userLng = user.Ubicacion.Item2;
+            double latDist = Math.Abs(userLat - lat);
+            double lngDist = Math.Abs(userLng - lng);
+            double totalDist = latDist + lngDist;
+
+            finalOffers.Add(offer, totalDist);
+        }
+
+        var sortedFinalOffers = from entry in finalOffers orderby entry.Value ascending select entry;
+        sortedFinalOffers = sortedFinalOffers.ToDictionary<KeyValuePair<List<OfertaDeServicio>, double>, OfertaDeServicio, double>(pair => pair.Key, pair => pair.Value);
+        return sortedFinalOffers;
+    }
 
     /// <summary> Método para obtener la <see cref="OfertaDeServicio"/> más cercana </summary>
     /// <param name="myPos"> Posición actual del <see cref="Usuario"/> </param>
