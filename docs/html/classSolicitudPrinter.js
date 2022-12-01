@@ -1,4 +1,4 @@
 var classSolicitudPrinter =
 [
-    [ "Print", "classSolicitudPrinter.html#a7d88c152d3daa4c5be3762ceb1360ae8", null ]
+    [ "PrintAll", "classSolicitudPrinter.html#aa320b5d581c75f130bdcd6b9de50faa5", null ]
 ];

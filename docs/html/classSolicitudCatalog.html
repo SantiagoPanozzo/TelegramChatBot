@@ -105,7 +105,7 @@ Collaboration diagram for SolicitudCatalog:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a4296d2128d7425fa3e2bb199e7dc9a6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSolicitud.html">Solicitud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolicitudCatalog.html#a4296d2128d7425fa3e2bb199e7dc9a6e">AddSolicitud</a> (<a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a> Oferta, <a class="el" href="classEmpleador.html">Empleador</a> empleador)</td></tr>
-<tr class="memdesc:a4296d2128d7425fa3e2bb199e7dc9a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para agregar una <a class="el" href="classSolicitud.html">al catálogo. </a>  <a href="classSolicitudCatalog.html#a4296d2128d7425fa3e2bb199e7dc9a6e">More...</a><br /></td></tr>
+<tr class="memdesc:a4296d2128d7425fa3e2bb199e7dc9a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para agregar una <a class="el" href="classSolicitud.html">al catálogo. </a> <a href="classSolicitudCatalog.html#a4296d2128d7425fa3e2bb199e7dc9a6e">More...</a><br /></td></tr>
 <tr class="separator:a4296d2128d7425fa3e2bb199e7dc9a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a174e2a43a0c6ba335b735e6ee0e3ac0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSolicitud.html">Solicitud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolicitudCatalog.html#a174e2a43a0c6ba335b735e6ee0e3ac0c">GetSolicitud</a> (int id)</td></tr>
 <tr class="memdesc:a174e2a43a0c6ba335b735e6ee0e3ac0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una solicitud por id  <a href="classSolicitudCatalog.html#a174e2a43a0c6ba335b735e6ee0e3ac0c">More...</a><br /></td></tr>
@@ -130,9 +130,11 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Clase para para manejar el catálogo de solicitudes. </p>
-<p >/// </p>
+<p >Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para obtener las solicitudes. </p>
+<p ><br  />
+ </p>
 
-<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00010">10</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00009">9</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4296d2128d7425fa3e2bb199e7dc9a6e" name="a4296d2128d7425fa3e2bb199e7dc9a6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4296d2128d7425fa3e2bb199e7dc9a6e">&#9670;&nbsp;</a></span>AddSolicitud()</h2>
@@ -160,10 +162,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Método para agregar una <a class="el" href="classSolicitud.html">al catálogo. </a> </p>
+<p>Método para agregar una <a class="el" href="classSolicitud.html">al catálogo. </a></p>
+<p >Utilizamos creator ya que al ser esta clase el catálogo que almacenará instancias de solicitud, es la clase que más sentido tiene que cree estas instancias, es la que trabajará de manera más directa con las solicitudes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Oferta</td><td><a class="el" href="classOfertaDeServicio.html">que se busca. </a> <dl class="params"><dt>Parameters</dt><dd>
+    <tr><td class="paramname">Oferta</td><td><a class="el" href="classOfertaDeServicio.html">que se quiere agregar. </a> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">empleador</td><td><a class="el" href="classEmpleador.html">que realiza la </a>. </td></tr>
   </table>
@@ -174,7 +177,7 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00063">63</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00062">62</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -210,7 +213,13 @@ Here is the caller graph for this function:</div>
 <p>Método para obtener la instancia de la clase. </p>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la instancia a crear. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00052">52</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00051">51</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -239,17 +248,17 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la <a class="el" href="classSolicitud.html" title="Clase Solicitud para iniciar una OfertaDeServicio.">Solicitud</a> por valor de id </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00078">78</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00076">76</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 2 -->
+<div class="center"><!-- SVG 3 -->
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 3 -->
+<div class="center"><!-- SVG 4 -->
 </div>
 </div>
 
@@ -279,7 +288,13 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00090">90</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00087">87</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 5 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -315,11 +330,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00032">32</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00031">31</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 4 -->
+<div class="center"><!-- SVG 6 -->
 </div>
 </div>
 
@@ -338,7 +353,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00013">13</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolicitudCatalog_8cs_source.html#l00012">12</a> of file <a class="el" href="SolicitudCatalog_8cs_source.html">SolicitudCatalog.cs</a>.</p>
 
 </div>
 </div>

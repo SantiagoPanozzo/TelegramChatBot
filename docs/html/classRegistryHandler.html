@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4ba76c1e045bdb0c91f86046ccd7d013"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegistryHandler.html#a4ba76c1e045bdb0c91f86046ccd7d013">VerificarCedula</a> (string cedula)</td></tr>
 <tr class="memdesc:a4ba76c1e045bdb0c91f86046ccd7d013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para verificar la cédula de un <a class="el" href="classUsuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador.">Usuario</a>.  <a href="classRegistryHandler.html#a4ba76c1e045bdb0c91f86046ccd7d013">More...</a><br /></td></tr>
 <tr class="separator:a4ba76c1e045bdb0c91f86046ccd7d013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c76402f61b0ded205b48617384c78b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegistryHandler.html#ad0c76402f61b0ded205b48617384c78b">ParseCedula</a> (string cedula)</td></tr>
+<tr class="memdesc:ad0c76402f61b0ded205b48617384c78b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para convertir un string a un formato apropiado de cédula.  <a href="classRegistryHandler.html#ad0c76402f61b0ded205b48617384c78b">More...</a><br /></td></tr>
+<tr class="separator:ad0c76402f61b0ded205b48617384c78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5891aaccf0f0b364757161dcf5f97ab5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegistryHandler.html#a5891aaccf0f0b364757161dcf5f97ab5">RemoveUsuario</a> (<a class="el" href="classUsuario.html">Usuario</a> admin, <a class="el" href="classUsuario.html">Usuario</a> usuarioEliminar)</td></tr>
 <tr class="memdesc:a5891aaccf0f0b364757161dcf5f97ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para eliminar un <a class="el" href="classUsuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador.">Usuario</a>.  <a href="classRegistryHandler.html#a5891aaccf0f0b364757161dcf5f97ab5">More...</a><br /></td></tr>
 <tr class="separator:a5891aaccf0f0b364757161dcf5f97ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +139,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a638f81e0c1ddfd4e5e0bdef97c8253cb"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegistryHandler.html#a638f81e0c1ddfd4e5e0bdef97c8253cb">GetUserContact</a> (string nickname)</td></tr>
 <tr class="memdesc:a638f81e0c1ddfd4e5e0bdef97c8253cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener el contacto de un usuario.  <a href="classRegistryHandler.html#a638f81e0c1ddfd4e5e0bdef97c8253cb">More...</a><br /></td></tr>
 <tr class="separator:a638f81e0c1ddfd4e5e0bdef97c8253cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade210b5d1073ad4de22cdbffb8b97eb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUsuario.html">Usuario</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegistryHandler.html#ade210b5d1073ad4de22cdbffb8b97eb5">GetUserForAdmin</a> (<a class="el" href="classUsuario.html">Usuario</a> admin, string nickname)</td></tr>
+<tr class="separator:ade210b5d1073ad4de22cdbffb8b97eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4207077d5ef33194908da2c99489ccb5"><td class="memItemLeft" align="right" valign="top">List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegistryHandler.html#a4207077d5ef33194908da2c99489ccb5">GetTrabajadores</a> ()</td></tr>
 <tr class="memdesc:a4207077d5ef33194908da2c99489ccb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener la lista de trabajadores.  <a href="classRegistryHandler.html#a4207077d5ef33194908da2c99489ccb5">More...</a><br /></td></tr>
 <tr class="separator:a4207077d5ef33194908da2c99489ccb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,11 +180,17 @@ Static Public Member Functions</h2></td></tr>
 <p>Método para obtener la lista de empleadores. </p>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve lista de empleadores. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00280">280</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00314">314</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><!-- SVG 1 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 -->
 </div>
 </div>
 
@@ -211,7 +222,13 @@ Here is the call graph for this function:</div>
 <p>Método para obtener la instancia. </p>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la instancia. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00054">54</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00052">52</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -240,11 +257,11 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la reputación. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00212">212</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00238">238</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 2 -->
+<div class="center"><!-- SVG 4 -->
 </div>
 </div>
 
@@ -268,11 +285,17 @@ Here is the call graph for this function:</div>
 <p>Método para obtener la lista de trabajadores. </p>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve lista de trabajadores. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00264">264</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00298">298</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 3 -->
+<div class="center"><!-- SVG 5 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 6 -->
 </div>
 </div>
 
@@ -303,13 +326,43 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve el contacto del usuario. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00237">237</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00263">263</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 4 -->
+<div class="center"><!-- SVG 7 -->
 </div>
 </div>
+
+</div>
+</div>
+<a id="ade210b5d1073ad4de22cdbffb8b97eb5" name="ade210b5d1073ad4de22cdbffb8b97eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade210b5d1073ad4de22cdbffb8b97eb5">&#9670;&nbsp;</a></span>GetUserForAdmin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classUsuario.html">Usuario</a> RegistryHandler.GetUserForAdmin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUsuario.html">Usuario</a>&#160;</td>
+          <td class="paramname"><em>admin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>nickname</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00287">287</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -338,7 +391,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la información del usuario. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00228">228</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00254">254</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 
 </div>
 </div>
@@ -379,11 +432,52 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve el <a class="el" href="classUsuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador.">Usuario</a> que coincida con los parámetros dados. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00197">197</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00223">223</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 5 -->
+<div class="center"><!-- SVG 8 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 9 -->
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad0c76402f61b0ded205b48617384c78b" name="ad0c76402f61b0ded205b48617384c78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c76402f61b0ded205b48617384c78b">&#9670;&nbsp;</a></span>ParseCedula()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string RegistryHandler.ParseCedula </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cedula</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método para convertir un string a un formato apropiado de cédula. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cedula</td><td>Cedula a ser convertida</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String cedula con puntos y guiones si la entrada es de 7 u 8 caracteres, solo los dígitos si tiene otra longitud. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00175">175</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 10 -->
 </div>
 </div>
 
@@ -439,11 +533,11 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la instancia de <a class="el" href="classTrabajador.html" title="Clase que hereda de .">Trabajador</a> creada. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00117">117</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00115">115</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 6 -->
+<div class="center"><!-- SVG 11 -->
 </div>
 </div>
 
@@ -533,11 +627,17 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la instancia de <a class="el" href="classEmpleador.html" title="Clase Empleador que hereda de Usuario.">Empleador</a> creada. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00096">96</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00094">94</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 7 -->
+<div class="center"><!-- SVG 12 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 13 -->
 </div>
 </div>
 
@@ -627,11 +727,17 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la instancia de <a class="el" href="classTrabajador.html" title="Clase que hereda de .">Trabajador</a> creada. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00073">73</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00071">71</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 8 -->
+<div class="center"><!-- SVG 14 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 15 -->
 </div>
 </div>
 
@@ -671,11 +777,17 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00179">179</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00205">205</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 9 -->
+<div class="center"><!-- SVG 16 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 17 -->
 </div>
 </div>
 
@@ -706,11 +818,17 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve true si el formato es válido, de lo contrario devuelve false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00159">159</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00160">160</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 18 -->
+</div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 10 -->
+<div class="center"><!-- SVG 19 -->
 </div>
 </div>
 
@@ -741,11 +859,11 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve true si el correo es válido, en caso contrario false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00151">151</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00152">152</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 11 -->
+<div class="center"><!-- SVG 20 -->
 </div>
 </div>
 
@@ -776,17 +894,17 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve true si no existe otro <a class="el" href="classUsuario.html" title="Clase abstracta Usuario para que luego hereden Administrador, Trabajador y Empleador.">Usuario</a> con ese nick, de lo contrario devuelve false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00130">130</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00127">127</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 12 -->
+<div class="center"><!-- SVG 21 -->
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 13 -->
+<div class="center"><!-- SVG 22 -->
 </div>
 </div>
 
@@ -824,11 +942,11 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00034">34</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RegistryHandler_8cs_source.html#l00032">32</a> of file <a class="el" href="RegistryHandler_8cs_source.html">RegistryHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 14 -->
+<div class="center"><!-- SVG 23 -->
 </div>
 </div>
 

@@ -15,7 +15,16 @@ digraph "SearchHandler.FiltrarReputacion"
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="OfertasHandler.GetInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#ae5ec8218485c0a9c560e34682404d229",tooltip="Método para obtener la instancia de la clase."];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="OfertaDeServicio.GetReputacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#a200f6192086dbddd1455e54a1a7ab214",tooltip="Método para obtener la reputación del ofertante."];
+  Node6 [label="OfertasHandler.GetOfertas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1",tooltip="Método para obtener OfertaDeServicio."];
   Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="Trabajador.GetReputacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html#aff73d27e40b55c6b134a837095d65d18",tooltip="Método para obtener las calificaciones del usuario."];
+  Node7 [label="OfertasHandler.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872",tooltip="Método para obtener una Categoria por id."];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="CategoriasCatalog.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#a1275f6565562402725de3b14b665f622",tooltip="Método para obtener una categoría por id."];
+  Node8 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Categoria.GetOfertas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoria.html#a16a5125f7bdde8a7f307d1927b448d85",tooltip="Método para conocer la lista de ofertas."];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="OfertaDeServicio.GetReputacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertaDeServicio.html#a200f6192086dbddd1455e54a1a7ab214",tooltip="Método para obtener la reputación del ofertante."];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Trabajador.GetReputacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTrabajador.html#aff73d27e40b55c6b134a837095d65d18",tooltip="Método para obtener las calificaciones del usuario."];
 }

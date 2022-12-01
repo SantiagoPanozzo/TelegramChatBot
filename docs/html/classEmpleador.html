@@ -114,6 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a369cfc477afd79472189f923a1ac4700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpleador.html#a369cfc477afd79472189f923a1ac4700">Calificar</a> (Calificacion Rate)</td></tr>
 <tr class="memdesc:a369cfc477afd79472189f923a1ac4700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para calificar un usuario.  <a href="classEmpleador.html#a369cfc477afd79472189f923a1ac4700">More...</a><br /></td></tr>
 <tr class="separator:a369cfc477afd79472189f923a1ac4700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a852c7b5026a26e99ad160b557b876fb1"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpleador.html#a852c7b5026a26e99ad160b557b876fb1">IsActive</a> ()</td></tr>
+<tr class="memdesc:a852c7b5026a26e99ad160b557b876fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checkea si el usuario está activo.  <a href="classEmpleador.html#a852c7b5026a26e99ad160b557b876fb1">More...</a><br /></td></tr>
+<tr class="separator:a852c7b5026a26e99ad160b557b876fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebd4cd043ecaa99299d48b63a24529f8"><td class="memItemLeft" align="right" valign="top">Calificacion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpleador.html#aebd4cd043ecaa99299d48b63a24529f8">GetReputacion</a> ()</td></tr>
 <tr class="memdesc:aebd4cd043ecaa99299d48b63a24529f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener las calificaciones del usuario.  <a href="classEmpleador.html#aebd4cd043ecaa99299d48b63a24529f8">More...</a><br /></td></tr>
 <tr class="separator:aebd4cd043ecaa99299d48b63a24529f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,9 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a71c224018699866280b429e4b7e00cb7 inherit pub_methods_classUsuario"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUsuario.html#a71c224018699866280b429e4b7e00cb7">VerifyContraseña</a> (string contraseña)</td></tr>
 <tr class="memdesc:a71c224018699866280b429e4b7e00cb7 inherit pub_methods_classUsuario"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método verificar que la contraseña sea igual a la anteriormente ingresada al iniciar sesión.  <a href="classUsuario.html#a71c224018699866280b429e4b7e00cb7">More...</a><br /></td></tr>
 <tr class="separator:a71c224018699866280b429e4b7e00cb7 inherit pub_methods_classUsuario"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a963618b4817eadfc6117830e37a39e inherit pub_methods_classUsuario"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUsuario.html#a4a963618b4817eadfc6117830e37a39e">IsActive</a> ()</td></tr>
-<tr class="memdesc:a4a963618b4817eadfc6117830e37a39e inherit pub_methods_classUsuario"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checkea si el usuario está activo.  <a href="classUsuario.html#a4a963618b4817eadfc6117830e37a39e">More...</a><br /></td></tr>
-<tr class="separator:a4a963618b4817eadfc6117830e37a39e inherit pub_methods_classUsuario"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15597dc7bd2f0ef9104a00b0077d547d inherit pub_methods_classUsuario"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUsuario.html#a15597dc7bd2f0ef9104a00b0077d547d">IsActive</a> ()</td></tr>
+<tr class="memdesc:a15597dc7bd2f0ef9104a00b0077d547d inherit pub_methods_classUsuario"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checkea si el usuario está activo.  <a href="classUsuario.html#a15597dc7bd2f0ef9104a00b0077d547d">More...</a><br /></td></tr>
+<tr class="separator:a15597dc7bd2f0ef9104a00b0077d547d inherit pub_methods_classUsuario"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27cda50e359fbd5269d418679ad38828 inherit pub_methods_classUsuario"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUsuario.html#a27cda50e359fbd5269d418679ad38828">DarDeBaja</a> (<a class="el" href="classUsuario.html">Usuario</a> user)</td></tr>
 <tr class="memdesc:a27cda50e359fbd5269d418679ad38828 inherit pub_methods_classUsuario"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para desactivar un usuario.  <a href="classUsuario.html#a27cda50e359fbd5269d418679ad38828">More...</a><br /></td></tr>
 <tr class="separator:a27cda50e359fbd5269d418679ad38828 inherit pub_methods_classUsuario"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -322,7 +325,39 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="interfaceICalificable.html">ICalificable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Empleador_8cs_source.html#l00037">37</a> of file <a class="el" href="Empleador_8cs_source.html">Empleador.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Empleador_8cs_source.html#l00042">42</a> of file <a class="el" href="Empleador_8cs_source.html">Empleador.cs</a>.</p>
+
+</div>
+</div>
+<a id="a852c7b5026a26e99ad160b557b876fb1" name="a852c7b5026a26e99ad160b557b876fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a852c7b5026a26e99ad160b557b876fb1">&#9670;&nbsp;</a></span>IsActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool Empleador.IsActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checkea si el usuario está activo. </p>
+<dl class="section return"><dt>Returns</dt><dd>Retorna un valor de bool, True si está activo o False si no lo está. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classUsuario.html#a15597dc7bd2f0ef9104a00b0077d547d">Usuario</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Empleador_8cs_source.html#l00035">35</a> of file <a class="el" href="Empleador_8cs_source.html">Empleador.cs</a>.</p>
 
 </div>
 </div>

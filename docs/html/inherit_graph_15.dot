@@ -2,13 +2,38 @@ digraph "Graphical Class Hierarchy"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="Library.ITextPrinter\l\< string \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfaceLibrary_1_1ITextPrinter.html",tooltip=" "];
-  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
-  Node1 [label="Library.PlainTextUsersEmpleadores\lPrinter",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1PlainTextUsersEmpleadoresPrinter.html",tooltip=" "];
-  Node0 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="Library.PlainTextUsersTrabajadores\lPrinter",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classLibrary_1_1PlainTextUsersTrabajadoresPrinter.html",tooltip=" "];
+  Node0 [label="IHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interfaceIHandler.html",tooltip="Interfaz para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a travé..."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="BaseHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBaseHandler.html",tooltip="Clase base para implementar el patrón Chain of Responsibility. En ese patrón se pasa un mensaje a tra..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="BuscarHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBuscarHandler.html",tooltip="Muestra una lista de OfertaDeServicio disponibles según su ID y el trabajo. El usuario puede seleccio..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DefaultHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDefaultHandler.html",tooltip="IHandler \"default\", procesa una respuesta a cualquier mensaje que no lo haga otro handler."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="InfoHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classInfoHandler.html",tooltip="Un \"handler\" del patrón Chain of Responsibility que lee el comando \"info\"."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="IniciarSesionHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIniciarSesionHandler.html",tooltip="Solicita al usuario su Nick y su Contraseña y si coinciden con la base de datos pasa a InicioHandler."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="InicioHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classInicioHandler.html",tooltip="Dependiendo del TipoDeUsuario del Usuario muestra distintas opciones. Para un Trabajador muestra Ofer..."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="OfertarHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertarHandler.html",tooltip="Permite a un Trabajador crear una oferta de servicio, mediante lo cual se le pedirá la categoría en l..."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="PanelDeControlHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPanelDeControlHandler.html",tooltip="Se fija si el Telegram ID de la persona corresponde a un administrador y le pide su contraseña de adm..."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="RegistrarHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistrarHandler.html",tooltip="Handler para manejar el ingreso de datos del Usuario."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="StartHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classStartHandler.html",tooltip="Un \"handler\" del patrón Chain of Responsibility que lee la palabra \"start\", o el comando /start,..."];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="VerCategoriasHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVerCategoriasHandler.html",tooltip="IHandler del patrón Chain of Responsibility que implementa lee la palabra categoria/s y muestra al us..."];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="VerInfoHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVerInfoHandler.html",tooltip="Muestra toda la información correspondiente al Usuario que tiene la sesión iniciada,..."];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="VerOfertasHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVerOfertasHandler.html",tooltip="Presenta al trabajador cada OfertaDeServicio vigente ligada al mismo y le permite calificar al Emplea..."];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="VerSolicitudesHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVerSolicitudesHandler.html",tooltip="Muestra cada Solicitud no-finalizada que esté ligada al Empleador que tenga la sesión iniciada y le p..."];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="VerUsuariosHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVerUsuariosHandler.html",tooltip="Muestra al administrador una lista de cada Usuario registrado y le da la opción de dar de baja a algu..."];
 }

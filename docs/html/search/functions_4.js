@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['eliminarcategoria_0',['EliminarCategoria',['../classLibrary_1_1OfertasHandler.html#afefa462e1fe30165a2985f3ec5daa760',1,'Library::OfertasHandler']]],
-  ['eliminarsolicitudnoagregadatest_1',['EliminarSolicitudNoAgregadaTest',['../classLibraryTests_1_1SolicitudCatalogTests.html#a15b2d4a72db2e069aa261b92fd4ae42a',1,'LibraryTests::SolicitudCatalogTests']]],
-  ['eliminarsolicitudtest_2',['EliminarSolicitudTest',['../classLibraryTests_1_1SolicitudCatalogTests.html#aea4cb16f2b317be2f0f8d82f5c474f5e',1,'LibraryTests::SolicitudCatalogTests']]],
-  ['empleador_3',['Empleador',['../classLibrary_1_1Empleador.html#a0455b7b82f05b0dae6f8e08ef4d50c72',1,'Library::Empleador']]],
-  ['empleadoryacalificadotest_4',['EmpleadorYaCalificadoTest',['../classLibraryTests_1_1SolicitudTests.html#a0f15a9d28e0c5a6417536b8c7add017c',1,'LibraryTests::SolicitudTests']]]
+  ['eliminarcategoria_0',['EliminarCategoria',['../classOfertasHandler.html#a5e4a2a347fd4f2861d3d976bef9844c1',1,'OfertasHandler']]],
+  ['eliminarsolicitudnoagregadatest_1',['EliminarSolicitudNoAgregadaTest',['../classSolicitudCatalogTests.html#ac2282bf4b76184ee16459d43f3fbd5e2',1,'SolicitudCatalogTests']]],
+  ['eliminarsolicitudtest_2',['EliminarSolicitudTest',['../classSolicitudCatalogTests.html#a3ca4ddc9c6e70fb0a68196c3d44ddf00',1,'SolicitudCatalogTests']]],
+  ['empleador_3',['Empleador',['../classEmpleador.html#af2659e8f8d224961d6352962341e6f68',1,'Empleador']]],
+  ['empleadoryacalificadotest_4',['EmpleadorYaCalificadoTest',['../classSolicitudTests.html#a85dd1b35b3e2e963c53e5e8d26383dbe',1,'SolicitudTests']]]
 ];

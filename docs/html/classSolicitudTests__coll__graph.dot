@@ -4,5 +4,5 @@ digraph "SolicitudTests"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{SolicitudTests\n||+ Setup()\l+ Test1()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tests de la clase Solicitud"];
+  Node1 [label="{SolicitudTests\n||+ Setup()\l+ Wipe()\l+ ObtenerIdSolicitudTest()\l+ ObtenerOfertanteDeUnaSolicitud\lTest()\l+ ObtenerUbicacionDeUnaSolicitud\lTest()\l+ IniciarTrabajoTest()\l+ CalificacionPorTrabajador\lQueNoEsTest()\l+ ErrorCalificacionEmpleador()\l+ CalificacionPorEmpleador\lQueNoEsTest()\l+ ErrorCalificacionTrabajador()\land 15 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tests de la clase ."];
 }

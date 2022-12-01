@@ -2,20 +2,19 @@ digraph "Exception"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
-  Node1 [label="{Exception\n||}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Exception\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
   Node2 [label="{AccionInnecesariaException\n||+ AccionInnecesariaException()\l+ AccionInnecesariaException()\l+ AccionInnecesariaException()\l}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classAccionInnecesariaException.html",tooltip=" "];
-  Node1 -> Node3 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];
-  Node3 [label="{ElevacionException\n||+ ElevacionException()\l+ ElevacionException()\l+ ElevacionException()\l}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classElevacionException.html",tooltip="Representa una excepción por falta de"];
-  Node1 -> Node4 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{ElevacionException\n||+ ElevacionException()\l+ ElevacionException()\l+ ElevacionException()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classElevacionException.html",tooltip="Representa una excepción por falta de"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
   Node4 [label="{FalloDeAutenticacionException\n||+ FalloDeAutenticacionException()\l+ FalloDeAutenticacionException()\l+ FalloDeAutenticacionException()\l}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classFalloDeAutenticacionException.html",tooltip=" "];
-  Node1 -> Node5 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
   Node5 [label="{NotFoundException\n||+ NotFoundException()\l+ NotFoundException()\l+ NotFoundException()\l}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classNotFoundException.html",tooltip=" "];
-  Node1 -> Node6 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
   Node6 [label="{UsuarioIncorrectoException\n||+ UsuarioIncorrectoException()\l+ UsuarioIncorrectoException()\l+ UsuarioIncorrectoException()\l}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classUsuarioIncorrectoException.html",tooltip=" "];
-  Node1 -> Node7 [dir="back",color="steelblue1",style="solid",arrowtail="onormal"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
   Node7 [label="{YaCalificadoException\n||+ YaCalificadoException()\l+ YaCalificadoException()\l+ YaCalificadoException()\l}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$classYaCalificadoException.html",tooltip=" "];
 }

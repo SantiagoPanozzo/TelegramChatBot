@@ -10,4 +10,6 @@ digraph "CategoriasCatalog.GetOfertaById"
   Node2 [label="OfertasHandler.GetOfertaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7",tooltip="Método para obtener una OfertaDeServicio por id."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="OfertasHandler.DarDeBaja\lOferta",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a8a2ad6d9d2db484f18d71e3b50c486c3",tooltip="Método para dar de baja una OfertaDeServicio."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="PanelDeControlHandler.Internal\lHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPanelDeControlHandler.html#a30658d59450bfd0528572c30ee7af021",tooltip="Procesamiento de los mensajes."];
 }

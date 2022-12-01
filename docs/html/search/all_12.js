@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['telegrambot_0',['TelegramBot',['../classLibrary_1_1TelegramBot.html',1,'Library']]],
+  ['telegrambot_0',['TelegramBot',['../classTelegramBot.html',1,'']]],
   ['temptipo_1',['TempTipo',['../classRegistrarHandler.html#ab8c8b893744eaafa257226d7d80d916c',1,'RegistrarHandler']]],
-  ['tipodeusuario_2',['TipoDeUsuario',['../namespaceLibrary.html#a4cb7ae7753cda2aecc9365eead4518c9',1,'Library']]],
-  ['trabajador_3',['Trabajador',['../classLibrary_1_1Trabajador.html',1,'Library.Trabajador'],['../classLibrary_1_1Trabajador.html#a97983678e5335fd1fa6080459376a51b',1,'Library.Trabajador.Trabajador()']]],
-  ['trabajadortests_4',['TrabajadorTests',['../classLibraryTests_1_1TrabajadorTests.html',1,'LibraryTests']]]
+  ['trabajador_2',['Trabajador',['../classTrabajador.html',1,'Trabajador'],['../classTrabajador.html#a140a28b7a44a90048a01bc4bb5749e49',1,'Trabajador.Trabajador()']]],
+  ['trabajadortests_3',['TrabajadorTests',['../classTrabajadorTests.html',1,'']]]
 ];

@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('classOfertasHandler.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
-<p>Clase para manejar el catálogo de ofertas.  
+<p> 
  <a href="classOfertasHandler.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for OfertasHandler:</div>
@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aee064b912d719b92da28610ca6c002c1"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1">GetOfertas</a> (int categoriaId)</td></tr>
 <tr class="memdesc:aee064b912d719b92da28610ca6c002c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a>.  <a href="classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1">More...</a><br /></td></tr>
 <tr class="separator:aee064b912d719b92da28610ca6c002c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a699944987dda2793b545183bcbdaed07"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a699944987dda2793b545183bcbdaed07">GetOfertasIgnoreId</a> ()</td></tr>
+<tr class="memdesc:a699944987dda2793b545183bcbdaed07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una lista de todas las <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a>  <a href="classOfertasHandler.html#a699944987dda2793b545183bcbdaed07">More...</a><br /></td></tr>
+<tr class="separator:a699944987dda2793b545183bcbdaed07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42d3b05e970ca29e77161980832193b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7">GetOfertaById</a> (int id)</td></tr>
 <tr class="memdesc:a42d3b05e970ca29e77161980832193b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para obtener una <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a> por id.  <a href="classOfertasHandler.html#a42d3b05e970ca29e77161980832193b7">More...</a><br /></td></tr>
 <tr class="separator:a42d3b05e970ca29e77161980832193b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,8 +141,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ae5ec8218485c0a9c560e34682404d229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Clase para manejar el catálogo de ofertas. </p>
-<p >/// </p>
+<div class="textblock"><p >Clase para manejar el catálogo de ofertas Utilizamos patrón singleton ya que solo necesitamos una misma instancia de esta clase, si hubieran más se mezclarían los elementos de la misma y no sabríamos a cual instancia acceder para interactuar con las ofertas </p>
 
 <p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00009">9</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -231,6 +233,12 @@ Here is the call graph for this function:</div>
 <div class="center"><!-- SVG 2 -->
 </div>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -273,7 +281,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 3 -->
+<div class="center"><!-- SVG 4 -->
 </div>
 </div>
 
@@ -304,17 +312,17 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la <a class="el" href="classCategoria.html" title="Clase para conocer y agregar categorias de ofertas de servicio.">Categoria</a> que coincida con el id ingresado. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00142">142</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00155">155</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 4 -->
+<div class="center"><!-- SVG 5 -->
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 5 -->
+<div class="center"><!-- SVG 6 -->
 </div>
 </div>
 
@@ -342,13 +350,13 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 6 -->
+<div class="center"><!-- SVG 7 -->
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 7 -->
+<div class="center"><!-- SVG 8 -->
 </div>
 </div>
 
@@ -384,7 +392,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 8 -->
+<div class="center"><!-- SVG 9 -->
 </div>
 </div>
 
@@ -415,17 +423,17 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Devuelve la <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a> que coincida con el id ingresado. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00133">133</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00146">146</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 9 -->
+<div class="center"><!-- SVG 10 -->
 </div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 10 -->
+<div class="center"><!-- SVG 11 -->
 </div>
 </div>
 
@@ -460,7 +468,47 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 11 -->
+<div class="center"><!-- SVG 12 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 13 -->
+</div>
+</div>
+
+</div>
+</div>
+<a id="a699944987dda2793b545183bcbdaed07" name="a699944987dda2793b545183bcbdaed07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699944987dda2793b545183bcbdaed07">&#9670;&nbsp;</a></span>GetOfertasIgnoreId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt; <a class="el" href="classOfertaDeServicio.html">OfertaDeServicio</a> &gt; OfertasHandler.GetOfertasIgnoreId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método para obtener una lista de todas las <a class="el" href="classOfertaDeServicio.html" title="Clase que representa una oferta de servicio">OfertaDeServicio</a> </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="OfertasHandler_8cs_source.html#l00131">131</a> of file <a class="el" href="OfertasHandler_8cs_source.html">OfertasHandler.cs</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 14 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 15 -->
 </div>
 </div>
 
@@ -527,7 +575,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 12 -->
+<div class="center"><!-- SVG 16 -->
 </div>
 </div>
 
@@ -569,7 +617,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 13 -->
+<div class="center"><!-- SVG 17 -->
 </div>
 </div>
 

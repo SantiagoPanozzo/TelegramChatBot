@@ -121,9 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a71c224018699866280b429e4b7e00cb7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUsuario.html#a71c224018699866280b429e4b7e00cb7">VerifyContraseña</a> (string contraseña)</td></tr>
 <tr class="memdesc:a71c224018699866280b429e4b7e00cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método verificar que la contraseña sea igual a la anteriormente ingresada al iniciar sesión.  <a href="classUsuario.html#a71c224018699866280b429e4b7e00cb7">More...</a><br /></td></tr>
 <tr class="separator:a71c224018699866280b429e4b7e00cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a963618b4817eadfc6117830e37a39e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUsuario.html#a4a963618b4817eadfc6117830e37a39e">IsActive</a> ()</td></tr>
-<tr class="memdesc:a4a963618b4817eadfc6117830e37a39e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checkea si el usuario está activo.  <a href="classUsuario.html#a4a963618b4817eadfc6117830e37a39e">More...</a><br /></td></tr>
-<tr class="separator:a4a963618b4817eadfc6117830e37a39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15597dc7bd2f0ef9104a00b0077d547d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUsuario.html#a15597dc7bd2f0ef9104a00b0077d547d">IsActive</a> ()</td></tr>
+<tr class="memdesc:a15597dc7bd2f0ef9104a00b0077d547d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checkea si el usuario está activo.  <a href="classUsuario.html#a15597dc7bd2f0ef9104a00b0077d547d">More...</a><br /></td></tr>
+<tr class="separator:a15597dc7bd2f0ef9104a00b0077d547d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27cda50e359fbd5269d418679ad38828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUsuario.html#a27cda50e359fbd5269d418679ad38828">DarDeBaja</a> (<a class="el" href="classUsuario.html">Usuario</a> user)</td></tr>
 <tr class="memdesc:a27cda50e359fbd5269d418679ad38828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método para desactivar un usuario.  <a href="classUsuario.html#a27cda50e359fbd5269d418679ad38828">More...</a><br /></td></tr>
 <tr class="separator:a27cda50e359fbd5269d418679ad38828"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,7 +193,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interfaceIDesactivable.html">IDesactivable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Usuario_8cs_source.html#l00069">69</a> of file <a class="el" href="Usuario_8cs_source.html">Usuario.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Usuario_8cs_source.html#l00068">68</a> of file <a class="el" href="Usuario_8cs_source.html">Usuario.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -284,25 +284,35 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a4a963618b4817eadfc6117830e37a39e" name="a4a963618b4817eadfc6117830e37a39e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a963618b4817eadfc6117830e37a39e">&#9670;&nbsp;</a></span>IsActive()</h2>
+<a id="a15597dc7bd2f0ef9104a00b0077d547d" name="a15597dc7bd2f0ef9104a00b0077d547d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15597dc7bd2f0ef9104a00b0077d547d">&#9670;&nbsp;</a></span>IsActive()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool Usuario.IsActive </td>
+          <td class="memname">virtual bool Usuario.IsActive </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checkea si el usuario está activo. </p>
 <dl class="section return"><dt>Returns</dt><dd>Retorna un valor de bool, True si está activo o False si no lo está. </dd></dl>
 
 <p>Implements <a class="el" href="interfaceIDesactivable.html">IDesactivable</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classEmpleador.html#a852c7b5026a26e99ad160b557b876fb1">Empleador</a>, and <a class="el" href="classTrabajador.html#aea67aebba9f6f1799b9663f354b11e6e">Trabajador</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Usuario_8cs_source.html#l00063">63</a> of file <a class="el" href="Usuario_8cs_source.html">Usuario.cs</a>.</p>
 <div class="dynheader">
@@ -334,7 +344,7 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="interfaceIDesactivable.html">IDesactivable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Usuario_8cs_source.html#l00083">83</a> of file <a class="el" href="Usuario_8cs_source.html">Usuario.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Usuario_8cs_source.html#l00082">82</a> of file <a class="el" href="Usuario_8cs_source.html">Usuario.cs</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

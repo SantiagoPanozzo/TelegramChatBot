@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['calificacion_0',['Calificacion',['../namespaceLibrary.html#ab1f074010f510a22115a4ef8b23e7c92',1,'Library']]]
+  ['loginstate_0',['LoginState',['../classIniciarSesionHandler.html#ab14328337aefdac317701fe4e4cc19da',1,'IniciarSesionHandler']]]
 ];

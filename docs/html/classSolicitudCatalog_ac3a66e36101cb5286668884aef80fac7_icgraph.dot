@@ -1,0 +1,43 @@
+digraph "SolicitudCatalog.GetInstance"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="SolicitudCatalog.GetInstance",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener la instancia de la clase."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SolicitudTests.AdminDarDe\lBajaUsuarioTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a2a29ba0d44e72d12c5c959761d6d42b6",tooltip="Test para cuando se da de baja una solicitud"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SolicitudTests.AdminReactivar\lUsuarioTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#aaf41cba309b9b52a2c90fbcea299b112",tooltip="Test para cuando un administrador reactiva una solicitud"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SolicitudCatalogTests.Agregar\lSolicitudTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudCatalogTests.html#aa8f4cfa2dea89351ea33b5ff90427788",tooltip="Test de que se agrega una solicitud al catálogo."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SolicitudTests.Autocalificacion\lEmpleadorTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a5bd98ac4be94cb0014d689c4f038392e",tooltip="Test para cuando un empleador puede ser autocalificado con la calificación neutra"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="SolicitudTests.Autocalificacion\lTrabajadorTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a09026af8d6f60cdd45066247b773a869",tooltip="Test para cuando un trabajador puede ser autocalificado con la calificación neutra"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="SolicitudCatalogTests.Eliminar\lSolicitudTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudCatalogTests.html#a3ca4ddc9c6e70fb0a68196c3d44ddf00",tooltip="Test para eliminar una solicitud agregada al catálogo."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="SolicitudTests.Empleador\lYaCalificadoTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a85dd1b35b3e2e963c53e5e8d26383dbe",tooltip="Test para verificar que un empleador queda calificado."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="SolicitudTests.IniciarTrabajoTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a3458abad9fb728fad45bdd1f960b791a",tooltip="Test para dar una solicitud como iniciada."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="SolicitudTests.NoSePuede\lAutocalificacionEmpleadorTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a5abe601f5a30fa21c69dfb7ef1bc1d18",tooltip="Test para cuando un empleador no puede ser autocalificado con la calificación neutra"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="SolicitudTests.ObtenerCalificacion\lEmpleadorTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a5bc9552c0e56d34922ac61376da6d22c",tooltip="Test para obtener la calificación de un empleador."];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="SolicitudTests.ObtenerCalificacion\lTrabajadorTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a0c917552cbe07a3c304ae0437d9542e7",tooltip="Test para obtener la calificación de un trabajador."];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="SolicitudCatalogTests.Obtener\lSolicitudPorIdTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudCatalogTests.html#abd6dcd94597015193d81049630297b8e",tooltip="Test para cuando se quiere obtener una solicitud por un valor de id."];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="SolicitudTests.OfertaYaCalificadaTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#ac70abbc78ffcce55e27aec9b143ee758",tooltip="Test para verificar que una oferta quede calificada."];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="SolicitudCatalogTests.Solicitud\lCatalogSingletonTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudCatalogTests.html#a82d3d3e6fccc1451e23171b8a58b2e40",tooltip="Test de que si se crea una nueva instancia de SolicitudCatalog es en realidad igual a la que ya estab..."];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="SolicitudTests.ValorAutocalificacion\lEmpleadorTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a08a4481df842b71f70a17227f65d4b20",tooltip="Test para conocer la calificación de un empleador autocalificado"];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="SolicitudTests.ValorAutocalificacion\lTrabajadorTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudTests.html#a43b2ba391910e6055ca3398948aff57a",tooltip="Test para conocer la calificación de un empleador autocalificado"];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="SolicitudCatalogTests.Wipear\lSolicitudCatalogTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSolicitudCatalogTests.html#ae369ecf78d2090cf49f93bc2812aba8a",tooltip="Test de que el método Wipe() borra la instancia."];
+}

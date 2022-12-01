@@ -16,5 +16,5 @@ digraph "RegistryHandler.RemoveUsuario"
   Node5 [label="Usuario.DarDeBaja",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#a27cda50e359fbd5269d418679ad38828",tooltip="Método para desactivar un usuario."];
   Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="Usuario.IsActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#a4a963618b4817eadfc6117830e37a39e",tooltip="Checkea si el usuario está activo."];
+  Node6 [label="Usuario.IsActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classUsuario.html#a15597dc7bd2f0ef9104a00b0077d547d",tooltip="Checkea si el usuario está activo."];
 }

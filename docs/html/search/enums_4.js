@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loginstate_0',['LoginState',['../classLibrary_1_1IniciarSesionHandler.html#a5ad23e11fc3083709ab91019fa7a2167',1,'Library::IniciarSesionHandler']]]
+  ['registrarstate_0',['RegistrarState',['../classRegistrarHandler.html#a27f6029b4d042012ed2d8522ca200a36',1,'RegistrarHandler']]]
 ];

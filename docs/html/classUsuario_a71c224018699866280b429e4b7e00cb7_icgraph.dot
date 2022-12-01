@@ -8,4 +8,6 @@ digraph "Usuario.VerifyContraseña"
   Node1 [label="Usuario.VerifyContraseña",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método verificar que la contraseña sea igual a la anteriormente ingresada al iniciar sesión."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="RegistryHandler.GetUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRegistryHandler.html#a005052f60abd978ad080acd6e66bde57",tooltip="Método para obtener los datos de un Usuario."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="IniciarSesionHandler.Internal\lHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classIniciarSesionHandler.html#a0edabb292a13cc8ee0ee17d74609f54f",tooltip="Procesamiento de los mensajes."];
 }

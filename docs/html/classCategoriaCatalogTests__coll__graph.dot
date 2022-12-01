@@ -4,5 +4,5 @@ digraph "CategoriaCatalogTests"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{CategoriaCatalogTests\n||+ Setup()\l+ GetOfertaByIdTest()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tests de la clase CategoriaCatalog"];
+  Node1 [label="{CategoriaCatalogTests\n||+ SetUp()\l+ Wipe()\l+ CategoriasCatalogSingleton\lTest()\l+ WipearCategoriasCatalogTest()\l+ AdminAgregarCategoriaTest()\l+ NoAdminAgregarCategoriaTest()\l+ ErrorAgregarCategoria()\l+ ObtenerOfertaPorIdTest()\l+ ObtenerCategoriaPorDescripcion\lTest()\l+ AdminEliminarCategoriaTest()\l+ NoAdminEliminarCategoria\lTest()\l+ ErrorEliminarCategoria()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tests de la clase CategoriaCatalog"];
 }

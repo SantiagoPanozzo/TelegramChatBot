@@ -2,21 +2,8 @@ digraph "Graphical Class Hierarchy"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
-  bgcolor="transparent";
-  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
-  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="Exception",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classException.html",tooltip=" "];
-  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
-  Node1 [label="AccionInnecesariaException",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classAccionInnecesariaException.html",tooltip=" "];
-  Node0 -> Node2 [dir="back",color="steelblue1",style="solid"];
-  Node2 [label="ElevacionException",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classElevacionException.html",tooltip="Representa una excepción por falta de"];
-  Node0 -> Node3 [dir="back",color="steelblue1",style="solid"];
-  Node3 [label="FalloDeAutenticacionException",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classFalloDeAutenticacionException.html",tooltip=" "];
-  Node0 -> Node4 [dir="back",color="steelblue1",style="solid"];
-  Node4 [label="NotFoundException",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classNotFoundException.html",tooltip=" "];
-  Node0 -> Node5 [dir="back",color="steelblue1",style="solid"];
-  Node5 [label="UsuarioIncorrectoException",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classUsuarioIncorrectoException.html",tooltip=" "];
-  Node0 -> Node6 [dir="back",color="steelblue1",style="solid"];
-  Node6 [label="YaCalificadoException",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classYaCalificadoException.html",tooltip=" "];
+  Node0 [label="AdministradorTests",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classAdministradorTests.html",tooltip="Tests de la clase Administrador"];
 }

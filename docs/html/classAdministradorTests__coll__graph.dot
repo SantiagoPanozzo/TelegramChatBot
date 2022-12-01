@@ -4,5 +4,5 @@ digraph "AdministradorTests"
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{AdministradorTests\n||+ Setup()\l+ ConstructorCompleto()\l+ NoNickname()\l+ NullNickname()\l+ NoContraseña()\l+ NullContraseña()\l+ NoTelefono()\l+ NullTelefono()\l+ NoCorreo()\l+ NullCorreo()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tests de la clase Administrador"];
+  Node1 [label="{AdministradorTests\n||+ Setup()\l+ Wipe()\l+ AdministradorCrearCategoria\lParte2()\l+ Setup()\l+ ConstructorCompleto()\l+ NoNickname()\l+ NullNickname()\l+ NoContraseña()\l+ NullContraseña()\l+ NoTelefono()\l+ NullTelefono()\l+ NoCorreo()\l+ NullCorreo()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tests de la clase Administrador"];
 }

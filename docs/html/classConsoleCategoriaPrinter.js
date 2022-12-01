@@ -1,4 +1,4 @@
 var classConsoleCategoriaPrinter =
 [
-    [ "Print", "classConsoleCategoriaPrinter.html#aa413fbf376c35ef8c789260047901064", null ]
+    [ "PrintAll", "classConsoleCategoriaPrinter.html#a772374b3678ff295bc198c46d71e182f", null ]
 ];

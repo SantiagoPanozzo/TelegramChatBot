@@ -49,31 +49,24 @@ var NAVTREE =
       ] ],
       [ "Historias de usuario:", "md_Manual.html#autotoc_md18", null ]
     ] ],
-    [ "Proyecto ChatBot Programación II", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html", [
-      [ "Integrantes del equipo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md21", null ],
-      [ "Consigna", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md22", null ],
-      [ "Escenarios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md23", null ],
-      [ "Reflexiones de Grupo", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md24", [
-        [ "Implementación de un chatbot para ayudar a la gente encontrar trabajo y/o servicios", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md20", null ],
-        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md25", null ],
-        [ "Mateo Rodríguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md26", null ],
-        [ "Facundo Martínez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md27", null ],
-        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md28", null ],
-        [ "Alejandra Benítez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md29", null ]
+    [ "Proyecto ChatBot Programación II", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html", [
+      [ "Integrantes del equipo:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md21", null ],
+      [ "Consigna", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md22", null ],
+      [ "Escenarios", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md23", null ],
+      [ "Reflexiones de Grupo", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md24", [
+        [ "Implementación de un chatbot para ayudar a la gente encontrar trabajo y/o servicios", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md20", null ],
+        [ "Santiago Panozzo:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md25", null ],
+        [ "Mateo Rodríguez:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md26", null ],
+        [ "Facundo Martínez:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md27", null ],
+        [ "Tomás Esteves:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md28", null ],
+        [ "Alejandra Benítez:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md29", null ]
       ] ],
-      [ "Asignaciones:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md30", [
-        [ "Facundo Martinez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md31", null ],
-        [ "Mateo Rodriguez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md32", null ],
-        [ "Tomás Esteves:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md33", null ],
-        [ "Alejandra Benitez:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md34", null ],
-        [ "Santiago Panozzo:", "md__home_snowiemischief_projects_programacion2_pii_2022_2_equipo_21_README.html#autotoc_md35", null ]
-      ] ]
-    ] ],
-    [ "Packages", "namespaces.html", [
-      [ "Package List", "namespaces.html", "namespaces_dup" ],
-      [ "Package Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ]
+      [ "Asignaciones:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md30", [
+        [ "Facundo Martinez:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md31", null ],
+        [ "Mateo Rodriguez:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md32", null ],
+        [ "Tomás Esteves:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md33", null ],
+        [ "Alejandra Benitez:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md34", null ],
+        [ "Santiago Panozzo:", "md__mnt_c_Users_Bastet_Projects_WinProgramacion2_pii_2022_2_equipo_21_README.html#autotoc_md35", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -97,8 +90,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AccionInnecesariaException_8cs_source.html",
-"classLibrary_1_1Categoria.html",
-"classLibrary_1_1UsuariosCatalog.html#a085dae9662f6292b336866b5614d34c8"
+"classPanelDeControlHandler.html#a3e55c49f0bc6f1f0e4beb6005eb44057abafaacc01c90114e38ba3f8431507348",
+"md_HistoriasDeUsuarios.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

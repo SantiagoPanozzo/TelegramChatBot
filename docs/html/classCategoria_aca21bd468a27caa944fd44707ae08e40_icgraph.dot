@@ -8,12 +8,21 @@ digraph "Categoria.GetId"
   Node1 [label="Categoria.GetId",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Método para obtener el ID de una Categoria."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="SearchHandler.FiltrarReputacion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSearchHandler.html#a206259c11033d2e8fb322a9c243bb0f7",tooltip="Método para filtrar las OfertaDeServicio por reputación"];
-  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="CategoriasCatalog.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#a1275f6565562402725de3b14b665f622",tooltip="Método para obtener una categoría por id."];
-  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="OfertasHandler.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872",tooltip="Método para obtener una Categoria por id."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="BuscarHandler.InternalHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classBuscarHandler.html#a178b0dbdefa7d271b792fa0238ad0cc5",tooltip="Procesamiento del mensaje recibido."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CategoriasCatalog.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCategoriasCatalog.html#a1275f6565562402725de3b14b665f622",tooltip="Método para obtener una categoría por id."];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="OfertasHandler.GetOfertas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1",tooltip="Método para obtener OfertaDeServicio."];
-  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="OfertasHandler.Ofertar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a4171d183ad7e5356a35881f8078fd5c1",tooltip="Constructor de la clase."];
+  Node5 [label="OfertasHandler.GetCategoriaById",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#acd0f922cabb68e54f3a72a4761925872",tooltip="Método para obtener una Categoria por id."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="OfertasHandler.GetOfertas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#aee064b912d719b92da28610ca6c002c1",tooltip="Método para obtener OfertaDeServicio."];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="OfertasHandler.GetOfertas\lIgnoreId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a699944987dda2793b545183bcbdaed07",tooltip="Método para obtener una lista de todas las OfertaDeServicio"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="VerOfertasHandler.Internal\lHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVerOfertasHandler.html#ab56b6f4f1b0645311ed9704709f6b5cb",tooltip="Procesa el mensaje \"categorias\" y retorna true; retorna false en caso contrario."];
+  Node4 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="PanelDeControlHandler.Internal\lHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPanelDeControlHandler.html#a30658d59450bfd0528572c30ee7af021",tooltip="Procesamiento de los mensajes."];
+  Node4 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="OfertasHandler.Ofertar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classOfertasHandler.html#a4171d183ad7e5356a35881f8078fd5c1",tooltip="Constructor de la clase."];
 }
