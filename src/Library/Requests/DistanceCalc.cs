@@ -37,8 +37,7 @@ public class Distance
     //Se espera una dirección del formato "{Ciudad} {País}"
     //Falta retocar este método
     private string UrlFormat(string address){
-        string invalidChars;        //Regex de números, comas y cosas así
-        if(address.Trim().Count(x => x == ' ') == 1)    //&& !(invalidChars)
+        if(address.Trim().Count(x => x == ' ') == 1)
         {
             string[] trimmedArr = address.Trim().Split(" ");
             string origin = trimmedArr[0];
@@ -55,8 +54,6 @@ public class Distance
         // Honestamente no recuerdo por qué lo hice Singleton XD, no la uso para extender de nada, después veo
         if (_instance == null)
         {
-            // Posiblemente delegar la responsabilidad de lidiar con las variables de entorno a otra clase?
-            //DotNetEnv.Env.TraversePath().Load();
             _token = DotNetEnv.Env.GetString("DISTANCE_KEY");
             _instance = new Distance();
         }
