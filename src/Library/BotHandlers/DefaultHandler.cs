@@ -81,41 +81,4 @@ public class DefaultHandler : BaseHandler
             }
         }
      
-     private async Task SendImage(Message message)
-     {
-         // Can be null during testing
-         if (bot != null)
-         {
-             await bot.SendChatActionAsync(message.Chat.Id, ChatAction.UploadPhoto);
-
-             const string filePath = @"../../../../../Assets/supuse.jpg";
-             using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-             var fileName = filePath.Split(Path.DirectorySeparatorChar).Last();
-
-             await bot.SendPhotoAsync(
-                 chatId: message.Chat.Id,
-                 photo: new InputOnlineFile(fileStream, fileName),
-                 caption: "🏳🌈?"
-             );
-         }
-     }
-     
-     private async Task SendImageU(Message message)
-     {
-         // Can be null during testing
-         if (bot != null)
-         {
-             await bot.SendChatActionAsync(message.Chat.Id, ChatAction.UploadPhoto);
-
-             const string filePath = @"../../../../../Assets/urugod.png";
-             using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
-             var fileName = filePath.Split(Path.DirectorySeparatorChar).Last();
-
-             await bot.SendPhotoAsync(
-                 chatId: message.Chat.Id,
-                 photo: new InputOnlineFile(fileStream, fileName),
-                 caption: "Uruguay noma (nos nerfearon el escudo)"
-             );
-         }
-     }
 }

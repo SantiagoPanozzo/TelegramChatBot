@@ -6,6 +6,19 @@ desde Doxygen).
 ***
 
 # Ejecución del programa:
+
+Para ejecutar el programa es necesario tener establecido un Token para el bot en un archivo "`secrets.json`" en el directorio:
+* Windows: `%APPDATA%\\Microsoft\\UserSecrets\\pii_2022_2_equipo_21\\secrets.json`
+* Linux/macOs: `~/.microsoft/usersecrets/pii_2022_2_equipo_21/secrets.json`
+
+El archivo debe contener el siguiente código:
+
+```json
+{
+    "BotSecret:Token": "5845508375:AAHpEWJ4NsakgYXHKcnN5A11qyKp2ha5z8o"
+}
+```
+
 Para poder utilizar el bot es necesario ejecutar el programa en un dispositivo con DotNet Runtime 6 o superior instalado.
 Con esto hecho basta con ejecutar el proyecto "Program" dentro de la carpeta "src/Program" con el comando `dotnet run`
 desde dentro de dicha carpeta, o el comando `dotnet run --project ./src/Program`. Dicho proyecto contiene únicamente el
