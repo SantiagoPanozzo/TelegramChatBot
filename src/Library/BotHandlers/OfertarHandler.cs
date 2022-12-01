@@ -9,7 +9,6 @@ public class OfertarHandler : BaseHandler
     {
         Start,
         AskCategory,
-        Failed,
         AskDescription,
         AskJobType,
         AskPrice,
